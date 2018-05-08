@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <mvc:annotation-driven/>
+    <mvc:resources mapping="/images/**" location="/WEB-INF/resources/img/" cache-period="60"/>
+    <!-- Namespaces 탭에서 context 선택해야함 -->
+    <!--<context:annotation-config />-->
+    <!-- Component 패키지 지정 -->
+    <!--<context:component-scan base-package="org.silkdog.maven.hikoco.main"/>-->
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/view/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="oracle.jdbc.driver.OracleDriver"/>
+        <property name="jdbcUrl" value="jdbc:oracle:thin:@127.0.0.1:1521:xe"/>
+        <property name="user" value="system"/>
+        <property name="password" value="oracle"/>
+    </bean>
+
+    <bean id="jdbcTemplateMemberDAO" class="org.silkdog.maven.hikoco.member.jdbc.JdbcTemplateMemberDAO">
+        <constructor-arg ref="dataSource"/>
+    </bean>
+
+    <bean id="memberDAO" class="org.silkdog.maven.hikoco.member.dao.MemberDAOImpl"/>
+    <!-- 책에선 net.madvirus.spring4.chap07.quickstart.HelloContoller 로 소개되어 있음 -->
+    <bean class="org.silkdog.maven.hikoco.main.MainController"/>
+
+    <context:annotation-config />
+</beans>
