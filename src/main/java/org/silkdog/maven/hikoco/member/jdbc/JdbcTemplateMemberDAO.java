@@ -18,20 +18,24 @@ public class JdbcTemplateMemberDAO implements MemberDAO {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
-    private RowMapper<MemberDTO> rowMapper = new RowMapper<MemberDTO>() {
-        public MemberDTO mapRow(ResultSet rs, int rowNum) throws SQLException {
-            MemberDTO mdto = new MemberDTO();
-            mdto.setNo(rs.getInt("no"));
-            mdto.setId(rs.getString("id"));
-            mdto.setPw(rs.getString("pw"));
-            mdto.setJoindate(rs.getString("joindate"));
-            return mdto;
-        }
+    private RowMapper<MemberDTO> rowMapper = (rs, rowNum) -> {
+        MemberDTO mdto = new MemberDTO();
+        mdto.setNo(rs.getInt("no"));
+        mdto.setId(rs.getString("id"));
+        mdto.setPw(rs.getString("pw"));
+        mdto.setJoindate(rs.getString("joindate"));
+        return mdto;
     };
 
     @Override
     public List<MemberDTO> select(){
-        List<MemberDTO> mlist = jdbcTemplate.query("select * from HIKOCO_MEMBER", rowMapper);
+        List<MemberDTO> mlist = jdbcTemplate.query("select * from HIKOCO_MEMBER order by NO desc", rowMapper);
         return mlist;
+    }
+
+    @Override
+    public MemberDTO selectOne(){
+        MemberDTO mdto = jdbcTemplate.queryForObject("select * from HIKOCO_MEMBER where NO = 1", rowMapper);
+        return mdto;
     }
 }

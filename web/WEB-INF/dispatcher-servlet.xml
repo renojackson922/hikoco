@@ -5,9 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <mvc:annotation-driven/>
-    <mvc:resources mapping="/images/**" location="/WEB-INF/resources/img/" cache-period="60"/>
-    <!-- Namespaces 탭에서 context 선택해야함 -->
-    <!--<context:annotation-config />-->
+    <!--<mvc:resources mapping="/images/**" location="/WEB-INF/resources/img/" cache-period="60"/>-->
     <!-- Component 패키지 지정 -->
     <!--<context:component-scan base-package="org.silkdog.maven.hikoco.main"/>-->
 
@@ -26,10 +24,16 @@
     <bean id="jdbcTemplateMemberDAO" class="org.silkdog.maven.hikoco.member.jdbc.JdbcTemplateMemberDAO">
         <constructor-arg ref="dataSource"/>
     </bean>
+    <bean id="jdbcTemplateTransactionDAO" class="org.silkdog.maven.hikoco.transaction.jdbc.JdbcTemplateTransactionDAO">
+        <constructor-arg ref="dataSource"/>
+    </bean>
 
     <bean id="memberDAO" class="org.silkdog.maven.hikoco.member.dao.MemberDAOImpl"/>
+    <bean id="transactionDAO" class="org.silkdog.maven.hikoco.transaction.dao.TransactionDAOImpl"/>
     <!-- 책에선 net.madvirus.spring4.chap07.quickstart.HelloContoller 로 소개되어 있음 -->
     <bean class="org.silkdog.maven.hikoco.main.MainController"/>
 
+    <!-- Important !!! At the bottom of XML-->
     <context:annotation-config />
+
 </beans>
