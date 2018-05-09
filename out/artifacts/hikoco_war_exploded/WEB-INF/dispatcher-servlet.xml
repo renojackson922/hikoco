@@ -27,9 +27,13 @@
     <bean id="jdbcTemplateTransactionDAO" class="org.silkdog.maven.hikoco.transaction.jdbc.JdbcTemplateTransactionDAO">
         <constructor-arg ref="dataSource"/>
     </bean>
+    <bean id="jdbcTemplateCategoryDAO" class="org.silkdog.maven.hikoco.category.jdbc.JdbcTemplateCategoryDAO">
+        <constructor-arg ref="dataSource"/>
+    </bean>
 
     <bean id="memberDAO" class="org.silkdog.maven.hikoco.member.dao.MemberDAOImpl"/>
     <bean id="transactionDAO" class="org.silkdog.maven.hikoco.transaction.dao.TransactionDAOImpl"/>
+    <bean id="categoryDAO" class="org.silkdog.maven.hikoco.category.dao.CategoryDAOImpl"/>
     <!-- 책에선 net.madvirus.spring4.chap07.quickstart.HelloContoller 로 소개되어 있음 -->
     <bean class="org.silkdog.maven.hikoco.main.MainController"/>
 

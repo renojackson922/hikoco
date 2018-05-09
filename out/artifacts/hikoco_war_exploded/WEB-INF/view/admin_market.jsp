@@ -1,9 +1,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.util.*,member.dao.*,member.dto.*" %>
+<%@ page import="java.util.*, org.silkdog.maven.hikoco.category.dao.*, org.silkdog.maven.hikoco.category.dto.*" %>
 
 <%
 //    MemberDTO mlist = (MemberDTO)request.getAttribute("mlist");
 //    System.out.println(mlist);
+    int count = (int)request.getAttribute("count");
+
+    int cat_height;
+    float countDIV = (float)count/6;
+
+    System.out.println("count를 나눈 값: "+ countDIV);
+    if(countDIV > (int)Math.ceil(count / 6)){
+        cat_height = (int)Math.ceil(count/6) + 1;
+    }else{
+        cat_height = (int)Math.ceil(count/6);
+    }
+    System.out.println("count를 반올림한 값 :" + cat_height);
 %>
 
 <!DOCTYPE html>

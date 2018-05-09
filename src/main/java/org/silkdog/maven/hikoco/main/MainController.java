@@ -1,5 +1,7 @@
 package org.silkdog.maven.hikoco.main;
 
+import org.silkdog.maven.hikoco.category.dao.CategoryDAO;
+import org.silkdog.maven.hikoco.category.dto.CategoryDTO;
 import org.silkdog.maven.hikoco.member.dao.MemberDAO;
 import org.silkdog.maven.hikoco.member.dto.MemberDTO;
 import org.silkdog.maven.hikoco.transaction.dao.TransactionDAO;
@@ -19,6 +21,8 @@ public class MainController{
     private MemberDAO memberDAO;
     @Autowired
     private TransactionDAO transactionDAO;
+    @Autowired
+    private CategoryDAO categoryDAO;
 
     @RequestMapping("/hello.do")
     public String main(Model model){
@@ -53,7 +57,11 @@ public class MainController{
     }
 
     @RequestMapping(value="/admin_market.do", method=RequestMethod.GET)
-    public String adminMarket(Model model) throws Exception{
+    public String adminMarket(Model model, HttpServletRequest req) throws Exception{
+        int count = categoryDAO.count();
+        List<CategoryDTO> clist = categoryDAO.list();
+        req.setAttribute("count", count);
+        req.setAttribute("clist", clist);
         model.addAttribute("adminMarket","adminMarket");
         return "admin_market";
     }

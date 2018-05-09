@@ -38,4 +38,5 @@ public class JdbcTemplateMemberDAO implements MemberDAO {
         MemberDTO mdto = jdbcTemplate.queryForObject("select * from HIKOCO_MEMBER where NO = 1", rowMapper);
         return mdto;
     }
+
 }

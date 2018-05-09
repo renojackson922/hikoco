@@ -1,9 +1,22 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.util.*,member.dao.*,member.dto.*" %>
+<%@ page import="java.util.*, org.silkdog.maven.hikoco.category.dao.*, org.silkdog.maven.hikoco.category.dto.*" %>
 
 <%
 //    MemberDTO mlist = (MemberDTO)request.getAttribute("mlist");
 //    System.out.println(mlist);
+    int count = (int)request.getAttribute("count");
+    List<CategoryDTO> clist = (List<CategoryDTO>)request.getAttribute("clist");
+
+    int cat_height;
+    float countDIV = (float)count/6;
+
+    System.out.println("count를 나눈 값: "+ countDIV);
+    if(countDIV > (int)Math.ceil(count / 6)){
+        cat_height = (int)Math.ceil(count/6) + 1;
+    }else{
+        cat_height = (int)Math.ceil(count/6);
+    }
+    System.out.println("count를 반올림한 값 :" + cat_height);
 %>
 
 <!DOCTYPE html>
@@ -126,6 +139,11 @@
         <table class="table">
             <tbody>
                 <!-- 제일 첫번째와 마지막을 제외하고는 오른쪽 border 삭제해야함 -->
+                    <%
+                        // 첫번째 여섯개의 카테고리는 parent css를 적용해야함
+                        for(int i = 0; i < cat_height; i++){
+                            if(i == 0){
+                    %>
                 <tr>
                     <div class="category-td-parent" style="display:block">
                         <td class="category-td-parent-item"><a href="#" class="list-group-item list-group-item-action">전체보기 (1926)</a></td>
@@ -136,6 +154,7 @@
                         <td class="category-td-parent-item last-row"><a href="#" class="list-group-item list-group-item-action">Monitor (20)</a></td>
                     </div>
                 </tr>
+                <% }else{%>
                 <tr>
                     <div id="category-td-child" style="display:block;">
                         <td class="category-td-child-item"><a href="#" class="list-group-item list-group-item-action">K/B (62)</a></td>
@@ -146,6 +165,7 @@
                         <td class="category-td-child-item last-row"><a href="#" class="list-group-item list-group-item-action">N/A (0)</a></td>
                     </div>
                 </tr>
+            <% } %>
             </tbody>
         </table>
         <!-- 아이템 검색 -->
