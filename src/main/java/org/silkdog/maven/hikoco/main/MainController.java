@@ -70,5 +70,15 @@ public class MainController{
     public String adminMarketSubmit(Model model) throws Exception{
         return "admin_market";
     }
+
+    @RequestMapping(value="/login.do", method=RequestMethod.GET)
+    public String login(Model model, HttpServletRequest req){
+        return "login";
+    }
+
+    @RequestMapping(value="/signup.do", method=RequestMethod.GET)
+    public String signup(Model model){
+        return "signup";
+    }
     // 같은 내용을 합칠 수도 있음. p.286 참고
 }

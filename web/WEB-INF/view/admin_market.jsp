@@ -1,13 +1,13 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ page import="java.util.*, org.silkdog.maven.hikoco.category.dao.*, org.silkdog.maven.hikoco.category.dto.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%
-//    MemberDTO mlist = (MemberDTO)request.getAttribute("mlist");
-//    System.out.println(mlist);
     int count = (int)request.getAttribute("count");
     List<CategoryDTO> clist = (List<CategoryDTO>)request.getAttribute("clist");
 
     int cat_height;
+    // rowNum 도 추가할 것
     float countDIV = (float)count/6;
 
     System.out.println("count를 나눈 값: "+ countDIV);
@@ -17,6 +17,14 @@
         cat_height = (int)Math.ceil(count/6);
     }
     System.out.println("count를 반올림한 값 :" + cat_height);
+
+    HashMap map = new HashMap<Integer, String>();
+    for(CategoryDTO cdto : clist){
+        map.put(cdto.getHic_id(), cdto.getHic_val());
+    }
+
+    Set<Map.Entry<Integer, String>> set = map.entrySet();
+    Iterator<Map.Entry<Integer, String>> it = set.iterator();
 %>
 
 <!DOCTYPE html>
@@ -138,34 +146,55 @@
         <!-- 카테고리 -->
         <table class="table">
             <tbody>
+                <c:set var="cat_height" value="<%=cat_height%>" scope="page"/>
+                <%--<c:set var="e" value="<%=new AbstractMap.SimpleEntry<Integer, String>%>"/>--%>
                 <!-- 제일 첫번째와 마지막을 제외하고는 오른쪽 border 삭제해야함 -->
                     <%
                         // 첫번째 여섯개의 카테고리는 parent css를 적용해야함
-                        for(int i = 0; i < cat_height; i++){
-                            if(i == 0){
+                        Map.Entry<Integer, String> e;
+                        while(it.hasNext()){
                     %>
-                <tr>
-                    <div class="category-td-parent" style="display:block">
-                        <td class="category-td-parent-item"><a href="#" class="list-group-item list-group-item-action">전체보기 (1926)</a></td>
-                        <td class="category-td-parent-item"><a href="#" class="list-group-item list-group-item-action">CPU (124)</a></td>
-                        <td class="category-td-parent-item"><a href="#" class="list-group-item list-group-item-action">GPU (201)</a></td>
-                        <td class="category-td-parent-item"><a href="#" class="list-group-item list-group-item-action">M/B (56)</a></td>
-                        <td class="category-td-parent-item"><a href="#" class="list-group-item list-group-item-action">Case (27)</a></td>
-                        <td class="category-td-parent-item last-row"><a href="#" class="list-group-item list-group-item-action">Monitor (20)</a></td>
-                    </div>
-                </tr>
-                <% }else{%>
-                <tr>
-                    <div id="category-td-child" style="display:block;">
-                        <td class="category-td-child-item"><a href="#" class="list-group-item list-group-item-action">K/B (62)</a></td>
-                        <td class="category-td-child-item"><a href="#" class="list-group-item list-group-item-action">Mice (112)</a></td>
-                        <td class="category-td-child-item"><a href="#" class="list-group-item list-group-item-action">Headset (23)</a></td>
-                        <td class="category-td-child-item"><a href="#" class="list-group-item list-group-item-action">Speaker (47)</a></td>
-                        <td class="category-td-child-item"><a href="#" class="list-group-item list-group-item-action">Miscellaneous (3)</a></td>
-                        <td class="category-td-child-item last-row"><a href="#" class="list-group-item list-group-item-action">N/A (0)</a></td>
-                    </div>
-                </tr>
-            <% } %>
+                    <c:forEach var="i" begin="1" end="${cat_height}" step="1">
+                        <c:choose>
+                            <c:when test="${i == 1}">
+                                <tr>
+                                    <div class="category-td-parent" style="display:block">
+                                        <c:forEach var="j" begin="1" end="5" step="1">
+                                            <% if(it.hasNext()){ e = it.next(); %>
+                                            <td class="category-td-parent-item"><a href="#" class="list-group-item list-group-item-action"><%=e.getValue()%> (###)</a></td>
+                                            <% }else{ %>
+                                            <td class="category-td-parent-item"><a href="#" class="list-group-item list-group-item-action">&nbsp;</a></td>
+                                            <% } %>
+                                        </c:forEach>
+                                        <% if(it.hasNext()){ e = it.next(); %>
+                                        <td class="category-td-parent-item last-row"><a href="#" class="list-group-item list-group-item-action"><%=e.getValue()%> (###)</a></td>
+                                        <% }else{ %>
+                                        <td class="category-td-parent-item last-row"><a href="#" class="list-group-item list-group-item-action">&nbsp;</a></td>
+                                        <% } %>
+                                    </div>
+                                </tr>
+                            </c:when>
+                            <c:when test="${i >= 2}">
+                                <tr>
+                                    <div class="category-td-child" style="display:block">
+                                        <c:forEach var="j" begin="1" end="5" step="1">
+                                            <% if(it.hasNext()){ e = it.next(); %>
+                                            <td class="category-td-child-item"><a href="#" class="list-group-item list-group-item-action"><%=e.getValue()%> (###)</a></td>
+                                            <% }else{ %>
+                                            <td class="category-td-child-item"><a href="#" class="list-group-item list-group-item-action">&nbsp;</a></td>
+                                            <% } %>
+                                        </c:forEach>
+                                        <% if(it.hasNext()){ e = it.next(); %>
+                                        <td class="category-td-child-item last-row"><a href="#" class="list-group-item list-group-item-action"><%=e.getValue()%> (###)</a></td>
+                                        <% }else{ %>
+                                        <td class="category-td-child-item last-row"><a href="#" class="list-group-item list-group-item-action">&nbsp;</a></td>
+                                        <% } %>
+                                    </div>
+                                </tr>
+                            </c:when>
+                        </c:choose>
+                    </c:forEach>
+                    <% } %>
             </tbody>
         </table>
         <!-- 아이템 검색 -->
@@ -554,3 +583,8 @@
     }
 </script>
 </html>
+
+<!--
+박제용
+
+-->

@@ -26,7 +26,7 @@ public class JdbcTemplateCategoryDAO implements CategoryDAO {
 
     @Override
     public List<CategoryDTO> list(){
-        List<CategoryDTO> clist = jdbcTemplate.query("SELECT * FROM HIKOCO_ITEM_CATEGORY ORDER BY HIC_ORDER DESC", rowMapper);
+        List<CategoryDTO> clist = jdbcTemplate.query("SELECT * FROM HIKOCO_ITEM_CAT ORDER BY HIC_ORDER DESC", rowMapper);
         return clist;
     }
 
