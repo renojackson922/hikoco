@@ -72,14 +72,17 @@
                         <label for="mem_phone">휴대폰 번호</label>
                         <input type="text" class="form-control" id="mem_phone" name="mem_phone" placeholder="ex) 01012345678">
                     </div>
-                    <div class="form-group col-md-6">
-                        <label for="mem_nickname">성별</label>
-                        <select id="mem_sex" class="form-control" name="mem_sex">
-                            <option selected>선택하세요</option>
-                            <option value="1">남</option>
-                            <option value="2">여</option>
-                        </select>
-                    </div>
+                    <!-- 생년월일 -->
+                    <input type="hidden" id="mem_birthday" name="mem_birthday" value="19920829">
+                    <%--<div class="form-group col-md-6">--%>
+                        <%--<label for="mem_sex">성별</label>--%>
+                        <%--<select id="mem_sex" class="form-control" name="mem_sex">--%>
+                            <%--<option selected>선택하세요</option>--%>
+                            <%--<option value="1">남</option>--%>
+                            <%--<option value="2">여</option>--%>
+                        <%--</select>--%>
+                    <%--</div>--%>
+                    <input type="hidden" id="mem_sex" name="mem_sex" value="1">
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-2">
@@ -98,15 +101,14 @@
                         <label for="mem_addr2">City</label>
                         <input type="text" class="form-control" id="mem_addr2" name="mem_addr2">
                     </div>
-                <div class="form-group">
-                    <label for="mem_addr3">Address</label>
-                    <input type="text" class="form-control" id="mem_addr3" name="mem_addr3" placeholder="1234 Main St">
-                </div>
-                <div class="form-group">
-                    <label for="mem_addr4">Address 2</label>
-                    <input type="text" class="form-control" id="mem_addr4" name="mem_addr4" placeholder="Apartment, studio, or floor">
-                </div>
-
+                    <div class="form-group">
+                        <label for="mem_addr3">Address</label>
+                        <input type="text" class="form-control" id="mem_addr3" name="mem_addr3" placeholder="1234 Main St">
+                    </div>
+                    <div class="form-group">
+                        <label for="mem_addr4">Address 2</label>
+                        <input type="text" class="form-control" id="mem_addr4" name="mem_addr4" placeholder="Apartment, studio, or floor">
+                    </div>
                 </div>
                 <%--<div class="form-group">--%>
                     <%--<div class="form-check">--%>
