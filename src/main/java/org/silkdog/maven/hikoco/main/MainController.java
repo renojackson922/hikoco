@@ -80,5 +80,18 @@ public class MainController{
     public String signup(Model model){
         return "signup";
     }
+
+    @RequestMapping(value="/signup.do", method=RequestMethod.POST)
+    public int signupPro(Model model) {
+        MemberDTO mdto = new MemberDTO();
+        int result = memberDAO.insert(mdto);
+        if(result == 0){
+            System.out.println("fuck0");
+            return result;
+        }else{
+            System.out.println("hellyeah");
+            return result;
+        }
+    }
     // 같은 내용을 합칠 수도 있음. p.286 참고
 }

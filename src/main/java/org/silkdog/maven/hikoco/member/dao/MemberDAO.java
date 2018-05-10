@@ -7,4 +7,5 @@ import java.util.List;
 public interface MemberDAO {
     List<MemberDTO> select();
     MemberDTO selectOne();
+    int insert(final MemberDTO mdto);
 }
