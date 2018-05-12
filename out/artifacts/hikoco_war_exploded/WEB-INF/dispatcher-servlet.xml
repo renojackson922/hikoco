@@ -16,9 +16,9 @@
 
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
         <property name="driverClass" value="oracle.jdbc.driver.OracleDriver"/>
-        <property name="jdbcUrl" value="jdbc:oracle:thin:@127.0.0.1:1521:xe"/>
-        <property name="user" value="system"/>
-        <property name="password" value="oracle"/>
+        <property name="jdbcUrl" value="jdbc:oracle:thin:@52.79.130.227:1521:orcl"/>
+        <property name="user" value="aikocandy"/>
+        <property name="password" value="Shemwpdl9"/>
     </bean>
 
     <bean id="jdbcTemplateMemberDAO" class="org.silkdog.maven.hikoco.member.jdbc.JdbcTemplateMemberDAO">
