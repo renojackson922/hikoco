@@ -24,11 +24,11 @@ public class MainController{
     @Autowired
     private CategoryDAO categoryDAO;
 
-    @RequestMapping("/hello.do")
-    public String main(Model model){
-        model.addAttribute("greeting","안녕하세요?");
-        return "hello";
-    }
+//    @RequestMapping("/hello.do")
+//    public String main(Model model){
+//        model.addAttribute("greeting","안녕하세요?");
+//        return "hello";
+//    }
 
     @RequestMapping("/admin.do")
     public String admin(Model model) throws Exception{
@@ -94,4 +94,9 @@ public class MainController{
         }
     }
     // 같은 내용을 합칠 수도 있음. p.286 참고
+
+    @RequestMapping(value="/main.do", method=RequestMethod.GET)
+    public String main(Model model){
+        return "main";
+    }
 }
