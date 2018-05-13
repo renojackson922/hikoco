@@ -7,7 +7,7 @@
     <mvc:annotation-driven/>
     <!--<mvc:resources mapping="/images/**" location="/WEB-INF/resources/img/" cache-period="60"/>-->
     <!-- Component 패키지 지정 -->
-    <!--<context:component-scan base-package="org.silkdog.maven.hikoco.main"/>-->
+    <context:component-scan base-package="org.silkdog.maven.hikoco"/>
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/view/"/>
@@ -21,7 +21,16 @@
         <property name="password" value="Shemwpdl9"/>
     </bean>
 
-    <bean id="jdbcTemplateMemberDAO" class="org.silkdog.maven.hikoco.member.jdbc.JdbcTemplateMemberDAO">
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="mapperLocations" value="classpath*:org/silkdog/maven/hikoco/testXMLmapper.xml" />
+    </bean>
+
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory" />
+    </bean>
+
+<!--    <bean id="jdbcTemplateMemberDAO" class="org.silkdog.maven.hikoco.member.jdbc.JdbcTemplateMemberDAO">
         <constructor-arg ref="dataSource"/>
     </bean>
     <bean id="jdbcTemplateTransactionDAO" class="org.silkdog.maven.hikoco.transaction.jdbc.JdbcTemplateTransactionDAO">
@@ -29,13 +38,13 @@
     </bean>
     <bean id="jdbcTemplateCategoryDAO" class="org.silkdog.maven.hikoco.category.jdbc.JdbcTemplateCategoryDAO">
         <constructor-arg ref="dataSource"/>
-    </bean>
+    </bean>-->
 
-    <bean id="memberDAO" class="org.silkdog.maven.hikoco.member.dao.MemberDAOImpl"/>
+    <!--<bean id="memberDAO" class="org.silkdog.maven.hikoco.member.dao.MemberDAOImpl"/>
     <bean id="transactionDAO" class="org.silkdog.maven.hikoco.transaction.dao.TransactionDAOImpl"/>
     <bean id="categoryDAO" class="org.silkdog.maven.hikoco.category.dao.CategoryDAOImpl"/>
-    <!-- 책에선 net.madvirus.spring4.chap07.quickstart.HelloContoller 로 소개되어 있음 -->
-    <bean class="org.silkdog.maven.hikoco.main.MainController"/>
+    &lt;!&ndash; 책에선 net.madvirus.spring4.chap07.quickstart.HelloContoller 로 소개되어 있음 &ndash;&gt;
+    <bean class="org.silkdog.maven.hikoco.main.MainController"/>-->
 
     <!-- Important !!! At the bottom of XML-->
     <context:annotation-config />

@@ -3,8 +3,8 @@
         PUBLIC "-//mybatis//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="member.dao.MemberDAO">
-    <select id="findById" resultType="member.dto.MemberDTO">  <!-- DTO 지정 -->
+<mapper namespace="testXMLmapper">
+    <select id="findById" resultType="java.util.HashMap">  <!-- DTO 지정 -->
       select * from HIKOCO_MEMBER where NO = 1
     </select>
 </mapper>

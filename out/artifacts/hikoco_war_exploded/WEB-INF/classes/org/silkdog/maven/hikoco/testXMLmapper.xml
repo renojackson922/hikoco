@@ -3,8 +3,8 @@
         PUBLIC "-//mybatis//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="testXMLmapper">
+<mapper namespace="org.silkdog.maven.hikoco.testXMLmapper">
     <select id="findById" resultType="java.util.HashMap">  <!-- DTO 지정 -->
-      select * from HIKOCO_MEMBER where NO = 1
+      select MEM_USERID from HIKOCO_MEMBER where MEM_ID = 1
     </select>
 </mapper>

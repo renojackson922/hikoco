@@ -4,6 +4,7 @@ import org.silkdog.maven.hikoco.category.dao.CategoryDAO;
 import org.silkdog.maven.hikoco.category.dto.CategoryDTO;
 import org.silkdog.maven.hikoco.member.dao.MemberDAO;
 import org.silkdog.maven.hikoco.member.dto.MemberDTO;
+import org.silkdog.maven.hikoco.testService;
 import org.silkdog.maven.hikoco.transaction.dao.TransactionDAO;
 import org.silkdog.maven.hikoco.transaction.dto.TransactionDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,19 +14,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.List;
 
 @Controller
 public class MainController{
-    @Autowired
+
+/*    @Autowired
     private MemberDAO memberDAO;
     @Autowired
     private TransactionDAO transactionDAO;
     @Autowired
-    private CategoryDAO categoryDAO;
+    private CategoryDAO categoryDAO;*/
 
-    @RequestMapping("/hello.do")
+
+    @Autowired
+    private testService testService;
+
+    @RequestMapping(value="/", method=RequestMethod.GET)
+    public String root(Model model){
+        return "hello";
+    }
+
+    @RequestMapping(value="/hello.do", method=RequestMethod.GET)
     public String main(Model model){
+        List<HashMap> test = testService.findById();
+        System.out.println((test.get(0)).get("MEM_USERID"));
+        model.addAttribute("test", test);
         model.addAttribute("greeting","안녕하세요?");
         return "hello";
     }
@@ -38,6 +53,7 @@ public class MainController{
         return "admin";
     }
 
+/*
     @RequestMapping("/admin_member.do")
     public String adminMember(Model model, HttpServletRequest req) throws Exception{
         List<MemberDTO> mlist = memberDAO.select();
@@ -65,6 +81,7 @@ public class MainController{
         model.addAttribute("adminMarket","adminMarket");
         return "admin_market";
     }
+*/
 
     @RequestMapping(value="/admin_market.do", method=RequestMethod.POST)
     public String adminMarketSubmit(Model model) throws Exception{
@@ -81,7 +98,7 @@ public class MainController{
         return "signup";
     }
 
-    @RequestMapping(value="/signup.do", method=RequestMethod.POST)
+ /*   @RequestMapping(value="/signup.do", method=RequestMethod.POST)
     public int signupPro(Model model) {
         MemberDTO mdto = new MemberDTO();
         int result = memberDAO.insert(mdto);
@@ -92,6 +109,6 @@ public class MainController{
             System.out.println("hellyeah");
             return result;
         }
-    }
+    }*/
     // 같은 내용을 합칠 수도 있음. p.286 참고
 }
