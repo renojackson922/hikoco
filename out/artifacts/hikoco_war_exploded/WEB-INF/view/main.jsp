@@ -1,4 +1,48 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="java.util.Set" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+    Map<String, Integer> mainHashMap = new HashMap<String, Integer>();
+    mainHashMap.put("../../resources/imgs/img1.jpg", 1);
+    mainHashMap.put("../../resources/imgs/img2.jpg", 2);
+    mainHashMap.put("../../resources/imgs/img3.jpg", 3);
+    mainHashMap.put("../../resources/imgs/img4.jpg", 4);
+    mainHashMap.put("../../resources/imgs/img5.jpg", 5);
+    mainHashMap.put("../../resources/imgs/img6.jpg", 6);
+
+    Map<Integer, String> titleHashMap = new HashMap<Integer, String>();
+    titleHashMap.put(1, "RX530");
+    titleHashMap.put(2, "RX540");
+    titleHashMap.put(3, "RX550");
+    titleHashMap.put(4, "RX560");
+    titleHashMap.put(5, "RX570");
+    titleHashMap.put(6, "RX580");
+
+    Map<Integer, String> detailHashMap = new HashMap<Integer, String>();
+    detailHashMap.put(1, "RX시리즈1");
+    detailHashMap.put(2, "RX시리즈2");
+    detailHashMap.put(3, "RX시리즈3");
+    detailHashMap.put(4, "RX시리즈4");
+    detailHashMap.put(5, "RX시리즈5");
+    detailHashMap.put(6, "RX시리즈6");
+
+
+
+
+    Set<Map.Entry<String, Integer>> set = mainHashMap.entrySet();
+    Iterator<Map.Entry<String, Integer>> it = set.iterator();
+
+    Set<Map.Entry<Integer, String>> set2 = titleHashMap.entrySet();
+    Iterator<Map.Entry<Integer, String>> it2 = set2.iterator();
+
+    Set<Map.Entry<Integer, String>> set3 = detailHashMap.entrySet();
+    Iterator<Map.Entry<Integer, String>> it3 = set3.iterator();
+
+    session.setAttribute("mainHashMap", mainHashMap);
+%>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -251,12 +295,66 @@
                 <div class="jcarousel-wrapper">
                     <div class="jcarousel">
                         <ul>
-                            <li><img src="../../resources/imgs/img1.jpg" alt="Image 1"></li>
-                            <li><img src="../../resources/imgs/img2.jpg" alt="Image 2"></li>
-                            <li><img src="../../resources/imgs/img3.jpg" alt="Image 3"></li>
-                            <li><img src="../../resources/imgs/img4.jpg" alt="Image 4"></li>
-                            <li><img src="../../resources/imgs/img5.jpg" alt="Image 5"></li>
-                            <li><img src="../../resources/imgs/img6.jpg" alt="Image 6"></li>
+                            <%
+                                Map.Entry<String, Integer> e;
+                                Map.Entry<Integer, String> e2;
+                                Map.Entry<Integer, String> e3;
+                                while(it.hasNext() && it2.hasNext() && it3.hasNext()){
+                            %>
+                            <c:forEach var="i" begin="1" end="6" step="1">
+                                <%
+                                    e = it.next();
+                                    e2 = it2.next();
+                                    e3 = it3.next();
+                                %>
+                                <li>
+                                    <div class="text-center">
+                                        <img src="<%=e.getKey()%>" alt="Image ${i}">
+                                        <span style="font-size:8px;">제품 ${i}</span><br>
+                                        <span><strong><%=e2.getValue()%></strong></span>
+                                        <p><%=e3.getValue()%></p>
+                                    </div>
+                                </li>
+                            </c:forEach>
+                            <%
+                                }
+                            %>
+                            <%--<li>--%>
+                                <%--<div class="text-center">--%>
+                                    <%--<img src="../../resources/imgs/img1.jpg" alt="Image 1">--%>
+                                    <%--<span>fuck</span>--%>
+                                <%--</div>--%>
+                            <%--</li>--%>
+                            <%--<li>--%>
+                                <%--<div class="text-center">--%>
+                                    <%--<img src="../../resources/imgs/img2.jpg" alt="Image 2">--%>
+                                    <%--<span>fuck</span>--%>
+                                <%--</div>--%>
+                            <%--</li>--%>
+                            <%--<li>--%>
+                                <%--<div class="text-center">--%>
+                                    <%--<img src="../../resources/imgs/img3.jpg" alt="Image 3">--%>
+                                    <%--<span>fuck</span>--%>
+                                <%--</div>--%>
+                            <%--</li>--%>
+                            <%--<li>--%>
+                                <%--<div class="text-center">--%>
+                                    <%--<img src="../../resources/imgs/img4.jpg" alt="Image 4">--%>
+                                    <%--<span>fuck</span>--%>
+                                <%--</div>--%>
+                            <%--</li>--%>
+                            <%--<li>--%>
+                                <%--<div class="text-center">--%>
+                                    <%--<img src="../../resources/imgs/img5.jpg" alt="Image 5">--%>
+                                    <%--<span>fuck</span>--%>
+                                <%--</div>--%>
+                            <%--</li>--%>
+                            <%--<li>--%>
+                                <%--<div class="text-center">--%>
+                                    <%--<img src="../../resources/imgs/img6.jpg" alt="Image 6">--%>
+                                    <%--<span>fuck</span>--%>
+                                <%--</div>--%>
+                            <%--</li>--%>
                         </ul>
                     </div>
 
