@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HIKOCO :: MAIN</title>
     <!-- Vue.js Development -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -222,16 +223,16 @@
             <div class="text-left" style="padding-top:30px; padding-left:400px;">
                 <%--<img class="animated fadeInUp" src="../../resources/imgs/rx580_grande.png" style="right:1000px; top:100px;">--%>
                 <div class="bg"></div>
-                <div class="animated fadeInUp" style="position:absolute; width:300px; height:90px; right:400px; top:180px; background-color: rgba(0,0,0,0.5); padding:15px; ">
+                <div class="animated fadeInUp" style="position:absolute; width:300px; height:90px; right:150px; top:180px; background-color: rgba(0,0,0,0.5); padding:15px; ">
                     <span class="hikoco-sec1-span" style="font-size:20px; display:block; line-height: 30px;"><i>최상의 게이밍 성능</i></span>
                     <div class="text-right">
                         <span class="hikoco-sec1-span" style="font-size:16px; display:block; line-height: 30px;"><i>- Charles Hoskinson</i></span>
                     </div>
                 </div>
-                <div class="animated fadeInUp" style="position:absolute; width:300px; height:150px; right:400px; top:280px; background-color:#000; padding:20px;">
+                <div class="animated fadeInUp" style="position:absolute; width:300px; height:150px; right:150px; top:280px; background-color:#000; padding:20px;">
                     <span class="hikoco-sec1-span" style="font-size:16px; line-height: 20px;">AMD</span>
                     <span class="hikoco-sec1-span" style="font-size:30px; display:block; line-height: 30px;"><strong>Radeon&#174; RX580</strong></span>
-                    <span class="hikoco-sec1-span" style="font-size:18px; display:block; line-height: 40px;">&#8361;&nbsp;300,000</span>
+                    <span class="hikoco-sec1-span" style="font-size:18px; display:block; line-height: 40px;">&#8361;&nbsp;300,000 부터</span>
                     <div class="text-right">
                         <a href="#"><span style="font-size:12px; line-height:40px;">지금 구매하기</span></a>
                     </div>
@@ -245,8 +246,8 @@
         </div>
         <div style="height:400px;">
             <div class="wrapper">
-                <h1>Responsive Carousel</h1>
-                <p>This example shows how to implement a responsive carousel. Resize the browser window to see the effect.</p>
+                <%--<h1>Responsive Carousel</h1>--%>
+                <%--<p>This example shows how to implement a responsive carousel. Resize the browser window to see the effect.</p>--%>
                 <div class="jcarousel-wrapper">
                     <div class="jcarousel">
                         <ul>
