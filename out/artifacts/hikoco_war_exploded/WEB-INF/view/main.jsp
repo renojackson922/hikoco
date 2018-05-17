@@ -48,6 +48,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HIKOCO :: MAIN</title>
+    <!-- Non-responsive -->
+    <link href="../../resources/script/non-responsive.css" rel="stylesheet">
     <!-- Vue.js Development -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!-- Bootstrap 4.1.1 & jQuery-Slim -->
@@ -130,6 +132,9 @@
             });
         })(jQuery);
     </script>
+    <style>
+
+    </style>
 </head>
 <body>
     <!-- navbar -->
@@ -231,9 +236,9 @@
     <section id="hikoco_sec3">
         <style>
             table{
-                width: 100%;
+                /*width: 100%;*/
                 /*width: -webkit-fill-available;*/
-                width: -moz-available;
+                /*width: -moz-available;*/
             }
             figure{
                 text-align:center;
@@ -251,6 +256,7 @@
                 margin-bottom:15px !important;
             }
             td{
+                width:25% !important;
                 padding-right:15px !important;
             }
             .unselectable {
@@ -279,7 +285,7 @@
                                     <li class="list-group-item list-group-item-action unselectable">
                                         <figure>
                                             <div style="padding:20px 30px 5px 30px;">
-                                                <img src="../../resources/imgs/neogul.jpg" width="220px" height="220px" style="margin-bottom:10px;">
+                                                <img src="../../resources/imgs/neogul.jpg" style="margin-bottom:10px; height:150px; max-width:150px;">
                                                 <figcaption>
                                                     <p style="margin-bottom:0px; font-weight:700;">현존 최고의 성능 워크스테이션</p>
                                                     <p style="font-size:12px; color:#5d5d5d; text-align:left; font-weight:400;">인텔 Xeon E5-2687Wv4 (3.0G) / DDR4 4GB / HDD 미포함 / VGA 미포함 / ODD미포함 / 3.5인치 내부 4Bay / 5.25인치 3Bay / 시리얼포트 / 1000W 파워 / 지원 / 32GB 이상</p>
@@ -301,35 +307,35 @@
                                 <% } %>
                             <%--</ul>--%>
                         </tr>
-                        <tr>
-                            <%--<ul class="list-group">--%>
-                            <% for(int i = 0; i < 5; i++){%>
-                            <td>
-                                <li class="list-group-item list-group-item-action unselectable">
-                                    <figure>
-                                        <div style="padding:20px 30px 5px 30px;">
-                                            <img src="../../resources/imgs/neogul.jpg" width="220px" height="220px" style="margin-bottom:10px;">
-                                            <figcaption>
-                                                <p style="margin-bottom:0px; font-weight:700;">현존 최고의 성능 워크스테이션</p>
-                                                <p style="font-size:12px; color:#5d5d5d; text-align:left; font-weight:400;">인텔 Xeon E5-2687Wv4 (3.0G) / DDR4 4GB / HDD 미포함 / VGA 미포함 / ODD미포함 / 3.5인치 내부 4Bay / 5.25인치 3Bay / 시리얼포트 / 1000W 파워 / 지원 / 32GB 이상</p>
-                                            </figcaption>
-                                        </div>
-                                        <div style="padding:15px 30px 15px 30px; border-top:1px solid #ddd;">
-                                            <figcaption>
-                                                <div class="text-left" style="float:left;">
-                                                    <span style="font-size:14px;"><strong>9,400,270원</strong></span>
-                                                </div>
-                                                <div class="text-right">
-                                                    <span style="font-size:12px; border:1px solid coral; background: coral; color:#fff; padding:5px; border-radius:4px;">특가</span>
-                                                </div>
-                                            </figcaption>
-                                        </div>
-                                    </figure>
-                                </li>
-                            </td>
-                            <% } %>
-                            <%--</ul>--%>
-                        </tr>
+                        <%--<tr>--%>
+                            <%--&lt;%&ndash;<ul class="list-group">&ndash;%&gt;--%>
+                            <%--<% for(int i = 0; i < 5; i++){%>--%>
+                            <%--<td>--%>
+                                <%--<li class="list-group-item list-group-item-action unselectable">--%>
+                                    <%--<figure>--%>
+                                        <%--<div style="padding:20px 30px 5px 30px;">--%>
+                                            <%--<img src="../../resources/imgs/neogul.jpg" width="220px" height="220px" style="margin-bottom:10px;">--%>
+                                            <%--<figcaption>--%>
+                                                <%--<p style="margin-bottom:0px; font-weight:700;">현존 최고의 성능 워크스테이션</p>--%>
+                                                <%--<p style="font-size:12px; color:#5d5d5d; text-align:left; font-weight:400;">인텔 Xeon E5-2687Wv4 (3.0G) / DDR4 4GB / HDD 미포함 / VGA 미포함 / ODD미포함 / 3.5인치 내부 4Bay / 5.25인치 3Bay / 시리얼포트 / 1000W 파워 / 지원 / 32GB 이상</p>--%>
+                                            <%--</figcaption>--%>
+                                        <%--</div>--%>
+                                        <%--<div style="padding:15px 30px 15px 30px; border-top:1px solid #ddd;">--%>
+                                            <%--<figcaption>--%>
+                                                <%--<div class="text-left" style="float:left;">--%>
+                                                    <%--<span style="font-size:14px;"><strong>9,400,270원</strong></span>--%>
+                                                <%--</div>--%>
+                                                <%--<div class="text-right">--%>
+                                                    <%--<span style="font-size:12px; border:1px solid coral; background: coral; color:#fff; padding:5px; border-radius:4px;">특가</span>--%>
+                                                <%--</div>--%>
+                                            <%--</figcaption>--%>
+                                        <%--</div>--%>
+                                    <%--</figure>--%>
+                                <%--</li>--%>
+                            <%--</td>--%>
+                            <%--<% } %>--%>
+                            <%--&lt;%&ndash;</ul>&ndash;%&gt;--%>
+                        <%--</tr>--%>
                     </thead>
                 </table>
             </div>
