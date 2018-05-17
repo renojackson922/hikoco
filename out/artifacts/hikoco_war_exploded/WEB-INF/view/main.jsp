@@ -154,44 +154,7 @@
         .jcarousel-control-next:hover, .jcarousel-control-prev:hover{
             color:#fff;
         }
-        .list-group-item:first-child{
-            border-top-left-radius:0px;
-            border-top-right-radius:0px;
-        }
-        .list-group-item:last-child{
-            border-bottom-left-radius:0px;
-            border-bottom-right-radius:0px;
-        }
-        .category-td-parent-item{
-            padding:0px !important;
-            width:144px;
-            border-right:0px;
-        }
-        .category-td-parent-item > a{
-            font-size:12px;
-            margin:0px;
-            padding:5px;
-            border-top:0px;
-            border-right:0px;
-        }
 
-        .category-td-child-item{
-            padding:0px !important;
-            width:144px;
-            border-top:0px !important;
-            border-right:0px;
-        }
-
-        .category-td-child-item > a{
-            font-size:12px;
-            margin:0px;
-            padding:5px;
-            border-top:0px !important;
-            border-right:0px;
-        }
-        .last-row{
-            border-right:1px solid #ddd !important;
-        }
 
     </style>
     <section id="hikoco-sec1" style="z-index:2;">
@@ -266,100 +229,116 @@
         </div>
     </section>
     <section id="hikoco_sec3">
+        <style>
+            table{
+                width: 100%;
+                /*width: -webkit-fill-available;*/
+                width: -moz-available;
+            }
+            figure{
+                text-align:center;
+                margin-bottom:0px;
+            }
+            hr{
+                margin:5px 0px 5px 0px;
+            }
+            .col-md-10{
+                padding:0px;
+            }
+            .list-group-item{
+                border-radius:0px !important;
+                padding:0px;
+                margin-bottom:15px !important;
+            }
+            td{
+                padding-right:15px !important;
+            }
+            .unselectable {
+                -moz-user-select: -moz-none;
+                -khtml-user-select: none;
+                -webkit-user-select: none;
+                -o-user-select: none;
+                user-select: none;
+            }
+        </style>
         <div style="height:50px; background-color:#ddd; line-height:50px; padding-left:20px; ">
             <span style="font-size:24px;">Hot-Selling</span>
         </div>
-        <div>
-            <!-- 카테고리 -->
-            <table class="table">
-                <tbody>
-                    <tr>
-                        <div class="category-td-parent" style="display:block">
-                            <td class="category-td-parent-item"><a href="#" class="list-group-item list-group-item-action"> (###)</a></td>
-                            <td class="category-td-parent-item"><a href="#" class="list-group-item list-group-item-action"> (###)</a></td>
-                            <td class="category-td-parent-item"><a href="#" class="list-group-item list-group-item-action"> (###)</a></td>
-                            <td class="category-td-parent-item last-row"><a href="#" class="list-group-item list-group-item-action"> (###)</a></td>
-                        </div>
-                    </tr>
-                    <tr>
-                        <div class="category-td-child" style="display:block">
-                            <td class="category-td-child-item"><a href="#" class="list-group-item list-group-item-action">(###)</a></td>
-                            <td class="category-td-child-item"><a href="#" class="list-group-item list-group-item-action">(###)</a></td>
-                            <td class="category-td-child-item"><a href="#" class="list-group-item list-group-item-action">(###)</a></td>
-                            <td class="category-td-child-item last-row"><a href="#" class="list-group-item list-group-item-action"> (###)</a></td>
-                        </div>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="sec3-wrapper" style="display:inline-block;">
+            <div class="col-md-2" style="float:left; padding-top:15px;">
 
+            </div>
+
+            <div class="col-md-10" style="float:left; padding-top:15px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <%--<ul class="list-group">--%>
+                                <% for(int i = 0; i < 5; i++){%>
+                                <td>
+                                    <li class="list-group-item list-group-item-action unselectable">
+                                        <figure>
+                                            <div style="padding:20px 30px 5px 30px;">
+                                                <img src="../../resources/imgs/neogul.jpg" width="220px" height="220px" style="margin-bottom:10px;">
+                                                <figcaption>
+                                                    <p style="margin-bottom:0px; font-weight:700;">현존 최고의 성능 워크스테이션</p>
+                                                    <p style="font-size:12px; color:#5d5d5d; text-align:left; font-weight:400;">인텔 Xeon E5-2687Wv4 (3.0G) / DDR4 4GB / HDD 미포함 / VGA 미포함 / ODD미포함 / 3.5인치 내부 4Bay / 5.25인치 3Bay / 시리얼포트 / 1000W 파워 / 지원 / 32GB 이상</p>
+                                                </figcaption>
+                                            </div>
+                                            <div style="padding:15px 30px 15px 30px; border-top:1px solid #ddd;">
+                                                <figcaption>
+                                                    <div class="text-left" style="float:left;">
+                                                        <span style="font-size:14px;"><strong>9,400,270원</strong></span>
+                                                    </div>
+                                                    <div class="text-right">
+                                                        <span style="font-size:12px; border:1px solid coral; background: coral; color:#fff; padding:5px; border-radius:4px;">특가</span>
+                                                    </div>
+                                                </figcaption>
+                                            </div>
+                                        </figure>
+                                    </li>
+                                </td>
+                                <% } %>
+                            <%--</ul>--%>
+                        </tr>
+                        <tr>
+                            <%--<ul class="list-group">--%>
+                            <% for(int i = 0; i < 5; i++){%>
+                            <td>
+                                <li class="list-group-item list-group-item-action unselectable">
+                                    <figure>
+                                        <div style="padding:20px 30px 5px 30px;">
+                                            <img src="../../resources/imgs/neogul.jpg" width="220px" height="220px" style="margin-bottom:10px;">
+                                            <figcaption>
+                                                <p style="margin-bottom:0px; font-weight:700;">현존 최고의 성능 워크스테이션</p>
+                                                <p style="font-size:12px; color:#5d5d5d; text-align:left; font-weight:400;">인텔 Xeon E5-2687Wv4 (3.0G) / DDR4 4GB / HDD 미포함 / VGA 미포함 / ODD미포함 / 3.5인치 내부 4Bay / 5.25인치 3Bay / 시리얼포트 / 1000W 파워 / 지원 / 32GB 이상</p>
+                                            </figcaption>
+                                        </div>
+                                        <div style="padding:15px 30px 15px 30px; border-top:1px solid #ddd;">
+                                            <figcaption>
+                                                <div class="text-left" style="float:left;">
+                                                    <span style="font-size:14px;"><strong>9,400,270원</strong></span>
+                                                </div>
+                                                <div class="text-right">
+                                                    <span style="font-size:12px; border:1px solid coral; background: coral; color:#fff; padding:5px; border-radius:4px;">특가</span>
+                                                </div>
+                                            </figcaption>
+                                        </div>
+                                    </figure>
+                                </li>
+                            </td>
+                            <% } %>
+                            <%--</ul>--%>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
         </div>
     </section>
-
-
-    <%--<section id="hikoco_sec3" style="z-index:1;">--%>
-        <%--<div style="height:50px; background-color:#ddd; line-height:50px; padding-left:20px; ">--%>
-            <%--<span style="font-size:24px;">Bestseller</span>--%>
-        <%--</div>--%>
-        <%--<div style="height:400px;">--%>
-            <%--<div class="wrapper">--%>
-                <%--&lt;%&ndash;<h1>Responsive Carousel</h1>&ndash;%&gt;--%>
-                <%--&lt;%&ndash;<p>This example shows how to implement a responsive carousel. Resize the browser window to see the effect.</p>&ndash;%&gt;--%>
-                <%--<div class="jcarousel-wrapper" id="second" >--%>
-                    <%--<div class="jcarousel">--%>
-                        <%--<ul>--%>
-                            <%--<li>--%>
-                                <%--<div class="text-center">--%>
-                                    <%--<img src="../../resources/imgs/img1.jpg" alt="Image 1">--%>
-                                    <%--<span>fuck</span>--%>
-                                <%--</div>--%>
-                            <%--</li>--%>
-                            <%--<li>--%>
-                                <%--<div class="text-center">--%>
-                                    <%--<img src="../../resources/imgs/img2.jpg" alt="Image 2">--%>
-                                    <%--<span>fuck</span>--%>
-                                <%--</div>--%>
-                            <%--</li>--%>
-                            <%--<li>--%>
-                                <%--<div class="text-center">--%>
-                                    <%--<img src="../../resources/imgs/img3.jpg" alt="Image 3">--%>
-                                    <%--<span>fuck</span>--%>
-                                <%--</div>--%>
-                            <%--</li>--%>
-                            <%--<li>--%>
-                                <%--<div class="text-center">--%>
-                                    <%--<img src="../../resources/imgs/img4.jpg" alt="Image 4">--%>
-                                    <%--<span>fuck</span>--%>
-                                <%--</div>--%>
-                            <%--</li>--%>
-                            <%--<li>--%>
-                                <%--<div class="text-center">--%>
-                                    <%--<img src="../../resources/imgs/img5.jpg" alt="Image 5">--%>
-                                    <%--<span>fuck</span>--%>
-                                <%--</div>--%>
-                            <%--</li>--%>
-                            <%--<li>--%>
-                                <%--<div class="text-center">--%>
-                                    <%--<img src="../../resources/imgs/img6.jpg" alt="Image 6">--%>
-                                    <%--<span>fuck</span>--%>
-                                <%--</div>--%>
-                            <%--</li>--%>
-                        <%--</ul>--%>
-                    <%--</div>--%>
-
-                    <%--<a href="#" class="jcarousel-control-prev2">&lsaquo;</a>--%>
-                    <%--<a href="#" class="jcarousel-control-next2">&rsaquo;</a>--%>
-
-                    <%--<p class="jcarousel-pagination2"></p>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-
-
-        <%--</div>--%>
-    <%--</section>--%>
-
-
     <section id="hikoco_sec4">
-
+        <div style="height:50px; background-color:#ddd; line-height:50px; padding-left:20px; ">
+            <span style="font-size:24px;">Hot-Selling</span>
+        </div>
     </section>
 </body>
 
