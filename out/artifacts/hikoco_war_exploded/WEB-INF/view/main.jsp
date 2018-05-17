@@ -73,6 +73,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
     <!-- jCarousel -->
     <script src="../../resources/js/jquery.jcarousel.min.js"></script>
+    <link rel="stylesheet" href="../../resources/script/jcarousel.css">
     <script>
         (function($) {
             $(function() {
@@ -84,9 +85,9 @@
                             width = carousel.innerWidth();
 
                         if (width >= 600) {
-                            width = width / 3;
+                            width = width / 6;
                         } else if (width >= 350) {
-                            width = width / 2;
+                            width = width / 5;
                         }
 
                         carousel.jcarousel('items').css('width', Math.ceil(width) + 'px');
@@ -121,6 +122,11 @@
                             return '<a href="#' + page + '">' + page + '</a>';
                         }
                     });
+
+                /* =================================================================================== */
+
+
+
             });
         })(jQuery);
     </script>
@@ -142,131 +148,58 @@
         .bg{
             background:url("../../resources/imgs/rx580_grande.png");
         }
-    </style>
-    <style>
-        .jcarousel-wrapper {
-            margin: 20px auto;
-            position: relative;
-            border: 10px solid #fff;
-            -webkit-border-radius: 5px;
-            -moz-border-radius: 5px;
-            border-radius: 5px;
-            -webkit-box-shadow: 0 0 2px #999;
-            -moz-box-shadow: 0 0 2px #999;
-            box-shadow: 0 0 2px #999;
+        .jcarousel-control-next, .jcarousel-control-prev{
+            text-decoration: none !important;
+        }
+        .jcarousel-control-next:hover, .jcarousel-control-prev:hover{
+            color:#fff;
+        }
+        .list-group-item:first-child{
+            border-top-left-radius:0px;
+            border-top-right-radius:0px;
+        }
+        .list-group-item:last-child{
+            border-bottom-left-radius:0px;
+            border-bottom-right-radius:0px;
+        }
+        .category-td-parent-item{
+            padding:0px !important;
+            width:144px;
+            border-right:0px;
+        }
+        .category-td-parent-item > a{
+            font-size:12px;
+            margin:0px;
+            padding:5px;
+            border-top:0px;
+            border-right:0px;
         }
 
-        /** Carousel **/
-
-        .jcarousel {
-            position: relative;
-            overflow: hidden;
-            width: 50%;
+        .category-td-child-item{
+            padding:0px !important;
+            width:144px;
+            border-top:0px !important;
+            border-right:0px;
         }
 
-        .jcarousel ul {
-            width: 10000em;
-            position: relative;
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        .category-td-child-item > a{
+            font-size:12px;
+            margin:0px;
+            padding:5px;
+            border-top:0px !important;
+            border-right:0px;
+        }
+        .last-row{
+            border-right:1px solid #ddd !important;
         }
 
-        .jcarousel li {
-            width: 200px;
-            float: left;
-            border: 1px solid #fff;
-            -moz-box-sizing: border-box;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        .jcarousel img {
-            display: block;
-            max-width: 100%;
-            height: auto !important;
-        }
-
-        /** Carousel Controls **/
-
-        .jcarousel-control-prev,
-        .jcarousel-control-next {
-            position: absolute;
-            top: 50%;
-            margin-top: -15px;
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            background: #4E443C;
-            color: #fff;
-            text-decoration: none;
-            text-shadow: 0 0 1px #000;
-            font: 24px/27px Arial, sans-serif;
-            -webkit-border-radius: 30px;
-            -moz-border-radius: 30px;
-            border-radius: 30px;
-            -webkit-box-shadow: 0 0 4px #F0EFE7;
-            -moz-box-shadow: 0 0 4px #F0EFE7;
-            box-shadow: 0 0 4px #F0EFE7;
-        }
-
-        .jcarousel-control-prev {
-            left: 15px;
-        }
-
-        .jcarousel-control-next {
-            right: 15px;
-        }
-
-        /** Carousel Pagination **/
-
-        .jcarousel-pagination {
-            position: absolute;
-            bottom: -40px;
-            left: 50%;
-            -webkit-transform: translate(-50%, 0);
-            -ms-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
-            margin: 0;
-        }
-
-        .jcarousel-pagination a {
-            text-decoration: none;
-            display: inline-block;
-
-            font-size: 11px;
-            height: 10px;
-            width: 10px;
-            line-height: 10px;
-
-            background: #fff;
-            color: #4E443C;
-            border-radius: 10px;
-            text-indent: -9999px;
-
-            margin-right: 7px;
-
-
-            -webkit-box-shadow: 0 0 2px #4E443C;
-            -moz-box-shadow: 0 0 2px #4E443C;
-            box-shadow: 0 0 2px #4E443C;
-        }
-
-        .jcarousel-pagination a.active {
-            background: #4E443C;
-            color: #fff;
-            opacity: 1;
-
-            -webkit-box-shadow: 0 0 2px #F0EFE7;
-            -moz-box-shadow: 0 0 2px #F0EFE7;
-            box-shadow: 0 0 2px #F0EFE7;
-        }
     </style>
     <section id="hikoco-sec1" style="z-index:2;">
         <div class="hikoco-sec1-div">
             <div class="text-left" style="padding-top:30px; padding-left:400px;">
                 <%--<img class="animated fadeInUp" src="../../resources/imgs/rx580_grande.png" style="right:1000px; top:100px;">--%>
-                <div class="bg"></div>
+                <%--<div class="bg"></div>--%>
+                    <%--<img class="animated fadeInUp" src="../../resources/imgs/radeon-rx580-logo-960x540.png" width="480px">--%>
                 <div class="animated fadeInUp" style="position:absolute; width:300px; height:90px; right:150px; top:180px; background-color: rgba(0,0,0,0.5); padding:15px; ">
                     <span class="hikoco-sec1-span" style="font-size:20px; display:block; line-height: 30px;"><i>최상의 게이밍 성능</i></span>
                     <div class="text-right">
@@ -284,9 +217,9 @@
             </div>
         </div>
     </section>
-    <section id="hikoco_sec2" style="z-index:1;">
+    <section id="hikoco_sec2">
         <div style="height:50px; background-color:#ddd; line-height:50px; padding-left:20px; ">
-            <span style="font-size:24px;">Bestseller</span>
+            <span style="font-size:24px; letter-spacing:2px;">Bestseller</span>
         </div>
         <div style="height:400px;">
             <div class="wrapper">
@@ -319,6 +252,61 @@
                             <%
                                 }
                             %>
+                        </ul>
+                    </div>
+
+                    <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                    <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+
+                    <p class="jcarousel-pagination"></p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <section id="hikoco_sec3">
+        <div style="height:50px; background-color:#ddd; line-height:50px; padding-left:20px; ">
+            <span style="font-size:24px;">Hot-Selling</span>
+        </div>
+        <div>
+            <!-- 카테고리 -->
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <div class="category-td-parent" style="display:block">
+                            <td class="category-td-parent-item"><a href="#" class="list-group-item list-group-item-action"> (###)</a></td>
+                            <td class="category-td-parent-item"><a href="#" class="list-group-item list-group-item-action"> (###)</a></td>
+                            <td class="category-td-parent-item"><a href="#" class="list-group-item list-group-item-action"> (###)</a></td>
+                            <td class="category-td-parent-item last-row"><a href="#" class="list-group-item list-group-item-action"> (###)</a></td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="category-td-child" style="display:block">
+                            <td class="category-td-child-item"><a href="#" class="list-group-item list-group-item-action">(###)</a></td>
+                            <td class="category-td-child-item"><a href="#" class="list-group-item list-group-item-action">(###)</a></td>
+                            <td class="category-td-child-item"><a href="#" class="list-group-item list-group-item-action">(###)</a></td>
+                            <td class="category-td-child-item last-row"><a href="#" class="list-group-item list-group-item-action"> (###)</a></td>
+                        </div>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+
+
+    <%--<section id="hikoco_sec3" style="z-index:1;">--%>
+        <%--<div style="height:50px; background-color:#ddd; line-height:50px; padding-left:20px; ">--%>
+            <%--<span style="font-size:24px;">Bestseller</span>--%>
+        <%--</div>--%>
+        <%--<div style="height:400px;">--%>
+            <%--<div class="wrapper">--%>
+                <%--&lt;%&ndash;<h1>Responsive Carousel</h1>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<p>This example shows how to implement a responsive carousel. Resize the browser window to see the effect.</p>&ndash;%&gt;--%>
+                <%--<div class="jcarousel-wrapper" id="second" >--%>
+                    <%--<div class="jcarousel">--%>
+                        <%--<ul>--%>
                             <%--<li>--%>
                                 <%--<div class="text-center">--%>
                                     <%--<img src="../../resources/imgs/img1.jpg" alt="Image 1">--%>
@@ -355,20 +343,22 @@
                                     <%--<span>fuck</span>--%>
                                 <%--</div>--%>
                             <%--</li>--%>
-                        </ul>
-                    </div>
+                        <%--</ul>--%>
+                    <%--</div>--%>
 
-                    <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-                    <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+                    <%--<a href="#" class="jcarousel-control-prev2">&lsaquo;</a>--%>
+                    <%--<a href="#" class="jcarousel-control-next2">&rsaquo;</a>--%>
 
-                    <p class="jcarousel-pagination"></p>
-                </div>
-            </div>
+                    <%--<p class="jcarousel-pagination2"></p>--%>
+                <%--</div>--%>
+            <%--</div>--%>
 
 
-        </div>
-    </section>
-    <section id="hikoco_sec3">
+        <%--</div>--%>
+    <%--</section>--%>
+
+
+    <section id="hikoco_sec4">
 
     </section>
 </body>
