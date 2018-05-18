@@ -43,7 +43,7 @@
 
     session.setAttribute("mainHashMap", mainHashMap);
 %>
-<html>
+<html ng-cloak ng-app="app">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,7 +51,11 @@
     <!-- Non-responsive -->
     <%--<link href="../../resources/script/non-responsive.css" rel="stylesheet">--%>
     <!-- Vue.js Development -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+    <script src="../../resources/js/angular-timer.min.js"></script>
+    <script src="../../resources/js/humanize-duration.js"></script>
+    <script src="../../resources/js/angular-moment.min.js"></script>
+    <%--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>--%>
     <!-- Bootstrap 4.1.1 & jQuery-Slim -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <!-- 주의! animated 를 위해서 slim 이 아닌 uncompressed를 사용했음. 문제를 해결하면 slim 으로 바꿀 것 -->
@@ -127,16 +131,35 @@
 
                 /* =================================================================================== */
 
-
-
             });
         })(jQuery);
     </script>
-    <style>
 
-    </style>
+    <script type="text/javascript">
+        //underscore.js URL parsing code
+        var _GET = _.object(_.compact(_.map(location.search.slice(1).split('&'), function(item) {  if (item) item = item.split('='); if (item[1]) item[1] = decodeURIComponent(item[1]); return item; })));
+
+        var app = angular.module('app', ['timer', 'angularMoment']);
+
+        // 다른 도메인의 소스 불러오기 필터
+        app.filter('trustUrl', function($sce){
+            return function(url){
+                return $sce.trustAsResourceUrl(url);
+            }
+        });
+
+        app.controller('ctrl', function($scope, $http, $interval, $timeout) {
+                $scope.currentYear = (new Date).getFullYear();
+                $scope.startTime = (new Date($scope.currentYear, 0, 1)).getTime();
+                $scope.endYear = $scope.currentYear+1;
+                $scope.endTime = (new Date($scope.endYear, 0, 1)).getTime();
+                console.log($scope.endTime)
+                // $scope.days, $scope.hours, $scope.minutes, $scope.millis;
+        });
+    </script>
+
 </head>
-<body>
+<body ng-controller="ctrl">
     <!-- navbar -->
     <!--        -->
     <%@ include file="layout/hikoco_navbar.jsp" %>
@@ -255,17 +278,17 @@
                 /*width:25% !important;*/
                 /*padding-right:15px !important;*/
             /*}*/
-            /*.unselectable {*/
-                /*-moz-user-select: -moz-none;*/
-                /*-khtml-user-select: none;*/
-                /*-webkit-user-select: none;*/
-                /*-o-user-select: none;*/
-                /*user-select: none;*/
-            /*}*/
+            .unselectable {
+                -moz-user-select: -moz-none;
+                -khtml-user-select: none;
+                -webkit-user-select: none;
+                -o-user-select: none;
+                user-select: none;
+            }
             .list-ul > li{
                 float:left;
                 width:253px;
-                height:363px;
+                min-height:333px;
                 border:1px solid #ddd;
                 display:inline-block !important;
                 margin:0 17px 17px 0;
@@ -300,18 +323,60 @@
         </div>
         <div class="sec3-wrapper" style="width:100%; display:inline-block; padding-top:15px;">
             <div class="col-md-2" style="float:left;">
+                <ul class="list-ul">
+                    <li class="list-action" style="width:100%; height:auto;">
 
+                    </li>
+                </ul>
             </div>
             <div class="col-md-10" style="float:left; display:inline-block;">
                 <ul class="list-ul">
                     <% for(int i = 0; i < 4; i++){%>
-                    <li class="list-action">
-                        <figure></figure>
+                    <li class="list-action unselectable">
+                        <figure>
+                            <div style="padding:20px 30px 5px 30px;">
+                                <img src="../../resources/imgs/neogul.jpg" style="margin-bottom:10px; height:150px; max-width:150px;">
+                                <figcaption>
+                                    <p style="margin-bottom:0px; font-size:14px; font-weight:700;">너굴맨이 해결했으니 안심하라구!너굴맨이 해결했으니 안심하라구!</p>
+                                    <%--<p style="margin-bottom:0px; font-size:14px; font-weight:700;">현존 최고의 성능 워크스테이션</p>--%>
+                                    <p style="font-size:10px; color:#5d5d5d; text-align:left; font-weight:400;">인텔 Xeon E5-2687Wv4 (3.0G) / DDR4 4GB / HDD 미포함 / VGA 미포함 / ODD미포함 / 3.5인치 내부 4Bay / 5.25인치 3Bay / 시리얼포트 / 1000W 파워 / 지원 / 32GB 이상</p>
+                                </figcaption>
+                            </div>
+                            <div style="padding:15px 30px 15px 30px; border-top:1px solid #ddd;">
+                                <figcaption>
+                                    <div class="text-left" style="float:left;">
+                                        <span style="font-size:14px;"><strong>9,400,270원</strong></span>
+                                    </div>
+                                    <div class="text-right" style=" vertical-align: middle;">
+                                        <span style="font-size:12px; border:1px solid coral; background: coral; color:#fff; padding:0 5px 0 5px; border-radius:4px;">특가</span>
+                                    </div>
+                                </figcaption>
+                            </div>
+                        </figure>
                     </li>
                     <% } %>
                     <% for(int i = 0; i < 4; i++){%>
-                    <li class="list-action">
-                        <figure></figure>
+                    <li class="list-action unselectable">
+                        <figure>
+                            <div style="padding:20px 30px 5px 30px;">
+                                <img src="../../resources/imgs/neogul.jpg" style="margin-bottom:10px; height:150px; max-width:150px;">
+                                <figcaption>
+                                    <p style="margin-bottom:0px; font-size:14px; font-weight:700;">너굴맨이 해결했으니 안심하라구!너굴맨이 해결했으니 안심하라구!</p>
+                                    <%--<p style="margin-bottom:0px; font-size:14px; font-weight:700;">현존 최고의 성능 워크스테이션</p>--%>
+                                    <p style="font-size:10px; color:#5d5d5d; text-align:left; font-weight:400;">인텔 Xeon E5-2687Wv4 (3.0G) / DDR4 4GB / HDD 미포함 / VGA 미포함 / ODD미포함 / 3.5인치 내부 4Bay / 5.25인치 3Bay / 시리얼포트 / 1000W 파워 / 지원 / 32GB 이상</p>
+                                </figcaption>
+                            </div>
+                            <div style="padding:15px 30px 15px 30px; border-top:1px solid #ddd;">
+                                <figcaption>
+                                    <div class="text-left" style="float:left;">
+                                        <span style="font-size:14px;"><strong>9,400,270원</strong></span>
+                                    </div>
+                                    <div class="text-right" style=" vertical-align: middle;">
+                                        <span style="font-size:12px; border:1px solid coral; background: coral; color:#fff; padding:0 5px 0 5px; border-radius:4px;">특가</span>
+                                    </div>
+                                </figcaption>
+                            </div>
+                        </figure>
                     </li>
                     <% } %>
                 </ul>
@@ -320,11 +385,87 @@
     </section>
     <section id="hikoco_sec4">
         <div style="height:50px; background-color:#ddd; line-height:50px; padding-left:20px; ">
-            <span style="font-size:24px;">Hot-Selling</span>
+            <span style="font-size:24px;">Special Price</span>
+            <timer countdown="10041" max-time-unit="'minute'" interval="1000">{{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</timer>
+        </div>
+        <div class="sec3-wrapper" style="width:100%; display:inline-block; padding-top:15px;">
+            <div class="col-md-10" style="float:left; display:inline-block;">
+                <ul class="list-ul">
+                    <% for(int i = 0; i < 4; i++){%>
+                    <li class="list-action unselectable">
+                        <figure>
+                            <div style="padding:20px 30px 5px 30px;">
+                                <img src="../../resources/imgs/neogul.jpg" style="margin-bottom:10px; height:150px; max-width:150px;">
+                                <figcaption>
+                                    <p style="margin-bottom:0px; font-size:14px; font-weight:700;">너굴맨이 해결했으니 안심하라구!너굴맨이 해결했으니 안심하라구!</p>
+                                    <%--<p style="margin-bottom:0px; font-size:14px; font-weight:700;">현존 최고의 성능 워크스테이션</p>--%>
+                                    <p style="font-size:10px; color:#5d5d5d; text-align:left; font-weight:400;">인텔 Xeon E5-2687Wv4 (3.0G) / DDR4 4GB / HDD 미포함 / VGA 미포함 / ODD미포함 / 3.5인치 내부 4Bay / 5.25인치 3Bay / 시리얼포트 / 1000W 파워 / 지원 / 32GB 이상</p>
+                                </figcaption>
+                            </div>
+                            <div style="padding:15px 30px 15px 30px; border-top:1px solid #ddd;">
+                                <figcaption>
+                                    <div class="text-left" style="float:left;">
+                                        <span style="font-size:14px;"><strong>9,400,270원</strong></span>
+                                    </div>
+                                    <div class="text-right" style=" vertical-align: middle;">
+                                        <span style="font-size:12px; border:1px solid coral; background: coral; color:#fff; padding:0 5px 0 5px; border-radius:4px;">특가</span>
+                                    </div>
+                                </figcaption>
+                            </div>
+                        </figure>
+                    </li>
+                    <% } %>
+                    <% for(int i = 0; i < 4; i++){%>
+                    <li class="list-action unselectable">
+                        <figure>
+                            <div style="padding:20px 30px 5px 30px;">
+                                <img src="../../resources/imgs/neogul.jpg" style="margin-bottom:10px; height:150px; max-width:150px;">
+                                <figcaption>
+                                    <p style="margin-bottom:0px; font-size:14px; font-weight:700;">너굴맨이 해결했으니 안심하라구!너굴맨이 해결했으니 안심하라구!</p>
+                                    <%--<p style="margin-bottom:0px; font-size:14px; font-weight:700;">현존 최고의 성능 워크스테이션</p>--%>
+                                    <p style="font-size:10px; color:#5d5d5d; text-align:left; font-weight:400;">인텔 Xeon E5-2687Wv4 (3.0G) / DDR4 4GB / HDD 미포함 / VGA 미포함 / ODD미포함 / 3.5인치 내부 4Bay / 5.25인치 3Bay / 시리얼포트 / 1000W 파워 / 지원 / 32GB 이상</p>
+                                </figcaption>
+                            </div>
+                            <div style="padding:15px 30px 15px 30px; border-top:1px solid #ddd;">
+                                <figcaption>
+                                    <div class="text-left" style="float:left;">
+                                        <span style="font-size:14px;"><strong>9,400,270원</strong></span>
+                                    </div>
+                                    <div class="text-right" style=" vertical-align: middle;">
+                                        <span style="font-size:12px; border:1px solid coral; background: coral; color:#fff; padding:0 5px 0 5px; border-radius:4px;">특가</span>
+                                    </div>
+                                </figcaption>
+                            </div>
+                        </figure>
+                    </li>
+                    <% } %>
+                    <%--<% for(int i = 0; i < 4; i++){%>--%>
+                    <%--<li class="list-action">--%>
+                    <%--<figure></figure>--%>
+                    <%--</li>--%>
+                    <%--<% } %>--%>
+                </ul>
+            </div>
+            <div class="col-md-2" style="float:left;">
+                <ul class="list-ul">
+                    <li class="list-action" style="width:100%; height:auto;">
+
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
-</body>
 
+
+
+    <section id="hikoco_sec5">
+        <%--<div style="height:50px; background-color:#ddd; line-height:50px; padding-left:20px; ">--%>
+            <%--<span style="font-size:24px;">Hot-Selling</span>--%>
+        <%--</div>--%>
+    </section>
+
+    <%@include file="layout/hikoco_footer.jsp"%>
+</body>
 </html>
 
 
