@@ -199,7 +199,8 @@
         #hikoco-sec2, #hikoco-sec3, #hikoco-sec4{
             margin:0 auto;
             padding-top:17px;
-            width:70%;
+            min-width:70%;
+            max-width:100%;
         }
     </style>
 </head>
@@ -309,7 +310,7 @@
             }
             .list-ul > li, .list-ul__left > li {
                 float: left;
-                width: 263px;
+                max-width: 263px;
                 min-height: 333px;
                 border: 1px solid #ddd;
                 display: inline-block !important;
@@ -345,7 +346,7 @@
             .list-left, .list-right{
                 display:inline-block;
                 float:left;
-                overflow:hidden;
+                /*overflow:hidden;*/
             }
             .center {
                 display: block;
@@ -475,7 +476,7 @@
             </div>
             <!-- Item List -->
             <div class="sec3-wrapper" style="display:inline-block; padding:17px 0 17px 0; width:100%">
-                <div class="list-left" style="width:300px; height:800px; background:#ddd;">
+                <div class="list-left" style="min-width:280px; max-width:280px; height:800px; background:#ddd; margin-left:17px;">
                     <div class="hikoco-sec3-list-left__img" style="width:inherit; height:inherit;">
                         <div class="opaque__light">
                             <div class="optional-table">
@@ -553,7 +554,7 @@
             </div>
             <!-- Item List -->
             <div class="sec4-wrapper" style="display:inline-block; padding:17px 0 17px 0;  width:100%;">
-                <div class="list-left">
+                <div class="list-left" style="margin-left:17px;"> <!-- NEED TO BE FIXED -->
                     <ul class="list-ul__left">
                         <% for(int i = 0; i<2; i++){%>
                         <% for (int j = 0; j < 4; j++) {%>
@@ -588,7 +589,7 @@
                         <% } %>
                     </ul>
                 </div>
-                <div class="list-right" style="width:300px; height:800px;">
+                <div class="list-right" style="width:280px; height:800px;">
                     <div class="hikoco-sec4-list-right__img" style="width:inherit; height:inherit;">
                         <div class="opaque__light">
                             <div class="optional-table">
