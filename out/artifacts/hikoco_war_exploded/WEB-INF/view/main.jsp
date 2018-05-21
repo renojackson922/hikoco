@@ -476,13 +476,13 @@
             </div>
             <!-- Item List -->
             <div class="sec3-wrapper" style="display:inline-block; padding:17px 0 17px 0; width:100%">
-                <div class="list-left" style="min-width:280px; max-width:280px; height:800px; background:#ddd; margin-left:17px;">
+                <div class="list-left" style="min-width:240px; max-width:240px; height:800px; background:#ddd; margin-left:17px;">
                     <div class="hikoco-sec3-list-left__img" style="width:inherit; height:inherit;">
                         <div class="opaque__light">
                             <div class="optional-table">
                                 <div class="optional-cell">
                                     <div class="optional-box">
-                                        <p>Unleash the beast</p>
+                                        <p>Unleash<br>               the beast</p>
                                     </div>
                                 </div>
                             </div>
@@ -589,13 +589,13 @@
                         <% } %>
                     </ul>
                 </div>
-                <div class="list-right" style="width:280px; height:800px;">
+                <div class="list-right" style="min-width:240px; max-width:240px; height:800px;">
                     <div class="hikoco-sec4-list-right__img" style="width:inherit; height:inherit;">
                         <div class="opaque__light">
                             <div class="optional-table">
                                 <div class="optional-cell">
                                     <div class="optional-box">
-                                        <p>이 람쥐들은 무료로 해줍니다!</p>
+                                        <p>이 람쥐들은<br> 무료로 해줍니다!</p>
                                     </div>
                                 </div>
                             </div>

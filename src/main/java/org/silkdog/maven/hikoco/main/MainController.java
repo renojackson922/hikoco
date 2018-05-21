@@ -99,4 +99,19 @@ public class MainController{
     public String main(Model model){
         return "main";
     }
+
+    @RequestMapping(value="/item.do", method=RequestMethod.GET)
+    public String item(Model model, HttpServletRequest req){
+        int count = categoryDAO.count();
+        List<CategoryDTO> clist = categoryDAO.list();
+        req.setAttribute("count", count);
+        req.setAttribute("clist", clist);
+        model.addAttribute("adminMarket","adminMarket");
+        return "item";
+    }
+
+    @RequestMapping(value="/item_detail.do", method = RequestMethod.GET)
+    public String itemDetail(Model model, HttpServletRequest req){
+        return "item_detail";
+    }
 }
