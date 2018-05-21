@@ -174,8 +174,8 @@
         <!-- Angular.js // Shows Nuffin -->
     </div>
     <div id="show">
-        <div style="display:inline-block; padding:20px; margin:0 auto !important;">
-            <div class="pubg-right col-md-10 text-center" style="float:left; overflow-x:hidden; border:1px solid #ddd; padding:20px;">
+        <div class="text-center" style="display:inline-block; padding:20px; margin:0 auto;">
+            <div class="container text-center" style="float:left; overflow-x:hidden; border:1px solid #ddd; padding:20px;">
                 <!-- 카테고리 -->
                 <table class="table">
                     <tbody>

@@ -1,0 +1,253 @@
+/* Top Button */
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: darkorchid !important; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 100% !important; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}
+
+/*  한가운데 정렬 Trick */
+.css-table{
+    display:table;
+}
+.css-table-row{
+    dispaly:table-row;
+}
+.css-table-cell{
+    display:table-cell;
+    float:left;
+}
+
+/* Navigator */
+.list-group-item:first-child{
+    border-top-left-radius:0px !important;
+    border-top-right-radius:0px !important;
+}
+.list-group-item:last-child{
+    border-bottom-left-radius:0px !important;
+    border-bottom-right-radius:0px !important;
+}
+.list-group > a{
+    font-size:12px;
+}
+
+.navigator-td-parent-item{
+    padding:0px !important;
+    width:144px;
+    border-right:0px;
+}
+.navigator-td-parent-item > a{
+    font-size:12px;
+    margin:0px;
+    padding:5px;
+    border-top:0px;
+    border-right:0px;
+}
+
+.navigator-td-child-item{
+    padding:0px !important;
+    width:144px;
+    border-top:0px !important;
+    border-right:0px;
+}
+
+.navigator-td-child-item > a{
+    font-size:12px;
+    margin:0px;
+    padding:5px;
+    border-top:0px !important;
+    border-right:0px;
+}
+.last-row{
+    border-right:1px solid #ddd !important;
+}
+
+.item-detail-top{
+    border-bottom:1px solid #ddd; padding:17px; width:100%;
+}
+.item-detail-bottom{
+    padding:17px;
+    width:100%;
+}
+
+.__detail-title{
+    border:1px solid #5d5d5d;
+    background: linear-gradient(to right, #5d5d5d , #fff);
+    color:#fff;
+    padding:7px 7px 7px 13px;
+    margin-bottom:17px;
+}
+.__detail-title > h5{
+    vertical-align: middle;
+    font-weight: 600;
+    margin-bottom:0;
+}
+.__detail-title > hr{
+    margin:1px;
+}
+
+.item-detail-span{
+    display:block;
+}
+
+.img-center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.item-focus:focus{
+    background: #5d5d5d;
+    color:#fff;
+}
+.modal-span{
+    display: block;
+}
+.item-title{
+    font-size:1.5em;
+}
+.item-subtitle{
+    font-size:0.8em;
+}
+.item-optional{
+    font-size:0.8em;
+    vertical-align:bottom;
+}
+.btn-outline-secondary{
+    border-radius:0px !important;
+}
+hr{
+    margin:5px;
+}
+.strong{
+    font-weight: 700;
+}
+.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+#card:hover{
+    background-color: #5d5d5d;
+    color:#fff;
+}
+div[id^="item-"], div[id*="item-"]{
+    margin-bottom:15px;
+}
+.custom-tablecell, .custom-tablecell__last{
+    float:left;
+    border:1px solid #ddd;
+    font-size:0.8em;
+    border-bottom:0px;
+}
+.custom-tablecell{
+    border-right:0px !important;
+}
+th, td{
+    font-size:0.7em;
+}
+td{
+    padding: .3rem .3rem .3rem .7rem !important;
+    width:35%; /* 주의 */
+}
+th{
+    font-weight: 400;
+    background-color: #5d5d5d;
+    color:#fff;
+    width:16%;  /* 주의 */
+    padding: .3rem .3rem .3rem .7rem !important;
+}
+div[class^="item-comment__"]{
+    float:left;
+    margin:2px;
+    border:1px solid #ddd;
+    width:32%;
+    height:150px;
+}
+.title{
+    height: 24%;
+    border-bottom:1px solid #ddd;
+    background-color:#ddd;
+}
+.title > h5{
+    display:inline-block;
+    font-size:0.9em;
+    margin:8px 0 0 20px;
+    padding:0px;
+    font-weight:700;
+}
+.starry-wrapper{
+    padding:10px;
+    padding-top:18px !important;
+}
+.starry{
+    text-align:center;
+    color: darkorchid;
+}
+.starry > span{
+    font-size:1.6em;
+}
+.starry__score{
+    font-weight: 700;
+    text-align: center;
+}
+.starry__score > span{
+    font-size:2.2em;
+}
+.bubble{
+    text-align: center;
+    padding:10px;
+    padding-top:24px !important;
+}
+.bubble > span{
+    font-weight: 700;
+    font-size:2.2em;
+}
+.satisfaction{
+    padding:25px 0 10px 12px;
+    /*display:block;*/
+}
+.col-md-3, .col-md-9{
+    padding:0 !important; /* 주의 */
+}
+.satisfaction-col > span{
+    font-size:0.7em;
+    margin-bottom:1px;
+    display:block;
+}
+div[class^="satisfaction-comment-item__"]{
+    display:block;
+    margin:5px 0 5px 0;
+}
+.satisfaction-comment > span{
+    font-size:0.8em;
+}
+.satisfaction-comment-item__profile > span{
+    font-size:0.7em;
+}
+.satisfaction-comment-item__profile > span > i{  /* Stars */
+    color: darkorchid;
+}
+.satisfaction-comment-item__title > span{
+    font-size:0.9em;
+    font-weight:700;
+}
+.satisfaction-comment-item__detail > span{
+    font-size:0.8em;
+}

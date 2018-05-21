@@ -295,8 +295,7 @@
             .unselectable {
                 -moz-user-select: -moz-none;
                 -khtml-user-select: none;
-                -webkit-user-select: none;
-                -o-user-select: none;
+D                -o-user-select: none;
                 user-select: none;
             }
             .list-ul{
@@ -475,25 +474,25 @@
                 </div>
             </div>
             <!-- Item List -->
-            <div class="sec3-wrapper" style="display:inline-block; padding:17px 0 17px 0; width:100%">
-                <div class="list-left" style="min-width:240px; max-width:240px; height:800px; background:#ddd; margin-left:17px;">
-                    <div class="hikoco-sec3-list-left__img" style="width:inherit; height:inherit;">
-                        <div class="opaque__light">
-                            <div class="optional-table">
-                                <div class="optional-cell">
-                                    <div class="optional-box">
-                                        <p>Unleash<br>               the beast</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="sec3-wrapper container" style="display:inline-block; padding:17px 0 17px 0; width:100%">
+                <%--<div class="list-left" style="min-width:240px; max-width:240px; height:800px; background:#ddd; margin-left:17px;">--%>
+                    <%--<div class="hikoco-sec3-list-left__img" style="width:inherit; height:inherit;">--%>
+                        <%--<div class="opaque__light">--%>
+                            <%--<div class="optional-table">--%>
+                                <%--<div class="optional-cell">--%>
+                                    <%--<div class="optional-box">--%>
+                                        <%--<p>Unleash<br>               the beast</p>--%>
+                                    <%--</div>--%>
+                                <%--</div>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
                 <div class="list-right">
                     <ul class="list-ul">
                         <% for(int i = 0; i<2; i++){%>
                         <% for (int j = 0; j < 4; j++) {%>
-                        <li class="list-action unselectable">
+                        <li class="list-action unselectable" onclick="window.location.href='item_detail.do?no=<%=j%>'"> <!-- TEST -->
                             <figure>
                                 <div class="fig-top" style="padding:20px 25px 5px 25px;">
                                     <img class="center" src="../../resources/imgs/neogul_thumbnail.png"
@@ -553,7 +552,7 @@
                 </div>
             </div>
             <!-- Item List -->
-            <div class="sec4-wrapper" style="display:inline-block; padding:17px 0 17px 0;  width:100%;">
+            <div class="sec4-wrapper container" style="display:inline-block; padding:17px 0 17px 0;  width:100%;">
                 <div class="list-left" style="margin-left:17px;"> <!-- NEED TO BE FIXED -->
                     <ul class="list-ul__left">
                         <% for(int i = 0; i<2; i++){%>
@@ -589,19 +588,19 @@
                         <% } %>
                     </ul>
                 </div>
-                <div class="list-right" style="min-width:240px; max-width:240px; height:800px;">
-                    <div class="hikoco-sec4-list-right__img" style="width:inherit; height:inherit;">
-                        <div class="opaque__light">
-                            <div class="optional-table">
-                                <div class="optional-cell">
-                                    <div class="optional-box">
-                                        <p>이 람쥐들은<br> 무료로 해줍니다!</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <%--<div class="list-right" style="min-width:240px; max-width:240px; height:800px;">--%>
+                    <%--<div class="hikoco-sec4-list-right__img" style="width:inherit; height:inherit;">--%>
+                        <%--<div class="opaque__light">--%>
+                            <%--<div class="optional-table">--%>
+                                <%--<div class="optional-cell">--%>
+                                    <%--<div class="optional-box">--%>
+                                        <%--<p>이 람쥐들은<br> 무료로 해줍니다!</p>--%>
+                                    <%--</div>--%>
+                                <%--</div>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
             </div>
 
         </section>
