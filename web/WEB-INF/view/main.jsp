@@ -245,6 +245,11 @@
                     <%--<h1>Responsive Carousel</h1>--%>
                     <%--<p>This example shows how to implement a responsive carousel. Resize the browser window to see the effect.</p>--%>
                     <div class="jcarousel-wrapper">
+                        <style>
+                            .jcarousel-item:hover{
+                                background-color: #ddd;
+                            }
+                        </style>
                         <div class="jcarousel">
                             <ul>
                                 <%
@@ -260,7 +265,7 @@
                                         e3 = it3.next();
                                     %>
                                     <li>
-                                        <div class="text-center">
+                                        <div class="jcarousel-item text-center unselectable" onclick="window.location.href='/item_detail.do?no=${i}'">
                                             <img src="<%=e.getKey()%>" alt="Image ${i}">
                                             <span style="font-size:8px;">제품 ${i}</span><br>
                                             <span><strong><%=e2.getValue()%></strong></span>
@@ -627,38 +632,3 @@ D                -o-user-select: none;
     </div>
 </body>
 </html>
-
-
-<%--<table>--%>
-<%--<thead>--%>
-<%--<tr>--%>
-<%--<% for(int i = 0; i < 4; i++){%>--%>
-<%--<td>--%>
-<%--<ul>--%>
-<%--<li class="list-group-item list-group-item-action unselectable">--%>
-<%--<figure>--%>
-<%--<div style="padding:20px 30px 5px 30px;">--%>
-<%--<img src="../../resources/imgs/neogul.jpg" style="margin-bottom:10px; height:150px; max-width:150px;">--%>
-<%--<figcaption>--%>
-<%--<p style="margin-bottom:0px; font-weight:700;">현존 최고의 성능 워크스테이션</p>--%>
-<%--<p style="font-size:12px; color:#5d5d5d; text-align:left; font-weight:400;">인텔 Xeon E5-2687Wv4 (3.0G) / DDR4 4GB / HDD 미포함 / VGA 미포함 / ODD미포함 / 3.5인치 내부 4Bay / 5.25인치 3Bay / 시리얼포트 / 1000W 파워 / 지원 / 32GB 이상</p>--%>
-<%--</figcaption>--%>
-<%--</div>--%>
-<%--<div style="padding:15px 30px 15px 30px; border-top:1px solid #ddd;">--%>
-<%--<figcaption>--%>
-<%--<div class="text-left" style="float:left;">--%>
-<%--<span style="font-size:14px;"><strong>9,400,270원</strong></span>--%>
-<%--</div>--%>
-<%--<div class="text-right">--%>
-<%--<span style="font-size:12px; border:1px solid coral; background: coral; color:#fff; padding:5px; border-radius:4px;">특가</span>--%>
-<%--</div>--%>
-<%--</figcaption>--%>
-<%--</div>--%>
-<%--</figure>--%>
-<%--</li>--%>
-<%--</ul>--%>
-<%--</td>--%>
-<%--<% } %>--%>
-<%--</tr>--%>
-<%--</thead>--%>
-<%--</table>--%>

@@ -7,6 +7,7 @@
     <title>HIKOCO :: MAIN</title>
     <!-- Native Style.css -->
     <link rel="stylesheet" href="../../resources/script/item_detail.css">
+    <link rel="stylesheet" href="../../resources/script/global.css">
     <!-- Vue.js Development -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
     <script src="../../resources/js/angular-timer.min.js"></script>

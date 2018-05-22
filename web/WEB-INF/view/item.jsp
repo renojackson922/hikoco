@@ -32,6 +32,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HIKOCO :: MAIN</title>
+    <link rel="stylesheet" href="../../resources/script/global.css">
     <!-- Vue.js Development -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
     <script src="../../resources/js/angular-timer.min.js"></script>
