@@ -12,10 +12,10 @@
 
     <!-- Connection Pool -->
     <bean id="dataSourceOrigin" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
-        <property name="driverClass" value="oracle.jdbc.driver.OracleDriver"/>
-        <property name="jdbcUrl" value="jdbc:oracle:thin:@52.79.130.227:1521:orcl"/>
-        <property name="user" value="aikocandy"/>
-        <property name="password" value="Shemwpdl9"/>
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/hikoco?verifyServerCertificate=false&amp;useSSL=true&amp;serverTimezone=UTC" />
+        <property name="user" value="root"/>
+        <property name="password" value="a"/>
     </bean>
 
     <!-- log4jdbc -->

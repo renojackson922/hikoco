@@ -2,6 +2,8 @@ package org.silkdog.maven.hikoco.member.dto;
 
 import org.apache.ibatis.type.Alias;
 
+import java.sql.Timestamp;
+
 @Alias("MemberDTO")
 public class MemberDTO {
     private int mem_id;
@@ -19,8 +21,8 @@ public class MemberDTO {
     private String mem_addr2;
     private String mem_addr3;
     private String mem_addr4;
-    private String mem_regdate;
-    private String mem_lastlogin_datetime;
+    private Timestamp mem_regdate;
+    private Timestamp mem_lastlogin_datetime;
     private String mem_lastlogin_ip;
 
     public int getMem_id() {
@@ -87,11 +89,11 @@ public class MemberDTO {
         this.mem_phone = mem_phone;
     }
 
-    public String getMem_birthday(){
+    public String getMem_birthday() {
         return mem_birthday;
     }
 
-    public void setMem_birthday(String mem_birthday){
+    public void setMem_birthday(String mem_birthday) {
         this.mem_birthday = mem_birthday;
     }
 
@@ -143,19 +145,19 @@ public class MemberDTO {
         this.mem_addr4 = mem_addr4;
     }
 
-    public String getMem_regdate() {
+    public Timestamp getMem_regdate() {
         return mem_regdate;
     }
 
-    public void setMem_regdate(String mem_regdate) {
+    public void setMem_regdate(Timestamp mem_regdate) {
         this.mem_regdate = mem_regdate;
     }
 
-    public String getMem_lastlogin_datetime() {
+    public Timestamp getMem_lastlogin_datetime() {
         return mem_lastlogin_datetime;
     }
 
-    public void setMem_lastlogin_datetime(String mem_lastlogin_datetime) {
+    public void setMem_lastlogin_datetime(Timestamp mem_lastlogin_datetime) {
         this.mem_lastlogin_datetime = mem_lastlogin_datetime;
     }
 

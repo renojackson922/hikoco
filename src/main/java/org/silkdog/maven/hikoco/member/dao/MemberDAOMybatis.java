@@ -21,4 +21,10 @@ public class MemberDAOMybatis implements MemberDAO {
         MemberDTO mdto = (MemberDTO)sqlSession.selectOne("org.silkdog.maven.hikoco.member.dao.MemberDAO.select");
         return mdto;
     }
+
+    @Override
+    public int insert(MemberDTO mdto){
+        int result = sqlSession.insert("org.silkdog.maven.hikoco.member.dao.MemberDAO.insert", mdto);
+        return result;
+    }
 }
