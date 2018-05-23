@@ -19,51 +19,54 @@ public class TestService{
 
     @Test
     public void test(){
-//        java.util.Date date = new java.util.Date();
-//        java.sql.Timestamp timestamp = new java.sql.Timestamp(date.getTime());
+        java.util.Date date = new java.util.Date();
+        java.sql.Timestamp timestamp = new java.sql.Timestamp(date.getTime());
+
+        MemberDTO mdto = new MemberDTO();
+        mdto.setMem_userid("B");
+        mdto.setMem_password("b");
+        mdto.setMem_realname("B");
+        mdto.setMem_nickname("B");
+        mdto.setMem_photo("b");
+        mdto.setMem_tier("Diamond");
+        mdto.setMem_phone("01012345678");
+        mdto.setMem_birthday("19900101");
+        mdto.setMem_sex(1);
+        mdto.setMem_zipcode("06700");
+        mdto.setMem_addr1("BB");
+        mdto.setMem_addr2("BB");
+        mdto.setMem_addr3("BB");
+        mdto.setMem_addr4("BB");
+        mdto.setMem_regdate(timestamp);
+        mdto.setMem_lastlogin_datetime(timestamp);
+        mdto.setMem_lastlogin_ip("127.0.0.1");
+        int result = sqlSession.insert("org.silkdog.maven.hikoco.member.dao.MemberDAO.insert", mdto);
+
+
+
+        if(result == 0){
+            System.out.println("FUCK TRY AGAIN");
+        }else{
+            System.out.println("HELL YEAH!");
+        }
+
+//        HashMap<String, String> hashMap =  sqlSession.selectOne("org.silkdog.maven.hikoco.member.dao.MemberDAO.select");
+//        if (hashMap != null) {
+//            Set<Map.Entry<String, String>> set = hashMap.entrySet();
+//            Iterator<Map.Entry<String, String>> it = set.iterator();
+//            Map.Entry<String, String> e;
+//            while(it.hasNext()){
+//                e = it.next();
+//                System.out.println(e.getKey() + ", " + String.valueOf(e.getValue()));  // !! 주목 !!
+//            }
 //
-//        MemberDTO mdto = new MemberDTO();
-//        mdto.setMem_userid("B");
-//        mdto.setMem_password("b");
-//        mdto.setMem_realname("B");
-//        mdto.setMem_nickname("B");
-//        mdto.setMem_photo("b");
-//        mdto.setMem_tier("Diamond");
-//        mdto.setMem_phone("01012345678");
-//        mdto.setMem_birthday("19900101");
-//        mdto.setMem_sex(1);
-//        mdto.setMem_zipcode("06700");
-//        mdto.setMem_addr1("BB");
-//        mdto.setMem_addr2("BB");
-//        mdto.setMem_addr3("BB");
-//        mdto.setMem_addr4("BB");
-//        mdto.setMem_regdate(timestamp);
-//        mdto.setMem_lastlogin_datetime(timestamp);
-//        mdto.setMem_lastlogin_ip("127.0.0.1");
-//        int result = sqlSession.insert("org.silkdog.maven.hikoco.member.dao.MemberDAO.insert", mdto);
-//
-//
-//
-//        if(result == 0){
-//            System.out.println("FUCK TRY AGAIN");
+//            System.out.println("It is not null");
 //        }else{
-//            System.out.println("HELL YEAH!");
+//            System.out.println("It is null, goddamnit!");
 //        }
 
-        HashMap<String, String> hashMap =  sqlSession.selectOne("org.silkdog.maven.hikoco.member.dao.MemberDAO.select");
-        if (hashMap != null) {
-            Set<Map.Entry<String, String>> set = hashMap.entrySet();
-            Iterator<Map.Entry<String, String>> it = set.iterator();
-            Map.Entry<String, String> e;
-            while(it.hasNext()){
-                e = it.next();
-                System.out.println(e.getKey() + ", " + String.valueOf(e.getValue()));  // !! 주목 !!
-            }
 
-            System.out.println("It is not null");
-        }else{
-            System.out.println("It is null, goddamnit!");
-        }
+
     }
 }
 
