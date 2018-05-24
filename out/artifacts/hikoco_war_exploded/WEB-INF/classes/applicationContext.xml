@@ -51,19 +51,9 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <!-- Beans for @Autowired -->
-    <!--<bean id="MemberDAO" class="org.silkdog.maven.hikoco.member.dao.MemberDAOMybatis">-->
-        <!--<constructor-arg ref="dataSource"/>-->
-    <!--</bean>-->
-    <bean id="TransactionDAO" class="org.silkdog.maven.hikoco.transaction.jdbc.JdbcTemplateTransactionDAO">
-        <constructor-arg ref="dataSource"/>
-    </bean>
-    <bean id="CategoryDAO" class="org.silkdog.maven.hikoco.category.jdbc.JdbcTemplateCategoryDAO">
-        <constructor-arg ref="dataSource"/>
-    </bean>
-
     <!-- Set Annotaion-Config; Always be bottom of the xml file -->
     <context:annotation-config />
 
+    <!-- Beans for @Autowired -->
 
 </beans>

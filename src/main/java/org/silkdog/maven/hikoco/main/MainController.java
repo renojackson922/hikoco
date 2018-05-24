@@ -18,64 +18,64 @@ import java.util.List;
 public class MainController{
 //    @Autowired
 //    private MemberDAO memberDAO;
-//    @Autowired
-//    private TransactionDAO transactionDAO;
-//    @Autowired
-//    private CategoryDAO categoryDAO;
-//
-//    @RequestMapping("/admin.do")
-//    public String admin(Model model) throws Exception{
-//
-//        model.addAttribute("admin1","어드민1");
-//
-//        return "admin";
-//    }
-//
-//    @RequestMapping("/admin_member.do")
-//    public String adminMember(Model model, HttpServletRequest req) throws Exception{
-////        List<MemberDTO> mlist = memberDAO.select();
-////        MemberDTO mdto = memberDAO.selectOne();
-////        req.setAttribute("mlist", mlist);
-////        req.setAttribute("mdto", mdto);
-////        model.addAttribute("adminMember","adminMember");
-//        return "admin_member";
-//    }
-//
-//    @RequestMapping("/admin_tx.do")
-//    public String adminTx(Model model, HttpServletRequest req) throws Exception{
+    @Autowired
+    private TransactionDAO transactionDAO;
+    @Autowired
+    private CategoryDAO categoryDAO;
+
+    @RequestMapping("/admin.do")
+    public String admin(Model model) throws Exception{
+
+        model.addAttribute("admin1","어드민1");
+
+        return "admin";
+    }
+
+    @RequestMapping("/admin_member.do")
+    public String adminMember(Model model, HttpServletRequest req) throws Exception{
+//        List<MemberDTO> mlist = memberDAO.select();
+//        MemberDTO mdto = memberDAO.selectOne();
+//        req.setAttribute("mlist", mlist);
+//        req.setAttribute("mdto", mdto);
+//        model.addAttribute("adminMember","adminMember");
+        return "admin_member";
+    }
+
+    @RequestMapping("/admin_tx.do")
+    public String adminTx(Model model, HttpServletRequest req) throws Exception{
 //        TransactionDTO tdto = transactionDAO.selectOne();
 //        req.setAttribute("tdto", tdto);
 //        model.addAttribute("adminTx","adminTx");
-//        return "admin_tx";
-//    }
-//
-//    @RequestMapping(value="/admin_market.do", method=RequestMethod.GET)
-//    public String adminMarket(Model model, HttpServletRequest req) throws Exception{
+        return "admin_tx";
+    }
+
+    @RequestMapping(value="/admin_market.do", method=RequestMethod.GET)
+    public String adminMarket(Model model, HttpServletRequest req) throws Exception{
 //        int count = categoryDAO.count();
 //        List<CategoryDTO> clist = categoryDAO.list();
 //        req.setAttribute("count", count);
 //        req.setAttribute("clist", clist);
 //        model.addAttribute("adminMarket","adminMarket");
-//        return "admin_market";
-//    }
-//
-//    @RequestMapping(value="/admin_market.do", method=RequestMethod.POST)
-//    public String adminMarketSubmit(Model model) throws Exception{
-//        return "admin_market";
-//    }
-//
-//    @RequestMapping(value="/login.do", method=RequestMethod.GET)
-//    public String login(Model model, HttpServletRequest req){
-//        return "login";
-//    }
-//
-//    @RequestMapping(value="/signup.do", method=RequestMethod.GET)
-//    public String signup(Model model){
-//        return "signup";
-//    }
-//
-//    @RequestMapping(value="/signup.do", method=RequestMethod.POST)
-//    public int signupPro(Model model) {
+        return "admin_market";
+    }
+
+    @RequestMapping(value="/admin_market.do", method=RequestMethod.POST)
+    public String adminMarketSubmit(Model model) throws Exception{
+        return "admin_market";
+    }
+
+    @RequestMapping(value="/login.do", method=RequestMethod.GET)
+    public String login(Model model, HttpServletRequest req){
+        return "login";
+    }
+
+    @RequestMapping(value="/signup.do", method=RequestMethod.GET)
+    public String signup(Model model){
+        return "signup";
+    }
+
+/*    @RequestMapping(value="/signup.do", method=RequestMethod.POST)
+    public int signupPro(Model model) {
 //        int result = memberDAO.insert();
 //        if(result == 0){
 //            System.out.println("fuck0");
@@ -84,7 +84,17 @@ public class MainController{
 //            System.out.println("hellyeah");
 //            return result;
 //        }
+    }*/
+
+//    @RequestMapping(value="/signup.do", method = RequestMethod.GET)
+//    public String signup(){
+//        return "signup";
 //    }
+
+    @RequestMapping(value="/signup.do", method = RequestMethod.POST)
+    public String signup_PRO(){
+        return "main";
+    }
 
 
 
@@ -94,18 +104,18 @@ public class MainController{
         return "main";
     }
 
-//    @RequestMapping(value="/item.do", method=RequestMethod.GET)
-//    public String item(Model model, HttpServletRequest req){
-//        int count = categoryDAO.count();
-//        List<CategoryDTO> clist = categoryDAO.list();
-//        req.setAttribute("count", count);
-//        req.setAttribute("clist", clist);
-//        model.addAttribute("adminMarket","adminMarket");
-//        return "item";
-//    }
+    @RequestMapping(value="/item.do", method=RequestMethod.GET)
+    public String item(Model model, HttpServletRequest req){
+        int count = categoryDAO.count();
+        List<CategoryDTO> clist = categoryDAO.list();
+        req.setAttribute("count", count);
+        req.setAttribute("clist", clist);
+        model.addAttribute("adminMarket","adminMarket");
+        return "item";
+    }
 //
-//    @RequestMapping(value="/item_detail.do", method = RequestMethod.GET)
-//    public String itemDetail(Model model, HttpServletRequest req){
-//        return "item_detail";
-//    }
+    @RequestMapping(value="/item_detail.do", method = RequestMethod.GET)
+    public String itemDetail(Model model, HttpServletRequest req){
+        return "item_detail";
+    }
 }
