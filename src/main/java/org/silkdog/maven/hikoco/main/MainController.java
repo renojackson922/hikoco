@@ -118,4 +118,11 @@ public class MainController{
     public String itemDetail(Model model, HttpServletRequest req){
         return "item_detail";
     }
+
+    @RequestMapping("/category_test")
+    public String categoryTest(HttpServletRequest req){
+        List<CategoryDTO> clist = categoryDAO.list();
+        req.setAttribute("clist", clist);
+        return "categoryTest";
+    }
 }
