@@ -1,5 +1,6 @@
 package org.silkdog.maven.hikoco.main;
 
+import com.mysql.cj.Session;
 import org.silkdog.maven.hikoco.category.dao.CategoryDAO;
 import org.silkdog.maven.hikoco.category.dto.CategoryDTO;
 import org.silkdog.maven.hikoco.member.dao.MemberDAO;
@@ -119,10 +120,25 @@ public class MainController{
         return "item_detail";
     }
 
-    @RequestMapping("/category_test")
+    @RequestMapping(value="/category_test.do", method= RequestMethod.GET)
     public String categoryTest(HttpServletRequest req){
+        checkCategoryList(req);
+        return "categoryTest";
+    }
+
+    @RequestMapping(value="/category_test.do", method= RequestMethod.POST)
+    public String categoryTestPro(HttpServletRequest req){
+        CategoryDTO cdto = new CategoryDTO();
+        cdto.setHic_parent(String.valueOf(req.getParameter("cat_exists")));
+        cdto.setHic_val(req.getParameter("cat_name"));
+        int result = categoryDAO.insert(cdto);
+
+        checkCategoryList(req);
+        return "redirect:category_test.do"; /*  Important  */
+    }
+
+    public void checkCategoryList(HttpServletRequest req){
         List<CategoryDTO> clist = categoryDAO.list();
         req.setAttribute("clist", clist);
-        return "categoryTest";
     }
 }

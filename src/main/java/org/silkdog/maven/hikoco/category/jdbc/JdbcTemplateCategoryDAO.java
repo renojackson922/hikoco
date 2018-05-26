@@ -3,9 +3,15 @@ package org.silkdog.maven.hikoco.category.jdbc;
 import org.silkdog.maven.hikoco.category.dao.CategoryDAO;
 import org.silkdog.maven.hikoco.category.dto.CategoryDTO;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 
 import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
 public class JdbcTemplateCategoryDAO implements CategoryDAO {
@@ -26,8 +32,23 @@ public class JdbcTemplateCategoryDAO implements CategoryDAO {
 
     @Override
     public List<CategoryDTO> list(){
-        List<CategoryDTO> clist = jdbcTemplate.query("select * from hikoco_item_cat order by hic_order asc, hic_id asc;", rowMapper);
+        List<CategoryDTO> clist = jdbcTemplate.query("select * from hikoco_item_cat where hic_parent = '-1' order by hic_id asc, hic_order asc;", rowMapper);
         return clist;
+    }
+
+    @Override
+    public int insert(final CategoryDTO cdto){
+        KeyHolder keyHolder = new GeneratedKeyHolder();
+        jdbcTemplate.update(conn -> {
+            String sql = "INSERT INTO HIKOCO_ITEM_CAT (hic_val, hic_parent, hic_order) values (?,?, (SELECT hic_order from HIKOCO_ITEM_CAT HIC_SUB where hic_id = ?));";
+            PreparedStatement ps = conn.prepareStatement(sql, new String[]{"hic_id"});
+            ps.setString(1, cdto.getHic_val());
+            ps.setString(2, cdto.getHic_parent());
+            ps.setInt(3, Integer.parseInt(cdto.getHic_parent()));
+            return ps;
+        }, keyHolder);
+        Number idNum = keyHolder.getKey();
+        return idNum.intValue();
     }
 
     @Override

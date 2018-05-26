@@ -7,4 +7,5 @@ import java.util.List;
 public interface CategoryDAO {
     List<CategoryDTO> list();
     int count();
+    int insert(CategoryDTO cdto);
 }
