@@ -100,7 +100,7 @@
             <div class="css-table-row">
                 <!-- 제목, 가격 등... -->
                 <div class="css-table-cell">
-                    <img src="/resources/imgs/palit.jpg" width="300px" height="300px" style="border:1px solid #ddd;">
+                    <img src="../../resources/imgs/palit.jpg" width="300px" height="300px" style="border:1px solid #ddd;">
                     <div class="" style="display: block;">
                         <button class="btn btn-sm btn-outline-secondary" style="width:100%; margin-top:5px;">자세히 보기</button>
                         <button class="btn btn-sm btn-outline-secondary" style="width:100%; margin-top:5px;">상품신고</button>
@@ -176,7 +176,7 @@
                     <h5>상품 상세설명</h5>
                 </div>
                 <div id="item-describe">
-                    <img class="img-center" src="/resources/imgs/222.jpg">
+                    <img class="img-center" src="../../resources/imgs/222.jpg">
                 </div>
                 <!--  상품정보제공고시 -->
                 <div class="__detail-title">

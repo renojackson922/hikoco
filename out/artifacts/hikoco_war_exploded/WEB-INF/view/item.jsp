@@ -1,10 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ page import="java.util.*, org.silkdog.maven.hikoco.category.dao.*, org.silkdog.maven.hikoco.category.dto.*" %>
+<%@ page import="org.silkdog.maven.hikoco.item.dto.ItemDTO" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%
     int count = (int)request.getAttribute("count");
     List<CategoryDTO> clist = (List<CategoryDTO>)request.getAttribute("clist");
+    List<ItemDTO> ilist = (List<ItemDTO>)request.getAttribute("ilist");
 
     int cat_height;
     // rowNum 도 추가할 것
@@ -240,7 +242,7 @@
                     <div class="list-group" style="margin-bottom:15px;">
 
                         <!-- a tag starts -->
-                        <a href="#" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#exampleModal" data-backdrop="static" data-keyboard="false" style="background:rgba(168,217,234,0.3)">
+                        <a href="#" class="list-group-item list-group-item-action"  style="background:rgba(168,217,234,0.3)">
                             <div class="text-left">
                                 <div style="margin-bottom:5px; border:1px dashed #5d5d5d; display:inline-block; padding:0px 10px 2px 10px;background: #fff">
                                     <span style="font-size:14px;"><i class="fas fa-thumbs-up"></i>&nbsp;<strong>Signature Item</strong></span>
@@ -282,6 +284,50 @@
                             </div>
                         </a>
                         <!-- a tag ends -->
+
+
+                        <% for(ItemDTO idto : ilist){ %>
+                        <!-- a tag starts -->
+                        <a href="./item_detail.do" class="list-group-item list-group-item-action" style="">
+                            <div class="text-left">
+                                <div style="float:left; margin-right:5px;">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="item-wrapper" style="height:70px ;">
+                                    <!-- 사진 -->
+                                    <div class="" style="float:left;">
+                                        <img src="<%=idto.getItem_pic()%>" width="100px " style="border:1px solid #ddd;">
+                                    </div>
+                                    <!-- 내용 -->
+                                    <div class="col-md-10" style="float:left; padding-left:0px;">
+                                        <div class="col-md-6" style="display:block; float:left;">
+                                            <span><strong><%=idto.getItem_title()%></strong></span>
+                                        </div>
+                                        <br> <!-- new line -->
+                                        <div class="col-md-12" style="display:block; float:left;">
+                                            <span><%=idto.getItem_summary()%></span>
+                                        </div><br> <!-- new line -->
+                                        <div class="col-md-12" style="display:block;">
+                                            <span class="span-loginInfo" style="font-size:10px; padding:0px 5px 0px 5px; background: #2897d3; color:#fff; border-radius:0px; display: inline-block;">사은품</span>
+                                            <span style="font-size:11px; vertical-align: middle !important;">&nbsp;구매영수증 인증 시 메로나 아이스크림 증정 (05.01~05.31)</span>
+                                        </div>
+                                        <div class="col-md-12" style="display:block;">
+                                            <span class="span-loginInfo" style="font-size:10px; padding:0px 5px 0px 5px; background: gold; color:#fff; border-radius:0px; display: inline-block; width:40px; text-align: center;">후기</span>
+                                            <span style="font-size:11px; vertical-align: middle !important;">&nbsp;후기 작성 후 별도의 신청 시 스타벅스 캔커피 증정 (05.01~05.31)</span>
+                                        </div>
+                                        <div class="col-md-12" style="display:block; ">
+                                            <span class="span-loginInfo" style="font-size:10px; padding:0px 5px 0px 5px; background: gold; color:#fff; border-radius:0px; display: inline-block; width:40px; text-align: center;">후기</span>
+                                            <span style="font-size:11px; vertical-align: middle !important;">&nbsp;후기 작성 후 별도의 신청을 하신 6분께 LED 삼각대 증정 (05.01~05.31)</span>
+                                        </div>
+                                    </div>
+                                </div><br>
+                                <%--<hr style="margin:5px 0px 5px 0px;">--%>
+                                <%--<!-- 상태 -->--%>
+                                <%--<div class="col-md-3" style="float:left; padding:0px;"><span>해당 상품을 구매한 이력이 있습니다.</span></div>--%>
+                            </div>
+                        </a>
+                        <!-- a tag ends -->
+                        <% } %>
 
                         <!-- a tag starts -->
                         <a href="./item_detail.do" class="list-group-item list-group-item-action" style="">

@@ -82,6 +82,24 @@
         });
     </script>
 </head>
+<style>
+    .list-group-item{
+        width:60%;
+    }
+    .list-group-item:first-child{
+        border-top-left-radius:0px;
+        border-top-right-radius:0px;
+    }
+    .list-group-item:last-child{
+        border-bottom-left-radius:0px;
+        border-bottom-right-radius:0px;
+    }
+    .list-group-item{
+        height:24px;
+        padding:0 0 0 7px;
+        font-size:0.8em;
+    }
+</style>
 <body ng-controller="ctrl">
     <div class="container">
         <ul class="list-group">
@@ -102,6 +120,7 @@
                 .form-group{
                     float:left;
                 }
+
             </style>
             <div class="form-group col-md-3">
                 <label for="cat_exists">기존 카테고리</label>

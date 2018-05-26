@@ -1,8 +1,11 @@
 package org.silkdog.maven.hikoco.main;
 
 import com.mysql.cj.Session;
+import com.sun.org.apache.regexp.internal.RE;
 import org.silkdog.maven.hikoco.category.dao.CategoryDAO;
 import org.silkdog.maven.hikoco.category.dto.CategoryDTO;
+import org.silkdog.maven.hikoco.item.dao.ItemDAO;
+import org.silkdog.maven.hikoco.item.dto.ItemDTO;
 import org.silkdog.maven.hikoco.member.dao.MemberDAO;
 import org.silkdog.maven.hikoco.transaction.dao.TransactionDAO;
 import org.silkdog.maven.hikoco.transaction.dto.TransactionDTO;
@@ -23,6 +26,9 @@ public class MainController{
     private TransactionDAO transactionDAO;
     @Autowired
     private CategoryDAO categoryDAO;
+    @Autowired
+    private ItemDAO itemDAO;
+
 
     @RequestMapping("/admin.do")
     public String admin(Model model) throws Exception{
@@ -109,6 +115,7 @@ public class MainController{
     public String item(Model model, HttpServletRequest req){
         int count = categoryDAO.count();
         List<CategoryDTO> clist = categoryDAO.list();
+        checkItemList(req);
         req.setAttribute("count", count);
         req.setAttribute("clist", clist);
         model.addAttribute("adminMarket","adminMarket");
@@ -140,5 +147,31 @@ public class MainController{
     public void checkCategoryList(HttpServletRequest req){
         List<CategoryDTO> clist = categoryDAO.list();
         req.setAttribute("clist", clist);
+    }
+
+    public void checkItemList(HttpServletRequest req){
+        List<ItemDTO> ilist = itemDAO.list();
+        req.setAttribute("ilist", ilist);
+    }
+
+    @RequestMapping(value = "/item_test.do", method= RequestMethod.GET)
+    public String itemTest(HttpServletRequest req){
+        checkItemList(req);
+        return "itemTest";
+    }
+
+    @RequestMapping(value="/item_test.do", method=RequestMethod.POST)
+    public String itemTestPro(HttpServletRequest req){
+        ItemDTO idto = new ItemDTO();
+        idto.setItem_title(req.getParameter("item_title"));
+        idto.setItem_manu(req.getParameter("item_manu"));
+        idto.setItem_vendor(req.getParameter("item_vendor"));
+        idto.setItem_summary(req.getParameter("item_summary"));
+        idto.setItem_pic(req.getParameter("item_pic"));
+        idto.setItem_detail(req.getParameter("item_detail"));
+        int result = itemDAO.insert(idto);
+
+        checkItemList(req);
+        return "redirect:item_test.do";
     }
 }

@@ -32,7 +32,7 @@ public class JdbcTemplateCategoryDAO implements CategoryDAO {
 
     @Override
     public List<CategoryDTO> list(){
-        List<CategoryDTO> clist = jdbcTemplate.query("select * from hikoco_item_cat where hic_parent = '-1' order by hic_id asc, hic_order asc;", rowMapper);
+        List<CategoryDTO> clist = jdbcTemplate.query("select * from hikoco_item_cat order by hic_order asc, hic_id asc;", rowMapper);
         return clist;
     }
 
