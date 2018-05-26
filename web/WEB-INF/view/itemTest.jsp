@@ -36,6 +36,10 @@
                 <input type="text" class="form-control" name="item_title">
             </div>
             <div class="form-group">
+                <label>아이템 가격</label>
+                <input type="text" class="form-control" name="item_price">
+            </div>
+            <div class="form-group">
                 <label>아이템 제조사</label>
                 <input type="text" class="form-control" name="item_manu">
             </div>
@@ -65,6 +69,7 @@
                 <li class="list-group-item">
                     <span><%=idto.getItem_id()%></span>
                     <span><%=idto.getItem_title()%></span>
+                    <span><%=idto.getItem_price()%></span>
                     <span><%=idto.getItem_manu()%></span>
                     <span><%=idto.getItem_vendor()%></span>
                     <span><%=idto.getItem_summary()%></span>

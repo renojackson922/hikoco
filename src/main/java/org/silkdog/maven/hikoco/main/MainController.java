@@ -103,8 +103,6 @@ public class MainController{
         return "main";
     }
 
-
-
     // 같은 내용을 합칠 수도 있음. p.286 참고
     @RequestMapping(value="/main.do", method=RequestMethod.GET)
     public String main(Model model){
@@ -127,6 +125,7 @@ public class MainController{
         return "item_detail";
     }
 
+    /* 카테고리 테스트 */
     @RequestMapping(value="/category_test.do", method= RequestMethod.GET)
     public String categoryTest(HttpServletRequest req){
         checkCategoryList(req);
@@ -148,12 +147,10 @@ public class MainController{
         List<CategoryDTO> clist = categoryDAO.list();
         req.setAttribute("clist", clist);
     }
+    /* ================ */
 
-    public void checkItemList(HttpServletRequest req){
-        List<ItemDTO> ilist = itemDAO.list();
-        req.setAttribute("ilist", ilist);
-    }
 
+    /* 아이템 테스트 */
     @RequestMapping(value = "/item_test.do", method= RequestMethod.GET)
     public String itemTest(HttpServletRequest req){
         checkItemList(req);
@@ -164,6 +161,7 @@ public class MainController{
     public String itemTestPro(HttpServletRequest req){
         ItemDTO idto = new ItemDTO();
         idto.setItem_title(req.getParameter("item_title"));
+        idto.setItem_price(Integer.parseInt(req.getParameter("item_price")));
         idto.setItem_manu(req.getParameter("item_manu"));
         idto.setItem_vendor(req.getParameter("item_vendor"));
         idto.setItem_summary(req.getParameter("item_summary"));
@@ -174,4 +172,10 @@ public class MainController{
         checkItemList(req);
         return "redirect:item_test.do";
     }
+
+    public void checkItemList(HttpServletRequest req){
+        List<ItemDTO> ilist = itemDAO.list();
+        req.setAttribute("ilist", ilist);
+    }
+    /* ================ */
 }

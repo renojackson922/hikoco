@@ -22,6 +22,7 @@ public class ItemDAOImpl implements ItemDAO {
       ItemDTO idto = new ItemDTO();
       idto.setItem_id(rs.getInt("item_id"));
       idto.setItem_title(rs.getString("item_title"));
+      idto.setItem_price(rs.getInt("item_price"));
       idto.setItem_manu(rs.getString("item_manu"));
       idto.setItem_vendor(rs.getString("item_vendor"));
       idto.setItem_summary(rs.getString("item_summary"));
@@ -42,14 +43,15 @@ public class ItemDAOImpl implements ItemDAO {
     public int insert(final ItemDTO idto){
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(conn -> {
-            String sql = "INSERT INTO HIKOCO_ITEM (item_title, item_manu, item_vendor, item_summary, item_pic, item_detail, item_upload_date, item_last_edited_date) VALUES(?,?,?,?,?,?, now(), now())";
+            String sql = "INSERT INTO HIKOCO_ITEM (item_title, item_price, item_manu, item_vendor, item_summary, item_pic, item_detail, item_upload_date, item_last_edited_date) VALUES(?,?,?,?,?,?,?, now(), now())";
             PreparedStatement ps = conn.prepareStatement(sql, new String[]{"item_id"});
             ps.setString(1, idto.getItem_title());
-            ps.setString(2, idto.getItem_manu());
-            ps.setString(3, idto.getItem_vendor());
-            ps.setString(4, idto.getItem_summary());
-            ps.setString(5, idto.getItem_pic());
-            ps.setString(6, idto.getItem_detail());
+            ps.setInt(2, idto.getItem_price());
+            ps.setString(3, idto.getItem_manu());
+            ps.setString(4, idto.getItem_vendor());
+            ps.setString(5, idto.getItem_summary());
+            ps.setString(6, idto.getItem_pic());
+            ps.setString(7, idto.getItem_detail());
             return ps;
         }, keyHolder);
         Number idNum = keyHolder.getKey();

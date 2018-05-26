@@ -6,6 +6,7 @@ import java.util.Date;
 public class ItemDTO {
     private int item_id;
     private String item_title;
+    private int item_price;
     private String item_manu;
     private String item_vendor;
     private String item_summary;
@@ -28,6 +29,14 @@ public class ItemDTO {
 
     public void setItem_title(String item_title) {
         this.item_title = item_title;
+    }
+
+    public int getItem_price() {
+        return item_price;
+    }
+
+    public void setItem_price(int item_price) {
+        this.item_price = item_price;
     }
 
     public String getItem_manu() {
