@@ -3,11 +3,15 @@ package org.silkdog.maven.hikoco;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.silkdog.maven.hikoco.category.dto.CategoryDTO;
 import org.silkdog.maven.hikoco.member.dto.MemberDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import javax.sql.DataSource;
 import java.util.*;
 
 
@@ -17,38 +21,61 @@ public class TestService{
     @Autowired
     private SqlSession sqlSession;
 
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
     @Test
     public void test(){
-        java.util.Date date = new java.util.Date();
-        java.sql.Timestamp timestamp = new java.sql.Timestamp(date.getTime());
-
-        MemberDTO mdto = new MemberDTO();
-        mdto.setMem_userid("B");
-        mdto.setMem_password("b");
-        mdto.setMem_realname("B");
-        mdto.setMem_nickname("B");
-        mdto.setMem_photo("b");
-        mdto.setMem_tier("Diamond");
-        mdto.setMem_phone("01012345678");
-        mdto.setMem_birthday("19900101");
-        mdto.setMem_sex(1);
-        mdto.setMem_zipcode("06700");
-        mdto.setMem_addr1("BB");
-        mdto.setMem_addr2("BB");
-        mdto.setMem_addr3("BB");
-        mdto.setMem_addr4("BB");
-        mdto.setMem_regdate(timestamp);
-        mdto.setMem_lastlogin_datetime(timestamp);
-        mdto.setMem_lastlogin_ip("127.0.0.1");
-        int result = sqlSession.insert("org.silkdog.maven.hikoco.member.dao.MemberDAO.insert", mdto);
 
 
-
-        if(result == 0){
-            System.out.println("FUCK TRY AGAIN");
-        }else{
-            System.out.println("HELL YEAH!");
+    public JdbcTemplateCategoryDAO(DataSource dataSource){
+            jdbcTemplate = new JdbcTemplate(dataSource);
         }
+
+        RowMapper<CategoryDTO> rowMapper = (rs, rowNum) -> {
+            CategoryDTO cdto = new CategoryDTO();
+            cdto.setHic_id(rs.getInt("hic_id"));
+            cdto.setHic_val(rs.getString("hic_val"));
+            cdto.setHic_parent(rs.getString("hic_parent"));
+            cdto.setHic_order(rs.getInt("hic_order"));
+            cdto.setHic_indent(rs.getInt("hic_indent"));
+            return cdto;
+        };
+        public List<CategoryDTO> listByIndent(int indent){
+
+            jdbcTemplate.queryForList("select * from hikoco_item_cat where hic_indent = indent order by hic_order asc, hic_id asc", indent ,rowMapper);
+
+        }
+//        java.util.Date date = new java.util.Date();
+//        java.sql.Timestamp timestamp = new java.sql.Timestamp(date.getTime());
+//
+//        MemberDTO mdto = new MemberDTO();
+//        mdto.setMem_userid("B");
+//        mdto.setMem_password("b");
+//        mdto.setMem_realname("B");
+//        mdto.setMem_nickname("B");
+//        mdto.setMem_photo("b");
+//        mdto.setMem_tier("Diamond");
+//        mdto.setMem_phone("01012345678");
+//        mdto.setMem_birthday("19900101");
+//        mdto.setMem_sex(1);
+//        mdto.setMem_zipcode("06700");
+//        mdto.setMem_addr1("BB");
+//        mdto.setMem_addr2("BB");
+//        mdto.setMem_addr3("BB");
+//        mdto.setMem_addr4("BB");
+//        mdto.setMem_regdate(timestamp);
+//        mdto.setMem_lastlogin_datetime(timestamp);
+//        mdto.setMem_lastlogin_ip("127.0.0.1");
+//        int result = sqlSession.insert("org.silkdog.maven.hikoco.member.dao.MemberDAO.insert", mdto);
+//
+//
+//
+//        if(result == 0){
+//            System.out.println("FUCK TRY AGAIN");
+//        }else{
+//            System.out.println("HELL YEAH!");
+//        }
 
 //        HashMap<String, String> hashMap =  sqlSession.selectOne("org.silkdog.maven.hikoco.member.dao.MemberDAO.select");
 //        if (hashMap != null) {

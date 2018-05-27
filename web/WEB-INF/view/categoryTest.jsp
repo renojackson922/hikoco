@@ -1,9 +1,18 @@
 <%@ page import="org.silkdog.maven.hikoco.category.dto.CategoryDTO" %>
-<%@ page import="java.util.List" %>
 <%@ page import="org.silkdog.maven.hikoco.category.dao.CategoryDAO" %>
+<%@ page import="java.util.*" %>
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%
     List<CategoryDTO> clist = (List<CategoryDTO>)request.getAttribute("clist");
+
+//    HashMap map = new HashMap<Integer, String>();
+//    for(CategoryDTO cdto : clist){
+//        map.put(cdto.getHic_id(), cdto.getHic_val());
+//    }
+
+
+
+
 
 %>
 <html ng-cloak ng-app="app">
@@ -103,16 +112,30 @@
 <body ng-controller="ctrl">
     <div class="container">
         <ul class="list-group">
-            <%
-                for(CategoryDTO cdto : clist){
-                    if(cdto.getHic_parent().equals("-1")){
-            %>
-            <li class="list-group-item"><%=cdto.getHic_val()%></li>
-            <% } else {%>
-            <li class="list-group-item">ㄴ <%=cdto.getHic_val()%></li>
-            <%}
-            }
-            %>
+            <%--<%--%>
+                <%--for(CategoryDTO cdto : clist){--%>
+                    <%--if(cdto.getHic_parent().equals("-1")){--%>
+            <%--%>--%>
+            <%--<li class="list-group-item"><%=cdto.getHic_val()%></li>--%>
+            <%--<% } else {%>--%>
+            <%--<li class="list-group-item">ㄴ <%=cdto.getHic_val()%></li>--%>
+            <%--<%}--%>
+            <%--}--%>
+            <%--%>--%>
+        <%--<%--%>
+            <%--Set<Map.Entry<Integer, String>> set = map.entrySet();--%>
+            <%--Iterator<Map.Entry<Integer, String>> it = set.iterator();--%>
+
+            <%--Map.Entry<Integer,String> e;--%>
+        <%--%>--%>
+            <%--<%--%>
+                <%--while(it.hasNext()){--%>
+                  <%--System.out.println(e.getKey() + " + " + e.getValue());--%>
+
+                <%--}--%>
+            <%--%>--%>
+
+
         </ul>
         <hr>
         <form id="form1" name="form1" method="POST">

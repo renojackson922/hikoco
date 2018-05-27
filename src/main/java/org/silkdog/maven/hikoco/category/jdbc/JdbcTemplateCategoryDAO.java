@@ -11,7 +11,9 @@ import org.springframework.jdbc.support.KeyHolder;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class JdbcTemplateCategoryDAO implements CategoryDAO {
@@ -27,6 +29,7 @@ public class JdbcTemplateCategoryDAO implements CategoryDAO {
         cdto.setHic_val(rs.getString("hic_val"));
         cdto.setHic_parent(rs.getString("hic_parent"));
         cdto.setHic_order(rs.getInt("hic_order"));
+        cdto.setHic_indent(rs.getInt("hic_indent"));
         return cdto;
     };
 
@@ -36,15 +39,18 @@ public class JdbcTemplateCategoryDAO implements CategoryDAO {
         return clist;
     }
 
+
+
     @Override
     public int insert(final CategoryDTO cdto){
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(conn -> {
-            String sql = "INSERT INTO HIKOCO_ITEM_CAT (hic_val, hic_parent, hic_order) values (?,?, (SELECT hic_order from HIKOCO_ITEM_CAT HIC_SUB where hic_id = ?));";
+            String sql = "INSERT INTO HIKOCO_ITEM_CAT (hic_val, hic_parent, hic_order, hic_indent) values (?,?, (SELECT hic_order from HIKOCO_ITEM_CAT HIC_SUB where hic_id = ?), ((SELECT hic_indent+1 from HIKOCO_ITEM_CAT HIC_SUB2 where hic_id=?)));";
             PreparedStatement ps = conn.prepareStatement(sql, new String[]{"hic_id"});
             ps.setString(1, cdto.getHic_val());
             ps.setString(2, cdto.getHic_parent());
             ps.setInt(3, Integer.parseInt(cdto.getHic_parent()));
+            ps.setString(4, cdto.getHic_parent());
             return ps;
         }, keyHolder);
         Number idNum = keyHolder.getKey();

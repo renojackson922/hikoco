@@ -5,6 +5,7 @@ public class CategoryDTO {
     private String hic_val;
     private String hic_parent;
     private int hic_order;
+    private int hic_indent;
 
     public int getHic_id() {
         return hic_id;
@@ -36,5 +37,13 @@ public class CategoryDTO {
 
     public void setHic_order(int hic_order) {
         this.hic_order = hic_order;
+    }
+
+    public int getHic_indent() {
+        return hic_indent;
+    }
+
+    public void setHic_indent(int hic_indent) {
+        this.hic_indent = hic_indent;
     }
 }
