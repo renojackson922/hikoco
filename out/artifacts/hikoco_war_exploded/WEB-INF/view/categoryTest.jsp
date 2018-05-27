@@ -5,10 +5,40 @@
 <%
     List<CategoryDTO> clist = (List<CategoryDTO>)request.getAttribute("clist");
 
-//    HashMap map = new HashMap<Integer, String>();
-//    for(CategoryDTO cdto : clist){
-//        map.put(cdto.getHic_id(), cdto.getHic_val());
+
+    /* indent */
+    for(int i = 0; i < clist.size(); i++){
+        CategoryDTO cdto1 = clist.get(i);
+        for(int j = 1; j < clist.size(); j++) {
+            CategoryDTO cdto2 = clist.get(j);
+            if (cdto1.getHic_id() == Integer.parseInt(cdto2.getHic_parent()) && cdto1.getHic_indent() == cdto2.getHic_indent()-1){
+                Collections.swap(clist,j, i+1);
+            }
+        }
+     }
+     /* 서순 */
+//    for(int i = 0; i < clist.size(); i++){
+//        CategoryDTO cdto1 = clist.get(i);
+//        for(int j = 1; j < clist.size(); j++) {
+//            CategoryDTO cdto2 = clist.get(j);
+//            if (!cdto1.getHic_parent().equals("-1") && !cdto2.getHic_parent().equals("-1") && Integer.parseInt(cdto1.getHic_parent()) == Integer.parseInt(cdto2.getHic_parent()) && cdto1.getHic_indent() == cdto2.getHic_indent() && cdto1.getHic_id() > cdto2.getHic_id()){
+//                Collections.swap(clist,j, i+1);
+//            }
+//        }
 //    }
+
+
+    for(CategoryDTO cdtoTest2 : clist){
+        if(cdtoTest2.getHic_indent() == 1) {
+            System.out.println(cdtoTest2.getHic_val());
+        }else if(cdtoTest2.getHic_indent() == 2){
+            System.out.println("ㄴ" + cdtoTest2.getHic_val());
+        }else if(cdtoTest2.getHic_indent() == 3){
+            System.out.println("  ㄴ" + cdtoTest2.getHic_val());
+        }else if(cdtoTest2.getHic_indent() == 4){
+            System.out.println("    ㄴ" + cdtoTest2.getHic_val());
+        }
+    }
 
 %>
 <html ng-cloak ng-app="app">
@@ -108,36 +138,27 @@
 <body ng-controller="ctrl">
     <div class="container">
         <ul class="list-group">
-            <%--<%--%>
-                <%--for(CategoryDTO cdto : clist){--%>
-                    <%--if(cdto.getHic_parent().equals("-1")){--%>
-            <%--%>--%>
-            <%--<li class="list-group-item"><%=cdto.getHic_val()%></li>--%>
-            <%--<% } else {%>--%>
-            <%--<li class="list-group-item">ㄴ <%=cdto.getHic_val()%></li>--%>
-            <%--<%}--%>
-            <%--}--%>
-            <%--%>--%>
-        <%--<%--%>
-            <%--Set<Map.Entry<Integer, String>> set = map.entrySet();--%>
-            <%--Iterator<Map.Entry<Integer, String>> it = set.iterator();--%>
-
-            <%--Map.Entry<Integer,String> e;--%>
-        <%--%>--%>
-            <%--<%--%>
-                <%--while(it.hasNext()){--%>
-                  <%--System.out.println(e.getKey() + " + " + e.getValue());--%>
-
-                <%--}--%>
-            <%--%>--%>
-            <% int cnt = 0;%>
-            <% for(CategoryDTO cdto : clist){ %>
-            <% if(cdto.getHic_parent().equals("-1")){  %>
-                <li class="list-group-item"><%=cdto.getHic_val()%></li>
-            <%  cnt++;%>
-            <% } %>
-            <% } %>
-
+            <%
+                for(CategoryDTO cdto : clist){
+                    if(cdto.getHic_indent() == 1) {
+            %>
+                    <li class="list-group-item"><%=cdto.getHic_val()%></li>
+            <%
+                    }else if(cdto.getHic_indent() == 2){
+            %>
+                    <li class="list-group-item">ㄴ<%=cdto.getHic_val()%></li>
+            <%
+                    }else if(cdto.getHic_indent() == 3){
+            %>
+                    <li class="list-group-item">&nbsp;&nbsp;&nbsp;ㄴ<%=cdto.getHic_val()%></li>
+            <%
+                    }else if(cdto.getHic_indent() == 4){
+            %>
+                    <li class="list-group-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㄴ<%=cdto.getHic_val()%></li>
+            <%
+                    } 
+                }
+            %>
         </ul>
         <hr>
         <form id="form1" name="form1" method="POST">
@@ -146,19 +167,34 @@
                     float:left;
                 }
 
+                <%--<option value="<%=cdto.getHic_id()%>"><%=cdto.getHic_val()%></option>--%>
+
             </style>
             <div class="form-group col-md-3">
                 <label for="cat_exists">기존 카테고리</label>
                 <select ng-model="catOption" class="form-control" id="cat_exists" name="cat_exists">
                     <option value="" selected>-- 선택하세요 --</option>
-                    <% for(CategoryDTO cdto : clist){
-                        if(cdto.getHic_parent().equals("-1")){
+                    <%
+                        for(CategoryDTO cdto : clist){
+                            if(cdto.getHic_indent() == 1) {
                     %>
                     <option value="<%=cdto.getHic_id()%>"><%=cdto.getHic_val()%></option>
-                    <% } else {%>
-                    <option value="<%=cdto.getHic_id()%>">ㄴ <%=cdto.getHic_val()%></option>
-                    <% }
-                    }%>
+                    <%
+                    }else if(cdto.getHic_indent() == 2){
+                    %>
+                    <option value="<%=cdto.getHic_id()%>">ㄴ<%=cdto.getHic_val()%></option>
+                    <%
+                    }else if(cdto.getHic_indent() == 3){
+                    %>
+                    <option value="<%=cdto.getHic_id()%>">&nbsp;&nbsp;&nbsp;ㄴ<%=cdto.getHic_val()%></option>
+                    <%
+                    }else if(cdto.getHic_indent() == 4){
+                    %>
+                    <option value="<%=cdto.getHic_id()%>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㄴ<%=cdto.getHic_val()%></option>
+                    <%
+                            }
+                        }
+                    %>
             </select>
 
             </div>

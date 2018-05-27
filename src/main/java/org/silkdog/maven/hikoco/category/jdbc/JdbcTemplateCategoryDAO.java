@@ -39,6 +39,11 @@ public class JdbcTemplateCategoryDAO implements CategoryDAO {
         return clist;
     }
 
+    @Override
+    public List<CategoryDTO> listByIndent(int i){
+        List<CategoryDTO> clist = jdbcTemplate.query("select * from hikoco_item_cat where hic_indent = " + i + " order by hic_order asc, hic_id asc;", rowMapper);
+        return clist;
+    }
 
 
     @Override

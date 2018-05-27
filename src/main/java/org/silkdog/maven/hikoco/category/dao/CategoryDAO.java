@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface CategoryDAO {
     List<CategoryDTO> list();
-//    List<CategoryDTO> listByIndent(int indent);
+    List<CategoryDTO> listByIndent(int i);
     int count();
     int insert(CategoryDTO cdto);
 }

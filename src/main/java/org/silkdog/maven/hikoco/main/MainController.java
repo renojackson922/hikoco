@@ -146,6 +146,16 @@ public class MainController{
     public void checkCategoryList(HttpServletRequest req){
         List<CategoryDTO> clist = categoryDAO.list();
         req.setAttribute("clist", clist);
+
+
+
+//        List<CategoryDTO> clist1 = categoryDAO.listByIndent(1);
+//        req.setAttribute("clist1", clist1);
+//        List<CategoryDTO> clist2 = categoryDAO.listByIndent(2);
+//        req.setAttribute("clist2", clist2);
+//        List<CategoryDTO> clist3 = categoryDAO.listByIndent(3);
+//        req.setAttribute("clist3.;p-", clist3);
+
     }
     /* ================ */
 
