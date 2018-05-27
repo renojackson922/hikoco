@@ -65,7 +65,7 @@
 </head>
 <body>
 <div class="container" style="border:1px solid #ddd; margin-top:20px; padding:15px 15px 0px 0px; height:900px;">
-    <%@ include file="./layout/hikoco_admin_left.jsp" %>
+    <%@ include file="../layout/hikoco_admin_left.jsp" %>
     <div class="pubg-right col-md-10 text-center" style="float:left; overflow-x:hidden; border:1px solid #ddd;">
         <span style="font-size:44px;"><strong>Transaction</strong></span>
         <p>판매자와 구매자 간의 거래내역을 조회합니다.</p>

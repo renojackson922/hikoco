@@ -166,6 +166,15 @@
             // $scope.endTime = (new Date($scope.endYear, 0, 1)).getTime();
             // console.log($scope.endTime)
             // $scope.days, $scope.hours, $scope.minutes, $scope.millis;
+            $scope.hide = 0;
+
+            $scope.hideAndSeek = function(){
+                $scope.hide = 1;
+            }
+
+            $scope.hideAndSeekDisabled = function(){
+                $scope.hide = 0;
+            }
         });
     </script>
     <script>
@@ -176,7 +185,7 @@
 
         }
         .hikoco-sec1-div {
-            height: 400px;
+            height: 600px;
             /*background-color: #fff;*/
             background: url("../../resources/imgs/bg1.jpg");
             background-size: cover;
@@ -204,7 +213,29 @@
         }
     </style>
 </head>
-<body ng-controller="ctrl">
+<%--ng-click="hideAndSeekDisabled(); lockBodyScroll={overflow:'scroll'}"--%>
+<body ng-controller="ctrl" ng-style="lockBodyScroll">
+    <div id="hide" class="animated fadeIn" ng-show="hide" style="display:table; position:absolute; margin:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index: 2147483647;">
+        <div style="display:table-row">
+            <div style="display:table-cell; vertical-align:middle;">
+                <style>
+                    #signInModal:hover{
+                        text-decoration: none;
+                    }
+                    #hikoco-signin{
+                        /*background: url("../../resources/imgs/signin-bg.gif")  no-repeat center center;*/
+                    }
+                </style>
+                <div id="hikoco-signin" class="animated fadeInUp text-right" style="margin:0 auto; width:500px; height:500px; padding-right:15px; background: #fff;">
+                    <a id="signInModal" href="#" ng-click="hideAndSeekDisabled(); lockBodyScroll={overflow:'scroll'}"><span style="font-size:1.5em; color:#222;">&times;</span></a>
+                    <div class="text-center" style="padding:20px;">
+                        <i class="fas fa-coffee" style="vertical-align: baseline; font-size:1.7em;"></i>  <!-- vertical-align: baseline; // Useful CSS Style -->
+                        <h1 style="letter-spacing: -2px; display:inline !important;">&nbsp;&nbsp;Cafe HIKOCO</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="show">
         <!-- navbar -->
         <%@ include file="layout/hikoco_navbar.jsp" %>
@@ -621,14 +652,36 @@ D                -o-user-select: none;
 
         <%@include file="layout/hikoco_footer.jsp" %>
 
-        <script>;
-            var block = {
-                reset: true,
-                viewOffset: { top: 64 }
-            }
-            var container = document.getElementById('hikoco-sec4');
-            sr.reveal('.hikoco-sec4-intro', { container : container }, block);  // , block
-        </script>
+
     </div>
 </body>
+
+<script>;
+    var block = {
+        reset: true,
+        viewOffset: { top: 64 }
+    }
+    var container = document.getElementById('hikoco-sec4');
+    sr.reveal('.hikoco-sec4-intro', { container : container }, block);  // , block
+
+
+    // When the user scrolls down 20px from the top of the document, change background properties
+    // CSS 설정을 바꾸기.... 이게 뭐하는건지..
+    document.addEventListener("DOMContentLoaded", function(event){
+        // document.getElementById('hikoco-nav').style.height = 66;
+        document.getElementById('hikoco-nav').style.background = 'rgba(0,0,0,0)';
+    });
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            // document.getElementById('hikoco-nav').style.height = 66;
+            document.getElementById('hikoco-nav').style.background = 'rgba(0,0,0,0.8)';
+        } else {
+            // document.getElementById('hikoco-nav').style.height = 66;
+            document.getElementById('hikoco-nav').style.background = 'rgba(0,0,0,0)';
+        }
+    }
+</script>
 </html>

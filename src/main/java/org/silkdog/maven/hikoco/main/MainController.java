@@ -1,12 +1,11 @@
 package org.silkdog.maven.hikoco.main;
 
-import com.mysql.cj.Session;
-import com.sun.org.apache.regexp.internal.RE;
 import org.silkdog.maven.hikoco.category.dao.CategoryDAO;
 import org.silkdog.maven.hikoco.category.dto.CategoryDTO;
 import org.silkdog.maven.hikoco.item.dao.ItemDAO;
 import org.silkdog.maven.hikoco.item.dto.ItemDTO;
 import org.silkdog.maven.hikoco.member.dao.MemberDAO;
+import org.silkdog.maven.hikoco.member.dto.MemberDTO;
 import org.silkdog.maven.hikoco.transaction.dao.TransactionDAO;
 import org.silkdog.maven.hikoco.transaction.dto.TransactionDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +17,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
+//@SuppressWarnings("SpringMVCViewInspection")
 @Controller
 public class MainController{
-//    @Autowired
-//    private MemberDAO memberDAO;
+    @Autowired
+    private MemberDAO memberDAO;
     @Autowired
     private TransactionDAO transactionDAO;
     @Autowired
@@ -29,13 +29,15 @@ public class MainController{
     @Autowired
     private ItemDAO itemDAO;
 
+    /* Main Page */
+    @RequestMapping(value="/", method=RequestMethod.GET)
+    public String main(){
+        return "main";
+    }
 
     @RequestMapping("/admin.do")
-    public String admin(Model model) throws Exception{
-
-        model.addAttribute("admin1","어드민1");
-
-        return "admin";
+    public String admin() throws Exception{
+        return "admin/admin";
     }
 
     @RequestMapping("/admin_member.do")
@@ -45,7 +47,7 @@ public class MainController{
 //        req.setAttribute("mlist", mlist);
 //        req.setAttribute("mdto", mdto);
 //        model.addAttribute("adminMember","adminMember");
-        return "admin_member";
+        return "admin/admin_member";
     }
 
     @RequestMapping("/admin_tx.do")
@@ -53,31 +55,30 @@ public class MainController{
 //        TransactionDTO tdto = transactionDAO.selectOne();
 //        req.setAttribute("tdto", tdto);
 //        model.addAttribute("adminTx","adminTx");
-        return "admin_tx";
+        return "admin/admin_tx";
     }
 
     @RequestMapping(value="/admin_market.do", method=RequestMethod.GET)
-    public String adminMarket(Model model, HttpServletRequest req) throws Exception{
+    public String adminMarket() throws Exception{
 //        int count = categoryDAO.count();
 //        List<CategoryDTO> clist = categoryDAO.list();
 //        req.setAttribute("count", count);
 //        req.setAttribute("clist", clist);
-//        model.addAttribute("adminMarket","adminMarket");
-        return "admin_market";
+        return "admin/admin_market";
     }
 
     @RequestMapping(value="/admin_market.do", method=RequestMethod.POST)
-    public String adminMarketSubmit(Model model) throws Exception{
-        return "admin_market";
+    public String adminMarketSubmit() throws Exception{
+        return "admin/admin_market";
     }
 
     @RequestMapping(value="/login.do", method=RequestMethod.GET)
-    public String login(Model model, HttpServletRequest req){
+    public String login(){
         return "login";
     }
 
     @RequestMapping(value="/signup.do", method=RequestMethod.GET)
-    public String signup(Model model){
+    public String signup(){
         return "signup";
     }
 
@@ -104,15 +105,12 @@ public class MainController{
     }
 
     // 같은 내용을 합칠 수도 있음. p.286 참고
-    @RequestMapping(value="/main.do", method=RequestMethod.GET)
-    public String main(Model model){
-        return "main";
-    }
+
 
     @RequestMapping(value="/item.do", method=RequestMethod.GET)
     public String item(Model model, HttpServletRequest req){
-        int count = categoryDAO.count();
-        List<CategoryDTO> clist = categoryDAO.list();
+        int count = categoryDAO.count(1);
+        List<CategoryDTO> clist = categoryDAO.listFirstIndent();
         checkItemList(req);
         req.setAttribute("count", count);
         req.setAttribute("clist", clist);
@@ -121,7 +119,7 @@ public class MainController{
     }
 //
     @RequestMapping(value="/item_detail.do", method = RequestMethod.GET)
-    public String itemDetail(Model model, HttpServletRequest req){
+    public String itemDetail(){
         return "item_detail";
     }
 

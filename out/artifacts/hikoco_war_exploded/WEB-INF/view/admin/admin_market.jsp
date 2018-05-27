@@ -139,7 +139,7 @@
 </head>
 <body>
 <div class="container" style="border:1px solid #ddd; margin-top:20px; padding:15px 15px 0px 0px; height:1000px;">
-    <%@ include file="./layout/hikoco_admin_left.jsp" %>
+    <%@ include file="../layout/hikoco_admin_left.jsp" %>
     <div class="pubg-right col-md-10 text-center" style="float:left; overflow-x:hidden; border:1px solid #ddd;">
         <span style="font-size:44px;"><strong>MarketList</strong></span>
         <p>판매 중인 품목을 관리합니다.</p>

@@ -84,7 +84,6 @@
         .list-group > a{
             font-size:12px;
         }
-
         .category-td-parent-item{
             padding:0px !important;
             width:144px;
@@ -128,7 +127,6 @@
             height:1000px;
             overflow-y: scroll;
         }
-
         #myBtn {
             display: none; /* Hidden by default */
             position: fixed; /* Fixed/sticky position */
@@ -197,13 +195,13 @@
                                     <div class="category-td-parent" style="display:block">
                                         <c:forEach var="j" begin="1" end="5" step="1">
                                             <% if(it.hasNext()){ e = it.next(); %>
-                                            <td class="category-td-parent-item"><a href="#" class="list-group-item list-group-item-action"><%=e.getValue()%> (###)</a></td>
+                                            <td class="category-td-parent-item"><a href="#" class="list-group-item list-group-item-action" style="background-color: #eee;"><%=e.getValue()%> (###)</a></td>
                                             <% }else{ %>
                                             <td class="category-td-parent-item"><a href="#" class="list-group-item list-group-item-action">&nbsp;</a></td>
                                             <% } %>
                                         </c:forEach>
                                         <% if(it.hasNext()){ e = it.next(); %>
-                                        <td class="category-td-parent-item last-row"><a href="#" class="list-group-item list-group-item-action"><%=e.getValue()%> (###)</a></td>
+                                        <td class="category-td-parent-item last-row"><a href="#" class="list-group-item list-group-item-action" style="background-color: #eee;"><%=e.getValue()%> (###)</a></td>
                                         <% }else{ %>
                                         <td class="category-td-parent-item last-row"><a href="#" class="list-group-item list-group-item-action">&nbsp;</a></td>
                                         <% } %>
@@ -215,13 +213,13 @@
                                     <div class="category-td-child" style="display:block">
                                         <c:forEach var="j" begin="1" end="5" step="1">
                                             <% if(it.hasNext()){ e = it.next(); %>
-                                            <td class="category-td-child-item"><a href="#" class="list-group-item list-group-item-action"><%=e.getValue()%> (###)</a></td>
+                                            <td class="category-td-child-item"><a href="#" class="list-group-item list-group-item-action" style="background-color: #eee;"><%=e.getValue()%> (###)</a></td>
                                             <% }else{ %>
                                             <td class="category-td-child-item"><a href="#" class="list-group-item list-group-item-action">&nbsp;</a></td>
                                             <% } %>
                                         </c:forEach>
                                         <% if(it.hasNext()){ e = it.next(); %>
-                                        <td class="category-td-child-item last-row"><a href="#" class="list-group-item list-group-item-action"><%=e.getValue()%> (###)</a></td>
+                                        <td class="category-td-child-item last-row"><a href="#" class="list-group-item list-group-item-action" style="background-color: #eee;"><%=e.getValue()%> (###)</a></td>
                                         <% }else{ %>
                                         <td class="category-td-child-item last-row"><a href="#" class="list-group-item list-group-item-action">&nbsp;</a></td>
                                         <% } %>

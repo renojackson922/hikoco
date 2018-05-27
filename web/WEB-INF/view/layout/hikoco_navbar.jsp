@@ -1,6 +1,16 @@
     <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/main.do">Cafe HIKOCO</a>
+        <style>
+        #hikoco-nav{
+            padding: 8px 36px 8px 36px;
+            height: 56px;
+        }
+        nav{
+            /* Highest z-index value */
+            z-index: 2147483646 !important;
+        }
+        </style>
+    <nav id="hikoco-nav" class="navbar navbar-expand-lg navbar-dark" style="position:fixed; width:100%;">  <!--navbar-dark-->
+    <a class="navbar-brand" href="/"><i class="fas fa-coffee"></i>&nbsp;&nbsp;Cafe HIKOCO</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,7 +18,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
     <li class="nav-item active">
-    <a class="nav-link" href="/main.do">Home <span class="sr-only">(current)</span></a>
+    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item">
     <a class="nav-link" href="/item.do"><i class="fas fa-gift"></i>&nbsp;Item</a>
@@ -31,7 +41,7 @@
         <!-- Another nav -->
         <ul class="navbar-nav mr-2">
         <li class="nav-item">
-        <a class="nav-link" href="#">Sign in</a>
+        <a class="nav-link" href="#" ng-click="lockBodyScroll={overflow:'hidden'}; hideAndSeek();">Sign in</a>
         </li>
         <li class="nav-item">
         <a class="nav-link" href="#">My Cart</a>
@@ -43,3 +53,5 @@
     </form>
     </div>
     </nav>
+
+

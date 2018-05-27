@@ -14,15 +14,24 @@
             if (cdto1.getHic_id() == Integer.parseInt(cdto2.getHic_parent()) && cdto1.getHic_indent() == cdto2.getHic_indent()-1){
                 Collections.swap(clist,j, i+1);
             }
+
         }
      }
-     /* 서순 */
+
+//     /* 서순 */
 //    for(int i = 0; i < clist.size(); i++){
 //        CategoryDTO cdto1 = clist.get(i);
 //        for(int j = 1; j < clist.size(); j++) {
 //            CategoryDTO cdto2 = clist.get(j);
-//            if (!cdto1.getHic_parent().equals("-1") && !cdto2.getHic_parent().equals("-1") && Integer.parseInt(cdto1.getHic_parent()) == Integer.parseInt(cdto2.getHic_parent()) && cdto1.getHic_indent() == cdto2.getHic_indent() && cdto1.getHic_id() > cdto2.getHic_id()){
-//                Collections.swap(clist,j, i+1);
+//            if (!cdto1.getHic_parent().equals("-1") &&
+//                    !cdto2.getHic_parent().equals("-1") &&
+//                    (Integer.parseInt(cdto1.getHic_parent()) == Integer.parseInt(cdto2.getHic_parent())) &&
+//                    (cdto1.getHic_indent() == cdto2.getHic_indent()) &&
+//                    (cdto1.getHic_order() == cdto2.getHic_order()) &&
+//                    cdto1.getHic_id() < cdto2.getHic_id()){
+//                Collections.swap(clist,i,j);
+//            }else{
+//                continue;
 //            }
 //        }
 //    }

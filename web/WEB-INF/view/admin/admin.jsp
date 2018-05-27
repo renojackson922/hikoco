@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.util.*,member.dao.*,member.dto.*" %>
+<%@ page import="java.util.*" %>
 
 <%
 //    MemberDTO mlist = (MemberDTO)request.getAttribute("mlist");
@@ -52,7 +52,7 @@
 </head>
 <body>
 <div class="container" style="border:1px solid #ddd; margin-top:20px; padding:15px 15px 0px 0px; height:700px;">
-    <%@ include file="./layout/hikoco_admin_left.jsp" %>
+    <%@ include file="../layout/hikoco_admin_left.jsp" %>
     <div class="pubg-right col-md-10 text-center" style="float:left; overflow-x:hidden; border:1px solid #ddd;">
         <span style="font-size:48px;"><strong>MAIN MENU</strong></span>
         <p>ASS</p>
