@@ -54,7 +54,7 @@
 
     <!-- Beans for @Autowired -->
     <!--<bean id="MemberDAO" class="org.silkdog.maven.hikoco.member.dao.MemberDAOMybatis">-->
-        <!--<constructor-arg ref="dataSource"/>-->
+        <!--<constructor-arg ref="sqlSessionTemplate"/>-->
     <!--</bean>-->
     <bean id="TransactionDAO" class="org.silkdog.maven.hikoco.transaction.dao.TransactionDAOImpl">
         <constructor-arg ref="dataSource"/>

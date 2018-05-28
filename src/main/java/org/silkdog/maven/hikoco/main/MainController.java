@@ -20,8 +20,10 @@ import java.util.List;
 //@SuppressWarnings("SpringMVCViewInspection")
 @Controller
 public class MainController{
-    @Autowired
-    private MemberDAO memberDAO;
+//    @Autowired
+//    private MemberDAO memberDAO;
+
+
     @Autowired
     private TransactionDAO transactionDAO;
     @Autowired

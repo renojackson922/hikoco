@@ -16,8 +16,11 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("/auth/login")
 public class LoginController {
-@Autowired
-    private MemberDAO memberDAO;
+//@Autowired
+//    private MemberDAO memberDAO;
+
+
+
 //    @RequestMapping(method=RequestMethod.POST)
 //    public String login(@Valid LoginCommand loginCommand, Errors errors, HttpSession session){
 //        if(errors.hasErrors()){
@@ -35,10 +38,10 @@ public class LoginController {
 //        }
 //    }
 
-    @RequestMapping(method=RequestMethod.POST)
-    public String login(@RequestParam("hic_email") String id, @RequestParam("hic_pw") String pw){
-        memberDAO.login(id, pw);
-        return "redirect:/";
-    }
+//    @RequestMapping(method=RequestMethod.POST)
+//    public String login(@RequestParam("hic_email") String id, @RequestParam("hic_pw") String pw){
+//        memberDAO.login(id, pw);
+//        return "redirect:/";
+//    }
 
 }
