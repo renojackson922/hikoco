@@ -100,7 +100,10 @@ public class MainController{
 //    }
 
     @RequestMapping(value="/signup.do", method = RequestMethod.POST)
-    public String signup_PRO(){
+    public String signup_PRO(HttpServletRequest req){
+        req.getParameter("hic_email");
+        req.getParameter("hic_pw");
+
         return "main";
     }
 

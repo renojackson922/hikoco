@@ -23,6 +23,19 @@ public class MemberDAOMybatis implements MemberDAO {
     }
 
     @Override
+    public int login(String id, String pw){
+        HashMap<String, String> hashMap = new HashMap<String, String>;
+        hashMap.put(id, pw);
+
+        int result = sqlSession.selectOne("org.silkdog.maven.hikoco.member.dao.MemberDAO.select", hashMap);
+        if(result == 0){
+            return 0;
+        }else{
+            return 1;
+        }
+    }
+
+    @Override
     public int insert(MemberDTO mdto){
         java.util.Date date = new java.util.Date();
         java.sql.Timestamp timestamp = new java.sql.Timestamp(date.getTime());
