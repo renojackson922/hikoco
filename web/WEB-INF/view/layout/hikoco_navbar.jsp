@@ -1,4 +1,8 @@
-    <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+    <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
+        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+        <%
+            System.out.println(session.getAttribute("userid"));
+        %>
         <style>
         #hikoco-nav{
             padding: 8px 36px 8px 36px;
@@ -40,12 +44,27 @@
     </ul>
         <!-- Another nav -->
         <ul class="navbar-nav mr-2">
-        <li class="nav-item">
-        <a class="nav-link" href="#" ng-click="lockBodyScroll={overflow:'hidden'}; hideAndSeek();">Sign in</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#">My Cart</a>
-        </li>
+        <c:choose>
+            <c:when test="${sessionScope.userid eq null}">
+            <li class="nav-item">
+            <a class="nav-link" href="#" ng-click="lockBodyScroll={overflow:'hidden'}; hideAndSeek();">Sign in</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">My Cart</a>
+            </li>
+            </c:when>
+            <c:otherwise>
+                <li class="nav-item">
+                <a class="nav-link" href="#" ng-click="lockBodyScroll={overflow:'hidden'}; hideAndSeek();">${sessionScope.nickname} 님, 환영합니다.</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link">Logout</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">My Cart</a>
+                </li>
+            </c:otherwise>
+        </c:choose>
         </ul>
     <form class="form-inline my-2 my-lg-0">
     <input class="form-control mr-sm-2" type="search" placeholder="상품명 검색" aria-label="Search">
@@ -55,3 +74,31 @@
     </nav>
 
 
+
+        <%--<!-- Another nav -->--%>
+        <%--<ul class="navbar-nav mr-2">--%>
+        <%--<c:choose>--%>
+            <%--<c:when test="${sessionScope.id ne null}">--%>
+                <%--<li class="nav-item">--%>
+                <%--<a class="nav-link" href="/envelope.do"><i class="fas fa-envelope"></i></a>--%>
+                <%--</li>--%>
+                <%--<li class="nav-item">--%>
+                <%--<a class="nav-link" href="/logout.do">Log Out</a>--%>
+                <%--</li>--%>
+                <%--<li class="nav-item">--%>
+                <%--<a class="nav-link" href="#">My Page</a>--%>
+                <%--</li>--%>
+            <%--</c:when>--%>
+            <%--<c:otherwise>--%>
+                <%--<li class="nav-item">--%>
+                <%--<a class="nav-link" href="/signup.do">Sign In</a>--%>
+                <%--</li>--%>
+                <%--<li class="nav-item">--%>
+                <%--<a class="nav-link" href="/login.do">Log In</a>--%>
+                <%--</li>--%>
+            <%--</c:otherwise>--%>
+        <%--</c:choose>--%>
+        <%--<li class="nav-item">--%>
+        <%--<a class="nav-link" href="#">My Cart</a>--%>
+        <%--</li>--%>
+        <%--</ul>--%>

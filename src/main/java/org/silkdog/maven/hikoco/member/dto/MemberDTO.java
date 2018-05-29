@@ -1,6 +1,8 @@
 package org.silkdog.maven.hikoco.member.dto;
 
 import org.apache.ibatis.type.Alias;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import java.sql.Timestamp;
 
@@ -8,7 +10,10 @@ import java.sql.Timestamp;
 @Alias("MemberDTO")
 public class MemberDTO {
     private int mem_id;
+    @NotEmpty
+    @Email
     private String mem_userid;
+    @NotEmpty
     private String mem_password;
     private String mem_realname;
     private String mem_nickname;

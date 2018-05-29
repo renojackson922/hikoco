@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 //@SuppressWarnings("SpringMVCViewInspection")
@@ -191,4 +192,16 @@ public class MainController{
         req.setAttribute("ilist", ilist);
     }
     /* ================ */
+
+
+    @RequestMapping(value="/logout.do", method=RequestMethod.POST)
+    public String logout(HttpSession session){
+        if(session.getAttribute("userid") != null){
+            session.removeAttribute("userid");
+            if(session.getAttribute("nickname")!= null) session.removeAttribute("nickname");
+        }
+        session.invalidate();
+
+        return "/";
+    }
 }

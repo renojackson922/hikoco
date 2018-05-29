@@ -238,11 +238,11 @@
                         <form id="form1" action="/auth/login.do" method="POST">
                             <div class="form-group">
                                 <label for="hic_email">이메일</label>
-                                <input type="email" class="form-control" id="hic_email" name="hic_email">
+                                <input type="email" class="form-control" id="hic_email" name="hic_email" required>
                             </div>
                             <div class="form-group">
                                 <label for="hic_pw">비밀번호</label>
-                                <input type="password" class="form-control" id="hic_pw" name="hic_pw">
+                                <input type="password" class="form-control" id="hic_pw" name="hic_pw" required>
                             </div>
                             <div class="text-center" style="padding-top:10px;">
                                 <button type="submit" class="btn btn-info">로그인하기</button>

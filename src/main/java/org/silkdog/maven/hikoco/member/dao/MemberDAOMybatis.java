@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
+import java.util.List;
 
 @Repository
 public class MemberDAOMybatis implements MemberDAO {
@@ -28,24 +29,20 @@ public class MemberDAOMybatis implements MemberDAO {
     }
 
     @Override
-    public int login(String id, String pw){
+    public MemberDTO login(String id, String pw){
         HashMap<String, Object> hashMap = new HashMap<String, Object>();
         hashMap.put("mem_userid", id);
         hashMap.put("mem_password", pw);
 
-        MemberDTO mdto = sqlSessionTemplate.selectOne("org.silkdog.maven.hikoco.member.dao.MemberDAO.login", hashMap);
-
-        if(mdto == null){
-            return 0;
-        }else{
-            return 1;
+        MemberDTO mdto;
+        try{
+             mdto = sqlSessionTemplate.selectOne("org.silkdog.maven.hikoco.member.dao.MemberDAO.login", hashMap);
+             return mdto;
+        }catch(Exception e){
+            e.printStackTrace();
+            return null;
         }
 
-//        if(result == 0){
-//            return 0;
-//        }else{
-//            return 1;
-//        }
     }
 
     @Override

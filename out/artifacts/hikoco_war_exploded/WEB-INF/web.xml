@@ -7,6 +7,11 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>/WEB-INF/applicationContext.xml</param-value>
     </context-param>
+    <!--<context-param>-->
+        <!--<param-name>contextConfigLocationSecurity</param-name>-->
+        <!--<param-value>/WEB-INF/security-context.xml</param-value>-->
+    <!--</context-param>-->
+
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
@@ -29,13 +34,26 @@
             <param-value>UTF-8</param-value>
         </init-param>
     </filter>
+
     <filter-mapping>
         <filter-name>encodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <!--Security Filter-->
+    <!--<filter>-->
+        <!--<filter-name>springSecurityFilterChain</filter-name>-->
+        <!--<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>springSecurityFilterChain</filter-name>-->
+        <!--<url-pattern>/*</url-pattern>-->
+    <!--</filter-mapping>-->
+
     <welcome-file-list>
         <welcome-file>/WEB-INF/view/main.jsp</welcome-file>
     </welcome-file-list>
+
     <!--<error-page>-->
         <!--<error-code>404</error-code>-->
         <!--<location>/WEB-INF/view/error/error404.jsp</location>-->

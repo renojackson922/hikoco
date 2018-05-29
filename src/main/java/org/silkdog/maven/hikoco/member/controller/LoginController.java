@@ -1,6 +1,7 @@
 package org.silkdog.maven.hikoco.member.controller;
 
 import org.silkdog.maven.hikoco.member.dao.MemberDAO;
+import org.silkdog.maven.hikoco.member.dto.MemberDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.naming.AuthenticationException;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.util.HashMap;
 
 @Controller
 @RequestMapping("/auth/login")
@@ -39,15 +41,15 @@ public class LoginController {
     @RequestMapping(method=RequestMethod.POST)
     public String login(@RequestParam("hic_email") String id, @RequestParam("hic_pw") String pw, HttpSession session){
         System.out.println(id + " " + pw);
-        int result = memberDAO.login(id, pw);
-        if(result == 0){
-            System.out.println("nope");
-            return "redirect:/";
-
+        MemberDTO mdto = memberDAO.login(id, pw);
+        if(mdto == null){
+            System.out.println("No such userId exists.");
+            return("redirect:/");
         }else{
-            System.out.println("WE GOT IT!!!");
-            session.setAttribute("result", result);
-            return "redirect:/";
+            session.setAttribute("userid", mdto.getMem_userid());
+            session.setAttribute("nickname", mdto.getMem_nickname());
+            System.out.println("Logged in successfully.");
+            return("redirect:/");
         }
     }
 
