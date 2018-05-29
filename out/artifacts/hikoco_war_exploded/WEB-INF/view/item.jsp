@@ -172,9 +172,9 @@
 <body ng-controller="ctrl">
     <%@ include file="layout/hikoco_navbar.jsp"%>
     <div id="hide">
-        <!-- Angular.js // Shows Nuffin -->
+        <!-- Angular.js // Shows Nothing -->
     </div>
-    <div id="show">
+    <div id="show" style="padding-top:60px;">
         <div class="text-center" style="display:inline-block; padding:20px; margin:0 auto;">
             <div class="container text-center" style="float:left; overflow-x:hidden; border:1px solid #ddd; padding:20px;">
                 <!-- 카테고리 -->
@@ -489,4 +489,10 @@
     </div>
     <%@ include file="layout/hikoco_footer.jsp"%>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function(event){
+        // document.getElementById('hikoco-nav').style.height = 66;
+        document.getElementById('hikoco-nav').style.background = 'rgba(0,0,0,0.8)';
+    });
+</script>
 </html>

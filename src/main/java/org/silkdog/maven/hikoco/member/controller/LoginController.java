@@ -16,10 +16,8 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("/auth/login")
 public class LoginController {
-//@Autowired
-//    private MemberDAO memberDAO;
-
-
+    @Autowired
+    private MemberDAO memberDAO;
 
 //    @RequestMapping(method=RequestMethod.POST)
 //    public String login(@Valid LoginCommand loginCommand, Errors errors, HttpSession session){
@@ -38,10 +36,19 @@ public class LoginController {
 //        }
 //    }
 
-//    @RequestMapping(method=RequestMethod.POST)
-//    public String login(@RequestParam("hic_email") String id, @RequestParam("hic_pw") String pw){
-//        memberDAO.login(id, pw);
-//        return "redirect:/";
-//    }
+    @RequestMapping(method=RequestMethod.POST)
+    public String login(@RequestParam("hic_email") String id, @RequestParam("hic_pw") String pw, HttpSession session){
+        System.out.println(id + " " + pw);
+        int result = memberDAO.login(id, pw);
+        if(result == 0){
+            System.out.println("nope");
+            return "redirect:/";
+
+        }else{
+            System.out.println("WE GOT IT!!!");
+            session.setAttribute("result", result);
+            return "redirect:/";
+        }
+    }
 
 }

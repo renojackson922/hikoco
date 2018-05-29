@@ -235,7 +235,7 @@
                         <h1 style="letter-spacing: -2px; display:inline !important;">&nbsp;&nbsp;Cafe HIKOCO</h1>
                     </div>
                     <div class="hikoco-signin-form" style="display:block; padding:20px 50px 20px 50px;">
-                        <form id="form1" action="/login.do" method="POST">
+                        <form id="form1" action="/auth/login.do" method="POST">
                             <div class="form-group">
                                 <label for="hic_email">이메일</label>
                                 <input type="email" class="form-control" id="hic_email" name="hic_email">
@@ -364,7 +364,7 @@
             .unselectable {
                 -moz-user-select: -moz-none;
                 -khtml-user-select: none;
-D                -o-user-select: none;
+                -o-user-select: none;
                 user-select: none;
             }
             .list-ul{
@@ -710,9 +710,14 @@ D                -o-user-select: none;
     function scrollFunction() {
         if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
             // document.getElementById('hikoco-nav').style.height = 66;
+
+            // document.getElementById('hikoco-nav').classList.add('animated');
+            // document.getElementById('hikoco-nav').classList.add('fadeIn');
             document.getElementById('hikoco-nav').style.background = 'rgba(0,0,0,0.8)';
         } else {
             // document.getElementById('hikoco-nav').style.height = 66;
+            // document.getElementById('hikoco-nav').classList.add('animated');
+            // document.getElementById('hikoco-nav').classList.add('fadeOut');
             document.getElementById('hikoco-nav').style.background = 'rgba(0,0,0,0)';
         }
     }

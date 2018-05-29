@@ -34,11 +34,22 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:/mybatis-config.xml"/>
+        <property name="typeAliases">
+            <list>
+                <value>org.silkdog.maven.hikoco.member.dto.MemberDTO</value>
+            </list>
+        </property>
         <!--<property name="mapperLocations" value="classpath*:/mybatis/*.xml"/>-->
             <!--<list>-->
                 <!--<value>classpath*:/mybatis/*.xml</value>-->
             <!--</list>-->
     </bean>
+
+    <!-- TransactionManager for MyBatis -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
 
     <!-- sqlSessionTemplate -->
     <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
@@ -51,11 +62,14 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-
-    <!-- Beans for @Autowired -->
-    <!--<bean id="MemberDAO" class="org.silkdog.maven.hikoco.member.dao.MemberDAOMybatis">-->
-        <!--<constructor-arg ref="sqlSessionTemplate"/>-->
-    <!--</bean>-->
+    <!--
+        -aikocandy-
+        Beans for @Autowired.
+        Caution, MyBatis requires different type to jdbcTemplate
+    -->
+    <bean id="memberDAO" class="org.silkdog.maven.hikoco.member.dao.MemberDAOMybatis">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+    </bean>
     <bean id="TransactionDAO" class="org.silkdog.maven.hikoco.transaction.dao.TransactionDAOImpl">
         <constructor-arg ref="dataSource"/>
     </bean>

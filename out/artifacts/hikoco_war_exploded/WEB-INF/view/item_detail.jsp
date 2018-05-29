@@ -86,8 +86,8 @@
 
 </div>
 <button onclick="topFunction()" id="myBtn" class="animated fadeIn" title="Go to top">Top</button>
-<div id="show">
-    <%@include file="layout/hikoco_navbar.jsp"%>
+<%@include file="layout/hikoco_navbar.jsp"%>
+<div id="show" style="padding-top:60px;">
     <!-- 분류 -->
     <div class="container" style="margin-top:17px; margin-bottom:17px; padding:17px; border:1px solid #ddd;">
         <span style="font-size:12px"><i class="fas fa-home"></i>&nbsp;&nbsp;홈 > 그래픽카드 > 엔비디아 > PALIT</span>
@@ -400,5 +400,9 @@
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
+    document.addEventListener("DOMContentLoaded", function(event){
+        // document.getElementById('hikoco-nav').style.height = 66;
+        document.getElementById('hikoco-nav').style.background = 'rgba(0,0,0,0.8)';
+    });
 </script>
 </html>

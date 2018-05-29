@@ -1,6 +1,7 @@
 package org.silkdog.maven.hikoco.member.dao;
 
 import org.apache.ibatis.session.SqlSession;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.silkdog.maven.hikoco.member.dto.MemberDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -9,31 +10,43 @@ import java.util.HashMap;
 
 @Repository
 public class MemberDAOMybatis implements MemberDAO {
-    @Autowired
-    private SqlSession sqlSession;
+    /*
+    - aikocandy -
+     Since sqlSessionTemplate is inheriting sqlSession Interface,
+     it is okay to use sqlSession type instead.
+    */
+    private SqlSessionTemplate sqlSessionTemplate;
 
-    public void setSqlSession(SqlSession sqlSession) {
-        this.sqlSession = sqlSession;
+    public void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {
+        this.sqlSessionTemplate = sqlSessionTemplate;
     }
 
     @Override
     public MemberDTO select(){
-        MemberDTO mdto = (MemberDTO)sqlSession.selectOne("org.silkdog.maven.hikoco.member.dao.MemberDAO.select");
+        MemberDTO mdto = (MemberDTO)sqlSessionTemplate.selectOne("org.silkdog.maven.hikoco.member.dao.MemberDAO.select");
         return mdto;
     }
 
-//    @Override
-//    public int login(String id, String pw){
-//        HashMap<String, String> hashMap = new HashMap<String, String>();
-//        hashMap.put(id, pw);
-//
-//        int result = sqlSession.selectOne("org.silkdog.maven.hikoco.member.dao.MemberDAO.select", hashMap);
+    @Override
+    public int login(String id, String pw){
+        HashMap<String, Object> hashMap = new HashMap<String, Object>();
+        hashMap.put("mem_userid", id);
+        hashMap.put("mem_password", pw);
+
+        MemberDTO mdto = sqlSessionTemplate.selectOne("org.silkdog.maven.hikoco.member.dao.MemberDAO.login", hashMap);
+
+        if(mdto == null){
+            return 0;
+        }else{
+            return 1;
+        }
+
 //        if(result == 0){
 //            return 0;
 //        }else{
 //            return 1;
 //        }
-//    }
+    }
 
     @Override
     public int insert(MemberDTO mdto){
@@ -58,7 +71,7 @@ public class MemberDAOMybatis implements MemberDAO {
         mdto.setMem_regdate(timestamp);
         mdto.setMem_lastlogin_datetime(timestamp);
         mdto.setMem_lastlogin_ip("127.0.0.1");
-        int result = sqlSession.insert("org.silkdog.maven.hikoco.member.dao.MemberDAO.insert", mdto);
+        int result = sqlSessionTemplate.insert("org.silkdog.maven.hikoco.member.dao.MemberDAO.insert", mdto);
 
         return result;
     }

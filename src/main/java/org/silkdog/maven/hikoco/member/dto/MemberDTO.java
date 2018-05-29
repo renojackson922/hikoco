@@ -4,6 +4,7 @@ import org.apache.ibatis.type.Alias;
 
 import java.sql.Timestamp;
 
+/* applicationContext -> sqlSession -> typeAliases */
 @Alias("MemberDTO")
 public class MemberDTO {
     private int mem_id;
