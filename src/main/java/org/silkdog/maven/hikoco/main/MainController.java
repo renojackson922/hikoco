@@ -194,22 +194,24 @@ public class MainController{
     }
     /* ================ */
 
+    @RequestMapping(value="/mycart.do", method=RequestMethod.GET)
+    public String mycart(){
 
-    @RequestMapping(value="/logout.do", method=RequestMethod.POST)
+        return "mycart";
+    }
+
+    @RequestMapping(value="/hbl.do", method=RequestMethod.GET)
+    public String hbl(){
+        return "hbl";
+    }
+
+    @RequestMapping(value="logout.do", method=RequestMethod.GET)
     public String logout(HttpSession session){
         if(session.getAttribute("userid") != null){
             session.removeAttribute("userid");
             if(session.getAttribute("nickname")!= null) session.removeAttribute("nickname");
         }
         session.invalidate();
-
-        return "/";
-    }
-
-    @RequestMapping(value="/mycart.do", method=RequestMethod.GET)
-    public String mycart(){
-
-
-        return "mycart";
+        return "redirect:/";
     }
 }

@@ -45,7 +45,7 @@
         }
         </style>
         <div class="hic-signin-span text-center">
-        <span>아이디가 없으신가요? <a href="#">가입하기</a></span>
+        <span>아이디가 없으신가요? <a href="/signup.do">가입하기</a></span>
         <span>비밀번호를 잊어버리셨나요? <a href="#">비밀번호 찾기</a></span>
         </div>
         </form>
