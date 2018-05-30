@@ -155,7 +155,7 @@
             return item;
         })));
 
-        var app = angular.module('app', []);
+        var app = angular.module('app', ['timer']);
 
         // 다른 도메인의 소스 불러오기 필터
         app.filter('trustUrl', function ($sce) {
@@ -165,15 +165,27 @@
         });
 
         app.controller('ctrl', function ($scope, $http, $interval, $timeout) {
+            // $scope.currentYear = (new Date).getFullYear();
+            // $scope.startTime = (new Date($scope.currentYear, 0, 1)).getTime();
+            // $scope.endYear = $scope.currentYear+1;
+            // $scope.endTime = (new Date($scope.endYear, 0, 1)).getTime();
+            // console.log($scope.endTime)
+            // $scope.days, $scope.hours, $scope.minutes, $scope.millis;
+            $scope.hide = 0;
 
+            $scope.hideAndSeek = function(){
+                $scope.hide = 1;
+            }
+
+            $scope.hideAndSeekDisabled = function(){
+                $scope.hide = 0;
+            }
         });
     </script>
 </head>
 <body ng-controller="ctrl">
+    <%@ include file="layout/hikoco_login_popup.jsp"%>
     <%@ include file="layout/hikoco_navbar.jsp"%>
-    <div id="hide">
-        <!-- Angular.js // Shows Nothing -->
-    </div>
     <div id="show" style="padding-top:60px;">
         <div class="text-center" style="display:inline-block; padding:20px; margin:0 auto;">
             <div class="container text-center" style="float:left; overflow-x:hidden; border:1px solid #ddd; padding:20px;">
