@@ -1,5 +1,6 @@
 package org.silkdog.maven.hikoco.item.dao;
 
+import org.mybatis.spring.SqlSessionTemplate;
 import org.silkdog.maven.hikoco.item.dto.ItemDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -12,6 +13,12 @@ import java.sql.PreparedStatement;
 import java.util.List;
 
 public class ItemDAOImpl implements ItemDAO {
+    private SqlSessionTemplate sqlSessionTemplate;
+
+    public void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {
+        this.sqlSessionTemplate = sqlSessionTemplate;
+    }
+
     private JdbcTemplate jdbcTemplate;
 
     public ItemDAOImpl(DataSource dataSource){
@@ -56,6 +63,16 @@ public class ItemDAOImpl implements ItemDAO {
         }, keyHolder);
         Number idNum = keyHolder.getKey();
         return idNum.intValue();
+    }
+
+    @Override
+    public List<ItemDTO> search(){
+        List<ItemDTO> ilist = sqlSessionTemplate.selectList("org.silkdog.maven.hikoco.item.dao.ItemDAO.search");
+        ilist.addAll(sqlSessionTemplate.selectList("test"));
+        ilist.addAll(sqlSessionTemplate.selectList("test"));
+        ilist.addAll(sqlSessionTemplate.selectList("test"));
+
+        return ilist;
     }
 
 }

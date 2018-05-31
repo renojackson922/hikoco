@@ -99,7 +99,7 @@
             }
         </style>
     <form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" type="search" placeholder="상품명 검색" aria-label="Search">
+    <input class="form-control mr-sm-2" type="search" placeholder="상품명 검색" aria-label="Search" name="item_value">
     <button class="btn btn-outline-purple my-2 my-sm-0" type="submit">검색</button>
     </form>
     </div>

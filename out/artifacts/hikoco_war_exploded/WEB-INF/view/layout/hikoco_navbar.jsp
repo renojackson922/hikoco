@@ -95,11 +95,11 @@
             }
 
             .btn-outline-purple:not(:disabled):not(.disabled).active:focus,.btn-outline-purple:not(:disabled):not(.disabled):active:focus,.show>.btn-outline-purple.dropdown-toggle:focus {
-        box-shadow: 0 0 0 .2rem rgba(136,112,162,0.69);
+                box-shadow: 0 0 0 .2rem rgba(136,112,162,0.69);
             }
         </style>
     <form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" type="search" placeholder="상품명 검색" aria-label="Search">
+    <input class="form-control mr-sm-2" type="search" placeholder="상품명 검색" aria-label="Search" name="item_value">
     <button class="btn btn-outline-purple my-2 my-sm-0" type="submit">검색</button>
     </form>
     </div>

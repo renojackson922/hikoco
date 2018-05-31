@@ -7,4 +7,5 @@ import java.util.List;
 public interface ItemDAO {
     int insert(ItemDTO idto);
     List<ItemDTO> list();
+    List<ItemDTO> search();
 }
