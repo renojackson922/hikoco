@@ -1,8 +1,11 @@
 package org.silkdog.maven.hikoco.item.dto;
 
+import org.apache.ibatis.type.Alias;
+
 import java.sql.Timestamp;
 import java.util.Date;
 
+@Alias("ItemDTO")
 public class ItemDTO {
     private int item_id;
     private String item_title;

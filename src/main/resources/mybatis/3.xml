@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.silkdog.maven.hikoco.category.dao.CategoryDAO">
+	<select id="list" resultType="java.util.HashMap">
+		select * from hikoco_item_cat order by hic_order asc, hic_id asc
+	</select>
+
+
+    <select id="count" parameterType="int" resultType="int">
+		select count(hic_id) from hikoco_item_cat where hic_indent = #{0}
+	</select>
+</mapper>

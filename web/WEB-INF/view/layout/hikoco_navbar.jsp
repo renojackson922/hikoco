@@ -1,7 +1,7 @@
     <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
         <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
         <%
-            System.out.println(session.getAttribute("userid"));
+            System.out.println("현재 접속중인 세션ID: " + session.getAttribute("userid"));
         %>
         <style>
         #hikoco-nav{
@@ -55,7 +55,7 @@
             </c:when>
             <c:otherwise>
                 <li class="nav-item">
-                <a class="nav-link" href="#" ng-click="lockBodyScroll={overflow:'hidden'}; hideAndSeek();">${sessionScope.nickname} 님, 환영합니다.</a>
+                <a class="nav-link" href="#">${sessionScope.nickname} 님, 환영합니다.</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="<c:url value="/logout.do"/>">Logout</a>
@@ -98,8 +98,8 @@
                 box-shadow: 0 0 0 .2rem rgba(136,112,162,0.69);
             }
         </style>
-    <form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" type="search" placeholder="상품명 검색" aria-label="Search" name="item_value">
+    <form class="form-inline my-2 my-lg-0" action="/search.do" method="GET">
+    <input class="form-control mr-sm-2" type="search" placeholder="상품명 검색" aria-label="Search" name="search_string">
     <button class="btn btn-outline-purple my-2 my-sm-0" type="submit">검색</button>
     </form>
     </div>

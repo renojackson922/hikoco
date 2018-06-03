@@ -1,4 +1,8 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="org.silkdog.maven.hikoco.item.dto.ItemDTO" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%
+    ItemDTO idto = (ItemDTO)request.getAttribute("idto");
+%>
 <html ng-cloak ng-app="app">
 <head>
     <title>HIKOCO :: ITEM</title>
@@ -100,7 +104,7 @@
             <div class="css-table-row">
                 <!-- 제목, 가격 등... -->
                 <div class="css-table-cell">
-                    <img src="../../resources/imgs/palit.jpg" width="300px" height="300px" style="border:1px solid #ddd;">
+                    <img src="<%=idto.getItem_pic()%>" width="300px" height="300px" style="border:1px solid #ddd;">
                     <div class="" style="display: block;">
                         <button class="btn btn-sm btn-outline-secondary" style="width:100%; margin-top:5px;">자세히 보기</button>
                         <button class="btn btn-sm btn-outline-secondary" style="width:100%; margin-top:5px;">상품신고</button>
@@ -108,9 +112,9 @@
                 </div>
                 <!-- 상품의 정보 -->
                 <div class="css-table-cell" style="margin-left:20px;">
-                    <span class="item-detail-span item-title"><strong>[PALIT] GeForce GTX1060 Dual D5 6GB</strong></span>
-                    <span class="item-detail-span item-subtitle" style="color:#5d5d5d;">NVIDIA Corporation&nbsp;&nbsp;|&nbsp;&nbsp;STCOM Inc.</span>
-                    <span class="item-detail-span item-subtitle">지포스 GTX1060 / GDDR5 6GB / 1506MHz / 최대 1708MHz / 8000MHz / 192-bit / 히트파이프+팬 / PCI-Express x16(3.0)</span>
+                    <span class="item-detail-span item-title"><strong><%=idto.getItem_title()%></strong></span>
+                    <span class="item-detail-span item-subtitle" style="color:#5d5d5d;"><%=idto.getItem_manu()%>&nbsp;&nbsp;|&nbsp;&nbsp;<%=idto.getItem_vendor()%></span>
+                    <span class="item-detail-span item-subtitle"><%=idto.getItem_summary()%></span>
                     <div class="item-detail-span">
                         <span class="span-loginInfo" style="font-size:10px; padding:0px 5px 0px 5px; background: #2897d3; color:#fff; border-radius:0px; display: inline-block;">사은품</span>
                         <span class="item-optional">&nbsp;구매영수증 인증 시 메로나 아이스크림 증정 (05.01~05.31)</span>
@@ -126,7 +130,7 @@
                     <hr>
                     <div class="item-detail-span">
                         <span class="item-optional strong">제품번호:&nbsp;</span>
-                        <span class="item-optional">000001</span>
+                        <span class="item-optional"><%=idto.getItem_id()%></span>
                     </div>
                     <div class="item-detail-span">
                         <span class="item-optional strong">적립금:&nbsp;</span>
@@ -176,7 +180,7 @@
                     <h5>상품 상세설명</h5>
                 </div>
                 <div id="item-describe">
-                    <img class="img-center" src="../../resources/imgs/222.jpg">
+                    <img class="img-center" src="<%=idto.getItem_detail()%>">
                 </div>
                 <!--  상품정보제공고시 -->
                 <div class="__detail-title">

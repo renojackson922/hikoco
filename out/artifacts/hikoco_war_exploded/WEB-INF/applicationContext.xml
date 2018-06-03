@@ -46,12 +46,10 @@
         <property name="typeAliases">
             <list>
                 <value>org.silkdog.maven.hikoco.member.dto.MemberDTO</value>
+                <value>org.silkdog.maven.hikoco.item.dto.ItemDTO</value>
             </list>
         </property>
         <!--<property name="mapperLocations" value="classpath*:/mybatis/*.xml"/>-->
-            <!--<list>-->
-                <!--<value>classpath*:/mybatis/*.xml</value>-->
-            <!--</list>-->
     </bean>
 
     <!-- TransactionManager for MyBatis -->
@@ -79,14 +77,14 @@
     <bean id="memberDAO" class="org.silkdog.maven.hikoco.member.dao.MemberDAOMybatis">
         <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
     </bean>
-    <bean id="TransactionDAO" class="org.silkdog.maven.hikoco.transaction.dao.TransactionDAOImpl">
+    <bean id="transactionDAO" class="org.silkdog.maven.hikoco.transaction.dao.TransactionDAOImpl">
         <constructor-arg ref="dataSource"/>
     </bean>
-    <bean id="CategoryDAO" class="org.silkdog.maven.hikoco.category.dao.CategoryDAOImpl">
+    <bean id="categoryDAO" class="org.silkdog.maven.hikoco.category.dao.CategoryDAOImpl">
         <constructor-arg ref="dataSource"/>
     </bean>
-    <bean id="ItemDAO" class="org.silkdog.maven.hikoco.item.dao.ItemDAOImpl">
-        <constructor-arg ref="dataSource"/>
+    <bean id="itemDAO" class="org.silkdog.maven.hikoco.item.dao.ItemDAOImpl">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
     </bean>
 
     <!-- Set Annotaion-Config; Always be bottom of the xml file -->
