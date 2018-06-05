@@ -1,22 +1,23 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="org.silkdog.maven.hikoco.category.dto.CategoryDTO" %>
 <%@ page import="org.silkdog.maven.hikoco.category.dao.CategoryDAO" %>
 <%@ page import="java.util.*" %>
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%
-    List<CategoryDTO> clist = (List<CategoryDTO>)request.getAttribute("clist");
+    List<HashMap> clist = (List<HashMap>)request.getAttribute("clist");
 
 
     /* indent */
-    for(int i = 0; i < clist.size(); i++){
-        CategoryDTO cdto1 = clist.get(i);
-        for(int j = 1; j < clist.size(); j++) {
-            CategoryDTO cdto2 = clist.get(j);
-            if (cdto1.getHic_id() == Integer.parseInt(cdto2.getHic_parent()) && cdto1.getHic_indent() == cdto2.getHic_indent()-1){
-                Collections.swap(clist,j, i+1);
-            }
-
-        }
-     }
+//    for(int i = 0; i < clist.size(); i++){
+//        CategoryDTO cdto1 = clist.get(i);
+//        for(int j = 1; j < clist.size(); j++) {
+//            CategoryDTO cdto2 = clist.get(j);
+//            if (cdto1.getHic_id() == Integer.parseInt(cdto2.getHic_parent()) && cdto1.getHic_indent() == cdto2.getHic_indent()-1){
+//                Collections.swap(clist,j, i+1);
+//            }
+//
+//        }
+//     }
 
 //     /* 서순 */
 //    for(int i = 0; i < clist.size(); i++){
@@ -37,17 +38,17 @@
 //    }
 
 
-    for(CategoryDTO cdtoTest2 : clist){
-        if(cdtoTest2.getHic_indent() == 1) {
-            System.out.println(cdtoTest2.getHic_val());
-        }else if(cdtoTest2.getHic_indent() == 2){
-            System.out.println("ㄴ" + cdtoTest2.getHic_val());
-        }else if(cdtoTest2.getHic_indent() == 3){
-            System.out.println("  ㄴ" + cdtoTest2.getHic_val());
-        }else if(cdtoTest2.getHic_indent() == 4){
-            System.out.println("    ㄴ" + cdtoTest2.getHic_val());
-        }
-    }
+//    for(CategoryDTO cdtoTest2 : clist){
+//        if(cdtoTest2.getHic_indent() == 1) {
+//            System.out.println(cdtoTest2.getHic_val());
+//        }else if(cdtoTest2.getHic_indent() == 2){
+//            System.out.println("ㄴ" + cdtoTest2.getHic_val());
+//        }else if(cdtoTest2.getHic_indent() == 3){
+//            System.out.println("  ㄴ" + cdtoTest2.getHic_val());
+//        }else if(cdtoTest2.getHic_indent() == 4){
+//            System.out.println("    ㄴ" + cdtoTest2.getHic_val());
+//        }
+//    }
 
 %>
 <html ng-cloak ng-app="app">
@@ -147,6 +148,10 @@
 <body ng-controller="ctrl">
     <div class="container">
         <ul class="list-group">
+            <c:forEach var="i" items="${cnt}">
+
+
+            </c:forEach>
             <%
                 for(CategoryDTO cdto : clist){
                     if(cdto.getHic_indent() == 1) {
@@ -179,34 +184,34 @@
                 <%--<option value="<%=cdto.getHic_id()%>"><%=cdto.getHic_val()%></option>--%>
 
             </style>
-            <div class="form-group col-md-3">
-                <label for="cat_exists">기존 카테고리</label>
-                <select ng-model="catOption" class="form-control" id="cat_exists" name="cat_exists">
-                    <option value="" selected>-- 선택하세요 --</option>
-                    <%
-                        for(CategoryDTO cdto : clist){
-                            if(cdto.getHic_indent() == 1) {
-                    %>
-                    <option value="<%=cdto.getHic_id()%>"><%=cdto.getHic_val()%></option>
-                    <%
-                    }else if(cdto.getHic_indent() == 2){
-                    %>
-                    <option value="<%=cdto.getHic_id()%>">ㄴ<%=cdto.getHic_val()%></option>
-                    <%
-                    }else if(cdto.getHic_indent() == 3){
-                    %>
-                    <option value="<%=cdto.getHic_id()%>">&nbsp;&nbsp;&nbsp;ㄴ<%=cdto.getHic_val()%></option>
-                    <%
-                    }else if(cdto.getHic_indent() == 4){
-                    %>
-                    <option value="<%=cdto.getHic_id()%>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㄴ<%=cdto.getHic_val()%></option>
-                    <%
-                            }
-                        }
-                    %>
-            </select>
+            <%--<div class="form-group col-md-3">--%>
+                <%--<label for="cat_exists">기존 카테고리</label>--%>
+                <%--<select ng-model="catOption" class="form-control" id="cat_exists" name="cat_exists">--%>
+                    <%--<option value="" selected>-- 선택하세요 --</option>--%>
+                    <%--<%--%>
+                        <%--for(CategoryDTO cdto : clist){--%>
+                            <%--if(cdto.getHic_indent() == 1) {--%>
+                    <%--%>--%>
+                    <%--<option value="<%=cdto.getHic_id()%>"><%=cdto.getHic_val()%></option>--%>
+                    <%--<%--%>
+                    <%--}else if(cdto.getHic_indent() == 2){--%>
+                    <%--%>--%>
+                    <%--<option value="<%=cdto.getHic_id()%>">ㄴ<%=cdto.getHic_val()%></option>--%>
+                    <%--<%--%>
+                    <%--}else if(cdto.getHic_indent() == 3){--%>
+                    <%--%>--%>
+                    <%--<option value="<%=cdto.getHic_id()%>">&nbsp;&nbsp;&nbsp;ㄴ<%=cdto.getHic_val()%></option>--%>
+                    <%--<%--%>
+                    <%--}else if(cdto.getHic_indent() == 4){--%>
+                    <%--%>--%>
+                    <%--<option value="<%=cdto.getHic_id()%>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㄴ<%=cdto.getHic_val()%></option>--%>
+                    <%--<%--%>
+                            <%--}--%>
+                        <%--}--%>
+                    <%--%>--%>
+            <%--</select>--%>
 
-            </div>
+            <%--</div>--%>
             <div class="form-group col-md-3">
                 <label for="cat_name">카테고리 이름</label>
                 <input type="text" class="form-control" id="cat_name" name="cat_name" ng-model="catName" placeholder="신규 혹은 하위 카테고리 이름">

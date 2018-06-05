@@ -1,7 +1,9 @@
 <%@ page import="org.silkdog.maven.hikoco.item.dto.ItemDTO" %>
+<%@ page import="java.util.HashMap" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%
     ItemDTO idto = (ItemDTO)request.getAttribute("idto");
+
 %>
 <html ng-cloak ng-app="app">
 <head>
@@ -71,20 +73,21 @@
             });
         });
     </script>
+    <style>
+        #advertisement > a > span{
+            font-size:2.5em;
+            color:#5d5d5d;
+        }
+        #advertisement > a:hover{
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body ng-controller="ctrl">
-<style>
-    #advertisement > a > span{
-        font-size:2.5em;
-        color:#5d5d5d;
-    }
-    #advertisement > a:hover{
-        text-decoration: none;
-    }
-</style>
+
 <%--<div id="advertisement" style="position:fixed; right:0;">--%>
-    <%--<a href="#" ng-model="clicked"><span>&times;</span></a>--%>
-    <%--<img ng-hide="clicked" src="../../resources/imgs/palit.jpg">--%>
+<%--<a href="#" ng-model="clicked"><span>&times;</span></a>--%>
+<%--<img ng-hide="clicked" src="../../resources/imgs/palit.jpg">--%>
 <%--</div>--%>
 <div id="hide">
 

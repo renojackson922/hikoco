@@ -81,7 +81,8 @@
         <constructor-arg ref="dataSource"/>
     </bean>
     <bean id="categoryDAO" class="org.silkdog.maven.hikoco.category.dao.CategoryDAOImpl">
-        <constructor-arg ref="dataSource"/>
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+
     </bean>
     <bean id="itemDAO" class="org.silkdog.maven.hikoco.item.dao.ItemDAOImpl">
         <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>

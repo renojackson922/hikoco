@@ -1,3 +1,4 @@
+/*
 package org.silkdog.maven.hikoco.item.etc;
 
 import java.util.HashMap;
@@ -183,3 +184,4 @@ public class ItemListObject {
         }
     }
 }
+*/

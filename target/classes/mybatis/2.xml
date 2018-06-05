@@ -44,24 +44,24 @@
 	</insert>
 
 	<!-- 아이템 리스트 페이징 -->
-	<select id="take_list_content" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+	<select id="listByIndex" resultType="java.util.HashMap" parameterType="java.util.HashMap">
       SELECT *
       FROM (
-      (select * from HIKOCO_ITEM where ITEM_TITLE like CONCAT('%',#{keword0},'%'))
+      (select * from HIKOCO_ITEM where ITEM_TITLE like CONCAT('%',#{keyword0},'%'))
       UNION
-      (select * from HIKOCO_ITEM where ITEM_MANU like CONCAT('%',#{keword1},'%'))
+      (select * from HIKOCO_ITEM where ITEM_MANU like CONCAT('%',#{keyword1},'%'))
       UNION
-      (select * from HIKOCO_ITEM where ITEM_VENDOR like CONCAT('%',#{keword2},'%'))
+      (select * from HIKOCO_ITEM where ITEM_VENDOR like CONCAT('%',#{keyword2},'%'))
       UNION
-      (select * from HIKOCO_ITEM where ITEM_SUMMARY like CONCAT('%',#{keword3},'%'))
+      (select * from HIKOCO_ITEM where ITEM_SUMMARY like CONCAT('%',#{keyword3},'%'))
       ) item_search
       ORDER BY item_id DESC
       limit #{startIndexNum}, #{pageNum}
 	</select>
 
 	<!-- 페이지 갯수 -->
-	<select id="count_index_num_for_max_page" resultType="int">
-	   SELECT count(no)
+	<select id="countFromList" resultType="int">
+	   SELECT count(item_id)
 	   FROM HIKOCO_ITEM
 	</select>
 </mapper>

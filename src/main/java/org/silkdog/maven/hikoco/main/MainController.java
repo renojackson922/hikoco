@@ -4,10 +4,7 @@ import org.silkdog.maven.hikoco.category.dao.CategoryDAO;
 import org.silkdog.maven.hikoco.category.dto.CategoryDTO;
 import org.silkdog.maven.hikoco.item.dao.ItemDAO;
 import org.silkdog.maven.hikoco.item.dto.ItemDTO;
-import org.silkdog.maven.hikoco.member.dao.MemberDAO;
-import org.silkdog.maven.hikoco.member.dto.MemberDTO;
 import org.silkdog.maven.hikoco.transaction.dao.TransactionDAO;
-import org.silkdog.maven.hikoco.transaction.dto.TransactionDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,18 +13,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-//@SuppressWarnings("SpringMVCViewInspection")
 @Controller
 public class MainController{
 //    @Autowired
 //    private MemberDAO memberDAO;
-
     @Autowired
     private TransactionDAO transactionDAO;
     @Autowired
@@ -36,12 +30,17 @@ public class MainController{
     @Autowired
     private ItemDAO itemDAO;
 
-    /* Main Page */
+    /* ======================================================== */
+    /* ======================= 메인 페이지 ======================= */
+    /* ======================================================== */
     @RequestMapping(value="/", method=RequestMethod.GET)
     public String main(){
         return "main";
     }
 
+    /* ======================================================== */
+    /* ======================= 관리자 페이지 ===================== */
+    /* ======================================================== */
     @RequestMapping("/admin.do")
     public String admin() throws Exception{
         return "admin/admin";
@@ -78,12 +77,21 @@ public class MainController{
     public String adminMarketSubmit() throws Exception{
         return "admin/admin_market";
     }
+    /* ======================================================== */
 
+
+
+    /* ======================================================== */
+    /* ======================= 로그인 페이지 ===================== */
+    /* ======================================================== */
     @RequestMapping(value="/login.do", method=RequestMethod.GET)
     public String login(){
         return "login";
     }
 
+    /* ======================================================== */
+    /* ====================== 회원가입 페이지 ===================== */
+    /* ======================================================== */
     @RequestMapping(value="/signup.do", method=RequestMethod.GET)
     public String signup(){
         return "signup";
@@ -117,6 +125,8 @@ public class MainController{
     // 같은 내용을 합칠 수도 있음. p.286 참고
 
 
+    /* 아이템 */
+
 //    @RequestMapping(value="/item.do", method=RequestMethod.GET)
 //    public String item(Model model, HttpServletRequest req){
 //        int count = categoryDAO.count(1);
@@ -128,17 +138,9 @@ public class MainController{
 //        return "item";
 //    }
 
-
-//
-    @RequestMapping(value="/item_detail.do", method = RequestMethod.GET)
-    public String itemDetail(@RequestParam("item_id") int itemId, HttpServletRequest req){
-        System.out.println("itemID의 값: " + itemId);
-        ItemDTO idto = itemDAO.select(itemId);
-        req.setAttribute("idto", idto);
-        return "item_detail";
-    }
-
-    /* 카테고리 테스트 */
+    /* ======================================================== */
+    /* ====================== 카테고리 페이지 ===================== */
+    /* ======================================================== */
     @RequestMapping(value="/category_test.do", method= RequestMethod.GET)
     public String categoryTest(HttpServletRequest req){
         checkCategoryList(req);
@@ -157,50 +159,74 @@ public class MainController{
     }
 
     public void checkCategoryList(HttpServletRequest req){
-        List<CategoryDTO> clist = categoryDAO.list();
+        List<HashMap> clist = categoryDAO.list();
         req.setAttribute("clist", clist);
-
-
-
-//        List<CategoryDTO> clist1 = categoryDAO.listByIndent(1);
-//        req.setAttribute("clist1", clist1);
-//        List<CategoryDTO> clist2 = categoryDAO.listByIndent(2);
-//        req.setAttribute("clist2", clist2);
-//        List<CategoryDTO> clist3 = categoryDAO.listByIndent(3);
-//        req.setAttribute("clist3.;p-", clist3);
-
     }
     /* ================ */
 
 
-    /* 아이템 테스트 */
-    @RequestMapping(value = "/item_test.do", method= RequestMethod.GET)
-    public String itemTest(HttpServletRequest req, Model model){
-        checkItemList(req, model);
-        return "itemTest";
+    /* ======================================================== */
+    /* ======================= 아이템 페이지 ===================== */
+    /* ======================================================== */
+    @RequestMapping(value="/item.do", method=RequestMethod.GET)
+    public String item(HttpServletRequest req,  Model model){
+        String mode = (String)req.getParameter("mode");
+        if(mode.equals("list")){
+            /* 테스트 용도의 모든 리스트 출력의 경우 */
+            List<HashMap> ilist = itemDAO.list();
+            model.addAttribute("cnt", ilist);
+            req.setAttribute("ilist", ilist);
+            return "item?mode=list";
+        }else if(mode.equals("search")){
+            /* 검색어를 입력한 검색기능 */
+            String searchString = (String)req.getAttribute("search_string");
+            List<HashMap> ilist = itemDAO.search(searchString);
+            model.addAttribute("cnt", ilist);
+            req.setAttribute("ilist", ilist);
+            return "item?mode=search&search_string="+searchString;
+        }else{
+            /* 사용자가 임의로 URL을 수정한 것으로 간주 */
+            return "redirect:/";
+        }
     }
 
-    @RequestMapping(value="/item_test.do", method=RequestMethod.POST)
-    public String itemTestPro(HttpServletRequest req, Model model){
-        ItemDTO idto = new ItemDTO();
 
-        java.util.Date date = new java.util.Date();
-        java.sql.Timestamp timestamp = new java.sql.Timestamp(date.getTime());
 
-        idto.setItem_title(req.getParameter("item_title"));
-        idto.setItem_price(Integer.parseInt(req.getParameter("item_price")));
-        idto.setItem_manu(req.getParameter("item_manu"));
-        idto.setItem_vendor(req.getParameter("item_vendor"));
-        idto.setItem_summary(req.getParameter("item_summary"));
-        idto.setItem_pic(req.getParameter("item_pic"));
-        idto.setItem_detail(req.getParameter("item_detail"));
-        idto.setItem_upload_date(timestamp);
-        idto.setItem_last_edited_date(timestamp);
-        int result = itemDAO.insert(idto);
-
-        checkItemList(req, model);
-        return "redirect:item_test.do";
+    @RequestMapping(value="/item_detail.do", method = RequestMethod.GET)
+    public String itemDetail(@RequestParam("item_id") int itemId, HttpServletRequest req){
+        System.out.println("itemID의 값: " + itemId);
+        ItemDTO idto = itemDAO.select(itemId);
+        req.setAttribute("idto", idto);
+        return "item_detail";
     }
+
+//    @RequestMapping(value = "/item_test.do", method= RequestMethod.GET)
+//    public String itemTest(HttpServletRequest req, Model model){
+//        checkItemList(req, model);
+//        return "itemTest";
+//    }
+//
+//    @RequestMapping(value="/item_test.do", method=RequestMethod.POST)
+//    public String itemTestPro(HttpServletRequest req, Model model){
+//        ItemDTO idto = new ItemDTO();
+//
+//        java.util.Date date = new java.util.Date();
+//        java.sql.Timestamp timestamp = new java.sql.Timestamp(date.getTime());
+//
+//        idto.setItem_title(req.getParameter("item_title"));
+//        idto.setItem_price(Integer.parseInt(req.getParameter("item_price")));
+//        idto.setItem_manu(req.getParameter("item_manu"));
+//        idto.setItem_vendor(req.getParameter("item_vendor"));
+//        idto.setItem_summary(req.getParameter("item_summary"));
+//        idto.setItem_pic(req.getParameter("item_pic"));
+//        idto.setItem_detail(req.getParameter("item_detail"));
+//        idto.setItem_upload_date(timestamp);
+//        idto.setItem_last_edited_date(timestamp);
+//        int result = itemDAO.insert(idto);
+//
+//        checkItemList(req, model);
+//        return "redirect:item_test.do";
+//    }
 
     public void checkItemList(HttpServletRequest req, Model model){
         List<HashMap> ilist = itemDAO.list();
@@ -208,18 +234,7 @@ public class MainController{
         req.setAttribute("ilist", ilist);
         model.addAttribute("cnt", ilist);
     }
-    /* ================ */
 
-    @RequestMapping(value="/mycart.do", method=RequestMethod.GET)
-    public String mycart(){
-
-        return "mycart";
-    }
-
-    @RequestMapping(value="/hbl.do", method=RequestMethod.GET)
-    public String hbl(){
-        return "hbl";
-    }
 
     @RequestMapping(value="logout.do", method=RequestMethod.GET)
     public String logout(HttpSession session){
@@ -231,18 +246,21 @@ public class MainController{
         return "redirect:/";
     }
 
-    @RequestMapping(value="/search.do", method=RequestMethod.GET)
-    public String search(@RequestParam("search_string") String searchString, HttpServletRequest req, Model model){
-        System.out.println(searchString);
-        List<HashMap> ilist = itemDAO.search(searchString);
-        req.setAttribute("ilist", ilist);
-        model.addAttribute("cnt", ilist);
-        return "search";
-    }
-
-
     @RequestMapping(value="/item_request_test.do", method=RequestMethod.GET)
     public String itemRequestTest(){
         return "item_request_test";
+    }
+
+
+
+
+
+    /* ======================================================== */
+    /* ====================== 장바구니 페이지 ===================== */
+    /* ======================================================== */
+    @RequestMapping(value="/mycart.do", method=RequestMethod.GET)
+    public String mycart(){
+
+        return "mycart";
     }
 }

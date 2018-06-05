@@ -25,7 +25,7 @@
     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item">
-    <a class="nav-link" href="/item.do"><i class="fas fa-gift"></i>&nbsp;Item</a>
+    <a class="nav-link" href="/item.do?mode=list"><i class="fas fa-gift"></i>&nbsp;Item</a>
     </li>
     <li class="nav-item dropdown">
     <%--<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--%>
@@ -98,7 +98,7 @@
                 box-shadow: 0 0 0 .2rem rgba(136,112,162,0.69);
             }
         </style>
-    <form class="form-inline my-2 my-lg-0" action="/search.do" method="GET">
+    <form class="form-inline my-2 my-lg-0" action="/item.do?mode=search" method="GET">
     <input class="form-control mr-sm-2" type="search" placeholder="상품명 검색" aria-label="Search" name="search_string">
     <button class="btn btn-outline-purple my-2 my-sm-0" type="submit">검색</button>
     </form>
