@@ -123,49 +123,49 @@
                 <tbody style="vertical-align: middle;">
                 <tr>
                     <th><input type="checkbox"></th>
-                    <td class="text-left"><img src="../../resources/imgs/palit.jpg" width="70px" style="border:1px solid #ddd; margin-right:25px;">[PALIT] Nvidia GeForce GTX 1070</td>
+                    <td class="text-left"><img src="../../resources/imgs/items/palit.jpg" width="70px" style="border:1px solid #ddd; margin-right:25px;">[PALIT] Nvidia GeForce GTX 1070</td>
                     <td>999,000원</td>
                     <td class="text-center"><input type="text" style="text-align: center; width:30px; margin-bottom:5px;"><br><button type="button" class="btn btn-warning btn-sm" style="font-size:0.9em; padding:3px 7px 3px 7px;">변경</button></td>
                     <td>999,000원</td>
                 </tr>
                 <tr>
                     <th><input type="checkbox"></th>
-                    <td class="text-left"><img src="../../resources/imgs/palit.jpg" width="70px" style="border:1px solid #ddd; margin-right:25px;">[PALIT] Nvidia GeForce GTX 1070</td>
+                    <td class="text-left"><img src="../../resources/imgs/items/palit.jpg" width="70px" style="border:1px solid #ddd; margin-right:25px;">[PALIT] Nvidia GeForce GTX 1070</td>
                     <td>999,000원</td>
                     <td class="text-center"><input type="text" style="text-align: center; width:30px; margin-bottom:5px;"><br><button type="button" class="btn btn-warning btn-sm" style="font-size:0.9em; padding:3px 7px 3px 7px;">변경</button></td>
                     <td>999,000원</td>
                 </tr>
                 <tr>
                     <th><input type="checkbox"></th>
-                    <td class="text-left"><img src="../../resources/imgs/palit.jpg" width="70px" style="border:1px solid #ddd; margin-right:25px;">[PALIT] Nvidia GeForce GTX 1070</td>
+                    <td class="text-left"><img src="../../resources/imgs/items/palit.jpg" width="70px" style="border:1px solid #ddd; margin-right:25px;">[PALIT] Nvidia GeForce GTX 1070</td>
                     <td>999,000원</td>
                     <td class="text-center"><input type="text" style="text-align: center; width:30px; margin-bottom:5px;"><br><button type="button" class="btn btn-warning btn-sm" style="font-size:0.9em; padding:3px 7px 3px 7px;">변경</button></td>
                     <td>999,000원</td>
                 </tr>
                 <tr>
                     <th><input type="checkbox"></th>
-                    <td class="text-left"><img src="../../resources/imgs/palit.jpg" width="70px" style="border:1px solid #ddd; margin-right:25px;">[PALIT] Nvidia GeForce GTX 1070</td>
+                    <td class="text-left"><img src="../../resources/imgs/items/palit.jpg" width="70px" style="border:1px solid #ddd; margin-right:25px;">[PALIT] Nvidia GeForce GTX 1070</td>
                     <td>999,000원</td>
                     <td class="text-center"><input type="text" style="text-align: center; width:30px; margin-bottom:5px;"><br><button type="button" class="btn btn-warning btn-sm" style="font-size:0.9em; padding:3px 7px 3px 7px;">변경</button></td>
                     <td>999,000원</td>
                 </tr>
                 <tr>
                     <th><input type="checkbox"></th>
-                    <td class="text-left"><img src="../../resources/imgs/palit.jpg" width="70px" style="border:1px solid #ddd; margin-right:25px;">[PALIT] Nvidia GeForce GTX 1070</td>
+                    <td class="text-left"><img src="../../resources/imgs/items/palit.jpg" width="70px" style="border:1px solid #ddd; margin-right:25px;">[PALIT] Nvidia GeForce GTX 1070</td>
                     <td>999,000원</td>
                     <td class="text-center"><input type="text" style="text-align: center; width:30px; margin-bottom:5px;"><br><button type="button" class="btn btn-warning btn-sm" style="font-size:0.9em; padding:3px 7px 3px 7px;">변경</button></td>
                     <td>999,000원</td>
                 </tr>
                 <tr>
                     <th><input type="checkbox"></th>
-                    <td class="text-left"><img src="../../resources/imgs/palit.jpg" width="70px" style="border:1px solid #ddd; margin-right:25px;">[PALIT] Nvidia GeForce GTX 1070</td>
+                    <td class="text-left"><img src="../../resources/imgs/items/palit.jpg" width="70px" style="border:1px solid #ddd; margin-right:25px;">[PALIT] Nvidia GeForce GTX 1070</td>
                     <td>999,000원</td>
                     <td class="text-center"><input type="text" style="text-align: center; width:30px; margin-bottom:5px;"><br><button type="button" class="btn btn-warning btn-sm" style="font-size:0.9em; padding:3px 7px 3px 7px;">변경</button></td>
                     <td>999,000원</td>
                 </tr>
                 <tr>
                     <th><input type="checkbox"></th>
-                    <td class="text-left"><img src="../../resources/imgs/palit.jpg" width="70px" style="border:1px solid #ddd; margin-right:25px;">[PALIT] Nvidia GeForce GTX 1070</td>
+                    <td class="text-left"><img src="../../resources/imgs/items/palit.jpg" width="70px" style="border:1px solid #ddd; margin-right:25px;">[PALIT] Nvidia GeForce GTX 1070</td>
                     <td>999,000원</td>
                     <td class="text-center"><input type="text" style="text-align: center; width:30px; margin-bottom:5px;"><br><button type="button" class="btn btn-warning btn-sm" style="font-size:0.9em; padding:3px 7px 3px 7px;">변경</button></td>
                     <td>999,000원</td>

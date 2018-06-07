@@ -64,4 +64,9 @@
 	   SELECT count(item_id)
 	   FROM HIKOCO_ITEM
 	</select>
+
+	<!-- 시그니쳐 아이템 리스트 -->
+	<select id="getSignatureItems" resultType="java.util.HashMap">
+		SELECT * FROM HIKOCO_ITEM_SIGNATURE;
+	</select>
 </mapper>

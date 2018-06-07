@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOError;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
@@ -78,8 +79,6 @@ public class MainController{
         return "admin/admin_market";
     }
     /* ======================================================== */
-
-
 
     /* ======================================================== */
     /* ======================= 로그인 페이지 ===================== */
@@ -164,33 +163,47 @@ public class MainController{
     }
     /* ================ */
 
-
     /* ======================================================== */
     /* ======================= 아이템 페이지 ===================== */
     /* ======================================================== */
     @RequestMapping(value="/item.do", method=RequestMethod.GET)
-    public String item(HttpServletRequest req,  Model model){
-        String mode = (String)req.getParameter("mode");
-        if(mode.equals("list")){
-            /* 테스트 용도의 모든 리스트 출력의 경우 */
-            List<HashMap> ilist = itemDAO.list();
-            model.addAttribute("cnt", ilist);
-            req.setAttribute("ilist", ilist);
-            return "item?mode=list";
-        }else if(mode.equals("search")){
-            /* 검색어를 입력한 검색기능 */
-            String searchString = (String)req.getAttribute("search_string");
-            List<HashMap> ilist = itemDAO.search(searchString);
-            model.addAttribute("cnt", ilist);
-            req.setAttribute("ilist", ilist);
-            return "item?mode=search&search_string="+searchString;
-        }else{
-            /* 사용자가 임의로 URL을 수정한 것으로 간주 */
-            return "redirect:/";
-        }
+    public String item(HttpServletRequest req,  Model model, @RequestParam("mode") String mode){
+        String searchString = req.getParameter("search_string");
+        checkItemList(req, model, mode, searchString);
+        return "item";
     }
 
+    @RequestMapping(value = "/item_test.do", method= RequestMethod.GET)
+    public String itemTest(HttpServletRequest req, Model model){
+        checkItemList(req, model);
+        return "item_test";
+    }
 
+    public void checkItemList(HttpServletRequest req, Model model){
+        List<HashMap> ilist = itemDAO.list();
+        req.setAttribute("ilist", ilist);
+        model.addAttribute("cnt", ilist);
+    }
+
+    public void checkItemList(HttpServletRequest req, Model model, String mode, String searchString){
+            // mode의 값이 list일 경우 모든 list 저장
+        if(mode.equals("list") && searchString == null){
+            List<HashMap> ilist = itemDAO.list();
+            System.out.println("List 테스트: " + ilist.get(0).get("item_title"));
+            req.setAttribute("ilist", ilist);
+            req.setAttribute("mode", mode);
+            model.addAttribute("cnt", ilist);
+            // mode의 값이 search일 경우 search(searchString)을 조회후 list로 저장
+        }else if(mode.equals("search") && searchString != null){
+            List<HashMap> ilist = itemDAO.search(searchString);
+            System.out.println("Search 테스트: " + ilist.get(0).get("item_title"));
+            req.setAttribute("ilist", ilist);
+            req.setAttribute("mode", mode);
+            model.addAttribute("cnt", ilist);
+        }else{
+            System.out.println("Unexpected access detected!");
+        }
+    }
 
     @RequestMapping(value="/item_detail.do", method = RequestMethod.GET)
     public String itemDetail(@RequestParam("item_id") int itemId, HttpServletRequest req){
@@ -200,12 +213,7 @@ public class MainController{
         return "item_detail";
     }
 
-//    @RequestMapping(value = "/item_test.do", method= RequestMethod.GET)
-//    public String itemTest(HttpServletRequest req, Model model){
-//        checkItemList(req, model);
-//        return "itemTest";
-//    }
-//
+
 //    @RequestMapping(value="/item_test.do", method=RequestMethod.POST)
 //    public String itemTestPro(HttpServletRequest req, Model model){
 //        ItemDTO idto = new ItemDTO();
@@ -228,12 +236,7 @@ public class MainController{
 //        return "redirect:item_test.do";
 //    }
 
-    public void checkItemList(HttpServletRequest req, Model model){
-        List<HashMap> ilist = itemDAO.list();
-        System.out.println("테스트: " + ilist.get(0).get("item_title"));
-        req.setAttribute("ilist", ilist);
-        model.addAttribute("cnt", ilist);
-    }
+
 
 
     @RequestMapping(value="logout.do", method=RequestMethod.GET)
@@ -250,8 +253,6 @@ public class MainController{
     public String itemRequestTest(){
         return "item_request_test";
     }
-
-
 
 
 

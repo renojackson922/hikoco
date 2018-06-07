@@ -28,20 +28,7 @@
 //    Set<Map.Entry<Integer, String>> set = map.entrySet();
 //    Iterator<Map.Entry<Integer, String>> it = set.iterator();
 
-    String mode = request.getParameter("mode");
-    System.out.println(mode);
-    if(mode.equals("search")){
-        response.sendRedirect("/");
-
-    }else if(mode.equals("list")){
-        response.sendRedirect("/");
-
-    }else{
-        response.sendRedirect("/");
-    }
-
     List<HashMap> ilist = (List<HashMap>)request.getAttribute("ilist");
-
 
 %>
 <html ng-cloak ng-app="app">
@@ -327,7 +314,9 @@
             </div>
 
         </div>
-        <%--TEST : ${admin2}--%>
+        <c:forEach var="i" items="${cnt}">
+            <%--<span>${i.item_title}</span>--%>
+        </c:forEach>
     </div>
 
 </div>

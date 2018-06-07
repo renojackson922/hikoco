@@ -28,20 +28,7 @@
 //    Set<Map.Entry<Integer, String>> set = map.entrySet();
 //    Iterator<Map.Entry<Integer, String>> it = set.iterator();
 
-    String mode = request.getParameter("mode");
-    System.out.println(mode);
-    if(mode.equals("search")){
-        response.sendRedirect("/");
-
-    }else if(mode.equals("list")){
-        response.sendRedirect("/");
-
-    }else{
-        response.sendRedirect("/");
-    }
-
     List<HashMap> ilist = (List<HashMap>)request.getAttribute("ilist");
-
 
 %>
 <html ng-cloak ng-app="app">
@@ -163,6 +150,7 @@
 <div id="show" style="padding-top:60px;">
     <div class="text-center" style="display:inline-block; padding:20px; margin:0 auto;">
         <div class="container text-center" style="float:left; overflow-x:hidden; border:1px solid #ddd; padding:20px;">
+            <div>
             <!-- 카테고리 -->
             <%--<table class="table">--%>
             <%--<tbody>--%>
@@ -218,6 +206,7 @@
             <%--</tbody>--%>
             <%--</table>--%>
             <!-- 아이템 검색 -->
+            </div>
             <div class="text-right" style="margin-bottom:10px; padding-right:10px;">
                 <span style="font-size:12px;">페이지 수 :&nbsp;</span>
                 <input type="text" id="pageNum" size="1" maxlength="3" value="10" style="font-size:12px;">
@@ -327,7 +316,6 @@
             </div>
 
         </div>
-        <%--TEST : ${admin2}--%>
     </div>
 
 </div>
