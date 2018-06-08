@@ -83,6 +83,7 @@ public class ItemController {
             req.setAttribute("ilist", ilist);
             req.setAttribute("mode", mode);
             model.addAttribute("cnt", ilist);
+            model.addAttribute("searchString", searchString);
         }else{
             System.out.println("Unexpected access detected!");
         }

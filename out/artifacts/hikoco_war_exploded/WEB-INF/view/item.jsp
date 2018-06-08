@@ -148,10 +148,20 @@
         });
     </script>
 </head>
+<%
+    String isSearch = request.getParameter("mode");
+%>
 <body ng-controller="ctrl">
 <%@ include file="layout/hikoco_login_popup.jsp"%>
 <%@ include file="layout/hikoco_navbar.jsp"%>
-<div id="show" style="padding-top:60px;">
+<div id="show" style="padding:60px 0">
+    <%
+        if(isSearch.equals("search")){
+    %>
+    <div class="container text-center" style="margin-top:20px; height:150px; line-height: 150px; background: #ddd;">
+        <span style="font-size:1em;">${searchString} (으)로 검색하신 결과입니다.</span>
+    </div>
+    <% }else{} %>
     <div class="text-center" style="display:inline-block; padding:20px; margin:0 auto;">
         <div class="container text-center" style="float:left; overflow-x:hidden; border:1px solid #ddd; padding:20px;">
             <div>

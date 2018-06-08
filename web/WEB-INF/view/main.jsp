@@ -1,6 +1,7 @@
 <%@ page import="java.util.*" %>
 <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html ng-cloak ng-app="app">
 <head>
     <meta charset="UTF-8">
@@ -20,12 +21,13 @@
                             width = carousel.innerWidth();
 
                         if (width >= 600) {
-                            width = width / 5; // 6
+                            width = width / 6; // 6
                         } else if (width >= 350) {
-                            width = width / 4;  // 5
+                            width = width / 5;  // 5
                         }
 
-                        carousel.jcarousel('items').css('width', Math.ceil(width) + 'px');
+                        /* .jcarousel-ul > li 에 margin-right 를 20만큼 줬기 때문에 -20 만큼 연산함 */
+                        carousel.jcarousel('items').css('width', Math.ceil(width)-20 + 'px');
                     })
                     .jcarousel({
                         wrap: 'circular'
@@ -112,18 +114,18 @@
                 <div class="animated"
                      style="position:absolute; width:300px; height:90px; right:150px; top:180px; background-color: rgba(0,0,0,0.5); padding:15px; ">
             <span class="hikoco-sec1-span"
-                  style="font-size:20px; display:block; line-height: 30px;"><i>최상의 게이밍 성능</i></span>
+                  style="font-size:1.3em; display:block; line-height: 30px;"><i>최상의 게이밍 성능</i></span>
                     <div class="text-right">
-                        <span class="hikoco-sec1-span" style="font-size:16px; display:block; line-height: 30px;"><i>- Charles Hoskinson</i></span>
+                        <span class="hikoco-sec1-span" style="font-size:1.0em; display:block; line-height: 30px;"><i>- Charles Hoskinson</i></span>
                     </div>
                 </div>
                 <div class="animated"
                      style="position:absolute; width:300px; height:150px; right:150px; top:280px; background-color:#000; padding:20px;">
-                    <span class="hikoco-sec1-span" style="font-size:16px; line-height: 20px;">AMD</span>
-                    <span class="hikoco-sec1-span" style="font-size:30px; display:block; line-height: 30px;"><strong>Radeon&#174; RX580</strong></span>
-                    <span class="hikoco-sec1-span" style="font-size:18px; display:block; line-height: 40px;">&#8361;&nbsp;300,000 부터</span>
+                    <span class="hikoco-sec1-span" style="font-size:1.0em; line-height: 20px;">AMD</span>
+                    <span class="hikoco-sec1-span" style="font-size:1.8em; display:block; line-height: 30px;"><strong>Radeon&#174; RX580</strong></span>
+                    <span class="hikoco-sec1-span" style="font-size:1.2em; display:block; line-height: 40px;">&#8361;&nbsp;300,000 부터</span>
                     <div class="text-right">
-                        <a href="#"><span style="font-size:12px; line-height:40px;">지금 구매하기</span></a>
+                        <a href="#"><span style="font-size:0.8em; line-height:40px;">지금 구매하기</span></a>
                     </div>
                 </div>
             </div>
@@ -136,36 +138,33 @@
         <div class="text-left" style="height:100px; background-color:#ddd; line-height:50px; margin:0 20px 0 20px; padding:25px 0 0 25px; ">
             <span style="font-size:1.5em; font-weight:200;">BESTSELLER</span>
         </div>
-        <%--<div style="height:350px;">--%>
-            <div class="wrapper" style="background: #fff;">
-                <%--<h1>Responsive Carousel</h1>--%>
-                <%--<p>This example shows how to implement a responsive carousel. Resize the browser window to see the effect.</p>--%>
-                <div class="jcarousel-wrapper">
-                    <div class="jcarousel">
-                        <ul>
-                            <c:forEach var="i" items="${cntRyzen}">
-                            <li>
-                                <figure class="jcarousel-item text-center unselectable" onclick="window.location.href='/item_detail.do?item_id=${i.item_id}'">
+        <div class="jcarousel-wrapper">
+            <div class="jcarousel">
+                <ul class="jcarousel-ul">
+                    <c:forEach var="i" items="${cntRyzen}">
+                        <li>
+                            <figure class="jcarousel-item text-center unselectable" onclick="window.location.href='/item_detail.do?item_id=${i.item_id}'">
                                     <%-- 참고: https://getbootstrap.com/docs/4.1/content/images/--%>
-                                    <img class="mx-auto" src="${i.item_pic}" width="150px" height="auto" alt>
-                                    <figcaption>
+                                <img class="mx-auto" src="${i.item_pic}" width="200px" height="auto" alt>
+                                <figcaption>
+                                    <div style="padding-bottom:7px; ">
                                         <span style="font-size:8px;">${i.item_manu}</span><br>
                                         <span style="font-size:0.8em;"><strong>${i.item_title}</strong></span>
-                                            <p>RX시리즈</p>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            </c:forEach>
-                        </ul>
-                    </div>
-
-                    <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-                    <a href="#" class="jcarousel-control-next">&rsaquo;</a>
-
-                    <p class="jcarousel-pagination" style="margin-bottom:70px;"></p>
-                </div>
+                                    </div>
+                                    <hr class="item-hr">
+                                    <div style="padding-top:7px;">
+                                        <span style="font-size:1.1em;"><strong><fmt:formatNumber value="${i.item_price}" type="currency" currencySymbol=""/>원</strong></span>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </c:forEach>
+                </ul>
             </div>
-        <%--</div>--%>
+            <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+            <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+            <p class="jcarousel-pagination"></p>
+        </div>
     </section>
 
     <!-- section 3 -->
@@ -201,16 +200,16 @@
                                     <img class="center" src="${i.item_pic}"
                                          style="margin-bottom:10px; height:150px; max-width:150px;">
                                     <figcaption  style="height:135px;">
-                                        <p style="margin-bottom:0px; font-size:14px; font-weight:700;">${i.item_title}</p>
-                                        <hr>
+                                        <p style="margin-bottom:0px; font-size:14px; font-weight:700; min-height:60px;">${i.item_title}</p>
+                                        <hr class="item-hr">
                                             <%--<p style="margin-bottom:0px; font-size:14px; font-weight:700;">현존 최고의 성능 워크스테이션</p>--%>
                                         <p style="font-size:12px; color:#5d5d5d; text-align:left; font-weight:400;">${i.item_summary}</p>
                                     </figcaption>
                                 </div>
-                                <div class="fig-bottom" style="padding:15px 30px 15px 30px; border-top:1px solid #ddd;">
+                                <div class="fig-bottom">
                                     <figcaption>
                                         <div class="text-left" style="float:left;">
-                                            <span style="font-size:14px;"><strong>${i.item_price}원</strong></span>
+                                            <span style="font-size:14px;"><strong><fmt:formatNumber value="${i.item_price}" type="currency" currencySymbol=""/>원</strong></span>
                                         </div>
                                         <div class="text-right" style=" vertical-align: middle;">
                                             <span style="font-size:12px; border:1px solid coral; background: coral; color:#fff; padding:0 5px 0 5px; border-radius:4px;">특가</span>
@@ -266,14 +265,14 @@
                                          style="margin-bottom:10px; height:200px; width:200px;">
                                     <figcaption style="height:135px;"> <!-- 임시적 높이 조정 -->
                                         <p style="margin-bottom:0px; font-size:0.8em; font-weight:700;">${i.item_title}</p>
-                                        <hr>
+                                        <hr class="item-hr">
                                         <p style="font-size:12px; color:#5d5d5d; text-align:left; font-weight:400;">${i.item_summary}</p>
                                     </figcaption>
                                 </div>
-                                <div class="fig-bottom" style="padding:15px 30px 15px 30px; border-top:1px solid #ddd;">
+                                <div class="fig-bottom">
                                     <figcaption>
                                         <div class="text-left" style="float:left;">
-                                            <span style="font-size:14px;"><strong>${i.item_price}원</strong></span>
+                                            <span style="font-size:14px;"><strong><fmt:formatNumber value="${i.item_price}" type="currency" currencySymbol=""/>원</strong></span>
                                         </div>
                                         <div class="text-right" style=" vertical-align: middle;">
                                             <span style="font-size:12px; border:1px solid #428bca; background: #428bca; color:#fff; padding:0 5px 0 5px; border-radius:4px;">MD추천</span>
@@ -291,14 +290,14 @@
                                          style="margin-bottom:10px; height:200px; width:200px;">
                                     <figcaption style="height:135px;"> <!-- 임시적 높이 조정 -->
                                         <p style="margin-bottom:0px; font-size:0.8em; font-weight:700;">${i.item_title}</p>
-                                        <hr>
+                                        <hr class="item-hr">
                                         <p style="font-size:12px; color:#5d5d5d; text-align:left; font-weight:400;">${i.item_summary}</p>
                                     </figcaption>
                                 </div>
-                                <div class="fig-bottom" style="padding:15px 30px 15px 30px; border-top:1px solid #ddd;">
+                                <div class="fig-bottom">
                                     <figcaption>
                                         <div class="text-left" style="float:left;">
-                                            <span style="font-size:14px;"><strong>${i.item_price}원</strong></span>
+                                            <span style="font-size:14px;"><strong><fmt:formatNumber value="${i.item_price}" type="currency" currencySymbol=""/>원</strong></span>
                                         </div>
                                         <div class="text-right" style=" vertical-align: middle;">
                                             <span style="font-size:12px; border:1px solid #428bca; background: #428bca; color:#fff; padding:0 5px 0 5px; border-radius:4px;">MD추천</span>
