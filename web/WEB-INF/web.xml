@@ -53,6 +53,9 @@
     <welcome-file-list>
         <welcome-file>/WEB-INF/view/main.jsp</welcome-file>
     </welcome-file-list>
+    <!--<welcome-file-list>-->
+        <!--<welcome-file>/WEB-INF/view/main.jsp</welcome-file>-->
+    <!--</welcome-file-list>-->
 
     <!--<error-page>-->
         <!--<error-code>404</error-code>-->

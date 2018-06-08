@@ -7,75 +7,28 @@
   </component>
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/web/resources/script/jcarousel.css" line="18" />
-    <bookmark url="file://$PROJECT_DIR$/web/WEB-INF/view/main.jsp" line="159" />
+    <bookmark url="file://$PROJECT_DIR$/web/WEB-INF/view/main.jsp" line="167" />
     <bookmark url="file://$PROJECT_DIR$/web/WEB-INF/view/mycart.jsp" line="95" />
-    <bookmark url="file://$PROJECT_DIR$/web/WEB-INF/view/main.jsp" line="522" />
-    <bookmark url="file://$PROJECT_DIR$/web/WEB-INF/view/main.jsp" line="320" />
+    <bookmark url="file://$PROJECT_DIR$/web/WEB-INF/view/main.jsp" line="528" />
+    <bookmark url="file://$PROJECT_DIR$/web/WEB-INF/view/main.jsp" line="328" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e4dadd9-aa54-45fd-aee2-bdcdfaaf52b8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/controller/ItemController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/view/hbltest.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/amd-pinacle.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/i78700k+ryzen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/i78700k+ryzen_cropped.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/items/g304.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/items/rxvega56gaming.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/items/rxvega56powercolor.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/items/rxvega64gaming.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/items/rxvega64rogstrix.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/items_detail/g304_detail.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/items_detail/g304_detail2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/items_detail/rxvega56gaming_detail.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/items_detail/rxvega56powercolor_detail.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/items_detail/rxvega64gaming_detail.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/items_detail/rxvega64rogstrix_detail.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/items_detail/vega_detail.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/smoke-hero.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/sticky-shadow-top.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/svg/rxvega.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/titan-v-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/vega64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/resources/imgs/ryzen-logo-300x150.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/resources/imgs/ryzen-logo-white.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/hikoco_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/hikoco_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/junk/1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/junk/SqlMapConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/junk/db.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/junk/jdbc/JdbcTemplateMemberDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/mybatis/1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/mybatis/2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/mybatis/3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/hikoco/item/dao/ItemDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/hikoco/item/dao/ItemDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/hikoco/item/dto/ItemDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/hikoco/item/dto/ItemDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/hikoco/main/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/hikoco/main/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/item.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/item.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/item_detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/item_detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/item_test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/item_test.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/lib/slf4j-api-1.6.2.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/main.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/dao/ItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/dao/ItemDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/dao/ItemDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/dao/ItemDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/dto/ItemDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/dto/ItemDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/main/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/main/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/ItemCatMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/ItemCatMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/ItemMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/ItemMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/MemberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/MemberMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/junk/1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/junk/SqlMapConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/junk/db.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/junk/jdbc/JdbcTemplateMemberDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/hikoco/item/dao/ItemDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/hikoco/item/dao/ItemDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/hikoco/item/dto/ItemDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/hikoco/item/dto/ItemDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/hikoco/main/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/hikoco/main/MainController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/item.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/item.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/item_detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/item_detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/item_test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/item_test.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -105,35 +58,16 @@
       <file leaf-file-name="item.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/item.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4883">
-              <caret line="257" column="14" selection-start-line="257" selection-start-column="14" selection-end-line="257" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/main.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10241">
-              <caret line="539" column="10" selection-start-line="539" selection-start-column="10" selection-end-line="539" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/login.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="item_detail.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/item_detail.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3667">
-              <caret line="193" column="78" selection-start-line="193" selection-start-column="78" selection-end-line="193" selection-end-column="78" />
+            <state relative-caret-position="86">
+              <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="33" selection-end-column="36" />
+              <folding>
+                <element signature="n#head#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -141,35 +75,46 @@
       <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/main/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3344">
-              <caret line="176" column="67" selection-start-line="176" selection-start-column="67" selection-end-line="176" selection-end-column="67" />
+            <state relative-caret-position="-39">
+              <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+              <folding>
+                <element signature="e#1391#1392#0" expanded="true" />
+                <element signature="e#1420#1421#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hbltest.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/hbltest.jsp">
+      <file leaf-file-name="main.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/main.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="330" column="30" lean-forward="true" selection-start-line="330" selection-start-column="30" selection-end-line="330" selection-end-column="30" />
+            <state relative-caret-position="328">
+              <caret line="47" column="2" lean-forward="true" selection-start-line="47" selection-start-column="2" selection-end-line="47" selection-end-column="2" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#div#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#figure#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#section#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ItemController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/controller/ItemController.java">
+      <file leaf-file-name="hikoco_navbar.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/layout/hikoco_navbar.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1596">
-              <caret line="84" column="45" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="45" />
+            <state relative-caret-position="68">
+              <caret line="64" column="10" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ItemDTO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/dto/ItemDTO.java">
+      <file leaf-file-name="item_test.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/item_test.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1254">
-              <caret line="66" column="12" selection-start-line="66" selection-start-column="12" selection-end-line="69" />
+            <state relative-caret-position="714">
+              <caret line="51" column="32" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -177,8 +122,11 @@
       <file leaf-file-name="ItemDAOImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/dao/ItemDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="817">
-              <caret line="43" selection-start-line="43" selection-end-line="43" />
+            <state relative-caret-position="143">
+              <caret line="55" selection-start-line="55" selection-end-line="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -186,8 +134,17 @@
       <file leaf-file-name="ItemMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/ItemMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1121">
-              <caret line="59" column="27" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
+            <state relative-caret-position="563">
+              <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemCatMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/ItemCatMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -266,9 +223,7 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/view/error/error500.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/error/error404.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/member/util/MemberRegValidator.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/security-context.xml" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/member/dto/MemberDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/member/dao/MemberDAOMybatis.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/member/controller/LoginController.java" />
@@ -295,7 +250,6 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/view/categoryTest.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/layout/hikoco_navbar.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/view/item.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/MemberMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/ItemCatMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/dao/ItemDAOImpl.java" />
@@ -305,9 +259,12 @@
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/controller/ItemController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/item_detail.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/item_test.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/main/MainController.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/view/main.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/hbltest.jsp" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/main/MainController.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/item.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/main.jsp" />
       </list>
     </option>
   </component>
@@ -348,6 +305,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -457,6 +415,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="hikoco" type="462c0819:PsiDirectoryNode" />
+              <item name="item" type="462c0819:PsiDirectoryNode" />
+              <item name="etc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hikoco" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hikoco" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -531,14 +499,6 @@
               <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
               <item name="hikoco" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="imgs" type="462c0819:PsiDirectoryNode" />
-              <item name="svg" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hikoco" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -548,11 +508,18 @@
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hikoco" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -563,26 +530,26 @@
     <property name="last_opened_file_path" value="C:/카카오톡 받은 파일/hikoco_sub2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15527344" />
     <property name="project.structure.side.proportion" value="0.093457945" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/resources/imgs" />
+      <recent name="C:\IntelliJ_STS\hikoco\web\resources\imgs\items" />
+      <recent name="C:\IntelliJ_STS\hikoco\web\resources\imgs\items_detail" />
+      <recent name="C:\IntelliJ_STS\hikoco\web\resources\imgs" />
+      <recent name="$PROJECT_DIR$/src/main/resources/mybatis" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\IntelliJ_STS\hikoco\web\resources\imgs\svg" />
       <recent name="C:\IntelliJ_STS\hikoco\web\resources\imgs\items" />
       <recent name="$PROJECT_DIR$/web/resources/imgs/items_detail" />
       <recent name="$PROJECT_DIR$/web/resources/imgs/items" />
       <recent name="C:\IntelliJ_STS\hikoco\web\WEB-INF\view\admin" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\IntelliJ_STS\hikoco\web\resources\imgs\items" />
-      <recent name="C:\IntelliJ_STS\hikoco\web\resources\imgs\items_detail" />
-      <recent name="C:\IntelliJ_STS\hikoco\web\resources\imgs" />
-      <recent name="$PROJECT_DIR$/src/main/resources/mybatis" />
-      <recent name="$PROJECT_DIR$/web/WEB-INF/view" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -869,10 +836,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="388962000" />
+    <option name="totallyTimeSpent" value="395267000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="827" y="35" width="1609" height="1185" extended-state="0" />
+    <frame x="31" y="23" width="1409" height="837" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -886,29 +853,57 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39948675" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3184797" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49808183" weight="0.32656515" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49808183" weight="0.3270525" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.27224436" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.79264474" weight="0.20954163" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.79264474" visible="true" weight="0.3761468" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49930555" weight="0.32931727" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1745135" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19375443" />
       <window_info anchor="right" id="Bean Validation" order="9" />
       <window_info id="Web" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49783862" weight="0.21231979" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49783862" weight="0.21231979" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.3299435" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.79264474" weight="0.20954163" />
+      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.50069445" side_tool="true" weight="0.32931727" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1745135" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="bottom" id="Application Servers" order="7" sideWeight="0.49930555" weight="0.32793522" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info id="Web" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="Image Layers" order="3" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.27224436" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.3299435" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49930555" weight="0.32931727" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39948675" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49808183" weight="0.32656515" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49783862" weight="0.21231979" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info id="Designer" order="2" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -919,7 +914,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="16" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/main/MainController.java</url>
+          <line>42</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="21" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1066,13 +1069,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
@@ -1080,18 +1076,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="52" selection-start-line="52" selection-end-line="54" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/resources/imgs/items/palit.jpg" />
     <entry file="file://$PROJECT_DIR$/web/resources/imgs/items_detail/palit_detail.jpg" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="66">
           <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
         </state>
       </provider>
@@ -1105,36 +1094,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="59" selection-start-line="13" selection-start-column="59" selection-end-line="13" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/layout/hikoco_navbar.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="67" column="10" selection-start-line="67" selection-start-column="10" selection-end-line="67" selection-end-column="10" />
+        <state relative-caret-position="182">
+          <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/MemberMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/dao/ItemDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="294">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/ItemCatMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="196">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1152,34 +1127,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/item_test.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="51" column="32" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/item_detail.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3667">
           <caret line="193" column="78" selection-start-line="193" selection-start-column="78" selection-end-line="193" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/item.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4883">
-          <caret line="257" column="14" selection-start-line="257" selection-start-column="14" selection-end-line="257" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/dao/ItemDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="817">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
         </state>
       </provider>
     </entry>
@@ -1192,22 +1143,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/ItemMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1121">
-          <caret line="59" column="27" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/main/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3344">
-          <caret line="176" column="67" selection-start-line="176" selection-start-column="67" selection-end-line="176" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/controller/ItemController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1596">
-          <caret line="84" column="45" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="45" />
+        <state relative-caret-position="563">
+          <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -1218,17 +1155,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/main.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10241">
-          <caret line="539" column="10" selection-start-line="539" selection-start-column="10" selection-end-line="539" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/hbltest.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
           <caret line="330" column="30" lean-forward="true" selection-start-line="330" selection-start-column="30" selection-end-line="330" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/layout/hikoco_navbar.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="64" column="10" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/dao/ItemDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/controller/ItemController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="155" column="36" lean-forward="true" selection-start-line="155" selection-start-column="36" selection-end-line="155" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="742">
+          <caret line="53" column="31" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/item.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="33" selection-end-column="36" />
+          <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/main/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-39">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding>
+            <element signature="e#1391#1392#0" expanded="true" />
+            <element signature="e#1420#1421#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/dao/ItemDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/item_test.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="51" column="32" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="47" column="2" lean-forward="true" selection-start-line="47" selection-start-column="2" selection-end-line="47" selection-end-column="2" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#figure#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#section#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

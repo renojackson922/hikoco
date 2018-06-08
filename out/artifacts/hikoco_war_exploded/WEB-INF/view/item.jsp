@@ -28,9 +28,11 @@
 //    Set<Map.Entry<Integer, String>> set = map.entrySet();
 //    Iterator<Map.Entry<Integer, String>> it = set.iterator();
 
-    List<HashMap> ilist = (List<HashMap>)request.getAttribute("ilist");
-    List<HashMap> ilistSign = (List<HashMap>)request.getAttribute("ilistSign");
-    System.out.println(ilistSign);
+
+//    List<HashMap> ilist = (List<HashMap>)request.getAttribute("ilist");
+//    List<HashMap> ilistSign = (List<HashMap>)request.getAttribute("ilistSign");
+//    System.out.println(ilistSign);
+
 
 %>
 <html ng-cloak ng-app="app">

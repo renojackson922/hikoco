@@ -1,6 +1,10 @@
 <%@ page import="java.util.*" %>
+<%@ page import="org.silkdog.maven.hikoco.item.dao.ItemDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:useBean id="itemDAO" class="org.silkdog.maven.hikoco.item.dao.ItemDAOImpl" scope="page"/>
+<jsp:setProperty name="itemDAO"  property="*" />
+
 <%
     Map<String, Integer> mainHashMap = new HashMap<String, Integer>();
     mainHashMap.put("../../resources/imgs/img1.jpg", 1);
@@ -37,6 +41,10 @@
     Iterator<Map.Entry<Integer, String>> it3 = set3.iterator();
 
     session.setAttribute("mainHashMap", mainHashMap);
+%>
+<%
+    List<HashMap> ilistVega = (List<HashMap>)itemDAO.search("vega");
+    System.out.println(ilistVega);
 %>
 <html ng-cloak ng-app="app">
 <head>
@@ -427,18 +435,16 @@
     <section id="hikoco-sec3" class="text-center">
         <!-- Small Title -->
         <div class="text-left" style="height:100px; background-color:#ddd; line-height:50px; margin:0 20px 0 20px; padding:25px 0 0 25px; ">
-            <span style="font-size:1.5em; font-weight:200;">CPU Special Offer</span>
+            <span style="font-size:1.5em; font-weight:200; ">CPU Special Offer</span>
         </div>
         <!-- Intro -->
         <div class="hikoco-sec3-intro">
             <div class="hikoco-sec3-intro-opaque">
                 <div class="intro-table">
                     <div class="intro-cell">
-                        <div class="intro-box">
-                            <h1 style="letter-spacing: 2px;"></h1>
-                            <%--<p><i class="fas fa-quote-left"></i>&nbsp;너굴맨이 올해도 정신나간 가격으로 돌아왔습니다!</p>--%>
-                            <%--<p>아래의 특별히 준비한 신상품들을 구매하지 않으면 너굴맨이 저주할 것입니다.&nbsp;<i class="fas fa-quote-right"></i></p>--%>
-                            <%--<p style="font-size:2.0em; font-weight:600;">평생!</p>--%>
+                        <div class="intro-box" style="display:inline-block">
+                            <h1 style="letter-spacing: 2px; font-weight: 200; border:1px solid #000; display:inline-block; padding:5px 17px 5px 17px; background: crimson;">EXTREME GAMING ENV.</h1>
+                            <img src="../../resources/imgs/ryzen-logo-white.png" width="200px" style="padding-left:57px;">
                         </div>
                     </div>
                 </div>
@@ -535,20 +541,18 @@
             </div>
         </div>
         <!-- Item List -->
-        <%
-//            List<HashMap> ilistAMD = (List<HashMap>)request.getAttribute("ilistAMD");
-        %>
+
         <div class="sec4-wrapper container" style="display:inline-block; padding:17px 0 17px 0;  width:100%;">
             <div class="list-left" style="margin-left:17px;"> <!-- NEED TO BE FIXED -->
                 <ul class="list-ul__left">
-                    <c:forEach begin="1" end="4">
+                    <c:forEach var="i" items="${cntVega}">
                             <li class="list-action unselectable">
                                 <figure>
                                     <div class="fig-top" style="padding:20px 25px 5px 25px;">
                                         <img class="center" src="../../resources/imgs/ramsay_thumbnail.png"
                                              style="margin-bottom:10px; height:150px; max-width:150px;">
                                         <figcaption>
-                                            <p style="margin-bottom:0px; font-size:14px; font-weight:700;">번개여! 대지여! 화염이여!</p>
+                                            <p style="margin-bottom:0px; font-size:14px; font-weight:700;">${i.item_title}</p>
                                             <hr>
                                                 <%--<p style="margin-bottom:0px; font-size:12px; font-weight:400; color:#5d5d5d;">현존 최고의 성능 워크스테이션</p>--%>
                                             <p style="font-size:12px; color:#5d5d5d; text-align:left; font-weight:400;">인텔 Xeon

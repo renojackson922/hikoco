@@ -14,10 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.io.IOError;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 @Controller
 public class MainController{
@@ -27,14 +26,24 @@ public class MainController{
     private TransactionDAO transactionDAO;
     @Autowired
     private CategoryDAO categoryDAO;
+    @Autowired
+    private ItemDAO itemDAO;
     /*  @Repository 일관성 확인할 것 */
 
     /* ======================================================== */
     /* ======================= 메인 페이지 ======================= */
     /* ======================================================== */
-    @RequestMapping(value="/", method=RequestMethod.GET)
-    public String main(){
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String mainRedirect(){
         return "main";
+    }
+
+    public void specialOffer1(HttpServletRequest req, Model model){
+//        List<HashMap> ilistVega = itemDAO.search("vega");
+//        System.out.println("특별전 프로모션1 테스트: " + ilistVega);
+//        req.setAttribute("ilistVega", ilistVega);
+//        model.addAttribute("cntVega", ilistVega);
     }
 
     /* ======================================================== */
