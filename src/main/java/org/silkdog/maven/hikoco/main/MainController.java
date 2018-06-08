@@ -28,8 +28,6 @@ public class MainController{
     @Autowired
     private CategoryDAO categoryDAO;
     /*  @Repository 일관성 확인할 것 */
-    @Autowired
-    private ItemDAO itemDAO;
 
     /* ======================================================== */
     /* ======================= 메인 페이지 ======================= */
@@ -123,20 +121,6 @@ public class MainController{
 
     // 같은 내용을 합칠 수도 있음. p.286 참고
 
-
-    /* 아이템 */
-
-//    @RequestMapping(value="/item.do", method=RequestMethod.GET)
-//    public String item(Model model, HttpServletRequest req){
-//        int count = categoryDAO.count(1);
-//        List<CategoryDTO> clist = categoryDAO.listFirstIndent();
-//        checkItemList(req);
-//        req.setAttribute("count", count);
-//        req.setAttribute("clist", clist);
-//        model.addAttribute("adminMarket","adminMarket");
-//        return "item";
-//    }
-
     /* ======================================================== */
     /* ====================== 카테고리 페이지 ===================== */
     /* ======================================================== */
@@ -163,81 +147,6 @@ public class MainController{
     }
     /* ================ */
 
-    /* ======================================================== */
-    /* ======================= 아이템 페이지 ===================== */
-    /* ======================================================== */
-    @RequestMapping(value="/item.do", method=RequestMethod.GET)
-    public String item(HttpServletRequest req,  Model model, @RequestParam("mode") String mode){
-        String searchString = req.getParameter("search_string");
-        checkItemList(req, model, mode, searchString);
-        return "item";
-    }
-
-    @RequestMapping(value = "/item_test.do", method= RequestMethod.GET)
-    public String itemTest(HttpServletRequest req, Model model){
-        checkItemList(req, model);
-        return "item_test";
-    }
-
-    public void checkItemList(HttpServletRequest req, Model model){
-        List<HashMap> ilist = itemDAO.list();
-        req.setAttribute("ilist", ilist);
-        model.addAttribute("cnt", ilist);
-    }
-
-    public void checkItemList(HttpServletRequest req, Model model, String mode, String searchString){
-            // mode의 값이 list일 경우 모든 list 저장
-        if(mode.equals("list") && searchString == null){
-            List<HashMap> ilist = itemDAO.list();
-            System.out.println("List 테스트: " + ilist.get(0).get("item_title"));
-            req.setAttribute("ilist", ilist);
-            req.setAttribute("mode", mode);
-            model.addAttribute("cnt", ilist);
-            // mode의 값이 search일 경우 search(searchString)을 조회후 list로 저장
-        }else if(mode.equals("search") && searchString != null){
-            List<HashMap> ilist = itemDAO.search(searchString);
-            System.out.println("Search 테스트: " + ilist.get(0).get("item_title"));
-            req.setAttribute("ilist", ilist);
-            req.setAttribute("mode", mode);
-            model.addAttribute("cnt", ilist);
-        }else{
-            System.out.println("Unexpected access detected!");
-        }
-    }
-
-    @RequestMapping(value="/item_detail.do", method = RequestMethod.GET)
-    public String itemDetail(@RequestParam("item_id") int itemId, HttpServletRequest req){
-        System.out.println("itemID의 값: " + itemId);
-        ItemDTO idto = itemDAO.select(itemId);
-        req.setAttribute("idto", idto);
-        return "item_detail";
-    }
-
-
-//    @RequestMapping(value="/item_test.do", method=RequestMethod.POST)
-//    public String itemTestPro(HttpServletRequest req, Model model){
-//        ItemDTO idto = new ItemDTO();
-//
-//        java.util.Date date = new java.util.Date();
-//        java.sql.Timestamp timestamp = new java.sql.Timestamp(date.getTime());
-//
-//        idto.setItem_title(req.getParameter("item_title"));
-//        idto.setItem_price(Integer.parseInt(req.getParameter("item_price")));
-//        idto.setItem_manu(req.getParameter("item_manu"));
-//        idto.setItem_vendor(req.getParameter("item_vendor"));
-//        idto.setItem_summary(req.getParameter("item_summary"));
-//        idto.setItem_pic(req.getParameter("item_pic"));
-//        idto.setItem_detail(req.getParameter("item_detail"));
-//        idto.setItem_upload_date(timestamp);
-//        idto.setItem_last_edited_date(timestamp);
-//        int result = itemDAO.insert(idto);
-//
-//        checkItemList(req, model);
-//        return "redirect:item_test.do";
-//    }
-
-
-
 
     @RequestMapping(value="logout.do", method=RequestMethod.GET)
     public String logout(HttpSession session){
@@ -263,5 +172,10 @@ public class MainController{
     public String mycart(){
 
         return "mycart";
+    }
+
+    @RequestMapping(value="/hbltest.do", method = RequestMethod.GET)
+    public String hbltest(){
+        return "hbltest";
     }
 }

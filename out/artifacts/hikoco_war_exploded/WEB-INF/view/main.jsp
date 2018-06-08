@@ -1,7 +1,4 @@
-<%@ page import="java.util.Map" %>
-<%@ page import="java.util.HashMap" %>
-<%@ page import="java.util.Set" %>
-<%@ page import="java.util.Iterator" %>
+<%@ page import="java.util.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
@@ -176,34 +173,36 @@
     <!-- section 1 -->
     <section id="hikoco-sec1">
         <div class="hikoco-sec1-div">
-            <div class="text-left" style="padding-top:30px; padding-left:400px;">
-                <%--<img class="animated fadeInUp" src="../../resources/imgs/rx580_grande.png" style="right:1000px; top:100px;">--%>
-                <%--<div class="bg"></div>--%>
-                <%--<img class="animated fadeInUp" src="../../resources/imgs/radeon-rx580-logo-960x540.png" width="480px">--%>
-                <div class="animated fadeInUp"
-                     style="position:absolute; width:300px; height:90px; right:150px; top:180px; background-color: rgba(0,0,0,0.5); padding:15px; ">
-                    <span class="hikoco-sec1-span"
-                          style="font-size:20px; display:block; line-height: 30px;"><i>최상의 게이밍 성능</i></span>
-                    <div class="text-right">
-                        <span class="hikoco-sec1-span" style="font-size:16px; display:block; line-height: 30px;"><i>- Charles Hoskinson</i></span>
-                    </div>
-                </div>
-                <div class="animated fadeInUp"
-                     style="position:absolute; width:300px; height:150px; right:150px; top:280px; background-color:#000; padding:20px;">
-                    <span class="hikoco-sec1-span" style="font-size:16px; line-height: 20px;">AMD</span>
-                    <span class="hikoco-sec1-span" style="font-size:30px; display:block; line-height: 30px;"><strong>Radeon&#174; RX580</strong></span>
-                    <span class="hikoco-sec1-span" style="font-size:18px; display:block; line-height: 40px;">&#8361;&nbsp;300,000 부터</span>
-                    <div class="text-right">
-                        <a href="#"><span style="font-size:12px; line-height:40px;">지금 구매하기</span></a>
-                    </div>
-                </div>
-            </div>
+            <!-- 찰스형 애니메이션 부분 -->
+            <%--<div class="text-left" style="padding-top:30px; padding-left:400px;">--%>
+            <%--&lt;%&ndash;<img class="animated fadeInUp" src="../../resources/imgs/rx580_grande.png" style="right:1000px; top:100px;">&ndash;%&gt;--%>
+            <%--&lt;%&ndash;<div class="bg"></div>&ndash;%&gt;--%>
+            <%--&lt;%&ndash;<img class="animated fadeInUp" src="../../resources/imgs/radeon-rx580-logo-960x540.png" width="480px">&ndash;%&gt;--%>
+            <%--<div class="animated fadeInUp"--%>
+            <%--style="position:absolute; width:300px; height:90px; right:150px; top:180px; background-color: rgba(0,0,0,0.5); padding:15px; ">--%>
+            <%--<span class="hikoco-sec1-span"--%>
+            <%--style="font-size:20px; display:block; line-height: 30px;"><i>최상의 게이밍 성능</i></span>--%>
+            <%--<div class="text-right">--%>
+            <%--<span class="hikoco-sec1-span" style="font-size:16px; display:block; line-height: 30px;"><i>- Charles Hoskinson</i></span>--%>
+            <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="animated fadeInUp"--%>
+            <%--style="position:absolute; width:300px; height:150px; right:150px; top:280px; background-color:#000; padding:20px;">--%>
+            <%--<span class="hikoco-sec1-span" style="font-size:16px; line-height: 20px;">AMD</span>--%>
+            <%--<span class="hikoco-sec1-span" style="font-size:30px; display:block; line-height: 30px;"><strong>Radeon&#174; RX580</strong></span>--%>
+            <%--<span class="hikoco-sec1-span" style="font-size:18px; display:block; line-height: 40px;">&#8361;&nbsp;300,000 부터</span>--%>
+            <%--<div class="text-right">--%>
+            <%--<a href="#"><span style="font-size:12px; line-height:40px;">지금 구매하기</span></a>--%>
+            <%--</div>--%>
+            <%--</div>--%>
+            <%--</div>--%>
         </div>
     </section>
     <!-- section 2 -->
     <section id="hikoco-sec2">
-        <div style="height:50px; background-color:#ddd; line-height:50px; padding-left:20px; ">
-            <span style="font-size:24px; letter-spacing:2px;">Bestseller</span>
+        <!-- Small Title -->
+        <div class="text-left" style="height:100px; background-color:#ddd; line-height:50px; margin:0 20px 0 20px; padding:25px 0 0 25px; ">
+            <span style="font-size:1.5em; font-weight:200;">BESTSELLER</span>
         </div>
         <div style="height:350px;">
             <div class="wrapper">
@@ -292,6 +291,7 @@
 
         .list-action {
             /*width: 100%;*/
+            background-color: #fff;
             color: #495057;
             text-align: inherit
         }
@@ -318,10 +318,11 @@
             width: 100%;
         }
         .hikoco-sec3-intro{
-            background: url("../../resources/imgs/neogul-bg.jpg");
+            background: #000 url("../../resources/imgs/amd-pinacle.jpg");
+            /*background: #000 url("../../resources/imgs/i78700k+ryzen_cropped.png");*/
             background-repeat: no-repeat;
             background-size: cover;
-            background-position-y: -300px;
+            background-position: center;
             width: auto;
             height: 300px;
             margin-top:17px;
@@ -333,12 +334,12 @@
         }
 
         .hikoco-sec4-intro{
-            background: url("../../resources/imgs/ramsay-bg.jpg");
+            background: #000 url("../../resources/imgs/smoke-hero.jpg");
             background-repeat: no-repeat;
             background-size: cover;
-            background-position-y: -450px;
+            background-position: center;
             width: auto;
-            height: 300px;
+            height: 500px;
             margin-top:17px;
         }
         .hikoco-sec4-intro-opaque{
@@ -413,14 +414,20 @@
         .fa-quote-left, .fa-quote-right{
             vertical-align:top;
         }
+
+        #hikoco-sec4{
+            background:  url("../../resources/imgs/sticky-shadow-top.png");
+            background-size: cover;
+        }
+
     </style>
 
 
     <!-- section 3 -->
     <section id="hikoco-sec3" class="text-center">
         <!-- Small Title -->
-        <div class="text-left" style="height:50px; background-color:#ddd; line-height:50px; padding-left:20px; ">
-            <span style="font-size:24px;">Hot-Selling</span>
+        <div class="text-left" style="height:100px; background-color:#ddd; line-height:50px; margin:0 20px 0 20px; padding:25px 0 0 25px; ">
+            <span style="font-size:1.5em; font-weight:200;">CPU Special Offer</span>
         </div>
         <!-- Intro -->
         <div class="hikoco-sec3-intro">
@@ -428,10 +435,10 @@
                 <div class="intro-table">
                     <div class="intro-cell">
                         <div class="intro-box">
-                            <h1>역습의 너굴맨</h1>
-                            <p><i class="fas fa-quote-left"></i>&nbsp;너굴맨이 올해도 정신나간 가격으로 돌아왔습니다!</p>
-                            <p>아래의 특별히 준비한 신상품들을 구매하지 않으면 너굴맨이 저주할 것입니다.&nbsp;<i class="fas fa-quote-right"></i></p>
-                            <p style="font-size:2.0em; font-weight:600;">평생!</p>
+                            <h1 style="letter-spacing: 2px;"></h1>
+                            <%--<p><i class="fas fa-quote-left"></i>&nbsp;너굴맨이 올해도 정신나간 가격으로 돌아왔습니다!</p>--%>
+                            <%--<p>아래의 특별히 준비한 신상품들을 구매하지 않으면 너굴맨이 저주할 것입니다.&nbsp;<i class="fas fa-quote-right"></i></p>--%>
+                            <%--<p style="font-size:2.0em; font-weight:600;">평생!</p>--%>
                         </div>
                     </div>
                 </div>
@@ -492,35 +499,49 @@
 
     </section>
 
+    <style>
+        #hikoco-sec4-profile{
+            background: #000 !important;
+        }
+    </style>
 
 
     <!-- section 4 -->
     <section id="hikoco-sec4" class="text-center">
         <!-- Small Title -->
-        <div class="text-left" style="height:50px; background-color:#ddd; line-height:50px; padding-left:20px; ">
-            <span style="font-size:24px;">Special Offer (Until 2018-05-24)</span>
+        <div id="hikoco-sec4-profile" class="text-left" style="height:100px; background-color:#ddd; margin:0 20px 0 20px; line-height:50px; padding:25px 0 0 25px; ">
+            <span style="font-size:1.5em; color:#fff; font-weight:200;">AMD Radeon RX Vega 특별 기획전</span>
         </div>
         <!-- Intro -->
         <div class="hikoco-sec4-intro">
             <div class="hikoco-sec4-intro-opaque">
                 <div class="intro-table">
                     <div class="intro-cell">
-                        <div class="intro-box">
-                            <h1>역습의 람쥐썬더</h1>
-                            <p><i class="fas fa-quote-left"></i>&nbsp;람쥐썬더가 올해도 장물을 한아름 짊어지고 찾아왔습니다!</p>
-                            <p>아래의 특별히 준비한 특가상품들을 구매하지 않으면 람쥐썬더가 폭력을 행사할 것입니다.&nbsp;<i class="fas fa-quote-right"></i></p>
-                            <p style="font-size:2.0em; font-weight:600;">기대해!</p>
+                        <div class="intro-box unselectable">
+                            <div class="col-md-6" style="display: block; float:left;">
+                                <img src="../../resources/imgs/svg/rxvega.svg" alt style="display:block;">
+                                <p style="font-size:2em; font-weight:200; text-align:left; color:#fff; padding-top:15px;"><strong>DEFY CONVENTION.</strong> Don’t follow. Lead. Choose Radeon RX Vega graphics & Radeon™ FreeSync technology.</p>
+                            </div>
+                            <div class="col-md-6" style="display: block; float:left;">
+                                <img src="../../resources/imgs/vega64.png" width="100%" alt style="display:block; opacity: 0.6;">
+                            </div>
+                            <%--<h1>역습의 람쥐썬더</h1>--%>
+                            <%--<p><i class="fas fa-quote-left"></i>&nbsp;람쥐썬더가 올해도 장물을 한아름 짊어지고 찾아왔습니다!</p>--%>
+                            <%--<p>아래의 특별히 준비한 특가상품들을 구매하지 않으면 람쥐썬더가 폭력을 행사할 것입니다.&nbsp;<i class="fas fa-quote-right"></i></p>--%>
+                            <%--<p style="font-size:2.0em; font-weight:600;">기대해!</p>--%>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Item List -->
+        <%
+//            List<HashMap> ilistAMD = (List<HashMap>)request.getAttribute("ilistAMD");
+        %>
         <div class="sec4-wrapper container" style="display:inline-block; padding:17px 0 17px 0;  width:100%;">
             <div class="list-left" style="margin-left:17px;"> <!-- NEED TO BE FIXED -->
                 <ul class="list-ul__left">
-                    <c:forEach begin="1" end="2">
-                        <c:forEach begin="1" end="4">
+                    <c:forEach begin="1" end="4">
                             <li class="list-action unselectable">
                                 <figure>
                                     <div class="fig-top" style="padding:20px 25px 5px 25px;">
@@ -547,8 +568,6 @@
                                     </div>
                                 </figure>
                             </li>
-                        </c:forEach>
-                        <br> <!-- HAS TO BE FIXED -->
                     </c:forEach>
                 </ul>
             </div>
@@ -578,7 +597,7 @@
         <%--</div>--%>
     </section>
 
-    <%@include file="layout/hikoco_footer.jsp" %>
+    <%--<%@include file="layout/hikoco_footer.jsp" %>--%>
 
 
 </div>
@@ -590,7 +609,7 @@ var block = {
     viewOffset: { top: 64 }
 }
 var container = document.getElementById('hikoco-sec4');
-sr.reveal('.hikoco-sec4-intro', { container : container }, block);  // , block
+// sr.reveal('.hikoco-sec4-intro', { container : container }, block);  // , block
 
 
 // When the user scrolls down 20px from the top of the document, change background properties

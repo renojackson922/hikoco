@@ -2,12 +2,14 @@ package org.silkdog.maven.hikoco.item.dao;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.silkdog.maven.hikoco.item.dto.ItemDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.HashMap;
 import java.util.List;
 
 //@Repository
 public class ItemDAOImpl implements ItemDAO {
+
     private SqlSessionTemplate sqlSessionTemplate;
 
     public void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {
@@ -40,7 +42,6 @@ public class ItemDAOImpl implements ItemDAO {
     @Override
     public int insert(final ItemDTO idto){
         int result = sqlSessionTemplate.insert("org.silkdog.maven.hikoco.item.dao.ItemDAO.insert", idto);
-
         return result;
     }
 
@@ -68,9 +69,17 @@ public class ItemDAOImpl implements ItemDAO {
         return sqlSessionTemplate.selectOne("org.silkdog.maven.hikoco.item.dao.ItemDAO.countFromList");
     }
 
-    @Override
-    public List<HashMap> getSignatureItems(){
-        return sqlSessionTemplate.selectList("org.silkdog.maven.hikoco.item.dao.ItemDAO.getSignatureItems");
-    }
-
+//    @Override
+//    public List<HashMap> getSignatureItems(){
+//        List<HashMap> ilistSig =  sqlSessionTemplate.selectList("org.silkdog.maven.hikoco.item.dao.ItemDAO.getSignatureItems");
+//        List<HashMap> ilistSigStack = null;
+//        int cnt = ilistSig.size();
+//        System.out.println("Amount of Counter: " + cnt);
+//        System.out.println("GET 테스트 : " + ilistSig.get(0).get("item_id") );
+//        for(int i = 0; i < cnt; i++) {
+//            int tmp = (Integer)ilistSig.get(i).get("item_id");
+//            ilistSigStack.add(sqlSessionTemplate.selectOne("org.silkdog.maven.hikoco.item.dao.ItemDAO.select", tmp));
+//        }
+//        return ilistSigStack;
+//    }
 }

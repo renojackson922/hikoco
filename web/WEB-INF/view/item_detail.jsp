@@ -132,8 +132,11 @@
                     </div>
                     <hr>
                     <div class="item-detail-span">
+                        <%
+                            String leadingZeroFormation = String.format("%06d", idto.getItem_id());
+                        %>
                         <span class="item-optional strong">제품번호:&nbsp;</span>
-                        <span class="item-optional"><%=idto.getItem_id()%></span>
+                        <span class="item-optional"><%=leadingZeroFormation%></span>
                     </div>
                     <div class="item-detail-span">
                         <span class="item-optional strong">적립금:&nbsp;</span>
@@ -184,6 +187,12 @@
                 </div>
                 <div id="item-describe">
                     <img class="img-center" src="<%=idto.getItem_detail()%>">
+                    <% if(!(idto.getItem_detail2().isEmpty())){ %>
+                    <img class="img-center" src="<%=idto.getItem_detail2()%>">
+                    <% }else{}%>
+                    <% if(!(idto.getItem_detail3().isEmpty())){ %>
+                    <img class="img-center" src="<%=idto.getItem_detail3()%>">
+                    <% }else{}%>
                 </div>
                 <!--  상품정보제공고시 -->
                 <div class="__detail-title">

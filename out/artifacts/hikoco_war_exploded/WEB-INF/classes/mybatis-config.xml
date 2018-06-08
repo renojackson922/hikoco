@@ -9,8 +9,8 @@
         <!--<typeAlias alias="itemList" type="list"/>-->
     </typeAliases>
     <mappers>
-        <mapper resource="mybatis/1.xml"></mapper>
-        <mapper resource="mybatis/2.xml"></mapper>
-        <mapper resource="mybatis/3.xml"></mapper>
+        <mapper resource="mybatis/MemberMapper.xml"></mapper>
+        <mapper resource="mybatis/ItemMapper.xml"></mapper>
+        <mapper resource="mybatis/ItemCatMapper.xml"></mapper>
     </mappers>
 </configuration>

@@ -15,6 +15,8 @@ public class ItemDTO {
     private String item_summary;
     private String item_pic;
     private String item_detail;
+    private String item_detail2;
+    private String item_detail3;
     private Date item_upload_date;
     private Timestamp item_last_edited_date;
 
@@ -80,6 +82,22 @@ public class ItemDTO {
 
     public void setItem_detail(String item_detail) {
         this.item_detail = item_detail;
+    }
+
+    public String getItem_detail2() {
+        return item_detail2;
+    }
+
+    public void setItem_detail2(String item_detail2) {
+        this.item_detail2 = item_detail2;
+    }
+
+    public String getItem_detail3() {
+        return item_detail3;
+    }
+
+    public void setItem_detail3(String item_detail3) {
+        this.item_detail3 = item_detail3;
     }
 
     public Date getItem_upload_date() {

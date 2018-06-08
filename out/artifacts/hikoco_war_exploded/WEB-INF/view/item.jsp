@@ -29,6 +29,8 @@
 //    Iterator<Map.Entry<Integer, String>> it = set.iterator();
 
     List<HashMap> ilist = (List<HashMap>)request.getAttribute("ilist");
+    List<HashMap> ilistSign = (List<HashMap>)request.getAttribute("ilistSign");
+    System.out.println(ilistSign);
 
 %>
 <html ng-cloak ng-app="app">
@@ -150,6 +152,7 @@
 <div id="show" style="padding-top:60px;">
     <div class="text-center" style="display:inline-block; padding:20px; margin:0 auto;">
         <div class="container text-center" style="float:left; overflow-x:hidden; border:1px solid #ddd; padding:20px;">
+            <div>
             <!-- 카테고리 -->
             <%--<table class="table">--%>
             <%--<tbody>--%>
@@ -205,6 +208,7 @@
             <%--</tbody>--%>
             <%--</table>--%>
             <!-- 아이템 검색 -->
+            </div>
             <div class="text-right" style="margin-bottom:10px; padding-right:10px;">
                 <span style="font-size:12px;">페이지 수 :&nbsp;</span>
                 <input type="text" id="pageNum" size="1" maxlength="3" value="10" style="font-size:12px;">
@@ -314,9 +318,6 @@
             </div>
 
         </div>
-        <c:forEach var="i" items="${cnt}">
-            <%--<span>${i.item_title}</span>--%>
-        </c:forEach>
     </div>
 
 </div>
