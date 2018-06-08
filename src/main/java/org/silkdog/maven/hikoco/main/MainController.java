@@ -36,6 +36,7 @@ public class MainController{
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String mainRedirect(HttpServletRequest req, Model model){
         specialOffer1(req, model);
+        specialOffer2(req, model);
         return "main";
     }
 
@@ -45,6 +46,14 @@ public class MainController{
         req.setAttribute("ilistVega", ilistVega);
         model.addAttribute("cntVega", ilistVega);
     }
+
+    public void specialOffer2(HttpServletRequest req, Model model){
+        List<HashMap> ilistRyzen = itemDAO.search("라이젠");
+        System.out.println("특별전 프로모션1 테스트: " + ilistRyzen);
+        req.setAttribute("ilistRyzen", ilistRyzen);
+        model.addAttribute("cntRyzen", ilistRyzen);
+    }
+
 
     /* ======================================================== */
     /* ======================= 관리자 페이지 ===================== */

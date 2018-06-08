@@ -1,0 +1,204 @@
+html, body{
+
+}
+.hikoco-sec1-div {
+    height: 600px;
+    background: url("../../resources/imgs/bg1.jpg");
+    background-size: cover;
+}
+.hikoco-sec1-span {
+    color: #fff;
+}
+.bg {
+    background: url("../../resources/imgs/rx580_grande.png");
+}
+.jcarousel-control-next, .jcarousel-control-prev {
+    text-decoration: none !important;
+}
+.jcarousel-control-next:hover, .jcarousel-control-prev:hover {
+    color: #fff;
+}
+.jcarousel-wrapper{
+
+}
+#hikoco-sec2, #hikoco-sec3, #hikoco-sec4{
+    margin:0 auto;
+    padding-top:17px;
+    min-width:70%;
+    max-width:100%;
+}
+.jcarousel-item{
+    height:300px;
+}
+.jcarousel-item:hover{
+    /*border:1px solid crimson;*/
+}
+figure {
+    margin-bottom: 0px;
+}
+
+hr {
+    margin: 5px 0px 5px 0px;
+}
+.list-ul{
+    /*padding-right:20px;*/
+    padding-left:17px;
+}
+
+.list-ul__left{
+    /*padding-right:20px;*/
+    /*padding-left:17px;*/
+    padding-left:0px;
+}
+.list-ul > li, .list-ul__left > li {
+    float: left;
+    max-width: 263px;
+    min-height: 333px;
+    border: 1px solid #ddd;
+    display: inline-block !important;
+    margin: 0 17px 17px 0;
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: 0em;
+    border-top-right-radius: 0em;
+}
+
+.list-group-item:last-child {
+    border-bottom-left-radius: 0em;
+    border-bottom-right-radius: 0em;
+}
+
+.list-action {
+    /*width: 100%;*/
+    background-color: #fff;
+    color: #495057;
+    text-align: inherit
+}
+
+.list-action:focus, .list-action:hover {
+    color: #495057;
+    text-decoration: none;
+    background-color: #f8f9fa
+}
+
+.list-action:active {
+    color: #212529;
+    background-color: #e9ecef
+}
+.list-left, .list-right{
+    display:inline-block;
+    float:left;
+    /*overflow:hidden;*/
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+.hikoco-sec3-intro{
+    background: #000 url("../../resources/imgs/amd-pinacle.jpg");
+    /*background: #000 url("../../resources/imgs/i78700k+ryzen_cropped.png");*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: auto;
+    height: 300px;
+    margin-top:17px;
+}
+.hikoco-sec3-intro-opaque{
+    width: inherit;
+    height: inherit;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hikoco-sec4-intro{
+    background: #000 url("../../resources/imgs/smoke-hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: auto;
+    height: 500px;
+    margin-top:17px;
+}
+.hikoco-sec4-intro-opaque{
+    width: inherit;
+    height: inherit;
+    background: rgba(0, 0, 0, 0.5);
+}
+/* table, table-cell 3단 콤보 */
+.intro-table, .optional-table{
+    display:table;
+    position:relative;
+    width:100%;
+    height:inherit;
+}
+.intro-cell, .optional-cell{
+    display:table-cell;
+    vertical-align:middle;
+}
+.intro-box{
+    display:block;
+    margin:0 auto;
+    padding:10px;
+    font-size:12px;
+    width: 800px;
+}
+.optional-box{
+    display:block;
+    margin:0 auto;
+    padding:10px;
+    font-size:12px;
+    width: 300px;
+}
+
+.intro-box > h1{
+    color:#fff;
+}
+.optional-box > h1{
+    color:#fff;
+}
+.intro-box > p{
+    color:#fff;
+    font-size:1.5em;
+    display:block;
+    margin:0;
+    font-weight:300;
+}
+.optional-box > p{
+    color:#fff;
+    font-size:1.5em;
+    display:block;
+    margin:0;
+    font-weight:300;
+}
+
+.hikoco-sec3-list-left__img{
+    background: url("../../resources/imgs/retriever.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: -100px !important;
+}
+
+.hikoco-sec4-list-right__img{
+    background: url("../../resources/imgs/ramsay.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.opaque__light{
+    width: inherit;
+    height: inherit;
+    background: rgba(0, 0, 0, 0.3);
+}
+.fa-quote-left, .fa-quote-right{
+    vertical-align:top;
+}
+
+#hikoco-sec2, #hikoco-sec3, #hikoco-sec4{
+    background:  url("../../resources/imgs/sticky-shadow-top.png");
+    background-size: cover;
+}
+#hikoco-sec4-profile{
+    background: #000 !important;
+}

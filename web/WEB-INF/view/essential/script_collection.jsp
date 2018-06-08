@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
+
+
 <!-- Angular.js -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
 <script src="../../resources/js/angular-timer.min.js"></script>
