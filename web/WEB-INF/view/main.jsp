@@ -1,9 +1,6 @@
 <%@ page import="java.util.*" %>
-<%@ page import="org.silkdog.maven.hikoco.item.dao.ItemDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:useBean id="itemDAO" class="org.silkdog.maven.hikoco.item.dao.ItemDAOImpl" scope="page"/>
-<jsp:setProperty name="itemDAO"  property="*" />
 
 <%
     Map<String, Integer> mainHashMap = new HashMap<String, Integer>();
@@ -43,8 +40,6 @@
     session.setAttribute("mainHashMap", mainHashMap);
 %>
 <%
-    List<HashMap> ilistVega = itemDAO.search("vega");
-    System.out.println(ilistVega);
 %>
 <html ng-cloak ng-app="app">
 <head>
@@ -276,7 +271,8 @@
 
         .list-ul__left{
             /*padding-right:20px;*/
-            /*padding-left:17px;*/             padding-left:0px;
+            /*padding-left:17px;*/
+            padding-left:0px;
         }
         .list-ul > li, .list-ul__left > li {
             float: left;
@@ -540,30 +536,27 @@
                 </div>
             </div>
         </div>
-        <!-- Item List -->
 
+        <!-- Item List; AMD RXVega Special Offer -->
         <div class="sec4-wrapper container" style="display:inline-block; padding:17px 0 17px 0;  width:100%;">
             <div class="list-left" style="margin-left:17px;"> <!-- NEED TO BE FIXED -->
                 <ul class="list-ul__left">
                     <c:forEach var="i" items="${cntVega}">
-                            <li class="list-action unselectable">
+                            <li class="list-action unselectable" onclick="window.location.href='item_detail.do?item_id=${i.item_id}'">
                                 <figure>
                                     <div class="fig-top" style="padding:20px 25px 5px 25px;">
-                                        <img class="center" src="../../resources/imgs/ramsay_thumbnail.png"
-                                             style="margin-bottom:10px; height:150px; max-width:150px;">
-                                        <figcaption>
-                                            <p style="margin-bottom:0px; font-size:14px; font-weight:700;">${i.item_title}</p>
+                                        <img class="center" src="${i.item_pic}"
+                                             style="margin-bottom:10px; height:200px; width:200px;">
+                                        <figcaption style="height:135px;"> <!-- 임시적 높이 조정 -->
+                                            <p style="margin-bottom:0px; font-size:0.8em; font-weight:700;">${i.item_title}</p>
                                             <hr>
-                                                <%--<p style="margin-bottom:0px; font-size:12px; font-weight:400; color:#5d5d5d;">현존 최고의 성능 워크스테이션</p>--%>
-                                            <p style="font-size:12px; color:#5d5d5d; text-align:left; font-weight:400;">인텔 Xeon
-                                                E5-2687Wv4 (3.0G) / DDR4 4GB / HDD 미포함 / VGA 미포함 / ODD미포함 / 3.5인치 내부 4Bay / 5.25인치
-                                                3Bay / 시리얼포트 / 1000W 파워 / 지원 / 32GB 이상</p>
+                                            <p style="font-size:12px; color:#5d5d5d; text-align:left; font-weight:400;">${i.item_summary}</p>
                                         </figcaption>
                                     </div>
                                     <div class="fig-bottom" style="padding:15px 30px 15px 30px; border-top:1px solid #ddd;">
                                         <figcaption>
                                             <div class="text-left" style="float:left;">
-                                                <span style="font-size:14px;"><strong>9,400,270원</strong></span>
+                                                <span style="font-size:14px;"><strong>${i.item_price}원</strong></span>
                                             </div>
                                             <div class="text-right" style=" vertical-align: middle;">
                                                 <span style="font-size:12px; border:1px solid #428bca; background: #428bca; color:#fff; padding:0 5px 0 5px; border-radius:4px;">MD추천</span>
@@ -573,37 +566,41 @@
                                 </figure>
                             </li>
                     </c:forEach>
+                    <c:forEach var="i" items="${cntVega}">
+                        <li class="list-action unselectable" onclick="window.location.href='item_detail.do?item_id=${i.item_id}'">
+                            <figure>
+                                <div class="fig-top" style="padding:20px 25px 5px 25px;">
+                                    <img class="center" src="${i.item_pic}"
+                                         style="margin-bottom:10px; height:200px; width:200px;">
+                                    <figcaption style="height:135px;"> <!-- 임시적 높이 조정 -->
+                                        <p style="margin-bottom:0px; font-size:0.8em; font-weight:700;">${i.item_title}</p>
+                                        <hr>
+                                        <p style="font-size:12px; color:#5d5d5d; text-align:left; font-weight:400;">${i.item_summary}</p>
+                                    </figcaption>
+                                </div>
+                                <div class="fig-bottom" style="padding:15px 30px 15px 30px; border-top:1px solid #ddd;">
+                                    <figcaption>
+                                        <div class="text-left" style="float:left;">
+                                            <span style="font-size:14px;"><strong>${i.item_price}원</strong></span>
+                                        </div>
+                                        <div class="text-right" style=" vertical-align: middle;">
+                                            <span style="font-size:12px; border:1px solid #428bca; background: #428bca; color:#fff; padding:0 5px 0 5px; border-radius:4px;">MD추천</span>
+                                        </div>
+                                    </figcaption>
+                                </div>
+                            </figure>
+                        </li>
+                    </c:forEach>
                 </ul>
             </div>
-            <%--<div class="list-right" style="min-width:240px; max-width:240px; height:800px;">--%>
-            <%--<div class="hikoco-sec4-list-right__img" style="width:inherit; height:inherit;">--%>
-            <%--<div class="opaque__light">--%>
-            <%--<div class="optional-table">--%>
-            <%--<div class="optional-cell">--%>
-            <%--<div class="optional-box">--%>
-            <%--<p>이 람쥐들은<br> 무료로 해줍니다!</p>--%>
-            <%--</div>--%>
-            <%--</div>--%>
-            <%--</div>--%>
-            <%--</div>--%>
-            <%--</div>--%>
-            <%--</div>--%>
         </div>
-
     </section>
-
-
-
-
     <section id="hikoco-sec5">
         <%--<div style="height:50px; background-color:#ddd; line-height:50px; padding-left:20px; ">--%>
         <%--<span style="font-size:24px;">Hot-Selling</span>--%>
         <%--</div>--%>
     </section>
-
     <%--<%@include file="layout/hikoco_footer.jsp" %>--%>
-
-
 </div>
 </body>
 

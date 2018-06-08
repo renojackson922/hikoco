@@ -16,7 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 
 @Controller
 public class MainController{
@@ -35,15 +34,16 @@ public class MainController{
     /* ======================================================== */
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String mainRedirect(){
+    public String mainRedirect(HttpServletRequest req, Model model){
+        specialOffer1(req, model);
         return "main";
     }
 
     public void specialOffer1(HttpServletRequest req, Model model){
-//        List<HashMap> ilistVega = itemDAO.search("vega");
-//        System.out.println("특별전 프로모션1 테스트: " + ilistVega);
-//        req.setAttribute("ilistVega", ilistVega);
-//        model.addAttribute("cntVega", ilistVega);
+        List<HashMap> ilistVega = itemDAO.search("vega");
+        System.out.println("특별전 프로모션1 테스트: " + ilistVega);
+        req.setAttribute("ilistVega", ilistVega);
+        model.addAttribute("cntVega", ilistVega);
     }
 
     /* ======================================================== */

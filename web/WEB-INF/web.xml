@@ -22,7 +22,8 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
-        <url-pattern>*.do</url-pattern>
+        <!--<url-pattern>*.do</url-pattern>-->
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
     <filter>
         <filter-name>encodingFilter</filter-name>
@@ -50,9 +51,7 @@
         <!--<url-pattern>/*</url-pattern>-->
     <!--</filter-mapping>-->
 
-    <welcome-file-list>
-        <welcome-file>/WEB-INF/view/main.jsp</welcome-file>
-    </welcome-file-list>
+
     <!--<welcome-file-list>-->
         <!--<welcome-file>/WEB-INF/view/main.jsp</welcome-file>-->
     <!--</welcome-file-list>-->
