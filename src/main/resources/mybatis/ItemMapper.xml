@@ -49,14 +49,22 @@
 	<select id="listByIndex" resultType="java.util.HashMap" parameterType="java.util.HashMap">
       SELECT *
       FROM (
+		<if test="keyword0 != null" >
       (SELECT * FROM hikoco_item WHERE item_title LIKE CONCAT('%',#{keyword0},'%'))
       UNION
-      (SELECT * FROM hikoco_item WHERE item_manu LIKE CONCAT('%',#{keyword1},'%'))
+		</if>
+		<if test="keyword1 != null">
+		(SELECT * FROM hikoco_item WHERE item_manu LIKE CONCAT('%',#{keyword1},'%'))
       UNION
-      (SELECT * FROM hikoco_item WHERE item_vendor LIKE CONCAT('%',#{keyword2},'%'))
+		</if>
+		<if test="keyword2 != null">
+		(SELECT * FROM hikoco_item WHERE item_vendor LIKE CONCAT('%',#{keyword2},'%'))
       UNION
-      (SELECT * FROM hikoco_item WHERE item_summary LIKE CONCAT('%',#{keyword3},'%'))
-      ) item_search
+		</if>
+		<if test="keyword3 != null">
+		(SELECT * FROM hikoco_item WHERE item_summary LIKE CONCAT('%',#{keyword3},'%'))
+		</if>
+		) item_search
       ORDER BY item_id DESC
       limit #{startIndexNum}, #{pageNum}
 	</select>
