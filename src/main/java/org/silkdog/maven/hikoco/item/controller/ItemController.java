@@ -82,6 +82,8 @@ public class ItemController {
             model.addAttribute("listcount", listcount);
             req.setAttribute("listcount2", listcount);
 
+            getPagination(listcount);
+
             // mode의 값이 search일 경우 search(searchString)을 조회후 list로 저장
         }else if(mode.equals("search") && searchString != null){
             List<HashMap> ilist = itemDAO.search(searchString);
@@ -96,13 +98,29 @@ public class ItemController {
             model.addAttribute("listcount", listcount);
             req.setAttribute("listcount2", listcount);
 
+            getPagination(listcount);
+
         }else{
             System.out.println("Unexpected access detected!");
         }
     }
 
+    /* 인덱스 갯수 계산하기 */
     public void getPagination(int listcount){
-        
+        //    if(countDIV > (int)Math.ceil(count / 6)){
+//        cat_height = (int)Math.ceil(count/6) + 1;
+//    }else{
+//        cat_height = (int)Math.ceil(count/6);
+//    }
+        int index;
+
+        if((listcount % 10) == 0 || listcount < 10){
+            index = (int)Math.ceil(listcount / 10);
+        }else{
+            index = (int)Math.ceil(listcount / 10)+1;
+        }
+
+        System.out.println(index);
     }
 
     @RequestMapping(value="/item_detail.do", method = RequestMethod.GET)

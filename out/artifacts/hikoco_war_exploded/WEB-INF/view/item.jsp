@@ -168,64 +168,64 @@
     <div class="text-center" style="display:inline-block; padding:20px; margin:0 auto;">
         <div class="container text-center" style="float:left; overflow-x:hidden; border:1px solid #ddd; padding:20px;">
             <div>
-            <!-- 카테고리 -->
-            <%--<table class="table">--%>
-            <%--<tbody>--%>
-            <%--<c:set var="cat_height" value="<%=cat_height%>" scope="page"/>--%>
-            <%--&lt;%&ndash;<c:set var="e" value="<%=new AbstractMap.SimpleEntry<Integer, String>%>"/>&ndash;%&gt;--%>
-            <%--<!-- 제일 첫번째와 마지막을 제외하고는 오른쪽 border 삭제해야함 -->--%>
-            <%--<%--%>
-            <%--// 첫번째 여섯개의 카테고리는 parent css를 적용해야함--%>
-            <%--Map.Entry<Integer, String> e;--%>
-            <%--while(it.hasNext()){--%>
-            <%--%>--%>
-            <%--<c:forEach var="i" begin="1" end="${cat_height}" step="1">--%>
-            <%--<c:choose>--%>
-            <%--<c:when test="${i == 1}">--%>
-            <%--<tr>--%>
-            <%--<div class="category-td-parent" style="display:block">--%>
-            <%--<c:forEach var="j" begin="1" end="5" step="1">--%>
-            <%--<% if(it.hasNext()){ e = it.next(); %>--%>
-            <%--<td class="category-td-parent-item"><a href="#" class="list-group-item list-group-item-action" style="background-color: #eee;"><%=e.getValue()%> (###)</a></td>--%>
-            <%--<% }else{ %>--%>
-            <%--<td class="category-td-parent-item"><a href="#" class="list-group-item list-group-item-action">&nbsp;</a></td>--%>
-            <%--<% } %>--%>
-            <%--</c:forEach>--%>
-            <%--<% if(it.hasNext()){ e = it.next(); %>--%>
-            <%--<td class="category-td-parent-item last-row"><a href="#" class="list-group-item list-group-item-action" style="background-color: #eee;"><%=e.getValue()%> (###)</a></td>--%>
-            <%--<% }else{ %>--%>
-            <%--<td class="category-td-parent-item last-row"><a href="#" class="list-group-item list-group-item-action">&nbsp;</a></td>--%>
-            <%--<% } %>--%>
-            <%--</div>--%>
-            <%--</tr>--%>
-            <%--</c:when>--%>
-            <%--<c:when test="${i >= 2}">--%>
-            <%--<tr>--%>
-            <%--<div class="category-td-child" style="display:block">--%>
-            <%--<c:forEach var="j" begin="1" end="5" step="1">--%>
-            <%--<% if(it.hasNext()){ e = it.next(); %>--%>
-            <%--<td class="category-td-child-item"><a href="#" class="list-group-item list-group-item-action" style="background-color: #eee;"><%=e.getValue()%> (###)</a></td>--%>
-            <%--<% }else{ %>--%>
-            <%--<td class="category-td-child-item"><a href="#" class="list-group-item list-group-item-action">&nbsp;</a></td>--%>
-            <%--<% } %>--%>
-            <%--</c:forEach>--%>
-            <%--<% if(it.hasNext()){ e = it.next(); %>--%>
-            <%--<td class="category-td-child-item last-row"><a href="#" class="list-group-item list-group-item-action" style="background-color: #eee;"><%=e.getValue()%> (###)</a></td>--%>
-            <%--<% }else{ %>--%>
-            <%--<td class="category-td-child-item last-row"><a href="#" class="list-group-item list-group-item-action">&nbsp;</a></td>--%>
-            <%--<% } %>--%>
-            <%--</div>--%>
-            <%--</tr>--%>
-            <%--</c:when>--%>
-            <%--</c:choose>--%>
-            <%--</c:forEach>--%>
-            <%--<% } %>--%>
-            <%--</tbody>--%>
-            <%--</table>--%>
-            <!-- 아이템 검색 -->
+                <!-- 카테고리 -->
+                <%--<table class="table">--%>
+                <%--<tbody>--%>
+                <%--<c:set var="cat_height" value="<%=cat_height%>" scope="page"/>--%>
+                <%--&lt;%&ndash;<c:set var="e" value="<%=new AbstractMap.SimpleEntry<Integer, String>%>"/>&ndash;%&gt;--%>
+                <%--<!-- 제일 첫번째와 마지막을 제외하고는 오른쪽 border 삭제해야함 -->--%>
+                <%--<%--%>
+                <%--// 첫번째 여섯개의 카테고리는 parent css를 적용해야함--%>
+                <%--Map.Entry<Integer, String> e;--%>
+                <%--while(it.hasNext()){--%>
+                <%--%>--%>
+                <%--<c:forEach var="i" begin="1" end="${cat_height}" step="1">--%>
+                <%--<c:choose>--%>
+                <%--<c:when test="${i == 1}">--%>
+                <%--<tr>--%>
+                <%--<div class="category-td-parent" style="display:block">--%>
+                <%--<c:forEach var="j" begin="1" end="5" step="1">--%>
+                <%--<% if(it.hasNext()){ e = it.next(); %>--%>
+                <%--<td class="category-td-parent-item"><a href="#" class="list-group-item list-group-item-action" style="background-color: #eee;"><%=e.getValue()%> (###)</a></td>--%>
+                <%--<% }else{ %>--%>
+                <%--<td class="category-td-parent-item"><a href="#" class="list-group-item list-group-item-action">&nbsp;</a></td>--%>
+                <%--<% } %>--%>
+                <%--</c:forEach>--%>
+                <%--<% if(it.hasNext()){ e = it.next(); %>--%>
+                <%--<td class="category-td-parent-item last-row"><a href="#" class="list-group-item list-group-item-action" style="background-color: #eee;"><%=e.getValue()%> (###)</a></td>--%>
+                <%--<% }else{ %>--%>
+                <%--<td class="category-td-parent-item last-row"><a href="#" class="list-group-item list-group-item-action">&nbsp;</a></td>--%>
+                <%--<% } %>--%>
+                <%--</div>--%>
+                <%--</tr>--%>
+                <%--</c:when>--%>
+                <%--<c:when test="${i >= 2}">--%>
+                <%--<tr>--%>
+                <%--<div class="category-td-child" style="display:block">--%>
+                <%--<c:forEach var="j" begin="1" end="5" step="1">--%>
+                <%--<% if(it.hasNext()){ e = it.next(); %>--%>
+                <%--<td class="category-td-child-item"><a href="#" class="list-group-item list-group-item-action" style="background-color: #eee;"><%=e.getValue()%> (###)</a></td>--%>
+                <%--<% }else{ %>--%>
+                <%--<td class="category-td-child-item"><a href="#" class="list-group-item list-group-item-action">&nbsp;</a></td>--%>
+                <%--<% } %>--%>
+                <%--</c:forEach>--%>
+                <%--<% if(it.hasNext()){ e = it.next(); %>--%>
+                <%--<td class="category-td-child-item last-row"><a href="#" class="list-group-item list-group-item-action" style="background-color: #eee;"><%=e.getValue()%> (###)</a></td>--%>
+                <%--<% }else{ %>--%>
+                <%--<td class="category-td-child-item last-row"><a href="#" class="list-group-item list-group-item-action">&nbsp;</a></td>--%>
+                <%--<% } %>--%>
+                <%--</div>--%>
+                <%--</tr>--%>
+                <%--</c:when>--%>
+                <%--</c:choose>--%>
+                <%--</c:forEach>--%>
+                <%--<% } %>--%>
+                <%--</tbody>--%>
+                <%--</table>--%>
+                <!-- 아이템 검색 -->
             </div>
             <div class="text-right" style="margin-bottom:10px; padding-right:10px;">
-                <span>${listcount}</span>
+                <span><strong>${listcount}</strong></span>
                 <span style="font-size:12px;">페이지 수 :&nbsp;</span>
                 <input type="text" id="pageNum" size="1" maxlength="3" value="10" style="font-size:12px;">
             </div>
@@ -320,8 +320,30 @@
                         <!-- a tag ends -->
                     </c:forEach>
                 </div>
-                <div style="margin-bottom:15px;">
-                    <span style="display:block; font-size:12px; text-align:center;"><strong>[1]</strong></span>
+                <div style="display:inline-block; margin:0 auto;">
+
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
                 </div>
 
                 <div class="input-group mb-3" style="margin:0 auto; width:200px">
