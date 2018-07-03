@@ -2,12 +2,13 @@
 <%@ page import="java.util.HashMap" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%
-    ItemDTO idto = (ItemDTO)request.getAttribute("idto");
+    ItemDTO idto = (ItemDTO) request.getAttribute("idto");
 
 %>
 <html ng-cloak ng-app="app">
 <head>
-    <title>HIKOCO :: ITEM :: <%=idto.getItem_title()%></title>
+    <title>HIKOCO :: ITEM :: <%=idto.getItem_title()%>
+    </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HIKOCO :: MAIN</title>
@@ -33,7 +34,8 @@
     <!-- Load Montstreet Fonts -->
     <%--<link rel="stylesheet" href="/public/css/fonts.css">--%>
     <!-- Font-Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <!-- Underscore.js -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
     <!-- Animate.css -->
@@ -67,18 +69,19 @@
         app.controller('ctrl', function ($scope, $http, $interval, $timeout) {
             $scope.test1 = 1;
 
-            $scope.$watch('test1 * 1000000', function(value){
+            $scope.$watch('test1 * 1000000', function (value) {
                 $scope.test2 = value;
                 $scope.test3 = value * 0.005 // 0.5% 적립
             });
         });
     </script>
     <style>
-        #advertisement > a > span{
-            font-size:2.5em;
-            color:#5d5d5d;
+        #advertisement > a > span {
+            font-size: 2.5em;
+            color: #5d5d5d;
         }
-        #advertisement > a:hover{
+
+        #advertisement > a:hover {
             text-decoration: none;
         }
     </style>
@@ -93,7 +96,7 @@
 
 </div>
 <button onclick="topFunction()" id="myBtn" class="animated fadeIn" title="Go to top">Top</button>
-<%@include file="layout/hikoco_navbar.jsp"%>
+<%@include file="layout/hikoco_navbar.jsp" %>
 <div id="show" style="padding-top:60px;">
     <!-- 분류 -->
     <div class="container" style="margin-top:17px; margin-bottom:17px; padding:17px; border:1px solid #ddd;">
@@ -109,8 +112,10 @@
                 <div class="css-table-cell">
                     <img src="<%=idto.getItem_pic()%>" width="300px" height="300px" style="border:1px solid #ddd;">
                     <div class="" style="display: block;">
-                        <button class="btn btn-sm btn-outline-secondary" style="width:100%; margin-top:5px;">자세히 보기</button>
-                        <button class="btn btn-sm btn-outline-secondary" style="width:100%; margin-top:5px;">상품신고</button>
+                        <button class="btn btn-sm btn-outline-secondary" style="width:100%; margin-top:5px;">자세히 보기
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary" style="width:100%; margin-top:5px;">상품신고
+                        </button>
                     </div>
                 </div>
                 <!-- 상품의 정보 -->
@@ -119,15 +124,18 @@
                     <span class="item-detail-span item-subtitle" style="color:#5d5d5d;"><%=idto.getItem_manu()%>&nbsp;&nbsp;|&nbsp;&nbsp;<%=idto.getItem_vendor()%></span>
                     <span class="item-detail-span item-subtitle"><%=idto.getItem_summary()%></span>
                     <div class="item-detail-span">
-                        <span class="span-loginInfo" style="font-size:10px; padding:0px 5px 0px 5px; background: #2897d3; color:#fff; border-radius:0px; display: inline-block;">사은품</span>
+                        <span class="span-loginInfo"
+                              style="font-size:10px; padding:0px 5px 0px 5px; background: #2897d3; color:#fff; border-radius:0px; display: inline-block;">사은품</span>
                         <span class="item-optional">&nbsp;구매영수증 인증 시 메로나 아이스크림 증정 (05.01~05.31)</span>
                     </div>
                     <div class="item-detail-span">
-                        <span class="span-loginInfo" style="font-size:10px; padding:0px 5px 0px 5px; background: gold; color:#fff; border-radius:0px; display: inline-block; width:40px; text-align: center;">후기</span>
+                        <span class="span-loginInfo"
+                              style="font-size:10px; padding:0px 5px 0px 5px; background: gold; color:#fff; border-radius:0px; display: inline-block; width:40px; text-align: center;">후기</span>
                         <span class="item-optional">&nbsp;후기 작성 후 별도의 신청 시 스타벅스 캔커피 증정 (05.01~05.31)</span>
                     </div>
                     <div class="item-detail-span">
-                        <span class="span-loginInfo" style="font-size:10px; padding:0px 5px 0px 5px; background: gold; color:#fff; border-radius:0px; display: inline-block; width:40px; text-align: center;">후기</span>
+                        <span class="span-loginInfo"
+                              style="font-size:10px; padding:0px 5px 0px 5px; background: gold; color:#fff; border-radius:0px; display: inline-block; width:40px; text-align: center;">후기</span>
                         <span class="item-optional">&nbsp;후기 작성 후 별도의 신청을 하신 6분께 LED 삼각대 증정 (05.01~05.31)</span>
                     </div>
                     <hr>
@@ -149,7 +157,8 @@
                     <div class="item-detail-span">
                         <span class="item-optional strong">카드혜택:&nbsp;</span>
                         <span class="item-optional">최대 6개월 무이자&nbsp;</span>
-                        <span id="card" class="unselectable" style="height:1.0em; font-size:0.5em; padding:5px 5px 5px 5px; border:1px solid #5d5d5d;">카드사별</span>
+                        <span id="card" class="unselectable"
+                              style="height:1.0em; font-size:0.5em; padding:5px 5px 5px 5px; border:1px solid #5d5d5d;">카드사별</span>
                     </div>
                     <!-- 옵션 -->
 
@@ -168,12 +177,30 @@
                     <tbody>
                     <tr>
                         <div class="navigator-td-parent" style="display:block">
-                            <td class="navigator-td-parent-item"><a href="#" class="list-group-item list-group-item-action item-focus" onclick="window.location.hash='item-describe'">상세정보</a></td>
-                            <td class="navigator-td-parent-item"><a href="#" class="list-group-item list-group-item-action item-focus" onclick="window.location.hash='item-specinfo'">상품정보제공고시</a></td>
-                            <td class="navigator-td-parent-item"><a href="#" class="list-group-item list-group-item-action item-focus" onclick="window.location.hash='item-comment'">이용후기&nbsp;(0)</a></td>
-                            <td class="navigator-td-parent-item"><a href="#" class="list-group-item list-group-item-action item-focus" onclick="window.location.hash='item-review'">뉴스/리뷰&nbsp;(0)</a></td>
-                            <td class="navigator-td-parent-item"><a href="#" class="list-group-item list-group-item-action item-focus" onclick="window.location.hash='item-qna'">상품Q&A</a></td>
-                            <td class="navigator-td-parent-item last-row"><a href="#" class="list-group-item list-group-item-action item-focus" onclick="window.location.hash='item-refund'">배송/교환/환불</a></td>
+                            <td class="navigator-td-parent-item"><a href="#"
+                                                                    class="list-group-item list-group-item-action item-focus"
+                                                                    onclick="window.location.hash='item-describe'">상세정보</a>
+                            </td>
+                            <td class="navigator-td-parent-item"><a href="#"
+                                                                    class="list-group-item list-group-item-action item-focus"
+                                                                    onclick="window.location.hash='item-specinfo'">상품정보제공고시</a>
+                            </td>
+                            <td class="navigator-td-parent-item"><a href="#"
+                                                                    class="list-group-item list-group-item-action item-focus"
+                                                                    onclick="window.location.hash='item-comment'">이용후기&nbsp;(0)</a>
+                            </td>
+                            <td class="navigator-td-parent-item"><a href="#"
+                                                                    class="list-group-item list-group-item-action item-focus"
+                                                                    onclick="window.location.hash='item-review'">뉴스/리뷰&nbsp;(0)</a>
+                            </td>
+                            <td class="navigator-td-parent-item"><a href="#"
+                                                                    class="list-group-item list-group-item-action item-focus"
+                                                                    onclick="window.location.hash='item-qna'">상품Q&A</a>
+                            </td>
+                            <td class="navigator-td-parent-item last-row"><a href="#"
+                                                                             class="list-group-item list-group-item-action item-focus"
+                                                                             onclick="window.location.hash='item-refund'">배송/교환/환불</a>
+                            </td>
                         </div>
                     </tr>
                     </tbody>
@@ -187,12 +214,14 @@
                 </div>
                 <div id="item-describe">
                     <img class="img-center" src="<%=idto.getItem_detail()%>">
-                    <% if(!(idto.getItem_detail2().isEmpty())){ %>
+                    <% if (!(idto.getItem_detail2().isEmpty())) { %>
                     <img class="img-center" src="<%=idto.getItem_detail2()%>">
-                    <% }else{}%>
-                    <% if(!(idto.getItem_detail3().isEmpty())){ %>
+                    <% } else {
+                    }%>
+                    <% if (!(idto.getItem_detail3().isEmpty())) { %>
                     <img class="img-center" src="<%=idto.getItem_detail3()%>">
-                    <% }else{}%>
+                    <% } else {
+                    }%>
                 </div>
                 <!--  상품정보제공고시 -->
                 <div class="__detail-title">
@@ -310,7 +339,7 @@
                                     </div>
                                     <div class="satisfaction-col col-md-9" style="float:left;">
                                         <!-- 주의 -->
-                                        <% for(int k = 0; k < 5; k++){ %>
+                                        <% for (int k = 0; k < 5; k++) { %>
                                         <span style="border:1px solid #5d5d5d; margin-left:5px; margin-right:10px; margin-bottom:3px; height:14px;"></span>
                                         <% } %>
                                     </div>
@@ -321,11 +350,13 @@
                     <br><br><br><br><br><br><br><!-- 주의 -->
                     <!-- 코멘트 -->
                     <div class="satisfaction-comment-wrapper" style="display:block;">
-                        <div class="satisfaction-comment" style="border-bottom:2px solid #5d5d5d; padding-bottom:5px; margin-bottom:5px;">
+                        <div class="satisfaction-comment"
+                             style="border-bottom:2px solid #5d5d5d; padding-bottom:5px; margin-bottom:5px;">
                             &nbsp;<span><strong>전체(29)</strong>&nbsp;&nbsp;|&nbsp;&nbsp;일반(20)&nbsp;&nbsp;|&nbsp;&nbsp;프리미엄(9)</span>
                         </div>
-                        <% for(int i = 0; i< 5; i++){%>
-                        <div class="satisfaction-comment-item" style="min-height:90px; border-bottom:1px solid #ddd; padding-left:7px;">
+                        <% for (int i = 0; i < 5; i++) {%>
+                        <div class="satisfaction-comment-item"
+                             style="min-height:90px; border-bottom:1px solid #ddd; padding-left:7px;">
                             <div class="satisfaction-comment-item__profile">
                                 <span><i class="fas fa-star"></i></span>
                                 <span><i class="fas fa-star"></i></span>
@@ -374,11 +405,11 @@
             </div>
         </div>
     </div>
-    <%@include file="layout/hikoco_footer.jsp"%>
+    <%@include file="layout/hikoco_footer.jsp" %>
 </div>
 </body>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $("#itemAmount").keydown(function (e) {
             // Allow: backspace, delete, tab, escape, enter and .
             if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
@@ -401,7 +432,9 @@
     });
 
     // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
+    window.onscroll = function () {
+        scrollFunction()
+    };
 
     function scrollFunction() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -416,7 +449,8 @@
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
-    document.addEventListener("DOMContentLoaded", function(event){
+
+    document.addEventListener("DOMContentLoaded", function (event) {
         // document.getElementById('hikoco-nav').style.height = 66;
         document.getElementById('hikoco-nav').style.background = 'rgba(0,0,0,0.8)';
     });

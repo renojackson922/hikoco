@@ -2,9 +2,9 @@
 <%@ page import="org.silkdog.maven.hikoco.item.dto.ItemDTO" %>
 <%@ page import="java.util.*" %>
 <%@ page contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <%
-    List<HashMap> ilist = (List<HashMap>)request.getAttribute("ilist");
+    List<HashMap> ilist = (List<HashMap>) request.getAttribute("ilist");
     System.out.println(ilist);
 
 //
@@ -42,8 +42,8 @@
 </head>
 <body>
 <style>
-    span{
-        display:block;
+    span {
+        display: block;
     }
 </style>
 <a class="btn btn-info" href="/">홈으로</a>
@@ -55,7 +55,7 @@
         </div>
         <div class="form-group">
             <label>아이템 가격</label>
-            <input type="text" class="form-control" name="item_price" required>
+            <input type="text" class="form-control" name="item_price" value="0" required>
         </div>
         <div class="form-group">
             <label>아이템 제조사</label>
@@ -72,11 +72,13 @@
         </div>
         <div class="form-group">
             <label>아이템 사진 위치(상대경로)</label>
-            <input type="text" class="form-control" name="item_pic" value="../../resources/imgs/items/palit.jpg" required>
+            <input type="text" class="form-control" name="item_pic" value="../../resources/imgs/items/palit.jpg"
+                   required>
         </div>
         <div class="form-group">
             <label>아이템 설명 위치1(상대경로)</label>
-            <input type="text" class="form-control" name="item_detail" value="../../resources/imgs/items_detail/palit_detail.jpg" required>
+            <input type="text" class="form-control" name="item_detail"
+                   value="../../resources/imgs/items_detail/palit_detail.jpg" required>
         </div>
         <div class="form-group">
             <label>아이템 설명 위치2(상대경로) - OPTIONAL</label>

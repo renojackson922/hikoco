@@ -1,11 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.*,
-org.silkdog.maven.hikoco.member.dao.*,
-org.silkdog.maven.hikoco.member.dto.*" %>
+                 org.silkdog.maven.hikoco.member.dao.*,
+                 org.silkdog.maven.hikoco.member.dto.*" %>
 
 <%
-    List<MemberDTO> mlist = (List<MemberDTO>)request.getAttribute("mlist");
-    MemberDTO mdto2 = (MemberDTO)request.getAttribute("mdto");
+    List<MemberDTO> mlist = (List<MemberDTO>) request.getAttribute("mlist");
+    MemberDTO mdto2 = (MemberDTO) request.getAttribute("mdto");
 %>
 
 <!DOCTYPE html>
@@ -17,14 +17,23 @@ org.silkdog.maven.hikoco.member.dto.*" %>
     <%--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>--%>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <!-- Bootstrap 4.1.1 & jQuery-Slim -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
     <!-- Load Montstreet Fonts -->
     <link rel="stylesheet" href="/public/css/fonts.css">
     <!-- Font-Awesome -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+            integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+            crossorigin="anonymous"></script>
     <!-- Underscore.js -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
     <!-- Animate.css -->
@@ -37,47 +46,57 @@ org.silkdog.maven.hikoco.member.dto.*" %>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
     <style>
-        .pubg-left{
+        .pubg-left {
 
         }
-        .pubg-right{
-            padding-bottom:15px;
-        }
-        .list-group-item:first-child{
-            border-top-left-radius:0px;
-            border-top-right-radius:0px;
-        }
-        .list-group-item:last-child{
-            border-bottom-left-radius:0px;
-            border-bottom-right-radius:0px;
-        }
-        .list-group > a{
-            font-size:12px;
-        }
-        th, td{
-            font-size:12px;
-        }
-        thead{
-            background-color:#ddd;
+
+        .pubg-right {
+            padding-bottom: 15px;
         }
 
-        input, label{
-            font-size:12px;
+        .list-group-item:first-child {
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+        }
+
+        .list-group-item:last-child {
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+
+        .list-group > a {
+            font-size: 12px;
+        }
+
+        th, td {
+            font-size: 12px;
+        }
+
+        thead {
+            background-color: #ddd;
+        }
+
+        input, label {
+            font-size: 12px;
         }
 
     </style>
     <script type="text/javascript">
         //underscore.js URL parsing code
-        var _GET = _.object(_.compact(_.map(location.search.slice(1).split('&'), function(item) {  if (item) item = item.split('='); if (item[1]) item[1] = decodeURIComponent(item[1]); return item; })));
+        var _GET = _.object(_.compact(_.map(location.search.slice(1).split('&'), function (item) {
+            if (item) item = item.split('=');
+            if (item[1]) item[1] = decodeURIComponent(item[1]);
+            return item;
+        })));
         var app = angular.module('app', []);
         // 다른 도메인의 소스 불러오기 필터
 
-        app.filter('trustUrl', function($sce){
-            return function(url){
+        app.filter('trustUrl', function ($sce) {
+            return function (url) {
                 return $sce.trustAsResourceUrl(url);
             }
         });
-        app.controller('ctrl', function($scope, $http, $interval, $timeout) {
+        app.controller('ctrl', function ($scope, $http, $interval, $timeout) {
 
             /* $scope.doHide = false;*/
             /*
@@ -139,7 +158,8 @@ org.silkdog.maven.hikoco.member.dto.*" %>
                     <td>전은표</td>
                     <td>+821077311268</td>
                     <td>플래티넘</td>
-                    <td><a href="#" onclick="doFix()" data-toggle="modal" data-target="#exampleModal" data-backdrop="static" data-keyboard="false"><i class="fas fa-wrench"></i></a></td>
+                    <td><a href="#" onclick="doFix()" data-toggle="modal" data-target="#exampleModal"
+                           data-backdrop="static" data-keyboard="false"><i class="fas fa-wrench"></i></a></td>
                     <td><a href="#" onclick="doDelete(1)"><i class="fas fa-trash-alt"></i></a></td>
                 </tr>
                 <tr>
@@ -162,13 +182,17 @@ org.silkdog.maven.hikoco.member.dto.*" %>
                     <td><i class="fas fa-wrench"></i></td>
                     <td><i class="fas fa-trash-alt"></i></td>
                 </tr>
-                <% for(MemberDTO mdto : mlist){ %>
+                <% for (MemberDTO mdto : mlist) { %>
                 <tr>
                     <td><input type="checkbox"></td>
-                    <th scope="row"><%=mdto.getNo()%></th>
-                    <td><%=mdto.getId()%></td>
-                    <td><%=mdto.getPw()%></td>
-                    <td><%=mdto.getJoindate()%></td>
+                    <th scope="row"><%=mdto.getNo()%>
+                    </th>
+                    <td><%=mdto.getId()%>
+                    </td>
+                    <td><%=mdto.getPw()%>
+                    </td>
+                    <td><%=mdto.getJoindate()%>
+                    </td>
                     <td>아다만티움</td>
                     <td><i class="fas fa-wrench"></i></td>
                     <td><i class="fas fa-trash-alt"></i></td>
@@ -177,10 +201,14 @@ org.silkdog.maven.hikoco.member.dto.*" %>
                 <% %>
                 <tr>
                     <td><input type="checkbox"></td>
-                    <th scope="row"><%=mdto2.getNo()%></th>
-                    <td><%=mdto2.getId()%></td>
-                    <td><%=mdto2.getPw()%></td>
-                    <td><%=mdto2.getJoindate()%></td>
+                    <th scope="row"><%=mdto2.getNo()%>
+                    </th>
+                    <td><%=mdto2.getId()%>
+                    </td>
+                    <td><%=mdto2.getPw()%>
+                    </td>
+                    <td><%=mdto2.getJoindate()%>
+                    </td>
                     <td>아다만티움 (selectOne)</td>
                     <td><i class="fas fa-wrench"></i></td>
                     <td><i class="fas fa-trash-alt"></i></td>
@@ -189,25 +217,28 @@ org.silkdog.maven.hikoco.member.dto.*" %>
                 </tbody>
             </table>
             <div class="text-left" style="padding-left:10px;"> <!-- 일괄삭제 -->
-                <a href="#" onclick="deleteSelected()"><span style="font-size:12px; text-align:left;">선택한 항목을 일괄 삭제</span></a>
+                <a href="#" onclick="deleteSelected()"><span
+                        style="font-size:12px; text-align:left;">선택한 항목을 일괄 삭제</span></a>
             </div>
         </div>
         <div>
             <span style="display:block; font-size:12px; text-align:center; margin-bottom:15px;"><strong>[1]</strong></span>
         </div>
         <div class="input-group mb-3" style="margin:0 auto; width:200px">
-            <input type="text" class="form-control" placeholder="검색어" aria-label="Recipient's username" aria-describedby="basic-addon2" style="font-size:12px; height:30px;">
+            <input type="text" class="form-control" placeholder="검색어" aria-label="Recipient's username"
+                   aria-describedby="basic-addon2" style="font-size:12px; height:30px;">
             <div class="input-group-append">
                 <button class="btn btn-sm btn-outline-secondary" type="button">검색</button>
             </div>
         </div>
     </div>
-<%--TEST : ${admin2}--%>
+    <%--TEST : ${admin2}--%>
 
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -217,39 +248,40 @@ org.silkdog.maven.hikoco.member.dto.*" %>
                 </button>
             </div>
             <form id="formfix" action="admin_member.do" method="post">
-            <div class="modal-body" style="width:500px; height:500px;">
-                <!-- form -->
-                <div class="form-group">
-                    <label for="id">아이디</label>
-                    <input type="text" class="form-control" id="id" name="id" value="admin@admin.io"readonly>
+                <div class="modal-body" style="width:500px; height:500px;">
+                    <!-- form -->
+                    <div class="form-group">
+                        <label for="id">아이디</label>
+                        <input type="text" class="form-control" id="id" name="id" value="admin@admin.io" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="pw">비밀번호</label>
+                        <input type="password" class="form-control" id="pw" name="pw" value="!@$cjaalfalf9" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">이름</label>
+                        <input type="text" class="form-control" id="name" name="name" value="전은표" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="tel">전화번호</label>
+                        <input type="text" class="form-control" id="tel" name="tel" value="+821077311268">
+                    </div>
+                    <div class="form-group">
+                        <label for="tier">등급</label>
+                        <select class="custom-select" id="tier" style="display:block;">
+                            <option selected>선택하세요</option>
+                            <option value="1">브론즈</option>
+                            <option value="2">실버</option>
+                            <option value="3">골드</option>
+                            <option value="4">플래티넘</option>
+                            <option value="5">다이아몬드</option>
+                        </select>
+                    </div>
+                    <!-- /form -->
                 </div>
-                <div class="form-group">
-                    <label for="pw">비밀번호</label>
-                    <input type="password" class="form-control" id="pw" name="pw" value="!@$cjaalfalf9"readonly>
-                </div>
-                <div class="form-group">
-                    <label for="name">이름</label>
-                    <input type="text" class="form-control" id="name" name="name" value="전은표" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="tel">전화번호</label>
-                    <input type="text" class="form-control" id="tel" name="tel" value="+821077311268">
-                </div>
-                <div class="form-group">
-                    <label for="tier">등급</label>
-                    <select class="custom-select" id="tier" style="display:block;">
-                        <option selected>선택하세요</option>
-                        <option value="1">브론즈</option>
-                        <option value="2">실버</option>
-                        <option value="3">골드</option>
-                        <option value="4">플래티넘</option>
-                        <option value="5">다이아몬드</option>
-                    </select>
-                </div>
-                <!-- /form -->
-            </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="font-size:12px;">취소</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="font-size:12px;">취소
+                    </button>
                     <button type="submit" class="btn btn-primary" style="font-size:12px;">저장 및 적용</button>
                 </div>
             </form>
@@ -260,28 +292,28 @@ org.silkdog.maven.hikoco.member.dto.*" %>
 </body>
 <script>
     // check-all script
-    $('#selectall').change(function(){
-        if($(this).prop('checked')){
+    $('#selectall').change(function () {
+        if ($(this).prop('checked')) {
             $('input').prop('checked', true);
-        }else{
+        } else {
             $('input').prop('checked', false);
         }
     });
     $('#selectall').trigger('change');
 
     // Fix Event
-    function doFix(num){
+    function doFix(num) {
 
     }
 
     // Delete Message Event
-    function doDelete(num){
+    function doDelete(num) {
         alert('Are you really gonna delete this item?')
         alert(num)
     }
 
     // deleteSelected Event
-    function deleteSelected(){
+    function deleteSelected() {
         alert('Are you sure to delete all selected items?')
         alert('fuck it')
     }
@@ -292,7 +324,7 @@ org.silkdog.maven.hikoco.member.dto.*" %>
     // })
 
     // PageNum number only
-    $(document).ready(function() {
+    $(document).ready(function () {
         $("#pageNum").keydown(function (e) {
             // Allow: backspace, delete, tab, escape, enter and .
             if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||

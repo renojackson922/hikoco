@@ -18,8 +18,8 @@ import java.util.HashMap;
 import java.util.List;
 
 @Controller
-public class MainController{
-//    @Autowired
+public class MainController {
+    //    @Autowired
 //    private MemberDAO memberDAO;
     @Autowired
     private TransactionDAO transactionDAO;
@@ -34,20 +34,20 @@ public class MainController{
     /* ======================================================== */
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String mainRedirect(HttpServletRequest req, Model model){
+    public String mainRedirect(HttpServletRequest req, Model model) {
         specialOffer1(req, model);
         specialOffer2(req, model);
         return "main";
     }
 
-    public void specialOffer1(HttpServletRequest req, Model model){
+    public void specialOffer1(HttpServletRequest req, Model model) {
         List<HashMap> ilistVega = itemDAO.search("vega");
         System.out.println("특별전 프로모션1 테스트: " + ilistVega);
         req.setAttribute("ilistVega", ilistVega);
         model.addAttribute("cntVega", ilistVega);
     }
 
-    public void specialOffer2(HttpServletRequest req, Model model){
+    public void specialOffer2(HttpServletRequest req, Model model) {
         List<HashMap> ilistRyzen = itemDAO.search("라이젠");
         System.out.println("특별전 프로모션1 테스트: " + ilistRyzen);
         req.setAttribute("ilistRyzen", ilistRyzen);
@@ -59,12 +59,12 @@ public class MainController{
     /* ======================= 관리자 페이지 ===================== */
     /* ======================================================== */
     @RequestMapping("/admin.do")
-    public String admin() throws Exception{
+    public String admin() throws Exception {
         return "admin/admin";
     }
 
     @RequestMapping("/admin_member.do")
-    public String adminMember(Model model, HttpServletRequest req) throws Exception{
+    public String adminMember(Model model, HttpServletRequest req) throws Exception {
 //        List<MemberDTO> mlist = memberDAO.select();
 //        MemberDTO mdto = memberDAO.selectOne();
 //        req.setAttribute("mlist", mlist);
@@ -74,15 +74,15 @@ public class MainController{
     }
 
     @RequestMapping("/admin_tx.do")
-    public String adminTx(Model model, HttpServletRequest req) throws Exception{
+    public String adminTx(Model model, HttpServletRequest req) throws Exception {
 //        TransactionDTO tdto = transactionDAO.selectOne();
 //        req.setAttribute("tdto", tdto);
 //        model.addAttribute("adminTx","adminTx");
         return "admin/admin_tx";
     }
 
-    @RequestMapping(value="/admin_market.do", method=RequestMethod.GET)
-    public String adminMarket() throws Exception{
+    @RequestMapping(value = "/admin_market.do", method = RequestMethod.GET)
+    public String adminMarket() throws Exception {
 //        int count = categoryDAO.count();
 //        List<CategoryDTO> clist = categoryDAO.list();
 //        req.setAttribute("count", count);
@@ -90,8 +90,8 @@ public class MainController{
         return "admin/admin_market";
     }
 
-    @RequestMapping(value="/admin_market.do", method=RequestMethod.POST)
-    public String adminMarketSubmit() throws Exception{
+    @RequestMapping(value = "/admin_market.do", method = RequestMethod.POST)
+    public String adminMarketSubmit() throws Exception {
         return "admin/admin_market";
     }
     /* ======================================================== */
@@ -99,16 +99,16 @@ public class MainController{
     /* ======================================================== */
     /* ======================= 로그인 페이지 ===================== */
     /* ======================================================== */
-    @RequestMapping(value="/login.do", method=RequestMethod.GET)
-    public String login(){
+    @RequestMapping(value = "/login.do", method = RequestMethod.GET)
+    public String login() {
         return "login";
     }
 
     /* ======================================================== */
     /* ====================== 회원가입 페이지 ===================== */
     /* ======================================================== */
-    @RequestMapping(value="/signup.do", method=RequestMethod.GET)
-    public String signup(){
+    @RequestMapping(value = "/signup.do", method = RequestMethod.GET)
+    public String signup() {
         return "signup";
     }
 
@@ -129,8 +129,8 @@ public class MainController{
 //        return "signup";
 //    }
 
-    @RequestMapping(value="/signup.do", method = RequestMethod.POST)
-    public String signup_PRO(HttpServletRequest req){
+    @RequestMapping(value = "/signup.do", method = RequestMethod.POST)
+    public String signup_PRO(HttpServletRequest req) {
         req.getParameter("hic_email");
         req.getParameter("hic_pw");
 
@@ -142,14 +142,14 @@ public class MainController{
     /* ======================================================== */
     /* ====================== 카테고리 페이지 ===================== */
     /* ======================================================== */
-    @RequestMapping(value="/category_test.do", method= RequestMethod.GET)
-    public String categoryTest(HttpServletRequest req){
+    @RequestMapping(value = "/category_test.do", method = RequestMethod.GET)
+    public String categoryTest(HttpServletRequest req) {
         checkCategoryList(req);
         return "categoryTest";
     }
 
-    @RequestMapping(value="/category_test.do", method= RequestMethod.POST)
-    public String categoryTestPro(HttpServletRequest req){
+    @RequestMapping(value = "/category_test.do", method = RequestMethod.POST)
+    public String categoryTestPro(HttpServletRequest req) {
         CategoryDTO cdto = new CategoryDTO();
         cdto.setHic_parent(String.valueOf(req.getParameter("cat_exists")));
         cdto.setHic_val(req.getParameter("cat_name"));
@@ -159,41 +159,40 @@ public class MainController{
         return "redirect:category_test.do"; /*  Important  */
     }
 
-    public void checkCategoryList(HttpServletRequest req){
+    public void checkCategoryList(HttpServletRequest req) {
         List<HashMap> clist = categoryDAO.list();
         req.setAttribute("clist", clist);
     }
     /* ================ */
 
 
-    @RequestMapping(value="logout.do", method=RequestMethod.GET)
-    public String logout(HttpSession session){
-        if(session.getAttribute("userid") != null){
+    @RequestMapping(value = "logout.do", method = RequestMethod.GET)
+    public String logout(HttpSession session) {
+        if (session.getAttribute("userid") != null) {
             session.removeAttribute("userid");
-            if(session.getAttribute("nickname")!= null) session.removeAttribute("nickname");
+            if (session.getAttribute("nickname") != null) session.removeAttribute("nickname");
         }
         session.invalidate();
         return "redirect:/";
     }
 
-    @RequestMapping(value="/item_request_test.do", method=RequestMethod.GET)
-    public String itemRequestTest(){
+    @RequestMapping(value = "/item_request_test.do", method = RequestMethod.GET)
+    public String itemRequestTest() {
         return "item_request_test";
     }
-
 
 
     /* ======================================================== */
     /* ====================== 장바구니 페이지 ===================== */
     /* ======================================================== */
-    @RequestMapping(value="/mycart.do", method=RequestMethod.GET)
-    public String mycart(){
+    @RequestMapping(value = "/mycart.do", method = RequestMethod.GET)
+    public String mycart() {
 
         return "mycart";
     }
 
-    @RequestMapping(value="/hbltest.do", method = RequestMethod.GET)
-    public String hbltest(){
+    @RequestMapping(value = "/hbltest.do", method = RequestMethod.GET)
+    public String hbltest() {
         return "hbltest";
     }
 }

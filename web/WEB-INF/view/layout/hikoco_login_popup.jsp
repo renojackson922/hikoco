@@ -1,6 +1,7 @@
     <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 
-        <div id="hide" class="animated fadeIn" ng-show="hide" style="display:table; position:absolute; margin:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index: 2147483647;">
+        <div id="hide" class="animated fadeIn" ng-show="hide" style="display:table; position:absolute; margin:0;
+        width:100%; height:100%; background: rgba(0,0,0,0.5); z-index: 2147483647;">
         <div style="display:table-row">
         <div style="display:table-cell; vertical-align:middle;">
         <style>
@@ -8,15 +9,18 @@
         text-decoration: none;
         }
         #hikoco-signin{
-        /*background: url("../../resources/imgs/signin-bg.gif")  no-repeat center center;*/
+        /*background: url("../../resources/imgs/signin-bg.gif") no-repeat center center;*/
         }
         </style>
-        <div id="hikoco-signin" class="animated fadeInUp" style="margin:0 auto; width:500px; height:500px; padding-right:15px; background: #fff;">
+        <div id="hikoco-signin" class="animated fadeInUp" style="margin:0 auto; width:500px; height:500px;
+        padding-right:15px; background: #fff;">
         <div class="text-right">
-        <a id="signInModal" href="#" ng-click="hideAndSeekDisabled(); lockBodyScroll={overflow:'scroll'}"><span style="font-size:1.5em; color:#222;">&times;</span></a>
+        <a id="signInModal" href="#" ng-click="hideAndSeekDisabled(); lockBodyScroll={overflow:'scroll'}"><span
+        style="font-size:1.5em; color:#222;">&times;</span></a>
         </div>
         <div class="text-center unselectable" style="padding:20px;">
-        <i class="fas fa-coffee" style="vertical-align: baseline; font-size:1.7em;"></i>  <!-- vertical-align: baseline; // Useful CSS Style -->
+        <i class="fas fa-coffee" style="vertical-align: baseline; font-size:1.7em;"></i> <!-- vertical-align: baseline;
+        // Useful CSS Style -->
         <h1 style="letter-spacing: -2px; display:inline !important;">&nbsp;&nbsp;Cafe HIKOCO</h1>
         </div>
         <div class="hikoco-signin-form" style="display:block; padding:20px 50px 20px 50px;">

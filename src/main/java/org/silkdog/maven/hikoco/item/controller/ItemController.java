@@ -72,9 +72,9 @@ public class ItemController {
         // mode의 값이 list일 경우 모든 list 저장
         if(mode.equals("list") && searchString == null){
             List<HashMap> ilist = itemDAO.list();
-            System.out.println("List 테스트: " + ilist.get(0).get("item_title"));
+//            System.out.println("List 테스트: " + ilist.get(0).get("item_title"));
             int listcount = itemDAO.countFromList();
-            System.out.println(listcount);
+//            System.out.println(listcount);
 
             req.setAttribute("ilist", ilist);
             req.setAttribute("mode", mode);
@@ -87,9 +87,9 @@ public class ItemController {
             // mode의 값이 search일 경우 search(searchString)을 조회후 list로 저장
         }else if(mode.equals("search") && searchString != null){
             List<HashMap> ilist = itemDAO.search(searchString);
-            System.out.println("Search 테스트: " + ilist.get(0).get("item_title"));
+//            System.out.println("Search 테스트: " + ilist.get(0).get("item_title"));
             int listcount = itemDAO.countFromList();
-            System.out.println(listcount);
+//            System.out.println(listcount);
 
             req.setAttribute("ilist", ilist);
             req.setAttribute("mode", mode);

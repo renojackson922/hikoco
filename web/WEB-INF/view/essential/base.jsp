@@ -1,5 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8"%>
-
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <!-- Angular.js -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
@@ -51,3 +50,15 @@
 
 <!-- Util.css -->
 <link rel="stylesheet" href="../../resources/script/util.css">
+
+<style>
+    html {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    body {
+        position: relative;
+    }
+</style>

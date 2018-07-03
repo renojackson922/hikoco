@@ -1,41 +1,42 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ page import="java.util.*, org.silkdog.maven.hikoco.category.dao.*, org.silkdog.maven.hikoco.category.dto.*" %>
 <%@ page import="org.silkdog.maven.hikoco.item.dto.ItemDTO" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%
-    //    int count = (int)request.getAttribute("count");
-//    List<CategoryDTO> clist = (List<CategoryDTO>)request.getAttribute("clist");
-//    List<ItemDTO> ilist = (List<ItemDTO>)request.getAttribute("ilist");
-//
-//    int cat_height;
-//    // rowNum 도 추가할 것
-//    float countDIV = (float)count/6;
-//
-//    System.out.println("count를 나눈 값: "+ countDIV);
-//    if(countDIV > (int)Math.ceil(count / 6)){
-//        cat_height = (int)Math.ceil(count/6) + 1;
-//    }else{
-//        cat_height = (int)Math.ceil(count/6);
-//    }
-//    System.out.println("count를 반올림한 값 :" + cat_height);
-//
-//    HashMap map = new HashMap<Integer, String>();
-//    for(CategoryDTO cdto : clist){
-//        map.put(cdto.getHic_id(), cdto.getHic_val());
-//    }
-//
-//    Set<Map.Entry<Integer, String>> set = map.entrySet();
-//    Iterator<Map.Entry<Integer, String>> it = set.iterator();
+    /*
+    int count = (int)request.getAttribute("count");
+    List<CategoryDTO> clist = (List<CategoryDTO>)request.getAttribute("clist");
+    List<ItemDTO> ilist = (List<ItemDTO>)request.getAttribute("ilist");
+
+    int cat_height;
+    // rowNum 도 추가할 것
+    float countDIV = (float)count/6;
+
+    System.out.println("count를 나눈 값: "+ countDIV);
+    if(countDIV > (int)Math.ceil(count / 6)){
+        cat_height = (int)Math.ceil(count/6) + 1;
+    }else{
+        cat_height = (int)Math.ceil(count/6);
+    }
+    System.out.println("count를 반올림한 값 :" + cat_height);
+
+    HashMap map = new HashMap<Integer, String>();
+    for(CategoryDTO cdto : clist){
+        map.put(cdto.getHic_id(), cdto.getHic_val());
+    }
+
+    Set<Map.Entry<Integer, String>> set = map.entrySet();
+    Iterator<Map.Entry<Integer, String>> it = set.iterator();
 
 
-//    List<HashMap> ilist = (List<HashMap>)request.getAttribute("ilist");
-//    List<HashMap> ilistSign = (List<HashMap>)request.getAttribute("ilistSign");
-//    System.out.println(ilistSign);
+    List<HashMap> ilist = (List<HashMap>)request.getAttribute("ilist");
+    List<HashMap> ilistSign = (List<HashMap>)request.getAttribute("ilistSign");
+    System.out.println(ilistSign);
 
-//    int listcount2 = (int)request.getAttribute("countlist2");
-//    System.out.println(listcount2);
-
+    int listcount2 = (int)request.getAttribute("countlist2");
+    System.out.println(listcount2);
+    */
 %>
 <html ng-cloak ng-app="app">
 <head>
@@ -43,63 +44,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../resources/script/global.css">
-    <%@ include file="./essential/script_collection.jsp"%>
+    <%@ include file="./essential/base.jsp" %>
 
     <style>
-        .list-group-item:first-child{
-            border-top-left-radius:0px;
-            border-top-right-radius:0px;
-        }
-        .list-group-item:last-child{
-            border-bottom-left-radius:0px;
-            border-bottom-right-radius:0px;
-        }
-        .list-group > a{
-            font-size:12px;
-        }
-        .category-td-parent-item{
-            padding:0px !important;
-            width:144px;
-            border-right:0px;
-        }
-        .category-td-parent-item > a{
-            font-size:12px;
-            margin:0px;
-            padding:5px;
-            border-top:0px;
-            border-right:0px;
+        .list-group-item:first-child {
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
         }
 
-        .category-td-child-item{
-            padding:0px !important;
-            width:144px;
-            border-top:0px !important;
-            border-right:0px;
+        .list-group-item:last-child {
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
         }
 
-        .category-td-child-item > a{
-            font-size:12px;
-            margin:0px;
-            padding:5px;
-            border-top:0px !important;
-            border-right:0px;
+        .list-group > a {
+            font-size: 12px;
         }
-        .last-row{
-            border-right:1px solid #ddd !important;
+
+        .category-td-parent-item {
+            padding: 0px !important;
+            width: 144px;
+            border-right: 0px;
         }
+
+        .category-td-parent-item > a {
+            font-size: 12px;
+            margin: 0px;
+            padding: 5px;
+            border-top: 0px;
+            border-right: 0px;
+        }
+
+        .category-td-child-item {
+            padding: 0px !important;
+            width: 144px;
+            border-top: 0px !important;
+            border-right: 0px;
+        }
+
+        .category-td-child-item > a {
+            font-size: 12px;
+            margin: 0px;
+            padding: 5px;
+            border-top: 0px !important;
+            border-right: 0px;
+        }
+
+        .last-row {
+            border-right: 1px solid #ddd !important;
+        }
+
         /* modal-lg inline size */
-        .modal-lg{
-            max-width:1000px;
+        .modal-lg {
+            max-width: 1000px;
         }
 
-        .modal-span{
+        .modal-span {
             display: block;
         }
 
-        .modal-body{
-            height:1000px;
+        .modal-body {
+            height: 1000px;
             overflow-y: scroll;
         }
+
         #myBtn {
             display: none; /* Hidden by default */
             position: fixed; /* Fixed/sticky position */
@@ -140,34 +148,40 @@
         app.controller('ctrl', function ($scope, $http, $interval, $timeout) {
             $scope.hide = 0;
 
-            $scope.hideAndSeek = function(){
+            $scope.hideAndSeek = function () {
                 $scope.hide = 1;
             }
 
-            $scope.hideAndSeekDisabled = function(){
+            $scope.hideAndSeekDisabled = function () {
                 $scope.hide = 0;
             }
         });
     </script>
 </head>
-<%
-    String isSearch = request.getParameter("mode");
-%>
-<body ng-controller="ctrl">
-<%@ include file="layout/hikoco_login_popup.jsp"%>
-<%@ include file="layout/hikoco_navbar.jsp"%>
-<div id="show" style="padding:60px 0">
 
-    <%
-        if(isSearch.equals("search")){
-    %>
-    <div class="container text-center" style="margin-top:20px; height:150px; line-height: 150px; background: #ddd;">
-        <span style="font-size:1em;">${searchString} (으)로 검색하신 결과입니다.</span>
-    </div>
-    <% }else{} %>
+<!-- JSTL 태그 사용시 인용부호 특수문자 사용법에 유의할 것.  -->
+<c:set var="isSearch" scope="session" value="<%=request.getParameter(\"mode\")%>" />
+<c:if test="${isSearch eq 'search'}">
+    <c:set var="searchString" scope="session" value="<%=request.getParameter(\"search_string\")%>" />
+</c:if>
+
+<body ng-controller="ctrl">
+<%@ include file="layout/hikoco_login_popup.jsp" %>
+<%@ include file="layout/hikoco_navbar.jsp" %>
+<div id="show" style="padding:60px 0; padding-bottom:170px; text-align: center;">
+    <c:choose>
+        <c:when test="${isSearch eq 'search'}">
+            <div class="container text-center" style="margin-top:20px; height:150px; line-height: 150px; background: #ddd;">
+                <span style="font-size:1em;">${searchString} (으)로 검색하신 결과입니다.</span>
+            </div>
+        </c:when>
+        <c:otherwise/>
+    </c:choose>
+
     <div class="text-center" style="display:inline-block; padding:20px; margin:0 auto;">
         <div class="container text-center" style="float:left; overflow-x:hidden; border:1px solid #ddd; padding:20px;">
             <div>
+
                 <!-- 카테고리 -->
                 <%--<table class="table">--%>
                 <%--<tbody>--%>
@@ -233,18 +247,20 @@
                 <div class="list-group" style="margin-bottom:15px;">
 
                     <!-- a tag starts -->
-                    <a href="#" class="list-group-item list-group-item-action"  style="background:rgba(168,217,234,0.3)">
+                    <a href="#" class="list-group-item list-group-item-action" style="background:rgba(168,217,234,0.3)">
                         <div class="text-left">
                             <div style="margin-bottom:5px; border:1px dashed #5d5d5d; display:inline-block; padding:0px 10px 2px 10px;background: #fff">
                                 <span style="font-size:14px;"><i class="fas fa-thumbs-up"></i>&nbsp;<strong>Signature Item</strong></span>
-                            </div><br> <!-- newline -->
+                            </div>
+                            <br> <!-- newline -->
                             <div style="float:left; margin-right:5px;">
                                 <input type="checkbox">
                             </div>
                             <div class="item-wrapper" style="height:70px ;">
                                 <!-- 사진 -->
                                 <div class="" style="float:left;">
-                                    <img src="/resources/imgs/margarette.png" width="100px " style="border:1px solid #ddd;">
+                                    <img src="/resources/imgs/margarette.png" width="100px "
+                                         style="border:1px solid #ddd;">
                                 </div>
                                 <!-- 내용 -->
                                 <div class="col-md-10" style="float:left; padding-left:0px;">
@@ -254,21 +270,26 @@
                                     <br> <!-- new line -->
                                     <div class="col-md-12" style="display:block; float:left;">
                                         <span>지포스 GTX1060 / GDDR5 6GB / 1506MHz / 최대 1708MHz / 8000MHz / 192-bit / 히트파이프+팬 / PCI-Express x16(3.0)</span>
-                                    </div><br> <!-- new line -->
+                                    </div>
+                                    <br> <!-- new line -->
                                     <div class="col-md-12" style="display:block;">
-                                        <span class="span-loginInfo" style="font-size:10px; padding:0px 5px 0px 5px; background: #2897d3; color:#fff; border-radius:0px; display: inline-block;">사은품</span>
+                                        <span class="span-loginInfo"
+                                              style="font-size:10px; padding:0px 5px 0px 5px; background: #2897d3; color:#fff; border-radius:0px; display: inline-block;">사은품</span>
                                         <span style="font-size:11px; vertical-align: middle !important;">&nbsp;구매영수증 인증 시 메로나 아이스크림 증정 (05.01~05.31)</span>
                                     </div>
                                     <div class="col-md-12" style="display:block;">
-                                        <span class="span-loginInfo" style="font-size:10px; padding:0px 5px 0px 5px; background: gold; color:#fff; border-radius:0px; display: inline-block; width:40px; text-align: center;">후기</span>
+                                        <span class="span-loginInfo"
+                                              style="font-size:10px; padding:0px 5px 0px 5px; background: gold; color:#fff; border-radius:0px; display: inline-block; width:40px; text-align: center;">후기</span>
                                         <span style="font-size:11px; vertical-align: middle !important;">&nbsp;후기 작성 후 별도의 신청 시 스타벅스 캔커피 증정 (05.01~05.31)</span>
                                     </div>
                                     <div class="col-md-12" style="display:block; ">
-                                        <span class="span-loginInfo" style="font-size:10px; padding:0px 5px 0px 5px; background: gold; color:#fff; border-radius:0px; display: inline-block; width:40px; text-align: center;">후기</span>
+                                        <span class="span-loginInfo"
+                                              style="font-size:10px; padding:0px 5px 0px 5px; background: gold; color:#fff; border-radius:0px; display: inline-block; width:40px; text-align: center;">후기</span>
                                         <span style="font-size:11px; vertical-align: middle !important;">&nbsp;후기 작성 후 별도의 신청을 하신 6분께 LED 삼각대 증정 (05.01~05.31)</span>
                                     </div>
                                 </div>
-                            </div><br>
+                            </div>
+                            <br>
                             <%--<hr style="margin:5px 0px 5px 0px;">--%>
                             <%--<!-- 상태 -->--%>
                             <%--<div class="col-md-3" style="float:left; padding:0px;"><span>해당 상품을 구매한 이력이 있습니다.</span></div>--%>
@@ -279,7 +300,8 @@
 
                     <c:forEach var="i" items="${cnt}">
                         <!-- a tag starts -->
-                        <a href="./item_detail.do?item_id=${i.item_id}" class="list-group-item list-group-item-action" style="">
+                        <a href="./item_detail.do?item_id=${i.item_id}" class="list-group-item list-group-item-action"
+                           style="">
                             <div class="text-left">
                                 <div style="float:left; margin-right:5px;">
                                     <input type="checkbox">
@@ -297,21 +319,26 @@
                                         <br> <!-- new line -->
                                         <div class="col-md-12" style="display:block; float:left;">
                                             <span>${i.item_summary}</span>
-                                        </div><br> <!-- new line -->
+                                        </div>
+                                        <br> <!-- new line -->
                                         <div class="col-md-12" style="display:block;">
-                                            <span class="span-loginInfo" style="font-size:10px; padding:0px 5px 0px 5px; background: #2897d3; color:#fff; border-radius:0px; display: inline-block;">사은품</span>
+                                            <span class="span-loginInfo"
+                                                  style="font-size:10px; padding:0px 5px 0px 5px; background: #2897d3; color:#fff; border-radius:0px; display: inline-block;">사은품</span>
                                             <span style="font-size:11px; vertical-align: middle !important;">&nbsp;구매영수증 인증 시 메로나 아이스크림 증정 (05.01~05.31)</span>
                                         </div>
                                         <div class="col-md-12" style="display:block;">
-                                            <span class="span-loginInfo" style="font-size:10px; padding:0px 5px 0px 5px; background: gold; color:#fff; border-radius:0px; display: inline-block; width:40px; text-align: center;">후기</span>
+                                            <span class="span-loginInfo"
+                                                  style="font-size:10px; padding:0px 5px 0px 5px; background: gold; color:#fff; border-radius:0px; display: inline-block; width:40px; text-align: center;">후기</span>
                                             <span style="font-size:11px; vertical-align: middle !important;">&nbsp;후기 작성 후 별도의 신청 시 스타벅스 캔커피 증정 (05.01~05.31)</span>
                                         </div>
                                         <div class="col-md-12" style="display:block; ">
-                                            <span class="span-loginInfo" style="font-size:10px; padding:0px 5px 0px 5px; background: gold; color:#fff; border-radius:0px; display: inline-block; width:40px; text-align: center;">후기</span>
+                                            <span class="span-loginInfo"
+                                                  style="font-size:10px; padding:0px 5px 0px 5px; background: gold; color:#fff; border-radius:0px; display: inline-block; width:40px; text-align: center;">후기</span>
                                             <span style="font-size:11px; vertical-align: middle !important;">&nbsp;후기 작성 후 별도의 신청을 하신 6분께 LED 삼각대 증정 (05.01~05.31)</span>
                                         </div>
                                     </div>
-                                </div><br>
+                                </div>
+                                <br>
                                     <%--<hr style="margin:5px 0px 5px 0px;">--%>
                                     <%--<!-- 상태 -->--%>
                                     <%--<div class="col-md-3" style="float:left; padding:0px;"><span>해당 상품을 구매한 이력이 있습니다.</span></div>--%>
@@ -330,11 +357,22 @@
                                     <span class="sr-only">Previous</span>
                                 </a>
                             </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                            <c:choose>
+                                <c:when test="${isSearch eq 'search'}">
+                                    <li class="page-item"><a class="page-link" href="/item.do?mode=${isSearch}&search_string=${searchString}&page=1">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                </c:when>
+                                <c:otherwise>
+                                    <li class="page-item"><a class="page-link" href="/item.do?mode=${isSearch}&page=1">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                </c:otherwise>
+                            </c:choose>
                             <li class="page-item">
                                 <a class="page-link" href="#" aria-label="Next">
                                     <span aria-hidden="true">&raquo;</span>
@@ -347,7 +385,8 @@
                 </div>
 
                 <div class="input-group mb-3" style="margin:0 auto; width:200px">
-                    <input type="text" class="form-control" placeholder="검색어" aria-label="Recipient's username" aria-describedby="basic-addon2" style="font-size:12px; height:30px;">
+                    <input type="text" class="form-control" placeholder="검색어" aria-label="Recipient's username"
+                           aria-describedby="basic-addon2" style="font-size:12px; height:30px;">
                     <div class="input-group-append">
                         <button class="btn btn-sm btn-outline-secondary" type="button">검색</button>
                     </div>
@@ -359,10 +398,10 @@
     </div>
 
 </div>
-<%@ include file="layout/hikoco_footer.jsp"%>
+<%@ include file="layout/hikoco_footer.jsp" %>
 </body>
 <script>
-    document.addEventListener("DOMContentLoaded", function(event){
+    document.addEventListener("DOMContentLoaded", function (event) {
         // document.getElementById('hikoco-nav').style.height = 66;
         document.getElementById('hikoco-nav').style.background = 'rgba(0,0,0,0.8)';
     });
