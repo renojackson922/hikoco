@@ -8,17 +8,18 @@
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/web/resources/script/jcarousel.css" line="18" />
     <bookmark url="file://$PROJECT_DIR$/web/WEB-INF/view/mycart.jsp" line="95" />
-    <bookmark url="file://$PROJECT_DIR$/web/resources/script/main.css" line="142" />
+    <bookmark url="file://$PROJECT_DIR$/web/resources/script/main.css" line="119" />
+    <bookmark url="file://$PROJECT_DIR$/web/WEB-INF/view/main.jsp" line="70" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e4dadd9-aa54-45fd-aee2-bdcdfaaf52b8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/hikoco_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/hikoco_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/item.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/item.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/controller/ItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/hikoco/item/controller/ItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/hikoco/item/controller/ItemController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/item.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/item.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/resources/script/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/resources/script/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/item_detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/item_detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/resources/script/item_detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/resources/script/item_detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/resources/script/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/resources/script/main.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -44,136 +45,99 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.68915343">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/main/MainController.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="361">
-                  <caret line="34" selection-start-line="34" selection-end-line="34" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ItemController.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/controller/ItemController.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="350">
-                  <caret line="110" column="51" lean-forward="true" selection-start-line="110" selection-start-column="51" selection-end-line="110" selection-end-column="51" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="item.jsp" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/item.jsp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="327" column="80" lean-forward="true" selection-start-line="327" selection-start-column="80" selection-end-line="327" selection-end-column="80" />
-                  <folding>
-                    <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-                    <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
-                    <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="e#17343#17350#1#HTML" expanded="true" />
-                    <element signature="e#17969#17976#1#HTML" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="main.jsp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/main.jsp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="304">
-                  <caret line="170" column="50" selection-start-line="170" selection-start-column="50" selection-end-line="170" selection-end-column="50" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="hikoco_footer.jsp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/layout/hikoco_footer.jsp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="17" column="48" lean-forward="true" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-                  <folding>
-                    <element signature="n#style#0;n#div#0;n#footer#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#footer#0;n#!!top" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="hikoco_navbar.jsp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/layout/hikoco_navbar.jsp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1216">
-                  <caret line="64" column="10" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="item_test.jsp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/item_test.jsp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="969">
-                  <caret line="51" column="32" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ItemDAOImpl.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/dao/ItemDAOImpl.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1045">
-                  <caret line="55" selection-start-line="55" selection-end-line="55" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ItemMapper.xml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/ItemMapper.xml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1349">
-                  <caret line="79" column="52" selection-start-line="79" selection-start-column="52" selection-end-line="79" selection-end-column="52" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ItemCatMapper.xml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/ItemCatMapper.xml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="266">
-                  <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/web/resources/script/main.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="95">
-                  <caret line="125" column="23" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="23" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/main/MainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/controller/ItemController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1638">
+              <caret line="128" column="46" selection-start-line="128" selection-start-column="46" selection-end-line="128" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="item.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/item.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4886">
+              <caret line="349" column="80" selection-start-line="349" selection-start-column="80" selection-end-line="349" selection-end-column="80" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/main.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="97" column="12" lean-forward="true" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="12" />
+              <folding>
+                <element signature="e#7313#7321#1#HTML" expanded="true" />
+                <element signature="e#7381#7389#1#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="item_detail.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/item_detail.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="14">
+              <caret line="9" column="52" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hikoco_footer.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/layout/hikoco_footer.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="item_test.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/item_test.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="714">
+              <caret line="51" column="32" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemDAOImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/dao/ItemDAOImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="700">
+              <caret line="55" selection-start-line="55" selection-end-line="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/ItemMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1106">
+              <caret line="79" column="52" selection-start-line="79" selection-start-column="52" selection-end-line="79" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -238,7 +202,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/TestService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/category/jdbc/JdbcTemplateCategoryDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/transaction/jdbc/JdbcTemplateTransactionDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/transaction/dao/TransactionDAOImpl.java" />
@@ -275,7 +238,6 @@
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/dao/ItemDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/dao/ItemDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/dto/ItemDTO.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/view/item_detail.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/item_test.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/hbltest.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -283,12 +245,14 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/applicationContext.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/main/MainController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/essential/script_collection.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/view/main.jsp" />
-        <option value="$PROJECT_DIR$/web/resources/script/main.css" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/layout/hikoco_footer.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/ItemMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/controller/ItemController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/item.jsp" />
+        <option value="$PROJECT_DIR$/web/resources/script/main.css" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/main.jsp" />
+        <option value="$PROJECT_DIR$/web/resources/script/item_detail.css" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/item_detail.jsp" />
       </list>
     </option>
   </component>
@@ -315,11 +279,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="40" />
-    <option name="width" value="1527" />
-    <option name="height" value="1345" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="235" />
+    <option name="y" value="85" />
+    <option name="width" value="1440" />
+    <option name="height" value="837" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -329,7 +293,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -499,13 +465,6 @@
               <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
               <item name="hikoco" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="imgs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hikoco" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -535,8 +494,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -553,19 +510,19 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/resources/imgs" />
-      <recent name="C:\IntelliJ_STS\hikoco\web\resources\imgs\items" />
-      <recent name="C:\IntelliJ_STS\hikoco\web\resources\imgs\items_detail" />
-      <recent name="C:\IntelliJ_STS\hikoco\web\resources\imgs" />
-      <recent name="$PROJECT_DIR$/src/main/resources/mybatis" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\IntelliJ_STS\hikoco\web\resources\imgs\svg" />
       <recent name="C:\IntelliJ_STS\hikoco\web\resources\imgs\items" />
       <recent name="$PROJECT_DIR$/web/resources/imgs/items_detail" />
       <recent name="$PROJECT_DIR$/web/resources/imgs/items" />
       <recent name="C:\IntelliJ_STS\hikoco\web\WEB-INF\view\admin" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/resources/imgs" />
+      <recent name="C:\IntelliJ_STS\hikoco\web\resources\imgs\items" />
+      <recent name="C:\IntelliJ_STS\hikoco\web\resources\imgs\items_detail" />
+      <recent name="C:\IntelliJ_STS\hikoco\web\resources\imgs" />
+      <recent name="$PROJECT_DIR$/src/main/resources/mybatis" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -820,6 +777,10 @@
       <workItem from="1528465639529" duration="2075000" />
       <workItem from="1528468234547" duration="7075000" />
       <workItem from="1528506545447" duration="6126000" />
+      <workItem from="1529418609042" duration="7146000" />
+      <workItem from="1530458924818" duration="535000" />
+      <workItem from="1530459519398" duration="5722000" />
+      <workItem from="1530549069095" duration="2296000" />
     </task>
     <servers />
   </component>
@@ -856,14 +817,14 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="429760000" />
+    <option name="totallyTimeSpent" value="445459000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="40" width="1527" height="1345" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.38914627" side_tool="true" visible="true" weight="0.20260374" />
+      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.19236112" side_tool="true" visible="true" weight="0.3682831" />
       <window_info anchor="bottom" id="Application Servers" order="7" sideWeight="0.49930555" weight="0.32793522" />
       <window_info anchor="right" id="Maven Projects" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
@@ -881,48 +842,21 @@
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.27224436" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.61085373" weight="0.20260374" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8076389" visible="true" weight="0.3682831" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49930555" weight="0.32931727" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08537392" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12638889" />
       <window_info anchor="right" id="Bean Validation" order="9" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.80972224" weight="0.29750982" />
-      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.19027779" side_tool="true" visible="true" weight="0.2961992" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18958333" />
-      <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49930555" weight="0.32931727" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="8" />
-      <window_info id="Web" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Application Servers" order="7" sideWeight="0.49930555" weight="0.32793522" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info id="Image Layers" order="3" />
-      <window_info anchor="right" id="Bean Validation" order="9" />
-      <window_info anchor="right" id="Database" order="5" />
-      <window_info id="Capture Tool" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.27224436" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.3299435" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49722221" weight="0.21231979" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39948675" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49808183" weight="0.32656515" />
-      <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info id="Designer" order="2" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49722221" weight="0.21231979" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.3299435" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -937,7 +871,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/error/error500.jsp" />
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/error/error404.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/member/util/MemberRegValidator.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1085,15 +1018,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/ItemCatMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
+        <state relative-caret-position="196">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/item_detail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3667">
-          <caret line="193" column="78" selection-start-line="193" selection-start-column="78" selection-end-line="193" selection-end-column="78" />
         </state>
       </provider>
     </entry>
@@ -1113,14 +1039,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/layout/hikoco_navbar.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1216">
+        <state relative-caret-position="896">
           <caret line="64" column="10" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/item_test.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
+        <state relative-caret-position="714">
           <caret line="51" column="32" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
         </state>
       </provider>
@@ -1176,7 +1102,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/main/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
+        <state relative-caret-position="266">
           <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1193,14 +1119,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/ItemMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1349">
+        <state relative-caret-position="1106">
           <caret line="79" column="52" selection-start-line="79" selection-start-column="52" selection-end-line="79" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/dao/ItemDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1045">
+        <state relative-caret-position="700">
           <caret line="55" selection-start-line="55" selection-end-line="55" />
         </state>
       </provider>
@@ -1212,55 +1138,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/main.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="170" column="50" selection-start-line="170" selection-start-column="50" selection-end-line="170" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/layout/hikoco_footer.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="48" lean-forward="true" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#footer#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#footer#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/resources/script/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="125" column="23" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="23" />
+        <state relative-caret-position="238">
+          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/controller/ItemController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="110" column="51" lean-forward="true" selection-start-line="110" selection-start-column="51" selection-end-line="110" selection-end-column="51" />
+        <state relative-caret-position="1638">
+          <caret line="128" column="46" selection-start-line="128" selection-start-column="46" selection-end-line="128" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/item.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="327" column="80" lean-forward="true" selection-start-line="327" selection-start-column="80" selection-end-line="327" selection-end-column="80" />
+        <state relative-caret-position="4886">
+          <caret line="349" column="80" selection-start-line="349" selection-start-column="80" selection-end-line="349" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/script/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="116" column="12" selection-start-line="116" selection-start-column="12" selection-end-line="116" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="97" column="12" lean-forward="true" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="12" />
           <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#17343#17350#1#HTML" expanded="true" />
-            <element signature="e#17969#17976#1#HTML" expanded="true" />
+            <element signature="e#7313#7321#1#HTML" expanded="true" />
+            <element signature="e#7381#7389#1#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/script/item_detail.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1680">
+          <caret line="120" column="20" selection-start-line="120" selection-start-column="20" selection-end-line="120" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/item_detail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="9" column="52" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -7,7 +7,7 @@
 %>
 <html ng-cloak ng-app="app">
 <head>
-    <title>HIKOCO :: ITEM</title>
+    <title>HIKOCO :: ITEM :: <%=idto.getItem_title()%></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HIKOCO :: MAIN</title>

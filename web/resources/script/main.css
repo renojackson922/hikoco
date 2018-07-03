@@ -82,29 +82,6 @@
     width: 300px;
 }
 
-.intro-box > h1{
-    color:#fff;
-}
-.optional-box > h1{
-    color:#fff;
-}
-.intro-box > p{
-    color:#fff;
-    font-size:1.5em;
-    display:block;
-    margin:0;
-    font-weight:300;
-}
-.optional-box > p{
-    color:#fff;
-    font-size:1.5em;
-    display:block;
-    margin:0;
-    font-weight:300;
-}
-/* ========================== */
-
-
 .opaque__light{
     width: inherit;
     height: inherit;
