@@ -25,7 +25,7 @@
 	</select>
 
 	<!-- 카테고리 생성 -->
-	<insert id="insert" useGeneratedKeys="true" keyProperty="hic_id" parameterType="org.silkdog.maven.hikoco.category.dto.CategoryDTO">
+	<insert id="insert" useGeneratedKeys="true" keyProperty="hic_id" parameterType="org.silkdog.maven.hikoco.category.vo.CategoryVO">
 	  	INSERT INTO hikoco_item_cat (hic_val, hic_parent, hic_order, hic_indent) VALUES(
 			#{hic_val},
 			#{hic_parent},

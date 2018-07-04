@@ -1,7 +1,7 @@
 package org.silkdog.maven.hikoco.transaction.dao;
 
-import org.silkdog.maven.hikoco.transaction.dto.TransactionDTO;
+import org.silkdog.maven.hikoco.transaction.vo.TransactionVO;
 
 public interface TransactionDAO {
-    TransactionDTO selectOne();
+    TransactionVO selectOne();
 }

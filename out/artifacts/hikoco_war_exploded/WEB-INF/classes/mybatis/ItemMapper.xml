@@ -3,8 +3,9 @@
         PUBLIC "-//mybatis//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!-- DAO(Interface) 아래 resultType에는 DTO 지정 -->
+<!-- DAO(Interface) 아래 resultType에는 VO 지정 -->
 <mapper namespace="org.silkdog.maven.hikoco.item.dao.ItemDAO">
+
 	<!--모든 아이템 리스트-->
 	<select id="list" resultType="java.util.HashMap">
 		SELECT * FROM hikoco_item;
@@ -24,12 +25,12 @@
     </select>
 
 	<!--아이템 하나 선택-->
-	<select id="select" parameterType="int" resultType="org.silkdog.maven.hikoco.item.dto.ItemDTO">
+	<select id="select" parameterType="int" resultType="org.silkdog.maven.hikoco.item.vo.ItemVO">
 		SELECT * FROM hikoco_item WHERE item_id = #{item_id}
 	</select>
 
 	<!--아이템 삽입-->
-	<insert id="insert" useGeneratedKeys="true" keyProperty="item_id" parameterType="org.silkdog.maven.hikoco.item.dto.ItemDTO">
+	<insert id="insert" useGeneratedKeys="true" keyProperty="item_id" parameterType="org.silkdog.maven.hikoco.item.vo.ItemVO">
 		INSERT INTO hikoco_item (item_title, item_price, item_manu, item_vendor, item_summary, item_pic, item_detail, item_detail2, item_detail3, item_upload_date, item_last_edited_date) VALUES(
 			#{item_title},
 			#{item_price},
@@ -44,6 +45,11 @@
 			#{item_last_edited_date}
 		)
 	</insert>
+
+	<!-- 아이템 삭제 -->
+	<delete id="delete" parameterType="int">
+		DELETE FROM hikoco_item WHERE item_id = #{item_id}
+	</delete>
 
 	<!-- 아이템 리스트 페이징 -->
 	<select id="listByIndex" resultType="java.util.HashMap" parameterType="java.util.HashMap">

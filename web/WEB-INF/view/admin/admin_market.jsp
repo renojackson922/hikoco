@@ -1,10 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
-<%@ page import="java.util.*, org.silkdog.maven.hikoco.category.dao.*, org.silkdog.maven.hikoco.category.dto.*" %>
+<%@ page import="java.util.*, org.silkdog.maven.hikoco.category.dao.*, org.silkdog.maven.hikoco.category.vo.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%
     int count = (int) request.getAttribute("count");
-    List<CategoryDTO> clist = (List<CategoryDTO>) request.getAttribute("clist");
+    List<CategoryVO> clist = (List<CategoryVO>) request.getAttribute("clist");
 
     int cat_height;
     // rowNum 도 추가할 것
@@ -19,7 +19,7 @@
     System.out.println("count를 반올림한 값 :" + cat_height);
 
     HashMap map = new HashMap<Integer, String>();
-    for (CategoryDTO cdto : clist) {
+    for (CategoryVO cdto : clist) {
         map.put(cdto.getHic_id(), cdto.getHic_val());
     }
 

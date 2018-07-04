@@ -1,19 +1,14 @@
 package org.silkdog.maven.hikoco.member.controller;
 
 import org.silkdog.maven.hikoco.member.dao.MemberDAO;
-import org.silkdog.maven.hikoco.member.dto.MemberDTO;
+import org.silkdog.maven.hikoco.member.vo.MemberVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.Errors;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.naming.AuthenticationException;
 import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
-import java.util.HashMap;
 
 @Controller
 @RequestMapping("/auth/login")
@@ -41,7 +36,7 @@ public class LoginController {
     @RequestMapping(method=RequestMethod.POST)
     public String login(@RequestParam("hic_email") String id, @RequestParam("hic_pw") String pw, HttpSession session){
         System.out.println(id + " " + pw);
-        MemberDTO mdto = memberDAO.login(id, pw);
+        MemberVO mdto = memberDAO.login(id, pw);
         if(mdto == null){
             System.out.println("No such userId exists.");
             return("redirect:/");

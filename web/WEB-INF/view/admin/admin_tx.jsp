@@ -1,9 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.*" %>
-<%@ page import="org.silkdog.maven.hikoco.transaction.dto.TransactionDTO" %>
+<%@ page import="org.silkdog.maven.hikoco.transaction.vo.TransactionVO" %>
 
 <%
-    TransactionDTO tdto = (TransactionDTO) request.getAttribute("tdto");
+    TransactionVO tdto = (TransactionVO) request.getAttribute("tdto");
     String isDiscountParse;
     if (Integer.parseInt(tdto.getIs_discount()) == 1) {
         isDiscountParse = "TRUE";

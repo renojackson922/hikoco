@@ -1,11 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.*,
                  org.silkdog.maven.hikoco.member.dao.*,
-                 org.silkdog.maven.hikoco.member.dto.*" %>
+                 org.silkdog.maven.hikoco.member.vo.*" %>
 
 <%
-    List<MemberDTO> mlist = (List<MemberDTO>) request.getAttribute("mlist");
-    MemberDTO mdto2 = (MemberDTO) request.getAttribute("mdto");
+    List<MemberVO> mlist = (List<MemberVO>) request.getAttribute("mlist");
+    MemberVO mdto2 = (MemberVO) request.getAttribute("mdto");
 %>
 
 <!DOCTYPE html>
@@ -182,7 +182,7 @@
                     <td><i class="fas fa-wrench"></i></td>
                     <td><i class="fas fa-trash-alt"></i></td>
                 </tr>
-                <% for (MemberDTO mdto : mlist) { %>
+                <% for (MemberVO mdto : mlist) { %>
                 <tr>
                     <td><input type="checkbox"></td>
                     <th scope="row"><%=mdto.getNo()%>

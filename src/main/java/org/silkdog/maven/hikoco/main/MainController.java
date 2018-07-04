@@ -1,16 +1,14 @@
 package org.silkdog.maven.hikoco.main;
 
 import org.silkdog.maven.hikoco.category.dao.CategoryDAO;
-import org.silkdog.maven.hikoco.category.dto.CategoryDTO;
+import org.silkdog.maven.hikoco.category.vo.CategoryVO;
 import org.silkdog.maven.hikoco.item.dao.ItemDAO;
-import org.silkdog.maven.hikoco.item.dto.ItemDTO;
 import org.silkdog.maven.hikoco.transaction.dao.TransactionDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -150,7 +148,7 @@ public class MainController {
 
     @RequestMapping(value = "/category_test.do", method = RequestMethod.POST)
     public String categoryTestPro(HttpServletRequest req) {
-        CategoryDTO cdto = new CategoryDTO();
+        CategoryVO cdto = new CategoryVO();
         cdto.setHic_parent(String.valueOf(req.getParameter("cat_exists")));
         cdto.setHic_val(req.getParameter("cat_name"));
         int result = categoryDAO.insert(cdto);
@@ -191,8 +189,8 @@ public class MainController {
         return "mycart";
     }
 
-    @RequestMapping(value = "/hbltest.do", method = RequestMethod.GET)
-    public String hbltest() {
-        return "hbltest";
+    @RequestMapping(value = "/crypto.do", method = RequestMethod.GET)
+    public String crypto() {
+        return "crypto";
     }
 }

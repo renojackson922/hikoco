@@ -1,21 +1,18 @@
 package org.silkdog.maven.hikoco.transaction.dao;
 
-import org.silkdog.maven.hikoco.transaction.dao.TransactionDAO;
-import org.silkdog.maven.hikoco.transaction.dto.TransactionDTO;
+import org.silkdog.maven.hikoco.transaction.vo.TransactionVO;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 import javax.sql.DataSource;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class TransactionDAOImpl implements TransactionDAO {
     private JdbcTemplate jdbcTemplate;
     public TransactionDAOImpl(DataSource dataSource){ jdbcTemplate = new JdbcTemplate(dataSource); }
 
 
-    public RowMapper<TransactionDTO> rowMapper = (rs, rowNum) -> {
-        TransactionDTO tdto = new TransactionDTO();
+    public RowMapper<TransactionVO> rowMapper = (rs, rowNum) -> {
+        TransactionVO tdto = new TransactionVO();
         tdto.setNo(rs.getInt("no"));
         tdto.setSeller(rs.getString("seller"));
         tdto.setPurchaser_rn(rs.getString("purchaser_rn"));
@@ -32,8 +29,8 @@ public class TransactionDAOImpl implements TransactionDAO {
     };
 
     @Override
-    public TransactionDTO selectOne(){
-        TransactionDTO tdto = jdbcTemplate.queryForObject("select * from HIKOCO_TX where NO = 1", rowMapper);
+    public TransactionVO selectOne(){
+        TransactionVO tdto = jdbcTemplate.queryForObject("select * from HIKOCO_TX where NO = 1", rowMapper);
         return tdto;
     }
 

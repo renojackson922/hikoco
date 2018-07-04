@@ -1,5 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="org.silkdog.maven.hikoco.item.dto.ItemDTO" %>
 <%@ page import="java.util.*" %>
 <%@ page contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
@@ -107,6 +106,12 @@
                 <span>${i.item_detail3}</span>
                 <span>${i.item_upload_date}</span>
                 <span>${i.item_last_edited_date}</span>
+                <hr/>
+                <a class="btn btn-sm btn-info" href="#">수정하기</a>
+                <form id="form2" name="form2" action="./item_test.do?action=remove" method="POST">
+                    <input type="hidden" name="item_id" value="${i.item_id}">
+                    <button type="submit" class="btn btn-sm btn-danger">삭제하기</button>
+                </form>
             </li>
         </c:forEach>
     </ul>

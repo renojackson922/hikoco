@@ -6,7 +6,7 @@
 <!-- 서순 중요 -->
 <configuration>
     <typeAliases>
-        <!--<typeAlias alias="itemList" type="list"/>-->
+        <!--<typeAlias type="org.silkdog.maven.hikoco.item.vo.ItemVO" alias="ItemVO"/>-->
     </typeAliases>
     <mappers>
         <mapper resource="mybatis/MemberMapper.xml"></mapper>

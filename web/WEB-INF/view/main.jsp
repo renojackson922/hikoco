@@ -112,23 +112,22 @@
             <div class="col-md-6" style="float:left;"></div>
             <div class="col-md-6" style="float:left;">
                 <!-- 찰스형 애니메이션 부분 , fadeInUp -->
-                <div class="animated"
-                     style="position:absolute; width:300px; height:90px; right:150px; top:180px; background-color: rgba(0,0,0,0.5); padding:15px; ">
-            <span class="hikoco-sec1-span"
-                  style="font-size:1.3em; display:block; line-height: 30px;"><i>최상의 게이밍 성능</i></span>
-                    <div class="text-right">
-                        <span class="hikoco-sec1-span" style="font-size:1.0em; display:block; line-height: 30px;"><i>- Charles Hoskinson</i></span>
-                    </div>
-                </div>
-                <div class="animated"
-                     style="position:absolute; width:300px; height:150px; right:150px; top:280px; background-color:#000; padding:20px;">
-                    <span class="hikoco-sec1-span" style="font-size:1.0em; line-height: 20px;">AMD</span>
-                    <span class="hikoco-sec1-span" style="font-size:1.8em; display:block; line-height: 30px;"><strong>Radeon&#174; RX580</strong></span>
-                    <span class="hikoco-sec1-span" style="font-size:1.2em; display:block; line-height: 40px;">&#8361;&nbsp;300,000 부터</span>
-                    <div class="text-right">
-                        <a href="#"><span style="font-size:0.8em; line-height:40px;">지금 구매하기</span></a>
-                    </div>
-                </div>
+
+                <%--<div class="animated" style="position:absolute; width:300px; height:90px; right:150px; top:180px; background-color: rgba(0,0,0,0.5); padding:15px; ">--%>
+                    <%--<span class="hikoco-sec1-span" style="font-size:1.3em; display:block; line-height: 30px;"><i>최상의 게이밍 성능</i></span>--%>
+                    <%--<div class="text-right">--%>
+                        <%--<span class="hikoco-sec1-span" style="font-size:1.0em; display:block; line-height: 30px;"><i>- Charles Hoskinson</i></span>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+                <%--<div class="animated" style="position:absolute; width:300px; height:150px; right:150px; top:280px; background-color:#000; padding:20px;">--%>
+                    <%--<span class="hikoco-sec1-span" style="font-size:1.0em; line-height: 20px;">AMD</span>--%>
+                    <%--<span class="hikoco-sec1-span" style="font-size:1.8em; display:block; line-height: 30px;"><strong>Radeon&#174; RX580</strong></span>--%>
+                    <%--<span class="hikoco-sec1-span" style="font-size:1.2em; display:block; line-height: 40px;">&#8361;&nbsp;300,000 부터</span>--%>
+                    <%--<div class="text-right">--%>
+                        <%--<a href="#"><span style="font-size:0.8em; line-height:40px;">지금 구매하기</span></a>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+
             </div>
         </div>
     </section>
@@ -211,39 +210,50 @@
         </div>
         <!-- Item List -->
         <div class="sec3-wrapper container" style="display:inline-block; padding:17px 0 17px 0; width:100%">
-            <div class="list-right">
-                <ul class="list-ul">
-                    <c:forEach var="i" items="${cntRyzen}">
-                        <li class="list-action unselectable"
-                            onclick="window.location.href='item_detail.do?item_id=${i.item_id}'"> <!-- TEST -->
-                            <figure>
-                                <div class="fig-top" style="padding:20px 25px 5px 25px;">
-                                    <img class="center" src="${i.item_pic}"
-                                         style="margin-bottom:10px; height:150px; max-width:150px;">
-                                    <figcaption style="height:135px;">
-                                        <p style="margin-bottom:0px; font-size:14px; font-weight:700; min-height:60px;">${i.item_title}</p>
-                                        <hr class="item-hr">
-                                            <%--<p style="margin-bottom:0px; font-size:14px; font-weight:700;">현존 최고의 성능 워크스테이션</p>--%>
-                                        <p style="font-size:12px; color:#5d5d5d; text-align:left; font-weight:400;">${i.item_summary}</p>
-                                    </figcaption>
-                                </div>
-                                <div class="fig-bottom">
-                                    <figcaption>
-                                        <div class="text-left" style="float:left;">
+            <c:choose>
+                <c:when test="${cntRyzen eq '[]'}">
+                    <div class="text-center" style="height:300px; padding:100px 0;">
+                        <h2>Ryzen과(와) 관련된 아이템이 없습니다.</h2>
+                        <a class="btn btn-warning" href="#">등록하기</a>
+                    </div>
+                </c:when>
+                <c:otherwise>
+                    <div class="list-right">
+                        <ul class="list-ul">
+                            <c:forEach var="i" items="${cntRyzen}">
+                                <li class="list-action unselectable"
+                                    onclick="window.location.href='item_detail.do?item_id=${i.item_id}'"> <!-- TEST -->
+                                    <figure>
+                                        <div class="fig-top" style="padding:20px 25px 5px 25px;">
+                                            <img class="center" src="${i.item_pic}"
+                                                 style="margin-bottom:10px; height:150px; max-width:150px;">
+                                            <figcaption style="height:135px;">
+                                                <p style="margin-bottom:0px; font-size:14px; font-weight:700; min-height:60px;">${i.item_title}</p>
+                                                <hr class="item-hr">
+                                                    <%--<p style="margin-bottom:0px; font-size:14px; font-weight:700;">현존 최고의 성능 워크스테이션</p>--%>
+                                                <p style="font-size:12px; color:#5d5d5d; text-align:left; font-weight:400;">${i.item_summary}</p>
+                                            </figcaption>
+                                        </div>
+                                        <div class="fig-bottom">
+                                            <figcaption>
+                                                <div class="text-left" style="float:left;">
                                             <span style="font-size:14px;"><strong><fmt:formatNumber
                                                     value="${i.item_price}" type="currency"
                                                     currencySymbol=""/>원</strong></span>
+                                                </div>
+                                                <div class="text-right" style=" vertical-align: middle;">
+                                                    <span style="font-size:12px; border:1px solid coral; background: coral; color:#fff; padding:0 5px 0 5px; border-radius:4px;">특가</span>
+                                                </div>
+                                            </figcaption>
                                         </div>
-                                        <div class="text-right" style=" vertical-align: middle;">
-                                            <span style="font-size:12px; border:1px solid coral; background: coral; color:#fff; padding:0 5px 0 5px; border-radius:4px;">특가</span>
-                                        </div>
-                                    </figcaption>
-                                </div>
-                            </figure>
-                        </li>
-                    </c:forEach>
-                </ul>
-            </div>
+                                    </figure>
+                                </li>
+                            </c:forEach>
+                        </ul>
+                    </div>
+                </c:otherwise>
+            </c:choose>
+
         </div>
     </section>
 
@@ -282,66 +292,76 @@
 
         <!-- Item List; AMD RXVega Special Offer -->
         <div class="sec4-wrapper container" style="display:inline-block; padding:17px 0 17px 0;  width:100%;">
-            <div class="list-left" style="margin-left:17px;"> <!-- NEED TO BE FIXED -->
-                <ul class="list-ul__left">
-                    <c:forEach var="i" items="${cntVega}">
-                        <li class="list-action unselectable"
-                            onclick="window.location.href='item_detail.do?item_id=${i.item_id}'">
-                            <figure>
-                                <div class="fig-top" style="padding:20px 25px 5px 25px;">
-                                    <img class="center" src="${i.item_pic}"
-                                         style="margin-bottom:10px; height:200px; width:200px;">
-                                    <figcaption style="height:135px;"> <!-- 임시적 높이 조정 -->
-                                        <p style="margin-bottom:0px; font-size:0.8em; font-weight:700;">${i.item_title}</p>
-                                        <hr class="item-hr">
-                                        <p style="font-size:12px; color:#5d5d5d; text-align:left; font-weight:400;">${i.item_summary}</p>
-                                    </figcaption>
-                                </div>
-                                <div class="fig-bottom">
-                                    <figcaption>
-                                        <div class="text-left" style="float:left;">
+            <c:choose>
+                <c:when test="${cntVega eq '[]'}">
+                    <div class="text-center" style="height:300px; padding:100px 0;">
+                        <h2>Vega과(와) 관련된 아이템이 없습니다.</h2>
+                        <a class="btn btn-warning" href="#">등록하기</a>
+                    </div>
+                </c:when>
+                <c:otherwise>
+                    <div class="list-left" style="margin-left:17px;"> <!-- NEED TO BE FIXED -->
+                        <ul class="list-ul__left">
+                            <c:forEach var="i" items="${cntVega}">
+                                <li class="list-action unselectable"
+                                    onclick="window.location.href='item_detail.do?item_id=${i.item_id}'">
+                                    <figure>
+                                        <div class="fig-top" style="padding:20px 25px 5px 25px;">
+                                            <img class="center" src="${i.item_pic}"
+                                                 style="margin-bottom:10px; height:200px; width:200px;">
+                                            <figcaption style="height:135px;"> <!-- 임시적 높이 조정 -->
+                                                <p style="margin-bottom:0px; font-size:0.8em; font-weight:700;">${i.item_title}</p>
+                                                <hr class="item-hr">
+                                                <p style="font-size:12px; color:#5d5d5d; text-align:left; font-weight:400;">${i.item_summary}</p>
+                                            </figcaption>
+                                        </div>
+                                        <div class="fig-bottom">
+                                            <figcaption>
+                                                <div class="text-left" style="float:left;">
                                             <span style="font-size:14px;"><strong><fmt:formatNumber
                                                     value="${i.item_price}" type="currency"
                                                     currencySymbol=""/>원</strong></span>
+                                                </div>
+                                                <div class="text-right" style=" vertical-align: middle;">
+                                                    <span style="font-size:12px; border:1px solid #428bca; background: #428bca; color:#fff; padding:0 5px 0 5px; border-radius:4px;">MD추천</span>
+                                                </div>
+                                            </figcaption>
                                         </div>
-                                        <div class="text-right" style=" vertical-align: middle;">
-                                            <span style="font-size:12px; border:1px solid #428bca; background: #428bca; color:#fff; padding:0 5px 0 5px; border-radius:4px;">MD추천</span>
+                                    </figure>
+                                </li>
+                            </c:forEach>
+                            <c:forEach var="i" items="${cntVega}">
+                                <li class="list-action unselectable"
+                                    onclick="window.location.href='item_detail.do?item_id=${i.item_id}'">
+                                    <figure>
+                                        <div class="fig-top" style="padding:20px 25px 5px 25px;">
+                                            <img class="center" src="${i.item_pic}"
+                                                 style="margin-bottom:10px; height:200px; width:200px;">
+                                            <figcaption style="height:135px;"> <!-- 임시적 높이 조정 -->
+                                                <p style="margin-bottom:0px; font-size:0.8em; font-weight:700;">${i.item_title}</p>
+                                                <hr class="item-hr">
+                                                <p style="font-size:12px; color:#5d5d5d; text-align:left; font-weight:400;">${i.item_summary}</p>
+                                            </figcaption>
                                         </div>
-                                    </figcaption>
-                                </div>
-                            </figure>
-                        </li>
-                    </c:forEach>
-                    <c:forEach var="i" items="${cntVega}">
-                        <li class="list-action unselectable"
-                            onclick="window.location.href='item_detail.do?item_id=${i.item_id}'">
-                            <figure>
-                                <div class="fig-top" style="padding:20px 25px 5px 25px;">
-                                    <img class="center" src="${i.item_pic}"
-                                         style="margin-bottom:10px; height:200px; width:200px;">
-                                    <figcaption style="height:135px;"> <!-- 임시적 높이 조정 -->
-                                        <p style="margin-bottom:0px; font-size:0.8em; font-weight:700;">${i.item_title}</p>
-                                        <hr class="item-hr">
-                                        <p style="font-size:12px; color:#5d5d5d; text-align:left; font-weight:400;">${i.item_summary}</p>
-                                    </figcaption>
-                                </div>
-                                <div class="fig-bottom">
-                                    <figcaption>
-                                        <div class="text-left" style="float:left;">
+                                        <div class="fig-bottom">
+                                            <figcaption>
+                                                <div class="text-left" style="float:left;">
                                             <span style="font-size:14px;"><strong><fmt:formatNumber
                                                     value="${i.item_price}" type="currency"
                                                     currencySymbol=""/>원</strong></span>
+                                                </div>
+                                                <div class="text-right" style=" vertical-align: middle;">
+                                                    <span style="font-size:12px; border:1px solid #428bca; background: #428bca; color:#fff; padding:0 5px 0 5px; border-radius:4px;">MD추천</span>
+                                                </div>
+                                            </figcaption>
                                         </div>
-                                        <div class="text-right" style=" vertical-align: middle;">
-                                            <span style="font-size:12px; border:1px solid #428bca; background: #428bca; color:#fff; padding:0 5px 0 5px; border-radius:4px;">MD추천</span>
-                                        </div>
-                                    </figcaption>
-                                </div>
-                            </figure>
-                        </li>
-                    </c:forEach>
-                </ul>
-            </div>
+                                    </figure>
+                                </li>
+                            </c:forEach>
+                        </ul>
+                    </div>
+                </c:otherwise>
+            </c:choose>
         </div>
     </section>
     <section id="hikoco-sec5">

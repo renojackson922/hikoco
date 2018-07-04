@@ -1,7 +1,7 @@
 package org.silkdog.maven.hikoco.category.dao;
 
 import org.mybatis.spring.SqlSessionTemplate;
-import org.silkdog.maven.hikoco.category.dto.CategoryDTO;
+import org.silkdog.maven.hikoco.category.vo.CategoryVO;
 
 import java.util.HashMap;
 import java.util.List;
@@ -50,7 +50,7 @@ public class CategoryDAOImpl implements CategoryDAO {
     }
 
     @Override
-    public int insert(final CategoryDTO cdto){
+    public int insert(final CategoryVO cdto){
         return sqlSessionTemplate.insert("org.silkdog.maven.hikoco.category.CategoryDAO.insert" ,cdto);
     }
 

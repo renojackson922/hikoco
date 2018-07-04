@@ -1,13 +1,10 @@
 package org.silkdog.maven.hikoco.member.dao;
 
-import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
-import org.silkdog.maven.hikoco.member.dto.MemberDTO;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.silkdog.maven.hikoco.member.vo.MemberVO;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
-import java.util.List;
 
 @Repository
 public class MemberDAOMybatis implements MemberDAO {
@@ -23,18 +20,18 @@ public class MemberDAOMybatis implements MemberDAO {
     }
 
     @Override
-    public MemberDTO select(){
-        MemberDTO mdto = (MemberDTO)sqlSessionTemplate.selectOne("org.silkdog.maven.hikoco.member.dao.MemberDAO.select");
+    public MemberVO select(){
+        MemberVO mdto = (MemberVO)sqlSessionTemplate.selectOne("org.silkdog.maven.hikoco.member.dao.MemberDAO.select");
         return mdto;
     }
 
     @Override
-    public MemberDTO login(String id, String pw){
+    public MemberVO login(String id, String pw){
         HashMap<String, Object> hashMap = new HashMap<String, Object>();
         hashMap.put("mem_userid", id);
         hashMap.put("mem_password", pw);
 
-        MemberDTO mdto;
+        MemberVO mdto;
         try{
              mdto = sqlSessionTemplate.selectOne("org.silkdog.maven.hikoco.member.dao.MemberDAO.login", hashMap);
              return mdto;
@@ -46,7 +43,7 @@ public class MemberDAOMybatis implements MemberDAO {
     }
 
     @Override
-    public int insert(MemberDTO mdto){
+    public int insert(MemberVO mdto){
         java.util.Date date = new java.util.Date();
         java.sql.Timestamp timestamp = new java.sql.Timestamp(date.getTime());
 

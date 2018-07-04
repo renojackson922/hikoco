@@ -1,9 +1,9 @@
 package org.silkdog.maven.hikoco.member.dao;
 
-import org.silkdog.maven.hikoco.member.dto.MemberDTO;
+import org.silkdog.maven.hikoco.member.vo.MemberVO;
 
 public interface MemberDAO {
-    MemberDTO select();
-    MemberDTO login(String id, String pw);
-    int insert(MemberDTO mdto);
+    MemberVO select();
+    MemberVO login(String id, String pw);
+    int insert(MemberVO mdto);
 }

@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
-<%@ page import="java.util.*, org.silkdog.maven.hikoco.category.dao.*, org.silkdog.maven.hikoco.category.dto.*" %>
-<%@ page import="org.silkdog.maven.hikoco.item.dto.ItemDTO" %>
+<%@ page import="java.util.*, org.silkdog.maven.hikoco.category.dao.*, org.silkdog.maven.hikoco.category.vo.*" %>
+<%@ page import="org.silkdog.maven.hikoco.item.vo.ItemVO" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%
@@ -347,38 +347,57 @@
                         <!-- a tag ends -->
                     </c:forEach>
                 </div>
-                <div style="display:inline-block; margin:0 auto;">
 
+                <style>
+                    .page-link{
+                        color:#000;
+                    }
+                </style>
+
+                <div style="display:inline-block; margin:0 auto;">
                     <nav aria-label="Page navigation example">
                         <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                            </li>
                             <c:choose>
                                 <c:when test="${isSearch eq 'search'}">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                    </li>
                                     <li class="page-item"><a class="page-link" href="/item.do?mode=${isSearch}&search_string=${searchString}&page=1">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                    <li class="page-item"><a class="page-link" href="/item.do?mode=${isSearch}&search_string=${searchString}&page=2">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="/item.do?mode=${isSearch}&search_string=${searchString}&page=3">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="/item.do?mode=${isSearch}&search_string=${searchString}&page=4">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="/item.do?mode=${isSearch}&search_string=${searchString}&page=5">5</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </li>
                                 </c:when>
                                 <c:otherwise>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                    </li>
                                     <li class="page-item"><a class="page-link" href="/item.do?mode=${isSearch}&page=1">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                    <li class="page-item"><a class="page-link" href="/item.do?mode=${isSearch}&page=2">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="/item.do?mode=${isSearch}&page=3">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="/item.do?mode=${isSearch}&page=4">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="/item.do?mode=${isSearch}&page=5">5</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </li>
                                 </c:otherwise>
                             </c:choose>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </li>
+
                         </ul>
                     </nav>
 

@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="org.silkdog.maven.hikoco.category.dto.CategoryDTO" %>
+<%@ page import="org.silkdog.maven.hikoco.category.vo.CategoryVO" %>
 <%@ page import="org.silkdog.maven.hikoco.category.dao.CategoryDAO" %>
 <%@ page import="java.util.*" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
@@ -156,7 +156,7 @@
 
         </c:forEach>
         <%
-            for (CategoryDTO cdto : clist) {
+            for (CategoryVO cdto : clist) {
                 if (cdto.getHic_indent() == 1) {
         %>
         <li class="list-group-item"><%=cdto.getHic_val()%>

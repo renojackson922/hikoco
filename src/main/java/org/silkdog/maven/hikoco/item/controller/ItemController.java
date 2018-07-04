@@ -1,7 +1,7 @@
 package org.silkdog.maven.hikoco.item.controller;
 
 import org.silkdog.maven.hikoco.item.dao.ItemDAO;
-import org.silkdog.maven.hikoco.item.dto.ItemDTO;
+import org.silkdog.maven.hikoco.item.vo.ItemVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,7 +40,7 @@ public class ItemController {
 
     @RequestMapping(value="/item_test.do", method=RequestMethod.POST)
     public String itemTestPro(HttpServletRequest req, Model model){
-        ItemDTO idto = new ItemDTO();
+        ItemVO idto = new ItemVO();
 
         java.util.Date date = new java.util.Date();
         java.sql.Timestamp timestamp = new java.sql.Timestamp(date.getTime());
@@ -61,6 +61,14 @@ public class ItemController {
         checkItemList(req, model);
         return "redirect:item_test.do";
     }
+
+    @RequestMapping(value="/item_test.do", method=RequestMethod.POST, params="action=remove")
+    public String itemTestDelete(HttpServletRequest req){
+        int itemId = Integer.parseInt(req.getParameter("item_id"));
+        itemDAO.delete(itemId);
+        return "redirect:item_test.do";
+    }
+
 
     public void checkItemList(HttpServletRequest req, Model model){
         List<HashMap> ilist = itemDAO.list();
@@ -126,7 +134,7 @@ public class ItemController {
     @RequestMapping(value="/item_detail.do", method = RequestMethod.GET)
     public String itemDetail(@RequestParam("item_id") int itemId, HttpServletRequest req){
         System.out.println("itemID의 값: " + itemId);
-        ItemDTO idto = itemDAO.select(itemId);
+        ItemVO idto = itemDAO.select(itemId);
         req.setAttribute("idto", idto);
         return "item_detail";
     }
