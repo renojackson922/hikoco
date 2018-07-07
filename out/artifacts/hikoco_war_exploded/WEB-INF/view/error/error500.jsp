@@ -4,6 +4,8 @@
     <title>Title</title>
 </head>
 <body>
-
+<div style="text-align:center">
+    <span style="font-size:3em;">Error 500</span>
+</div>
 </body>
 </html>

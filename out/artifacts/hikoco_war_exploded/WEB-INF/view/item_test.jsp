@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.*" %>
-<%@ page contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
+
 <%
     List<HashMap> ilist = (List<HashMap>) request.getAttribute("ilist");
     System.out.println(ilist);
@@ -24,20 +24,7 @@
 <html>
 <head>
     <title>Title</title>
-    <meta charset="UTF-8">
-    <!-- Bootstrap 4.1.1 & jQuery-Slim -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
-            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-            crossorigin="anonymous"></script>
-    <!-- Angular.js -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
-    <!-- Underscore.js -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+    <%@ include file="./essential/base.jsp"%>
 </head>
 <body>
 <style>

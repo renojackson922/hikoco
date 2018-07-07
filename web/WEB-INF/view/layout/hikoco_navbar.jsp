@@ -15,7 +15,7 @@
         </style>
         <nav id="hikoco-nav" class="navbar navbar-expand-lg navbar-dark" style="position:fixed; width:100%;">
         <!--navbar-dark-->
-        <a class="navbar-brand" href="/"><i class="fas fa-coffee"></i>&nbsp;&nbsp;Cafe HIKOCO</a>
+        <a class="navbar-brand" href="/"><i class="fas fa-coffee"></i>&nbsp;&nbsp;</a> <!--Cafe HIKOCO-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -52,10 +52,10 @@
         <c:choose>
             <c:when test="${sessionScope.userid eq null}">
                 <li class="nav-item">
-                <a class="nav-link" href="#" ng-click="lockBodyScroll={overflow:'hidden'}; hideAndSeek();">Sign in</a>
+                <a class="nav-link" href="<c:url value="/login"/>">로그인</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="/mycart.do">My Cart</a>
+                <a class="nav-link" href="/mycart">장바구니</a>
                 </li>
             </c:when>
             <c:otherwise>
@@ -66,7 +66,7 @@
                 <a class="nav-link" href="<c:url value="/logout.do"/>">Logout</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="/mycart.do">My Cart</a>
+                <a class="nav-link" href="<c:url value="/mycart"/>">My Cart</a>
                 </li>
             </c:otherwise>
         </c:choose>

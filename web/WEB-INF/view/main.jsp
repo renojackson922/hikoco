@@ -4,10 +4,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html ng-cloak ng-app="app">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HIKOCO :: MAIN</title>
-    <!-- MAIN화면 전용 CSS -->
+    <!-- MAIN 화면 전용 CSS -->
     <link rel="stylesheet" href="../../resources/script/main.css">
     <%@ include file="./essential/base.jsp" %>
     <script>
@@ -74,7 +72,7 @@
             return item;
         })));
 
-        var app = angular.module('app', ['timer']);
+        var app = angular.module('app', []);
 
         // 다른 도메인의 소스 불러오기 필터
         app.filter('trustUrl', function ($sce) {
@@ -83,51 +81,34 @@
             }
         });
 
-        app.controller('ctrl', function ($scope, $http, $interval, $timeout) {
-            $scope.hide = 0;
-
-            $scope.hideAndSeek = function () {
-                $scope.hide = 1;
-            }
-
-            $scope.hideAndSeekDisabled = function () {
-                $scope.hide = 0;
-            }
-        });
-    </script>
-    <script>
-        window.sr = ScrollReveal();
+        app.controller('ctrl', function ($scope, $http, $interval, $timeout) {});
     </script>
 </head>
-<%--ng-click="hideAndSeekDisabled(); lockBodyScroll={overflow:'scroll'}"--%>
-<body ng-controller="ctrl" ng-style="lockBodyScroll">
-<%@ include file="layout/hikoco_login_popup.jsp" %>
+<body ng-controller="ctrl">
 <!-- 고정 Footer 간의 간격 -->
 <div id="show" style="padding-bottom:170px;">
     <!-- navbar -->
     <%@ include file="layout/hikoco_navbar.jsp" %>
     <!-- section 1 -->
+    <style>
+        .hikoco-sec1-title > span{
+            display: inline-block;
+            margin-bottom:10px;
+        }
+        .hikoco-noitem{
+            font-weight:400;
+            padding-bottom:9px !important;
+        }
+    </style>
     <section id="hikoco-sec1">
         <div class="hikoco-sec1-div">
-            <div class="col-md-6" style="float:left;"></div>
-            <div class="col-md-6" style="float:left;">
-                <!-- 찰스형 애니메이션 부분 , fadeInUp -->
-
-                <%--<div class="animated" style="position:absolute; width:300px; height:90px; right:150px; top:180px; background-color: rgba(0,0,0,0.5); padding:15px; ">--%>
-                    <%--<span class="hikoco-sec1-span" style="font-size:1.3em; display:block; line-height: 30px;"><i>최상의 게이밍 성능</i></span>--%>
-                    <%--<div class="text-right">--%>
-                        <%--<span class="hikoco-sec1-span" style="font-size:1.0em; display:block; line-height: 30px;"><i>- Charles Hoskinson</i></span>--%>
-                    <%--</div>--%>
-                <%--</div>--%>
-                <%--<div class="animated" style="position:absolute; width:300px; height:150px; right:150px; top:280px; background-color:#000; padding:20px;">--%>
-                    <%--<span class="hikoco-sec1-span" style="font-size:1.0em; line-height: 20px;">AMD</span>--%>
-                    <%--<span class="hikoco-sec1-span" style="font-size:1.8em; display:block; line-height: 30px;"><strong>Radeon&#174; RX580</strong></span>--%>
-                    <%--<span class="hikoco-sec1-span" style="font-size:1.2em; display:block; line-height: 40px;">&#8361;&nbsp;300,000 부터</span>--%>
-                    <%--<div class="text-right">--%>
-                        <%--<a href="#"><span style="font-size:0.8em; line-height:40px;">지금 구매하기</span></a>--%>
-                    <%--</div>--%>
-                <%--</div>--%>
-
+            <div class="hikoco-sec1-title col-md-8 offset-md-2 text-center" style="padding:200px 0">
+                <span style="font-size:3.0em; color:#fff; font-weight:200;
+                background: rgba(0,0,0,0.7); padding:0 15px 0 15px;">야옹야옹 야옹이 노래를 한다.</span><br>
+                <span style="font-size:1.5em; color:#fff; font-weight:200;
+                background: rgba(0,0,0,0.7); padding:0 15px 0 15px;">Kitty Kitten Kitty-cat, sings a happy song.</span><br>
+                <span style="font-size:1.2em; color:#fff; font-weight:200;
+                background: rgba(0,0,0,0.7); padding:0 15px 0 15px;">소뱅은 과연 맥크리로 다이아를 갈 수 있을까?</span>
             </div>
         </div>
     </section>
@@ -145,15 +126,17 @@
         <c:choose>
             <c:when test="${cntRyzen eq '[]'}">
                 <div class="text-center" style="height:300px; padding:100px 0;">
-                    <h2>아이템이 없습니다.</h2>
+                    <h2 class="hikoco-noitem">아이템이 없습니다.</h2>
                     <a class="btn btn-warning" href="#">등록하기</a>
                 </div>
             </c:when>
             <c:otherwise>
-                <c:forEach var="i" items="${cntRyzen}">
-                    <div class="jcarousel-wrapper">
-                        <div class="jcarousel">
-                            <ul class="jcarousel-ul">
+
+                <div class="jcarousel-wrapper">
+                    <div class="jcarousel">
+                        <ul class="jcarousel-ul">
+                            <%--  --%>
+                            <c:forEach var="i" items="${cntRyzen}">
                                 <li>
                                     <figure class="jcarousel-item text-center unselectable"
                                             onclick="window.location.href='/item_detail.do?item_id=${i.item_id}'">
@@ -173,13 +156,31 @@
                                         </figcaption>
                                     </figure>
                                 </li>
-                            </ul>
-                        </div>
-                        <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-                        <a href="#" class="jcarousel-control-next">&rsaquo;</a>
-                        <p class="jcarousel-pagination"></p>
+                            </c:forEach>
+                            <c:choose>
+                                <c:when test="${cntRyzen.size() > 6}"></c:when>
+                                <c:otherwise>
+                                    <c:forEach var="j" begin="1" end="${6 - cntRyzen.size()}">
+                                        <li>
+                                            <figure class="jcarousel-item text-center unselectable" style="padding:150px 0;">
+                                                <i class="fas fa-coffee" style="color:#ddd; font-size:2.5em;"></i>
+                                            </figure>
+                                        </li>
+                                    </c:forEach>
+                                </c:otherwise>
+                            </c:choose>
+                        </ul>
                     </div>
-                </c:forEach>
+                    <c:choose>
+                        <c:when test="${cntRyzen.size() > 6}">
+                            <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                            <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+                            <p class="jcarousel-pagination"></p>
+                        </c:when>
+                        <c:otherwise></c:otherwise>
+                    </c:choose>
+                </div>
+
             </c:otherwise>
         </c:choose>
 
@@ -213,7 +214,7 @@
             <c:choose>
                 <c:when test="${cntRyzen eq '[]'}">
                     <div class="text-center" style="height:300px; padding:100px 0;">
-                        <h2>Ryzen과(와) 관련된 아이템이 없습니다.</h2>
+                        <h2 class="hikoco-noitem">Ryzen과(와) 관련된 아이템이 없습니다.</h2>
                         <a class="btn btn-warning" href="#">등록하기</a>
                     </div>
                 </c:when>
@@ -295,7 +296,7 @@
             <c:choose>
                 <c:when test="${cntVega eq '[]'}">
                     <div class="text-center" style="height:300px; padding:100px 0;">
-                        <h2>Vega과(와) 관련된 아이템이 없습니다.</h2>
+                        <h2 class="hikoco-noitem">Vega과(와) 관련된 아이템이 없습니다.</h2>
                         <a class="btn btn-warning" href="#">등록하기</a>
                     </div>
                 </c:when>

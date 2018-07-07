@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <mvc:annotation-driven/>
+
+    <!-- Set Component Package (Default) -->
+    <context:component-scan base-package="org.silkdog.maven.hikoco.*"/>
+
+    <!-- Connection Pool -->
+    <bean id="dataSourceOrigin" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql://silkdog.cxbplannjbaq.ap-northeast-2.rds.amazonaws.com:3306/hikoco?verifyServerCertificate=false&amp;useSSL=true&amp;serverTimezone=UTC" />
+        <property name="user" value="aikocandy"/>
+        <property name="password" value="Shemwpdl9"/>
+    </bean>
+
+    <!-- log4jdbc -->
+    <bean id="dataSource" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
+        <constructor-arg ref="dataSourceOrigin" />
+        <property name="logFormatter">
+            <bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
+                <property name="loggingType" value="MULTI_LINE" />
+                <!--<property name="margin" value="19" />-->
+                <property name="sqlPrefix" value="SQL:::" />
+            </bean>
+        </property>
+    </bean>
+
+    <!-- SqlSessionFactoryBean -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="classpath:/mybatis-config.xml"/>
+        <!--<property name="mapperLocations" value="classpath*:/mybatis/*.xml"/>-->
+            <!--<list>-->
+                <!--<value>classpath*:/mybatis/*.xml</value>-->
+            <!--</list>-->
+    </bean>
+
+    <!-- sqlSessionTemplate -->
+    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory"/>
+    </bean>
+
+    <!-- View Resolver -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/view/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!-- Set Annotaion-Config; Always be bottom of the xml file -->
+    <context:annotation-config />
+
+    <!-- Beans for @Autowired -->
+
+</beans>

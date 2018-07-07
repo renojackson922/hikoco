@@ -62,12 +62,12 @@ public class ItemController {
         return "redirect:item_test.do";
     }
 
-    @RequestMapping(value="/item_test.do", method=RequestMethod.POST, params="action=remove")
-    public String itemTestDelete(HttpServletRequest req){
-        int itemId = Integer.parseInt(req.getParameter("item_id"));
-        itemDAO.delete(itemId);
-        return "redirect:item_test.do";
-    }
+//    @RequestMapping(value="/item_test.do", method=RequestMethod.POST, params="action=remove")
+//    public String itemTestDelete(HttpServletRequest req){
+//        int itemId = Integer.parseInt(req.getParameter("item_id"));
+//        itemDAO.delete(itemId);
+//        return "redirect:item_test.do";
+//    }
 
 
     public void checkItemList(HttpServletRequest req, Model model){

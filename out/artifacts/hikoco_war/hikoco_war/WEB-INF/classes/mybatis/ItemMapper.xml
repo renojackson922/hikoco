@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- DAO(Interface) 아래 resultType에는 VO 지정 -->
+<mapper namespace="org.silkdog.maven.hikoco.item.dao.ItemDAO">
+
+	<!--모든 아이템 리스트-->
+	<select id="list" resultType="java.util.HashMap">
+		SELECT * FROM hikoco_item;
+	</select>
+
+	<!--아이템 검색-->
+    <select id="search" parameterType="String" resultType="java.util.HashMap">
+    SELECT * FROM (
+	(SELECT * FROM hikoco_item WHERE item_title LIKE CONCAT('%',#{0},'%'))
+	UNION
+	(SELECT * FROM hikoco_item WHERE item_manu LIKE CONCAT('%',#{1},'%'))
+	UNION
+	(SELECT * FROM hikoco_item WHERE item_vendor LIKE CONCAT('%',#{2},'%'))
+	UNION
+	(SELECT * FROM hikoco_item WHERE item_summary LIKE CONCAT('%',#{3},'%'))
+	) item_search
+    </select>
+
+	<!--아이템 하나 선택-->
+	<select id="select" parameterType="int" resultType="org.silkdog.maven.hikoco.item.vo.ItemVO">
+		SELECT * FROM hikoco_item WHERE item_id = #{item_id}
+	</select>
+
+	<!--아이템 삽입-->
+	<insert id="insert" useGeneratedKeys="true" keyProperty="item_id" parameterType="org.silkdog.maven.hikoco.item.vo.ItemVO">
+		INSERT INTO hikoco_item (item_title, item_price, item_manu, item_vendor, item_summary, item_pic, item_detail, item_detail2, item_detail3, item_upload_date, item_last_edited_date) VALUES(
+			#{item_title},
+			#{item_price},
+			#{item_manu},
+			#{item_vendor},
+			#{item_summary},
+			#{item_pic},
+			#{item_detail},
+			#{item_detail2},
+			#{item_detail3},
+			#{item_upload_date},
+			#{item_last_edited_date}
+		)
+	</insert>
+
+	<!-- 아이템 삭제 -->
+	<delete id="delete" parameterType="int">
+		DELETE FROM hikoco_item WHERE item_id = #{item_id}
+	</delete>
+
+	<!-- 아이템 리스트 페이징 -->
+	<select id="listByIndex" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+      SELECT *
+      FROM (
+		<if test="keyword0 != null" >
+      (SELECT * FROM hikoco_item WHERE item_title LIKE CONCAT('%',#{keyword0},'%'))
+      UNION
+		</if>
+		<if test="keyword1 != null">
+		(SELECT * FROM hikoco_item WHERE item_manu LIKE CONCAT('%',#{keyword1},'%'))
+      UNION
+		</if>
+		<if test="keyword2 != null">
+		(SELECT * FROM hikoco_item WHERE item_vendor LIKE CONCAT('%',#{keyword2},'%'))
+      UNION
+		</if>
+		<if test="keyword3 != null">
+		(SELECT * FROM hikoco_item WHERE item_summary LIKE CONCAT('%',#{keyword3},'%'))
+		</if>
+		) item_search
+      ORDER BY item_id DESC
+      limit #{startIndexNum}, #{pageNum}
+	</select>
+
+	<!-- 페이지 갯수 -->
+	<select id="countFromList" resultType="int">
+	   SELECT count(item_id)
+	   FROM hikoco_item
+	</select>
+
+	<!-- 시그니쳐 아이템 리스트 -->
+	<select id="getSignatureItems" resultType="java.util.HashMap">
+		SELECT (item_id) FROM hikoco_item_signature;
+	</select>
+</mapper>

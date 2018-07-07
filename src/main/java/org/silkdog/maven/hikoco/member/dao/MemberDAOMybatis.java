@@ -44,29 +44,34 @@ public class MemberDAOMybatis implements MemberDAO {
 
     @Override
     public int insert(MemberVO mdto){
-        java.util.Date date = new java.util.Date();
-        java.sql.Timestamp timestamp = new java.sql.Timestamp(date.getTime());
+//        java.util.Date date = new java.util.Date();
+//        java.sql.Timestamp timestamp = new java.sql.Timestamp(date.getTime());
+//
+//        mdto.setMem_userid("B");
+//        mdto.setMem_password("b");
+//        mdto.setMem_realname("B");
+//        mdto.setMem_nickname("B");
+//        mdto.setMem_photo("b");
+//        mdto.setMem_tier("Diamond");
+//        mdto.setMem_phone("01012345678");
+//        mdto.setMem_birthday("19900101");
+//        mdto.setMem_sex(1);
+//        mdto.setMem_zipcode("06700");
+//        mdto.setMem_addr1("BB");
+//        mdto.setMem_addr2("BB");
+//        mdto.setMem_addr3("BB");
+//        mdto.setMem_addr4("BB");
+//        mdto.setMem_regdate(timestamp);
+//        mdto.setMem_lastlogin_datetime(timestamp);
+//        mdto.setMem_lastlogin_ip("127.0.0.1");
+//        int result = sqlSessionTemplate.insert("org.silkdog.maven.hikoco.member.dao.MemberDAO.insert", mdto);
 
-//        MemberDTO mdto = new MemberDTO();
-        mdto.setMem_userid("B");
-        mdto.setMem_password("b");
-        mdto.setMem_realname("B");
-        mdto.setMem_nickname("B");
-        mdto.setMem_photo("b");
-        mdto.setMem_tier("Diamond");
-        mdto.setMem_phone("01012345678");
-        mdto.setMem_birthday("19900101");
-        mdto.setMem_sex(1);
-        mdto.setMem_zipcode("06700");
-        mdto.setMem_addr1("BB");
-        mdto.setMem_addr2("BB");
-        mdto.setMem_addr3("BB");
-        mdto.setMem_addr4("BB");
-        mdto.setMem_regdate(timestamp);
-        mdto.setMem_lastlogin_datetime(timestamp);
-        mdto.setMem_lastlogin_ip("127.0.0.1");
-        int result = sqlSessionTemplate.insert("org.silkdog.maven.hikoco.member.dao.MemberDAO.insert", mdto);
+//        return result;
 
-        return result;
+
+
+
+
+        return 0;
     }
 }

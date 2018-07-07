@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/auth/login")
+//@RequestMapping("/auth/login")
 public class LoginController {
     @Autowired
     private MemberDAO memberDAO;
@@ -33,7 +33,15 @@ public class LoginController {
 //        }
 //    }
 
-    @RequestMapping(method=RequestMethod.POST)
+    /* ======================================================== */
+    /* ======================= 로그인 페이지 ===================== */
+    /* ======================================================== */
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login() {
+        return "login";
+    }
+
+    @RequestMapping(value="/login", method = RequestMethod.POST)
     public String login(@RequestParam("hic_email") String id, @RequestParam("hic_pw") String pw, HttpSession session){
         System.out.println(id + " " + pw);
         MemberVO mdto = memberDAO.login(id, pw);
@@ -46,6 +54,16 @@ public class LoginController {
             System.out.println("Logged in successfully.");
             return("redirect:/");
         }
+    }
+
+    @RequestMapping(value = "logout.do", method = RequestMethod.GET)
+    public String logout(HttpSession session) {
+        if (session.getAttribute("userid") != null) {
+            session.removeAttribute("userid");
+            if (session.getAttribute("nickname") != null) session.removeAttribute("nickname");
+        }
+        session.invalidate();
+        return "redirect:/";
     }
 
 }
