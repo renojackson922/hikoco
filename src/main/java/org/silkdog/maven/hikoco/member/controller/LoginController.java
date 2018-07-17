@@ -1,5 +1,6 @@
 package org.silkdog.maven.hikoco.member.controller;
 
+import com.mysql.cj.Session;
 import org.silkdog.maven.hikoco.member.dao.MemberDAO;
 import org.silkdog.maven.hikoco.member.vo.MemberVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,17 +43,18 @@ public class LoginController {
     }
 
     @RequestMapping(value="/login", method = RequestMethod.POST)
-    public String login(@RequestParam("hic_email") String id, @RequestParam("hic_pw") String pw, HttpSession session){
+    public String login(@RequestParam("mem_userid") String id, @RequestParam("mem_userpw") String pw, HttpSession session){
         System.out.println(id + " " + pw);
-        MemberVO mdto = memberDAO.login(id, pw);
-        if(mdto == null){
-            System.out.println("No such userId exists.");
-            return("redirect:/");
+
+        int result = memberDAO.login(id, pw);
+
+        if(result == 1){
+            System.out.println("로그인 성공!");
+            session.setAttribute("id", id);
+            return "redirect:/";
         }else{
-            session.setAttribute("userid", mdto.getMem_userid());
-            session.setAttribute("nickname", mdto.getMem_nickname());
-            System.out.println("Logged in successfully.");
-            return("redirect:/");
+            System.out.println("로그인 실패!");
+            return "redirect:/login";
         }
     }
 

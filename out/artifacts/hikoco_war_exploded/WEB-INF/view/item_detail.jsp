@@ -2,12 +2,12 @@
 <%@ page import="java.util.HashMap" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%
-    ItemVO idto = (ItemVO) request.getAttribute("idto");
+    ItemVO itemVO = (ItemVO) request.getAttribute("itemVO");
 
 %>
 <html ng-cloak ng-app="app">
 <head>
-    <title>HIKOCO :: ITEM :: <%=idto.getItem_title()%>
+    <title>HIKOCO :: ITEM :: <%=itemVO.getItem_title()%>
     </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -77,7 +77,7 @@
             <div class="css-table-row">
                 <!-- 제목, 가격 등... -->
                 <div class="css-table-cell">
-                    <img src="<%=idto.getItem_pic()%>" width="300px" height="300px" style="border:1px solid #ddd;">
+                    <img src="<%=itemVO.getItem_pic()%>" width="300px" height="300px" style="border:1px solid #ddd;">
                     <div class="" style="display: block;">
                         <button class="btn btn-sm btn-outline-secondary" style="width:100%; margin-top:5px;">자세히 보기
                         </button>
@@ -87,9 +87,9 @@
                 </div>
                 <!-- 상품의 정보 -->
                 <div class="css-table-cell" style="margin-left:20px;">
-                    <span class="item-detail-span item-title"><strong><%=idto.getItem_title()%></strong></span>
-                    <span class="item-detail-span item-subtitle" style="color:#5d5d5d;"><%=idto.getItem_manu()%>&nbsp;&nbsp;|&nbsp;&nbsp;<%=idto.getItem_vendor()%></span>
-                    <span class="item-detail-span item-subtitle"><%=idto.getItem_summary()%></span>
+                    <span class="item-detail-span item-title"><strong><%=itemVO.getItem_title()%></strong></span>
+                    <span class="item-detail-span item-subtitle" style="color:#5d5d5d;"><%=itemVO.getItem_manu()%>&nbsp;&nbsp;|&nbsp;&nbsp;<%=itemVO.getItem_vendor()%></span>
+                    <span class="item-detail-span item-subtitle"><%=itemVO.getItem_summary()%></span>
                     <div class="item-detail-span">
                         <span class="span-loginInfo"
                               style="font-size:10px; padding:0px 5px 0px 5px; background: #2897d3; color:#fff; border-radius:0px; display: inline-block;">사은품</span>
@@ -108,7 +108,7 @@
                     <hr>
                     <div class="item-detail-span">
                         <%
-                            String leadingZeroFormation = String.format("%06d", idto.getItem_id());
+                            String leadingZeroFormation = String.format("%06d", itemVO.getItem_id());
                         %>
                         <span class="item-optional strong">제품번호:&nbsp;</span>
                         <span class="item-optional"><%=leadingZeroFormation%></span>
@@ -180,13 +180,13 @@
                     <h5>상품 상세설명</h5>
                 </div>
                 <div id="item-describe">
-                    <img class="img-center" src="<%=idto.getItem_detail()%>">
-                    <% if (!(idto.getItem_detail2().isEmpty())) { %>
-                    <img class="img-center" src="<%=idto.getItem_detail2()%>">
+                    <img class="img-center" src="<%=itemVO.getItem_detail()%>">
+                    <% if (!(itemVO.getItem_detail2().isEmpty())) { %>
+                    <img class="img-center" src="<%=itemVO.getItem_detail2()%>">
                     <% } else {
                     }%>
-                    <% if (!(idto.getItem_detail3().isEmpty())) { %>
-                    <img class="img-center" src="<%=idto.getItem_detail3()%>">
+                    <% if (!(itemVO.getItem_detail3().isEmpty())) { %>
+                    <img class="img-center" src="<%=itemVO.getItem_detail3()%>">
                     <% } else {
                     }%>
                 </div>

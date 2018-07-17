@@ -1,177 +1,211 @@
 package org.silkdog.maven.hikoco.member.vo;
 
 import org.apache.ibatis.type.Alias;
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotEmpty;
-
+import org.springframework.format.annotation.DateTimeFormat;
 import java.sql.Timestamp;
 
 /* applicationContext -> sqlSession -> typeAliases */
 @Alias("MemberVO")
 public class MemberVO {
-    private int mem_id;
-    @NotEmpty
-    @Email
-    private String mem_userid;
-    @NotEmpty
-    private String mem_password;
-    private String mem_realname;
-    private String mem_nickname;
-    private String mem_photo;
-    private String mem_tier;
-    private String mem_phone;
-    private String mem_birthday;
-    private int mem_sex;
-    private String mem_zipcode;
-    private String mem_addr1;
-    private String mem_addr2;
-    private String mem_addr3;
-    private String mem_addr4;
-    private Timestamp mem_regdate;
-    private Timestamp mem_lastlogin_datetime;
-    private String mem_lastlogin_ip;
+    private int id;
+//    @Email(message = "이메일 주소 형식에 맞춰주세요.")
+//    @NotEmpty(message = "이메일은 필수입니다.")
+//    @Size(min = 8, max = 20, message = "비밀번호는 최소 8자, 최대 20자로 입력해주세요.")
+    private String userid;
+//    @NotEmpty(message = "비밀번호는 필수입니다.")
+//    @Pattern(regexp = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})", message = "비밀 번호는 6~20자리로 숫자와 특수 문자가 포함된 영문 대소문자로 입력해 주세요")
+    private String password;
+    private String passwordConfirm;
+//    @NotEmpty(message = "실명은 필수입니다.")
+    private String realname;
+//    @NotEmpty(message = "닉네임은 필수입니다.")
+//    @Size(min = 4, max = 10, message = "닉네임은 최소 4자, 최대 10자로 입력해주세요.")
+    private String nickname;
+    private String photo;
+    private String tier;
+//    @NotEmpty(message = "휴대폰 번호는 필수입니다.")
+    private String phone;
+//    @NotEmpty(message = "생년월일은 필수입니다.")
+    private String birthday;
+//    @Range(min = 0, max = 1, message = "성별을 선택해주세요.")
+    private int sex;
+    private String zipcode;
+    private String addr1;
+    private String addr2;
+    private String addr3;
+    private String addr4;
+    private Timestamp regdate;
+    private Timestamp lastlogin_datetime;
+    private String lastlogin_ip;
 
-    public int getMem_id() {
-        return mem_id;
+    public int getId() {
+        return id;
     }
 
-    public void setMem_id(int mem_id) {
-        this.mem_id = mem_id;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getMem_userid() {
-        return mem_userid;
+    public String getUserid() {
+        return userid;
     }
 
-    public void setMem_userid(String mem_userid) {
-        this.mem_userid = mem_userid;
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
-    public String getMem_password() {
-        return mem_password;
+    public String getPassword() {
+        return password;
     }
 
-    public void setMem_password(String mem_password) {
-        this.mem_password = mem_password;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getMem_realname() {
-        return mem_realname;
+    public String getPasswordConfirm() {
+        return passwordConfirm;
     }
 
-    public void setMem_realname(String mem_realname) {
-        this.mem_realname = mem_realname;
+    public void setPasswordConfirm(String passwordConfirm) {
+        this.passwordConfirm = passwordConfirm;
     }
 
-    public String getMem_nickname() {
-        return mem_nickname;
+    public boolean isSamePasswordConfirmPassword() {
+        if (password == null || passwordConfirm == null)
+            return false;
+        return password.equals(passwordConfirm);
     }
 
-    public void setMem_nickname(String mem_nickname) {
-        this.mem_nickname = mem_nickname;
+    public boolean hasPassword() {
+        return password != null && password.trim().length() > 0;
     }
 
-    public String getMem_photo() {
-        return mem_photo;
+
+    public String getRealname() {
+        return realname;
     }
 
-    public void setMem_photo(String mem_photo) {
-        this.mem_photo = mem_photo;
+    public void setRealname(String realname) {
+        this.realname = realname;
     }
 
-    public String getMem_tier() {
-        return mem_tier;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setMem_tier(String mem_tier) {
-        this.mem_tier = mem_tier;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
-    public String getMem_phone() {
-        return mem_phone;
+    public String getPhoto() {
+        return photo;
     }
 
-    public void setMem_phone(String mem_phone) {
-        this.mem_phone = mem_phone;
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
-    public String getMem_birthday() {
-        return mem_birthday;
+    public String getTier() {
+        return tier;
     }
 
-    public void setMem_birthday(String mem_birthday) {
-        this.mem_birthday = mem_birthday;
+    public void setTier(String tier) {
+        this.tier = tier;
     }
 
-    public int getMem_sex() {
-        return mem_sex;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setMem_sex(int mem_sex) {
-        this.mem_sex = mem_sex;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getMem_zipcode() {
-        return mem_zipcode;
+    @DateTimeFormat(pattern="yyyyMMdd")
+    public String getBirthday() {
+        return birthday;
     }
 
-    public void setMem_zipcode(String mem_zipcode) {
-        this.mem_zipcode = mem_zipcode;
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 
-    public String getMem_addr1() {
-        return mem_addr1;
+    public int getSex() {
+        return sex;
     }
 
-    public void setMem_addr1(String mem_addr1) {
-        this.mem_addr1 = mem_addr1;
+    public void setSex(int sex) {
+        this.sex = sex;
     }
 
-    public String getMem_addr2() {
-        return mem_addr2;
+    public String getZipcode() {
+        return zipcode;
     }
 
-    public void setMem_addr2(String mem_addr2) {
-        this.mem_addr2 = mem_addr2;
+    public void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
     }
 
-    public String getMem_addr3() {
-        return mem_addr3;
+    public String getAddr1() {
+        return addr1;
     }
 
-    public void setMem_addr3(String mem_addr3) {
-        this.mem_addr3 = mem_addr3;
+    public void setAddr1(String addr1) {
+        this.addr1 = addr1;
     }
 
-    public String getMem_addr4() {
-        return mem_addr4;
+    public String getAddr2() {
+        return addr2;
     }
 
-    public void setMem_addr4(String mem_addr4) {
-        this.mem_addr4 = mem_addr4;
+    public void setAddr2(String addr2) {
+        this.addr2 = addr2;
     }
 
-    public Timestamp getMem_regdate() {
-        return mem_regdate;
+    public String getAddr3() {
+        return addr3;
     }
 
-    public void setMem_regdate(Timestamp mem_regdate) {
-        this.mem_regdate = mem_regdate;
+    public void setAddr3(String addr3) {
+        this.addr3 = addr3;
     }
 
-    public Timestamp getMem_lastlogin_datetime() {
-        return mem_lastlogin_datetime;
+    public String getAddr4() {
+        return addr4;
     }
 
-    public void setMem_lastlogin_datetime(Timestamp mem_lastlogin_datetime) {
-        this.mem_lastlogin_datetime = mem_lastlogin_datetime;
+    public void setAddr4(String addr4) {
+        this.addr4 = addr4;
     }
 
-    public String getMem_lastlogin_ip() {
-        return mem_lastlogin_ip;
+    public Timestamp getRegdate() {
+        return regdate;
     }
 
-    public void setMem_lastlogin_ip(String mem_lastlogin_ip) {
-        this.mem_lastlogin_ip = mem_lastlogin_ip;
+    public void setRegdate(Timestamp regdate) {
+        this.regdate = regdate;
+    }
+
+    public Timestamp getLastlogin_datetime() {
+        return lastlogin_datetime;
+    }
+
+    public void setLastlogin_datetime(Timestamp lastlogin_datetime) {
+        this.lastlogin_datetime = lastlogin_datetime;
+    }
+
+    public String getLastlogin_ip() {
+        return lastlogin_ip;
+    }
+
+    public void setLastlogin_ip(String lastlogin_ip) {
+        this.lastlogin_ip = lastlogin_ip;
+    }
+
+    @Override
+    public String toString() {
+//        return "MemberVO [email=" + email + ", name=" + name + ", password=" + password + ", confirmPassword=" + confirmPassword + ", allowNoti="
+//                + allowNoti + "]";
+        return null;
     }
 }

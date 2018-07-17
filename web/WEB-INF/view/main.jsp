@@ -139,7 +139,7 @@
                             <c:forEach var="i" items="${cntRyzen}">
                                 <li>
                                     <figure class="jcarousel-item text-center unselectable"
-                                            onclick="window.location.href='/item_detail.do?item_id=${i.item_id}'">
+                                            onclick="window.location.href='/item/${i.item_id}'">
                                             <%-- 참고: https://getbootstrap.com/docs/4.1/content/images/--%>
                                         <img class="mx-auto" src="${i.item_pic}" width="200px" height="auto" alt>
                                         <figcaption>
@@ -223,7 +223,7 @@
                         <ul class="list-ul">
                             <c:forEach var="i" items="${cntRyzen}">
                                 <li class="list-action unselectable"
-                                    onclick="window.location.href='item_detail.do?item_id=${i.item_id}'"> <!-- TEST -->
+                                    onclick="window.location.href='item/${i.item_id}'"> <!-- TEST -->
                                     <figure>
                                         <div class="fig-top" style="padding:20px 25px 5px 25px;">
                                             <img class="center" src="${i.item_pic}"
@@ -305,7 +305,7 @@
                         <ul class="list-ul__left">
                             <c:forEach var="i" items="${cntVega}">
                                 <li class="list-action unselectable"
-                                    onclick="window.location.href='item_detail.do?item_id=${i.item_id}'">
+                                    onclick="window.location.href='item/${i.item_id}'">
                                     <figure>
                                         <div class="fig-top" style="padding:20px 25px 5px 25px;">
                                             <img class="center" src="${i.item_pic}"
@@ -333,7 +333,7 @@
                             </c:forEach>
                             <c:forEach var="i" items="${cntVega}">
                                 <li class="list-action unselectable"
-                                    onclick="window.location.href='item_detail.do?item_id=${i.item_id}'">
+                                    onclick="window.location.href='item/${i.item_id}'">
                                     <figure>
                                         <div class="fig-top" style="padding:20px 25px 5px 25px;">
                                             <img class="center" src="${i.item_pic}"

@@ -5,6 +5,8 @@
 <head>
     <title>HIKOCO :: LOGIN</title>
     <%@include file="./essential/base.jsp"%>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <style>
         body{
             position: initial;
@@ -14,11 +16,11 @@
             background-size: cover !important;
         }
         input, label, select, option{
-            font-size:0.9em !important;
+            font-size:0.8em !important;
             height:30px !important;
         }
         small{
-            font-size:0.8em !important;
+            font-size:0.6em !important;
         }
         select{
             height:30px !important;
@@ -42,20 +44,23 @@
                 <div class="text-center">
                     <span style="font-size:2.8em; font-weight:200; ">CAFE HIKOCO</span>
                 </div>
-                <form id="form1" class="col-md-10 offset-md-1" action="/login.do" method="POST">
+                <form id="form1" name="form1" class="col-md-10 offset-md-1" action="/login.do" method="POST">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">이메일</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                               placeholder="이메일">
-                        <small id="emailHelp" class="form-text text-muted">회원가입 시 등록했던 이메일 주소를 입력하세요.</small>
+                        <label for="mem_userid">이메일</label>
+                        <input type="email" class="form-control" id="mem_userid" name="mem_userid" aria-describedby="emailHelp"
+                               placeholder="이메일" required>
+                        <small id="emailHelp" class="form-text text-muted">&nbsp;회원가입 시 등록했던 이메일 주소를 입력하세요.</small>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">비밀번호</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="비밀번호">
+                        <label for="mem_userpw">비밀번호</label>
+                        <input type="password" class="form-control" id="mem_userpw" name="mem_userpw" placeholder="비밀번호" required>
                     </div>
                     <%--<div class="form-group form-check text-center">--%>
                         <%--<input type="checkbox" class="form-check-input" id="exampleCheck1">--%>
                         <%--<label class="form-check-label" for="exampleCheck1">기억하기</label>--%>
+                    <%--</div>--%>
+                    <%--<div class="text-xs-center" style="padding-top:10px;">--%>
+                        <%--<div class="g-recaptcha" data-size="compact" data-callback="recaptchaCallback()" data-sitekey="6Lcwn2IUAAAAABXHj5EyIM8PlqjHMhJ3cOjMNTPI "></div>--%>
                     <%--</div>--%>
                     <div class="text-center" style="padding-top:10px;">
                         <button type="submit" class="btn btn-warning">로그인</button>
@@ -71,7 +76,7 @@
                         font-size:0.8em;
                     }
                 </style>
-                <div class="login-container-sub col-md-9 offset-md-3">
+                <div class="login-container-sub text-center">
                     <span>아직 회원이 아니신가요?&nbsp;&nbsp;<a href="<c:url value="/signup_new"/>">회원가입하기</a></span>
                     <span>비밀번호를 잊어버리셨나요?&nbsp;&nbsp;<a href="#">비밀번호찾기</a></span>
                 </div>

@@ -37,8 +37,18 @@ public class MainController {
 
     public void specialOffer2(HttpServletRequest req, Model model) {
         List<HashMap> ilistRyzen = itemDAO.search("라이젠");
-        System.out.println("특별전 프로모션1 테스트: " + ilistRyzen);
+        System.out.println("특별전 프로모션2 테스트: " + ilistRyzen);
         req.setAttribute("ilistRyzen", ilistRyzen);
         model.addAttribute("cntRyzen", ilistRyzen);
+    }
+
+    @RequestMapping("/juso")
+    public String juso(){
+        return "juso/Sample";
+    }
+
+    @RequestMapping("/jusoPopup")
+    public String jusoPopup(){
+        return "juso/jusoPopup";
     }
 }

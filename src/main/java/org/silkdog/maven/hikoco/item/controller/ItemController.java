@@ -5,6 +5,7 @@ import org.silkdog.maven.hikoco.item.vo.ItemVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -131,12 +132,30 @@ public class ItemController {
         System.out.println(index);
     }
 
-    @RequestMapping(value="/item_detail.do", method = RequestMethod.GET)
-    public String itemDetail(@RequestParam("item_id") int itemId, HttpServletRequest req){
-        System.out.println("itemID의 값: " + itemId);
-        ItemVO idto = itemDAO.select(itemId);
-        req.setAttribute("idto", idto);
-        return "item_detail";
+//    @RequestMapping(value="/item_detail.do", method = RequestMethod.GET)
+//    public String itemDetail(@RequestParam("item_id") int itemId, HttpServletRequest req){
+//        System.out.println("itemID의 값: " + itemId);
+//        ItemVO idto = itemDAO.select(itemId);
+//        req.setAttribute("idto", idto);
+//        return "item_detail";
+//    }
+
+    // Mimicking RESTful
+    @RequestMapping("/item/{itemId}")
+    public String itemDetail(@PathVariable String itemId, Model model){
+        try{
+            int test = Integer.parseInt(itemId);
+            ItemVO itemVO = itemDAO.select(test);
+            if(itemVO == null){
+                System.out.println("[Error] Unknown itemId. Forward to Mainpage.");
+                return "redirect:/";
+            }
+            model.addAttribute("itemVO", itemVO);
+            return "item_detail";
+        }catch(Exception e){
+            e.printStackTrace();
+            return "redirect:/";
+        }
     }
 
 }

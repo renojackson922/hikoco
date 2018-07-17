@@ -86,6 +86,8 @@
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.2.3" />
           <element id="library" level="project" name="Maven: javax.json:javax.json-api:1.1.2" />
           <element id="library" level="project" name="Maven: org.glassfish:javax.json:1.1.2" />
+          <element id="library" level="project" name="Maven: org.glassfish:javax.el:3.0.1-b09" />
+          <element id="library" level="project" name="Maven: org.hibernate.validator:hibernate-validator-cdi:6.0.10.Final" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="hikoco/web/Web" />

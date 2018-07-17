@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public interface MemberDAO {
     MemberVO select();
-    MemberVO login(String id, String pw);
-    int insert(HashMap map);
+    int login(String id, String pw);
+    int insert(MemberVO memberVO);
     int isduplicated(String userid);
 }
