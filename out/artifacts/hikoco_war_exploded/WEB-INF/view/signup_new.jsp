@@ -3,7 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
-<head>
+<head lang="ko" xmlns="http://www.w3.org/1999/xhtml">
     <title>HIKOCO :: SIGNUP</title>
     <%@include file="./essential/base.jsp"%>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -171,12 +171,14 @@
                 <form id="form1" name="form1" action="/signup_new" method="POST">
                     <div class="form-row">
                         <div class="form-group col-md-11">
-                            <%--<button id="ass" class="btn btn-primary">확인</button>--%>
                             <label for="userid">이메일</label>
                             <input type="email" class="form-control" id="userid"
                                    name="userid" placeholder="ex) mainnet@silkdog.io" value="${memberVO.userid}" required>
                             <small id="emailHelp" class="form-text text-muted">회원가입 시 등록했던 이메일 주소를 입력하세요.</small>
                             <span class="form-error"><form:errors path="memberVO.userid"/></span>
+                        </div>
+                        <div class="form-group col-md-1">
+                            <a class="btn btn-primary" href="#">확인하기</a>
                         </div>
                         <%--<div class="form-group col-md-1">--%>
                         <%--<img src="../../resources/svg/loading.svg" width="30px">--%>
@@ -214,17 +216,7 @@
                             <label for="nickname">닉네임</label>
                             <input type="text" class="form-control" id="nickname" name="nickname"
                                    placeholder="ex) DoubleMadew" value="${memberVO.nickname}" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <%--<div class="form-group col-md-12">--%>
-                        <%--<label for="photo">프로필 사진</label>--%>
-                        <%--<input type="file" class="form-control" id="photo" name="photo" placeholder="photo">--%>
-                        <%--</div>--%>
-                        <div class="form-group col-md-12">
-                            <label for="photo">프로필 사진</label>
-                            <input type="text" class="form-control" id="photo" name="photo"
-                                   placeholder="photo" value="${memberVO.photo}" required>
+                            <span class="form-error"><form:errors path="memberVO.nickname"/></span>
                         </div>
                     </div>
                     <!-- Tier -->
@@ -234,6 +226,7 @@
                             <label for="phone">휴대폰 번호</label>
                             <input type="text" class="form-control" id="phone" name="phone"
                                    placeholder="ex) 01012345678" value="${memberVO.phone}" required>
+                            <span class="form-error"><form:errors path="memberVO.phone"/></span>
                         </div>
                         <!-- 생년월일 -->
                         <input type="hidden" id="birthday" name="birthday" value="19920829">
@@ -315,6 +308,14 @@
     function recaptchaCallback(){
         $('#submit-button').removeAttr('disabled');
     }
+    /**
+     * Change custom-file-input field after choose a image file.
+     * */
+    $('.custom-file-input').on('change', function() {
+        let fileName = $(this).val().split('\\').pop();
+        console.log(fileName);
+        $(this).next('.custom-file-label').addClass("selected").html(fileName);
+    });
 
     // $(function(){
     //     function checkInputs(){

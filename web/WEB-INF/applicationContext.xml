@@ -15,6 +15,19 @@
     <!-- 대신, web.xml에서 servlet-mapping 을 .do 에서 / 로 변경함. main 절에서 컨트롤러 참조가능  -->
     <mvc:default-servlet-handler/>
 
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>image/jpeg</value>
+                        <value>image/png</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
     <!--<mvc:interceptors>-->
         <!--<mvc:interceptor>-->
             <!--<mvc:mapping path="/admin/**"/>-->
@@ -112,6 +125,8 @@
         </property>
         <property name="defaultEncoding" value="UTF-8"/>
     </bean>
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"/>
 
     <!-- Set Annotaion-Config; Always be bottom of the xml file -->
     <context:annotation-config />

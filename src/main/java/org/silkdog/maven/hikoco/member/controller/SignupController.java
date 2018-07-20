@@ -4,15 +4,14 @@ import org.silkdog.maven.hikoco.member.dao.MemberDAO;
 import org.silkdog.maven.hikoco.member.validator.MemberValidator;
 import org.silkdog.maven.hikoco.member.vo.MemberVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.util.*;
 
 @Controller
+@ComponentScan
 @RequestMapping("/signup_new")
 public class SignupController {
     @Autowired
@@ -28,12 +27,9 @@ public class SignupController {
 
     @PostMapping
     public String signupPOST(@ModelAttribute("memberVO") MemberVO memberVO,
-                             final BindingResult bindingResult,
-                             final RedirectAttributes redirectAttributes){
-
-        new MemberValidator().validate(memberVO, bindingResult);
+                             final BindingResult bindingResult){
+        new MemberValidator(memberDAO).validate(memberVO, bindingResult);
         if(bindingResult.hasErrors()){
-//            redirectAttributes.addFlashAttribute()
             return SIGNUP_FORM;
         }
         memberDAO.insert(memberVO);

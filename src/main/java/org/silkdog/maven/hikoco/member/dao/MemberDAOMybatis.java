@@ -2,11 +2,13 @@ package org.silkdog.maven.hikoco.member.dao;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.silkdog.maven.hikoco.member.vo.MemberVO;
+import org.silkdog.maven.hikoco.member.vo.ProfileImageVO;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.logging.Logger;
+import java.util.List;
 
 @Repository
 public class MemberDAOMybatis implements MemberDAO {
@@ -63,9 +65,47 @@ public class MemberDAOMybatis implements MemberDAO {
     }
 
     @Override
-    public int isduplicated(String userid){
-        int result = sqlSessionTemplate.selectOne("org.silkdog.maven.hikoco.member.dao.MemberDAO.isduplicated", userid);
-
-        return result;
+    public void saveProfileImage(HashMap<String, Object> map){
+        sqlSessionTemplate.insert("org.silkdog.maven.hikoco.member.dao.MemberDAO.saveProfileImage", map);
     }
+
+    @Override
+    public HashMap<String, Object> getByteImage(int id) {
+        return sqlSessionTemplate.selectOne("        /* 이메일 중복 여부 검사 */", id);
+    }
+
+//    @Override
+//    public ArrayList<Integer> getByteImageIdx(){
+//        return sqlSessionTemplate.selectList("org.silkdog.maven.hikoco.member.dao.MemberDAO.getByteImageIdx");
+//    }
+
+    @Override
+    public int isUseridExists(String userid){
+        int count = sqlSessionTemplate.selectOne("org.silkdog.maven.hikoco.member.dao.MemberDAO.isUseridExists", userid);
+        System.out.println(count);
+        return count;
+    }
+
+    @Override
+    public int isNicknameExists(String nickname){
+        int count = sqlSessionTemplate.selectOne("org.silkdog.maven.hikoco.member.dao.MemberDAO.isNicknameExists", nickname);
+        System.out.println(count);
+        return count;
+    }
+
+    @Override
+    public int isPhoneExists(String phone){
+        int count = sqlSessionTemplate.selectOne("org.silkdog.maven.hikoco.member.dao.MemberDAO.isPhoneExists", phone);
+        System.out.println(count);
+        return count;
+    }
+
+    /*
+    @Override
+    public ProfileImageVO getByteImageById(int id){
+        ProfileImageVO profileImageVO = sqlSessionTemplate.selectOne( "org.silkdog.maven.hikoco.member.dao.MemberDAO.getByteImageById",id);
+        return profileImageVO;
+    }
+    */
+
 }
