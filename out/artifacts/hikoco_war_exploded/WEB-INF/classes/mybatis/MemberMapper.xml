@@ -58,4 +58,20 @@
         SELECT count(*) FROM hikoco_member WHERE phone = #{phone}
     </select>
 
+    <select id="getMemberByUserid" parameterType="String" resultType="org.silkdog.maven.hikoco.member.vo.MemberMinifiedVO">
+        SELECT id, userid, password, realname, nickname FROM hikoco_member WHERE userid = #{userid}
+    </select>
+
+    <select id="getFullMemberByUserid" parameterType="String" resultType="org.silkdog.maven.hikoco.member.vo.MemberVO">
+        SELECT * FROM hikoco_member WHERE userid = #{userid}
+    </select>
+
+    <select id="getFullMemberById" parameterType="int" resultType="org.silkdog.maven.hikoco.member.vo.MemberVO">
+        SELECT * FROM hikoco_member WHERE id = #{id}
+    </select>
+
+    <select id="memberList" resultType="java.util.HashMap">
+        SELECT * FROM hikoco_member;
+    </select>
+
 </mapper>

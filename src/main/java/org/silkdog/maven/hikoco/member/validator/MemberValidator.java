@@ -3,13 +3,11 @@ package org.silkdog.maven.hikoco.member.validator;
 import org.silkdog.maven.hikoco.member.dao.MemberDAO;
 import org.silkdog.maven.hikoco.member.vo.MemberVO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import javax.annotation.PostConstruct;
 import java.util.regex.Pattern;
 
 @Service
@@ -89,7 +87,7 @@ public class MemberValidator implements Validator {
          *
          * */
 
-        
+
 
         /**
          *  휴대폰 번호 검사

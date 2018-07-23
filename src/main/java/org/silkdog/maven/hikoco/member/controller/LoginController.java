@@ -1,71 +1,63 @@
 package org.silkdog.maven.hikoco.member.controller;
 
-import com.mysql.cj.Session;
-import org.silkdog.maven.hikoco.member.dao.MemberDAO;
-import org.silkdog.maven.hikoco.member.vo.MemberVO;
+import org.silkdog.maven.hikoco.member.authenticator.Auth;
+import org.silkdog.maven.hikoco.member.authenticator.AuthenticationException;
+import org.silkdog.maven.hikoco.member.authenticator.Authenticator;
+import org.silkdog.maven.hikoco.member.authenticator.LoginCommandValidator;
+import org.silkdog.maven.hikoco.member.vo.LoginCommandVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 @Controller
-//@RequestMapping("/auth/login")
+@ComponentScan
+@RequestMapping("login")
 public class LoginController {
     @Autowired
-    private MemberDAO memberDAO;
+    private Authenticator authenticator;
+    private static final String LOGIN_FORM = "login";
 
-//    @RequestMapping(method=RequestMethod.POST)
-//    public String login(@Valid LoginCommand loginCommand, Errors errors, HttpSession session){
-//        if(errors.hasErrors()){
-//            return;
-//        }
-//        try{
-//            Auth auth = authentication.authenticate(
-//                    loginCommand.getEmail(), loginCommand.getPassword();
-//            )
-//            session.setAttribute("auth", auth);
-//            return "redirect:/";
-//        }catch(AuthenticationException e){
-//            errors.reject("invalidIdOrPassword");
-//            return;
-//        }
-//    }
+    /**
+     * Service###impl의 @Service 어노테이션과, 컨트롤러의 ComponentScan의 합작.
+     * ComponentScan이 필요한지는 추후 확인해야함.
+     * */
 
-    /* ======================================================== */
-    /* ======================= 로그인 페이지 ===================== */
-    /* ======================================================== */
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String login() {
+    @GetMapping
+    public String login(@ModelAttribute("loginCommandVO") LoginCommandVO loginCommandVO) {
         return "login";
     }
 
-    @RequestMapping(value="/login", method = RequestMethod.POST)
-    public String login(@RequestParam("mem_userid") String id, @RequestParam("mem_userpw") String pw, HttpSession session){
-        System.out.println(id + " " + pw);
-
-        int result = memberDAO.login(id, pw);
-
-        if(result == 1){
-            System.out.println("로그인 성공!");
-            session.setAttribute("id", id);
+    @PostMapping
+    public String login(@Valid @ModelAttribute("loginCommandVO") LoginCommandVO loginCommandVO,
+                        Errors errors,
+                        HttpServletRequest req){
+        if(errors.hasErrors()){
+            return LOGIN_FORM;
+        }
+        try{
+            Auth auth = authenticator.authenticate(loginCommandVO.getUserid(), loginCommandVO.getPassword());
+            HttpSession session = req.getSession();
+            session.setAttribute("auth", auth);
             return "redirect:/";
-        }else{
-            System.out.println("로그인 실패!");
-            return "redirect:/login";
+        }catch(AuthenticationException ae){
+            errors.rejectValue("password","invalidUseridOrPassword");
+            return LOGIN_FORM;
         }
     }
 
-    @RequestMapping(value = "logout.do", method = RequestMethod.GET)
-    public String logout(HttpSession session) {
-        if (session.getAttribute("userid") != null) {
-            session.removeAttribute("userid");
-            if (session.getAttribute("nickname") != null) session.removeAttribute("nickname");
-        }
-        session.invalidate();
-        return "redirect:/";
+    @InitBinder
+    protected void initBinder(WebDataBinder binder) {
+        binder.setValidator(new LoginCommandValidator());
     }
 
+    public void setAuthenticator(Authenticator authenticator) {
+        this.authenticator = authenticator;
+    }
 }

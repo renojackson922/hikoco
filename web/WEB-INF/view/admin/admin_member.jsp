@@ -1,12 +1,8 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.*,
                  org.silkdog.maven.hikoco.member.dao.*,
                  org.silkdog.maven.hikoco.member.vo.*" %>
-
-<%
-    List<MemberVO> mlist = (List<MemberVO>) request.getAttribute("mlist");
-    MemberVO mdto2 = (MemberVO) request.getAttribute("mdto");
-%>
 
 <!DOCTYPE html>
 <html ng-cloak ng-app="app">
@@ -98,37 +94,12 @@
         });
         app.controller('ctrl', function ($scope, $http, $interval, $timeout) {
 
-            /* $scope.doHide = false;*/
-            /*
-            $scope.loadQuestion = function(){
-                $http({
-                    url: './data.json',
-                    method: 'GET'
-                }).then(function(response){
-                    $scope.quizList = response.data;
-                    console.log($scope.quizList);
-                    $scope.quizInput1 = $scope.quizList[1].input1;
-                    $scope.quizOutput1 = $scope.quizList[1].output1;
-                    $scope.quizInput2 = $scope.quizList[1].input2;
-                    $scope.quizOutput2 = $scope.quizList[1].output2;
-                    $scope.quizCode = $scope.quizList[1].code;
-                });
-            }
-
-            $scope.loadQuestion();
-            */
-            /*    $scope.nowSaving = function(){
-                $scope.doHide = true;
-                $timeout(function(){
-                  $scope.doHide = false;
-                },0);
-              }*/
         });
     </script>
 </head>
 <body ng-controller="ctrl">
 <div class="container" style="border:1px solid #ddd; margin-top:20px; padding:15px 15px 0px 0px; height:700px;">
-    <%@ include file="./layout/hikoco_admin_left.jsp" %>
+    <%@ include file="./layout/admin_left.jsp" %>
     <div class="pubg-right col-md-10 text-center" style="float:left; overflow-x:hidden; border:1px solid #ddd;">
         <span style="font-size:44px;"><strong>MemberList</strong></span>
         <p>회원을 관리하는 페이지 입니다.</p>
@@ -142,78 +113,68 @@
                 <tr>
                     <th scope="col"><input id="selectall" type="checkbox"></th>
                     <th scope="col">#</th>
-                    <th scope="col">아이디</th>
+                    <th scope="col">아이디(이메일)</th>
                     <th scope="col">이름</th>
+                    <th scope="col">닉네임</th>
                     <th scope="col">전화번호</th>
                     <th scope="col">등급</th>
+                    <th scope="col">가입일</th>
                     <th scope="col">수정</th>
                     <th scope="col">삭제</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <th scope="row">1</th> <!-- 2, 3 -->
-                    <td>admin@admin.io</td>
-                    <td>전은표</td>
-                    <td>+821077311268</td>
-                    <td>플래티넘</td>
-                    <td><a href="#" onclick="doFix()" data-toggle="modal" data-target="#exampleModal"
-                           data-backdrop="static" data-keyboard="false"><i class="fas fa-wrench"></i></a></td>
-                    <td><a href="#" onclick="doDelete(1)"><i class="fas fa-trash-alt"></i></a></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <th scope="row">2</th> <!-- 2, 3 -->
-                    <td>seoulsoldier@admin.io</td>
-                    <td>윤종호</td>
-                    <td>+821059194811</td>
-                    <td>다이아몬드</td>
-                    <td><i class="fas fa-wrench"></i></td>
-                    <td><i class="fas fa-trash-alt"></i></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <th scope="row">3</th> <!-- 2, 3 -->
-                    <td>bebi_ingka@admin.io</td>
-                    <td>이칸</td>
-                    <td>+821012345678</td>
-                    <td>실버</td>
-                    <td><i class="fas fa-wrench"></i></td>
-                    <td><i class="fas fa-trash-alt"></i></td>
-                </tr>
-                <% for (MemberVO mdto : mlist) { %>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <th scope="row"><%=mdto.getNo()%>
-                    </th>
-                    <td><%=mdto.getId()%>
-                    </td>
-                    <td><%=mdto.getPw()%>
-                    </td>
-                    <td><%=mdto.getJoindate()%>
-                    </td>
-                    <td>아다만티움</td>
-                    <td><i class="fas fa-wrench"></i></td>
-                    <td><i class="fas fa-trash-alt"></i></td>
-                </tr>
-                <% } %>
-                <% %>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <th scope="row"><%=mdto2.getNo()%>
-                    </th>
-                    <td><%=mdto2.getId()%>
-                    </td>
-                    <td><%=mdto2.getPw()%>
-                    </td>
-                    <td><%=mdto2.getJoindate()%>
-                    </td>
-                    <td>아다만티움 (selectOne)</td>
-                    <td><i class="fas fa-wrench"></i></td>
-                    <td><i class="fas fa-trash-alt"></i></td>
-                </tr>
-                <% %>
+                <style>
+                    .td-disabled, .th-disabled{
+                        color:#ddd;
+                    }
+                </style>
+                <c:forEach var="i" items="${memberList}" >
+                    <c:choose>
+                        <c:when test="${i.get('userid') eq currentUser.userid}">
+                            <%--<tr>--%>
+                                <%--<td><input type="checkbox" disabled></td>--%>
+                                <%--<th class="th-disabled" scope="row">${i.get("id")}--%>
+                                <%--</th>--%>
+                                <%--<td class="td-disabled">${i.get("userid")}--%>
+                                <%--</td>--%>
+                                <%--<td class="td-disabled">${i.get("realname")}--%>
+                                <%--</td>--%>
+                                <%--<td class="td-disabled">${i.get("nickname")}--%>
+                                <%--</td>--%>
+                                <%--<td class="td-disabled">${i.get("phone")}--%>
+                                <%--</td>--%>
+                                <%--<td class="td-disabled">${i.get("tier")}--%>
+                                <%--</td>--%>
+                                <%--<td class="td-disabled">${i.get("regdate")}--%>
+                                <%--</td>--%>
+                                <%--<td class="td-disabled"><i class="fas fa-wrench"></i></td>--%>
+                                <%--<td class="td-disabled"><i class="fas fa-trash-alt"></i></td>--%>
+                            <%--</tr>--%>
+                        </c:when>
+                        <c:otherwise>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <th scope="row">${i.get("id")}
+                                </th>
+                                <td>${i.get("userid")}
+                                </td>
+                                <td>${i.get("realname")}
+                                </td>
+                                <td>${i.get("nickname")}
+                                </td>
+                                <td>${i.get("phone")}
+                                </td>
+                                <td>${i.get("tier")}
+                                </td>
+                                <td>${i.get("regdate")}
+                                </td>
+                                <td><a href="#" onclick="editPopup(${i.get("id")})"><i class="fas fa-wrench"></i></a></td>
+                                <td><a href="#" onclick=""><i class="fas fa-trash-alt"></i></a></td>
+                            </tr>
+                        </c:otherwise>
+                    </c:choose>
+                </c:forEach>
                 </tbody>
             </table>
             <div class="text-left" style="padding-left:10px;"> <!-- 일괄삭제 -->
@@ -232,8 +193,6 @@
             </div>
         </div>
     </div>
-    <%--TEST : ${admin2}--%>
-
 </div>
 
 <!-- Modal -->
@@ -291,6 +250,27 @@
 
 </body>
 <script>
+    function editPopup(param){
+        // var url = "/memberedit?id=" + param;
+        var url = "/admin/auth?id=" + param;
+        var pop = window.open(url, "pop","width=570, height=420, scrollbars=yes, resizable=yes");
+
+    }
+
+    // function open_pop(arg1, arg2){
+    //     var frmPop= document.frmPopup;
+    //     var url = 'popup.php';
+    //     window.open('','popupView','옵션');
+    //
+    //     frmPop.action = url;
+    //     frmPop.target = 'popupView'; //window,open()의 두번째 인수와 같아야 하며 필수다.
+    //     frmPop.arg1.value = arg1;
+    //     frmPop.arg2.value = arg2;
+    //     frmPop.submit();
+    //
+    // }
+
+
     // check-all script
     $('#selectall').change(function () {
         if ($(this).prop('checked')) {

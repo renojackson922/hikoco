@@ -1,11 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.util.*" %>
-
-<%
-    //    MemberDTO mlist = (MemberDTO)request.getAttribute("mlist");
-//    System.out.println(mlist);
-%>
-
+<%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,10 +36,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
     <style>
-        .pubg-left {
-
-        }
-
         .list-group-item:first-child {
             border-top-left-radius: 0px;
             border-top-right-radius: 0px;
@@ -64,15 +53,11 @@
 </head>
 <body>
 <div class="container" style="border:1px solid #ddd; margin-top:20px; padding:15px 15px 0px 0px; height:700px;">
-    <%@ include file="../layout/hikoco_admin_left.jsp" %>
+    <%@ include file="layout/admin_left.jsp" %>
     <div class="pubg-right col-md-10 text-center" style="float:left; overflow-x:hidden; border:1px solid #ddd;">
         <span style="font-size:48px;"><strong>MAIN MENU</strong></span>
         <p>ASS</p>
     </div>
-
-
-    <%--TEST : ${admin2}--%>
-
 </div>
 </body>
 </html>

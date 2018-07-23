@@ -1,8 +1,8 @@
-    <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+    <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
         <style>
         .span-loginInfo{
         display: block;
-        font-size:12px;
+        font-size: 12px;
         /*margin:2px 0px 2px 0px;*/
         }
         </style>
@@ -11,8 +11,8 @@
         5px;">
         <%--<span><strong>로그인 정보</strong></span>--%>
         <img src="/resources/imgs/margarette.png" width="50px">
-        <span class="span-loginInfo">Margarette</span>
-        <span class="span-loginInfo">플래티넘</span>
+        <span class="span-loginInfo">${member.nickname}</span>
+        <span class="span-loginInfo">${member.tier}</span>
         <span class="span-loginInfo" style="font-size:10px; padding:0px 5px 0px 5px; background: #2897d3; color:#fff;
         border-radius:4px; display: inline-block;">관리자</span>
         </div>

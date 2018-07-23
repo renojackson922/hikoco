@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -46,15 +47,18 @@
                 </div>
                 <form id="form1" name="form1" class="col-md-10 offset-md-1" action="/login.do" method="POST">
                     <div class="form-group">
-                        <label for="mem_userid">이메일</label>
-                        <input type="email" class="form-control" id="mem_userid" name="mem_userid" aria-describedby="emailHelp"
+                        <label for="userid">이메일</label>
+                        <input type="email" class="form-control" id="userid" name="userid" aria-describedby="emailHelp"
                                placeholder="이메일" required>
                         <small id="emailHelp" class="form-text text-muted">&nbsp;회원가입 시 등록했던 이메일 주소를 입력하세요.</small>
+                        <form:errors path="LoginCommandVO.userid" />
                     </div>
                     <div class="form-group">
-                        <label for="mem_userpw">비밀번호</label>
-                        <input type="password" class="form-control" id="mem_userpw" name="mem_userpw" placeholder="비밀번호" required>
+                        <label for="password">비밀번호</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="비밀번호" required>
+                        <form:errors path="LoginCommandVO.password" />
                     </div>
+                    <form:errors path=""/>
                     <%--<div class="form-group form-check text-center">--%>
                         <%--<input type="checkbox" class="form-check-input" id="exampleCheck1">--%>
                         <%--<label class="form-check-label" for="exampleCheck1">기억하기</label>--%>

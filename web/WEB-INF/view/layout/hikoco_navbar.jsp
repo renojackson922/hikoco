@@ -1,7 +1,13 @@
-    <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
+    <%@ page import="org.silkdog.maven.hikoco.member.authenticator.Auth" %>
+        <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
         <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
             <%
-            System.out.println("현재 접속중인 세션ID: " + session.getAttribute("userid"));
+            try{
+                Auth auth = (Auth)session.getAttribute("auth");
+                System.out.println("현재 접속중인 세션ID: " + session.getAttribute("auth") + ", " + auth.getUserid());
+            }catch(NullPointerException e){
+                System.out.println("현재 접속중인 세션ID: null");
+            }
         %>
         <style>
         #hikoco-nav{
@@ -48,9 +54,14 @@
         </li>
         </ul>
         <!-- Another nav -->
+        <style>
+            .navbar-nav > li > a{
+                font-size:0.9em;
+            }
+        </style>
         <ul class="navbar-nav mr-2">
         <c:choose>
-            <c:when test="${sessionScope.userid eq null}">
+            <c:when test="${sessionScope.auth.getUserid() eq null}">
                 <li class="nav-item">
                 <a class="nav-link" href="<c:url value="/login"/>">로그인</a>
                 </li>
@@ -60,7 +71,7 @@
             </c:when>
             <c:otherwise>
                 <li class="nav-item">
-                <a class="nav-link" href="#">${sessionScope.nickname} 님, 환영합니다.</a>
+                <a class="nav-link" href="/admin">${sessionScope.auth.getNickname()} 님, 환영합니다.</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="<c:url value="/logout.do"/>">Logout</a>

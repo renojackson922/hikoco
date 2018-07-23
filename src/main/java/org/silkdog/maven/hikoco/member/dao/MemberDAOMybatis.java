@@ -1,6 +1,7 @@
 package org.silkdog.maven.hikoco.member.dao;
 
 import org.mybatis.spring.SqlSessionTemplate;
+import org.silkdog.maven.hikoco.member.vo.MemberMinifiedVO;
 import org.silkdog.maven.hikoco.member.vo.MemberVO;
 import org.silkdog.maven.hikoco.member.vo.ProfileImageVO;
 import org.springframework.stereotype.Repository;
@@ -98,6 +99,26 @@ public class MemberDAOMybatis implements MemberDAO {
         int count = sqlSessionTemplate.selectOne("org.silkdog.maven.hikoco.member.dao.MemberDAO.isPhoneExists", phone);
         System.out.println(count);
         return count;
+    }
+
+    @Override
+    public MemberMinifiedVO getMemberByUserid(String userid){
+        return sqlSessionTemplate.selectOne("org.silkdog.maven.hikoco.member.dao.MemberDAO.getMemberByUserid", userid);
+    }
+
+    @Override
+    public MemberVO getFullMemberByUserid(String userid){
+        return sqlSessionTemplate.selectOne("org.silkdog.maven.hikoco.member.dao.MemberDAO.getFullMemberByUserid", userid);
+    }
+
+    @Override
+    public MemberVO getFullMemberById(int id){
+        return sqlSessionTemplate.selectOne("org.silkdog.maven.hikoco.member.dao.MemberDAO.getFullMemberById", id);
+    }
+
+    @Override
+    public List<MemberVO> memberList(){
+        return sqlSessionTemplate.selectList("org.silkdog.maven.hikoco.member.dao.MemberDAO.memberList");
     }
 
     /*
