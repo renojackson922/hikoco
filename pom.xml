@@ -194,7 +194,6 @@
             <version>1.11</version>
         </dependency>
 
-
         <!-- Security -->
         <dependency>
             <groupId>org.springframework.security</groupId>

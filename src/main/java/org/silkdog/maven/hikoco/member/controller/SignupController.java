@@ -7,14 +7,13 @@ import org.silkdog.maven.hikoco.member.vo.MemberVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 
 @Controller
 @ComponentScan
-@RequestMapping("/signup_new")
+@RequestMapping("/signup")
 public class SignupController {
     @Autowired
     private MemberDAO memberDAO;
@@ -31,7 +30,7 @@ public class SignupController {
     }
 
     /* static final : never going to be changed */
-    private static final String SIGNUP_FORM = "signup_new";
+    private static final String SIGNUP_FORM = "signup";
 
     @GetMapping
     public String signupGET(@ModelAttribute("memberVO") MemberVO memberVO){

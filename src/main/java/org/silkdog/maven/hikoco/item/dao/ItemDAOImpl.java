@@ -57,6 +57,11 @@ public class ItemDAOImpl implements ItemDAO {
         int result =  sqlSessionTemplate.delete("org.silkdog.maven.hikoco.item.dao.ItemDAO.delete", itemId);
     }
 
+    @Override
+    public List<ItemVO> recentItemList(){
+        return sqlSessionTemplate.selectList("org.silkdog.maven.hikoco.item.dao.ItemDAO.recentItemList");
+    }
+
 
 //    @Override
 //    public List<HashMap> getSignatureItems(){

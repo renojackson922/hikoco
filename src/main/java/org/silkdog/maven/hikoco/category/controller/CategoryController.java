@@ -18,13 +18,13 @@ public class CategoryController {
     /* ======================================================== */
     /* ====================== 카테고리 페이지 ===================== */
     /* ======================================================== */
-    @RequestMapping(value = "/category_test.do", method = RequestMethod.GET)
+    @RequestMapping(value = "/category_test", method = RequestMethod.GET)
     public String categoryTest(HttpServletRequest req) {
         checkCategoryList(req);
         return "categoryTest";
     }
 
-    @RequestMapping(value = "/category_test.do", method = RequestMethod.POST)
+    @RequestMapping(value = "/category_test", method = RequestMethod.POST)
     public String categoryTestPro(HttpServletRequest req) {
         CategoryVO cdto = new CategoryVO();
         cdto.setHic_parent(String.valueOf(req.getParameter("cat_exists")));
@@ -32,7 +32,7 @@ public class CategoryController {
         int result = categoryDAO.insert(cdto);
 
         checkCategoryList(req);
-        return "redirect:category_test.do"; /*  Important  */
+        return "redirect:category_test"; /*  Important  */
     }
 
     public void checkCategoryList(HttpServletRequest req) {

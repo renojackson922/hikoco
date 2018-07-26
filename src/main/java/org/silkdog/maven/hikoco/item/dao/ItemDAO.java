@@ -13,5 +13,6 @@ public interface ItemDAO {
     List<HashMap> search(String searchValue);
     List<HashMap> listByIndex(HashMap map);
     int countFromList();
+    List<ItemVO> recentItemList();
 //    List<HashMap> getSignatureItems();
 }

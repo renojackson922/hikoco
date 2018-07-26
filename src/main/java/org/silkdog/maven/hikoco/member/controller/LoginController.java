@@ -18,11 +18,11 @@ import javax.validation.Valid;
 
 @Controller
 @ComponentScan
-@RequestMapping("login")
+@RequestMapping("/login")
 public class LoginController {
     @Autowired
     private Authenticator authenticator;
-    private static final String LOGIN_FORM = "login";
+    private static final String LOGIN_FORM = "login/login";
 
     /**
      * Service###impl의 @Service 어노테이션과, 컨트롤러의 ComponentScan의 합작.
@@ -31,11 +31,11 @@ public class LoginController {
 
     @GetMapping
     public String login(@ModelAttribute("loginCommandVO") LoginCommandVO loginCommandVO) {
-        return "login";
+        return "login/login";
     }
 
     @PostMapping
-    public String login(@Valid @ModelAttribute("loginCommandVO") LoginCommandVO loginCommandVO,
+    public String loginPro(@Valid @ModelAttribute("loginCommandVO") LoginCommandVO loginCommandVO,
                         Errors errors,
                         HttpServletRequest req){
         if(errors.hasErrors()){

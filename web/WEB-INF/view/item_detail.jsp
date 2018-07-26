@@ -315,6 +315,12 @@
                         </div>
                     </div>
                     <br><br><br><br><br><br><br><!-- 주의 -->
+
+                    <div id="satisfaction-comment__null" class="container text-center" style="height:300px; padding-top:90px;"> <!-- 주의 -->
+                        <h1><i class="fas fa-exclamation-circle"></i>&nbsp;&nbsp;등록된 한줄평이 없습니다</h1>
+                        <button class="btn btn-outline-secondary">한줄평 등록하기</button>
+                    </div>
+
                     <!-- 코멘트 -->
                     <div class="satisfaction-comment-wrapper" style="display:block;">
                         <div class="satisfaction-comment"

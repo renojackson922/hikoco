@@ -1,8 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.util.*,
-                 org.silkdog.maven.hikoco.member.dao.*,
-                 org.silkdog.maven.hikoco.member.vo.*" %>
+<%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
 
 <!DOCTYPE html>
 <html ng-cloak ng-app="app">
@@ -42,14 +39,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
     <style>
-        .pubg-left {
-
-        }
-
-        .pubg-right {
-            padding-bottom: 15px;
-        }
-
         .list-group-item:first-child {
             border-top-left-radius: 0px;
             border-top-right-radius: 0px;
@@ -69,7 +58,7 @@
         }
 
         thead {
-            background-color: #ddd;
+            /*background-color: #ddd;*/
         }
 
         input, label {
@@ -98,11 +87,12 @@
     </script>
 </head>
 <body ng-controller="ctrl">
-<div class="container" style="border:1px solid #ddd; margin-top:20px; padding:15px 15px 0px 0px; height:700px;">
+<%@include file="./layout/admin_navbar.jsp"%>
+<div style="margin:0 auto;">
     <%@ include file="./layout/admin_left.jsp" %>
-    <div class="pubg-right col-md-10 text-center" style="float:left; overflow-x:hidden; border:1px solid #ddd;">
-        <span style="font-size:44px;"><strong>MemberList</strong></span>
-        <p>회원을 관리하는 페이지 입니다.</p>
+    <div class="col-md-10" style="float:left;  overflow-x:hidden; padding:10px 20px 10px 20px;">
+        <span style="font-size:2.5em; font-weight:200;">Member Management</span>
+        <hr style="margin-top:0;"/>
         <div class="text-right" style="margin-bottom:10px; padding-right:10px;">
             <span style="font-size:12px;">페이지 수 :&nbsp;</span>
             <input type="text" id="pageNum" size="1" maxlength="3" value="10" style="font-size:12px;">
@@ -133,23 +123,23 @@
                     <c:choose>
                         <c:when test="${i.get('userid') eq currentUser.userid}">
                             <%--<tr>--%>
-                                <%--<td><input type="checkbox" disabled></td>--%>
-                                <%--<th class="th-disabled" scope="row">${i.get("id")}--%>
-                                <%--</th>--%>
-                                <%--<td class="td-disabled">${i.get("userid")}--%>
-                                <%--</td>--%>
-                                <%--<td class="td-disabled">${i.get("realname")}--%>
-                                <%--</td>--%>
-                                <%--<td class="td-disabled">${i.get("nickname")}--%>
-                                <%--</td>--%>
-                                <%--<td class="td-disabled">${i.get("phone")}--%>
-                                <%--</td>--%>
-                                <%--<td class="td-disabled">${i.get("tier")}--%>
-                                <%--</td>--%>
-                                <%--<td class="td-disabled">${i.get("regdate")}--%>
-                                <%--</td>--%>
-                                <%--<td class="td-disabled"><i class="fas fa-wrench"></i></td>--%>
-                                <%--<td class="td-disabled"><i class="fas fa-trash-alt"></i></td>--%>
+                            <%--<td><input type="checkbox" disabled></td>--%>
+                            <%--<th class="th-disabled" scope="row">${i.get("id")}--%>
+                            <%--</th>--%>
+                            <%--<td class="td-disabled">${i.get("userid")}--%>
+                            <%--</td>--%>
+                            <%--<td class="td-disabled">${i.get("realname")}--%>
+                            <%--</td>--%>
+                            <%--<td class="td-disabled">${i.get("nickname")}--%>
+                            <%--</td>--%>
+                            <%--<td class="td-disabled">${i.get("phone")}--%>
+                            <%--</td>--%>
+                            <%--<td class="td-disabled">${i.get("tier")}--%>
+                            <%--</td>--%>
+                            <%--<td class="td-disabled">${i.get("regdate")}--%>
+                            <%--</td>--%>
+                            <%--<td class="td-disabled"><i class="fas fa-wrench"></i></td>--%>
+                            <%--<td class="td-disabled"><i class="fas fa-trash-alt"></i></td>--%>
                             <%--</tr>--%>
                         </c:when>
                         <c:otherwise>
@@ -206,7 +196,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form id="formfix" action="admin_member.do" method="post">
+            <form id="formfix" action="admin_member" method="post">
                 <div class="modal-body" style="width:500px; height:500px;">
                     <!-- form -->
                     <div class="form-group">
@@ -246,7 +236,6 @@
             </form>
         </div>
     </div>
-</div>
 
 </body>
 <script>

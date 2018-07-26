@@ -3,20 +3,16 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/applicationContext.xml</param-value>
-    </context-param>
     <!--<context-param>-->
-        <!--<param-name>contextConfigLocationSecurity</param-name>-->
-        <!--<param-value>/WEB-INF/security-context.xml</param-value>-->
+        <!--<param-name>contextConfigLocation</param-name>-->
+        <!--<param-value>/WEB-INF/applicationContext.xml</param-value>-->
     <!--</context-param>-->
 
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
     <servlet>
-        <servlet-name>dispatcher</servlet-name>
+        <servlet-name>spring4-mvc-dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
         <multipart-config>
@@ -27,8 +23,7 @@
         </multipart-config>
     </servlet>
     <servlet-mapping>
-        <servlet-name>dispatcher</servlet-name>
-        <!--<url-pattern>*.do</url-pattern>-->
+        <servlet-name>spring4-mvc-dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
@@ -48,6 +43,34 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <!--<security-constraint>-->
+        <!--<display-name>jspPreventation</display-name>-->
+        <!--<web-resource-collection>-->
+            <!--<web-resource-name>secureJspPages</web-resource-name>-->
+            <!--<url-pattern>*.jsp</url-pattern>-->
+        <!--</web-resource-collection>-->
+        <!--<auth-constraint>-->
+            <!--<role-name>nobody</role-name>-->
+        <!--</auth-constraint>-->
+    <!--</security-constraint>-->
+
+    <!--<security-constraint>-->
+        <!--<display-name>doPreventation</display-name>-->
+        <!--<web-resource-collection>-->
+            <!--<web-resource-name>secureDoPages</web-resource-name>-->
+            <!--<url-pattern>*.do-->
+            <!--</url-pattern>-->
+        <!--</web-resource-collection>-->
+        <!--<auth-constraint>-->
+            <!--<role-name>nobody</role-name>-->
+        <!--</auth-constraint>-->
+    <!--</security-constraint>-->
+
+    <!--<security-role>-->
+        <!--<description>nobody</description>-->
+        <!--<role-name>nobody</role-name>-->
+    <!--</security-role>-->
+    
     <!--Security Filter-->
     <!--<filter>-->
         <!--<filter-name>springSecurityFilterChain</filter-name>-->
@@ -57,7 +80,6 @@
         <!--<filter-name>springSecurityFilterChain</filter-name>-->
         <!--<url-pattern>/*</url-pattern>-->
     <!--</filter-mapping>-->
-
 
     <!--<welcome-file-list>-->
         <!--<welcome-file>/WEB-INF/view/main.jsp</welcome-file>-->

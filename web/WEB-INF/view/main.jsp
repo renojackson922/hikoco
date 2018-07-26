@@ -1,4 +1,3 @@
-<%@ page import="java.util.*" %>
 <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -12,7 +11,6 @@
         (function ($) {
             $(function () {
                 var jcarousel = $('.jcarousel');
-
                 jcarousel
                     .on('jcarousel:reload jcarousel:create', function () {
                         var carousel = $(this),
@@ -131,29 +129,38 @@
                 </div>
             </c:when>
             <c:otherwise>
-
                 <div class="jcarousel-wrapper">
                     <div class="jcarousel">
                         <ul class="jcarousel-ul">
-                            <%--  --%>
                             <c:forEach var="i" items="${cntRyzen}">
-                                <li>
-                                    <figure class="jcarousel-item text-center unselectable"
-                                            onclick="window.location.href='/item/${i.item_id}'">
-                                            <%-- 참고: https://getbootstrap.com/docs/4.1/content/images/--%>
-                                        <img class="mx-auto" src="${i.item_pic}" width="200px" height="auto" alt>
-                                        <figcaption>
-                                            <div style="padding-bottom:7px; ">
-                                                <span style="font-size:8px;">${i.item_manu}</span><br>
-                                                <span style="font-size:0.8em;"><strong>${i.item_title}</strong></span>
-                                            </div>
-                                            <hr class="item-hr">
-                                            <div style="padding-top:7px;">
-                                                <span style="font-size:1.1em;"><strong><fmt:formatNumber
-                                                        value="${i.item_price}" type="currency"
-                                                        currencySymbol=""/>원</strong></span>
-                                            </div>
-                                        </figcaption>
+                                <li class="unselectable" onclick="window.location.href='item/${i.item_id}'" style="padding:0 !important;">
+                                    <figure>
+                                        <div style="height:90% !important; padding:10px;"> <!--padding:20px 25px 5px 25px; -->
+                                            <img class="center" src="${i.item_pic}"
+                                                 style="margin-bottom:10px; height:200px; width:200px;">
+                                            <figcaption> <!-- 임시적 높이 조정 -->
+                                                <p style="margin-bottom:0px; font-size:0.7em; font-weight:700; padding-bottom:5px;">${i.item_title}</p>
+                                                    <%--<hr class="item-hr">--%>
+                                                <p style="font-size:0.6em; color:#5d5d5d; text-align:left; font-weight:400;">${i.item_summary}</p>
+                                            </figcaption>
+                                        </div>
+                                        <div style="height:10% !important; border-top:1px solid #ddd; padding:5px;">
+                                            <figcaption>
+                                                <%-- 판매가격 --%>
+                                                <div style="float:left;padding-right:5px;">
+                                                    <span style="font-size:0.6em; font-weight:400; color:crimson;">판매가격</span>
+                                                </div>
+                                                <%-- 가격 --%>
+                                                <div style="float:left;">
+                                                    <span style="font-size:1.0em; font-weight:400;"><strong><fmt:formatNumber
+                                                    value="${i.item_price}" type="currency"
+                                                    currencySymbol=""/>원</strong></span>
+                                                </div>
+                                                    <%--<div class="text-right" style=" vertical-align: middle;">--%>
+                                                    <%--<span style="font-size:12px; border:1px solid #428bca; background: #428bca; color:#fff; padding:0 5px 0 5px; border-radius:4px;">MD추천</span>--%>
+                                                    <%--</div>--%>
+                                            </figcaption>
+                                        </div>
                                     </figure>
                                 </li>
                             </c:forEach>
@@ -164,7 +171,7 @@
                                         <li>
                                             <figure class="jcarousel-item text-center unselectable" style="padding:150px 0;">
                                                 <i class="fas fa-coffee" style="color:#ddd; font-size:2.5em;"></i>
-                                            </figure>
+                                             </figure>
                                         </li>
                                     </c:forEach>
                                 </c:otherwise>
@@ -374,7 +381,7 @@
 </div>
 </body>
 
-<script>;
+<script>
 var block = {
     reset: true,
     viewOffset: {top: 64}

@@ -5,13 +5,13 @@
 <html>
 <head>
     <title>HIKOCO :: LOGIN</title>
-    <%@include file="./essential/base.jsp"%>
+    <%@include file="../essential/base.jsp"%>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <style>
         body{
             position: initial;
-            background: url("../../resources/imgs/bg1.jpg");
+            background: url("../../../resources/imgs/bg1.jpg");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover !important;
@@ -45,11 +45,11 @@
                 <div class="text-center">
                     <span style="font-size:2.8em; font-weight:200; ">CAFE HIKOCO</span>
                 </div>
-                <form id="form1" name="form1" class="col-md-10 offset-md-1" action="/login.do" method="POST">
+                <form id="form1" name="form1" class="col-md-10 offset-md-1" action="/login" method="POST">
                     <div class="form-group">
                         <label for="userid">이메일</label>
                         <input type="email" class="form-control" id="userid" name="userid" aria-describedby="emailHelp"
-                               placeholder="이메일" required>
+                               placeholder="이메일" value="${loginCommandVO.userid}"required>
                         <small id="emailHelp" class="form-text text-muted">&nbsp;회원가입 시 등록했던 이메일 주소를 입력하세요.</small>
                         <form:errors path="LoginCommandVO.userid" />
                     </div>
@@ -81,7 +81,7 @@
                     }
                 </style>
                 <div class="login-container-sub text-center">
-                    <span>아직 회원이 아니신가요?&nbsp;&nbsp;<a href="<c:url value="/signup_new"/>">회원가입하기</a></span>
+                    <span>아직 회원이 아니신가요?&nbsp;&nbsp;<a href="<c:url value="/signup"/>">회원가입하기</a></span>
                     <span>비밀번호를 잊어버리셨나요?&nbsp;&nbsp;<a href="#">비밀번호찾기</a></span>
                 </div>
             </div>

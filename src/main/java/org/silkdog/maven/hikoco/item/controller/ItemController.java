@@ -22,7 +22,7 @@ public class ItemController {
     /* ======================================================== */
     /* ======================= 아이템 페이지 ===================== */
     /* ======================================================== */
-    @RequestMapping(value="/item.do", method=RequestMethod.GET)
+    @RequestMapping(value="/item", method=RequestMethod.GET)
     public String item(HttpServletRequest req, Model model, @RequestParam("mode") String mode){
         String searchString = req.getParameter("search_string");
         checkItemList(req, model, mode, searchString);
@@ -33,13 +33,13 @@ public class ItemController {
         return "item";
     }
 
-    @RequestMapping(value = "/item_test.do", method= RequestMethod.GET)
+    @RequestMapping(value = "/item_test", method= RequestMethod.GET)
     public String itemTest(HttpServletRequest req, Model model){
         checkItemList(req, model);
         return "item_test";
     }
 
-    @RequestMapping(value="/item_test.do", method=RequestMethod.POST)
+    @RequestMapping(value="/item_test", method=RequestMethod.POST)
     public String itemTestPro(HttpServletRequest req, Model model){
         ItemVO idto = new ItemVO();
 
@@ -60,7 +60,7 @@ public class ItemController {
         int result = itemDAO.insert(idto);
 
         checkItemList(req, model);
-        return "redirect:item_test.do";
+        return "redirect:item_test";
     }
 
 //    @RequestMapping(value="/item_test.do", method=RequestMethod.POST, params="action=remove")

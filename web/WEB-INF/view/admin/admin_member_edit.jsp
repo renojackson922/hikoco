@@ -40,19 +40,19 @@
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label for="id">회원번호</label>
-                <input type="text" class="form-control" id="id" value="${memberInfo.id}" disabled>
+                <input type="text" class="form-control" id="id" name="id" value="${memberInfo.id}" readonly>
             </div>
             <div class="form-group col-md-3">
                 <label for="regdate">가입일자</label>
-                <input type="text" class="form-control" id="regdate" value="${memberInfo.regdate}" disabled>
+                <input type="text" class="form-control" id="regdate" name="regdate" value="${memberInfo.regdate}" readonly>
             </div>
             <div class="form-group col-md-3">
                 <label for="addr3">마지막 로그인 시간</label>
-                <input type="text" class="form-control" id="lastlogin_datetime" name="lastlogin_datetime" value="${memberInfo.lastlogin_datetime}" disabled>
+                <input type="text" class="form-control" id="lastlogin_datetime" name="lastlogin_datetime" value="${memberInfo.lastlogin_datetime}" readonly>
             </div>
             <div class="form-group col-md-3">
                 <label for="addr4">마지막 로그인 IP</label>
-                <input type="text" class="form-control" id="lastlogin_ip" name="lastlogin_ip" value="${memberInfo.lastlogin_ip}" disabled>
+                <input type="text" class="form-control" id="lastlogin_ip" name="lastlogin_ip" value="${memberInfo.lastlogin_ip}" readonly>
             </div>
         </div>
         <div class="form-row">
@@ -114,6 +114,9 @@
                 <label for="addr4">주소4 (상세주소)</label>
                 <input type="text" class="form-control" id="addr4" name="addr4" value="${memberInfo.addr4}">
             </div>
+        </div>
+        <div class="text-center" style="padding-top:20px;">
+            <button class="btn btn-warning" type="submit">수정하기</button>
         </div>
     </form>
 </div>

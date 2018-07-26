@@ -1,43 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
-<%@ page import="java.util.*, org.silkdog.maven.hikoco.category.dao.*, org.silkdog.maven.hikoco.category.vo.*" %>
-<%@ page import="org.silkdog.maven.hikoco.item.vo.ItemVO" %>
+<%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<%
-    /*
-    int count = (int)request.getAttribute("count");
-    List<CategoryDTO> clist = (List<CategoryDTO>)request.getAttribute("clist");
-    List<ItemDTO> ilist = (List<ItemDTO>)request.getAttribute("ilist");
-
-    int cat_height;
-    // rowNum 도 추가할 것
-    float countDIV = (float)count/6;
-
-    System.out.println("count를 나눈 값: "+ countDIV);
-    if(countDIV > (int)Math.ceil(count / 6)){
-        cat_height = (int)Math.ceil(count/6) + 1;
-    }else{
-        cat_height = (int)Math.ceil(count/6);
-    }
-    System.out.println("count를 반올림한 값 :" + cat_height);
-
-    HashMap map = new HashMap<Integer, String>();
-    for(CategoryDTO cdto : clist){
-        map.put(cdto.getHic_id(), cdto.getHic_val());
-    }
-
-    Set<Map.Entry<Integer, String>> set = map.entrySet();
-    Iterator<Map.Entry<Integer, String>> it = set.iterator();
-
-
-    List<HashMap> ilist = (List<HashMap>)request.getAttribute("ilist");
-    List<HashMap> ilistSign = (List<HashMap>)request.getAttribute("ilistSign");
-    System.out.println(ilistSign);
-
-    int listcount2 = (int)request.getAttribute("countlist2");
-    System.out.println(listcount2);
-    */
-%>
 <html ng-cloak ng-app="app">
 <head>
     <title>HIKOCO :: ITEM</title>
@@ -300,7 +262,7 @@
 
                     <c:forEach var="i" items="${cnt}">
                         <!-- a tag starts -->
-                        <a href="./item_detail.do?item_id=${i.item_id}" class="list-group-item list-group-item-action"
+                        <a href="./item_detail?item_id=${i.item_id}" class="list-group-item list-group-item-action"
                            style="">
                             <div class="text-left">
                                 <div style="float:left; margin-right:5px;">
@@ -365,11 +327,11 @@
                                             <span class="sr-only">Previous</span>
                                         </a>
                                     </li>
-                                    <li class="page-item"><a class="page-link" href="/item.do?mode=${isSearch}&search_string=${searchString}&page=1">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="/item.do?mode=${isSearch}&search_string=${searchString}&page=2">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="/item.do?mode=${isSearch}&search_string=${searchString}&page=3">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="/item.do?mode=${isSearch}&search_string=${searchString}&page=4">4</a></li>
-                                    <li class="page-item"><a class="page-link" href="/item.do?mode=${isSearch}&search_string=${searchString}&page=5">5</a></li>
+                                    <li class="page-item"><a class="page-link" href="/item?mode=${isSearch}&search_string=${searchString}&page=1">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="/item?mode=${isSearch}&search_string=${searchString}&page=2">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="/item?mode=${isSearch}&search_string=${searchString}&page=3">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="/item?mode=${isSearch}&search_string=${searchString}&page=4">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="/item?mode=${isSearch}&search_string=${searchString}&page=5">5</a></li>
                                     <li class="page-item">
                                         <a class="page-link" href="#" aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>
@@ -384,11 +346,11 @@
                                             <span class="sr-only">Previous</span>
                                         </a>
                                     </li>
-                                    <li class="page-item"><a class="page-link" href="/item.do?mode=${isSearch}&page=1">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="/item.do?mode=${isSearch}&page=2">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="/item.do?mode=${isSearch}&page=3">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="/item.do?mode=${isSearch}&page=4">4</a></li>
-                                    <li class="page-item"><a class="page-link" href="/item.do?mode=${isSearch}&page=5">5</a></li>
+                                    <li class="page-item"><a class="page-link" href="/item?mode=${isSearch}&page=1">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="/item?mode=${isSearch}&page=2">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="/item?mode=${isSearch}&page=3">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="/item?mode=${isSearch}&page=4">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="/item?mode=${isSearch}&page=5">5</a></li>
                                     <li class="page-item">
                                         <a class="page-link" href="#" aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>

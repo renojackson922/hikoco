@@ -101,7 +101,7 @@
                     window.alert('EMPTY');
                     return false;
                 }
-                document.form1.action = "/category_test.do";
+                document.form1.action = "/category_test";
                 document.form1.submit();
                 return true;
             }

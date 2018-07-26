@@ -85,4 +85,9 @@
 	<select id="getSignatureItems" resultType="java.util.HashMap">
 		SELECT (item_id) FROM hikoco_item_signature;
 	</select>
+
+	<!-- 최근 물품 다섯 개 -->
+	<select id="recentItemList" resultType="java.util.HashMap">
+		SELECT * FROM ( SELECT * FROM hikoco_item ORDER BY item_id DESC LIMIT 5) item_tmp ORDER BY item_id DESC
+	</select>
 </mapper>

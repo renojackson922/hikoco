@@ -34,7 +34,7 @@
 </style>
 <a class="btn btn-info" href="/">홈으로</a>
 <div class="container" style="width:50%; margin:0 auto;">
-    <form id="form1" name="form1" action="./item_test.do" method="POST">
+    <form id="form1" name="form1" action="./item_test" method="POST">
         <div class="form-group">
             <label>아이템 제목</label>
             <input type="text" class="form-control" name="item_title" required>
@@ -95,7 +95,7 @@
                 <span>${i.item_last_edited_date}</span>
                 <hr/>
                 <a class="btn btn-sm btn-info" href="#">수정하기</a>
-                <form id="form2" name="form2" action="./item_test.do?action=remove" method="POST">
+                <form id="form2" name="form2" action="./item_test?action=remove" method="POST">
                     <input type="hidden" name="item_id" value="${i.item_id}">
                     <button type="submit" class="btn btn-sm btn-danger">삭제하기</button>
                 </form>
