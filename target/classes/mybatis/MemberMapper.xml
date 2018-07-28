@@ -74,4 +74,9 @@
         SELECT * FROM hikoco_member;
     </select>
 
+    <!-- 최근 회원 다섯 명 -->
+    <select id="recentMemberList" resultType="java.util.HashMap">
+        SELECT * FROM ( SELECT * FROM hikoco_member ORDER BY id DESC LIMIT 5) mem_tmp ORDER BY id DESC
+    </select>
+
 </mapper>

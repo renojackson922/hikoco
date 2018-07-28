@@ -46,6 +46,7 @@
             font-size:0.75em;
         }
         .small-title{
+            padding-left:3px;
             font-size:0.9em;
             font-weight: 500;
         }
@@ -53,6 +54,7 @@
             width:100% !important;
             display: inline-block;
             margin-bottom:10px;
+            padding:0px 10px 0px 0px;
         }
         /* 아이템 이름이 너무 길때 ... 로 축약하는 방법. 중요 */
         td{
@@ -61,44 +63,91 @@
             text-overflow: ellipsis;
             white-space: nowrap;
         }
+        th{
+            padding-left:10px !important;
+        }
+        /*div[id^="recent-"]{*/
+            /*border:1px solid #5d5d5d;*/
+        /*}*/
+        thead{
+            background: #ddd;
+        }
+        .admin-a{
+            color: #000;
+        }
+        .admin-a:hover{
+            color: #5d5d5d;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
 <%@include file="layout/admin_navbar.jsp"%>
-<div style="margin:0 auto;">
+<div style="margin:0 auto; display:inline-block">
     <%@ include file="layout/admin_left.jsp" %>
     <div class="col-md-10" style="float:left; overflow-x:hidden; padding:10px 20px 10px 20px;">
         <span style="font-size:2.5em; font-weight:200;">Dashboard</span>
         <hr style="margin-top:0;"/>
+        <!-- 첫번째 줄 -->
         <div class="admin-module">
-            <div class="col-md-6" style="float:left;">
-                <span class="small-title">최근 가입한 회원</span>
+            <div id="recent-member" class="col-md-6" style="float:left;">
+                <%-- 그냥 컨트롤러에서 갯수를 받아오는게 훨씬 빠를 듯... --%>
+                <c:set var="veryLastCnt" value="0}"/>
+                <c:forEach items="${recentMemberList}" varStatus="status" var="memberList">
+                    <c:set var="veryLastCnt" value="${status.index}"/>
+                </c:forEach>
+                <span class="small-title" style="">최근 가입한 회원</span>
+                <a class="admin-a" href="/admin/admin_member" style="float:right;"><span style="font-size:0.8em;">&#43;&nbsp;more</span></a>
                 <hr style="margin-top:0; display:block;"/>
                 <div style="padding:0 5px;">
-                    <table class="table table-sm">
-                        <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">이름</th>
-                            <th scope="col">닉네임</th>
-                            <th scope="col">가입일자</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <c:forEach var="i" begin="1" end="5" step="1">
-                            <tr>
-                                <th scope="row">${i}</th>
-                                <td>조강현</td>
-                                <td>곰보</td>
-                                <td>2018.07.26</td>
-                            </tr>
-                        </c:forEach>
-                        </tbody>
-                    </table>
+                    <c:choose>
+                        <c:when test="${veryLastCnt eq 0}">
+                            <div class="text-center" style="height:164px; margin-bottom:16px; padding:50px 0;">
+                                <span style="font-size:1.5em; font-weight:400; display:block;">회원이 없습니다!</span>
+                                <span style="font-size:0.8em; font-weight:400; color:#5d5d5d; line-height:0px;">관리자는 조회대상에서 제외되었습니다.</span>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <table class="table table-sm">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">이름</th>
+                                    <th scope="col">닉네임</th>
+                                    <th scope="col">가입일자</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <c:forEach var="i" begin="0" end="4">
+                                    <c:choose>
+                                        <c:when test="${i > veryLastCnt}">
+                                            <tr style="background: #eee;">
+                                                <th scope="row">&nbsp;</th>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <tr>
+                                                <th scope="row">${recentMemberList.get(i).id}</th>
+                                                <td>${recentMemberList.get(i).realname}</td>
+                                                <td>${recentMemberList.get(i).nickname}</td>
+                                                <td>${recentMemberList.get(i).regdate}</td>
+                                            </tr>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </c:forEach>
+                                </tbody>
+                            </table>
+                        </c:otherwise>
+                    </c:choose>
+
                 </div>
             </div>
-            <div class="col-md-6" style="float:left;">
+            <div id="recent-item" class="col-md-6" style="float:left;">
                 <span class="small-title">최근 등록된 물품</span>
+                <a class="admin-a" href="#" style="float:right;"><span style="font-size:0.8em;">&#43;&nbsp;more</span></a>
                 <hr style="margin-top:0;"/>
                 <div style="padding:0 5px;">
                     <table class="table table-sm">
@@ -157,61 +206,235 @@
                 </div>
             </div>
         </div>
+        <!-- 두번째 줄 -->
         <div class="admin-module">
-            <div class="col-md-6" style="float:left;">
+            <div id="recent-event" class="col-md-6" style="float:left;">
+                <%-- 그냥 컨트롤러에서 갯수를 받아오는게 훨씬 빠를 듯... --%>
+                <c:set var="veryLastCnt2" value="0}"/>
+                <c:forEach items="${recentMemberList}" varStatus="status2" var="memberList">
+                    <c:set var="veryLastCnt2" value="${status2.index}"/>
+                </c:forEach>
                 <span class="small-title">진행 중인 이벤트</span>
+                <a class="admin-a" href="#" style="float:right;"><span style="font-size:0.8em;">&#43;&nbsp;more</span></a>
                 <hr style="margin-top:0; display:block;"/>
                 <div style="padding:0 5px;">
-                    <table class="table table-sm">
-                        <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">이름</th>
-                            <th scope="col">닉네임</th>
-                            <th scope="col">가입일자</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <c:forEach var="i" begin="1" end="5" step="1">
-                            <tr>
-                                <th scope="row">${i}</th>
-                                <td>조강현</td>
-                                <td>곰보</td>
-                                <td>2018.07.26</td>
-                            </tr>
-                        </c:forEach>
-                        </tbody>
-                    </table>
+                    <c:choose>
+                        <c:when test="${veryLastCnt2 ne 0}">
+                            <div class="text-center" style="height:164px; margin-bottom:16px; padding:50px 0;">
+                                <span style="font-size:1.5em; font-weight:400; display:block;">진행중인 이벤트가 없습니다!</span>
+                                <button class="btn btn-sm btn-warning btn-fontsize" style="margin-top:10px;">이벤트 등록하기</button>
+                                <%--<span style="font-size:0.8em; font-weight:400; color:#5d5d5d; line-height:0px;">관리자는 조회대상에서 제외되었습니다.</span>--%>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <table class="table table-sm">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">이름</th>
+                                    <th scope="col">닉네임</th>
+                                    <th scope="col">가입일자</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <c:forEach var="i" begin="0" end="4">
+                                    <c:choose>
+                                        <c:when test="${i > veryLastCnt2}">
+                                            <tr style="background: #eee;">
+                                                <th scope="row">&nbsp;</th>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <tr>
+                                                <th scope="row">${recentMemberList.get(i).id}</th>
+                                                <td>${recentMemberList.get(i).realname}</td>
+                                                <td>${recentMemberList.get(i).nickname}</td>
+                                                <td>${recentMemberList.get(i).regdate}</td>
+                                            </tr>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </c:forEach>
+                                </tbody>
+                            </table>
+                        </c:otherwise>
+                    </c:choose>
+
                 </div>
             </div>
-            <div class="col-md-6" style="float:left;">
+            <div id="recent-qna" class="col-md-6" style="float:left;">
+                <%-- 그냥 컨트롤러에서 갯수를 받아오는게 훨씬 빠를 듯... --%>
+                <c:set var="veryLastCnt3" value="0}"/>
+                <c:forEach items="${recentMemberList}" varStatus="status3" var="memberList">
+                    <c:set var="veryLastCnt3" value="${status3.index}"/>
+                </c:forEach>
                 <span class="small-title">문의사항</span>
+                <a class="admin-a" href="#" style="float:right;"><span style="font-size:0.8em;">&#43;&nbsp;more</span></a>
                 <hr style="margin-top:0;"/>
                 <div style="padding:0 5px;">
-                    <table class="table table-sm">
-                        <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">이름</th>
-                            <th scope="col">닉네임</th>
-                            <th scope="col">가입일자</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <c:forEach var="i" begin="1" end="5" step="1">
-                            <tr>
-                                <th scope="row">${i}</th>
-                                <td>조강현</td>
-                                <td>곰보</td>
-                                <td>2018.07.26</td>
-                            </tr>
-                        </c:forEach>
-                        </tbody>
-                    </table>
+                    <c:choose>
+                        <c:when test="${veryLastCnt3 ne 0}">
+                            <div class="text-center" style="height:164px; margin-bottom:16px; padding:50px 0;">
+                                <span style="font-size:1.5em; font-weight:400; display:block;">등록된 Q&A가 없습니다!</span>
+                                <button class="btn btn-sm btn-warning btn-fontsize" style="margin-top:10px;">Q&A 상세검색</button>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <table class="table table-sm">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">이름</th>
+                                    <th scope="col">닉네임</th>
+                                    <th scope="col">가입일자</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <c:forEach var="i" begin="0" end="4">
+                                    <c:choose>
+                                        <c:when test="${i > veryLastCnt}">
+                                            <tr style="background: #eee;">
+                                                <th scope="row">&nbsp;</th>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <tr>
+                                                <th scope="row">${recentMemberList.get(i).id}</th>
+                                                <td>${recentMemberList.get(i).realname}</td>
+                                                <td>${recentMemberList.get(i).nickname}</td>
+                                                <td>${recentMemberList.get(i).regdate}</td>
+                                            </tr>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </c:forEach>
+                                </tbody>
+                            </table>
+                        </c:otherwise>
+                    </c:choose>
+
+                </div>
+            </div>
+        </div>
+        <!-- 세번째 줄 -->
+        <div class="admin-module">
+            <div id="recent-board" class="col-md-6" style="float:left;">
+                <%-- 그냥 컨트롤러에서 갯수를 받아오는게 훨씬 빠를 듯... --%>
+                <c:set var="veryLastCnt2" value="0}"/>
+                <c:forEach items="${recentMemberList}" varStatus="status2" var="memberList">
+                    <c:set var="veryLastCnt2" value="${status2.index}"/>
+                </c:forEach>
+                <span class="small-title">최근 등록된 게시글</span>
+                <a class="admin-a" href="#" style="float:right;"><span style="font-size:0.8em;">&#43;&nbsp;more</span></a>
+                <hr style="margin-top:0; display:block;"/>
+                <div style="padding:0 5px;">
+                    <c:choose>
+                        <c:when test="${veryLastCnt2 ne 0}">
+                            <div class="text-center" style="height:164px; margin-bottom:16px; padding:50px 0;">
+                                <span style="font-size:1.5em; font-weight:400; display:block;">게시글이 없습니다!</span>
+                                <span style="font-size:0.8em; font-weight:400; color:#5d5d5d; line-height:0px;">관리자는 조회대상에서 제외되었습니다.</span>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <table class="table table-sm">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">이름</th>
+                                    <th scope="col">닉네임</th>
+                                    <th scope="col">가입일자</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <c:forEach var="i" begin="0" end="4">
+                                    <c:choose>
+                                        <c:when test="${i > veryLastCnt2}">
+                                            <tr style="background: #eee;">
+                                                <th scope="row">&nbsp;</th>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <tr>
+                                                <th scope="row">${recentMemberList.get(i).id}</th>
+                                                <td>${recentMemberList.get(i).realname}</td>
+                                                <td>${recentMemberList.get(i).nickname}</td>
+                                                <td>${recentMemberList.get(i).regdate}</td>
+                                            </tr>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </c:forEach>
+                                </tbody>
+                            </table>
+                        </c:otherwise>
+                    </c:choose>
+
+                </div>
+            </div>
+            <div id="recent-report" class="col-md-6" style="float:left;">
+                <%-- 그냥 컨트롤러에서 갯수를 받아오는게 훨씬 빠를 듯... --%>
+                <c:set var="veryLastCnt3" value="0}"/>
+                <c:forEach items="${recentMemberList}" varStatus="status3" var="memberList">
+                    <c:set var="veryLastCnt3" value="${status3.index}"/>
+                </c:forEach>
+                <span class="small-title">신고내역</span>
+                <a class="admin-a" href="#" style="float:right;"><span style="font-size:0.8em;">&#43;&nbsp;more</span></a>
+                <hr style="margin-top:0;"/>
+                <div style="padding:0 5px;">
+                    <c:choose>
+                        <c:when test="${veryLastCnt3 ne 0}">
+                            <div class="text-center" style="height:164px; margin-bottom:16px; padding:50px 0;">
+                                <span style="font-size:1.5em; font-weight:400; display:block;">신고된 회원/물품/게시글이 없습니다!</span>
+                                <span style="font-size:0.8em; font-weight:400; color:#5d5d5d; line-height:0px;">관리자는 조회대상에서 제외되었습니다.</span>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <table class="table table-sm">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">이름</th>
+                                    <th scope="col">닉네임</th>
+                                    <th scope="col">가입일자</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <c:forEach var="i" begin="0" end="4">
+                                    <c:choose>
+                                        <c:when test="${i > veryLastCnt}">
+                                            <tr style="background: #eee;">
+                                                <th scope="row">&nbsp;</th>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <tr>
+                                                <th scope="row">${recentMemberList.get(i).id}</th>
+                                                <td>${recentMemberList.get(i).realname}</td>
+                                                <td>${recentMemberList.get(i).nickname}</td>
+                                                <td>${recentMemberList.get(i).regdate}</td>
+                                            </tr>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </c:forEach>
+                                </tbody>
+                            </table>
+                        </c:otherwise>
+                    </c:choose>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
+<%@ include file="./layout/admin_footer.jsp" %>
 </body>
 </html>

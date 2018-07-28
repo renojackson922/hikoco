@@ -121,6 +121,11 @@ public class MemberDAOMybatis implements MemberDAO {
         return sqlSessionTemplate.selectList("org.silkdog.maven.hikoco.member.dao.MemberDAO.memberList");
     }
 
+    @Override
+    public List<MemberVO> recentMemberList(){
+        return sqlSessionTemplate.selectList("org.silkdog.maven.hikoco.member.dao.MemberDAO.recentMemberList");
+    }
+
     /*
     @Override
     public ProfileImageVO getByteImageById(int id){

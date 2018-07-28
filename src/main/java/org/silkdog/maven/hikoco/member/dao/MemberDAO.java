@@ -18,6 +18,7 @@ public interface MemberDAO {
     MemberVO getFullMemberByUserid(String userid);
     MemberVO getFullMemberById(int id);
     List<MemberVO> memberList();
+    List<MemberVO> recentMemberList();
 
 //    ArrayList<Integer> getByteImageIdx();
 //    ProfileImageVO getByteImageById(int id);

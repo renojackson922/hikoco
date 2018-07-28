@@ -39,6 +39,9 @@ public class AdminController {
             Auth auth = (Auth)session.getAttribute("auth");
             MemberVO currentUser = memberDAO.getFullMemberByUserid(auth.getUserid());
             model.addAttribute("currentUser", currentUser);
+            /** 최근 가입한 회원 module */
+            List<MemberVO> recentMemberList = memberDAO.recentMemberList();
+            model.addAttribute("recentMemberList", recentMemberList);
             /** 최근 등록된 물품 module */
             List<ItemVO> recentItemList = itemDAO.recentItemList();
             model.addAttribute("recentItemList", recentItemList);
