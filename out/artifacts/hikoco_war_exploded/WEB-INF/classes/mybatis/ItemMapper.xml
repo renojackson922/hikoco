@@ -90,4 +90,10 @@
 	<select id="recentItemList" resultType="java.util.HashMap">
 		SELECT * FROM ( SELECT * FROM hikoco_item ORDER BY item_id DESC LIMIT 5) item_tmp ORDER BY item_id DESC
 	</select>
+
+	<!-- 모든 물품 -->
+	<select id="fullItemList" resultType="java.util.HashMap">
+		SELECT * FROM hikoco_item ORDER BY item_id DESC;
+	</select>
+
 </mapper>

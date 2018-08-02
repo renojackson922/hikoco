@@ -15,4 +15,5 @@ public interface ItemDAO {
     int countFromList();
     List<ItemVO> recentItemList();
 //    List<HashMap> getSignatureItems();
+    List<ItemVO> fullItemList();
 }

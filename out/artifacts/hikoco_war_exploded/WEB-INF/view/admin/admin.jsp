@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>HIKOCO :: ADMIN</title>
+    <title>HIKOCO :: DASHBOARD</title>
     <!-- Bootstrap 4.1.1 & jQuery-Slim -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
           integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -104,7 +104,7 @@
                         <c:when test="${veryLastCnt eq 0}">
                             <div class="text-center" style="height:164px; margin-bottom:16px; padding:50px 0;">
                                 <span style="font-size:1.5em; font-weight:400; display:block;">회원이 없습니다!</span>
-                                <span style="font-size:0.8em; font-weight:400; color:#5d5d5d; line-height:0px;">관리자는 조회대상에서 제외되었습니다.</span>
+                                <span style="font-size:0.8em; font-weight:400; color:#5d5d5d; line-height:0px;">현재 관리자는 조회대상에서 제외되었습니다.</span>
                             </div>
                         </c:when>
                         <c:otherwise>

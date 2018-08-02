@@ -20,16 +20,16 @@
 }
 
 /*  한가운데 정렬 Trick */
-.css-table{
-    display:table;
-}
-.css-table-row{
-    dispaly:table-row;
-}
-.css-table-cell{
-    display:table-cell;
-    float:left;
-}
+/*.css-table{*/
+    /*display:table;*/
+/*}*/
+/*.css-table-row{*/
+    /*dispaly:table-row;*/
+/*}*/
+/*.css-table-cell{*/
+    /*display:table-cell;*/
+    /*float:left;*/
+/*}*/
 
 /* Navigator */
 .list-group-item:first-child{

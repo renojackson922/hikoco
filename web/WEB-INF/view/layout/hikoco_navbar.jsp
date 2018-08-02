@@ -1,6 +1,6 @@
     <%@ page import="org.silkdog.maven.hikoco.member.authenticator.Auth" %>
         <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
-        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+        <%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
             <%
             try{
                 Auth auth = (Auth)session.getAttribute("auth");

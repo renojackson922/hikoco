@@ -142,7 +142,7 @@ public class ItemController {
 
     // Mimicking RESTful
     @RequestMapping("/item/{itemId}")
-    public String itemDetail(@PathVariable String itemId, Model model){
+    public String itemDetail(@PathVariable String itemId, HttpServletRequest req, Model model){
         try{
             int test = Integer.parseInt(itemId);
             ItemVO itemVO = itemDAO.select(test);
@@ -150,7 +150,9 @@ public class ItemController {
                 System.out.println("[Error] Unknown itemId. Forward to Mainpage.");
                 return "redirect:/";
             }
+            String check = req.getParameter("check");
             model.addAttribute("itemVO", itemVO);
+            model.addAttribute("check", check);
             return "item_detail";
         }catch(Exception e){
             e.printStackTrace();

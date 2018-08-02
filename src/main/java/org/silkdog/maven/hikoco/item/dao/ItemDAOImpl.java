@@ -62,6 +62,11 @@ public class ItemDAOImpl implements ItemDAO {
         return sqlSessionTemplate.selectList("org.silkdog.maven.hikoco.item.dao.ItemDAO.recentItemList");
     }
 
+    @Override
+    public List<ItemVO> fullItemList(){
+        return sqlSessionTemplate.selectList("org.silkdog.maven.hikoco.item.dao.ItemDAO.fullItemList");
+    }
+
 
 //    @Override
 //    public List<HashMap> getSignatureItems(){

@@ -128,8 +128,9 @@
 </c:if>
 
 <body ng-controller="ctrl">
-<%@ include file="layout/hikoco_login_popup.jsp" %>
+<%--<%@ include file="layout/hikoco_login_popup.jsp" %>--%>
 <%@ include file="layout/hikoco_navbar.jsp" %>
+
 <div id="show" style="padding:60px 0; padding-bottom:170px; text-align: center;">
     <c:choose>
         <c:when test="${isSearch eq 'search'}">

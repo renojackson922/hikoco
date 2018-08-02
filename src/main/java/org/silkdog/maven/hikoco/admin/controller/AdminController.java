@@ -6,6 +6,7 @@ import org.silkdog.maven.hikoco.member.authenticator.Auth;
 import org.silkdog.maven.hikoco.member.dao.MemberDAO;
 import org.silkdog.maven.hikoco.member.vo.MemberVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.method.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,7 +17,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * AuthInterceptor 기능 추가하였으니, 필요없는 인증 프로세스는 모두 삭제할 것.
@@ -32,6 +37,8 @@ public class AdminController {
 
     @RequestMapping("/admin")
     public String admin(HttpSession session, Model model) throws Exception{
+        int cnt = 0;
+        int idx = 0;
         /**
          *  Clear
          *  */
@@ -39,8 +46,21 @@ public class AdminController {
             Auth auth = (Auth)session.getAttribute("auth");
             MemberVO currentUser = memberDAO.getFullMemberByUserid(auth.getUserid());
             model.addAttribute("currentUser", currentUser);
-            /** 최근 가입한 회원 module */
+
+            /**
+             * 최근 가입한 회원 module
+             * 단, 현재 접속 중인 관리자는 표시하면 안되므로
+             * 추가적인 검출방법을 사용하였음.
+             * ++ 회원관리 페이지에서도 아래와 같은 방법을 사용하여 JSTL 복잡도를 줄일 것!
+             * */
             List<MemberVO> recentMemberList = memberDAO.recentMemberList();
+            Iterator it = recentMemberList.listIterator();
+            while(it.hasNext()){
+                if(it.next().toString().contains(currentUser.getUserid())) { idx = cnt; }
+                cnt++;
+            }
+            recentMemberList.remove(idx);
+
             model.addAttribute("recentMemberList", recentMemberList);
             /** 최근 등록된 물품 module */
             List<ItemVO> recentItemList = itemDAO.recentItemList();
@@ -127,8 +147,21 @@ public class AdminController {
     }
 
 
-
-
+    @RequestMapping("/admin/admin_item")
+    public String adminItem(HttpSession session, Model model){
+        try {
+            Auth auth = (Auth) session.getAttribute("auth");
+            MemberVO currentUser = memberDAO.getFullMemberByUserid(auth.getUserid());
+            List<ItemVO> fullItemList = itemDAO.fullItemList();
+            model.addAttribute("fullItemList", fullItemList);
+//            List<MemberVO> memberList = memberDAO.memberList();
+//            model.addAttribute("memberList", memberList);
+            model.addAttribute("currentUser", currentUser);
+            return "admin/admin_item";
+        }catch(Exception e){
+            return "redirect:/login";
+        }
+    }
 
 
 
