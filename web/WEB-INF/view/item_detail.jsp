@@ -1,9 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="org.silkdog.maven.hikoco.item.vo.ItemVO" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%
     ItemVO itemVO = (ItemVO) request.getAttribute("itemVO");
-
 %>
 <html ng-cloak ng-app="app">
 <head>
@@ -59,9 +59,7 @@
 <%--<a href="#" ng-model="clicked"><span>&times;</span></a>--%>
 <%--<img ng-hide="clicked" src="../../resources/imgs/palit.jpg">--%>
 <%--</div>--%>
-<div id="hide">
-
-</div>
+<div id="hide"></div>
 <button onclick="topFunction()" id="myBtn" class="animated fadeIn" title="Go to top">Top</button>
 <c:choose>
 <c:when test="${check eq null}">
@@ -73,7 +71,7 @@
         </c:otherwise>
         </c:choose>
         <!-- 분류 -->
-        <div class="container" style="margin-top:17px; margin-bottom:17px; padding:17px; border:1px solid #ddd;">
+        <div class="container" style="margin-top:17px; margin-bottom:17px; padding:17px; border:1px solid #ddd; background:#f7f7f7;">
             <span style="font-size:12px"><i class="fas fa-home"></i>&nbsp;&nbsp;홈 > 그래픽카드 > 엔비디아 > PALIT</span>
         </div>
         <!-- 상품 상세내용 시작 -->
@@ -81,11 +79,11 @@
             <!-- 상단 -->
             <div class="item-detail-top">
                 <!-- 상품의 정보, Top -->
-                <div class="">
+                <div class="" style="width:100% !important; display:inline-block">
                     <!-- 제목, 가격 등... -->
-                    <div class="">
-                        <img src="<%=itemVO.getItem_pic()%>" width="300px" style="border:1px solid #ddd;">
-                        <div class="" style="display: block;">
+                    <div class="col-md-4" style="float:left; margin:0 auto; padding:0 20px 0 0; max-width:320px;">
+                        <img src="<%=itemVO.getItem_pic()%>" width="100%" style="border:1px solid #ddd;">
+                        <div style="display: block;">
                             <button class="btn btn-sm btn-outline-secondary" style="width:100%; margin-top:5px;">자세히 보기
                             </button>
                             <button class="btn btn-sm btn-outline-secondary" style="width:100%; margin-top:5px;">상품신고
@@ -93,55 +91,124 @@
                         </div>
                     </div>
                     <!-- 상품의 정보 -->
-                    <div class="css-table-cell" style="margin-left:20px;">
-                        <span class="item-detail-span item-title"><strong><%=itemVO.getItem_title()%></strong></span>
-                        <span class="item-detail-span item-subtitle" style="color:#5d5d5d;"><%=itemVO.getItem_manu()%>&nbsp;&nbsp;|&nbsp;&nbsp;<%=itemVO.getItem_vendor()%></span>
-                        <span class="item-detail-span item-subtitle"><%=itemVO.getItem_summary()%></span>
-                        <div class="item-detail-span">
-                        <span class="span-loginInfo"
+                    <div class="col-md-8" style="float:left">
+                        <div>
+                            <span class="item-detail-span item-title"><strong><%=itemVO.getItem_title()%></strong></span>
+                            <span class="item-detail-span item-subtitle" style="color:#5d5d5d;"><%=itemVO.getItem_manu()%>&nbsp;&nbsp;|&nbsp;&nbsp;<%=itemVO.getItem_vendor()%></span>
+                            <span class="item-detail-span item-subtitle"><%=itemVO.getItem_summary()%></span>
+                            <div class="item-detail-span">
+                                <span class="span-loginInfo"
                               style="font-size:10px; padding:0px 5px 0px 5px; background: #2897d3; color:#fff; border-radius:0px; display: inline-block;">사은품</span>
-                            <span class="item-optional">&nbsp;구매영수증 인증 시 메로나 아이스크림 증정 (05.01~05.31)</span>
-                        </div>
-                        <div class="item-detail-span">
-                        <span class="span-loginInfo"
+                                <span class="item-optional">&nbsp;구매영수증 인증 시 메로나 아이스크림 증정 (05.01~05.31)</span>
+                            </div>
+                            <div class="item-detail-span">
+                                <span class="span-loginInfo"
                               style="font-size:10px; padding:0px 5px 0px 5px; background: gold; color:#fff; border-radius:0px; display: inline-block; width:40px; text-align: center;">후기</span>
-                            <span class="item-optional">&nbsp;후기 작성 후 별도의 신청 시 스타벅스 캔커피 증정 (05.01~05.31)</span>
-                        </div>
-                        <div class="item-detail-span">
-                        <span class="span-loginInfo"
+                                <span class="item-optional">&nbsp;후기 작성 후 별도의 신청 시 스타벅스 캔커피 증정 (05.01~05.31)</span>
+                            </div>
+                            <div class="item-detail-span">
+                                <span class="span-loginInfo"
                               style="font-size:10px; padding:0px 5px 0px 5px; background: gold; color:#fff; border-radius:0px; display: inline-block; width:40px; text-align: center;">후기</span>
-                            <span class="item-optional">&nbsp;후기 작성 후 별도의 신청을 하신 6분께 LED 삼각대 증정 (05.01~05.31)</span>
+                                <span class="item-optional">&nbsp;후기 작성 후 별도의 신청을 하신 6분께 LED 삼각대 증정 (05.01~05.31)</span>
+                            </div>
+                            <hr/>
+                            <div class="item-detail-span">
+                                <%
+                                    String leadingZeroFormation = String.format("%06d", itemVO.getItem_id());
+                                %>
+                                <span class="item-optional strong">제품번호:&nbsp;</span>
+                                <span class="item-optional"><%=leadingZeroFormation%></span>
+                            </div>
+                            <div class="item-detail-span">
+                                <span class="item-optional strong">적립금:&nbsp;</span>
+                                <span class="item-optional">{{test3}}원</span>
+                            </div>
+                            <div class="item-detail-span">
+                                <span class="item-optional strong">배송정보:&nbsp;</span>
+                                <span class="item-optional">2018년 5월 24일 배송예정</span>
+                            </div>
+                            <div class="item-detail-span">
+                                <span class="item-optional strong">카드혜택:&nbsp;</span>
+                                <span class="item-optional">최대 6개월 무이자&nbsp;</span>
+                                <span id="card" class="unselectable"
+                                      style="height:1.0em; font-size:0.5em; padding:5px 5px 5px 5px; border:1px solid #5d5d5d;">카드사별</span>
+                            </div>
+                            <hr/>
                         </div>
-                        <hr>
-                        <div class="item-detail-span">
-                            <%
-                                String leadingZeroFormation = String.format("%06d", itemVO.getItem_id());
-                            %>
-                            <span class="item-optional strong">제품번호:&nbsp;</span>
-                            <span class="item-optional"><%=leadingZeroFormation%></span>
-                        </div>
-                        <div class="item-detail-span">
-                            <span class="item-optional strong">적립금:&nbsp;</span>
-                            <span class="item-optional">{{test3}}원</span>
-                        </div>
-                        <div class="item-detail-span">
-                            <span class="item-optional strong">배송정보:&nbsp;</span>
-                            <span class="item-optional">2018년 5월 24일 배송예정</span>
-                        </div>
-                        <div class="item-detail-span">
-                            <span class="item-optional strong">카드혜택:&nbsp;</span>
-                            <span class="item-optional">최대 6개월 무이자&nbsp;</span>
-                            <span id="card" class="unselectable"
-                                  style="height:1.0em; font-size:0.5em; padding:5px 5px 5px 5px; border:1px solid #5d5d5d;">카드사별</span>
-                        </div>
-                        <!-- 옵션 -->
+                        <div>
+                            <!-- 옵션 -->
+                            <div class="col-md-6" style="float:left; padding:0;">
+                                <div class="item-detail-span" style="display:inline;">
+                                    <span class="item-optional strong">남은 수량:&nbsp;</span>
+                                    <span class="item-optional">${itemVO.item_amount}개</span>
+                                </div>
+                                <div class="item-detail-span">
+                                    <span class="item-optional strong" style="vertical-align: middle;">주문 수량:&nbsp;</span>
+                                    <input type="number" id="item_amount" name="item_amount" min="1" max="10"
+                                           value="1" style="width:3em; height:1.5em; font-size:0.8em;">
+                                    <script>
+                                        $(function(){
+                                            var totalPrice = 0;
+                                            totalPrice = ${itemVO.item_price};
 
-                        <!-- 가격 -->
+                                            $('#item_amount').each(function(){
+                                                var elem = $(this);
+                                                elem.bind('propertychange change', function(event){  // input
+                                                    if(elem.val() == null){
+                                                        alert('주문 수량을 입력해주세요.');
+                                                        document.getElementById('item_amount').value = 1;
+                                                    }
+                                                    if(elem.val() <= 0){
+                                                        alert('1개 미만으로 주문할 수 없습니다.');
+                                                        document.getElementById('item_amount').value = 1;
+                                                    }
+                                                    if(elem.val() > 10){
+                                                        alert('10개 이상 주문할 수 없습니다.');
+                                                        document.getElementById('item_amount').value = 10;
+                                                    }
+                                                    document.getElementById('totalPriceSpan').value = totalPrice * elem.val();
+                                                });
+                                            });
+                                        });
+                                    </script>
 
+                                    <%--<span style="width:27px; float:left;" class="optiondt2 Sblack11">--%>
+                                        <%--<input type="text" name="last_439394" id="last_439394" value="1" onblur="Add_Total_Price('439394');"--%>
+                                               <%--style="width:25px; height:19px; text-align:right; border-width:1px;--%>
+                                               <%--border-style:solid; border-color:#c5c5c5 #e9e9e9 #e9e9e9 #c5c5c5;">--%>
+                                    <%--</span>--%>
+                                    <%--<span style="width:21px; margin:0 0 0 4px; float:left;" class="optiondt3">--%>
+                                        <%--<div style="width:21px; float:left;"><a href="javascript:ea_up2('global_form','','last_439394','0');Add_Total_Price('439394');">--%>
+                                            <%--<img src="http://image5.compuzone.co.kr/img/images/product_detail/amount_plus.gif" width="21" height="11"></a></div>--%>
+                                        <%--<div style="width:21px; float:left;"><a href="javascript:ea_down2('global_form','','last_439394');Add_Total_Price('439394');">--%>
+                                            <%--<img src="http://image5.compuzone.co.kr/img/images/product_detail/amount_minus.gif" width="21" height="10"></a></div>--%>
+                                    <%--</span>--%>
+                                </div>
+                                <div class="item-detail-span">
+                                    <!-- 이부분 Angular watch 로 바꾸기 -->
+                                    <!-- 이부분 Angular watch 로 바꾸기 -->
+                                    <!-- 이부분 Angular watch 로 바꾸기 -->
+                                    <!-- 이부분 Angular watch 로 바꾸기 -->
+                                    <!-- 이부분 Angular watch 로 바꾸기 -->
+                                    <!-- 이부분 Angular watch 로 바꾸기 -->
+                                    <span class="item-optional strong" style="line-height:3em;">총 합계금액:&nbsp;</span>
+                                    <input type="text" id="totalPriceSpan" value="${itemVO.item_price}">
+                                    <%--<span class="item-optional" style="font-size:1.5em;">&nbsp;<fmt:formatNumber value="${itemVO.item_price}" type="currency" currencySymbol=""/>--%>
+                                        <%--<span style="font-size:0.6em; line-height:2em;">원</span>--%>
+                                    <%--</span>--%>
+                                </div>
+                                <%--<div class="item-detail-span">--%>
+                                <%--</div>--%>
+                            </div>
+                            <!-- 가격 -->
+                            <div class="col-md-6 text-right" style="float:left; right:0; bottom:0;">
+                                <button type="button" class="btn btn-primary">바로구매</button>
+                                <button type="button" class="btn btn-danger">장바구니</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
             <!-- 하단 -->
             <!-- 상품의 디테일, Bottom -->
             <div class="item-detail-bottom" style="display:block;">

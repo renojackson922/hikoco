@@ -10,6 +10,7 @@ public class ItemVO {
     private int item_id;
     private String item_title;
     private int item_price;
+    private int item_amount;
     private String item_manu;
     private String item_vendor;
     private String item_summary;
@@ -42,6 +43,14 @@ public class ItemVO {
 
     public void setItem_price(int item_price) {
         this.item_price = item_price;
+    }
+
+    public int getItem_amount() {
+        return item_amount;
+    }
+
+    public void setItem_amount(int item_amount) {
+        this.item_amount = item_amount;
     }
 
     public String getItem_manu() {
