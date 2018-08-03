@@ -32,6 +32,7 @@
         )
     </insert>
 
+    <!-- 회원 장바구니 -->
     <!--&lt;!&ndash;아이템 검색&ndash;&gt;-->
     <!--<select id="search" parameterType="String" resultType="java.util.HashMap">-->
         <!--SELECT * FROM (-->

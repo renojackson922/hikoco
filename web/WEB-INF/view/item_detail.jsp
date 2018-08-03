@@ -297,6 +297,7 @@
                             </style>
                             <div class="col-md-6 text-right" style="float:left; right:0; bottom:0; padding-top:50px;">
                                 <a class="btn btn-info" href="javascript:void(0)" onclick="confirmation()" style="font-size:0.9em; padding:12px 25px;">바로구매</a>
+                                <%-- 관리자 팝업모드에서는 비활성화로 바꾸기; disabled prop 추가--%>
                                 <button type="submit" class="btn btn-danger" style="font-size:0.9em; padding:12px 25px;">장바구니</button>
                             </div>
                             <script>
