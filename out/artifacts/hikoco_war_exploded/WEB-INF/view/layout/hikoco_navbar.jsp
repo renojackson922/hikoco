@@ -63,7 +63,7 @@
         <c:choose>
             <c:when test="${sessionScope.auth.getUserid() eq null}">
                 <li class="nav-item">
-                <a class="nav-link" href="<c:url value="/login"/>">로그인</a>
+                <a class="nav-link" href="/login">로그인</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="/mycart">장바구니</a>
@@ -74,10 +74,10 @@
                 <a class="nav-link" href="/admin">${sessionScope.auth.getNickname()} 님, 환영합니다.</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="<c:url value="/logout"/>">Logout</a>
+                <a class="nav-link" href="/logout">Logout</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="<c:url value="/mycart"/>">My Cart</a>
+                <a class="nav-link" href="/mycart">My Cart</a>
                 </li>
             </c:otherwise>
         </c:choose>

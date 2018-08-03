@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="org.silkdog.maven.hikoco.item.vo.ItemVO" %>
+<%@ page import="java.util.Date" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%
     ItemVO itemVO = (ItemVO) request.getAttribute("itemVO");
@@ -112,6 +113,46 @@
                                 <span class="item-optional">&nbsp;후기 작성 후 별도의 신청을 하신 6분께 LED 삼각대 증정 (05.01~05.31)</span>
                             </div>
                             <hr/>
+                            <script>
+                                if(!Object.prototype.watch){
+                                    Object.defineProperty(Object.prototype, 'watch', {
+                                        enumerable: false,
+                                        configurable: true,
+                                        writable: false,
+                                        value: function(prop, handler){
+                                            let oldval = this[prop],
+                                                newval = oldval,
+                                                getter = function(){
+                                                    return newval;
+                                                },
+                                                setter = function(val){
+                                                    oldval = newval;
+                                                    return newval = handler.call(this, prop, oldval, val);
+                                                };
+                                            if(delete this[prop]){ // can't watch constants
+                                                Object.defineProperty(this, prop, {
+                                                    get: getter,
+                                                    set: setter,
+                                                    enumerable: true,
+                                                    configurable: true
+                                                });
+                                            }
+                                        }
+                                    });
+                                }
+                                if(!Object.prototype.unwatch){
+                                    Object.defineProperty(Object.prototype, 'unwatch', {
+                                        enumerable: false,
+                                        configurable: true,
+                                        writable: false,
+                                        value: function(prop){
+                                            let val = this[prop];
+                                            delete this[prop]; // remove accessors
+                                            this[prop] = val;
+                                        }
+                                    });
+                                }
+                            </script>
                             <div class="item-detail-span">
                                 <%
                                     String leadingZeroFormation = String.format("%06d", itemVO.getItem_id());
@@ -125,7 +166,21 @@
                             </div>
                             <div class="item-detail-span">
                                 <span class="item-optional strong">배송정보:&nbsp;</span>
-                                <span class="item-optional">2018년 5월 24일 배송예정</span>
+                                <c:set var="now" value="<%=new java.util.Date()%>"/>
+                                <fmt:formatDate var="currentDate" value="${now}" pattern="yyyy년 MM월 dd일"/>
+                                <fmt:formatDate var="currentTime" value="${now}" pattern="HH"/> <%-- hh: 12hrs, HH: 24hrs --%>
+                                <c:choose>
+                                    <c:when test="${currentTime le 17}">
+                                        <span class="item-optional">${currentDate} 배송예정</span>&nbsp;&nbsp;
+                                        <span class="item-optional" style="color: #777777;">(17시 이전에 입금 시 당일 배송)</span>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <c:set var="tomorrow" value="<%=new Date(new Date().getTime() + 60*60*24*1000)%>"/>
+                                        <fmt:formatDate var="nextDate" value="${tomorrow}" pattern="yyyy년 MM월 dd일"/>
+                                        <span class="item-optional">${nextDate} 배송 예정</span>&nbsp;&nbsp;
+                                        <span class="item-optional" style="color: #777777;">(17시 이후에 입금 시 당일 배송)</span>
+                                    </c:otherwise>
+                                </c:choose>
                             </div>
                             <div class="item-detail-span">
                                 <span class="item-optional strong">카드혜택:&nbsp;</span>
@@ -137,6 +192,7 @@
                         </div>
                         <div>
                             <!-- 옵션 -->
+                            <form id="form1" name="form1" action="/addToCart" method="POST">
                             <div class="col-md-6" style="float:left; padding:0;">
                                 <div class="item-detail-span" style="display:inline;">
                                     <span class="item-optional strong">남은 수량:&nbsp;</span>
@@ -144,45 +200,38 @@
                                 </div>
                                 <div class="item-detail-span">
                                     <span class="item-optional strong" style="vertical-align: middle;">주문 수량:&nbsp;</span>
+                                    <input type="hidden" name="item_id" value="${itemVO.item_id}"/>
                                     <input type="number" id="item_amount" name="item_amount" min="1" max="10"
-                                           value="1" style="width:3em; height:1.5em; font-size:0.8em;">
+                                           value="1" style="text-align:center; width:3em; height:1.5em; font-size:0.8em;">
                                     <script>
                                         $(function(){
-                                            var totalPrice = 0;
+                                            let totalPrice = 0;
                                             totalPrice = ${itemVO.item_price};
 
                                             $('#item_amount').each(function(){
                                                 var elem = $(this);
                                                 elem.bind('propertychange change', function(event){  // input
+                                                    /** 수량칸이 비었을 경우 */
                                                     if(elem.val() == null){
                                                         alert('주문 수량을 입력해주세요.');
                                                         document.getElementById('item_amount').value = 1;
                                                     }
+                                                    /** 수량이 0 이하일 경우 */
                                                     if(elem.val() <= 0){
                                                         alert('1개 미만으로 주문할 수 없습니다.');
                                                         document.getElementById('item_amount').value = 1;
                                                     }
+                                                    /** 수량이 10을 초과할 경우 */
                                                     if(elem.val() > 10){
                                                         alert('10개 이상 주문할 수 없습니다.');
                                                         document.getElementById('item_amount').value = 10;
                                                     }
+
                                                     document.getElementById('totalPriceSpan').value = totalPrice * elem.val();
                                                 });
                                             });
                                         });
                                     </script>
-
-                                    <%--<span style="width:27px; float:left;" class="optiondt2 Sblack11">--%>
-                                        <%--<input type="text" name="last_439394" id="last_439394" value="1" onblur="Add_Total_Price('439394');"--%>
-                                               <%--style="width:25px; height:19px; text-align:right; border-width:1px;--%>
-                                               <%--border-style:solid; border-color:#c5c5c5 #e9e9e9 #e9e9e9 #c5c5c5;">--%>
-                                    <%--</span>--%>
-                                    <%--<span style="width:21px; margin:0 0 0 4px; float:left;" class="optiondt3">--%>
-                                        <%--<div style="width:21px; float:left;"><a href="javascript:ea_up2('global_form','','last_439394','0');Add_Total_Price('439394');">--%>
-                                            <%--<img src="http://image5.compuzone.co.kr/img/images/product_detail/amount_plus.gif" width="21" height="11"></a></div>--%>
-                                        <%--<div style="width:21px; float:left;"><a href="javascript:ea_down2('global_form','','last_439394');Add_Total_Price('439394');">--%>
-                                            <%--<img src="http://image5.compuzone.co.kr/img/images/product_detail/amount_minus.gif" width="21" height="10"></a></div>--%>
-                                    <%--</span>--%>
                                 </div>
                                 <div class="item-detail-span">
                                     <!-- 이부분 Angular watch 로 바꾸기 -->
@@ -191,8 +240,9 @@
                                     <!-- 이부분 Angular watch 로 바꾸기 -->
                                     <!-- 이부분 Angular watch 로 바꾸기 -->
                                     <!-- 이부분 Angular watch 로 바꾸기 -->
-                                    <span class="item-optional strong" style="line-height:3em;">총 합계금액:&nbsp;</span>
-                                    <input type="text" id="totalPriceSpan" value="${itemVO.item_price}">
+                                    <span class="item-optional strong" style="vertical-align: middle;">총 합계금액:&nbsp;</span>
+                                    <input type="text" id="totalPriceSpan" value="${itemVO.item_price}" style="font-size:0.8em; height:1.5em;
+                                    min-width:4em; max-width:5em; text-align:right; border:none;" disabled><span style="font-size:0.8em;">&nbsp;원</span>
                                     <%--<span class="item-optional" style="font-size:1.5em;">&nbsp;<fmt:formatNumber value="${itemVO.item_price}" type="currency" currencySymbol=""/>--%>
                                         <%--<span style="font-size:0.6em; line-height:2em;">원</span>--%>
                                     <%--</span>--%>
@@ -201,10 +251,67 @@
                                 <%--</div>--%>
                             </div>
                             <!-- 가격 -->
-                            <div class="col-md-6 text-right" style="float:left; right:0; bottom:0;">
-                                <button type="button" class="btn btn-primary">바로구매</button>
-                                <button type="button" class="btn btn-danger">장바구니</button>
+                            <style>
+                                /*.btn-skyblue{*/
+                                    /*color: #fff;*/
+                                    /*background-color: #007bff;*/
+                                    /*border-color: #007bff;*/
+                                /*}*/
+                                /*.btn-skyblue:hover{*/
+                                    /*color: #fff;*/
+                                    /*background-color: #007bff;*/
+                                    /*border-color: #007bff;*/
+                                /*}*/
+                                /*.btn-primary {*/
+                                    /*color: #fff;*/
+                                    /*background-color: #007bff;*/
+                                    /*border-color: #007bff*/
+                                /*}*/
+
+                                /*.btn-primary:hover {*/
+                                    /*color: #fff;*/
+                                    /*background-color: #0069d9;*/
+                                    /*border-color: #0062cc*/
+                                /*}*/
+
+                                /*.btn-primary.focus,.btn-primary:focus {*/
+                                    /*box-shadow: 0 0 0 .2rem rgba(0,123,255,.5)*/
+                                /*}*/
+
+                                /*.btn-primary.disabled,.btn-primary:disabled {*/
+                                    /*color: #fff;*/
+                                    /*background-color: #007bff;*/
+                                    /*border-color: #007bff*/
+                                /*}*/
+
+                                /*.btn-primary:not(:disabled):not(.disabled).active,.btn-primary:not(:disabled):not(.disabled):active,.show>.btn-primary.dropdown-toggle {*/
+                                    /*color: #fff;*/
+                                    /*background-color: #0062cc;*/
+                                    /*border-color: #005cbf*/
+                                /*}*/
+
+                                /*.btn-primary:not(:disabled):not(.disabled).active:focus,.btn-primary:not(:disabled):not(.disabled):active:focus,.show>.btn-primary.dropdown-toggle:focus {*/
+                                    /*box-shadow: 0 0 0 .2rem rgba(0,123,255,.5)*/
+                                /*}*/
+
+                            </style>
+                            <div class="col-md-6 text-right" style="float:left; right:0; bottom:0; padding-top:50px;">
+                                <a class="btn btn-info" href="javascript:void(0)" onclick="confirmation()" style="font-size:0.9em; padding:12px 25px;">바로구매</a>
+                                <button type="submit" class="btn btn-danger" style="font-size:0.9em; padding:12px 25px;">장바구니</button>
                             </div>
+                            <script>
+                                let confirmation = function() {
+                                    let amount = $(document.getElementById('item_amount')).val();
+                                    let price = ${itemVO.item_price};
+                                    let total = amount * price;
+                                    if (confirm('주문 전에 확인해주세요.\n수량: ' + amount + '개\n가격: ' + total +'원')) {
+                                        alert('hell yeah!');
+                                    }else{
+                                        return false;
+                                    }
+                                }
+                            </script>
+                            </form>
                         </div>
                     </div>
                 </div>

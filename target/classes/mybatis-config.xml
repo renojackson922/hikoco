@@ -12,5 +12,6 @@
         <mapper resource="mybatis/MemberMapper.xml"></mapper>
         <mapper resource="mybatis/ItemMapper.xml"></mapper>
         <mapper resource="mybatis/ItemCatMapper.xml"></mapper>
+        <mapper resource="mybatis/MyCartMapper.xml"></mapper>
     </mappers>
 </configuration>

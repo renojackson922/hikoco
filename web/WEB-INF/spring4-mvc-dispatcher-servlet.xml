@@ -89,6 +89,7 @@
                 <value>org.silkdog.maven.hikoco.member.vo.MemberVO</value>
                 <value>org.silkdog.maven.hikoco.item.vo.ItemVO</value>
                 <value>org.silkdog.maven.hikoco.category.vo.CategoryVO</value>
+                <value>org.silkdog.maven.hikoco.mycart.vo.MyCartVO</value>
             </list>
         </property>
         <!--<property name="mapperLocations" value="classpath*:/mybatis/*.xml"/>-->
@@ -123,9 +124,11 @@
     </bean>
     <bean id="categoryDAO" class="org.silkdog.maven.hikoco.category.dao.CategoryDAOImpl">
         <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
-
     </bean>
     <bean id="itemDAO" class="org.silkdog.maven.hikoco.item.dao.ItemDAOImpl">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+    </bean>
+    <bean id="myCartDAO" class="org.silkdog.maven.hikoco.mycart.dao.MyCartDAOImpl">
         <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
     </bean>
 
