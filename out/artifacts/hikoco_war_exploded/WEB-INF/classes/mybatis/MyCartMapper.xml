@@ -12,13 +12,17 @@
     </select>
 
     <!-- 회원의 장바구니 리스트-->
-    <select id="myCartList" parameterType="int" resultType="org.silkdog.maven.hikoco.mycart.vo.MyCartVO">
-        SELECT * FROM hikoco_cart where mem_id = #{mem_id}
+    <select id="myCartList" parameterType="int" resultType="java.util.HashMap">
+        SELECT cart.cart_id, cart.mem_id, cart.item_id, item.item_title, item.item_price, cart.cart_count, cart.cart_datetime, cart.cart_ip
+        FROM hikoco_cart AS cart
+        JOIN hikoco_item AS item
+        ON cart.item_id = item.item_id
+        WHERE cart.mem_id = #{mem_id}
     </select>
 
     <!-- 회원의 장바구니 확인하기 -->
-    <select id="checkCartListByUserInfo" parameterType="java.util.HashMap" resultType="org.silkdog.maven.hikoco.mycart.vo.MyCartVO">
-        SELECT * from hikoco_cart where mem_id = #{mem_id} and item_id = #{item_id}
+    <select id="checkCartListByUserInfo" parameterType="java.util.HashMap" resultType="int">
+        SELECT count(*) from hikoco_cart where mem_id = #{mem_id} and item_id = #{item_id}
     </select>
 
     <!-- 회원의 장바구니에 담기 -->
@@ -32,6 +36,12 @@
         )
     </insert>
 
+    <!-- 회원의 장바구니에 추가하기 -->
+    <update id="updateMyCart" parameterType="java.util.HashMap">
+        UPDATE hikoco_cart SET cart_count = #{cart_count}, cart_datetime = #{cart_datetime}, cart_ip = #{cart_ip} WHERE mem_id = #{mem_id} AND item_id = #{item_id}
+    </update>
+
+    <!-- 회원 장바구니 -->
     <!--&lt;!&ndash;아이템 검색&ndash;&gt;-->
     <!--<select id="search" parameterType="String" resultType="java.util.HashMap">-->
         <!--SELECT * FROM (-->

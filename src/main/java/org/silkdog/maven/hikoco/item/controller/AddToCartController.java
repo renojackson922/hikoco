@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 @ComponentScan
@@ -32,23 +34,31 @@ public class AddToCartController {
     }
 
     @PostMapping
-    public String addToCart(@RequestParam("item_amount") int itemAmount,
+    public String addToCart(@RequestParam("item_amount") int cartCount,
                             @RequestParam("item_id") int itemId,
                             HttpSession session, HttpServletRequest req){
         try{
+            /** 로그인 interceptor 적용해야함 */
             Auth auth = (Auth)session.getAttribute("auth");
             MemberVO currentUser = memberDAO.getFullMemberById(auth.getId());
             final int memId = currentUser.getId();
-            final String currentIp = req.getRemoteAddr();
+            final String cartIp = req.getRemoteAddr();
 
             /** 중복된 값이 있는지 확인 */
-            MyCartVO myCartVO = myCartDAO.checkCartListByUserInfo(itemId, itemAmount);
-            if(myCartVO == null){
-                myCartService.addToMyCart(memId, itemId, itemAmount, currentIp);
-            }else{
-                myCartService.addToMyCartAlterAmount(memId, itemId, itemAmount, currentIp);
-            }
+            HashMap<String, Object> map = new HashMap<>();
+            map.put("mem_id", memId);
+            map.put("item_id", itemId);
 
+            final int count = myCartDAO.checkCartListByUserInfo(map);
+
+            // count(*) 가 0일 경우; 어떠한 회원이 어떠한 아이템을 장바구니에 추가한 이력이 없을 경우.
+            if(count == 0){
+                // 장바구니에 새로 추가
+                myCartService.addToMyCart(memId, itemId, cartCount, cartIp);
+            }else{
+                // 장바구니 column에서 개수만 변경
+                myCartService.updateMyCart(memId, itemId, cartCount, cartIp);
+            }
         }catch(Exception e){
             e.printStackTrace();
         }

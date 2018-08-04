@@ -6,6 +6,8 @@ public class MyCartVO {
     private int cart_id;
     private int mem_id;
     private int item_id;
+    private String item_title;
+    private int item_price;
     private int cart_count;
     private Timestamp cart_datetime;
     private String cart_ip;
@@ -32,6 +34,22 @@ public class MyCartVO {
 
     public void setItem_id(int item_id) {
         this.item_id = item_id;
+    }
+
+    public String getItem_title() {
+        return item_title;
+    }
+
+    public void setItem_title(String item_title) {
+        this.item_title = item_title;
+    }
+
+    public int getItem_price() {
+        return item_price;
+    }
+
+    public void setItem_price(int item_price) {
+        this.item_price = item_price;
     }
 
     public int getCart_count() {
@@ -61,6 +79,25 @@ public class MyCartVO {
     public MyCartVO(int mem_id, int item_id, int cart_count, Timestamp cart_datetime, String cart_ip){
         this.mem_id = mem_id;
         this.item_id = item_id;
+        this.cart_count = cart_count;
+        this.cart_datetime = cart_datetime;
+        this.cart_ip = cart_ip;
+    }
+
+    public MyCartVO(int cart_id, int mem_id, int item_id, int cart_count, Timestamp cart_datetime, String cart_ip){
+        this.cart_id = cart_id;
+        this.mem_id = mem_id;
+        this.item_id = item_id;
+        this.cart_count = cart_count;
+        this.cart_datetime = cart_datetime;
+        this.cart_ip = cart_ip;
+    }
+
+    public MyCartVO(int cart_id, int mem_id, int item_id, String item_title,int cart_count, Timestamp cart_datetime, String cart_ip){
+        this.cart_id = cart_id;
+        this.mem_id = mem_id;
+        this.item_id = item_id;
+        this.item_title = item_title;
         this.cart_count = cart_count;
         this.cart_datetime = cart_datetime;
         this.cart_ip = cart_ip;
