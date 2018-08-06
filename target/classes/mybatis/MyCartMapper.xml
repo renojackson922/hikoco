@@ -20,7 +20,7 @@
         WHERE cart.mem_id = #{mem_id}
     </select>
 
-    <!-- 회원의 장바구니 확인하기 -->
+    <!-- 회원의 장바구니 확인하기, 회원의 장바구니에 해당 상품이 있는지 확인하기 -->
     <select id="checkCartListByUserInfo" parameterType="java.util.HashMap" resultType="int">
         SELECT count(*) from hikoco_cart where mem_id = #{mem_id} and item_id = #{item_id}
     </select>

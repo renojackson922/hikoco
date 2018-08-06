@@ -6,7 +6,7 @@
 <%
     ItemVO itemVO = (ItemVO) request.getAttribute("itemVO");
 %>
-<html ng-cloak ng-app="app">
+<html>
 <head>
     <title>HIKOCO :: ITEM :: <%=itemVO.getItem_title()%>
     </title>
@@ -16,33 +16,6 @@
     <link rel="stylesheet" href="../../resources/script/global.css">
     <link rel="stylesheet" href="../../resources/script/item_detail.css">
     <%@ include file="./essential/base.jsp" %>
-
-    <script type="text/javascript">
-        //underscore.js URL parsing code
-        var _GET = _.object(_.compact(_.map(location.search.slice(1).split('&'), function (item) {
-            if (item) item = item.split('=');
-            if (item[1]) item[1] = decodeURIComponent(item[1]);
-            return item;
-        })));
-
-        var app = angular.module('app', []);
-
-        // 다른 도메인의 소스 불러오기 필터
-        app.filter('trustUrl', function ($sce) {
-            return function (url) {
-                return $sce.trustAsResourceUrl(url);
-            }
-        });
-
-        app.controller('ctrl', function ($scope, $http, $interval, $timeout) {
-            $scope.test1 = 1;
-
-            $scope.$watch('test1 * 1000000', function (value) {
-                $scope.test2 = value;
-                $scope.test3 = value * 0.005 // 0.5% 적립
-            });
-        });
-    </script>
     <style>
         #advertisement > a > span {
             font-size: 2.5em;
@@ -54,12 +27,7 @@
         }
     </style>
 </head>
-<body ng-controller="ctrl">
-
-<%--<div id="advertisement"  style="position:fixed; right:0;">--%>
-<%--<a href="#" ng-model="clicked"><span>&times;</span></a>--%>
-<%--<img ng-hide="clicked" src="../../resources/imgs/palit.jpg">--%>
-<%--</div>--%>
+<body>
 <div id="hide"></div>
 <button onclick="topFunction()" id="myBtn" class="animated fadeIn" title="Go to top">Top</button>
 <c:choose>
@@ -99,21 +67,21 @@
                             <span class="item-detail-span item-subtitle"><%=itemVO.getItem_summary()%></span>
                             <div class="item-detail-span">
                                 <span class="span-loginInfo"
-                              style="font-size:10px; padding:0px 5px 0px 5px; background: #2897d3; color:#fff; border-radius:0px; display: inline-block;">사은품</span>
+                                      style="font-size:10px; padding:0px 5px 0px 5px; background: #2897d3; color:#fff; border-radius:0px; display: inline-block;">사은품</span>
                                 <span class="item-optional">&nbsp;구매영수증 인증 시 메로나 아이스크림 증정 (05.01~05.31)</span>
                             </div>
                             <div class="item-detail-span">
                                 <span class="span-loginInfo"
-                              style="font-size:10px; padding:0px 5px 0px 5px; background: gold; color:#fff; border-radius:0px; display: inline-block; width:40px; text-align: center;">후기</span>
+                                      style="font-size:10px; padding:0px 5px 0px 5px; background: gold; color:#fff; border-radius:0px; display: inline-block; width:40px; text-align: center;">후기</span>
                                 <span class="item-optional">&nbsp;후기 작성 후 별도의 신청 시 스타벅스 캔커피 증정 (05.01~05.31)</span>
                             </div>
                             <div class="item-detail-span">
                                 <span class="span-loginInfo"
-                              style="font-size:10px; padding:0px 5px 0px 5px; background: gold; color:#fff; border-radius:0px; display: inline-block; width:40px; text-align: center;">후기</span>
+                                      style="font-size:10px; padding:0px 5px 0px 5px; background: gold; color:#fff; border-radius:0px; display: inline-block; width:40px; text-align: center;">후기</span>
                                 <span class="item-optional">&nbsp;후기 작성 후 별도의 신청을 하신 6분께 LED 삼각대 증정 (05.01~05.31)</span>
                             </div>
                             <hr/>
-                            <script>
+                            <script type="text/javascript">
                                 if(!Object.prototype.watch){
                                     Object.defineProperty(Object.prototype, 'watch', {
                                         enumerable: false,
@@ -161,9 +129,10 @@
                                 <span class="item-optional"><%=leadingZeroFormation%></span>
                             </div>
                             <div class="item-detail-span">
-                                <span class="item-optional strong">적립금:&nbsp;</span>
-                                <span class="item-optional">{{test3}}원</span>
-                            </div>
+                                <span class="item-optional strong" style="vertical-align: middle">적립금:&nbsp;</span>
+                                <fmt:formatNumber var="savingSpan" value="${itemVO.item_price * 0.05}" currencySymbol="" type="currency"/>
+                                <input type="text" id="totalSavingSpan" value="${savingSpan}원" style="font-size:0.8em; height:1.5em;
+                                    min-width:4em; max-width:5em; text-align:left; border:none;" disabled><span style="font-size:0.8em;"></span></div>
                             <div class="item-detail-span">
                                 <span class="item-optional strong">배송정보:&nbsp;</span>
                                 <c:set var="now" value="<%=new java.util.Date()%>"/>
@@ -193,125 +162,148 @@
                         <div>
                             <!-- 옵션 -->
                             <form id="form1" name="form1" action="/addToCart" method="POST">
-                            <div class="col-md-6" style="float:left; padding:0;">
-                                <div class="item-detail-span" style="display:inline;">
-                                    <span class="item-optional strong">남은 수량:&nbsp;</span>
-                                    <span class="item-optional">${itemVO.item_amount}개</span>
-                                </div>
-                                <div class="item-detail-span">
-                                    <span class="item-optional strong" style="vertical-align: middle;">주문 수량:&nbsp;</span>
-                                    <input type="hidden" name="item_id" value="${itemVO.item_id}"/>
-                                    <input type="number" id="item_amount" name="item_amount" min="1" max="10"
-                                           value="1" style="text-align:center; width:3em; height:1.5em; font-size:0.8em;">
-                                    <script>
-                                        $(function(){
-                                            let totalPrice = 0;
-                                            totalPrice = ${itemVO.item_price};
+                                <div class="col-md-6" style="float:left; padding:0;">
+                                    <div class="item-detail-span" style="display:inline;">
+                                        <span class="item-optional strong">남은 수량:&nbsp;</span>
+                                        <span class="item-optional">${itemVO.item_amount}개</span>
+                                    </div>
+                                    <div class="item-detail-span">
+                                        <span class="item-optional strong" style="vertical-align: middle;">주문 수량:&nbsp;</span>
+                                        <input type="hidden" name="item_id" value="${itemVO.item_id}"/>
+                                        <input type="number" id="item_amount" name="item_amount" min="1" max="10"
+                                               value="1" style="text-align:center; width:3em; height:1.5em; font-size:0.8em;">
+                                        <script type="text/javascript">
+                                            $(function(){
+                                                let totalPrice = 0;
+                                                totalPrice = ${itemVO.item_price};
 
-                                            $('#item_amount').each(function(){
-                                                var elem = $(this);
-                                                elem.bind('propertychange change', function(event){  // input
-                                                    /** 수량칸이 비었을 경우 */
-                                                    if(elem.val() == null){
-                                                        alert('주문 수량을 입력해주세요.');
-                                                        document.getElementById('item_amount').value = 1;
-                                                    }
-                                                    /** 수량이 0 이하일 경우 */
-                                                    if(elem.val() <= 0){
-                                                        alert('1개 미만으로 주문할 수 없습니다.');
-                                                        document.getElementById('item_amount').value = 1;
-                                                    }
-                                                    /** 수량이 10을 초과할 경우 */
-                                                    if(elem.val() > 10){
-                                                        alert('10개 이상 주문할 수 없습니다.');
-                                                        document.getElementById('item_amount').value = 10;
-                                                    }
-
-                                                    document.getElementById('totalPriceSpan').value = totalPrice * elem.val();
+                                                $('#item_amount').each(function(){
+                                                    var elem = $(this);
+                                                    elem.bind('propertychange change', function(event){  // input
+                                                        /** 수량칸이 비었을 경우 */
+                                                        if(elem.val() == null){
+                                                            alert('주문 수량을 입력해주세요.');
+                                                            document.getElementById('item_amount').value = 1;
+                                                        }
+                                                        /** 수량이 0 이하일 경우 */
+                                                        if(elem.val() <= 0){
+                                                            alert('1개 미만으로 주문할 수 없습니다.');
+                                                            document.getElementById('item_amount').value = 1;
+                                                        }
+                                                        /** 수량이 10을 초과할 경우 */
+                                                        if(elem.val() > 10){
+                                                            alert('10개 이상 주문할 수 없습니다.');
+                                                            document.getElementById('item_amount').value = 10;
+                                                        }
+                                                        /** Lambda */
+                                                        const numberWithCommas = (x) => {
+                                                            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                                        }
+                                                        document.getElementById('totalPriceSpan').value = numberWithCommas(totalPrice * elem.val()) + '원';
+                                                        document.getElementById('totalSavingSpan').value = numberWithCommas(totalPrice * elem.val() * 0.05) + '원';
+                                                    });
                                                 });
                                             });
-                                        });
-                                    </script>
-                                </div>
-                                <div class="item-detail-span">
-                                    <!-- 이부분 Angular watch 로 바꾸기 -->
-                                    <!-- 이부분 Angular watch 로 바꾸기 -->
-                                    <!-- 이부분 Angular watch 로 바꾸기 -->
-                                    <!-- 이부분 Angular watch 로 바꾸기 -->
-                                    <!-- 이부분 Angular watch 로 바꾸기 -->
-                                    <!-- 이부분 Angular watch 로 바꾸기 -->
-                                    <span class="item-optional strong" style="vertical-align: middle;">총 합계금액:&nbsp;</span>
-                                    <input type="text" id="totalPriceSpan" value="${itemVO.item_price}" style="font-size:0.8em; height:1.5em;
-                                    min-width:4em; max-width:5em; text-align:right; border:none;" disabled><span style="font-size:0.8em;">&nbsp;원</span>
-                                    <%--<span class="item-optional" style="font-size:1.5em;">&nbsp;<fmt:formatNumber value="${itemVO.item_price}" type="currency" currencySymbol=""/>--%>
+                                        </script>
+                                    </div>
+                                    <div class="item-detail-span">
+                                        <!-- 이부분 Angular watch 로 바꾸기 -->
+                                        <!-- 이부분 Angular watch 로 바꾸기 -->
+                                        <!-- 이부분 Angular watch 로 바꾸기 -->
+                                        <!-- 이부분 Angular watch 로 바꾸기 -->
+                                        <!-- 이부분 Angular watch 로 바꾸기 -->
+                                        <!-- 이부분 Angular watch 로 바꾸기 -->
+                                        <span class="item-optional strong" style="vertical-align: middle;">총 합계금액:&nbsp;</span>
+                                        <fmt:formatNumber var="totalSpan" value="${itemVO.item_price}" type="currency" currencySymbol=""/>
+                                        <input type="text" id="totalPriceSpan" value="${totalSpan}원" style="font-size:0.8em; height:1.5em;
+                                    min-width:4em; max-width:5em; text-align:left; border:none;" disabled><span style="font-size:0.8em;">&nbsp;</span>
+                                        <%--<span class="item-optional" style="font-size:1.5em;">&nbsp;<fmt:formatNumber value="${itemVO.item_price}" type="currency" currencySymbol=""/>--%>
                                         <%--<span style="font-size:0.6em; line-height:2em;">원</span>--%>
-                                    <%--</span>--%>
+                                        <%--</span>--%>
+                                    </div>
+                                    <%--<div class="item-detail-span">--%>
+                                    <%--</div>--%>
                                 </div>
-                                <%--<div class="item-detail-span">--%>
-                                <%--</div>--%>
-                            </div>
-                            <!-- 가격 -->
-                            <style>
-                                /*.btn-skyblue{*/
+                                <!-- 가격 -->
+                                <style>
+                                    /*.btn-skyblue{*/
                                     /*color: #fff;*/
                                     /*background-color: #007bff;*/
                                     /*border-color: #007bff;*/
-                                /*}*/
-                                /*.btn-skyblue:hover{*/
+                                    /*}*/
+                                    /*.btn-skyblue:hover{*/
                                     /*color: #fff;*/
                                     /*background-color: #007bff;*/
                                     /*border-color: #007bff;*/
-                                /*}*/
-                                /*.btn-primary {*/
+                                    /*}*/
+                                    /*.btn-primary {*/
                                     /*color: #fff;*/
                                     /*background-color: #007bff;*/
                                     /*border-color: #007bff*/
-                                /*}*/
+                                    /*}*/
 
-                                /*.btn-primary:hover {*/
+                                    /*.btn-primary:hover {*/
                                     /*color: #fff;*/
                                     /*background-color: #0069d9;*/
                                     /*border-color: #0062cc*/
-                                /*}*/
+                                    /*}*/
 
-                                /*.btn-primary.focus,.btn-primary:focus {*/
+                                    /*.btn-primary.focus,.btn-primary:focus {*/
                                     /*box-shadow: 0 0 0 .2rem rgba(0,123,255,.5)*/
-                                /*}*/
+                                    /*}*/
 
-                                /*.btn-primary.disabled,.btn-primary:disabled {*/
+                                    /*.btn-primary.disabled,.btn-primary:disabled {*/
                                     /*color: #fff;*/
                                     /*background-color: #007bff;*/
                                     /*border-color: #007bff*/
-                                /*}*/
+                                    /*}*/
 
-                                /*.btn-primary:not(:disabled):not(.disabled).active,.btn-primary:not(:disabled):not(.disabled):active,.show>.btn-primary.dropdown-toggle {*/
+                                    /*.btn-primary:not(:disabled):not(.disabled).active,.btn-primary:not(:disabled):not(.disabled):active,.show>.btn-primary.dropdown-toggle {*/
                                     /*color: #fff;*/
                                     /*background-color: #0062cc;*/
                                     /*border-color: #005cbf*/
-                                /*}*/
+                                    /*}*/
 
-                                /*.btn-primary:not(:disabled):not(.disabled).active:focus,.btn-primary:not(:disabled):not(.disabled):active:focus,.show>.btn-primary.dropdown-toggle:focus {*/
+                                    /*.btn-primary:not(:disabled):not(.disabled).active:focus,.btn-primary:not(:disabled):not(.disabled):active:focus,.show>.btn-primary.dropdown-toggle:focus {*/
                                     /*box-shadow: 0 0 0 .2rem rgba(0,123,255,.5)*/
-                                /*}*/
+                                    /*}*/
 
-                            </style>
-                            <div class="col-md-6 text-right" style="float:left; right:0; bottom:0; padding-top:50px;">
-                                <a class="btn btn-info" href="javascript:void(0)" onclick="confirmation()" style="font-size:0.9em; padding:12px 25px;">바로구매</a>
-                                <%-- 관리자 팝업모드에서는 비활성화로 바꾸기; disabled prop 추가--%>
-                                <button type="submit" class="btn btn-danger" style="font-size:0.9em; padding:12px 25px;">장바구니</button>
-                            </div>
-                            <script>
-                                let confirmation = function() {
-                                    let amount = $(document.getElementById('item_amount')).val();
-                                    let price = ${itemVO.item_price};
-                                    let total = amount * price;
-                                    if (confirm('주문 전에 확인해주세요.\n수량: ' + amount + '개\n가격: ' + total +'원')) {
-                                        alert('hell yeah!');
-                                    }else{
-                                        return false;
+                                </style>
+                                <div class="col-md-6 text-right" style="float:left; right:0; bottom:0; padding-top:50px;">
+                                    <c:choose>
+                                        <c:when test="${isItemExists ne 0}">
+                                        <span style="font-size:0.8em; color:crimson; vertical-align:bottom; display:block;">
+                                            장바구니에 해당 상품이 담겨있습니다.
+                                        </span>
+                                        </c:when>
+                                        <c:otherwise></c:otherwise>
+                                    </c:choose>
+                                    <a class="btn btn-info" href="javascript:void(0)" onclick="confirmation()" style="font-size:0.9em; padding:12px 25px;">바로구매</a>
+                                    <%-- 관리자 팝업모드에서는 비활성화로 바꾸기; disabled prop 추가--%>
+                                    <button type="submit" class="btn btn-danger" style="font-size:0.9em; padding:12px 25px;">장바구니</button>
+                                </div>
+                                <script type="text/javascript">
+                                    let confirmation = function() {
+                                        let amount = $(document.getElementById('item_amount')).val();
+                                        let price = ${itemVO.item_price};
+                                        let total = amount * price;
+                                        if (confirm('주문 전에 확인해주세요.\n수량: ' + amount + '개\n가격: ' + total +'원')) {
+                                            alert('hell yeah!');
+                                        }else{
+                                            return false;
+                                        }
                                     }
-                                }
-                            </script>
+
+                                    /** ENTER 키 방지 */
+                                    $(document).ready(function() {
+                                        $(window).keydown(function(event){
+                                            if(event.keyCode == 13) {
+                                                event.preventDefault();
+                                                return false;
+                                            }
+                                        });
+                                    });
+                                </script>
                             </form>
                         </div>
                     </div>
@@ -506,7 +498,7 @@
 
                         <div id="satisfaction-comment__null" class="container text-center" style="height:300px; padding-top:90px;"> <!-- 주의 -->
                             <h1><i class="fas fa-exclamation-circle"></i>&nbsp;&nbsp;등록된 한줄평이 없습니다</h1>
-                            <button class="btn btn-outline-secondary">한줄평 등록하기</button>
+                            <button class="btn btn-outline-secondary" onclick="writeOnelinePopup('${itemVO.item_id}')">한줄평 등록하기</button>
                         </div>
 
                         <!-- 코멘트 -->
@@ -658,7 +650,7 @@
         <%--<%@include file="layout/hikoco_footer.jsp" %>--%>
     </div>
 </body>
-<script>
+<script type="text/javascript">
     $(document).ready(function () {
         $("#itemAmount").keydown(function (e) {
             // Allow: backspace, delete, tab, escape, enter and .
@@ -680,6 +672,13 @@
             }
         });
     });
+
+    function writeOnelinePopup(param){
+        let url = "/item/itemOneline?itemId=" + param;
+        let width = window.screen.availWidth * 0.5;
+        let height = window.screen.availHeight * 0.5;
+        let pop = window.open(url, "pop", 'width='+ width + ', height='+ height + ', scrollbars=yes, resizable=yes');
+    }
 
     // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = function () {

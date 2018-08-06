@@ -2,6 +2,8 @@ package org.silkdog.maven.hikoco.item.controller;
 
 import org.silkdog.maven.hikoco.item.dao.ItemDAO;
 import org.silkdog.maven.hikoco.item.vo.ItemVO;
+import org.silkdog.maven.hikoco.member.authenticator.Auth;
+import org.silkdog.maven.hikoco.mycart.dao.MyCartDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,13 +13,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class ItemController {
     @Autowired
     private ItemDAO itemDAO;
+    @Autowired
+    private MyCartDAO myCartDAO;
 
     /* ======================================================== */
     /* ======================= 아이템 페이지 ===================== */
@@ -132,32 +140,67 @@ public class ItemController {
         System.out.println(index);
     }
 
-//    @RequestMapping(value="/item_detail.do", method = RequestMethod.GET)
-//    public String itemDetail(@RequestParam("item_id") int itemId, HttpServletRequest req){
-//        System.out.println("itemID의 값: " + itemId);
-//        ItemVO idto = itemDAO.select(itemId);
-//        req.setAttribute("idto", idto);
-//        return "item_detail";
-//    }
-
-    // Mimicking RESTful
+    // Mimicking REST
+    /** item_detail.jsp  */
     @RequestMapping("/item/{itemId}")
-    public String itemDetail(@PathVariable String itemId, HttpServletRequest req, Model model){
+    public String itemDetail(@PathVariable String itemId,
+                             HttpServletRequest req,
+                             HttpSession session,
+                             Model model) {
         try{
-            int test = Integer.parseInt(itemId);
-            ItemVO itemVO = itemDAO.select(test);
+            int item = Integer.parseInt(itemId);
+            ItemVO itemVO = itemDAO.select(item);
             if(itemVO == null){
                 System.out.println("[Error] Unknown itemId. Forward to Mainpage.");
                 return "redirect:/";
             }
+
+            int isItemExists = checkAuth(item, session);
+            System.out.println(isItemExists);
+
+            // 팝업창인지 확인
             String check = req.getParameter("check");
             model.addAttribute("itemVO", itemVO);
             model.addAttribute("check", check);
+            model.addAttribute("isItemExists", isItemExists);
             return "item_detail";
         }catch(Exception e){
             e.printStackTrace();
             return "redirect:/";
         }
+    }
+
+    /** 서비스로 보내버리기 */
+    public int checkAuth(int item, HttpSession session){
+        try{
+            Auth auth = (Auth)session.getAttribute("auth");
+            HashMap<String, Object> map = new HashMap<>();
+            map.put("mem_id", auth.getId());
+            map.put("item_id", item);
+            final int foo = myCartDAO.checkCartListByUserInfo(map);
+            return foo;
+        }catch(Exception e){
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    @RequestMapping(value = "/item/itemOneline", method = RequestMethod.GET)
+    public String itemOneline(HttpSession session,
+                              @RequestParam("itemId") int itemId,
+                              HttpServletResponse resp) throws IOException {
+        if(session.getAttribute("auth") == null){
+            // 원래는 창 종료하기
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            return "redirect:/";
+        }else{
+            return "item_oneline";
+        }
+    }
+
+    @RequestMapping(value = "/item/itemOneline", method = RequestMethod.POST)
+    public String itemOnelinePro(){
+        return "";
     }
 
 }

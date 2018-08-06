@@ -84,7 +84,7 @@
 </head>
 <body ng-controller="ctrl">
 <!-- 고정 Footer 간의 간격 -->
-<div id="show" style="padding-bottom:170px;">
+<div id="show">
     <!-- navbar -->
     <%@ include file="layout/hikoco_navbar.jsp" %>
     <!-- section 1 -->
@@ -372,11 +372,11 @@
             </c:choose>
         </div>
     </section>
-    <section id="hikoco-sec5">
-        <%--<div style="height:50px; background-color:#ddd; line-height:50px; padding-left:20px; ">--%>
-        <%--<span style="font-size:24px;">Hot-Selling</span>--%>
-        <%--</div>--%>
-    </section>
+    <%--<section id="hikoco-sec5">--%>
+        <%--&lt;%&ndash;<div style="height:50px; background-color:#ddd; line-height:50px; padding-left:20px; ">&ndash;%&gt;--%>
+        <%--&lt;%&ndash;<span style="font-size:24px;">Hot-Selling</span>&ndash;%&gt;--%>
+        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
+    <%--</section>--%>
     <%@include file="layout/hikoco_footer.jsp" %>
 </div>
 </body>
