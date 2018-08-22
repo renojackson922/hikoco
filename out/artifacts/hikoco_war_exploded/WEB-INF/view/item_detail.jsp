@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ page import="org.silkdog.maven.hikoco.item.vo.ItemVO" %>
 <%@ page import="java.util.Date" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
@@ -13,6 +14,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HIKOCO :: MAIN</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <link rel="stylesheet" href="../../resources/script/global.css">
     <link rel="stylesheet" href="../../resources/script/item_detail.css">
     <%@ include file="./essential/base.jsp" %>
@@ -26,6 +28,49 @@
             text-decoration: none;
         }
     </style>
+    <script type="text/javascript">
+
+        // Load the Visualization API and the corechart package.
+        google.charts.load('current', {'packages':['corechart', 'bar']});
+
+        // Set a callback to run when the Google Visualization API is loaded.
+        google.charts.setOnLoadCallback(drawChart);
+
+        // Callback that creates and populates a data table,
+        // instantiates the pie chart, passes in the data and
+        // draws it.
+        function drawChart() {
+
+            // Create the data table.
+            // var data = new google.visualization.DataTable();
+            // data.addColumn('string', 'Topping');
+            // data.addColumn('number', 'Slices');
+            // data.addRows([
+            //     ['Mushrooms', 3],
+            //     ['Onions', 1],
+            //     ['Olives', 1],
+            //     ['Zucchini', 1],
+            //     ['Pepperoni', 2]
+            // ]);
+            var data = google.visualization.arrayToDataTable([
+                ['Element', 'Density', { role: 'style' }],
+                ['Copper', 8.94, '#b87333'],            // RGB value
+                ['Silver', 10.49, 'silver'],            // English color name
+                ['Gold', 19.30, 'gold'],
+                ['Platinum', 21.45, 'color: #e5e4e2' ], // CSS-style declaration
+                ['Adamantium', 21.45, 'color: crimson' ], // CSS-style declaration
+            ]);
+
+            //Set chart options
+            var options = {'title':'How Much Pizza I Ate Last Night',
+                'width':400,
+                'height':300};
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
 </head>
 <body>
 <div id="hide"></div>
@@ -216,7 +261,7 @@
                                         <span class="item-optional strong" style="vertical-align: middle;">총 합계금액:&nbsp;</span>
                                         <fmt:formatNumber var="totalSpan" value="${itemVO.item_price}" type="currency" currencySymbol=""/>
                                         <input type="text" id="totalPriceSpan" value="${totalSpan}원" style="font-size:0.8em; height:1.5em;
-                                    min-width:4em; max-width:5em; text-align:left; border:none;" disabled><span style="font-size:0.8em;">&nbsp;</span>
+                                    min-width:4em; max-width:8em; text-align:left; border:none;" disabled><span style="font-size:0.8em;">&nbsp;</span>
                                         <%--<span class="item-optional" style="font-size:1.5em;">&nbsp;<fmt:formatNumber value="${itemVO.item_price}" type="currency" currencySymbol=""/>--%>
                                         <%--<span style="font-size:0.6em; line-height:2em;">원</span>--%>
                                         <%--</span>--%>
@@ -328,7 +373,7 @@
                                 </td>
                                 <td class="navigator-td-parent-item"><a href="javascript:void(0)"
                                                                         class="list-group-item list-group-item-action item-focus"
-                                                                        onclick="window.location.hash='item-comment'">이용후기&nbsp;(0)</a>
+                                                                        onclick="window.location.hash='item-comment-hash'">이용후기&nbsp;(${reviewListByItemId.size()})</a>
                                 </td>
                                 <td class="navigator-td-parent-item"><a href="javascript:void(0)"
                                                                         class="list-group-item list-group-item-action item-focus"
@@ -438,100 +483,190 @@
                         </table>
                     </div>
                     <!-- 이용후기 -->
-                    <div class="__detail-title">
+                    <div id="item-comment-hash" class="__detail-title">
                         <h5>이용후기</h5>
                     </div>
-                    <div id="item-comment" class="container" style="width:80%; min-height:300px; margin-bottom:27px;">
-                        <!-- Wrapper -->
-                        <div class="item-comment-wrapper" style="display:block; width:100%;">
-                            <!-- 별 -->
-                            <div class="item-comment__star">
-                                <div class="title">
-                                    <h5>전체 만족도</h5>
-                                </div>
-                                <div class="starry-wrapper">
-                                    <div class="starry">
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                    </div>
-                                    <div class="starry__score">
-                                        <span>5 / 5</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 이용후기 수 -->
-                            <div class="item-comment__total">
-                                <div class="title">
-                                    <h5>전체 이용후기 수</h5>
-                                    <div class="bubble">
-                                        <span style="font-size:2.6em;"><i class="far fa-comment-dots"></i></span><br>
-                                        <span class="bubble__amount" style="line-height: 45px;">25</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 분포 -->
-                            <div class="item-comment__dist">
-                                <div class="title" style="margin:0 auto;">
-                                    <h5>만족도별 분포</h5>
-                                    <div class="satisfaction">
-                                        <div class="satisfaction-col col-md-3" style="float:left;">
-                                            <span>매우 만족</span>
-                                            <span>만족</span>
-                                            <span>보통</span>
-                                            <span>불만족</span>
-                                            <span>매우 불만족</span>
-                                        </div>
-                                        <div class="satisfaction-col col-md-9" style="float:left;">
-                                            <!-- 주의 -->
-                                            <% for (int k = 0; k < 5; k++) { %>
-                                            <span style="border:1px solid #5d5d5d; margin-left:5px; margin-right:10px; margin-bottom:3px; height:14px;"></span>
-                                            <% } %>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br><br><br><br><br><br><br><!-- 주의 -->
 
-                        <div id="satisfaction-comment__null" class="container text-center" style="height:300px; padding-top:90px;"> <!-- 주의 -->
-                            <h1><i class="fas fa-exclamation-circle"></i>&nbsp;&nbsp;등록된 한줄평이 없습니다</h1>
-                            <button class="btn btn-outline-secondary" onclick="writeOnelinePopup('${itemVO.item_id}')">한줄평 등록하기</button>
-                        </div>
+                    <!-- 코멘트 -->
+                    <%--<c:out value="${reviewListByItemId}"/>--%>
+                    <c:choose>
+                        <c:when test="${reviewListByItemId eq '[]'}">
+                            <div id="satisfaction-comment__null" class="container text-center" style="height:300px; padding-top:90px;"> <!-- 주의 -->
+                                <h1><i class="fas fa-exclamation-circle"></i>&nbsp;&nbsp;등록된 한줄평이 없습니다</h1>
+                                <button class="btn btn-outline-secondary" onclick="writeOnelinePopup('${itemVO.item_id}')">한줄평 등록하기</button>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <div id="item-comment" class="container" style="width:80%; min-height:300px; margin-bottom:27px;">
+                                <!-- Wrapper -->
+                                <div class="item-comment-wrapper" style="display:block; width:100%; padding-bottom:180px;">
+                                    <!-- 별 -->
+                                    <div class="item-comment__star">
+                                        <div class="title">
+                                            <h5>전체 만족도</h5>
+                                        </div>
+                                        <div class="starry-wrapper">
+                                                <%-- 컨트롤러에서 처리하는 방법도 고려하기 --%>
+                                            <c:set var="satisfy" value="0"/>
+                                            <c:set var="cnt" value="0" scope="page"/>
+                                            <c:forEach var="i" items="${reviewListByItemId}">
+                                                <c:set var="satisfy" value="${satisfy + i.score}"/>
+                                                <c:set var="cnt" value="${cnt + 1}"/>
+                                            </c:forEach>
+                                            <c:set var="satisfy" value="${satisfy / cnt}"/>
+                                            <fmt:formatNumber var="satisfyConversion" value="${satisfy}" pattern=".0" type="number"/>
+                                            <div class="starry">
 
-                        <!-- 코멘트 -->
-                        <div class="satisfaction-comment-wrapper" style="display:block;">
-                            <div class="satisfaction-comment"
-                                 style="border-bottom:2px solid #5d5d5d; padding-bottom:5px; margin-bottom:5px;">
-                                &nbsp;<span><strong>전체(29)</strong>&nbsp;&nbsp;|&nbsp;&nbsp;일반(20)&nbsp;&nbsp;|&nbsp;&nbsp;프리미엄(9)</span>
-                            </div>
-                            <% for (int i = 0; i < 5; i++) {%>
-                            <div class="satisfaction-comment-item"
-                                 style="min-height:90px; border-bottom:1px solid #ddd; padding-left:7px;">
-                                <div class="satisfaction-comment-item__profile">
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span style="font-weight: 700;">5</span>
+                                                <c:set var="satisfyNatural" value="${satisfy - (satisfy%1)}"/>
+                                                <c:set var="satisfySod" value="${satisfy % 1}"/>
+                                                <fmt:parseNumber var="satisfyNaturalConv" integerOnly="true" value="${satisfyNatural}"/>
+
+                                                <c:choose>
+                                                    <%-- 점수가 0일 경우 --%>
+                                                    <c:when test="${satisfyNaturalConv eq 0}">
+                                                        <%--<c:out value="정수가 0이에요"></c:out>--%>
+                                                        <c:forEach begin="1" end="5">
+                                                            <span><i class="far fa-star"></i></span>
+                                                        </c:forEach>
+                                                    </c:when>
+
+                                                    <%-- 만점일 경우 --%>
+                                                    <c:when test="${satisfyNaturalConv eq 5}">
+                                                        <%--<c:out value="만점이에요."></c:out>--%>
+                                                        <c:forEach begin="1" end="5">
+                                                            <span><i class="fas fa-star"></i></span>
+                                                        </c:forEach>
+                                                    </c:when>
+
+                                                    <%-- 딱 떨어질 경우 --%>
+                                                    <c:when test="${(satisfy % 1) eq 0}">
+                                                        <%--<c:out value="딱 떨어져요."></c:out>--%>
+                                                        <%-- 점수 --%>
+                                                        <c:forEach begin="1" end="${satisfyNaturalConv}">
+                                                            <span><i class="fas fa-star"></i></span>
+                                                        </c:forEach>
+                                                        <%-- 나머지 빈칸 --%>
+                                                        <c:forEach begin="1" end="${5 - (satisfyNaturalConv)}">
+                                                            <span><i class="far fa-star"></i></span>
+                                                        </c:forEach>
+                                                    </c:when>
+
+                                                    <%-- 어정쩡한 점수일 경우 --%>
+                                                    <c:otherwise>
+                                                        <%--<c:out value="어정쩡해요."></c:out>--%>
+                                                        <%-- 정수 부분 --%>
+                                                        <c:forEach begin="1" end="${satisfyNaturalConv}">
+                                                            <span><i class="fas fa-star"></i></span>
+                                                        </c:forEach>
+                                                        <%-- 소수점 부분; 무조건 하나 있으니 조건문 필요없음. --%>
+                                                            <span><i class="fas fa-star-half-alt"></i></span>
+                                                        <%-- 나머지 부분 --%>
+                                                        <c:forEach begin="1" end="${5 - (satisfyNatural + 1)}">
+                                                            <span><i class="far fa-star"></i></span>
+                                                        </c:forEach>
+                                                    </c:otherwise>
+                                                </c:choose>
+
+                                            </div>
+                                            <div class="starry__score">
+                                                <span style="font-size:1.8em;">${satisfyConversion} / 5</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 이용후기 수 -->
+                                    <div class="item-comment__total">
+                                        <div class="title">
+                                            <h5>전체 이용후기 수</h5>
+                                            <div class="bubble">
+                                                <span style="font-size:2.6em;"><i class="far fa-comment-dots"></i></span><br>
+                                                <span class="bubble__amount" style="font-size:1.8em; line-height:45px;">${reviewListByItemId.size()}개</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 분포 -->
+                                    <div class="item-comment__dist">
+                                        <div class="title" style="margin:0 auto;">
+                                            <h5>만족도별 분포</h5>
+                                            <div class="satisfaction">
+                                                <div class="satisfaction-col col-md-3" style="float:left;">
+                                                    <span>매우 만족</span>
+                                                    <span>만족</span>
+                                                    <span>보통</span>
+                                                    <span>불만족</span>
+                                                    <span>매우 불만족</span>
+                                                </div>
+                                                    <%--<div id="chart_div"></div>--%>
+                                                <div class="satisfaction-col col-md-9" style="float:left;">
+                                                    <!-- 주의 -->
+                                                    <% for (int k = 0; k < 5; k++) { %>
+                                                    <span style="border:1px solid #5d5d5d; margin-left:5px; margin-right:10px; margin-bottom:3px; height:14px;"></span>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="satisfaction-comment-item__title">
-                                    <span>야옹</span>
-                                </div>
-                                <div class="satisfaction-comment-item__detail">
-                                    <span>야옹</span>
+                                <div class="satisfaction-comment-wrapper" style="display:block;">
+                                    <div class="satisfaction-comment"
+                                         style="border-bottom:2px solid #5d5d5d; padding-bottom:5px; margin-bottom:5px;">
+                                        &nbsp;<span><strong>전체(${cnt})</strong>&nbsp;&nbsp;|&nbsp;&nbsp;일반(${cnt})&nbsp;&nbsp;|&nbsp;&nbsp;프리미엄(0)</span>
+                                        <c:choose>
+                                            <c:when test="${isReviewExists eq 0}">
+                                                <button class="btn btn-sm btn-danger"
+                                                        onclick="writeOnelinePopup('${itemVO.item_id}')"
+                                                        style="float:right; border-radius:0px; font-size:0.8em; padding:3px 9px;">한줄평 작성하기</button>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <button class="btn btn-sm btn-danger"
+                                                        onclick="writeOnelinePopup('${itemVO.item_id}')"
+                                                        style="float:right; border-radius:0px; font-size:0.8em; padding:3px 9px;" disabled>한줄평 작성하기</button>
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </div>
+                                    <c:forEach var="i" items="${reviewListByItemId}">
+                                        <%--<% for (int i = 0; i < 5; i++) {%>--%>
+                                        <div class="satisfaction-comment-item"
+                                             style="min-height:90px; border-bottom:1px solid #ddd; padding-left:7px;">
+                                            <div class="satisfaction-comment-item__profile">
+                                                <%-- 닉네임 --%>
+                                                <%--<c:out value="${fn:length(i.nickname)}"/>--%>
+                                                <span>${i.nickname}</span>
+                                                <span style="vertical-align: text-bottom;">|</span>
+                                                <c:forEach var="j" begin="1" end="${i.score}">
+                                                    <span class="starry__personal"><i class="fas fa-star"></i></span>
+                                                </c:forEach>
+                                                <c:forEach var="k" begin="1" end="${5 - i.score}">
+                                                    <span class="starry__personal"><i class="far fa-star"></i></span>
+                                                </c:forEach>
+                                                <span style="font-weight:700;">${i.score}</span>
+                                                <c:choose>
+                                                    <c:when test="${i.memId}">
+                                                        <span>&nbsp;삭제</span>
+                                                    </c:when>
+                                                    <c:otherwise>
+
+                                                    </c:otherwise>
+                                                </c:choose>
+                                            </div>
+                                            <div class="satisfaction-comment-item__title">
+                                                <span>${i.title}</span>
+                                            </div>
+                                            <div class="satisfaction-comment-item__detail">
+                                                <p style="font-size:0.8em;">${i.detail}</p>
+                                            </div>
+                                        </div>
+                                        <%--<% } %>--%>
+                                    </c:forEach>
+                                    <br> <!-- 주의 -->
+                                    <div class="text-center">
+                                        <span style="font-size:0.8em; font-weight:700;">1</span>
+                                            <%--<span style="font-size:0.8em; font-weight:700;">1  2  3  4  5  6  7</span>--%>
+                                    </div>
                                 </div>
                             </div>
-                            <% } %>
-                            <br> <!-- 주의 -->
-                            <div class="text-center">
-                                <span style="font-size:0.8em; font-weight:700;">1  2  3  4  5  6  7</span>
-                            </div>
-                        </div>
-                    </div>
+                        </c:otherwise>
+                    </c:choose>
+
                     <!-- 뉴스 / 리뷰 -->
                     <div class="__detail-title">
                         <h5>뉴스 / 리뷰</h5>
@@ -697,6 +832,7 @@
     function topFunction() {
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        window.location.hash = '';
     }
 
     document.addEventListener("DOMContentLoaded", function (event) {

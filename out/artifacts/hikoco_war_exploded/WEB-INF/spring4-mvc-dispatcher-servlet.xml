@@ -133,6 +133,9 @@
     <bean id="itemDAO" class="org.silkdog.maven.hikoco.item.dao.ItemDAOImpl">
         <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
     </bean>
+    <bean id="itemOnelineDAO" class="org.silkdog.maven.hikoco.item.dao.ItemOnelineDAOImpl">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+    </bean>
     <bean id="myCartDAO" class="org.silkdog.maven.hikoco.mycart.dao.MyCartDAOImpl">
         <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
     </bean>

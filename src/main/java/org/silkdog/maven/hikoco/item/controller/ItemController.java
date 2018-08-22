@@ -1,21 +1,21 @@
 package org.silkdog.maven.hikoco.item.controller;
 
 import org.silkdog.maven.hikoco.item.dao.ItemDAO;
+import org.silkdog.maven.hikoco.item.dao.ItemOnelineDAO;
+import org.silkdog.maven.hikoco.item.vo.ItemOnelineVO;
 import org.silkdog.maven.hikoco.item.vo.ItemVO;
 import org.silkdog.maven.hikoco.member.authenticator.Auth;
 import org.silkdog.maven.hikoco.mycart.dao.MyCartDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +26,8 @@ public class ItemController {
     private ItemDAO itemDAO;
     @Autowired
     private MyCartDAO myCartDAO;
+    @Autowired
+    private ItemOnelineDAO itemOnelineDAO;
 
     /* ======================================================== */
     /* ======================= 아이템 페이지 ===================== */
@@ -155,14 +157,38 @@ public class ItemController {
                 return "redirect:/";
             }
 
+            /** Auth 권한 철저히 검증할 것. */
+            // 아이템이 장바구니에 있는지 확인
             int isItemExists = checkAuth(item, session);
             System.out.println(isItemExists);
+            model.addAttribute("isItemExists", isItemExists);
+
+            // 작성된 한줄평이 있는지 확인
+            List<ItemOnelineVO> reviewListByItemId = checkOnelineReview(item);
+            model.addAttribute("reviewListByItemId", reviewListByItemId);
+
+            // 회원이 한줄평을 작성했는지 확인
+            /** 권한, 세션 확인 중요! */
+            if(session == null || session.getAttribute("auth") == null){
+                int isReviewExists = 0;
+                model.addAttribute("isReviewExists", isReviewExists);
+            }else{
+                Auth auth = (Auth)session.getAttribute("auth");
+                HashMap<String, Object> map = new HashMap<>();
+                map.put("memId", auth.getId());
+                map.put("itemId", item);
+                int isReviewExists = itemOnelineDAO.isReviewExists(map);
+                model.addAttribute("currentUser", auth);
+                model.addAttribute("isReviewExists", isReviewExists);
+            }
 
             // 팝업창인지 확인
             String check = req.getParameter("check");
-            model.addAttribute("itemVO", itemVO);
             model.addAttribute("check", check);
-            model.addAttribute("isItemExists", isItemExists);
+
+            // 아이템 정보 모델의 애트리뷰트로 저장.
+            model.addAttribute("itemVO", itemVO);
+
             return "item_detail";
         }catch(Exception e){
             e.printStackTrace();
@@ -185,22 +211,51 @@ public class ItemController {
         }
     }
 
+    /** 서비스로 보내버리기 */
+    public List<ItemOnelineVO> checkOnelineReview(int itemId){
+        try{
+            List<ItemOnelineVO> list = itemOnelineDAO.listByItemId(itemId);
+            return list;
+        }catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     @RequestMapping(value = "/item/itemOneline", method = RequestMethod.GET)
-    public String itemOneline(HttpSession session,
-                              @RequestParam("itemId") int itemId,
-                              HttpServletResponse resp) throws IOException {
+    public String itemOneline(HttpSession session, Model model,
+                              @RequestParam("itemId") int itemId) {
         if(session.getAttribute("auth") == null){
             // 원래는 창 종료하기
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+//            resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
             return "redirect:/";
         }else{
+            Auth auth = (Auth)session.getAttribute("auth");
+            HashMap<String, Object> hashMap = new HashMap<>();
+            hashMap.put("memId", auth.getId());
+            hashMap.put("itemId", itemId);
+            model.addAttribute("hashMap", hashMap);
             return "item_oneline";
         }
     }
 
     @RequestMapping(value = "/item/itemOneline", method = RequestMethod.POST)
-    public String itemOnelinePro(){
-        return "";
+    public void itemOnelinePro(HttpServletRequest req,
+                               @RequestParam("memId") int memId,
+                               @RequestParam("itemId") int itemId,
+                               @RequestParam("title") String title,
+                               @RequestParam("star") int star,
+                               @RequestParam("detail") String detail){
+
+        java.util.Date date = new java.util.Date();
+        java.sql.Timestamp timestamp = new java.sql.Timestamp(date.getTime());
+
+        ItemOnelineVO itemOnelineVO = new ItemOnelineVO(memId, itemId, star, title, detail);
+        itemOnelineVO.setWritedate(timestamp);
+        itemOnelineVO.setLastEditedDate(timestamp);
+        itemOnelineVO.setWriteIp(req.getRemoteAddr());
+
+        int res = itemOnelineDAO.insert(itemOnelineVO);
     }
 
 }

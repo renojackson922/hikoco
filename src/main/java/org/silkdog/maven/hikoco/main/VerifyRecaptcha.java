@@ -1,7 +1,5 @@
 package org.silkdog.maven.hikoco.main;
 
-import org.json.simple.JSONObject;
-
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonReader;

@@ -7,7 +7,7 @@
     z-index: 99; /* Make sure it does not overlap */
     border: none; /* Remove borders */
     outline: none; /* Remove outline */
-    background-color: darkorchid !important; /* Set a background color */
+    background-color: crimson !important; /* Set a background color, used to be darkorchid */
     color: white; /* Text color */
     cursor: pointer; /* Add a mouse pointer on hover */
     padding: 15px; /* Some padding */
@@ -198,7 +198,7 @@ div[class^="item-comment__"]{
 }
 .starry{
     text-align:center;
-    color: darkorchid;
+    color: crimson;
 }
 .starry > span{
     font-size:1.6em;
@@ -241,8 +241,9 @@ div[class^="satisfaction-comment-item__"]{
 .satisfaction-comment-item__profile > span{
     font-size:0.7em;
 }
-.satisfaction-comment-item__profile > span > i{  /* Stars */
-    color: darkorchid;
+.starry__personal{
+    color: crimson !important;
+    vertical-align: text-bottom !important;
 }
 .satisfaction-comment-item__title > span{
     font-size:0.9em;

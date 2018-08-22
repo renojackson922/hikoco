@@ -84,15 +84,15 @@
         </ul>
         <style>
         .btn-outline-purple {
-        color: blueviolet;
+        color: crimson;
         background-color: transparent;
         background-image: none;
-        border-color: blueviolet;
+        border-color: crimson;
         }
         .btn-outline-purple:hover {
         color: #212529;
-        background-color: blueviolet;
-        border-color: blueviolet;
+        background-color: crimson;
+        border-color: crimson;
         }
 
         .btn-outline-purple.focus,.btn-outline-purple:focus {
@@ -100,15 +100,15 @@
         }
 
         .btn-outline-purple.disabled,.btn-outline-purple:disabled {
-        color: blueviolet;
+        color: crimson;
         background-color: transparent;
         }
 
         .btn-outline-purple:not(:disabled):not(.disabled).active,.btn-outline-purple:not(:disabled):not(.disabled):active,.show>.btn-outline-purple.dropdown-toggle
         {
         color: #212529;
-        background-color: blueviolet;
-        border-color: blueviolet;
+        background-color: crimson;
+        border-color: crimson;
         }
 
         .btn-outline-purple:not(:disabled):not(.disabled).active:focus,.btn-outline-purple:not(:disabled):not(.disabled):active:focus,.show>.btn-outline-purple.dropdown-toggle:focus
