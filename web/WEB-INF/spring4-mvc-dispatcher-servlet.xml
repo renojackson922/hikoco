@@ -30,7 +30,7 @@
     <!--</mvc:annotation-driven>-->
 
     <!-- Set Component Package (Default) -->
-    <context:component-scan base-package="org.silkdog.maven.hikoco.*"/>
+    <context:component-scan base-package="org.silkdog.maven.*"/>
     <!-- http://www.baeldung.com/spring-httpmessageconverter-rest -->
     <bean class="org.silkdog.maven.hikoco.webConfig.WebConfig"/>
 
@@ -91,10 +91,13 @@
         <property name="configLocation" value="classpath:/mybatis-config.xml"/>
         <property name="typeAliases">
             <list>
+                <!-- HIKOCO -->
                 <value>org.silkdog.maven.hikoco.member.vo.MemberVO</value>
                 <value>org.silkdog.maven.hikoco.item.vo.ItemVO</value>
                 <value>org.silkdog.maven.hikoco.category.vo.CategoryVO</value>
                 <value>org.silkdog.maven.hikoco.mycart.vo.MyCartVO</value>
+                <!-- Simpleboard -->
+                <value>org.silkdog.maven.simpleboard.board.vo.BoardVO</value>
             </list>
         </property>
         <!--<property name="mapperLocations" value="classpath*:/mybatis/*.xml"/>-->
@@ -121,6 +124,7 @@
         Beans for @Autowired.
         Caution, MyBatis requires different type to jdbcTemplate
     -->
+    <!-- **************** HIKOCO **************** -->
     <bean id="memberDAO" class="org.silkdog.maven.hikoco.member.dao.MemberDAOMybatis">
         <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
     </bean>
@@ -140,6 +144,11 @@
         <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
     </bean>
 
+    <!-- **************** Simpleboard **************** -->
+    <bean id="boardDAO" class="org.silkdog.maven.simpleboard.board.dao.BoardDAOImpl">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+    </bean>
+
     <!-- 에러 메시지 등록 -->
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="basenames">
@@ -150,7 +159,9 @@
         <property name="defaultEncoding" value="UTF-8"/>
     </bean>
 
-    <bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"/>
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"/>
+    </bean>
 
     <!-- Set Annotaion-Config; Always be bottom of the xml file -->
     <context:annotation-config />

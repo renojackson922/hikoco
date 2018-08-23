@@ -97,6 +97,10 @@
           <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
           <element id="library" level="project" name="Maven: javax.interceptor:javax.interceptor-api:1.2" />
           <element id="library" level="project" name="Maven: javax.portlet:portlet-api:3.0.1" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.6" />
+          <element id="library" level="project" name="Maven: com.servlets:cos:09May2002" />
+          <element id="library" level="project" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.2.Final" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-test:5.0.8.RELEASE" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="hikoco/web/Web" />

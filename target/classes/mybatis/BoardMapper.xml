@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- DAO(Interface)를 지정할 것.-->
+<mapper namespace="org.silkdog.maven.simpleboard.board.dao.BoardDAO">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="java.util.HashMap">
+        INSERT INTO simpleboard_board (username, password, category, title, detail, writedate, last_edited_date, writeip, last_edited_ip)
+        VALUES (#{username},#{password},#{category}, #{title}, #{detail}, #{writedate}, #{lastEditedDate}, #{writeip}, #{lastEditedIp})
+    </insert>
+
+    <!--<insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="boardVO">-->
+        <!--INSERT INTO simpleboard_board (username, password, category, title, detail) VALUES (#{username},#{password},#{category}, #{title}, #{detail})-->
+    <!--</insert>-->
+
+    <select id="getList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        SELECT id, username, title, writedate FROM simpleboard_board ORDER BY id DESC LIMIT #{PAGINATION}, #{LIMIT}
+    </select>
+
+    <select id="getAllList" resultType="java.util.HashMap">
+        SELECT id, username, title, writedate FROM simpleboard_board
+    </select>
+
+    <select id="getListByCategory" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        SELECT id, username, title, writedate FROM simpleboard_board
+        WHERE category = #{category}
+        ORDER BY id DESC LIMIT #{PAGINATION}, #{LIMIT}
+    </select>
+
+    <select id="pageNumByCategory" parameterType="int" resultType="int">
+        SELECT count(id) FROM simpleboard_board WHERE category = #{category};
+    </select>
+
+    <insert id="doBot" useGeneratedKeys="true" keyProperty="id" parameterType="java.util.HashMap">
+        INSERT INTO simpleboard_board (username, password, category, title, detail, writedate, last_edited_date, writeip, last_edited_ip) VALUES (
+           #{username},#{password},#{category}, #{title}, #{detail}, #{writedate}, #{lastEditedDate}, #{writeip}, #{lastEditedIp}
+        )
+    </insert>
+
+    <select id="detailById" parameterType="int" resultType="boardVO">
+        SELECT * FROM simpleboard_board WHERE id = #{id}
+    </select>
+
+    <update id="update" useGeneratedKeys="true" keyProperty="id" parameterType="java.util.HashMap">
+        UPDATE simpleboard_board
+        SET
+            username = #{username},
+            password = #{password},
+            category = #{category},
+            title = #{title},
+            detail = #{detail}
+        WHERE id = #{id}
+    </update>
+
+    <!--<update id="update" useGeneratedKeys="true" keyProperty="id" parameterType="boardVO">-->
+        <!--UPDATE simpleboard_board SET username = #{username}, password = #{password}, category = #{category}, title = #{title}, detail = #{detail} WHERE id = #{id}-->
+    <!--</update>-->
+</mapper>
+
+        <!--<insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="boardVO">-->
+        <!--INSERT INTO simpleboard_board (username, password, category, title, detail, writedate, last_edited_date, writeip, last_edited_ip) VALUES(-->
+        <!--#{username},-->
+        <!--#{password},-->
+        <!--#{category},-->
+        <!--#{title},-->
+        <!--#{detail},-->
+        <!--#{writedate},-->
+        <!--#{lastEditedDate},-->
+        <!--#{writeip},-->
+        <!--#{lastEditedIp}-->
+        <!--)-->
+        <!--</insert>-->

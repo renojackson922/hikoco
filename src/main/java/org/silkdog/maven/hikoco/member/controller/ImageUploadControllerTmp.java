@@ -14,7 +14,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/img")
-public class ImageUploadController {
+public class ImageUploadControllerTmp {
     @Autowired
     private MemberDAO memberDAO;
 
