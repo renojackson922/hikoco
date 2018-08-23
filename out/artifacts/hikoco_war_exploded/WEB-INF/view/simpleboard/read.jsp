@@ -28,26 +28,6 @@
             }
         }
 
-        // var tmp;
-        //
-        // var test = function(callback){
-        //     $.ajax({
-        //         async: false,
-        //         type: "GET",
-        //         url: '/restfulBoard',
-        //         success: function (data) {
-        //             console.log(data);
-        //             _DATA = data;
-        //             // $(el).summernote('editor.insertImage', data);
-        //             // $('#imageBoard > ul').append('<li><img src="' + data + '" width="480px" height="auto"/></li>');
-        //         }
-        //     });
-        // }
-        //
-        // test();
-        //
-        // console.log(tmp.result);
-
     </script>
     <script type="text/javascript">
         var _GET = _.object(_.compact(_.map(location.search.slice(1).split('&'), function(item) {  if (item) item = item.split('='); if (item[1]) item[1] = decodeURIComponent(item[1]); return item; })));
@@ -77,7 +57,6 @@
                     $scope.mine = response.data;
                     // return response;
                     $('#article2').html($scope.mine.data.detail);
-                    $('');
                     if (callback) {
                         callback();
                     }
@@ -85,9 +64,8 @@
             };
 
           $scope.test(function(){
-              console.log($scope.mine.data.id + ', ' + $scope.mine.data.title);
-          });
 
+          });
         });
 
     </script>
@@ -275,7 +253,6 @@
         <%--&lt;%&ndash;</div><!-- End of Reply Wrapper-->&ndash;%&gt;--%>
     <%--</div>--%>
 <%--</div>--%>
-
 
 <!----------->
 <div class="wrapper" style="border:1px solid #ddd; margin:5px 0;">

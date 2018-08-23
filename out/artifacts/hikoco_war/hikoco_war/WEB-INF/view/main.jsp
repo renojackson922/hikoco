@@ -7,7 +7,7 @@
     <!-- MAIN 화면 전용 CSS -->
     <link rel="stylesheet" href="../../resources/script/main.css">
     <%@ include file="./essential/base.jsp" %>
-    <script>
+    <script type="text/javascript">
         (function ($) {
             $(function () {
                 var jcarousel = $('.jcarousel');
@@ -60,6 +60,7 @@
 
             });
         })(jQuery);
+
     </script>
 
     <script type="text/javascript">
@@ -100,14 +101,24 @@
     </style>
     <section id="hikoco-sec1">
         <div class="hikoco-sec1-div">
+            <div class="hikoco-sec1-title col-md-8 offset-md-2 text-right" style="padding:200px 0">
+                <span id="catchphrase" style="font-size:3.0em; color:#fff; font-weight:400;
+                background: rgb(118,185,0); padding:0 15px 0 20px; letter-spacing: 2px;">GEFORCE RTX™</span><br>
+                <span style="font-size:1.5em; color:#fff; font-weight:200;
+                background: rgb(118,185,0); padding:0 15px 0 15px;letter-spacing: 3px;">GRAPHICS REINVENTED</span><br>
+                <span style="font-size:1.2em; color:#fff; font-weight:200;
+                background: rgb(118,185,0); padding:0 15px 0 15px;letter-spacing: 2px;">PRE-ORDER NOW</span>
+            </div>
+            <%--
             <div class="hikoco-sec1-title col-md-8 offset-md-2 text-center" style="padding:200px 0">
                 <span style="font-size:3.0em; color:#fff; font-weight:200;
-                background: rgba(0,0,0,0.7); padding:0 15px 0 15px;">야옹야옹 야옹이 노래를 한다.</span><br>
+                background: rgba(0,0,0,0.7); padding:0 15px 0 15px;">번개는 항상 두 번 친다!</span><br>
                 <span style="font-size:1.5em; color:#fff; font-weight:200;
-                background: rgba(0,0,0,0.7); padding:0 15px 0 15px;">Kitty Kitten Kitty-cat, sings a happy song.</span><br>
+                background: rgba(0,0,0,0.7); padding:0 15px 0 15px;">Lightning CAN strike twice!</span><br>
                 <span style="font-size:1.2em; color:#fff; font-weight:200;
-                background: rgba(0,0,0,0.7); padding:0 15px 0 15px;">소뱅은 과연 맥크리로 다이아를 갈 수 있을까?</span>
+                background: rgba(0,0,0,0.7); padding:0 15px 0 15px;">"The coin? You used me for THE COIN!?"</span>
             </div>
+            --%>
         </div>
     </section>
 
@@ -394,7 +405,8 @@ var container = document.getElementById('hikoco-sec4');
 // CSS 설정을 바꾸기.... 이게 뭐하는건지..
 document.addEventListener("DOMContentLoaded", function (event) {
     // document.getElementById('hikoco-nav').style.height = 66;
-    document.getElementById('hikoco-nav').style.background = 'rgba(0,0,0,0)';
+    document.getElementById('hikoco-nav').style.background = 'rgba(0,0,0,0.8)';
+    // document.getElementById('hikoco-nav').style.background = 'rgba(0,0,0,0)'; // stormsurge
 });
 
 window.onscroll = function () {
@@ -412,7 +424,8 @@ function scrollFunction() {
         // document.getElementById('hikoco-nav').style.height = 66;
         // document.getElementById('hikoco-nav').classList.add('animated');
         // document.getElementById('hikoco-nav').classList.add('fadeOut');
-        document.getElementById('hikoco-nav').style.background = 'rgba(0,0,0,0)';
+        document.getElementById('hikoco-nav').style.background = 'rgba(0,0,0,0.8)';
+        // document.getElementById('hikoco-nav').style.background = 'rgba(0,0,0,0)'; // Stormsurge
     }
 }
 </script>

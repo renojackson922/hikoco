@@ -12,13 +12,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 public class ItemController {
@@ -46,7 +42,7 @@ public class ItemController {
     @RequestMapping(value = "/item_test", method= RequestMethod.GET)
     public String itemTest(HttpServletRequest req, Model model){
         checkItemList(req, model);
-        return "item_test";
+        return "test/item_test";
     }
 
     @RequestMapping(value="/item_test", method=RequestMethod.POST)

@@ -5,14 +5,10 @@
 
 <!-- DAO(Interface)를 지정할 것.-->
 <mapper namespace="org.silkdog.maven.simpleboard.board.dao.BoardDAO">
-    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="java.util.HashMap">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="boardVO">
         INSERT INTO simpleboard_board (username, password, category, title, detail, writedate, last_edited_date, writeip, last_edited_ip)
         VALUES (#{username},#{password},#{category}, #{title}, #{detail}, #{writedate}, #{lastEditedDate}, #{writeip}, #{lastEditedIp})
     </insert>
-
-    <!--<insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="boardVO">-->
-        <!--INSERT INTO simpleboard_board (username, password, category, title, detail) VALUES (#{username},#{password},#{category}, #{title}, #{detail})-->
-    <!--</insert>-->
 
     <select id="getList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
         SELECT id, username, title, writedate FROM simpleboard_board ORDER BY id DESC LIMIT #{PAGINATION}, #{LIMIT}

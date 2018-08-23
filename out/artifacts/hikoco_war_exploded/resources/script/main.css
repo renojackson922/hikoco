@@ -5,8 +5,9 @@
 /* HIKOCO-SECTION */
 .hikoco-sec1-div {
     height: 600px;
-    background: url("../../resources/imgs/windows-central-background.jpg");
+    /*background: url("../../resources/imgs/windows-central-background.jpg");*/
     background-size: cover;
+    background: #000 url("../../resources/imgs/2080ti.jpg") no-repeat 50% 0;
 }
 .hikoco-sec1-span {
     color: #fff;
@@ -23,11 +24,9 @@
 }
 
 .hikoco-sec3-intro{
-    background: #000 url("../../resources/imgs/amd-pinacle.jpg");
     /*background: #000 url("../../resources/imgs/i78700k+ryzen_cropped.png");*/
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background: #000 url("../../resources/imgs/amd-pinacle.jpg") no-repeat center;
     width: auto;
     height: 300px;
     margin-top:17px;
@@ -39,10 +38,8 @@
 }
 
 .hikoco-sec4-intro{
-    background: #000 url("../../resources/imgs/smoke-hero.jpg");
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background: #000 url("../../resources/imgs/smoke-hero.jpg") no-repeat center;
     width: auto;
     height: 500px;
     margin-top:17px;

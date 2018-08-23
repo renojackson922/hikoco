@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.HashMap;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/img")
@@ -20,7 +19,7 @@ public class ImageUploadControllerTmp {
 
     @GetMapping
     public String imgGet(){
-        return "img_test";
+        return "test/img_test";
     }
 
     @PostMapping

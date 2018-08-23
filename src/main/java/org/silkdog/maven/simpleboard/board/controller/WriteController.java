@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 @CrossOrigin
 @Controller
 @RequestMapping("/c{category}/write")
@@ -35,7 +37,8 @@ public class WriteController {
     @PostMapping
     public String writePro(@PathVariable("category") int category,
                            @ModelAttribute("boardVO") BoardVO boardVO,
-                           final BindingResult bindingResult){
+                           final BindingResult bindingResult,
+                           HttpServletRequest req){
 
         new AuthValidator(boardDAO).validate(boardVO, bindingResult);
         if(bindingResult.hasErrors()){
@@ -44,7 +47,7 @@ public class WriteController {
 
         /** Validator 서비스를 통해 오류 검출 */
 
-        boardService.addData(boardVO);
+        boardService.addData(boardVO, req);
 
         return "redirect:/board/c" + category;
     }

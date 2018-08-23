@@ -6,55 +6,53 @@
     </artifacts-to-build>
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/web/resources/script/main.css" line="119" />
-    <bookmark url="file://$PROJECT_DIR$/web/WEB-INF/view/item_detail.jsp" line="186" />
-    <bookmark url="file://$PROJECT_DIR$/web/WEB-INF/view/item_detail.jsp" line="178" />
+    <bookmark url="file://$PROJECT_DIR$/web/resources/script/main.css" line="116" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e4dadd9-aa54-45fd-aee2-bdcdfaaf52b8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/hikoco.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/main/DummyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/main/MainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/BotController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/EditController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/ImageUploadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/ReadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/WriteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/dao/BoardDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/dao/BoardDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/BoardService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/BoardServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/validator/AuthValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/vo/BoardVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/main/MainController.tmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/main/RestfulController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/BoardMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/board.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/bot.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/edit.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/essential/base.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/read.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/write.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/hikoco_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/hikoco_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/resources/imgs/2080ti.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/resources/imgs/stormsurge_cropped.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/resources/imgs/stormsurge_cropped_edited.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/messages/error.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/messages/error.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/hikoco/main/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/hikoco/main/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/hikoco/member/controller/ImageUploadController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/spring4-mvc-dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/spring4-mvc-dispatcher-servlet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/main/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/main/MainController.tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/member/controller/ImageUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/member/controller/ImageUploadControllerTmp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages/error.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages/error.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/messages/error.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/messages/error.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/hikoco/main/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/hikoco/main/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/hikoco/member/controller/ImageUploadController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/spring4-mvc-dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/spring4-mvc-dispatcher-servlet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/hikoco/item/controller/ItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/hikoco/item/controller/ItemController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/hikoco/main/MainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/hikoco/main/VerifierTestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/hikoco/main/VerifierTestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/hikoco/member/controller/ImageUploadControllerTmp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/hikoco/member/controller/ImageUploadControllerTmp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/main/DummyController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/ImageUploadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/ImageUploadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/WriteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/WriteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/service/BoardServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/service/BoardServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/main/MainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/img_test.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/item_test.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/recaptcha_test.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/simpleboard/read.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/simpleboard/read.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/resources/script/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/resources/script/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/controller/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/main/VerifierTestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/main/VerifierTestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/member/controller/ImageUploadControllerTmp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/member/controller/ImageUploadControllerTmp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/ImageUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/ImageUploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/WriteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/WriteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/BoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/BoardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/BoardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/BoardServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/BoardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/BoardMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/BoardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/BoardMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/hikoco/item/controller/ItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/hikoco/item/controller/ItemController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/hikoco/main/MainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/hikoco/main/VerifierTestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/hikoco/main/VerifierTestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/hikoco/member/controller/ImageUploadControllerTmp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/hikoco/member/controller/ImageUploadControllerTmp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/main/DummyController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/ImageUploadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/ImageUploadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/WriteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/WriteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/service/BoardServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/service/BoardServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/main/MainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/img_test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/test/img_test.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/item_test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/test/item_test.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/recaptcha_test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/test/recaptcha_test.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/read.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/read.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/resources/script/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/resources/script/main.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -96,21 +94,7 @@
         <item name="aikocandy@aikocandy.cafe24.com" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="aikocandy: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="hikoco_cart: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="aikocandy@aikocandy.cafe24.com" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="aikocandy: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="hikoco_item_oneline_review: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="aikocandy@aikocandy.cafe24.com" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="aikocandy: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="hikoco_profile_image: table" type="98d5ac3d:MysqlImplModel$Table" />
+        <item name="simpleboard_board: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -235,43 +219,53 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="JAVA/" value="1" />
+          <entry key="css" value="1" />
           <entry key="gitattributes" value="1" />
           <entry key="gitignore" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="31" />
-          <entry key="jsp" value="1" />
+          <entry key="java" value="37" />
+          <entry key="jpg" value="3" />
+          <entry key="jsp" value="5" />
           <entry key="main" value="1" />
           <entry key="md" value="1" />
           <entry key="properties" value="1" />
-          <entry key="xml" value="5" />
+          <entry key="simpleboard_board" value="2" />
+          <entry key="xml" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="CSS" value="1" />
+          <entry key="Database Element" value="2" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="31" />
-          <entry key="JSP" value="1" />
+          <entry key="Image" value="3" />
+          <entry key="JAVA" value="37" />
+          <entry key="JSP" value="5" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Properties" value="1" />
           <entry key="UML" value="2" />
-          <entry key="XML" value="5" />
+          <entry key="XML" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="css" value="51" />
           <entry key="dummy" value="6" />
-          <entry key="java" value="175" />
+          <entry key="java" value="609" />
+          <entry key="jsp" value="209" />
           <entry key="properties" value="2" />
-          <entry key="xml" value="152" />
+          <entry key="xml" value="160" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="175" />
+          <entry key="CSS" value="51" />
+          <entry key="JAVA" value="609" />
+          <entry key="JSP" value="209" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="Properties" value="2" />
-          <entry key="XML" value="152" />
+          <entry key="XML" value="160" />
         </counts>
       </usages-collector>
     </session>
@@ -280,35 +274,7 @@
     <favorites_list name="hikoco" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/validator/AuthValidator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="61" column="11" lean-forward="true" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/ImageUploadController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/main/RestfulController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -322,7 +288,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>height</find>
       <find>sec5</find>
       <find>최근 등록</find>
       <find>width:200</find>
@@ -352,6 +317,7 @@
       <find>crimson !</find>
       <find>style</find>
       <find>text</find>
+      <find>console.log</find>
     </findStrings>
     <replaceStrings>
       <replace>../../resources/imgs/</replace>
@@ -377,12 +343,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/WEB-INF/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/member/vo/MemberVO.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/view/item.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/view/admin/admin_item.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/view/admin/layout/admin_left.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/vo/ItemVO.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/signup.jsp" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a4b30908-8c89-4b01-be15-ea091cc157ae/console_1.sql" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/controller/MyCartController.java" />
@@ -396,7 +356,6 @@
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/mycart/dao/MyCartDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/mycart/controller/MyCartController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/mycart/vo/MyCartVO.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/view/main.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/layout/hikoco_footer.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/mycart.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/MyCartMapper.xml" />
@@ -425,9 +384,16 @@
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/EditController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/ReadController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/spring4-mvc-dispatcher-servlet.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/WriteController.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/validator/AuthValidator.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/read.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/ImageUploadController.java" />
+        <option value="$PROJECT_DIR$/web/resources/script/main.css" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/main.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/BoardMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/WriteController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/BoardService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/BoardServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -468,10 +434,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="227" />
+    <option name="x" value="109" />
     <option name="y" value="48" />
-    <option name="width" value="2172" />
-    <option name="height" value="1203" />
+    <option name="width" value="2290" />
+    <option name="height" value="1238" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -489,6 +455,48 @@
             <path>
               <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
               <item name="hikoco" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hikoco" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hikoco" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hikoco" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="hikoco_war" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hikoco" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="hikoco_war_exploded" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hikoco" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="hikoco_war_exploded" type="462c0819:PsiDirectoryNode" />
+              <item name="imgs_uploaded" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hikoco" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="hikoco_war_exploded" type="462c0819:PsiDirectoryNode" />
+              <item name="imgs_uploaded" type="462c0819:PsiDirectoryNode" />
+              <item name="2018-08-24" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
@@ -515,6 +523,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="maven" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hikoco" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="maven" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
@@ -554,6 +571,17 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="maven" type="462c0819:PsiDirectoryNode" />
               <item name="simpleboard" type="462c0819:PsiDirectoryNode" />
+              <item name="board" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hikoco" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="maven" type="462c0819:PsiDirectoryNode" />
+              <item name="simpleboard" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -566,7 +594,21 @@
             <path>
               <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
               <item name="hikoco" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hikoco" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hikoco" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
@@ -581,6 +623,14 @@
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hikoco" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="simpleboard" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -593,12 +643,12 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/aikocandy/Documents/Github/hikoco/src/main/java/org/silkdog/maven/hikoco/item/controller/AddToCartController.java&#10;&gt;&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535041854867" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535046666627" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15527344" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -613,22 +663,22 @@
       <recent name="org.silkdog.maven.hikoco.mycart.controller" />
       <recent name="org.silkdog.maven.hikoco" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/WEB-INF/view/simpleboard" />
-      <recent name="$PROJECT_DIR$/src/main/resources/mybatis" />
-      <recent name="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard" />
-      <recent name="$PROJECT_DIR$/src/main/java" />
-      <recent name="$PROJECT_DIR$/web/WEB-INF/view/admin/layout" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="org.silkdog.maven.hikoco.member.vo" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/WEB-INF/view/test" />
       <recent name="$PROJECT_DIR$/web/WEB-INF/view/login" />
       <recent name="$PROJECT_DIR$/web/WEB-INF/view/admin/layout" />
       <recent name="C:\IntelliJ_STS\hikoco\web\resources\imgs\svg" />
       <recent name="C:\IntelliJ_STS\hikoco\web\resources\imgs\items" />
-      <recent name="$PROJECT_DIR$/web/resources/imgs/items_detail" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.silkdog.maven.hikoco.member.vo" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/resources/imgs" />
+      <recent name="$PROJECT_DIR$/web/WEB-INF/view/simpleboard" />
+      <recent name="$PROJECT_DIR$/src/main/resources/mybatis" />
+      <recent name="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard" />
+      <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -786,6 +836,9 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpringBeansView">
+    <option name="beanDetailsProportion" value="0.3" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -897,7 +950,7 @@
       <workItem from="1534401954656" duration="2583000" />
       <workItem from="1534750280990" duration="1135000" />
       <workItem from="1535038565910" duration="586000" />
-      <workItem from="1535039178030" duration="2661000" />
+      <workItem from="1535039178030" duration="7408000" />
     </task>
     <servers />
   </component>
@@ -934,7 +987,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="825452000" />
+    <option name="totallyTimeSpent" value="830199000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -946,10 +999,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="227" y="48" width="2172" height="1203" extended-state="0" />
-    <editor active="true" />
+    <frame x="109" y="48" width="2290" height="1238" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.61454546" visible="true" weight="0.1887324" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.61454546" visible="true" weight="0.21841636" />
       <window_info id="Structure" order="1" sideWeight="0.38545454" side_tool="true" weight="0.22889842" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -960,20 +1012,20 @@
       <window_info anchor="bottom" id="SQL Generator" order="0" weight="0.32885906" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" sideWeight="0.5554785" weight="0.37315437" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.8805341" weight="0.3918742" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.84583336" weight="0.26822683" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.8805341" weight="0.39179754" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.84583336" visible="true" weight="0.23211169" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32885906" />
       <window_info anchor="bottom" id="Application Servers" order="8" sideWeight="0.49930555" weight="0.3261745" />
-      <window_info anchor="bottom" id="Spring" order="9" weight="0.32885906" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49930555" weight="0.32931727" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.48418835" weight="0.08322147" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" />
-      <window_info anchor="bottom" id="Database Changes" order="13" weight="0.32930514" />
-      <window_info anchor="bottom" id="Version Control" order="14" weight="0.27224436" />
+      <window_info anchor="bottom" id="Spring" order="9" weight="0.29162917" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49930555" weight="0.32853284" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.48418835" weight="0.18935427" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32943293" />
+      <window_info anchor="bottom" id="Database Changes" order="13" weight="0.32853284" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.2718272" />
       <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.15416667" side_tool="true" weight="0.3040629" />
-      <window_info anchor="bottom" id="Inspection Results" order="16" sideWeight="0.7659722" visible="true" weight="0.16021602" />
+      <window_info anchor="bottom" id="Inspection Results" order="16" sideWeight="0.7659722" weight="0.16021602" />
       <window_info anchor="bottom" id="Database Console" order="17" weight="0.25503355" />
       <window_info anchor="right" id="CDI" order="0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -981,7 +1033,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.11361502" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.12188612" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Maven Projects" order="9" weight="0.32950193" />
@@ -996,54 +1048,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/recaptcha_test.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-230" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/interceptor/AuthInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="19" column="49" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/essential/base.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/rating_addon.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="33" column="50" selection-start-line="33" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://a4b30908-8c89-4b01-be15-ea091cc157ae/schema/aikocandy/table/hikoco_item_oneline_review" />
-    <entry file="file://$PROJECT_DIR$/web/resources/script/item_detail.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="245" column="43" selection-start-line="245" selection-start-column="43" selection-end-line="245" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/dao/ItemOnelineDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/item/controller/ItemController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2072">
-          <caret line="166" column="36" selection-start-line="166" selection-start-column="36" selection-end-line="166" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/ItemOnelineMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -1068,7 +1072,7 @@
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/item.jsp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/img_test.jsp">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/test/img_test.jsp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/image_view.jsp">
@@ -1092,7 +1096,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/simpleboard/main/MainController.java" />
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/item_test.jsp">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/test/item_test.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
           <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
@@ -1103,20 +1107,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/BoardMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="728">
-          <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1162,30 +1152,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/main/DummyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/BoardService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/BoardServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/dao/BoardDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-54">
@@ -1218,20 +1184,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="518">
           <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/ReadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/WriteController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="46" column="38" lean-forward="true" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1290,13 +1242,6 @@
         <state split_layout="SPLIT">
           <first_editor />
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/validator/AuthValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="61" column="11" lean-forward="true" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1369,10 +1314,127 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/validator/AuthValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="61" column="11" lean-forward="true" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/main/DummyController.tmp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/login/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/imgs/windows-central-background.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/imgs_uploaded/1970-01-01 09:00:00.024/1d5635391.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/script/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-161">
+          <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/BoardMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-77">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="709">
+          <caret line="83" column="13" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/BoardServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
+            <element signature="e#581#582#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/BoardService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/WriteController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/ReadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="53" selection-start-column="53" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/essential/base.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/simpleboard/read.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="47" column="19" lean-forward="true" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/ImageUploadController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+        <state relative-caret-position="359">
+          <caret line="30" column="39" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="30" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://a4b30908-8c89-4b01-be15-ea091cc157ae/schema/aikocandy/table/simpleboard_board">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>

@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 @Controller
@@ -25,21 +25,29 @@ public class ImageUploadController {
                             HttpServletResponse resp,
                             MultipartFile file) throws IOException {
 
-        String realFolder = req.getSession().getServletContext().getRealPath("imgs");
+        /** 국제시간을 고려해서 UTC로 수정할 것. */
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDateTime now = LocalDateTime.now();
+        String today = dtf.format(now);
 
-        File dir = new File(realFolder);
+        String realFolder = req.getSession().getServletContext().getRealPath("imgs_uploaded");
+        UUID uuid = UUID.randomUUID();
+
+        String filepath = realFolder + "/" + today;
+
+        File dir = new File(filepath);
         if (!dir.exists()) {
             dir.mkdirs();
         }
 
-        String org_filename = file.getOriginalFilename();
+        String org_filename = uuid + file.getOriginalFilename();
         byte[] bytes = file.getBytes();
-        File f = new File(realFolder, file.getOriginalFilename());
+        File f = new File(filepath, org_filename);
         FileCopyUtils.copy(bytes, f);
 
         resp.setContentType("text/html;charset=utf-8");
         /* 게시했을때 절대주소를 고려하면 됨. */
-        resp.getWriter().write("/imgs/" +  org_filename);
+        resp.getWriter().write("/imgs_uploaded/"  + today + "/" + org_filename);
     }
 }
 

@@ -11,7 +11,7 @@ import java.io.IOException;
 public class VerifierTestController {
     @RequestMapping(value = "/verifier", method = RequestMethod.GET)
     public String verifier(){
-        return "recaptcha_test";
+        return "test/recaptcha_test";
     }
 
     @RequestMapping(value="/verifier", method= RequestMethod.POST)
