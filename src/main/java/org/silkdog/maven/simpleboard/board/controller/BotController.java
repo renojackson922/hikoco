@@ -39,7 +39,7 @@ public class BotController {
 
             hashMap.put("username", username);
             hashMap.put("password", password);
-            hashMap.put("category", 2);
+            hashMap.put("category", 3);
             hashMap.put("title", title);
             hashMap.put("detail", detail);
             hashMap.put("writedate", new Timestamp(date.getTime()));

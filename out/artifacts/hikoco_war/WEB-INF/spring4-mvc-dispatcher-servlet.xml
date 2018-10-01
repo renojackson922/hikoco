@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- JSP와 JSPX 이외의 Asset들에 정상적으로 접근할 수 있게 해줌 -->
+    <!-- 대신, web.xml에서 servlet-mapping 을 .do 에서 / 로 변경함. main 절에서 컨트롤러 참조가능  -->
+    <mvc:default-servlet-handler/>
+
+    <!-- WebConfig 설정으로 URI suffix 입력방지를 위해 주석처리 함. -->
+    <!--<mvc:annotation-driven>-->
+    <!--<mvc:message-converters>-->
+    <!--<bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter">-->
+    <!--<property name="supportedMediaTypes">-->
+    <!--<list>-->
+    <!--<value>image/jpeg</value>-->
+    <!--<value>image/png</value>-->
+    <!--</list>-->
+    <!--</property>-->
+    <!--</bean>-->
+    <!--</mvc:message-converters>-->
+    <!--</mvc:annotation-driven>-->
+
+    <!-- Set Component Package (Default) -->
+    <context:component-scan base-package="org.silkdog.maven.*"/>
+    <!-- http://www.baeldung.com/spring-httpmessageconverter-rest -->
+    <bean class="org.silkdog.maven.hikoco.webConfig.WebConfig"/>
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/admin/**"/>
+            <bean class="org.silkdog.maven.hikoco.interceptor.AuthAdminInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/login/**"/>
+            <bean class="org.silkdog.maven.hikoco.interceptor.AuthHasSessionInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/mypage/**"/>
+            <bean class="org.silkdog.maven.hikoco.interceptor.AuthInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <!--<mvc:interceptor>-->
+    <!--<mvc:mapping path="/item/itemOneline"/>-->
+    <!--<bean class="org.silkdog.maven.hikoco.interceptor.AuthInterceptor"/>-->
+    <!--</mvc:interceptor>-->
+
+    <!-- Connection Pool -->
+    <bean id="dataSourceOrigin" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql://aikocandy.cafe24.com/aikocandy?serverTimezone=UTC" />
+        <!--<property name="jdbcUrl" value="jdbc:mysql://aikocandy9.cafe24.com/aikocandy9?verifyServerCertificate=false&amp;useSSL=true&amp;serverTimezone=UTC" />-->
+        <property name="user" value="aikocandy"/>
+        <property name="password" value="ac129494"/>
+        <!--<property name="maximumActiveConnections" value="5" />-->
+        <!--<property name="maximumIdleConnections" value="3" />-->
+        <!--<property name="maximumWait" value="60000" />-->
+        <!-- validationQuery:유효 검사용 쿼리( 1개 이상의 row를 반환하는 쿼리를 넣어주면 된다. ) -->
+        <!--<property name="validationQuery" value="select 1"/>-->
+        <!--&lt;!&ndash; testWhileIdle:컨넥션이 놀고 있을때 -_-; validationQuery 를 이용해서 유효성 검사를 할지 여부. &ndash;&gt;-->
+        <!--<property name="testWhileIdle" value="true"/>-->
+        <!--&lt;!&ndash; timeBetweenEvictionRunsMillis:해당 밀리초마다 validationQuery 를 이용하여 유효성 검사 진행 &ndash;&gt;-->
+        <!--<property name="timeBetweenEvictionRunsMillis" value="7200000"/>-->
+        
+    </bean>
+
+    <!-- log4jdbc -->
+    <bean id="dataSource" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
+        <constructor-arg ref="dataSourceOrigin" />
+        <property name="logFormatter">
+            <bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
+                <property name="loggingType" value="MULTI_LINE" />
+                <!--<property name="margin" value="19" />-->
+                <property name="sqlPrefix" value="SQL:::" />
+            </bean>
+        </property>
+    </bean>
+
+    <!-- SqlSessionFactoryBean -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="classpath:/mybatis-config.xml"/>
+        <property name="typeAliases">
+            <list>
+                <!-- HIKOCO -->
+                <value>org.silkdog.maven.hikoco.member.vo.MemberVO</value>
+                <value>org.silkdog.maven.hikoco.item.vo.ItemVO</value>
+                <value>org.silkdog.maven.hikoco.category.vo.CategoryVO</value>
+                <value>org.silkdog.maven.hikoco.mycart.vo.MyCartVO</value>
+                <!-- Simpleboard -->
+                <value>org.silkdog.maven.simpleboard.board.vo.BoardVO</value>
+            </list>
+        </property>
+        <!--<property name="mapperLocations" value="classpath*:/mybatis/*.xml"/>-->
+    </bean>
+
+    <!-- TransactionManager for MyBatis -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- sqlSessionTemplate -->
+    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory"/>
+    </bean>
+
+    <!-- View Resolver -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:order="1">
+        <property name="prefix" value="/WEB-INF/view/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!--
+        -aikocandy-
+        Beans for @Autowired.
+        Caution, MyBatis requires different type to jdbcTemplate
+    -->
+    <!-- **************** HIKOCO **************** -->
+    <bean id="memberDAO" class="org.silkdog.maven.hikoco.member.dao.MemberDAOMybatis">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+    </bean>
+    <bean id="transactionDAO" class="org.silkdog.maven.hikoco.transaction.dao.TransactionDAOImpl">
+        <constructor-arg ref="dataSource"/>
+    </bean>
+    <bean id="categoryDAO" class="org.silkdog.maven.hikoco.category.dao.CategoryDAOImpl">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+    </bean>
+    <bean id="itemDAO" class="org.silkdog.maven.hikoco.item.dao.ItemDAOImpl">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+    </bean>
+    <bean id="itemOnelineDAO" class="org.silkdog.maven.hikoco.item.dao.ItemOnelineDAOImpl">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+    </bean>
+    <bean id="myCartDAO" class="org.silkdog.maven.hikoco.mycart.dao.MyCartDAOImpl">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+    </bean>
+
+    <!-- **************** Simpleboard **************** -->
+    <bean id="boardDAO" class="org.silkdog.maven.simpleboard.board.dao.BoardDAOImpl">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+    </bean>
+
+    <!-- 에러 메시지 등록 -->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>messages.error</value>
+            </list>
+        </property>
+        <property name="defaultEncoding" value="UTF-8"/>
+    </bean>
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"/>
+    </bean>
+
+    <!-- Set Annotaion-Config; Always be bottom of the xml file -->
+    <context:annotation-config />
+
+</beans>

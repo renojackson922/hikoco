@@ -46,7 +46,8 @@
 <link rel="stylesheet" href="../../resources/script/jcarousel.css">
 
 <!-- scrollreveal -->
-<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<%--Temporarily disabled--%>
+<%--<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>--%>
 
 <!-- Util.css -->
 <link rel="stylesheet" href="../../resources/script/util.css">

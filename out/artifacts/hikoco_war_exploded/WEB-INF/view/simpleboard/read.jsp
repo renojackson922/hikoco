@@ -8,6 +8,20 @@
         .col-md-2, .col-md-10{
             float:left;
         }
+        @media screen and (min-width: 0px) and (max-width: 700px) {
+            iframe{
+                width:100%;
+            }
+        }
+        /*@media screen and (min-width: 701px) and (max-width: 3000px) {*/
+            /*#view-wrapper {*/
+                /*width:80%;*/
+                /*margin:0 auto;*/
+            /*}*/
+        /*}*/
+        /*#search_module{*/
+            /*padding-top:30px;*/
+        /*}*/
     </style>
     <script>
         $(document).ready(function(){

@@ -127,6 +127,13 @@
                         <option value="3">익명게시판</option>
                         <option value="4">장터게시판</option>
                         <option value="5">신고게시판</option>
+                        <option value="6">오버워치</option>
+                        <option value="7">몬스터헌터:월드</option>
+                        <option value="8">리그오브레전드</option>
+                        <option value="9">나와라</option>
+                        <option value="10">윾게</option>
+                        <option value="11">스게</option>
+                        <option value="12">만세a</option>
                     </select>
                 </div>
                 <input type="hidden" name="category" value="${category}">

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- DAO(Interface) 아래 resultType에는 VO 지정 -->
+<mapper namespace="org.silkdog.maven.hikoco.member.dao.MemberDAO">
+    <select id="select" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        SELECT * FROM hikoco_member WHERE id = 10
+    </select>
+
+    <select id="login" parameterType="java.util.HashMap" resultType="org.silkdog.maven.hikoco.member.vo.MemberVO">
+        SELECT * FROM hikoco_member  WHERE userid = #{userid} AND password = #{password}
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="org.silkdog.maven.hikoco.member.vo.MemberVO">
+        INSERT INTO hikoco_member (userid, password, realname, nickname, tier, phone, birthday, sex, zipcode, addr1, addr2, addr3, addr4, regdate, lastlogin_datetime, lastlogin_ip) VALUES (
+        #{userid},
+        #{password},
+        #{realname},
+        #{nickname},
+        #{tier},
+        #{phone},
+        #{birthday},
+        #{sex},
+        #{zipcode},
+        #{addr1},
+        #{addr2},
+        #{addr3},
+        #{addr4},
+        #{regdate},
+        #{lastlogin_datetime},
+        #{lastlogin_ip}
+        )
+    </insert>
+
+    <insert id="saveProfileImage" parameterType="java.util.HashMap">
+        INSERT INTO hikoco_profile_image (img) VALUES (#{img})
+    </insert>
+
+    <select id="getByteImage" parameterType="int" resultType="java.util.HashMap">
+        SELECT img FROM hikoco_profile_image WHERE id = #{id}
+    </select>
+
+    <select id="getAllByteImage" resultType="java.util.HashMap">
+        SELECT img FROM hikoco_profile_image
+    </select>
+
+    <select id="isUseridExists" parameterType="String" resultType="int">
+        SELECT count(*) FROM hikoco_member WHERE userid = #{userid}
+    </select>
+
+    <select id="isNicknameExists" parameterType="String" resultType="int">
+        SELECT count(*) FROM hikoco_member WHERE nickname = #{nickname}
+    </select>
+
+    <select id="isPhoneExists" parameterType="String" resultType="int">
+        SELECT count(*) FROM hikoco_member WHERE phone = #{phone}
+    </select>
+
+    <select id="getMemberByUserid" parameterType="String" resultType="org.silkdog.maven.hikoco.member.vo.MemberMinifiedVO">
+        SELECT id, userid, password, realname, nickname FROM hikoco_member WHERE userid = #{userid}
+    </select>
+
+    <select id="getFullMemberByUserid" parameterType="String" resultType="org.silkdog.maven.hikoco.member.vo.MemberVO">
+        SELECT * FROM hikoco_member WHERE userid = #{userid}
+    </select>
+
+    <select id="getFullMemberById" parameterType="int" resultType="org.silkdog.maven.hikoco.member.vo.MemberVO">
+        SELECT * FROM hikoco_member WHERE id = #{id}
+    </select>
+
+    <select id="memberList" resultType="java.util.HashMap">
+        SELECT * FROM hikoco_member;
+    </select>
+
+    <!-- 최근 회원 다섯 명 -->
+    <select id="recentMemberList" resultType="java.util.HashMap">
+        SELECT * FROM ( SELECT * FROM hikoco_member ORDER BY id DESC LIMIT 5) mem_tmp ORDER BY id DESC
+    </select>
+
+</mapper>
