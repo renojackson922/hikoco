@@ -30,9 +30,10 @@ public class MainController {
 
     @RequestMapping("/")
     public String main(HttpServletRequest req, Model model) {
-        specialOffer1(req, model);
-        specialOffer2(req, model);
-        return "main";
+//        specialOffer1(req, model);
+//        specialOffer2(req, model);
+//        return "main";
+        return "redirect:/board/";
     }
 
     public void specialOffer1(HttpServletRequest req, Model model) {

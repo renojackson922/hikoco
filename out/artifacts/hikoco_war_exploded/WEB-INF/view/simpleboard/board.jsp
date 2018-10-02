@@ -69,6 +69,9 @@
             #main-banner__last {
                 font-size: 0.85rem;
             }
+            .bottom-wrapper{
+                margin-top: 50px !important;
+            }
         }
         /* 데스크탑 뷰 */
         @media screen and (min-width: 768px) and (max-width: 3000px) {
@@ -100,6 +103,9 @@
             }
             #main-banner__last {
                 font-size: 1.0rem;
+            }
+            .bottom-wrapper{
+                margin-top: 200px !important;
             }
         }
         .search_module{
@@ -424,7 +430,7 @@
 </div>
 <!-- End of 모바일용 스크롤링 메뉴 -->
 
-<div class="" style="padding-top:50px;">
+<div id="pc-whole-wrapper" style="padding-top:50px;">
     <div id="main-banner" class="text-center" style="height:100px; margin-bottom:30px;">
         <span id="main-banner__first" style="font-weight:300; display:block">실크독 심플보드</span>
         <span id="main-banner__last" style="font-weight:300; line-height:0px;">Silkdog Simpleboard</span>
@@ -722,6 +728,7 @@
 </body>
 <script>
     var width = $(window).width();
+    var height = $(window).height();
     $(window).on('resize', function(){
         if($(this).width() != width){
             // width = $(this).width();
@@ -729,6 +736,9 @@
             var localTmpWidth = $('#login-module-avatar').width();
             $('#login-module-avatar').attr('height', localTmpWidth + "px");
         }
+    });
+    $(window).on('resize load', function(){
+       $('#pc-whole-wrapper').css('height', (height * 0.8) );
     });
 </script>
 </html>
