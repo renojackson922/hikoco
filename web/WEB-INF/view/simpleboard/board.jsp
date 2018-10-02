@@ -5,7 +5,7 @@
 <html>
 <head>
     <title>실크독 심플보드</title>
-    <%@include file="./essential/base.jsp"%>
+    <%@ include file="./essential/base.jsp"%>
     <style>
         .table td, .table th{
             vertical-align:middle;
@@ -40,19 +40,17 @@
         @media screen and (min-width: 0px) and (max-width: 767px) {
             #view-wrapper {
                 /*display: block;*/
-                width:100%;
+                width:100% !important;
                 margin: initial;
             }
             .table-view, #menu-view{
                 padding:0 !important;
             }
-
             #menu-view{
                 position: absolute;
                 visibility: hidden;
                 overflow: hidden;
             }
-
             .pc-only{
                 position: absolute;
                 visibility: hidden;
@@ -71,20 +69,17 @@
             #main-banner__last {
                 font-size: 0.85rem;
             }
-
         }
         /* 데스크탑 뷰 */
         @media screen and (min-width: 768px) and (max-width: 3000px) {
             #view-wrapper {
-                width:90%;
+                width:80%;
                 margin:0 auto;
             }
-
             #menu-view{
                 visibility: visible;
                 overflow: initial;
             }
-
             .pc-only{
                 visibility: visible;
                 overflow: initial;
@@ -106,7 +101,6 @@
             #main-banner__last {
                 font-size: 1.0rem;
             }
-
         }
         .search_module{
             padding-top:30px;
@@ -163,6 +157,64 @@
         .list-menu-selected{
             background: #5d5d5d;
             color:#fff;
+        }
+        #menu-view-verticalScroll{
+            display: none;
+            position: absolute;
+            z-index: 10000;
+            padding:0 !important;
+        }
+        ul[id^="list-filter-vert"]{
+            margin:0;
+            padding:0;
+        }
+        #list-filter-vert__close:hover{
+            color: #a10f2c !important;
+        }
+        .slideInLeft {
+            -webkit-animation-name: slideInLeft;
+            animation-name: slideInLeft;
+            -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+        }
+        .slideOutLeft {
+            -webkit-animation-name: slideInLeft;
+            animation-name: slideInLeft;
+            -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+        }
+        #times:focus, #times:hover{
+            text-decoration: none;
+        }
+        #login-module__idnick{
+            padding:10px 5px 5px 5px;
+        }
+        #login-module__idnick > span{
+            font-size:0.8rem;
+            display:block;
+        }
+        #login-module__progress{
+            padding:2px 5px;
+        }
+        #login-module__progress > .progress > .progress-bar{
+            background-color: crimson !important;
+            font-size:0.7rem !important;
+        }
+        #login-module__motto{
+            padding:2px 5px 5px 5px;
+        }
+        #login-module__motto > p{
+            font-size:0.75rem;
+            line-height: 15px;
+            margin-top:3px;
+            margin-bottom:3px;
+        }
+        #login-module__menu > button{
+            font-size:0.75rem;
+            border-radius: 0px;
+        }
+        .login-module__idnick__icon{
+            margin-bottom:2px;
         }
     </style>
     <script>
@@ -296,42 +348,12 @@
         }
 
     </script>
-    <style>
-        #menu-view-verticalScroll{
-            display: none;
-            position: absolute;
-            z-index: 10000;
-            padding:0 !important;
-        }
-        ul[id^="list-filter-vert"]{
-            margin:0;
-            padding:0;
-        }
-        #list-filter-vert__close:hover{
-            color: #a10f2c !important;
-        }
-        .slideInLeft {
-            -webkit-animation-name: slideInLeft;
-            animation-name: slideInLeft;
-            -webkit-animation-duration: 0.5s;
-            animation-duration: 0.5s;
-        }
-        .slideOutLeft {
-            -webkit-animation-name: slideInLeft;
-            animation-name: slideInLeft;
-            -webkit-animation-duration: 0.5s;
-            animation-duration: 0.5s;
-        }
-        #times:focus, #times:hover{
-            text-decoration: none;
-        }
-    </style>
 </head>
 <body>
 <div id="shadow" style="position:fixed; display:none; z-index:9998; width:100%; height:100%; background: rgba(0,0,0,0.8)"></div>
 <button onclick="verticalScrollMenu()" id="vertical-scrollBtn" title="모바일 메뉴 보기"><i class="fas fa-bars"></i></button>
 <!-- 모바일용 스크롤링 메뉴 -->
-<div id="menu-view-verticalScroll" class="animated slideInLeft col-md-2" style="display:none; padding-right:33% !important;">
+<div id="menu-view-verticalScroll" class="animated slideInLeft col-md-2" style="display:none; padding-right:20% !important;">
     <div id="list-filter-vert__close" style="height:20px; position:fixed; top:0px; right:10px;">
         <a id="times" href="javascript:void(0)" onclick="verticalScrollRestore()"><span style="font-size:3.0rem; font-weight:200; color: #fff;text-decoration: none;">&times;</span></a>
     </div>
@@ -343,18 +365,17 @@
             </div>
         </c:when>
         <c:otherwise>
-            <div id="login-module__mobile" style="background: #ddd; height:75px;">
+            <div id="login-module__mobile" style="background: #ddd; height:75px; padding:10px;">
                 <div id="login-module__mobile__avatar" style="float:left;">
                     <img src="../../../resources/imgs/margarette.png"
                          width="50px" height="auto" style="border-radius:9999px;">
                 </div>
-                <div id="login-module__mobile__idnick" style="float:left; overflow-x:hidden; display:inline-block;">
-                    <span style="font-size:0.9rem; line-height: 15px;"><strong>마가렛트</stro ng>&nbsp;(margarette)</span>
+                <div id="login-module__mobile__idnick" style="float:left; overflow:hidden; padding-left:5px; padding-top:5px;">
+                    <span style="font-size:0.9rem; line-height: 15px;"><strong>마가렛트</strong>&nbsp;(margarette)</span>
                     <div id="login-module__mobile__icon-wrapper">
                         <span class="login-module__idnick__icon" style="font-size:0.6rem !important; border:none; padding:1px 5px; border-radius:4px;
                      background:crimson; color:#fff; display:inline-block !important;">Lv.273</span>
-                        <span class="login-module__idnick__icon"  style="font-size:0.6rem !important; border:none; padding:1px 5px; border-radius:4px;
-                     background:deepskyblue; color:#fff; display:inline-block !important;">유리천장</span>
+                            <%--<span class="login-module__idnick__icon"  style="font-size:0.6rem !important; border:none; padding:1px 5px; border-radius:4px; background:deepskyblue; color:#fff; display:inline-block !important;">유리천장</span>--%>
                         <span class="login-module__idnick__icon"  style="font-size:0.6rem !important; border:none; padding:1px 5px; border-radius:4px;
                      background:orange; color:#fff; display:inline-block !important;">겜창인생</span>
                         <span class="login-module__idnick__icon"  style="font-size:0.6rem !important; border:none; padding:1px 5px; border-radius:4px;
@@ -392,58 +413,24 @@
         <li class="list-group-item list-menu" data-value="11" onclick="moveByRef(this)">스게</li>
         <li class="list-group-item list-menu" data-value="12" onclick="moveByRef(this)">만세a</li>
     </ul>
-    <ul id="list-filter-vert4" class="list-group">
-        <div class="text-center" style="padding:10px 0 5px;">
-            <span style="font-size:1rem; color:#fff;">임시게시판</span>
-        </div>
-        <c:forEach begin="13" end="19" var="i">
-            <li class="list-group-item list-menu" data-value="${i}" onclick="moveByRef(this)">임시${i}</li>
-        </c:forEach>
-    </ul>
+    <%--<ul id="list-filter-vert4" class="list-group">--%>
+    <%--<div class="text-center" style="padding:10px 0 5px;">--%>
+    <%--<span style="font-size:1rem; color:#fff;">임시게시판</span>--%>
+    <%--</div>--%>
+    <%--<c:forEach begin="13" end="19" var="i">--%>
+    <%--<li class="list-group-item list-menu" data-value="${i}" onclick="moveByRef(this)">임시${i}</li>--%>
+    <%--</c:forEach>--%>
+    <%--</ul>--%>
 </div>
 <!-- End of 모바일용 스크롤링 메뉴 -->
 
-
-<div class="" style="padding-top:30px;">
+<div class="" style="padding-top:50px;">
     <div id="main-banner" class="text-center" style="height:100px; margin-bottom:30px;">
         <span id="main-banner__first" style="font-weight:300; display:block">실크독 심플보드</span>
         <span id="main-banner__last" style="font-weight:300; line-height:0px;">Silkdog Simpleboard</span>
     </div>
-    <style>
-        #login-module__idnick{
-            padding:10px 5px 5px 5px;
-        }
-        #login-module__idnick > span{
-            font-size:0.8rem;
-            display:block;
-        }
-        #login-module__progress{
-            padding:2px 5px;
-        }
-        #login-module__progress > .progress > .progress-bar{
-            background-color: crimson !important;
-            font-size:0.7rem !important;
-        }
-        #login-module__motto{
-            padding:2px 5px 5px 5px;
-        }
-        #login-module__motto > p{
-            font-size:0.75rem;
-            line-height: 15px;
-            margin-top:3px;
-            margin-bottom:3px;
-        }
-        #login-module__menu > button{
-            font-size:0.75rem;
-            border-radius: 0px;
-        }
-        .login-module__idnick__icon{
-            margin-bottom:2px;
-        }
-    </style>
-    <div id="view-wrapper">
-        <div id="menu-view" class="col-md-2" style="float:left;">  <!--rgba(0,0,0,0.125);-->
-
+    <div id="view-wrapper" style="width:80%; height:100%;">
+        <div id="menu-view" style="float:left; max-width:220px;">  <!--rgba(0,0,0,0.125);-->
             <c:choose>
                 <c:when test="${0 ne 0}">
                     <div id="login-module-negative" class="text-center"
@@ -459,8 +446,6 @@
                             <span>(margarette)</span>
                             <span class="login-module__idnick__icon" style="font-size:0.6rem !important; border:none; padding:1px 5px; border-radius:4px;
                      background:crimson; color:#fff; display:inline-block !important;">Lv.273</span>
-                            <span class="login-module__idnick__icon"  style="font-size:0.6rem !important; border:none; padding:1px 5px; border-radius:4px;
-                     background:deepskyblue; color:#fff; display:inline-block !important;">유리천장</span>
                             <span class="login-module__idnick__icon"  style="font-size:0.6rem !important; border:none; padding:1px 5px; border-radius:4px;
                      background:orange; color:#fff; display:inline-block !important;">겜창인생</span>
                             <span class="login-module__idnick__icon"  style="font-size:0.6rem !important; border:none; padding:1px 5px; border-radius:4px;
@@ -484,7 +469,10 @@
                 </c:otherwise>
             </c:choose>
 
-            <ul id="list-filter1" class="list-group">
+            <div style="height:10px"></div>
+
+            <!-- PC Version -->
+            <ul id="list-filter1" class="list-group" style="max-width:220px;">
                 <div class="text-center" style="padding:10px 0 5px;">
                     <span style="font-size:1rem">포말게시판</span>
                 </div>
@@ -495,7 +483,7 @@
                 <li class="list-group-item list-menu" data-value="4" onclick="moveByRef(this)">장터게시판</li>
                 <li class="list-group-item list-menu" data-value="5" onclick="moveByRef(this)">신고게시판</li>
             </ul>
-            <ul id="list-filter2" class="list-group">
+            <ul id="list-filter2" class="list-group" style="max-width:220px;">
                 <div class="text-center" style="padding:10px 0 5px;">
                     <span style="font-size:1rem">께임게시판</span>
                 </div>
@@ -504,7 +492,7 @@
                 <li class="list-group-item list-menu" data-value="8" onclick="moveByRef(this)">리그오브레전드</li>
                 <li class="list-group-item list-menu" data-value="9" onclick="moveByRef(this)">나와라</li>
             </ul>
-            <ul id="list-filter3" class="list-group">
+            <ul id="list-filter3" class="list-group" style="max-width:220px;">
                 <div class="text-center" style="padding:10px 0 5px;">
                     <span style="font-size:1rem">투데이윾머</span>
                 </div>
@@ -515,7 +503,7 @@
         </div>
 
         <!-- PC -->
-        <div class="table-view col-md-10 pc-only" style="float:left;">
+        <div class="table-view pc-only" style="width: calc(100% - 220px); padding-left:20px; float:left; overflow:hidden;">
             <div style="padding-top:10px;">
                 <img src="" class="board-banner-img img-fluid mx-auto d-block" style="display:block; margin-bottom:5px;">
                 <%--<span id="board-name" style="padding-left:10px; padding-bottom:5px; font-size:1.25rem;"></span>--%>
@@ -676,9 +664,6 @@
                 </c:choose>
                 </tbody>
             </table>
-            <style>
-
-            </style>
             <%--<div class="number_module text-center">--%>
             <%--&lt;%&ndash;<span>&#60; &#60;&#60;/span>&ndash;%&gt;--%>
             <%--<c:forEach var="j" begin="1" end="5">--%>
@@ -727,6 +712,12 @@
             </div>
         </div>
     </div><!-- End of view-wrapper-->
+    <div class="bottom-wrapper" style="margin-top:200px; height:200px;">
+        <div class="bottom-footer text-center" style="background:#111; height:100%; width:100%; padding-top:50px;">
+            <img src="../../../resources/imgs/silkdog.png" width="170px" style="display:inline-block;">
+            <span style="font-size:1.0rem; color:#fff; display:block;">SILKDOG 2016 - 2018</span>
+        </div>
+    </div>
 </div>
 </body>
 <script>

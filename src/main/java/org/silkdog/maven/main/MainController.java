@@ -83,7 +83,7 @@ public class MainController {
 //        return "board";
 //    }
 
-    @RequestMapping("/board")
+    @RequestMapping(value={"/board", "/board/"})
     public String indexNoCategory(){
 // ResponseBody 를 통해 ~~로 인해 리다이렉트 되었습니다. 등의 메시지 보낼 것.
         return "redirect:/board/c1";

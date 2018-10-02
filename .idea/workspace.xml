@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="hikoco:war exploded" />
+      <artifact name="hikoco:war" />
     </artifacts-to-build>
   </component>
   <component name="BookmarkManager">
@@ -10,302 +10,271 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e4dadd9-aa54-45fd-aee2-bdcdfaaf52b8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/lol_ge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/mhw_ge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/overwatch_ge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/json/board_category.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a4b30908-8c89-4b01-be15-ea091cc157ae.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a4b30908-8c89-4b01-be15-ea091cc157ae.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/resources/imgs/silkdog.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/applicationContext.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/c3p0.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/messages/error.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/mybatis-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/mybatis/BoardMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/mybatis/ItemCatMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/mybatis/ItemMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/mybatis/ItemOnelineMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/mybatis/MemberMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/mybatis/MyCartMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/admin/controller/AdminController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/category/controller/CategoryController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/category/dao/CategoryDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/category/dao/CategoryDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/category/vo/CategoryVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/interceptor/AuthAdminInterceptor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/interceptor/AuthHasSessionInterceptor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/interceptor/AuthInterceptor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/item/controller/AddToCartController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/item/controller/ItemController 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/item/controller/ItemController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/item/dao/ItemDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/item/dao/ItemDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/item/dao/ItemOnelineDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/item/dao/ItemOnelineDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/item/vo/ItemOnelineVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/item/vo/ItemVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/main/MainController.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/main/VerifierTestController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/main/VerifyRecaptcha.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/authenticator/Auth.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/authenticator/AuthenticationException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/authenticator/Authenticator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/authenticator/LoginCommandValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/controller/ImageUploadControllerTmp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/controller/LoginController 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/controller/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/controller/LogoutController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/controller/SignupController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/controller/showImageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/dao/MemberDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/dao/MemberDAOMybatis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/service/LoginService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/service/LoginServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/service/MemberService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/service/SignupService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/service/SignupServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/validator/LoginValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/validator/MemberValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/vo/FileVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/vo/LoginCommandVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/vo/MemberMinifiedVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/vo/MemberVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/vo/MultiFileVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/vo/ProfileImageVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/mycart/controller/MyCartController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/mycart/dao/MyCartDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/mycart/dao/MyCartDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/mycart/service/MyCartService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/mycart/service/MyCartServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/mycart/vo/MyCartVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/transaction/dao/TransactionDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/transaction/dao/TransactionDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/transaction/vo/TransactionVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/webConfig/WebConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/main/DummyController.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/main/MainController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/BotController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/EditController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/ImageUploadController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/ReadController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/WriteController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/board/dao/BoardDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/board/dao/BoardDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/board/service/BoardService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/board/service/BoardServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/board/validator/AuthValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/board/vo/BoardVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/main/MainController.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/main/RestfulController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/aopalliance-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/aspectjrt-1.9.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/aspectjtools-1.9.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/aspectjweaver-1.9.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/c3p0-0.9.5.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/classmate-1.3.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/commons-codec-1.11.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/commons-fileupload-1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/commons-io-2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/commons-logging-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/cos-09May2002.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/hamcrest-core-1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/hibernate-jpa-2.1-api-1.0.2.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/hibernate-validator-6.0.10.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/hibernate-validator-cdi-6.0.10.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/jackson-annotations-2.9.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/jackson-core-2.9.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/jackson-databind-2.9.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/javax.el-3.0.1-b09.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/javax.json-1.1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/javax.json-api-1.1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/jboss-logging-3.3.2.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/json-simple-1.1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/junit-4.12.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/log4jdbc-remix-0.2.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/mchange-commons-java-0.2.11.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/mybatis-3.4.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/mybatis-spring-1.3.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/mysql-connector-java-8.0.11.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/ojdbc6-12.1.0.1-atlassian-hosted.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/protobuf-java-2.6.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/slf4j-api-1.6.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-aop-4.3.16.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-aop-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-aspects-4.3.16.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-beans-4.3.16.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-beans-4.3.17.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-context-4.3.16.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-context-4.3.17.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-context-support-4.3.16.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-core-4.3.16.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-core-4.3.17.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-expression-4.3.16.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-expression-4.3.17.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-instrument-4.3.16.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-instrument-tomcat-4.3.16.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-jdbc-4.3.16.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-jdbc-4.3.17.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-jms-4.3.16.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-messaging-4.3.16.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-orm-4.3.16.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-oxm-4.3.16.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-security-acl-3.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-security-config-3.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-security-core-3.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-security-taglibs-3.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-security-web-3.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-test-4.3.16.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-test-5.0.6.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-test-5.0.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-tx-4.3.16.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-tx-4.3.17.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-web-4.3.16.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-web-4.3.17.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-webmvc-4.3.16.RELEASE 2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-webmvc-4.3.16.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-webmvc-4.3.17.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-webmvc-portlet-4.3.16.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/spring-websocket-4.3.16.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/lib/validation-api-2.0.1.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/spring4-mvc-dispatcher-servlet.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/admin/admin.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/admin/admin_item.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/admin/admin_market.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/admin/admin_member.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/admin/admin_member_edit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/admin/admin_tx.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/admin/auth/admin_auth.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/admin/layout/admin_footer.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/admin/layout/admin_left.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/admin/layout/admin_navbar.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/categoryTest.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/error/error404.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/error/error500.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/essential/base.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/essential/script_collection.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/image_view.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/item.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/item_detail.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/item_oneline.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/juso/Sample.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/juso/jusoPopup.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/layout/hikoco_footer.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/layout/hikoco_login_popup.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/layout/hikoco_navbar.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/login/login.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/main.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/mycart.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/rating_addon.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/signup.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/simpleboard/board.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/simpleboard/bot.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/simpleboard/edit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/simpleboard/essential/base.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/simpleboard/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/simpleboard/read.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/simpleboard/write.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/test/img_test.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/test/item_test.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/view/test/recaptcha_test.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/imgs_uploaded/2018-08-24/3f2c4711-0f53-4183-81dc-d8162b9918d316457c89cff307447.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/2080ti.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/amd-pinacle.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/bg1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/bg111.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/bg1_width.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/hbl.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/i78700k+ryzen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/i78700k+ryzen_cropped.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/img1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/img2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/img3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/img4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/img5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/img6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/items/g304.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/items/palit.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/items/rxvega56gaming.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/items/rxvega56powercolor.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/items/rxvega64gaming.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/items/rxvega64rogstrix.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/items_detail/.palit_detail.jpg.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/items_detail/.rxvega56gaming_detail.jpg.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/items_detail/.rxvega56powercolor_detail.jpg.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/items_detail/.rxvega64gaming_detail.jpg.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/items_detail/.rxvega64rogstrix_detail.jpg.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/items_detail/.vega_detail.jpg.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/items_detail/g304_detail.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/items_detail/g304_detail2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/margarette.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/neogul-bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/neogul.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/neogul_thumbnail.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/radeon-rx580-logo-960x540.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/ramsay-bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/ramsay.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/ramsay_thumbnail.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/retriever.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/rx580.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/rx580_grande.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/rxvega_title.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/ryzen-logo-300x150.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/ryzen-logo-white.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/signin-bg.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/silkdoggy.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/smoke-hero.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/sticky-shadow-top.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/stormsurge_cropped.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/stormsurge_cropped_edited.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/svg/rxvega.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/titan-v-bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/vega64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/imgs/windows-central-background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/js/angular-moment.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/js/angular-timer.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/js/humanize-duration.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/js/jquery.jcarousel.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/json/category.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/script/global.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/script/item_detail.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/script/jcarousel.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/script/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/script/non-responsive.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/script/util.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/resources/svg/loading.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war/spring4-mvc-dispatcher-servlet.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/mybatis/BoardMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/hikoco/item/controller/ItemController 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/hikoco/main/MainController.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/hikoco/member/controller/LoginController 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/main/DummyController.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/c3p0.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/messages/error.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/mybatis/ItemCatMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/mybatis/ItemMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/mybatis/ItemOnelineMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/mybatis/MemberMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/mybatis/MyCartMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/mybatis/simpleboard/BoardMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/admin/controller/AdminController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/category/controller/CategoryController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/category/dao/CategoryDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/category/dao/CategoryDAOImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/category/vo/CategoryVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/interceptor/AuthAdminInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/interceptor/AuthHasSessionInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/interceptor/AuthInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/item/controller/AddToCartController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/item/controller/ItemController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/item/dao/ItemDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/item/dao/ItemDAOImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/item/dao/ItemOnelineDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/item/dao/ItemOnelineDAOImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/item/vo/ItemOnelineVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/item/vo/ItemVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/main/VerifierTestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/main/VerifyRecaptcha.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/authenticator/Auth.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/authenticator/AuthenticationException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/authenticator/Authenticator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/authenticator/LoginCommandValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/controller/ImageUploadControllerTmp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/controller/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/controller/LogoutController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/controller/SignupController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/controller/showImageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/dao/MemberDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/dao/MemberDAOMybatis.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/service/LoginService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/service/LoginServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/service/MemberService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/service/SignupService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/service/SignupServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/validator/LoginValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/validator/MemberValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/vo/FileVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/vo/LoginCommandVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/vo/MemberMinifiedVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/vo/MemberVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/vo/MultiFileVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/member/vo/ProfileImageVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/mycart/controller/MyCartController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/mycart/dao/MyCartDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/mycart/dao/MyCartDAOImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/mycart/service/MyCartService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/mycart/service/MyCartServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/mycart/vo/MyCartVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/transaction/dao/TransactionDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/transaction/dao/TransactionDAOImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/transaction/vo/TransactionVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/hikoco/webConfig/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/main/MainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/BotController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/EditController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/ImageUploadController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/ReadController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/WriteController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/board/dao/BoardDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/board/dao/BoardDAOImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/board/service/BoardService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/board/service/BoardServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/board/validator/AuthValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/board/vo/BoardVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/classes/org/silkdog/maven/simpleboard/main/RestfulController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/aopalliance-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/aspectjrt-1.9.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/aspectjtools-1.9.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/aspectjweaver-1.9.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/c3p0-0.9.5.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/classmate-1.3.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/commons-codec-1.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/commons-fileupload-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/commons-io-2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/commons-logging-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/cos-09May2002.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/hamcrest-core-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/hibernate-jpa-2.1-api-1.0.2.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/hibernate-validator-6.0.10.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/hibernate-validator-cdi-6.0.10.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/jackson-annotations-2.9.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/jackson-core-2.9.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/jackson-databind-2.9.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/javax.el-3.0.1-b09.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/javax.json-1.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/javax.json-api-1.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/jboss-logging-3.3.2.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/json-simple-1.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/junit-4.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/log4jdbc-remix-0.2.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/mchange-commons-java-0.2.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/mybatis-3.4.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/mybatis-spring-1.3.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/mysql-connector-java-8.0.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/ojdbc6-12.1.0.1-atlassian-hosted.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/protobuf-java-2.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/slf4j-api-1.6.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-aop-4.3.16.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-aop-4.3.18.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-aspects-4.3.16.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-beans-4.3.16.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-beans-4.3.17.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-context-4.3.16.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-context-4.3.17.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-context-support-4.3.16.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-core-4.3.16.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-core-4.3.17.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-expression-4.3.16.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-expression-4.3.17.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-instrument-4.3.16.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-instrument-tomcat-4.3.16.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-jdbc-4.3.16.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-jdbc-4.3.17.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-jms-4.3.16.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-messaging-4.3.16.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-orm-4.3.16.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-oxm-4.3.16.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-security-acl-3.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-security-config-3.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-security-core-3.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-security-taglibs-3.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-security-web-3.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-test-4.3.16.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-test-5.0.8.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-tx-4.3.16.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-tx-4.3.17.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-web-4.3.16.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-web-4.3.17.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-webmvc-4.3.16.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-webmvc-4.3.17.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-webmvc-portlet-4.3.16.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/spring-websocket-4.3.16.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/lib/validation-api-2.0.1.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/spring4-mvc-dispatcher-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/admin/admin.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/admin/admin_item.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/admin/admin_market.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/admin/admin_member.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/admin/admin_member_edit.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/admin/admin_tx.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/admin/auth/admin_auth.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/admin/layout/admin_footer.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/admin/layout/admin_left.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/admin/layout/admin_navbar.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/categoryTest.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/error/error404.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/error/error500.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/essential/base.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/image_view.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/item.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/item_detail.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/item_oneline.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/juso/Sample.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/juso/jusoPopup.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/layout/hikoco_footer.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/layout/hikoco_login_popup.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/layout/hikoco_navbar.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/login/login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/main.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/mycart.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/rating_addon.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/signup.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/simpleboard/board.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/simpleboard/bot.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/simpleboard/edit.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/simpleboard/essential/base.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/simpleboard/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/simpleboard/read.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/simpleboard/write.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/test/img_test.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/test/item_test.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/view/test/recaptcha_test.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/hikoco_war.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/2080ti.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/amd-pinacle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/bg1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/bg111.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/bg1_width.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/hbl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/i78700k+ryzen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/i78700k+ryzen_cropped.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/img5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/img6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/items/g304.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/items/palit.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/items/rxvega56gaming.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/items/rxvega56powercolor.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/items/rxvega64gaming.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/items/rxvega64rogstrix.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/items_detail/.palit_detail.jpg.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/items_detail/.rxvega56gaming_detail.jpg.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/items_detail/.rxvega56powercolor_detail.jpg.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/items_detail/.rxvega64gaming_detail.jpg.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/items_detail/.rxvega64rogstrix_detail.jpg.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/items_detail/.vega_detail.jpg.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/items_detail/g304_detail.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/items_detail/g304_detail2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/lol_ge.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/margarette.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/mhw_ge.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/neogul-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/neogul.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/neogul_thumbnail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/overwatch_ge.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/radeon-rx580-logo-960x540.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/ramsay-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/ramsay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/ramsay_thumbnail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/retriever.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/rx580.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/rx580_grande.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/rxvega_title.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/ryzen-logo-300x150.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/ryzen-logo-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/signin-bg.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/silkdoggy.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/smoke-hero.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/sticky-shadow-top.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/stormsurge_cropped.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/stormsurge_cropped_edited.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/svg/rxvega.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/titan-v-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/vega64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/imgs/windows-central-background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/js/angular-moment.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/js/angular-timer.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/js/humanize-duration.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/js/jquery.jcarousel.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/json/board_category.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/json/category.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/script/global.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/script/item_detail.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/script/jcarousel.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/script/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/script/non-responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/script/util.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war/resources/svg/loading.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/main/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/main/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/BotController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/BotController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/main/MainController.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/lib/spring-test-5.0.6.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/lib/spring-webmvc-4.3.16.RELEASE 2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/essential/base.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/essential/base.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/essential/script_collection.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/simpleboard/board.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/simpleboard/board.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/simpleboard/read.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/simpleboard/read.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/simpleboard/write.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/simpleboard/write.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/imgs_uploaded/2018-08-24/3f2c4711-0f53-4183-81dc-d8162b9918d316457c89cff307447.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/simpleboard/essential/base.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/simpleboard/essential/base.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/main/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/main/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/BotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/BotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/BoardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/simpleboard/BoardMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/BoardMapper.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/main/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/main/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/BotController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/BotController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/essential/base.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/essential/base.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/board.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/board.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/read.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/read.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/write.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/write.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/essential/base.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/essential/base.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -519,92 +488,79 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1984504170">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="25" />
+          <entry key="jsp" value="1034" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="25" />
+          <entry key="JSP" value="1034" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="jsp" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JSP" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="hikoco" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/simpleboard/BoardMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/simpleboard/board.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5320">
-              <caret line="384" column="70" selection-start-line="384" selection-start-column="70" selection-end-line="384" selection-end-column="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/main.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="938">
-              <caret line="67" column="67" selection-start-line="67" selection-start-column="67" selection-end-line="67" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/messages/error.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/login/login.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="815">
-              <caret line="59" column="18" selection-end-line="91" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/main/MainController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1694">
-              <caret line="141" column="4" selection-start-line="141" selection-start-column="4" selection-end-line="141" selection-end-column="4" />
+            <state relative-caret-position="452">
+              <caret line="466" column="30" lean-forward="true" selection-start-line="466" selection-start-column="30" selection-end-line="466" selection-end-column="30" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#1;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#12406#12412#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#div#0;n#div#1;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#3;n#div#0;n#div#1;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#ul#0;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#1;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#ul#1;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#ul#2;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#ul#2;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/simpleboard/write.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1442">
-              <caret line="103" column="84" selection-start-line="103" selection-start-column="84" selection-end-line="103" selection-end-column="84" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/simpleboard/read.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -623,11 +579,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pop</find>
-      <find>var</find>
-      <find>popup</find>
-      <find>&lt;%=</find>
-      <find>test3</find>
       <find>itemOne</find>
       <find>한줄</find>
       <find>orchid</find>
@@ -653,6 +604,11 @@
       <find>#menu-view-verticalScroll</find>
       <find>menu-view-verticalScroll</find>
       <find>unpkg</find>
+      <find>padding-top</find>
+      <find>body</find>
+      <find>body style</find>
+      <find>wrapper</find>
+      <find>33%</find>
     </findStrings>
     <replaceStrings>
       <replace>../../resources/imgs/</replace>
@@ -678,7 +634,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/mybatis/MyCartMapper" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/mycart/service/AddToMyCartService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/mycart/service/AddToMyCartServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/mycart/service/MyCartService.java" />
@@ -726,8 +681,9 @@
         <option value="$PROJECT_DIR$/web/resources/json/board_category.json" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/BotController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/main/MainController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/essential/base.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/main/MainController.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/essential/base.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/board.jsp" />
       </list>
     </option>
@@ -768,11 +724,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="125" />
-    <option name="y" value="115" />
-    <option name="width" value="1270" />
-    <option name="height" value="835" />
+    <option name="y" value="56" />
+    <option name="width" value="2177" />
+    <option name="height" value="1255" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -782,9 +738,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -936,20 +889,6 @@
               <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
               <item name="hikoco" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="imgs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hikoco" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="json" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hikoco" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -958,22 +897,6 @@
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hikoco" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="essential" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hikoco" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hikoco" type="b2602c69:ProjectViewProjectNode" />
@@ -987,6 +910,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -994,7 +919,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/aikocandy/Documents/Github/hikoco/src/main/java/org/silkdog/maven/hikoco/item/controller/AddToCartController.java&#10;&gt;&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535974443136" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538412826985" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -1014,22 +939,22 @@
       <recent name="org.silkdog.maven.hikoco.mycart.controller" />
       <recent name="org.silkdog.maven.hikoco" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\intelliJ\hikoco\web\resources\imgs" />
+      <recent name="$PROJECT_DIR$/web/resources/imgs" />
+      <recent name="$PROJECT_DIR$/web/WEB-INF/view/simpleboard" />
+      <recent name="$PROJECT_DIR$/src/main/resources/mybatis" />
+      <recent name="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.silkdog.maven.hikoco.member.vo" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/mybatis/simpleboard" />
       <recent name="$PROJECT_DIR$/web/WEB-INF/view/test" />
       <recent name="$PROJECT_DIR$/web/WEB-INF/view/login" />
       <recent name="$PROJECT_DIR$/web/WEB-INF/view/admin/layout" />
       <recent name="C:\IntelliJ_STS\hikoco\web\resources\imgs\svg" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="org.silkdog.maven.hikoco.member.vo" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/resources/imgs" />
-      <recent name="$PROJECT_DIR$/web/WEB-INF/view/simpleboard" />
-      <recent name="$PROJECT_DIR$/src/main/resources/mybatis" />
-      <recent name="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard" />
-      <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1316,6 +1241,7 @@
       <workItem from="1536974076867" duration="648000" />
       <workItem from="1537095465395" duration="289000" />
       <workItem from="1537193482072" duration="1117000" />
+      <workItem from="1538410035398" duration="3259000" />
     </task>
     <servers />
   </component>
@@ -1352,7 +1278,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="881137000" />
+    <option name="totallyTimeSpent" value="884396000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1364,9 +1290,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="125" y="115" width="1270" height="835" extended-state="0" />
+    <frame x="125" y="56" width="2177" height="1255" extended-state="1" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77205884" visible="true" weight="0.23615634" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77205884" visible="true" weight="0.13745867" />
       <window_info id="Structure" order="1" sideWeight="0.22794117" side_tool="true" weight="0.1420205" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1378,7 +1304,7 @@
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" sideWeight="0.5554785" weight="0.37315437" />
       <window_info anchor="bottom" id="Run" order="3" sideWeight="0.8805341" weight="0.39179754" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.84263235" weight="0.20861372" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.84222955" weight="0.17142858" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32885906" />
@@ -1389,8 +1315,8 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32943293" />
       <window_info anchor="bottom" id="Database Changes" order="13" weight="0.32853284" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.2718272" />
-      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.15736766" side_tool="true" visible="true" weight="0.20861372" />
-      <window_info anchor="bottom" id="Inspection Results" order="16" sideWeight="0.7659722" weight="0.15947467" />
+      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.15777043" side_tool="true" weight="0.20178571" />
+      <window_info anchor="bottom" id="Inspection Results" order="16" sideWeight="0.7659722" weight="0.15892857" />
       <window_info anchor="bottom" id="Database Console" order="17" weight="0.25503355" />
       <window_info anchor="right" id="CDI" order="0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -1398,7 +1324,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.08306189" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.19933869" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Maven Projects" order="9" weight="0.32950193" />
@@ -1439,13 +1365,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/simpleboard/essential/base.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
         </state>
       </provider>
     </entry>
@@ -1673,13 +1592,7 @@
     <entry file="file://$PROJECT_DIR$/web/resources/json/category.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/resources/json/board_category.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="48" column="3" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/json/board_category.json" />
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/phrase.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
@@ -1716,69 +1629,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/simpleboard/BoardMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/simpleboard/board.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5320">
-          <caret line="384" column="70" selection-start-line="384" selection-start-column="70" selection-end-line="384" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/simpleboard/BoardMapper.xml" />
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/main.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="938">
+        <state relative-caret-position="1273">
           <caret line="67" column="67" selection-start-line="67" selection-start-column="67" selection-end-line="67" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/main/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/messages/error.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1694">
-          <caret line="141" column="4" selection-start-line="141" selection-start-column="4" selection-end-line="141" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="152">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
+        <state relative-caret-position="399">
           <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/simpleboard/write.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1442">
+        <state relative-caret-position="1957">
           <caret line="103" column="84" selection-start-line="103" selection-start-column="84" selection-end-line="103" selection-end-column="84" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/simpleboard/read.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
+        <state relative-caret-position="190">
           <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/messages/error.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/login/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="815">
-          <caret line="59" column="18" selection-end-line="91" />
+        <state relative-caret-position="391">
+          <caret line="55" column="44" lean-forward="true" selection-start-line="55" selection-start-column="44" selection-end-line="55" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/main/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="758">
+          <caret line="114" selection-start-line="114" selection-end-line="115" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/simpleboard/essential/base.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="988">
+          <caret line="52" column="70" selection-start-line="52" selection-start-column="70" selection-end-line="52" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/simpleboard/board.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="466" column="30" lean-forward="true" selection-start-line="466" selection-start-column="30" selection-end-line="466" selection-end-column="30" />
+          <folding>
+            <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#12406#12412#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#div#1;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#3;n#div#0;n#div#1;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#ul#0;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#1;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#ul#1;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#ul#2;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#ul#2;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
