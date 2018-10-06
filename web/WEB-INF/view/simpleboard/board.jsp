@@ -224,14 +224,15 @@
         }
     </style>
     <script>
-        $(document).ready(function(){
-            var url_string = window.location.href;
-            var url = new URL(url_string);
-            var category1 = url.pathname.split('/c').slice(1);
-            console.log(category1);
-            var category = category1.split('/p').slice(0);
-            var tmp = 0, tmpNum = 0;
+        var category = function(){
+            var url = new URL(window.location.href);
+            return url.pathname.split("/c")[1].split("/p")[0];
+        };
+        console.log(category());
 
+        var tmp = 0, tmpNum = 0;
+
+        $(function(){
             $('#list-filter1 .list-menu').each(function(){
                 if($(this).attr('data-value') == category) {
                     $(this).removeClass('list-menu').addClass('list-menu-selected');
@@ -395,7 +396,7 @@
         <div class="text-center" style="padding:10px 0 5px;">
             <span style="font-size:1rem; color:#fff;">포말게시판</span>
         </div>
-        <li class="list-group-item list-menu" data-value="0" onclick="moveByRef(this)">전체보기</li>
+        <%--<li class="list-group-item list-menu" data-value="0" onclick="moveByRef(this)">전체보기</li>--%>
         <li class="list-group-item list-menu" data-value="1" onclick="moveByRef(this)">자유게시판</li>
         <li class="list-group-item list-menu" data-value="2" onclick="moveByRef(this)">질문게시판</li>
         <li class="list-group-item list-menu" data-value="3" onclick="moveByRef(this)">익명게시판</li>
@@ -430,6 +431,18 @@
 </div>
 <!-- End of 모바일용 스크롤링 메뉴 -->
 
+
+<!--
+=============================================================================
+     PPPPPP      CCCCCC          VV    VV  IIIIII  EEEEEE  WW      WW
+     PP    PP   CC     CC        VV    VV    II    EE      WW      WW
+     PP    PP   CC               VV    VV    II    EE      WW      WW
+     PPPPPP     CC        ====   VV    VV    II    EEEEEE  WW  WW  WW
+     PP         CC        ====   VV    VV    II    EE      WW  WW  WW
+     PP         CC     CC         VV  VV     II    EE      WW W  W WW
+     PP          CCCCCC             VV     IIIIII  EEEEEE   WWW  WWW
+=============================================================================
+-->
 <div id="pc-whole-wrapper" style="padding-top:50px;">
     <div id="main-banner" class="text-center" style="height:100px; margin-bottom:30px;">
         <span id="main-banner__first" style="font-weight:300; display:block">실크독 심플보드</span>
@@ -445,7 +458,7 @@
                     </div>
                 </c:when>
                 <c:otherwise>
-                    <div id="login-module" style="min-height:350px; margin-top:15px; border:1px solid crimson; padding:7px 7px 15px 7px;">
+                    <div id="login-module" style="min-height:350px; border:1px solid crimson; padding:7px 7px 15px 7px;">
                         <img id="login-module-avatar" src="../../../resources/imgs/margarette.png" width="100%" height="" class="mx-auto d-block">
                         <div id="login-module__idnick">
                             <span style="line-height:10px;"><strong>마가렛트</strong></span>
@@ -482,7 +495,7 @@
                 <div class="text-center" style="padding:10px 0 5px;">
                     <span style="font-size:1rem">포말게시판</span>
                 </div>
-                <li class="list-group-item list-menu" data-value="0" onclick="moveByRef(this)">전체보기</li>
+                <%--<li class="list-group-item list-menu" data-value="0" onclick="moveByRef(this)">전체보기</li>--%>
                 <li class="list-group-item list-menu" data-value="1" onclick="moveByRef(this)">자유게시판</li>
                 <li class="list-group-item list-menu" data-value="2" onclick="moveByRef(this)">질문게시판</li>
                 <li class="list-group-item list-menu" data-value="3" onclick="moveByRef(this)">익명게시판</li>
@@ -510,10 +523,32 @@
 
         <!-- PC -->
         <div class="table-view pc-only" style="width: calc(100% - 220px); padding-left:20px; float:left; overflow:hidden;">
-            <div style="padding-top:10px;">
-                <img src="" class="board-banner-img img-fluid mx-auto d-block" style="display:block; margin-bottom:5px;">
-                <%--<span id="board-name" style="padding-left:10px; padding-bottom:5px; font-size:1.25rem;"></span>--%>
-                <%--<span id="board-name2" style="float:right; font-size:0.75rem; padding-right:5px; padding-top:10px;">총 게시글 수: 0</span>--%>
+            <div style="width:100%; height:135px;">
+                <div class="text-center" style="width:100%; height:100px; border:1px solid #5d5d5d;">
+                    <span id="banner-span" style="font-size:2.5rem; font-weight:300; line-height:100px;"></span>
+                    <script>
+                        $(function(){
+                            var jqxhr = $.getJSON('../../../resources/json/board_category.json', function() {
+                                console.log( "success" );
+                            }).done(function() {
+                                console.log( "second success" );
+                            }).fail(function() {
+                                console.log( "error" );
+                            }).always(function() {
+                                console.log( "complete" );
+                            });
+
+                            // Perform other work here ...
+                            console.log(jqxhr.responseText);
+                            // Set another completion function for the request above
+                        });
+                        // var data = $.getJSON('../../../resources/json/board_category.json');
+                        // var aka = array[category()-1].aka;
+                        // console.log(array[1].aka);
+                        // console.log(aka);
+                    </script>
+                </div>
+                <span id="board-name2" style="float:right; font-size:0.75rem; padding-right:5px; padding-top:10px;">총 게시글 수: 0</span>
             </div>
             <table class="table table-bordered" style="border-color:#ddd;">
                 <thead>
@@ -738,7 +773,7 @@
         }
     });
     $(window).on('resize load', function(){
-       $('#pc-whole-wrapper').css('height', (height * 0.8) );
+        $('#pc-whole-wrapper').css('height', (height * 0.8) );
     });
 </script>
 </html>
