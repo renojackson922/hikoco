@@ -30,7 +30,7 @@ public class ReadController {
         boardVO.setDetail(new String((boardVO.getDetail()).getBytes("8859_1"), StandardCharsets.UTF_8));
         model.addAttribute("boardVO", boardVO);
         model.addAttribute("category", category);
-        return "simpleboard/read";
+        return "simpleboard/readArticle";
     }
 
     /*

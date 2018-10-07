@@ -435,6 +435,6 @@
         </div>
     </div>
 </div>
-<%@ include file="./layout/admin_footer.jsp" %>
+<%@ include file="layout/admin_footer.jsp" %>
 </body>
 </html>

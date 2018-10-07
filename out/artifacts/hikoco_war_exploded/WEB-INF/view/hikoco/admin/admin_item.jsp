@@ -47,9 +47,9 @@
     </style>
 </head>
 <body>
-<%@include file="./layout/admin_navbar.jsp"%>
+<%@include file="layout/admin_navbar.jsp"%>
 <div style="margin:0 auto; width:100%; display:inline-block">
-    <%@include file="./layout/admin_left.jsp"%>
+    <%@include file="layout/admin_left.jsp"%>
     <div class="col-md-10" style="width:100%; margin:0; padding:10px 20px 10px 20px; float:left; overflow-x:hidden;">
         <span style="font-size:2.5em; font-weight:200;">Item Management</span>
         <hr style="margin-top:0;"/>

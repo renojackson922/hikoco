@@ -5,6 +5,11 @@
     <title>${boardVO.title}&nbsp;&#124;&nbsp;실크독 심플보드</title>
     <%@include file="./essential/base.jsp"%>
     <style>
+        * {
+            background: #000 !important;
+            color: #0f0 !important;
+            outline: solid #f00 1px !important;
+        }
         .col-md-2, .col-md-10{
             float:left;
         }
@@ -140,133 +145,133 @@
     </c:when>
 </c:choose>
 
-<%--<div class="wrapper" style="border:1px solid #ddd; margin:5px 0;">--%>
-    <%--<div style="border-bottom: 1px solid #ddd; ">--%>
-        <%--<div class="col-md-12" style="padding-top:5px; padding-bottom:5px;;background: #f5f6f6;">--%>
-            <%--<span style="font-weight:600;">${catAbbr}&nbsp;${boardVO.title}</span>--%>
-        <%--</div>--%>
-    <%--</div>--%>
-    <%--<div style="border-bottom: 1px solid #ddd; ">--%>
-        <%--<div class="col-md-12" style="padding-top:5px; padding-bottom:5px;"><span style="font-size:0.8em;">작성자: ${boardVO.username}</span></div>--%>
-    <%--</div>--%>
-    <%--<div>--%>
-        <%--&lt;%&ndash;<button id="edit" class="btn btn-primary" onclick="edit()" type="button">Edit 1</button>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<button id="save" class="btn btn-primary" onclick="save()" type="button">Save 2</button>&ndash;%&gt;--%>
-        <%--<div id="article" style="min-height:500px; border-bottom:1px solid #5d5d5d; padding:10px 15px; overflow-x: hidden;">--%>
-            <%--${boardVO.detail}--%>
-        <%--</div>--%>
+<div class="wrapper" style="border:1px solid #ddd; margin:5px 0;">
+    <div style="border-bottom: 1px solid #ddd; ">
+        <div class="col-md-12" style="padding-top:5px; padding-bottom:5px;;background: #f5f6f6;">
+            <span style="font-weight:600;">${catAbbr}&nbsp;${boardVO.title}</span>
+        </div>
+    </div>
+    <div style="border-bottom: 1px solid #ddd; ">
+        <div class="col-md-12" style="padding-top:5px; padding-bottom:5px;"><span style="font-size:0.8em;">작성자: ${boardVO.username}</span></div>
+    </div>
+    <div>
+        <%--<button id="edit" class="btn btn-primary" onclick="edit()" type="button">Edit 1</button>--%>
+        <%--<button id="save" class="btn btn-primary" onclick="save()" type="button">Save 2</button>--%>
+        <div id="article" style="min-height:500px; border-bottom:1px solid #5d5d5d; padding:10px 15px; overflow-x: hidden;">
+            ${boardVO.detail}
+        </div>
 
-        <%--&lt;%&ndash;<div id="reply" style="min-height:100px;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<ul class="list-group">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<!-- 메인댓글 -->&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<li class="list-group-item">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<!-- 사진 -->&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div style="width:15%; float:left; min-height: 130px;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<img src="../../resources/imgs/overspark.png" class="img-fluid mx-auto d-block"&ndash;%&gt;--%>
-        <%--&lt;%&ndash;style="padding:5px;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<!-- 내용 -->&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div style="float:left; width:85%; min-height:130px; padding:5px 15px 5px 15px;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<!-- 닉네임 -->&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div style="padding-bottom:2px;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<span style="font-size:0.9em;"><strong>야옹이</strong></span>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<!-- 내용 -->&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<p style="font-size:0.8em;">앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠&ndash;%&gt;--%>
-        <%--&lt;%&ndash;앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠&ndash;%&gt;--%>
+        <div id="reply" style="min-height:100px;">
+        <ul class="list-group">
+        <!-- 메인댓글 -->
+        <li class="list-group-item">
+        <!-- 사진 -->
+        <div style="width:15%; float:left; min-height: 130px;">
+        <img src="../../resources/imgs/overspark.png" class="img-fluid mx-auto d-block"
+        style="padding:5px;">
+        </div>
+        <!-- 내용 -->
+        <div style="float:left; width:85%; min-height:130px; padding:5px 15px 5px 15px;">
+        <!-- 닉네임 -->
+        <div style="padding-bottom:2px;">
+        <span style="font-size:0.9em;"><strong>야옹이</strong></span>
+        </div>
+        <!-- 내용 -->
+        <div>
+        <p style="font-size:0.8em;">앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠
+        앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠
 
-        <%--&lt;%&ndash;</p>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div class="text-right" style="display:block;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<button class="btn btn-sm btn-secondary btn-tiny">수정</button>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<button class="btn btn-sm btn-secondary btn-tiny">삭제</button>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<button class="btn btn-sm btn-secondary btn-tiny">목록</button>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</li>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<c:forEach var="i" begin="1" end="3">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<!-- 답글 -->&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<li class="list-group-item" style="padding-left:50px;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<!-- 사진 -->&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div style="width:15%; float:left; min-height: 130px;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<img src="../../resources/imgs/overspark.png" class="img-fluid mx-auto d-block"&ndash;%&gt;--%>
-        <%--&lt;%&ndash;style="padding:5px;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<!-- 내용 -->&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div style="float:left; width:85%; min-height:130px; padding:5px 15px 5px 15px;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<!-- 닉네임 -->&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div style="padding-bottom:2px;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<span style="font-size:0.9em;"><strong>야옹이</strong></span>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<!-- 내용 -->&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<p style="font-size:0.8em;">앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠&ndash;%&gt;--%>
-        <%--&lt;%&ndash;앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠&ndash;%&gt;--%>
+        </p>
+        </div>
+        <div class="text-right" style="display:block;">
+        <button class="btn btn-sm btn-secondary btn-tiny">수정</button>
+        <button class="btn btn-sm btn-secondary btn-tiny">삭제</button>
+        <button class="btn btn-sm btn-secondary btn-tiny">목록</button>
+        </div>
+        </div>
+        </li>
+        <c:forEach var="i" begin="1" end="3">
+        <!-- 답글 -->
+        <li class="list-group-item" style="padding-left:50px;">
+        <!-- 사진 -->
+        <div style="width:15%; float:left; min-height: 130px;">
+        <img src="../../resources/imgs/overspark.png" class="img-fluid mx-auto d-block"
+        style="padding:5px;">
+        </div>
+        <!-- 내용 -->
+        <div style="float:left; width:85%; min-height:130px; padding:5px 15px 5px 15px;">
+        <!-- 닉네임 -->
+        <div style="padding-bottom:2px;">
+        <span style="font-size:0.9em;"><strong>야옹이</strong></span>
+        </div>
+        <!-- 내용 -->
+        <div>
+        <p style="font-size:0.8em;">앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠
+        앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠앙메르띠
 
-        <%--&lt;%&ndash;</p>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div class="text-right" style="display:block;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<button class="btn btn-sm btn-secondary btn-tiny">수정</button>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<button class="btn btn-sm btn-secondary btn-tiny">삭제</button>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<button class="btn btn-sm btn-secondary btn-tiny">목록</button>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</li>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</c:forEach>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</ul>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div id="reply-write" style="height:132px;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<form id="form2" name="form2" action="/reply" method="POST" style="margin:0;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<!-- 사진 -->&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div style="width:15%; float:left; min-height: 130px;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<img src="../../resources/imgs/overspark.png" class="img-fluid mx-auto d-block"&ndash;%&gt;--%>
-        <%--&lt;%&ndash;style="padding:5px;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<!-- 내용 -->&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div style="float:left; width:85%; min-height:130px; padding:5px;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<!-- 닉네임 -->&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div style="padding-bottom:2px; display:inline-block;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<style>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;#inputGroup-sizing-sm1, #inputGroup-sizing-sm2{&ndash;%&gt;--%>
-        <%--&lt;%&ndash;font-size:0.8em;&ndash;%&gt;--%>
-        <%--&lt;%&ndash;}&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</style>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div id="auth-form-wrapper" class="mb-1" style="display:inline-block; width:100%;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div class="col-sm-4" style="float:left; padding-left:0;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div class="input-group input-group-sm"> <!-- mb-3; margin-bottom -->&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div class="input-group-prepend">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<span class="input-group-text" id="inputGroup-sizing-sm1">닉네임</span>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<input type="text" class="form-control" aria-label="닉네임" aria-describedby="inputGroup-sizing-sm1">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div class="col-sm-4" style="float:left; padding-left:0;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div class="input-group input-group-sm">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div class="input-group-prepend">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<span class="input-group-text" id="inputGroup-sizing-sm2">비밀번호</span>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<input type="text" class="form-control" aria-label="비밀번호" aria-describedby="inputGroup-sizing-sm2">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div id="reply-wrapper" style="display:inline-block; width:100%">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div class="form-group">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div class="col-sm-11" style="padding:0; height:87px; float:left;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<textarea class="form-control" placeholder="댓글 내용을 입력해주세요." style="height: inherit;&ndash;%&gt;--%>
-        <%--&lt;%&ndash;border-radius:0px; resize: none;"></textarea>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<div class="col-md-1" style="padding-left:5px; float:left; height:87px; float:left;">&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<button type="submit" class="btn btn-info" style="height: inherit">제출</button>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</form>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div><!-- End of Reply Wrapper-->&ndash;%&gt;--%>
-    <%--</div>--%>
-<%--</div>--%>
+        </p>
+        </div>
+        <div class="text-right" style="display:block;">
+        <button class="btn btn-sm btn-secondary btn-tiny">수정</button>
+        <button class="btn btn-sm btn-secondary btn-tiny">삭제</button>
+        <button class="btn btn-sm btn-secondary btn-tiny">목록</button>
+        </div>
+        </div>
+        </li>
+        </c:forEach>
+        </ul>
+        <div id="reply-write" style="height:132px;">
+        <form id="form2" name="form2" action="/reply" method="POST" style="margin:0;">
+        <!-- 사진 -->
+        <div style="width:15%; float:left; min-height: 130px;">
+        <img src="../../resources/imgs/overspark.png" class="img-fluid mx-auto d-block"
+        style="padding:5px;">
+        </div>
+        <!-- 내용 -->
+        <div style="float:left; width:85%; min-height:130px; padding:5px;">
+        <!-- 닉네임 -->
+        <div style="padding-bottom:2px; display:inline-block;">
+        <style>
+        #inputGroup-sizing-sm1, #inputGroup-sizing-sm2{
+        font-size:0.8em;
+        }
+        </style>
+        <div id="auth-form-wrapper" class="mb-1" style="display:inline-block; width:100%;">
+        <div class="col-sm-4" style="float:left; padding-left:0;">
+        <div class="input-group input-group-sm"> <!-- mb-3; margin-bottom -->
+        <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-sm1">닉네임</span>
+        </div>
+        <input type="text" class="form-control" aria-label="닉네임" aria-describedby="inputGroup-sizing-sm1">
+        </div>
+        </div>
+        <div class="col-sm-4" style="float:left; padding-left:0;">
+        <div class="input-group input-group-sm">
+        <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-sm2">비밀번호</span>
+        </div>
+        <input type="text" class="form-control" aria-label="비밀번호" aria-describedby="inputGroup-sizing-sm2">
+        </div>
+        </div>
+        </div>
+        <div id="reply-wrapper" style="display:inline-block; width:100%">
+        <div class="form-group">
+        <div class="col-sm-11" style="padding:0; height:87px; float:left;">
+        <textarea class="form-control" placeholder="댓글 내용을 입력해주세요." style="height: inherit;
+        border-radius:0px; resize: none;"></textarea>
+        </div>
+        <div class="col-md-1" style="padding-left:5px; float:left; height:87px; float:left;">
+        <button type="submit" class="btn btn-info" style="height: inherit">제출</button>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </form>
+        </div>
+        </div><!-- End of Reply Wrapper-->
+    </div>
+</div>
 
 <!----------->
 <div class="wrapper" style="border:1px solid #ddd; margin:5px 0;">

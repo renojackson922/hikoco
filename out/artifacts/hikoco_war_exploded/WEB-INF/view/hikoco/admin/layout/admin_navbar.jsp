@@ -2,7 +2,7 @@
 <script>
     function leaveCurrentPage(){
         if(confirm('메인 페이지로 돌아가시겠습니까?\n작업 내용은 저장되지 않습니다.')){
-                window.location.href = "/";
+                window.location.href = "../../../../..";
             }else{
                 return false;
         }

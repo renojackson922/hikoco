@@ -7,6 +7,12 @@
     <title>실크독 심플보드</title>
     <%@ include file="./essential/base.jsp"%>
     <style>
+        /** Ghost CSS Analyzer*/
+        * {
+            background: #000 !important;
+            color: #0f0 !important;
+            outline: solid #f00 1px !important;
+        }
         .table td, .table th{
             vertical-align:middle;
             font-size: 0.8rem;
@@ -38,11 +44,11 @@
         }
         /* 모바일 뷰 */
         @media screen and (min-width: 0px) and (max-width: 767px) {
-            #view-wrapper {
-                /*display: block;*/
-                width:100% !important;
-                margin: initial;
-            }
+            /*html, body{*/
+                /*margin: initial;*/
+                /*width:100%;*/
+            /*}*/
+            #view-wrapper {}
             .table-view, #menu-view{
                 padding:0 !important;
             }
@@ -75,10 +81,14 @@
         }
         /* 데스크탑 뷰 */
         @media screen and (min-width: 768px) and (max-width: 3000px) {
-            #view-wrapper {
-                width:80%;
-                margin:0 auto;
-            }
+
+            /*html, body{*/
+                /*margin:0 auto;*/
+                /*padding:0;*/
+                /*width:1000px;*/
+            /*}*/
+
+            #view-wrapper {}
             #menu-view{
                 visibility: visible;
                 overflow: initial;
@@ -297,10 +307,10 @@
 
             console.log(tmp + ' / ' + tmpNum)
 
-            history.pushState(null, null, location.href);
-            window.onpopstate = function(event) {
-                history.go(1);
-            };
+            // history.pushState(null, null, location.href);
+            // window.onpopstate = function(event) {
+            //     history.go(1);
+            // };
             $('#board-name').text(tmp);
         });
 
@@ -359,7 +369,7 @@
 <body>
 <div id="shadow" style="position:fixed; display:none; z-index:9998; width:100%; height:100%; background: rgba(0,0,0,0.8)"></div>
 <button onclick="verticalScrollMenu()" id="vertical-scrollBtn" title="모바일 메뉴 보기"><i class="fas fa-bars"></i></button>
-<!-- 모바일용 스크롤링 메뉴 -->
+<!-- 모바일용 스크롤링  메뉴 -->
 <div id="menu-view-verticalScroll" class="animated slideInLeft col-md-2" style="display:none; padding-right:20% !important;">
     <div id="list-filter-vert__close" style="height:20px; position:fixed; top:0px; right:10px;">
         <a id="times" href="javascript:void(0)" onclick="verticalScrollRestore()"><span style="font-size:3.0rem; font-weight:200; color: #fff;text-decoration: none;">&times;</span></a>
@@ -396,7 +406,6 @@
         <div class="text-center" style="padding:10px 0 5px;">
             <span style="font-size:1rem; color:#fff;">포말게시판</span>
         </div>
-        <%--<li class="list-group-item list-menu" data-value="0" onclick="moveByRef(this)">전체보기</li>--%>
         <li class="list-group-item list-menu" data-value="1" onclick="moveByRef(this)">자유게시판</li>
         <li class="list-group-item list-menu" data-value="2" onclick="moveByRef(this)">질문게시판</li>
         <li class="list-group-item list-menu" data-value="3" onclick="moveByRef(this)">익명게시판</li>
@@ -448,7 +457,7 @@
         <span id="main-banner__first" style="font-weight:300; display:block">실크독 심플보드</span>
         <span id="main-banner__last" style="font-weight:300; line-height:0px;">Silkdog Simpleboard</span>
     </div>
-    <div id="view-wrapper" style="width:80%; height:100%;">
+    <div id="view-wrapper" style="height:100%;">
         <div id="menu-view" style="float:left; max-width:220px;">  <!--rgba(0,0,0,0.125);-->
             <c:choose>
                 <c:when test="${0 ne 0}">
@@ -495,12 +504,44 @@
                 <div class="text-center" style="padding:10px 0 5px;">
                     <span style="font-size:1rem">포말게시판</span>
                 </div>
-                <%--<li class="list-group-item list-menu" data-value="0" onclick="moveByRef(this)">전체보기</li>--%>
-                <li class="list-group-item list-menu" data-value="1" onclick="moveByRef(this)">자유게시판</li>
-                <li class="list-group-item list-menu" data-value="2" onclick="moveByRef(this)">질문게시판</li>
-                <li class="list-group-item list-menu" data-value="3" onclick="moveByRef(this)">익명게시판</li>
-                <li class="list-group-item list-menu" data-value="4" onclick="moveByRef(this)">장터게시판</li>
-                <li class="list-group-item list-menu" data-value="5" onclick="moveByRef(this)">신고게시판</li>
+                <c:forEach var="i" begin="1" end="5">
+                    <li class="list-group-item list-menu" data-value="${i}" onclick="moveByRef(this)"></li>
+                </c:forEach>
+                <script>
+                    // $.each([ 52, 97 ], function( index, value ) {
+                    //     alert( index + ": " + value );
+                    // });
+
+                    // $('#list-filter-vert1 .list-menu').each(function(){
+                    //     if($(this).attr('data-value') == category) {
+                    //         $(this).removeClass('list-menu').addClass('list-menu-selected');
+                    //         tmp = $(this).text();
+                    //         tmpNum = $(this).attr('data-value');
+                    //     }
+                    // });
+
+
+                    var array = ['자유게시판', '질문게시판', '익명게시판', '장터게시판', '신고게시판'];
+                    var cnt = 1;
+                    $('.list-menu').each(function(){
+                        if($(this).attr('data-value') == cnt){
+                            $(this).text(array[cnt]);
+                        }
+                        cnt++;
+
+                    });
+
+                    // $.each(array, function(i, value){
+                    //     console.log(value);
+                    //     $('.list-menu').attr('data-value') ;
+                    // });
+                    //
+
+
+                    // for(var i = 1; i <= 5; i++){
+                    //     $('.list-menu').attr('data-value', i).innerHTML;
+                    // }
+                </script>
             </ul>
             <ul id="list-filter2" class="list-group" style="max-width:220px;">
                 <div class="text-center" style="padding:10px 0 5px;">
@@ -525,27 +566,20 @@
         <div class="table-view pc-only" style="width: calc(100% - 220px); padding-left:20px; float:left; overflow:hidden;">
             <div style="width:100%; height:135px;">
                 <div class="text-center" style="width:100%; height:100px; border:1px solid #5d5d5d;">
-                    <span id="banner-span" style="font-size:2.5rem; font-weight:300; line-height:100px;"></span>
-                    <script>
-                        $(function(){
-                            var jqxhr = $.getJSON('../../../resources/json/board_category.json', function() {
-                                console.log( "success" );
-                            }).done(function() {
-                                console.log( "second success" );
-                            }).fail(function() {
-                                console.log( "error" );
-                            }).always(function() {
-                                console.log( "complete" );
-                            });
+                    <span id="banner-span" style="font-size:2.0rem; font-weight:300; line-height:100px;"></span>
 
-                            // Perform other work here ...
-                            console.log(jqxhr.responseText);
-                            // Set another completion function for the request above
-                        });
-                        // var data = $.getJSON('../../../resources/json/board_category.json');
-                        // var aka = array[category()-1].aka;
-                        // console.log(array[1].aka);
-                        // console.log(aka);
+                    <script>
+                        var getAkaFromJSON = function(){
+                            $.getJSON('../../../resources/json/board_category.json', function(result){
+                                $.each(result, function(i, field){
+                                    if(i == category()){
+                                        console.log(field.name);
+                                        $('#banner-span').text(field.name);
+                                    }
+                                });
+                            });
+                        };
+                        getAkaFromJSON();
                     </script>
                 </div>
                 <span id="board-name2" style="float:right; font-size:0.75rem; padding-right:5px; padding-top:10px;">총 게시글 수: 0</span>
@@ -761,6 +795,29 @@
     </div>
 </div>
 </body>
+<script>
+    /*
+    $(function(){
+        var jqxhr = $.getJSON('../../../resources/json/board_category.json', function() {
+            console.log( "success" );
+        }).done(function() {
+            console.log( "second success" );
+        }).fail(function() {
+            console.log( "error" );
+        }).always(function() {
+            console.log( "complete" );
+        });
+
+        // Perform other work here ...
+        console.log(jqxhr.responseText);
+        // Set another completion function for the request above
+    });
+    // var data = $.getJSON('../../../resources/json/board_category.json');
+    // var aka = array[category()-1].aka;
+    // console.log(array[1].aka);
+    // console.log(aka);
+    */
+</script>
 <script>
     var width = $(window).width();
     var height = $(window).height();

@@ -11,7 +11,7 @@
     <style>
         body{
             position: initial;
-            background: url("../../../resources/imgs/bg1.jpg");
+            background: url("../../../../resources/imgs/bg1.jpg");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover !important;
