@@ -1,10 +1,11 @@
+<%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Angular.js -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
-<%--<script src="../../resources/js/angular-timer.min.js"></script>--%>
-<%--<script src="../../resources/js/humanize-duration.js"></script>--%>
+<script src="../../../resources/js/angular-timer.min.js"></script>
+<script src="../../../resources/js/humanize-duration.js"></script>
 
 <!-- 주의! animated 를 위해서 slim 이 아닌 uncompressed를 사용했음. 문제를 해결하면 slim 으로 바꿀 것 -->
 <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -24,9 +25,7 @@
 <%--<link rel="stylesheet" href="/public/css/fonts.css">--%>
 
 <!-- Font-Awesome -->
-<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
-        integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
-        crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
 <!-- Underscore.js -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
@@ -43,11 +42,24 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
 
 <!-- jCarousel -->
-<%--<script src="../../resources/js/jquery.jcarousel.min.js"></script>--%>
-<%--<link rel="stylesheet" href="../../resources/script/jcarousel.css">--%>
+<script src="../../../resources/js/jquery.jcarousel.min.js"></script>
+<link rel="stylesheet" href="../../../resources/script/jcarousel.css">
 
 <!-- scrollreveal -->
-<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<%--Temporarily disabled--%>
+<%--<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>--%>
 
 <!-- Util.css -->
-<%--<link rel="stylesheet" href="../../resources/script/util.css">--%>
+<link rel="stylesheet" href="../../../resources/script/util.css">
+
+<style>
+    html {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    body {
+        position: relative;
+    }
+</style>

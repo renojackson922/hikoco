@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Title</title>
-    <%@include file="./essential/base.jsp"%>
+    <%@include file="../essential/base.jsp"%>
     <script type="text/javascript">
         $(document).ready(function() {
             $('#detail').summernote({

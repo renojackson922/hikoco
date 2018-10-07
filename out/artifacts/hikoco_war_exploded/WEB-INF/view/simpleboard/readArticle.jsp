@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>${boardVO.title}&nbsp;&#124;&nbsp;실크독 심플보드</title>
-    <%@include file="./essential/base.jsp"%>
+    <%@include file="../essential/base.jsp"%>
     <script>
         $(function(){
             var imgResize = document.getElementsByTagName( 'img' )[0]; // '0' to assign the first (and only `HTML` tag)

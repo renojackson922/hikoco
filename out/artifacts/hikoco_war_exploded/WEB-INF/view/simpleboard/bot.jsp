@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>DB 입력봇</title>
-    <%@ include file="./essential/base.jsp"%>
+    <%@ include file="../essential/base.jsp"%>
 </head>
 <body>
     <div class="container">

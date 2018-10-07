@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>글쓰기</title>
-    <%@include file="./essential/base.jsp"%>
+    <%@include file="../essential/base.jsp"%>
     <script type="text/javascript">
         $(document).ready(function() {
             $('#summernote').summernote({

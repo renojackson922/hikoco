@@ -3,7 +3,7 @@
 <html ng-app="app">
 <head>
     <title>${boardVO.title}&nbsp;&#124;&nbsp;실크독 심플보드</title>
-    <%@include file="./essential/base.jsp"%>
+    <%@include file="../essential/base.jsp"%>
     <style>
         * {
             background: #000 !important;

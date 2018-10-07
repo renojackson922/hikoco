@@ -14,21 +14,19 @@ import java.util.List;
 @Controller
 @CrossOrigin(origins = "*")
 public class MainController {
+
     /** ********** HIKOCO ********** */
     @Autowired
     private ItemDAO itemDAO;
     /*  @Repository 일관성 확인할 것 */
 
-    /* ======================================================== */
-    /* ======================= 메인 페이지 ======================= */
-    /* ======================================================== */
 
     @RequestMapping("/")
     public String main(HttpServletRequest req, Model model) {
 //        specialOffer1(req, model);
 //        specialOffer2(req, model);
 //        return "main";
-        return "redirect:/board/";
+        return "/main_selection";
     }
 
     public void specialOffer1(HttpServletRequest req, Model model) {

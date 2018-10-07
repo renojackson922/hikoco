@@ -5,7 +5,7 @@
 <html>
 <head>
     <title>실크독 심플보드</title>
-    <%@ include file="./essential/base.jsp"%>
+    <%@ include file="../essential/base.jsp"%>
     <style>
         /** Ghost CSS Analyzer*/
         * {
