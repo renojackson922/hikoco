@@ -5,8 +5,8 @@
     <title>HIKOCO :: ITEM</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../resources/script/global.css">
-    <%@ include file="./essential/base.jsp" %>
+    <link rel="stylesheet" href="../../../resources/script/global.css">
+    <%@ include file="../essential/base.jsp" %>
 
     <style>
         .list-group-item:first-child {
@@ -208,7 +208,6 @@
             </div>
             <div>
                 <div class="list-group" style="margin-bottom:15px;">
-
                     <!-- a tag starts -->
                     <a href="#" class="list-group-item list-group-item-action" style="background:rgba(168,217,234,0.3)">
                         <div class="text-left">
@@ -259,11 +258,9 @@
                         </div>
                     </a>
                     <!-- a tag ends -->
-
-
                     <c:forEach var="i" items="${cnt}">
                         <!-- a tag starts -->
-                        <a href="./item_detail?item_id=${i.item_id}" class="list-group-item list-group-item-action"
+                        <a href="/shop/item/${i.item_id}" class="list-group-item list-group-item-action"
                            style="">
                             <div class="text-left">
                                 <div style="float:left; margin-right:5px;">
@@ -328,11 +325,11 @@
                                             <span class="sr-only">Previous</span>
                                         </a>
                                     </li>
-                                    <li class="page-item"><a class="page-link" href="/item?mode=${isSearch}&search_string=${searchString}&page=1">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="/item?mode=${isSearch}&search_string=${searchString}&page=2">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="/item?mode=${isSearch}&search_string=${searchString}&page=3">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="/item?mode=${isSearch}&search_string=${searchString}&page=4">4</a></li>
-                                    <li class="page-item"><a class="page-link" href="/item?mode=${isSearch}&search_string=${searchString}&page=5">5</a></li>
+                                    <li class="page-item"><a class="page-link" href="/shop/item?mode=${isSearch}&search_string=${searchString}&page=1">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="/shop/item?mode=${isSearch}&search_string=${searchString}&page=2">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="/shop/item?mode=${isSearch}&search_string=${searchString}&page=3">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="/shop/item?mode=${isSearch}&search_string=${searchString}&page=4">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="/shop/item?mode=${isSearch}&search_string=${searchString}&page=5">5</a></li>
                                     <li class="page-item">
                                         <a class="page-link" href="#" aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>
@@ -347,11 +344,11 @@
                                             <span class="sr-only">Previous</span>
                                         </a>
                                     </li>
-                                    <li class="page-item"><a class="page-link" href="/item?mode=${isSearch}&page=1">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="/item?mode=${isSearch}&page=2">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="/item?mode=${isSearch}&page=3">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="/item?mode=${isSearch}&page=4">4</a></li>
-                                    <li class="page-item"><a class="page-link" href="/item?mode=${isSearch}&page=5">5</a></li>
+                                    <li class="page-item"><a class="page-link" href="/shop/item?mode=${isSearch}&page=1">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="/shop/item?mode=${isSearch}&page=2">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="/shop/item?mode=${isSearch}&page=3">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="/shop/item?mode=${isSearch}&page=4">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="/shop/item?mode=${isSearch}&page=5">5</a></li>
                                     <li class="page-item">
                                         <a class="page-link" href="#" aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>

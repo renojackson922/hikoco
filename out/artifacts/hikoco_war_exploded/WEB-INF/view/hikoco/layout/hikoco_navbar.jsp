@@ -21,7 +21,7 @@
         </style>
         <nav id="hikoco-nav" class="navbar navbar-expand-lg navbar-dark" style="position:fixed; width:100%;">
         <!--navbar-dark-->
-        <a class="navbar-brand" href="/"><i class="fas fa-coffee"></i>&nbsp;&nbsp;</a> <!--Cafe HIKOCO-->
+        <a class="navbar-brand" href="/shop"><i class="fas fa-coffee"></i>&nbsp;&nbsp;</a> <!--Cafe HIKOCO-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -63,21 +63,21 @@
         <c:choose>
             <c:when test="${sessionScope.auth.getUserid() eq null}">
                 <li class="nav-item">
-                <a class="nav-link" href="/login">로그인</a>
+                <a class="nav-link" href="/shop/login">로그인</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="/mycart">장바구니</a>
+                <a class="nav-link" href="/shop/mycart">장바구니</a>
                 </li>
             </c:when>
             <c:otherwise>
                 <li class="nav-item">
-                <a class="nav-link" href="/admin">${sessionScope.auth.getNickname()} 님, 환영합니다.</a>
+                <a class="nav-link" href="/shop/admin">${sessionScope.auth.getNickname()} 님, 환영합니다.</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="/logout">Logout</a>
+                <a class="nav-link" href="/shop/logout">Logout</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="/mycart">My Cart</a>
+                <a class="nav-link" href="/shop/mycart">My Cart</a>
                 </li>
             </c:otherwise>
         </c:choose>
@@ -116,7 +116,7 @@
         box-shadow: 0 0 0 .2rem rgba(136,112,162,0.69);
         }
         </style>
-        <form class="form-inline my-2 my-lg-0" action="/item" method="GET">
+        <form class="form-inline my-2 my-lg-0" action="/shop/item" method="GET">
         <input type="hidden" name="mode" value="search">
         <input class="form-control mr-sm-2" type="search" placeholder="상품명 검색" aria-label="Search" name="search_string">
         <button class="btn btn-outline-purple my-2 my-sm-0" type="submit">검색</button>

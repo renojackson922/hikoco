@@ -28,7 +28,7 @@ public class ItemController {
     /* ======================================================== */
     /* ======================= 아이템 페이지 ===================== */
     /* ======================================================== */
-    @RequestMapping(value="/item", method=RequestMethod.GET)
+    @RequestMapping(value="/shop/item", method=RequestMethod.GET)
     public String item(HttpServletRequest req, Model model, @RequestParam("mode") String mode){
         String searchString = req.getParameter("search_string");
         checkItemList(req, model, mode, searchString);
@@ -36,16 +36,16 @@ public class ItemController {
 //        List<HashMap> ilistSign = itemDAO.getSignatureItems();
 //        req.setAttribute("ilistSign", ilistSign);
 //        model.addAttribute("signCnt", ilistSign);
-        return "item";
+        return "hikoco/item";
     }
 
-    @RequestMapping(value = "/item_test", method= RequestMethod.GET)
+    @RequestMapping(value = "/shop/item_test", method= RequestMethod.GET)
     public String itemTest(HttpServletRequest req, Model model){
         checkItemList(req, model);
         return "test/item_test";
     }
 
-    @RequestMapping(value="/item_test", method=RequestMethod.POST)
+    @RequestMapping(value="/shop/item_test", method=RequestMethod.POST)
     public String itemTestPro(HttpServletRequest req, Model model){
         ItemVO idto = new ItemVO();
 
@@ -66,7 +66,7 @@ public class ItemController {
         int result = itemDAO.insert(idto);
 
         checkItemList(req, model);
-        return "redirect:item_test";
+        return "redirect:/shop/item_test";
     }
 
 //    @RequestMapping(value="/item_test.do", method=RequestMethod.POST, params="action=remove")
@@ -140,7 +140,7 @@ public class ItemController {
 
     // Mimicking REST
     /** item_detail.jsp  */
-    @RequestMapping("/item/{itemId}")
+    @RequestMapping("/shop/item/{itemId}")
     public String itemDetail(@PathVariable String itemId,
                              HttpServletRequest req,
                              HttpSession session,
@@ -150,7 +150,7 @@ public class ItemController {
             ItemVO itemVO = itemDAO.select(item);
             if(itemVO == null){
                 System.out.println("[Error] Unknown itemId. Forward to Mainpage.");
-                return "redirect:/";
+                return "redirect:/shop";
             }
 
             /** Auth 권한 철저히 검증할 것. */
@@ -185,10 +185,10 @@ public class ItemController {
             // 아이템 정보 모델의 애트리뷰트로 저장.
             model.addAttribute("itemVO", itemVO);
 
-            return "item_detail";
+            return "hikoco/item_detail";
         }catch(Exception e){
             e.printStackTrace();
-            return "redirect:/";
+            return "redirect:/shop";
         }
     }
 
@@ -218,24 +218,24 @@ public class ItemController {
         }
     }
 
-    @RequestMapping(value = "/item/itemOneline", method = RequestMethod.GET)
+    @RequestMapping(value = "/shop/item/itemOneline", method = RequestMethod.GET)
     public String itemOneline(HttpSession session, Model model,
                               @RequestParam("itemId") int itemId) {
         if(session.getAttribute("auth") == null){
             // 원래는 창 종료하기
 //            resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
-            return "redirect:/";
+            return "redirect:/shop";
         }else{
             Auth auth = (Auth)session.getAttribute("auth");
             HashMap<String, Object> hashMap = new HashMap<>();
             hashMap.put("memId", auth.getId());
             hashMap.put("itemId", itemId);
             model.addAttribute("hashMap", hashMap);
-            return "item_oneline";
+            return "hikoco/item_oneline";
         }
     }
 
-    @RequestMapping(value = "/item/itemOneline", method = RequestMethod.POST)
+    @RequestMapping(value="/shop/item/itemOneline", method = RequestMethod.POST)
     public void itemOnelinePro(HttpServletRequest req,
                                @RequestParam("memId") int memId,
                                @RequestParam("itemId") int itemId,

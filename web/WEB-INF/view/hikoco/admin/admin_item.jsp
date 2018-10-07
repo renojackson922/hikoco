@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>HIKOCO :: DASHBOARD - ITEM</title>
-    <%@include file="../essential/base.jsp"%>
+    <%@include file="../../essential/base.jsp"%>
     <style>
         .list-group > a {
             font-size: 12px;

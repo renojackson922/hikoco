@@ -6,13 +6,9 @@
 <head>
     <title>실크독 심플보드</title>
     <%@ include file="../essential/base.jsp"%>
+    <%--<link href="../../../resources/script/ghostcss.css" rel="stylesheet">--%>
     <style>
-        /** Ghost CSS Analyzer*/
-        * {
-            background: #000 !important;
-            color: #0f0 !important;
-            outline: solid #f00 1px !important;
-        }
+
         .table td, .table th{
             vertical-align:middle;
             font-size: 0.8rem;
@@ -48,6 +44,9 @@
                 /*margin: initial;*/
                 /*width:100%;*/
             /*}*/
+            body{
+                width:100%;
+            }
             #view-wrapper {}
             .table-view, #menu-view{
                 padding:0 !important;
@@ -81,7 +80,10 @@
         }
         /* 데스크탑 뷰 */
         @media screen and (min-width: 768px) and (max-width: 3000px) {
-
+            body{
+                width:70%;
+                margin:0 auto;
+            }
             /*html, body{*/
                 /*margin:0 auto;*/
                 /*padding:0;*/
@@ -498,67 +500,33 @@
             </c:choose>
 
             <div style="height:10px"></div>
-
             <!-- PC Version -->
             <ul id="list-filter1" class="list-group" style="max-width:220px;">
                 <div class="text-center" style="padding:10px 0 5px;">
                     <span style="font-size:1rem">포말게시판</span>
                 </div>
-                <c:forEach var="i" begin="1" end="5">
-                    <li class="list-group-item list-menu" data-value="${i}" onclick="moveByRef(this)"></li>
+                <c:set var="array">자유게시판,질문게시판,익명게시판,장터게시판,신고게시판</c:set>
+                <c:forEach var="i" begin="0" end="4" items="${array}" varStatus="idx">
+                    <li class="list-group-item list-menu" data-value="${idx.index + 1}" onclick="moveByRef(this)">${i}</li>
                 </c:forEach>
-                <script>
-                    // $.each([ 52, 97 ], function( index, value ) {
-                    //     alert( index + ": " + value );
-                    // });
-
-                    // $('#list-filter-vert1 .list-menu').each(function(){
-                    //     if($(this).attr('data-value') == category) {
-                    //         $(this).removeClass('list-menu').addClass('list-menu-selected');
-                    //         tmp = $(this).text();
-                    //         tmpNum = $(this).attr('data-value');
-                    //     }
-                    // });
-
-
-                    var array = ['자유게시판', '질문게시판', '익명게시판', '장터게시판', '신고게시판'];
-                    var cnt = 1;
-                    $('.list-menu').each(function(){
-                        if($(this).attr('data-value') == cnt){
-                            $(this).text(array[cnt]);
-                        }
-                        cnt++;
-
-                    });
-
-                    // $.each(array, function(i, value){
-                    //     console.log(value);
-                    //     $('.list-menu').attr('data-value') ;
-                    // });
-                    //
-
-
-                    // for(var i = 1; i <= 5; i++){
-                    //     $('.list-menu').attr('data-value', i).innerHTML;
-                    // }
-                </script>
             </ul>
             <ul id="list-filter2" class="list-group" style="max-width:220px;">
                 <div class="text-center" style="padding:10px 0 5px;">
                     <span style="font-size:1rem">께임게시판</span>
                 </div>
-                <li class="list-group-item list-menu" data-value="6" onclick="moveByRef(this)">오버워치</li>
-                <li class="list-group-item list-menu" data-value="7" onclick="moveByRef(this)">몬스터헌터:월드</li>
-                <li class="list-group-item list-menu" data-value="8" onclick="moveByRef(this)">리그오브레전드</li>
-                <li class="list-group-item list-menu" data-value="9" onclick="moveByRef(this)">나와라</li>
+                <c:set var="array2">오버워치,몬스터헌터:월드,리그오브레전드,나와라</c:set>
+                <c:forEach var="i" begin="0" end="3" items="${array2}" varStatus="idx">
+                    <li class="list-group-item list-menu" data-value="${idx.index + 6}" onclick="moveByRef(this)">${i}</li>
+                </c:forEach>
             </ul>
             <ul id="list-filter3" class="list-group" style="max-width:220px;">
                 <div class="text-center" style="padding:10px 0 5px;">
                     <span style="font-size:1rem">투데이윾머</span>
                 </div>
-                <li class="list-group-item list-menu" data-value="10" onclick="moveByRef(this)">윾게</li>
-                <li class="list-group-item list-menu" data-value="11" onclick="moveByRef(this)">스게</li>
-                <li class="list-group-item list-menu" data-value="12" onclick="moveByRef(this)">만세a</li>
+                <c:set var="array3">윾게,스게,만세a</c:set>
+                <c:forEach var="i" begin="0" end="2" items="${array3}" varStatus="idx">
+                    <li class="list-group-item list-menu" data-value="${idx.index + 10}" onclick="moveByRef(this)">${i}</li>
+                </c:forEach>
             </ul>
         </div>
 

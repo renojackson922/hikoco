@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>개인정보 수정</title>
-    <%@ include file="../essential/base.jsp"%>
+    <%@ include file="../../essential/base.jsp"%>
     <style>
         body{
             position: initial;
@@ -35,7 +35,7 @@
 <div class="containter" style="padding:20px 50px 20px 50px;">
     <span style="font-size:2.0em; font-weight:300;">개인정보수정</span>
     <hr/>
-    <form id="form1" name="form1" action="/memberedit" method="POST">
+    <form id="form1" name="form1" action="/shop/memberedit" method="POST">
         <%--<span style="font-size:1.5em; font-weight:300 !important;">${memberInfo.id}</span>--%>
         <div class="form-row">
             <div class="form-group col-md-3">

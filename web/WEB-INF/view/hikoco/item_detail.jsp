@@ -15,9 +15,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HIKOCO :: MAIN</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <link rel="stylesheet" href="../../resources/script/global.css">
-    <link rel="stylesheet" href="../../resources/script/item_detail.css">
-    <%@ include file="./essential/base.jsp" %>
+    <link rel="stylesheet" href="../../../resources/script/global.css">
+    <link rel="stylesheet" href="../../../resources/script/item_detail.css">
+    <%@ include file="../essential/base.jsp" %>
     <style>
         #advertisement > a > span {
             font-size: 2.5em;
@@ -206,7 +206,7 @@
                         </div>
                         <div>
                             <!-- 옵션 -->
-                            <form id="form1" name="form1" action="/addToCart" method="POST">
+                            <form id="form1" name="form1" action="/shop/addToCart" method="POST">
                                 <div class="col-md-6" style="float:left; padding:0;">
                                     <div class="item-detail-span" style="display:inline;">
                                         <span class="item-optional strong">남은 수량:&nbsp;</span>
@@ -809,7 +809,7 @@
     });
 
     function writeOnelinePopup(param){
-        let url = "/item/itemOneline?itemId=" + param;
+        let url = "/shop/item/itemOneline?itemId=" + param;
         let width = window.screen.availWidth * 0.5;
         let height = window.screen.availHeight * 0.5;
         let pop = window.open(url, "pop", 'width='+ width + ', height='+ height + ', scrollbars=yes, resizable=yes');

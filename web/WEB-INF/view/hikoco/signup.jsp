@@ -5,12 +5,12 @@
 <html>
 <head lang="ko" xmlns="http://www.w3.org/1999/xhtml">
     <title>HIKOCO :: SIGNUP</title>
-    <%@include file="./essential/base.jsp"%>
+    <%@include file="../essential/base.jsp"%>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <style>
         body{
             position: initial;
-            background: url("../../resources/imgs/bg1_width.jpg");
+            background: url("../../../resources/imgs/bg1_width.jpg");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
@@ -102,7 +102,7 @@
         // });
         var backToHome = function(){
             if(confirm('메인 페이지로 돌아가시겠습니까?\n작업 내용은 저장되지 않습니다.')){
-                window.location="/";
+                window.location.href="/shop";
             }else{
                 return false;
             }
@@ -168,7 +168,7 @@
                 <span style="font-size:1.0em; font-weight:200; display:block; line-height:10px;">회원가입</span>
             </div>
             <div class="col-md-10 offset-md-1" style="padding-top:20px;">
-                <form id="form1" name="form1" action="/signup_new" method="POST">
+                <form id="form1" name="form1" action="/shop/signup_new" method="POST">
                     <div class="form-row">
                         <div class="form-group col-md-11">
                             <label for="userid">이메일</label>

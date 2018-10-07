@@ -5,7 +5,7 @@
 <html>
 <head>
     <title>HIKOCO :: LOGIN</title>
-    <%@include file="../essential/base.jsp"%>
+    <%@include file="../../essential/base.jsp"%>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <style>
@@ -37,7 +37,7 @@
 </head>
 <body>
 <div id="home-button" style="position:absolute; display:inline-block; top:10px; left:10px; z-index:99999;">
-    <a href="/" class="btn btn-warning"><i class="fas fa-home"></i></a>
+    <a href="/shop" class="btn btn-warning"><i class="fas fa-home"></i></a>
 </div>
     <div id="login-container" style="display:table; position:absolute; height:100%; width:100%;"> <!-- absolute, originally -->
         <div style="display:table-cell; vertical-align: middle;">
@@ -45,7 +45,7 @@
                 <div class="text-center">
                     <span style="font-size:2.8em; font-weight:200; ">CAFE HIKOCO</span>
                 </div>
-                <form id="form1" name="form1" class="col-md-10 offset-md-1" action="/login" method="POST">
+                <form id="form1" name="form1" class="col-md-10 offset-md-1" action="/shop/login" method="POST">
                     <div class="form-group">
                         <label for="userid">이메일</label>
                         <input type="email" class="form-control" id="userid" name="userid" aria-describedby="emailHelp"
@@ -81,7 +81,7 @@
                     }
                 </style>
                 <div class="login-container-sub text-center">
-                    <span>아직 회원이 아니신가요?&nbsp;&nbsp;<a href="<c:url value="/signup"/>">회원가입하기</a></span>
+                    <span>아직 회원이 아니신가요?&nbsp;&nbsp;<a href="<c:url value="/shop/signup"/>">회원가입하기</a></span>
                     <span>비밀번호를 잊어버리셨나요?&nbsp;&nbsp;<a href="#">비밀번호찾기</a></span>
                 </div>
             </div>

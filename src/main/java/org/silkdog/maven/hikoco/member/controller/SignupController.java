@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @ComponentScan
-@RequestMapping("/signup")
+@RequestMapping("/shop/signup")
 public class SignupController {
     @Autowired
     private MemberDAO memberDAO;
@@ -30,7 +30,7 @@ public class SignupController {
     }
 
     /* static final : never going to be changed */
-    private static final String SIGNUP_FORM = "signup";
+    private static final String SIGNUP_FORM = "/hikoco/signup";
 
     @GetMapping
     public String signupGET(@ModelAttribute("memberVO") MemberVO memberVO){
@@ -47,7 +47,7 @@ public class SignupController {
         signupService.signupNewMember(memberVO);
         //memberDAO.insert(memberVO);
 
-        return "redirect:/";
+        return "redirect:/shop";
     }
 }
 

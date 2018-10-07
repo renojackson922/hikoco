@@ -221,7 +221,7 @@
         </c:forEach>
         </ul>
         <div id="reply-write" style="height:132px;">
-        <form id="form2" name="form2" action="/reply" method="POST" style="margin:0;">
+        <form id="form2" name="form2" action="/shop/reply" method="POST" style="margin:0;">
         <!-- 사진 -->
         <div style="width:15%; float:left; min-height: 130px;">
         <img src="../../resources/imgs/overspark.png" class="img-fluid mx-auto d-block"

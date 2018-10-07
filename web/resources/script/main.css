@@ -5,9 +5,9 @@
 /* HIKOCO-SECTION */
 .hikoco-sec1-div {
     height: 600px;
-    /*background: url("../../resources/imgs/windows-central-background.jpg");*/
+    background: url("../../resources/imgs/windows-central-background.jpg") no-repeat 50% 0;
     background-size: cover;
-    background: #000 url("../../resources/imgs/2080ti.jpg") no-repeat 50% 0;
+    /*background: #000 url("../../resources/imgs/2080ti_commercial.jpg") no-repeat 50% 0;*/
 }
 .hikoco-sec1-span {
     color: #fff;
@@ -193,14 +193,16 @@ figure {
 }
 
 .list-action:focus, .list-action:hover {
-    color: #495057;
-    text-decoration: none;
-    background-color: #f8f9fa
+    /*color: #495057;*/
+    /*text-decoration: none;*/
+    /*background-color: #f8f9fa*/
+    outline: 1px solid crimson;
 }
 
 .list-action:active {
     color: #212529;
-    background-color: #e9ecef
+    outline: 2px solid crimson;
+    /*background-color: #e9ecef*/
 }
 .list-left, .list-right{
     display:inline-block;

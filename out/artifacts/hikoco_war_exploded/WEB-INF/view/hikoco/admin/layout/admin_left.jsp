@@ -48,11 +48,11 @@
         </div>
     </div>
     <div class="list-group">
-        <a href="/admin" class="list-group-item list-group-item-action">대시보드</a>
-        <a href="/admin/admin_member" class="list-group-item list-group-item-action">회원 관리</a>
-        <a href="/admin/admin_item" class="list-group-item list-group-item-action">물품 관리</a>
-        <a href="/admin/admin_tx" class="list-group-item list-group-item-action">거래 관리</a>
-        <a href="/admin/admin_market" class="list-group-item list-group-item-action">글 관리</a>
+        <a href="/shop/admin" class="list-group-item list-group-item-action">대시보드</a>
+        <a href="/shop/admin/admin_member" class="list-group-item list-group-item-action">회원 관리</a>
+        <a href="/shop/admin/admin_item" class="list-group-item list-group-item-action">물품 관리</a>
+        <a href="/shop/admin/admin_tx" class="list-group-item list-group-item-action">거래 관리</a>
+        <a href="/shop/admin/admin_market" class="list-group-item list-group-item-action">글 관리</a>
     </div>
     <div class="flex-test" style="border-right:1px solid #ddd;">
     </div>

@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>HIKOCO :: ADMIN</title>
-    <%@include file="../essential/base.jsp"%>
+    <%@include file="../../essential/base.jsp"%>
     <style>
         .list-group-item:first-child {
             border-top-left-radius: 0px;

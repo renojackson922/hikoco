@@ -1,6 +1,5 @@
 package org.silkdog.maven.hikoco.mycart.controller;
 
-import org.silkdog.maven.hikoco.item.dao.ItemDAO;
 import org.silkdog.maven.hikoco.member.authenticator.Auth;
 import org.silkdog.maven.hikoco.member.dao.MemberDAO;
 import org.silkdog.maven.hikoco.member.vo.MemberVO;
@@ -23,7 +22,7 @@ public class MyCartController {
     @Autowired
     private MyCartDAO myCartDAO;
 
-    @RequestMapping(value = "/mycart", method = RequestMethod.GET)
+    @RequestMapping(value = "/shop/mycart", method = RequestMethod.GET)
     public String mycart(Model model, HttpSession session, HttpServletRequest req) {
         try{
             Auth auth = (Auth)session.getAttribute("auth");
@@ -40,6 +39,6 @@ public class MyCartController {
             e.printStackTrace();
         }
 
-        return "mycart";
+        return "hikoco/mycart";
     }
 }

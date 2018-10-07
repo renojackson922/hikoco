@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("logout")
+@RequestMapping("/shop/logout")
 public class LogoutController {
     @GetMapping
     public String logout(HttpSession session) {
@@ -16,6 +16,6 @@ public class LogoutController {
             if (session.getAttribute("nickname") != null) session.removeAttribute("nickname");
         }
         session.invalidate();
-        return "redirect:/";
+        return "redirect:/shop";
     }
 }

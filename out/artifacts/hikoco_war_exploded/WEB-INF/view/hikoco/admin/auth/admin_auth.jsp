@@ -6,7 +6,7 @@
 <body>
     <div>
         <h2>비밀번호를 입력해주세요.</h2>
-        <form id="form1" name="form1" action="/admin/auth" method="POST">
+        <form id="form1" name="form1" action="/shop/admin/auth" method="POST">
             <input type="password" name="password">
             <input type="hidden" name="id" value="<%=request.getParameter("id")%>">
             <button type="submit">확인</button>

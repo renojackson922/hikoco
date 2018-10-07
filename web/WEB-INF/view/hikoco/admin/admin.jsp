@@ -97,7 +97,7 @@
                     <c:set var="veryLastCnt" value="${status.index}"/>
                 </c:forEach>
                 <span class="small-title" style="">최근 가입한 회원</span>
-                <a class="admin-a" href="/admin/admin_member" style="float:right;"><span style="font-size:0.8em;">&#43;&nbsp;more</span></a>
+                <a class="admin-a" href="/shop/admin/admin_member" style="float:right;"><span style="font-size:0.8em;">&#43;&nbsp;more</span></a>
                 <hr style="margin-top:0; display:block;"/>
                 <div style="padding:0 5px;">
                     <c:choose>

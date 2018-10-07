@@ -10,8 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 
+@Controller
 @CrossOrigin(origins = "*")
-public class MainController {
+public class HikocoMainController {
     @Autowired
     private ItemDAO itemDAO;
     /*  @Repository 일관성 확인할 것 */
@@ -20,11 +21,11 @@ public class MainController {
     /* ======================= 메인 페이지 ======================= */
     /* ======================================================== */
 
-    @RequestMapping("/")
+    @RequestMapping("/shop")
     public String main(HttpServletRequest req, Model model) {
         specialOffer1(req, model);
         specialOffer2(req, model);
-        return "main";
+        return "/hikoco/main";
     }
 
     public void specialOffer1(HttpServletRequest req, Model model) {
@@ -43,11 +44,11 @@ public class MainController {
 
     @RequestMapping("/juso")
     public String juso(){
-        return "juso/Sample";
+        return "/essential/juso/Sample";
     }
 
     @RequestMapping("/jusoPopup")
     public String jusoPopup(){
-        return "juso/jusoPopup";
+        return "/essential/juso/jusoPopup";
     }
 }

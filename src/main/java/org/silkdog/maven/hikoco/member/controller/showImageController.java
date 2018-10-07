@@ -1,21 +1,16 @@
 package org.silkdog.maven.hikoco.member.controller;
 
 import org.silkdog.maven.hikoco.member.dao.MemberDAO;
-import org.silkdog.maven.hikoco.member.service.SignupService;
-import org.silkdog.maven.hikoco.member.vo.FileVO;
-import org.silkdog.maven.hikoco.member.vo.ProfileImageVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -34,12 +29,12 @@ public class showImageController {
     private SignupService signupService;
 */
 
-    @RequestMapping(value="/viewImage")
+    @RequestMapping(value="/shop/viewImage")
     public String view(){
-        return "image_view";
+        return "hikoco/image_view";
     }
 
-    @RequestMapping(value="/getByteImage")
+    @RequestMapping(value="/shop/getByteImage")
     public ResponseEntity<byte[]> getByteImage() {
         HashMap<String, Object> map = memberDAO.getByteImage(1);
         byte[] imageContent = (byte[]) map.get("img");
@@ -48,7 +43,7 @@ public class showImageController {
         return new ResponseEntity<>(imageContent, headers, HttpStatus.OK);
     }
 
-    @RequestMapping(value="/imageDisplay", method=RequestMethod.GET)
+    @RequestMapping(value="/shop/imageDisplay", method=RequestMethod.GET)
     public void imageDisplay(@RequestParam("id") int id,
                              HttpServletRequest req, HttpServletResponse resp) throws IOException {
         HashMap<String, Object> map = memberDAO.getByteImage(id);

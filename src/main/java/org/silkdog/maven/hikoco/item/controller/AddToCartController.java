@@ -5,7 +5,6 @@ import org.silkdog.maven.hikoco.member.dao.MemberDAO;
 import org.silkdog.maven.hikoco.member.vo.MemberVO;
 import org.silkdog.maven.hikoco.mycart.dao.MyCartDAO;
 import org.silkdog.maven.hikoco.mycart.service.MyCartService;
-import org.silkdog.maven.hikoco.mycart.vo.MyCartVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
@@ -16,11 +15,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
-import java.util.Map;
 
 @Controller
 @ComponentScan
-@RequestMapping("/addToCart")
+@RequestMapping("/shop/addToCart")
 public class AddToCartController {
     @Autowired
     private MemberDAO memberDAO;
@@ -62,6 +60,6 @@ public class AddToCartController {
         }catch(Exception e){
             e.printStackTrace();
         }
-        return "redirect:mycart";
+        return "redirect:/shop/mycart";
     }
 }

@@ -52,6 +52,6 @@ public class VerifierTestController {
 //            e.printStackTrace();
 //        }
 
-        return "main";
+        return "hikoco/main";
     }
 }

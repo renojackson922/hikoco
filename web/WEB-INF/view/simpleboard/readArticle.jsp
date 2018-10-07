@@ -3,6 +3,7 @@
 <head>
     <title>${boardVO.title}&nbsp;&#124;&nbsp;실크독 심플보드</title>
     <%@include file="../essential/base.jsp"%>
+    <%--<link href="../../../resources/script/ghostcss.css" rel="stylesheet">--%>
     <script>
         $(function(){
             var imgResize = document.getElementsByTagName( 'img' )[0]; // '0' to assign the first (and only `HTML` tag)
@@ -58,11 +59,6 @@
         });
     </script>
     <style>
-        * {
-            /*background: #000 !important;*/
-            /*color: #0f0 !important;*/
-            /*outline: solid #f00 1px !important;*/
-        }
         @media screen and (min-width: 0px) and (max-width: 700px) {
             #board-view {
                 /*display: block;*/
@@ -163,9 +159,9 @@
                 ${boardVO.username}
             </div>
             <div id="readArticle-task" class="text-right" style="padding:6px 6px 6px 0; ">
-                <a class="btn btn-primary" href="#">목록</a>
-                <a class="btn btn-primary" href="#">수정</a>
-                <a class="btn btn-primary" href="#">삭제</a>
+                <a class="btn btn-primary" href="/board/c${category}">목록</a>
+                <a class="btn btn-primary" href="/board/c${category}/r${boardVO.id}/edit">수정</a>
+                <a class="btn btn-primary" href="javascript:void(0)" onclick="deleteArticle(${boardVO.id}">삭제</a>
             </div>
             <div id="readArticle-article">
                 ${boardVO.detail}
@@ -216,45 +212,47 @@
                         </div>
                     </div>
                 </div>
-                <div class="readArticle-comment__item" data-order="3" data-depth="2" style="margin-left:25px;" >
-                    <div class="readArticle-comment__item__avatar">
-                        <img src="../../../resources/imgs/margarette.png" width="100px">
-                    </div>
-                    <div class="readArticle-comment__item__comment">
-                        <div class="readArticle-comment__item__comment__userinfo">
-                            <span>ㅎㅇ</span>&nbsp;
-                            <span>(aiko****)</span>&nbsp;
-                            <span>192.168.35.159</span>
-                        </div>
-                        <div class="readArticle-comment__item__comment__detail">
-                            <p style="margin-bottom:0px;">지나치게 비꼬시네요. PPAP 떠놨고 고소하겠읍니다.</p>
-                        </div>
-                        <div class="readArticle-comment__item__comment__vote text-right">
-                            [추천] [비추] [신고]
-                        </div>
-                    </div>
-                </div>
-                <div class="readArticle-comment__item" data-order="4" data-depth="3" style="margin-left:50px;">
-                    <div class="readArticle-comment__item__avatar">
-                        <img src="../../../resources/imgs/margarette.png" width="100px">
-                    </div>
-                    <div class="readArticle-comment__item__comment">
-                        <div class="readArticle-comment__item__comment__userinfo">
-                            <span>ㅎㅇ</span>&nbsp;
-                            <span>(aiko****)</span>&nbsp;
-                            <span>192.168.35.159</span>
-                        </div>
-                        <div class="readArticle-comment__item__comment__detail">
-                            <p style="margin-bottom:0px;">엌ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 이걸로 고소를??????????? ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
-                                ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
-                                ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
-                                ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</p>
-                        </div>
-                        <div class="readArticle-comment__item__comment__vote text-right">
-                            [추천] [비추] [신고]
-                        </div>
-                    </div>
-                </div>
+                <%----%>
+                <%--<div class="readArticle-comment__item" data-order="3" data-depth="2" style="margin-left:25px;" >--%>
+                    <%--<div class="readArticle-comment__item__avatar">--%>
+                        <%--<img src="../../../resources/imgs/margarette.png" width="100px">--%>
+                    <%--</div>--%>
+                    <%--<div class="readArticle-comment__item__comment">--%>
+                        <%--<div class="readArticle-comment__item__comment__userinfo">--%>
+                            <%--<span>ㅎㅇ</span>&nbsp;--%>
+                            <%--<span>(aiko****)</span>&nbsp;--%>
+                            <%--<span>192.168.35.159</span>--%>
+                        <%--</div>--%>
+                        <%--<div class="readArticle-comment__item__comment__detail">--%>
+                            <%--<p style="margin-bottom:0px;">지나치게 비꼬시네요. PPAP 떠놨고 고소하겠읍니다.</p>--%>
+                        <%--</div>--%>
+                        <%--<div class="readArticle-comment__item__comment__vote text-right">--%>
+                            <%--[추천] [비추] [신고]--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+                <%--<div class="readArticle-comment__item" data-order="4" data-depth="3" style="margin-left:50px;">--%>
+                    <%--<div class="readArticle-comment__item__avatar">--%>
+                        <%--<img src="../../../resources/imgs/margarette.png" width="100px">--%>
+                    <%--</div>--%>
+                    <%--<div class="readArticle-comment__item__comment">--%>
+                        <%--<div class="readArticle-comment__item__comment__userinfo">--%>
+                            <%--<span>ㅎㅇ</span>&nbsp;--%>
+                            <%--<span>(aiko****)</span>&nbsp;--%>
+                            <%--<span>192.168.35.159</span>--%>
+                        <%--</div>--%>
+                        <%--<div class="readArticle-comment__item__comment__detail">--%>
+                            <%--<p style="margin-bottom:0px;">엌ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 이걸로 고소를??????????? ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ--%>
+                                <%--ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ--%>
+                                <%--ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ--%>
+                                <%--ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</p>--%>
+                        <%--</div>--%>
+                        <%--<div class="readArticle-comment__item__comment__vote text-right">--%>
+                            <%--[추천] [비추] [신고]--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+                <%----%>
                 <!-- 댓글 목록 OFF -->
                 <div id="readArticle-comment_bottom" style="padding:10px 0;">
                     <div class="readArticle-comment__item__avatar?" style="float:left; margin-right:10px;">

@@ -6,7 +6,6 @@ import org.silkdog.maven.hikoco.member.authenticator.Auth;
 import org.silkdog.maven.hikoco.member.dao.MemberDAO;
 import org.silkdog.maven.hikoco.member.vo.MemberVO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.method.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -17,11 +16,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * AuthInterceptor 기능 추가하였으니, 필요없는 인증 프로세스는 모두 삭제할 것.
@@ -35,7 +31,7 @@ public class AdminController {
     @Autowired
     private ItemDAO itemDAO;
 
-    @RequestMapping("/admin")
+    @RequestMapping("/shop/admin")
     public String admin(HttpSession session, Model model) throws Exception{
         int cnt = 0;
         int idx = 0;
@@ -65,13 +61,13 @@ public class AdminController {
             /** 최근 등록된 물품 module */
             List<ItemVO> recentItemList = itemDAO.recentItemList();
             model.addAttribute("recentItemList", recentItemList);
-            return "admin/admin";
+            return "/hikoco/admin/admin";
         }catch(NullPointerException e){
-            return "redirect:/";
+            return "redirect:/shop";
         }
     }
 
-    @RequestMapping("/admin/admin_member")
+    @RequestMapping("/shop/admin/admin_member")
     public String adminMember(HttpSession session, Model model, HttpServletRequest req) throws Exception{
         try {
             Auth auth = (Auth) session.getAttribute("auth");
@@ -79,9 +75,9 @@ public class AdminController {
             List<MemberVO> memberList = memberDAO.memberList();
             model.addAttribute("memberList", memberList);
             model.addAttribute("currentUser", currentUser);
-            return "admin/admin_member";
+            return "/hikoco/admin/admin_member";
         }catch(Exception e){
-            return "redirect:/login";
+            return "redirect:/shop/login";
         }
     }
 
@@ -98,31 +94,31 @@ public class AdminController {
         }
     }
 
-    @RequestMapping(value="/admin/admin_member/memberedit", method=RequestMethod.GET)
+    @RequestMapping(value="/shop/admin/admin_member/memberedit", method=RequestMethod.GET)
     public String memberEdit(HttpSession session, Model model){
 
         if(checkSession(session) == true){
             int id = (int)session.getAttribute("id");
             MemberVO memberVO = memberDAO.getFullMemberById(id);
             model.addAttribute("memberInfo", memberVO);
-            return "admin/admin_member_edit";
+            return "/hikoco/admin/admin_member_edit";
         }else{
-            return "redirect:/";
+            return "redirect:/shop";
         }
     }
 
-    @RequestMapping(value="/admin/admin_member/memberedit", method=RequestMethod.POST)
+    @RequestMapping(value="/shop/admin/admin_member/memberedit", method=RequestMethod.POST)
     public String memberEditPro(@ModelAttribute("memberInfo") MemberVO memberVO, Model model){
         model.addAttribute("memberInfo");
-        return "admin/admin_member_edit";
+        return "/hikoco/admin/admin_member_edit";
     }
 
-    @RequestMapping(value="/admin/auth", method=RequestMethod.GET)
+    @RequestMapping(value="/shop/admin/auth", method=RequestMethod.GET)
     public String adminAuth(){
-        return "admin/auth/admin_auth";
+        return "/hikoco/admin/auth/admin_auth";
     }
 
-    @RequestMapping(value="/admin/auth", method=RequestMethod.POST)
+    @RequestMapping(value="/shop/admin/auth", method=RequestMethod.POST)
     public String adminAuthPRO(@RequestParam("password") String password,
                                @RequestParam("id") int id,  // 수정하고자 하는 회원의 회원번호
                                HttpSession session,
@@ -140,14 +136,14 @@ public class AdminController {
 //            redirectAttributes.addFlashAttribute("id", id); // URL에 파라미터가 남지 않음.
             session.setAttribute("id", id);
 //            req.setAttribute("id", id);
-            return "redirect:/admin/admin_member/memberedit";
+            return "redirect:/shop/admin/admin_member/memberedit";
         }else {
-            return "redirect:/admin/auth";
+            return "redirect:/shop/admin/auth";
         }
     }
 
 
-    @RequestMapping("/admin/admin_item")
+    @RequestMapping("/shop/admin/admin_item")
     public String adminItem(HttpSession session, Model model){
         try {
             Auth auth = (Auth) session.getAttribute("auth");
@@ -157,9 +153,9 @@ public class AdminController {
 //            List<MemberVO> memberList = memberDAO.memberList();
 //            model.addAttribute("memberList", memberList);
             model.addAttribute("currentUser", currentUser);
-            return "admin/admin_item";
+            return "/hikoco/admin/admin_item";
         }catch(Exception e){
-            return "redirect:/login";
+            return "redirect:/shop/login";
         }
     }
 
@@ -167,26 +163,26 @@ public class AdminController {
 
 
 
-    @RequestMapping("/admin_tx")
+    @RequestMapping("/shop/admin_tx")
     public String adminTx(Model model, HttpServletRequest req) {
 //        TransactionDTO tdto = transactionDAO.selectOne();
 //        req.setAttribute("tdto", tdto);
 //        model.addAttribute("adminTx","adminTx");
-        return "admin/admin_tx";
+        return "/hikoco/admin/admin_tx";
     }
 
-    @RequestMapping(value = "/admin_market", method = RequestMethod.GET)
+    @RequestMapping(value = "/shop/admin_market", method = RequestMethod.GET)
     public String adminMarket() {
 //        int count = categoryDAO.count();
 //        List<CategoryDTO> clist = categoryDAO.list();
 //        req.setAttribute("count", count);
 //        req.setAttribute("clist", clist);
-        return "admin/admin_market";
+        return "/hikoco/admin/admin_market";
     }
 
-    @RequestMapping(value = "/admin_market", method = RequestMethod.POST)
+    @RequestMapping(value = "/shop/admin_market", method = RequestMethod.POST)
     public String adminMarketSubmit() {
-        return "admin/admin_market";
+        return "/hikoco/admin/admin_market";
     }
 
 }

@@ -1,12 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<html ng-cloak ng-app="app">
+<html>
 <head>
     <title>HIKOCO :: MAIN</title>
     <!-- MAIN 화면 전용 CSS -->
-    <link rel="stylesheet" href="../../resources/script/main.css">
-    <%@ include file="./essential/base.jsp" %>
+    <link rel="stylesheet" href="../../../resources/script/main.css">
+    <%@ include file="../essential/base.jsp" %>
     <script type="text/javascript">
         (function ($) {
             $(function () {
@@ -62,28 +62,8 @@
         })(jQuery);
 
     </script>
-
-    <script type="text/javascript">
-        //underscore.js URL parsing code
-        var _GET = _.object(_.compact(_.map(location.search.slice(1).split('&'), function (item) {
-            if (item) item = item.split('=');
-            if (item[1]) item[1] = decodeURIComponent(item[1]);
-            return item;
-        })));
-
-        var app = angular.module('app', []);
-
-        // 다른 도메인의 소스 불러오기 필터
-        app.filter('trustUrl', function ($sce) {
-            return function (url) {
-                return $sce.trustAsResourceUrl(url);
-            }
-        });
-
-        app.controller('ctrl', function ($scope, $http, $interval, $timeout) {});
-    </script>
 </head>
-<body ng-controller="ctrl">
+<body>
 <!-- 고정 Footer 간의 간격 -->
 <div id="show">
     <!-- navbar -->
@@ -102,23 +82,13 @@
     <section id="hikoco-sec1">
         <div class="hikoco-sec1-div">
             <div class="hikoco-sec1-title col-md-8 offset-md-2 text-right" style="padding:200px 0">
-                <span id="catchphrase" style="font-size:3.0em; color:#fff; font-weight:400;
-                background: rgb(118,185,0); padding:0 15px 0 20px; letter-spacing: 2px;">GEFORCE RTX™</span><br>
-                <span style="font-size:1.5em; color:#fff; font-weight:200;
-                background: rgb(118,185,0); padding:0 15px 0 15px;letter-spacing: 3px;">GRAPHICS REINVENTED</span><br>
-                <span style="font-size:1.2em; color:#fff; font-weight:200;
-                background: rgb(118,185,0); padding:0 15px 0 15px;letter-spacing: 2px;">PRE-ORDER NOW</span>
+                <%--<span id="catchphrase" style="font-size:3.0em; color:#fff; font-weight:400;--%>
+                <%--background: rgb(118,185,0); padding:0 15px 0 20px; letter-spacing: 2px;">GEFORCE RTX™</span><br>--%>
+                <%--<span style="font-size:1.5em; color:#fff; font-weight:200;--%>
+                <%--background: rgb(118,185,0); padding:0 15px 0 15px;letter-spacing: 3px;">GRAPHICS REINVENTED</span><br>--%>
+                <%--<span style="font-size:1.2em; color:#fff; font-weight:200;--%>
+                <%--background: rgb(118,185,0); padding:0 15px 0 15px;letter-spacing: 2px;">PRE-ORDER NOW</span>--%>
             </div>
-            <%--
-            <div class="hikoco-sec1-title col-md-8 offset-md-2 text-center" style="padding:200px 0">
-                <span style="font-size:3.0em; color:#fff; font-weight:200;
-                background: rgba(0,0,0,0.7); padding:0 15px 0 15px;">번개는 항상 두 번 친다!</span><br>
-                <span style="font-size:1.5em; color:#fff; font-weight:200;
-                background: rgba(0,0,0,0.7); padding:0 15px 0 15px;">Lightning CAN strike twice!</span><br>
-                <span style="font-size:1.2em; color:#fff; font-weight:200;
-                background: rgba(0,0,0,0.7); padding:0 15px 0 15px;">"The coin? You used me for THE COIN!?"</span>
-            </div>
-            --%>
         </div>
     </section>
 
@@ -144,7 +114,7 @@
                     <div class="jcarousel">
                         <ul class="jcarousel-ul">
                             <c:forEach var="i" items="${cntRyzen}">
-                                <li class="unselectable" onclick="window.location.href='item/${i.item_id}'" style="padding:0 !important;">
+                                <li class="unselectable" onclick="window.location.href='/shop/item/${i.item_id}'" style="padding:0 !important;">
                                     <figure>
                                         <div style="height:90% !important; padding:10px;"> <!--padding:20px 25px 5px 25px; -->
                                             <img class="center" src="${i.item_pic}"
@@ -198,11 +168,8 @@
                         <c:otherwise></c:otherwise>
                     </c:choose>
                 </div>
-
             </c:otherwise>
         </c:choose>
-
-
     </section>
 
     <!-- section 3 -->
@@ -220,7 +187,7 @@
                         <div class="intro-box" style="display:inline-block">
                             <h1 style="letter-spacing: 2px; font-weight: 200; border:1px solid #000; display:inline-block; padding:5px 17px 5px 17px; background: crimson;">
                                 EXTREME GAMING ENV.</h1>
-                            <img src="../../resources/imgs/ryzen-logo-white.png" width="200px"
+                            <img src="../../../resources/imgs/ryzen-logo-white.png" width="200px"
                                  style="padding-left:57px;">
                         </div>
                     </div>
@@ -241,7 +208,7 @@
                         <ul class="list-ul">
                             <c:forEach var="i" items="${cntRyzen}">
                                 <li class="list-action unselectable"
-                                    onclick="window.location.href='item/${i.item_id}'"> <!-- TEST -->
+                                    onclick="window.location.href='/shop/item/${i.item_id}'"> <!-- TEST -->
                                     <figure>
                                         <div class="fig-top" style="padding:20px 25px 5px 25px;">
                                             <img class="center" src="${i.item_pic}"
@@ -290,13 +257,13 @@
                     <div class="intro-cell">
                         <div class="intro-box unselectable">
                             <div class="col-md-6" style="display: block; float:left;">
-                                <img src="../../resources/imgs/svg/rxvega.svg" alt style="display:block;">
+                                <img src="../../../resources/imgs/svg/rxvega.svg" alt style="display:block;">
                                 <p style="font-size:2em; font-weight:200; text-align:left; color:#fff; padding-top:15px;">
                                     <strong>DEFY CONVENTION.</strong> Don’t follow. Lead. Choose Radeon RX Vega graphics
                                     & Radeon™ FreeSync technology.</p>
                             </div>
                             <div class="col-md-6" style="display: block; float:left;">
-                                <img src="../../resources/imgs/vega64.png" width="100%" alt
+                                <img src="../../../resources/imgs/vega64.png" width="100%" alt
                                      style="display:block; opacity: 0.6;">
                             </div>
                             <%--<h1>역습의 람쥐썬더</h1>--%>
@@ -323,7 +290,7 @@
                         <ul class="list-ul__left">
                             <c:forEach var="i" items="${cntVega}">
                                 <li class="list-action unselectable"
-                                    onclick="window.location.href='item/${i.item_id}'">
+                                    onclick="window.location.href='/shop/item/${i.item_id}'">
                                     <figure>
                                         <div class="fig-top" style="padding:20px 25px 5px 25px;">
                                             <img class="center" src="${i.item_pic}"
@@ -351,7 +318,7 @@
                             </c:forEach>
                             <c:forEach var="i" items="${cntVega}">
                                 <li class="list-action unselectable"
-                                    onclick="window.location.href='item/${i.item_id}'">
+                                    onclick="window.location.href='/shop/item/${i.item_id}'">
                                     <figure>
                                         <div class="fig-top" style="padding:20px 25px 5px 25px;">
                                             <img class="center" src="${i.item_pic}"

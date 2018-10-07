@@ -4,7 +4,7 @@
 <html ng-cloak ng-app="app">
 <head>
     <title>HIKOCO :: My Cart</title>
-    <%@include file="./essential/base.jsp"%>
+    <%@include file="../essential/base.jsp"%>
     <script type="text/javascript">
         //underscore.js URL parsing code
 
@@ -104,7 +104,7 @@
                             <tr>
                                 <th scope="row"><input type="checkbox"></th>
                                 <td class="text-left" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"> <!-- overflow: hidden; text-overflow: ellipsis; white-space: nowrap; -->
-                                    <img src="../../resources/imgs/items/palit.jpg" width="70px"
+                                    <img src="../../../resources/imgs/items/palit.jpg" width="70px"
                                          style="border:1px solid #ddd; margin-right:25px;">
                                         ${i.item_title}&nbsp;&nbsp;<a class="table-magnify" href="/item/${i.item_id}"><i class="fas fa-search"></i></a>
                                 </td>

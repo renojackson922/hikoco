@@ -32,7 +32,7 @@
         display: block;
     }
 </style>
-<a class="btn btn-info" href="/">홈으로</a>
+<a class="btn btn-info" href="/shop">홈으로</a>
 <div class="container" style="width:50%; margin:0 auto;">
     <form id="form1" name="form1" action="./item_test" method="POST">
         <div class="form-group">

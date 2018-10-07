@@ -1,8 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Title</title>
-    <%@ include file="./essential/base.jsp"%>
+    <title>Silkdog</title>
+    <%@ include file="essential/base.jsp"%>
     <%--<link href="../../resources/script/ghostcss.css" rel="stylesheet" crossorigin="anonymous">--%>
     <style>
         #main{
@@ -47,10 +47,12 @@
             -o-user-select: none;
         }
         #type-a:hover{
-            border:2px solid crimson;
+            border:0px;
+            outline:2px solid crimson;
         }
         #type-b:hover{
-            border:2px solid deepskyblue;
+            border:0px;
+            outline:2px solid deepskyblue;
         }
 
         /*
@@ -74,6 +76,14 @@
         <div id="main-title">
             <span style="font-size:2.5rem; font-weight:300;">실크독 사이트맵</span>
             <span style="font-size:0.9rem; font-weight:400;">클릭하면 해당 사이트로 이동합니다</span>
+        </div>
+        <div id="main-announce">
+            <div class="text-center" style="height:150px; width:100%; margin-top:25px;">
+                <div style="background:#dc6d7d; height:100%; padding-top:30px;">
+                    <span style="font-size:2.0rem; color:#fff; display:block; margin-bottom:10px;"><i class="fas fa-exclamation-triangle"></i></span>
+                    <span style="font-size:1.35rem; color:#fff; display:block;">게시판과 쇼핑몰 통합작업으로 인해 일부 서비스에 문제가 발생하고 있습니다.</span>
+                </div>
+            </div>
         </div>
         <div id="main-content">
             <div id="main-content__button">

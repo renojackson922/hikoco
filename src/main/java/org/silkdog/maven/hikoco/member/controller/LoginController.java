@@ -18,11 +18,11 @@ import javax.validation.Valid;
 
 @Controller
 @ComponentScan
-@RequestMapping("/login")
+@RequestMapping("/shop/login")
 public class LoginController {
     @Autowired
     private Authenticator authenticator;
-    private static final String LOGIN_FORM = "login/login";
+    private static final String LOGIN_FORM = "/hikoco/login/login";
 
     /**
      * Service###impl의 @Service 어노테이션과, 컨트롤러의 ComponentScan의 합작.
@@ -31,7 +31,7 @@ public class LoginController {
 
     @GetMapping
     public String login(@ModelAttribute("loginCommandVO") LoginCommandVO loginCommandVO) {
-        return "login/login";
+        return "/hikoco/login/login";
     }
 
     @PostMapping
@@ -45,7 +45,7 @@ public class LoginController {
             Auth auth = authenticator.authenticate(loginCommandVO.getUserid(), loginCommandVO.getPassword());
             HttpSession session = req.getSession();
             session.setAttribute("auth", auth);
-            return "redirect:/";
+            return "redirect:/shop";
         }catch(AuthenticationException ae){
             errors.rejectValue("password","invalidUseridOrPassword");
             return LOGIN_FORM;

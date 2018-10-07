@@ -3,7 +3,7 @@
 <head>
     <title>한줄평 작성</title>
     <script src="http://malsup.github.com/jquery.form.js"></script>
-    <%@include file="./essential/base.jsp"%>
+    <%@include file="../essential/base.jsp"%>
     <style>
         label{
             font-size:0.8em;
