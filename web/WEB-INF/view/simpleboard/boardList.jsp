@@ -1,13 +1,9 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
 <!-- PC -->
-<div class="table-view pc-only" style="width: calc(100% - 220px); padding-left:20px; float:left; overflow:hidden;">
+<div class="table-view pc-only" style="width: calc(100% - 220px); padding-left:20px; float:left; overflow-x:hidden;">
     <div style="width:100%; height:135px;">
         <div class="text-center" style="width:100%; height:100px; border:1px solid #5d5d5d;">
             <span id="banner-span" style="font-size:2.0rem; font-weight:300; line-height:100px;"></span>
-
             <script>
                 var getAkaFromJSON = function(){
                     $.getJSON('../../../resources/json/board_category.json', function(result){
@@ -186,6 +182,8 @@
     <%--</c:forEach>--%>
     <%--<span>&#62; &#62;&#62;</span>--%>
     <%--</div>--%>
+
+	<!-- Mobile Pagination -->
     <div class="pagination_module text-center">
         <nav aria-label="Page navigation example" style="display:inline-block;">
             <ul class="pagination">

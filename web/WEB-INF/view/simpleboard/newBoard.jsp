@@ -13,8 +13,10 @@
 <body>
 	<div id="show">
 		<%@ include file="layout/banner.jsp"%>
-		<%@ include file="layout/menu.jsp"%>
-		<%@ include file="./boardList.jsp"%>
+		<div id="board_list" style="display:block; width:100%; height:100%;">
+			<%@ include file="layout/menu.jsp"%>
+			<%@ include file="./boardList.jsp"%>
+		</div>
 		<%@ include file="layout/footer.jsp"%>
 	</div>
 </body>

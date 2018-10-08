@@ -96,6 +96,6 @@ public class SimpleboardMainController {
         model.addAttribute("boardVOList", boardVOList);
         model.addAttribute("category", category);
         model.addAttribute("currentPage", page);
-        return "simpleboard/board";
+        return "simpleboard/newBoard";
     }
 }
