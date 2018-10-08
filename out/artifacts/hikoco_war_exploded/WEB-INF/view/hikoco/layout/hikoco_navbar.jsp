@@ -18,10 +18,14 @@
         /* Highest z-index value */
         z-index: 2147483646 !important;
         }
+        #navbar-gohome:hover{
+            color:greenyellow;
+        }
         </style>
         <nav id="hikoco-nav" class="navbar navbar-expand-lg navbar-dark" style="position:fixed; width:100%;">
         <!--navbar-dark-->
-        <a class="navbar-brand" href="/shop"><i class="fas fa-coffee"></i>&nbsp;&nbsp;</a> <!--Cafe HIKOCO-->
+        <a class="navbar-brand" href="/shop" title="히코코 메인화면"><i class="fas fa-coffee" style="color:crimson;"></i>&nbsp;&nbsp;</a> <!--Cafe HIKOCO-->
+        <a id="navbar-gohome" class="navbar-brand" href="/" title="실크독 사이트로 돌아가기"><i class="fas fa-arrow-alt-circle-left"></i>&nbsp;&nbsp;</a> <!--Cafe HIKOCO-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

@@ -101,6 +101,9 @@
           <element id="library" level="project" name="Maven: com.servlets:cos:09May2002" />
           <element id="library" level="project" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.2.Final" />
           <element id="library" level="project" name="Maven: org.springframework:spring-test:5.0.8.RELEASE" />
+          <element id="library" level="project" name="Maven: javax.json:javax.json-api:1.1.3" />
+          <element id="library" level="project" name="Maven: org.glassfish:javax.json:1.1.3" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-test:5.1.0.RELEASE" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="hikoco/web/Web" />

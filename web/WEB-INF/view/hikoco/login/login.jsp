@@ -43,7 +43,7 @@
         <div style="display:table-cell; vertical-align: middle;">
             <div class="col-md-4 offset-md-4" style="margin-left:auto; margin-right:auto; background: #fff; padding:70px 50px;">
                 <div class="text-center">
-                    <span style="font-size:2.8em; font-weight:200; ">CAFE HIKOCO</span>
+                    <span style="font-size:2.8em; font-weight:400; ">실크독 히코코</span>
                 </div>
                 <form id="form1" name="form1" class="col-md-10 offset-md-1" action="/shop/login" method="POST">
                     <div class="form-group">
