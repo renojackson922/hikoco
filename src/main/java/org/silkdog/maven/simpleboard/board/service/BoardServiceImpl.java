@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
@@ -22,13 +24,13 @@ public class BoardServiceImpl implements BoardService {
 
     @Override
     public void addData(BoardVO boardVO, HttpServletRequest req) {
-        Date in = new Date();
-        LocalDateTime ldt = LocalDateTime.ofInstant(in.toInstant(), ZoneId.systemDefault());
-        Date today = Date.from(ldt.atZone(ZoneId.systemDefault()).toInstant());
+//        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        Date date = new Date();
+        java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 
-        boardVO.setWritedate(today);
+        boardVO.setWritedate(sqlDate);
         boardVO.setWriteip(req.getRemoteAddr());
-        boardVO.setLastEditedDate(today);
+        boardVO.setLastEditedDate(sqlDate);
         boardVO.setLastEditedIp(req.getRemoteAddr());
 
         int res = boardDAO.insert(boardVO);

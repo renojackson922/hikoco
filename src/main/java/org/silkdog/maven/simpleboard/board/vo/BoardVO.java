@@ -2,7 +2,7 @@ package org.silkdog.maven.simpleboard.board.vo;
 
 import org.apache.ibatis.type.Alias;
 
-import java.util.Date;
+import java.sql.Date;
 
 @Alias("boardVO")
 public class BoardVO {

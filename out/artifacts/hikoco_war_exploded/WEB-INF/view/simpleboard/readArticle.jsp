@@ -83,23 +83,44 @@
 					</div>
 				</div>
 			</div>
+			<c:forEach var="i" items="${commentVOList}" varStatus="idx">
+				<div class="readArticle-comment__item" data-order="${idx.count}" data-depth="1">
+					<div class="readArticle-comment__item__avatar">
+						<img src="../../../resources/imgs/margarette.png" width="100px">
+					</div>
+					<div class="readArticle-comment__item__comment">
+						<div class="readArticle-comment__item__comment__userinfo">
+							<span><strong>${i.id}</strong></span>&nbsp;
+							<span>(appl****)</span>&nbsp;
+							<span>${i.last_edited_date}</span>&nbsp;
+							<span>${i.last_edited_ip}</span>&nbsp;
+						</div>
+						<div class="readArticle-comment__item__comment__detail">
+							<p style="margin-bottom:0px;">${i.detail}</p>
+						</div>
+						<div class="readArticle-comment__item__comment__vote text-right">
+							<a href="#">[추천]</a>&nbsp;<a href="#">[비추]</a>&nbsp;<a href="#">[신고]</a>
+						</div>
+					</div>
+				</div>
+			</c:forEach>
 			<%--<div class="readArticle-comment__item" data-order="2" data-depth="1">--%>
-				<%--<div class="readArticle-comment__item__avatar">--%>
-					<%--<img src="../../../resources/imgs/margarette.png" width="100px">--%>
-				<%--</div>--%>
-				<%--<div class="readArticle-comment__item__comment">--%>
-					<%--<div class="readArticle-comment__item__comment__userinfo">--%>
-						<%--<span>ㅎㅇ</span>&nbsp;--%>
-						<%--<span>(aiko****)</span>&nbsp;--%>
-						<%--<span>192.168.35.159</span>--%>
-					<%--</div>--%>
-					<%--<div class="readArticle-comment__item__comment__detail">--%>
-						<%--<p style="margin-bottom:0px;">와! 정말 알고 싶던 정보였어요!</p>--%>
-					<%--</div>--%>
-					<%--<div class="readArticle-comment__item__comment__vote text-right">--%>
-						<%--[추천] [비추] [신고]--%>
-					<%--</div>--%>
-				<%--</div>--%>
+			<%--<div class="readArticle-comment__item__avatar">--%>
+			<%--<img src="../../../resources/imgs/margarette.png" width="100px">--%>
+			<%--</div>--%>
+			<%--<div class="readArticle-comment__item__comment">--%>
+			<%--<div class="readArticle-comment__item__comment__userinfo">--%>
+			<%--<span>ㅎㅇ</span>&nbsp;--%>
+			<%--<span>(aiko****)</span>&nbsp;--%>
+			<%--<span>192.168.35.159</span>--%>
+			<%--</div>--%>
+			<%--<div class="readArticle-comment__item__comment__detail">--%>
+			<%--<p style="margin-bottom:0px;">와! 정말 알고 싶던 정보였어요!</p>--%>
+			<%--</div>--%>
+			<%--<div class="readArticle-comment__item__comment__vote text-right">--%>
+			<%--[추천] [비추] [신고]--%>
+			<%--</div>--%>
+			<%--</div>--%>
 			<%--</div>--%>
 
 
@@ -149,11 +170,23 @@
 				<div class="readArticle-comment__item__avatar?" style="float:left; margin-right:10px;">
 					<img src="../../../resources/imgs/margarette.png" width="120px">
 				</div>
-				<div>
-					<input type="text"><input type="text"><input type="text">
-				</div>
-				<textarea class="form-control" style="float:left; overflow-x:hidden; width:calc(100% - 260px); min-height: 120px; overflow-y:auto;"></textarea>
-				<button type="button" class="btn btn-info" style="float:left; overflow-x:hidden; height:120px; margin-left:10px; width:120px">제출</button>
+				<form id="form1" action="/board/addComment" method="POST">
+					<div class="form-row">
+						<div class="col">
+							<input type="text" class="form-control" name="id" placeholder="닉네임">
+						</div>
+						<div class="col">
+							<input type="password" class="form-control" name="pw" placeholder="비밀번호">
+						</div>
+						<div class="col">
+							<input type="password" class="form-control" name="pwConfirm" placeholder="비밀번호 확인">
+						</div>
+						<input type="hidden" name="category" value="${boardVO.category}">
+						<input type="hidden" name="boardId" value="${boardVO.id}">
+					</div>
+					<textarea name="detail" class="form-control" style="float:left; overflow-x:hidden; width:calc(100% - 260px); min-height: 120px; overflow-y:auto;"></textarea>
+					<button type="submit" class="btn btn-info" style="float:left; overflow-x:hidden; height:120px; margin-left:10px; width:120px">제출</button>
+				</form>
 			</div>
 		</div>
 

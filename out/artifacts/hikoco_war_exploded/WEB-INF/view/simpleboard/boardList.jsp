@@ -224,3 +224,32 @@
         <a href="/c${category}/write" class="btn btn-info">글쓰기</a>
     </div>
 </div>
+<script>
+	$(function(){
+		/*
+		 *    e.g.)
+		 *    .width() = 200
+		 *    .css('width') = 200'px'
+		 *  */
+
+		/** table-view    */
+		pWidth = $('#table-view').width();
+		cWidth = $('#menu-view').width();
+		$('#readArticle-wrapper').css('width', (pWidth - cWidth));
+
+		cHeight_cand1 = $('#readArticle-wrapper').height();
+		cHeight_cand2 = $('#menu-view').height();
+		if(cHeight_cand1 > cHeight_cand2){
+			$('#read_article').css('height', cHeight_cand1);
+		}else{
+			$('#read_article').css('height', cHeight_cand2);
+		}
+
+		$(window).on('resize', function () {
+			pWidth = $('#read_article').width();
+			cWidth = $('#menu-view').width();
+			$('#readArticle-wrapper').css('width', (pWidth - cWidth));
+		});
+
+	});
+</script>

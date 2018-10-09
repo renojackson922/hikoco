@@ -18,5 +18,6 @@
         <mapper resource="mybatis/MyCartMapper.xml"></mapper>
         <!-- Simpleboard -->
         <mapper resource="mybatis/simpleboard/BoardMapper.xml"></mapper>
+        <mapper resource="mybatis/simpleboard/CommentMapper.xml"></mapper>
     </mappers>
 </configuration>
