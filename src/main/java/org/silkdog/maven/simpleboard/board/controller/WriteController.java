@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 @RequestMapping("/c{category}/write")
 public class WriteController {
+    private final static String WRITE_URL = "simpleboard/newWrite";
     private final BoardDAO boardDAO;
     private BoardService boardService;
 
@@ -31,7 +32,7 @@ public class WriteController {
                         Model model){
         System.out.println("카테고리 번호: " + category);
         model.addAttribute("category", category);
-        return "simpleboard/write";
+        return WRITE_URL;
     }
 
     @PostMapping
@@ -42,7 +43,7 @@ public class WriteController {
 
         new AuthValidator(boardDAO).validate(boardVO, bindingResult);
         if(bindingResult.hasErrors()){
-            return "simpleboard/write";
+            return WRITE_URL;
         }
 
         /** Validator 서비스를 통해 오류 검출 */

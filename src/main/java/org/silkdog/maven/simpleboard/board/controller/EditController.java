@@ -15,6 +15,7 @@ import java.util.HashMap;
 @CrossOrigin
 @Controller
 public class EditController {
+    private final static String EDIT_URL = "simpleboard/newEdit";
     private final BoardDAO boardDAO;
 
     @Autowired
@@ -29,7 +30,7 @@ public class EditController {
         boardVO.setDetail(new String((boardVO.getDetail()).getBytes("8859_1"), StandardCharsets.UTF_8));
         model.addAttribute("boardVO", boardVO);
         model.addAttribute("category", category);
-        return "simpleboard/edit";
+        return EDIT_URL;
     }
 
     @RequestMapping(value = "/board/c{category}/r{id}/edit", method=RequestMethod.POST)

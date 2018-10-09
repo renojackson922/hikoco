@@ -17,6 +17,10 @@
         SELECT * FROM simpleboard_comment WHERE board_id = #{boardId} ORDER BY id ASC;
     </select>
 
+    <select id="getCommentCountByBoardId" parameterType="int" resultType="int">
+        SELECT count(*) FROM simpleboard_comment WHERE board_id = #{boardId}
+    </select>
+
 </mapper>
 
         <!--<insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="boardVO">-->

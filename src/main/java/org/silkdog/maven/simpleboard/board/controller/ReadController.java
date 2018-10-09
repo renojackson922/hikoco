@@ -41,11 +41,12 @@ public class ReadController {
 
         /** COMMENT 불러오기, 원래 MEDIUMBLOB 이었는데 데이터형으로 불러오려고 해서 임시로 varchar(4000)로 지정 */
         List<CommentVO> commentVOList = commentDAO.getCommentListByBoardId(id);
+        int commentCnt = commentDAO.getCommentCountByBoardId(id);
         model.addAttribute("commentVOList", commentVOList);
+        model.addAttribute("commentCnt", commentCnt);
 
         return READ_ARTICLE;
     }
-
 
     /*
     @PostMapping

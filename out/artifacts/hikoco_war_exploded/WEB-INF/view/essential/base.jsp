@@ -25,10 +25,10 @@
 <%--<link rel="stylesheet" href="/public/css/fonts.css">--%>
 
 <!-- Font-Awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-
+<%--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">--%>
+<link href="../../../resources/css/all.css" rel="stylesheet">
 <!-- Underscore.js -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+<script src="../../../resources/js/underscore-min.js"></script>
 <!-- Animate.css -->
 
 <link rel="stylesheet"

@@ -1,8 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
-<html>
-<head>
-    <title>Title</title>
-    <%@include file="../essential/base.jsp"%>
     <script type="text/javascript">
         $(document).ready(function() {
             $('#detail').summernote({
@@ -53,9 +49,11 @@
             color: #7a0f1f;
         }
     </style>
-</head>
-<body>
-    <div class="container" style="min-width:50%; padding-top:10px;">
+    <div id="editArticle-wrapper">
+		<!-- 서브 게시판 배너 -->
+		<div class="text-center" style="width:100%; height:100px; border:1px solid #5d5d5d; margin-bottom:10px;">
+			<span id="banner-span" style="font-size:2.0rem; font-weight:300; line-height:100px;"></span>
+		</div>
         <div style="padding-bottom:20px;">
             <span style="font-size:2.0em; font-weight: 300;">글 수정</span>
             <div style="float:right;">
@@ -69,23 +67,23 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="username">아이디</label>
-                    <input type="text" id="username" name="username" class="form-control" value="${boardVO.username}"required>
+                    <input type="text" id="username" name="username" class="form-control comment-text" value="${boardVO.username}"required>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="password">비밀번호</label>
-                    <input type="password" id="password" name="password" class="form-control" required>
+                    <input type="password" id="password" name="password" class="form-control comment-text" required>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="passwordConfirm">비밀번호 확인</label>
                     <input type="password" id="passwordConfirm"
-                           name="passwordConfirm" class="form-control" required>
+                           name="passwordConfirm" class="form-control comment-text" required>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <input type="hidden" name="category" value="${category}">
                     <label for="category">카테고리</label>
-                    <select id="category" class="form-control" disabled>
+                    <select id="category" class="form-control" style="padding-left:10px !important;" disabled>
                         <option value="-1">-- 선택하세요 --</option>
                         <option value="1">자유게시판</option>
                         <option value="2">질문게시판</option>
@@ -98,7 +96,7 @@
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="title">제목</label>
-                    <input type="text" id="title" name="title" class="form-control" value="${boardVO.title}" required>
+                    <input type="text" id="title" name="title" class="form-control comment-text" value="${boardVO.title}" required>
                 </div>
             </div>
             <div class="form-row">
@@ -113,5 +111,30 @@
             </div>
         </form>
     </div>
-</body>
-</html>
+<script>
+	var category = function(){
+		var url = new URL(window.location.href);
+		return url.pathname.split("/c")[1].split("/r")[0];
+	};
+
+	console.log(category());
+	var getAkaFromJSON = function(){
+		$.getJSON('../../../resources/json/board_category.json', function(result){
+			$.each(result, function(i, field){
+				if(i == category()){
+					console.log(field.name);
+					$('#banner-span').text(field.name);
+					$('#readArticle-title__category').text('[' + field.aka + ']');
+
+				}
+			});
+		});
+	};
+	getAkaFromJSON();
+
+	$(function(){
+		$('.card-block').css({'height':'550px', 'resize': 'none','background-color':'none'});
+		$('.note-resizebar').css('display','none');
+	});
+</script>
+

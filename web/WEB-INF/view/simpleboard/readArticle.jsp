@@ -45,7 +45,7 @@
 			<span id="readArticle-title__category"></span>&nbsp;<span>${boardVO.title}</span>
 		</div>
 		<div id="readArticle-subinfo">
-			<span><strong>작성자:</strong>&nbsp;${boardVO.username}&nbsp;(appl****)</span>&nbsp;&nbsp;&nbsp;<span><strong>작성일:</strong>&nbsp;${boardVO.writedate}</span>&nbsp;&nbsp;&nbsp;<span><strong>마지막 수정일:</strong>&nbsp;${boardVO.lastEditedDate}</span>
+			<span><strong>작성자:</strong>&nbsp;${boardVO.username}&nbsp;(********)</span>&nbsp;&nbsp;&nbsp;<span><strong>작성일:</strong>&nbsp;${boardVO.writedate}</span>&nbsp;&nbsp;&nbsp;<span><strong>마지막 수정일:</strong>&nbsp;${boardVO.lastEditedDate}</span>
 			<div id="readArticle-task" class="text-right" style="float:right; padding:5px 5px 0 0;">
 				<a class="btn btn-secondary btn-customized" href="/board/c${category}">목록</a>
 				<a class="btn btn-secondary btn-customized" href="/board/c${category}/r${boardVO.id}/edit">수정</a>
@@ -62,38 +62,20 @@
 		</div>
 		<div id="readArticle-comment">
 			<div id="readArticle-comment__top">
-				<span style="font-size:1.25rem; line-height:40px; font-weight:300;">댓글</span>
+				<span style="font-size:1.25rem; line-height:40px; font-weight:300;">댓글&nbsp;${commentCnt}</span>
 			</div>
 			<!-- 댓글 목록 ON -->
-			<div class="readArticle-comment__item" data-order="1" data-depth="1">
-				<div class="readArticle-comment__item__avatar">
-					<img src="../../../resources/imgs/margarette.png" width="100px">
-				</div>
-				<div class="readArticle-comment__item__comment">
-					<div class="readArticle-comment__item__comment__userinfo">
-						<span><strong>애플워너비</strong></span>&nbsp;
-						<span>(appl****)</span>&nbsp;
-						<span>192.168.35.159</span>
-					</div>
-					<div class="readArticle-comment__item__comment__detail">
-						<p style="margin-bottom:0px;">와! 정말 알고 싶던 정보였어요!</p>
-					</div>
-					<div class="readArticle-comment__item__comment__vote text-right">
-						<a href="#">[추천]</a>&nbsp;<a href="#">[비추]</a>&nbsp;<a href="#">[신고]</a>
-					</div>
-				</div>
-			</div>
 			<c:forEach var="i" items="${commentVOList}" varStatus="idx">
-				<div class="readArticle-comment__item" data-order="${idx.count}" data-depth="1">
-					<div class="readArticle-comment__item__avatar">
-						<img src="../../../resources/imgs/margarette.png" width="100px">
-					</div>
+				<div class="readArticle-comment__item" data-order="${idx.count}" data-depth="${i.depth}" data-parent="${i.parent}">
+					<%--<div class="readArticle-comment__item__avatar">--%>
+						<%--<img src="../../../resources/imgs/margarette.png" width="100px">--%>
+					<%--</div>--%>
 					<div class="readArticle-comment__item__comment">
 						<div class="readArticle-comment__item__comment__userinfo">
 							<span><strong>${i.id}</strong></span>&nbsp;
-							<span>(appl****)</span>&nbsp;
-							<span>${i.last_edited_date}</span>&nbsp;
-							<span>${i.last_edited_ip}</span>&nbsp;
+							<span>(********)</span>&nbsp;
+							<span style="font-size:0.8rem; color:#333;">${i.last_edited_date}</span>&nbsp;|
+							<span style="font-size:0.8rem; color:#333;">${i.last_edited_ip}</span>&nbsp;
 						</div>
 						<div class="readArticle-comment__item__comment__detail">
 							<p style="margin-bottom:0px;">${i.detail}</p>
@@ -104,87 +86,26 @@
 					</div>
 				</div>
 			</c:forEach>
-			<%--<div class="readArticle-comment__item" data-order="2" data-depth="1">--%>
-			<%--<div class="readArticle-comment__item__avatar">--%>
-			<%--<img src="../../../resources/imgs/margarette.png" width="100px">--%>
-			<%--</div>--%>
-			<%--<div class="readArticle-comment__item__comment">--%>
-			<%--<div class="readArticle-comment__item__comment__userinfo">--%>
-			<%--<span>ㅎㅇ</span>&nbsp;--%>
-			<%--<span>(aiko****)</span>&nbsp;--%>
-			<%--<span>192.168.35.159</span>--%>
-			<%--</div>--%>
-			<%--<div class="readArticle-comment__item__comment__detail">--%>
-			<%--<p style="margin-bottom:0px;">와! 정말 알고 싶던 정보였어요!</p>--%>
-			<%--</div>--%>
-			<%--<div class="readArticle-comment__item__comment__vote text-right">--%>
-			<%--[추천] [비추] [신고]--%>
-			<%--</div>--%>
-			<%--</div>--%>
-			<%--</div>--%>
-
-
-			<%----%>
-			<%--<div class="readArticle-comment__item" data-order="3" data-depth="2" style="margin-left:25px;" >--%>
-			<%--<div class="readArticle-comment__item__avatar">--%>
-			<%--<img src="../../../resources/imgs/margarette.png" width="100px">--%>
-			<%--</div>--%>
-			<%--<div class="readArticle-comment__item__comment">--%>
-			<%--<div class="readArticle-comment__item__comment__userinfo">--%>
-			<%--<span>ㅎㅇ</span>&nbsp;--%>
-			<%--<span>(aiko****)</span>&nbsp;--%>
-			<%--<span>192.168.35.159</span>--%>
-			<%--</div>--%>
-			<%--<div class="readArticle-comment__item__comment__detail">--%>
-			<%--<p style="margin-bottom:0px;">지나치게 비꼬시네요. PPAP 떠놨고 고소하겠읍니다.</p>--%>
-			<%--</div>--%>
-			<%--<div class="readArticle-comment__item__comment__vote text-right">--%>
-			<%--[추천] [비추] [신고]--%>
-			<%--</div>--%>
-			<%--</div>--%>
-			<%--</div>--%>
-			<%--<div class="readArticle-comment__item" data-order="4" data-depth="3" style="margin-left:50px;">--%>
-			<%--<div class="readArticle-comment__item__avatar">--%>
-			<%--<img src="../../../resources/imgs/margarette.png" width="100px">--%>
-			<%--</div>--%>
-			<%--<div class="readArticle-comment__item__comment">--%>
-			<%--<div class="readArticle-comment__item__comment__userinfo">--%>
-			<%--<span>ㅎㅇ</span>&nbsp;--%>
-			<%--<span>(aiko****)</span>&nbsp;--%>
-			<%--<span>192.168.35.159</span>--%>
-			<%--</div>--%>
-			<%--<div class="readArticle-comment__item__comment__detail">--%>
-			<%--<p style="margin-bottom:0px;">엌ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 이걸로 고소를??????????? ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ--%>
-			<%--ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ--%>
-			<%--ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ--%>
-			<%--ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</p>--%>
-			<%--</div>--%>
-			<%--<div class="readArticle-comment__item__comment__vote text-right">--%>
-			<%--[추천] [비추] [신고]--%>
-			<%--</div>--%>
-			<%--</div>--%>
-			<%--</div>--%>
-			<%----%>
 			<!-- 댓글 목록 OFF -->
-			<div id="readArticle-comment_bottom" style="padding:10px 0;">
-				<div class="readArticle-comment__item__avatar?" style="float:left; margin-right:10px;">
-					<img src="../../../resources/imgs/margarette.png" width="120px">
-				</div>
+			<div id="readArticle-comment_bottom" style="padding:10px 10px;">
+				<%--<div class="readArticle-comment__item__avatar?" style="float:left; margin-right:10px;">--%>
+					<%--<img src="../../../resources/imgs/margarette.png" width="120px">--%>
+				<%--</div>--%>
 				<form id="form1" action="/board/addComment" method="POST">
-					<div class="form-row">
+					<div class="form-row" style="margin-bottom:5px;">
 						<div class="col">
-							<input type="text" class="form-control" name="id" placeholder="닉네임">
+							<input type="text" class="form-control comment-text" name="id" placeholder="닉네임">
 						</div>
 						<div class="col">
-							<input type="password" class="form-control" name="pw" placeholder="비밀번호">
+							<input type="password" class="form-control comment-text" name="pw" placeholder="비밀번호">
 						</div>
 						<div class="col">
-							<input type="password" class="form-control" name="pwConfirm" placeholder="비밀번호 확인">
+							<input type="password" class="form-control comment-text" name="pwConfirm" placeholder="비밀번호 확인">
 						</div>
 						<input type="hidden" name="category" value="${boardVO.category}">
 						<input type="hidden" name="boardId" value="${boardVO.id}">
 					</div>
-					<textarea name="detail" class="form-control" style="float:left; overflow-x:hidden; width:calc(100% - 260px); min-height: 120px; overflow-y:auto;"></textarea>
+					<textarea name="detail" class="form-control comment-text" style="float:left; overflow-x:hidden; width:calc(100% - 130px); min-height: 120px; overflow-y:auto; resize:none !important;"></textarea>
 					<button type="submit" class="btn btn-info" style="float:left; overflow-x:hidden; height:120px; margin-left:10px; width:120px">제출</button>
 				</form>
 			</div>

@@ -22,4 +22,9 @@ public class CommentDAOImpl implements CommentDAO {
     public List<CommentVO> getCommentListByBoardId(int boardId) {
         return sqlSessionTemplate.selectList("org.silkdog.maven.simpleboard.board.dao.CommentDAO.getCommentListByBoardId", boardId);
     }
+
+    @Override
+    public int getCommentCountByBoardId(int boardId) {
+        return sqlSessionTemplate.selectOne("org.silkdog.maven.simpleboard.board.dao.CommentDAO.getCommentCountByBoardId", boardId);
+    }
 }

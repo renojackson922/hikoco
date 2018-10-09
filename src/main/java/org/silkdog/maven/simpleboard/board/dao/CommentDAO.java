@@ -7,4 +7,5 @@ import java.util.List;
 public interface CommentDAO {
     int insert(CommentVO commentVO);
     List<CommentVO> getCommentListByBoardId(int boardId);
+    int getCommentCountByBoardId(int boardId);
 }
