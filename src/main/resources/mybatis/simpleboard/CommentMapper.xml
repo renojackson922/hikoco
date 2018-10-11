@@ -12,15 +12,31 @@
         )
     </insert>
 
+    <update id="replaceNewline" parameterType="int">
+        UPDATE simpleboard_comment SET detail = REPLACE(detail, '\r\n', '<![CDATA[<br />]]>') WHERE id = #{id}
+    </update>
+
     <!-- #{LIMIT, #{PAGINATION} !!!! -->
     <select id="getCommentListByBoardId" parameterType="int" resultType="java.util.HashMap">
-        SELECT * FROM simpleboard_comment WHERE board_id = #{boardId} ORDER BY id ASC;
+        SELECT * FROM simpleboard_comment WHERE board_id = #{boardId} AND visible = 1 ORDER BY no ASC, writedate ASC
     </select>
 
     <select id="getCommentCountByBoardId" parameterType="int" resultType="int">
-        SELECT count(*) FROM simpleboard_comment WHERE board_id = #{boardId}
+        SELECT count(*) FROM simpleboard_comment WHERE board_id = #{boardId} AND visible = 1
     </select>
 
+    <select id="getOneCommentById" parameterType="int" resultType="commentVO">
+        SELECT * FROM simpleboard_comment WHERE no = #{dataId}
+    </select>
+
+    <update id="updateComment" parameterType="java.util.HashMap">
+        UPDATE simpleboard_comment SET detail = #{detail}, last_edited_date = #{lastEditedDate}, last_edited_ip = #{lastEditedIp}
+        WHERE no = #{dataId}
+    </update>
+
+    <update id="deleteComment" parameterType="int">
+        UPDATE simpleboard_comment SET visible = 0,  deleted_date = now() WHERE no = #{dataId}
+    </update>
 </mapper>
 
         <!--<insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="boardVO">-->

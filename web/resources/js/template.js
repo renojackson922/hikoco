@@ -167,15 +167,6 @@ $(window).on('resize load', function(){
     $('#pc-whole-wrapper').css('height', (height * 0.8) );
 });
 
-$(function(){
-    var imgResize = document.getElementsByTagName( 'img' )[0]; // '0' to assign the first (and only `HTML` tag)
-    imgResize.className += 'img-fluid';
-
-    // history.pushState(null, null, location.href);
-    // window.onpopstate = function(event) {
-    //     history.go(1);
-    // };
-});
 var deleteArticle = function(num){
     if(confirm('정말로 삭제하시겠습니까?\n한번 삭제된 내용은 복구할 수 없습니다!')){
         return true;

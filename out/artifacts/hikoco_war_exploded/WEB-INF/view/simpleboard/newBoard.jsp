@@ -20,4 +20,31 @@
 		<%@ include file="layout/footer.jsp"%>
 	</div>
 </body>
+<script>
+	$(function(){
+		/*
+		 *    e.g.)
+		 *    .width() = 200
+		 *    .css('width') = 200'px'
+		 *  */
+		pWidth = $('#board_list').width();
+		cWidth = $('#menu-view').width();
+		$('#table-view').css('width', (pWidth - cWidth));
+
+		cHeight_cand1 = $('#table-view').height();
+		cHeight_cand2 = $('#menu-view').height();
+		if(cHeight_cand1 > cHeight_cand2){
+			$('#board_list').css('height', cHeight_cand1);
+		}else{
+			$('#board_list').css('height', cHeight_cand2);
+		}
+
+		$(window).on('resize', function () {
+			pWidth = $('#board_list').width();
+			cWidth = $('#menu-view').width();
+			$('#table-view').css('width', (pWidth - cWidth));
+		});
+
+	});
+</script>
 </html>

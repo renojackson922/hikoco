@@ -14,6 +14,7 @@ public class BoardVO {
     private int category;
     private String title;
     private String detail;
+    private int hit;
     private Date writedate;
     private Date lastEditedDate;
     private String writeip;
@@ -110,6 +111,14 @@ public class BoardVO {
 
     public void setDetail(String detail) {
         this.detail = detail;
+    }
+
+    public int getHit() {
+        return hit;
+    }
+
+    public void setHit(int hit) {
+        this.hit = hit;
     }
 
     public Date getWritedate() {

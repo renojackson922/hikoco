@@ -1,13 +1,21 @@
 <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
     <script type="text/javascript">
         $(document).ready(function() {
+
+			// var str = ;
+			<%--ConvertSystemSourcetoHtml('${boardVO.detail}');--%>
+			<%--var str = ${boardVO.detail};--%>
+
+
             $('#detail').summernote({
                 focus: true,
                 tabsize: 2,
                 height: 500
             });
 
-            $('#detail').summernote('code','${boardVO.detail}');
+            $('#detail').summernote('code', '${boardVO.detail}');
+
+			<%--$('.card-block').append('${boardVO.detail}');--%>
 
         });
 
@@ -24,6 +32,16 @@
                 }
             });
         });
+
+		function ConvertSystemSourcetoHtml(str){
+			str = str.replace("&lt;","<");
+			str = str.replace("&gt;",">");
+			str = str.replace("&quot;",'"');
+			str = str.replace("&#39;","'");
+			str = str.replace("<br>","\n");
+			str = str.replace("<br />","\n");
+			return str;
+		}
 
         var ask = function(){
             if(confirm('정말 나가시겠습니까?\n작업 내용은 저장되지 않습니다.')){

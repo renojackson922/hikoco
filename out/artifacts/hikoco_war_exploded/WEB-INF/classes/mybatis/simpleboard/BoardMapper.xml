@@ -19,9 +19,13 @@
     </select>
 
     <select id="getListByCategory" parameterType="java.util.HashMap" resultType="java.util.HashMap">
-        SELECT id, username, title, writedate FROM simpleboard_board
+        SELECT id, username, title, hit, comment_cnt ,writedate FROM simpleboard_board
         WHERE category = #{category}
         ORDER BY id DESC LIMIT #{PAGINATION}, #{LIMIT}
+    </select>
+
+    <select id="getListCountByCategory" parameterType="int" resultType="int">
+        SELECT count(*) FROM simpleboard_board WHERE category = #{category}
     </select>
 
     <select id="pageNumByCategory" parameterType="int" resultType="int">
@@ -47,6 +51,27 @@
             title = #{title},
             detail = #{detail}
         WHERE id = #{id}
+    </update>
+
+    <update id="addCommentCntToBoard" parameterType="int">
+        UPDATE simpleboard_board
+        SET
+            comment_cnt = comment_cnt + 1
+        WHERE id = #{boardId}
+    </update>
+
+    <update id="subtractCommentCntToBoard" parameterType="int">
+        UPDATE simpleboard_board
+        SET
+            comment_cnt = comment_cnt - 1
+        WHERE id = #{boardId}
+    </update>
+
+    <update id="addHit" parameterType="int">
+        UPDATE simpleboard_board
+        SET
+            hit = hit + 1
+        WHERE id = #{boardId}
     </update>
 
     <!--<update id="update" useGeneratedKeys="true" keyProperty="id" parameterType="boardVO">-->

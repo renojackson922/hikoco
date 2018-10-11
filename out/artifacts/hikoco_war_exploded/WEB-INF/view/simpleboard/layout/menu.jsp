@@ -52,6 +52,7 @@
 		<li class="list-group-item list-menu" data-value="7" onclick="moveByRef(this)">몬스터헌터:월드</li>
 		<li class="list-group-item list-menu" data-value="8" onclick="moveByRef(this)">리그오브레전드</li>
 		<li class="list-group-item list-menu" data-value="9" onclick="moveByRef(this)">나와라</li>
+		<li class="list-group-item list-menu" data-value="13" onclick="moveByRef(this)">히어로즈오브더스톰</li>
 		</ul>
 		<ul id="list-filter-vert3" class="list-group">
 		<div class="text-center" style="padding:10px 0 5px;">
@@ -133,6 +134,7 @@
 		<c:forEach var="i" begin="0" end="3" items="${array2}" varStatus="idx">
 			<li class="list-group-item list-menu" data-value="${idx.index + 6}" onclick="moveByRef(this)">${i}</li>
 		</c:forEach>
+		<li class="list-group-item list-menu" data-value="13" onclick="moveByRef(this)">히어로즈오브더스톰</li>
 		</ul>
 		<ul id="list-filter3" class="list-group" style="max-width:220px;">
 		<div class="text-center" style="padding:10px 0 5px;">

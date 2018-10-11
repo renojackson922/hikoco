@@ -27,7 +27,10 @@ public class EditController {
     public String edit(@PathVariable("category") int category,
                        @PathVariable("id") int id, Model model) throws UnsupportedEncodingException { //, @ModelAttribute("boardVO") BoardVO boardVO
         BoardVO boardVO = boardDAO.detailById(id);
-        boardVO.setDetail(new String((boardVO.getDetail()).getBytes("8859_1"), StandardCharsets.UTF_8));
+        String str = new String((boardVO.getDetail()).getBytes("8859_1"), StandardCharsets.UTF_8);
+        String strConverted = conversion(str);
+
+        boardVO.setDetail(strConverted);
         model.addAttribute("boardVO", boardVO);
         model.addAttribute("category", category);
         return EDIT_URL;
@@ -52,5 +55,14 @@ public class EditController {
 //        int update = boardDAO.update(boardVO);
         int update = boardDAO.update(hashMap);
         return "redirect:/board/c{category}/r{id}";
+    }
+
+    public String conversion(String str){
+//        str = str.replaceAll("<","&lt;");
+//        str = str.replaceAll(">","&gt;");
+//        str = str.replaceAll("\"","&quot;");
+        str = str.replaceAll("'","&#39;");
+//        str = str.replaceAll("(\r\n|\n)","<br />");
+        return str;
     }
 }

@@ -58,6 +58,8 @@ public class SimpleboardMainController {
                                   Model model){
         this.page = page;
         this.category = category;
+        // 카테고리 내 게시물 수 model 에 넣기
+        model.addAttribute("getListCountByCategory", boardDAO.getListCountByCategory(category));
         return doIndex(page, category, model);
     }
 

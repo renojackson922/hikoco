@@ -18,12 +18,13 @@
                 getAkaFromJSON();
             </script>
         </div>
-        <span id="board-name2" style="float:right; font-size:0.75rem; padding-right:5px; padding-top:10px;">총 게시글 수: 0</span>
+        <span id="board-name2" style="float:right; font-size:0.75rem; padding-right:5px; padding-top:10px;">총 게시글 수:&nbsp;${getListCountByCategory}</span>
     </div>
     <table class="table table-bordered" style="border-color:#ddd;">
         <thead>
-        <th scope="col" style="width:10% !important;">#</th>
+        <th scope="col" class="text-center" style="width:5% !important;">#</th>
         <td style="width:70% !important;">제목</td>
+		<td style="width:5% !important;">조회수</td>
         <td style="width:10% !important;">작성자</td>
         <td style="width:10% !important;">작성일자</td>
         <%--<th scope="col" style="width:10%;">#</th>--%>
@@ -35,7 +36,7 @@
         <c:choose>
             <c:when test="${boardVOList eq '[]'}">
                 <tr>
-                    <th colspan="4">
+                    <th colspan="5">
                         <div class="text-center" style="height:300px;">
                             <span style="line-height: 300px; font-size:2.0rem; font-weight:300;">
                                 게시글이 없습니다.
@@ -47,7 +48,7 @@
             <c:otherwise>
                 <c:forEach var="i" items="${boardVOList}">
                     <tr>
-                        <th scope="row">${i.id}</th>
+                        <th scope="row" class="text-center">${i.id}</th>
                         <c:choose>
                             <c:when test="${i.title.length() gt 50}">
                                 <c:set var="tmp" value="${fn:substring(i.title, 0, 50)}..."></c:set>
@@ -56,7 +57,9 @@
                                 <c:set var="tmp" value="${i.title}"></c:set>
                             </c:otherwise>
                         </c:choose>
-                        <td><a href="/board/c${category}/r${i.id}">${tmp}</a></td>
+						<td><a href="/board/c${category}/r${i.id}">${tmp}&nbsp;&nbsp;<strong>[${i.comment_cnt}]</strong></a>&nbsp;&nbsp;
+							<%--<i class="fas fa-leaf" title="새 게시물" style="color:#8fff52;">&nbsp;&nbsp;<i class="fas fa-fire" title="인기 게시물" style="color:#dc2e2e;"></i></i></td>--%>
+                        <td class="text-center">${i.hit}</td>
                         <td>${i.username}</td>
                         <td>${i.writedate}</td>
                     </tr>

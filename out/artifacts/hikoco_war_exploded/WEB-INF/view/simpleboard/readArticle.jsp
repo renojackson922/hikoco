@@ -45,7 +45,7 @@
 			<span id="readArticle-title__category"></span>&nbsp;<span>${boardVO.title}</span>
 		</div>
 		<div id="readArticle-subinfo">
-			<span><strong>작성자:</strong>&nbsp;${boardVO.username}&nbsp;(********)</span>&nbsp;&nbsp;&nbsp;<span><strong>작성일:</strong>&nbsp;${boardVO.writedate}</span>&nbsp;&nbsp;&nbsp;<span><strong>마지막 수정일:</strong>&nbsp;${boardVO.lastEditedDate}</span>
+			<span><strong>작성자:</strong>&nbsp;${boardVO.username}&nbsp;(********)</span>&nbsp;&nbsp;&nbsp;<span><strong>작성일:</strong>&nbsp;${boardVO.writedate}</span>&nbsp;&nbsp;&nbsp;<span><strong>마지막 수정일:</strong>&nbsp;${boardVO.lastEditedDate}</span>&nbsp;&nbsp;&nbsp;<span><strong>조회수:</strong>&nbsp;${boardVO.hit}</span>
 			<div id="readArticle-task" class="text-right" style="float:right; padding:5px 5px 0 0;">
 				<a class="btn btn-secondary btn-customized" href="/board/c${category}">목록</a>
 				<a class="btn btn-secondary btn-customized" href="/board/c${category}/r${boardVO.id}/edit">수정</a>
@@ -66,10 +66,10 @@
 			</div>
 			<!-- 댓글 목록 ON -->
 			<c:forEach var="i" items="${commentVOList}" varStatus="idx">
-				<div class="readArticle-comment__item" data-order="${idx.count}" data-depth="${i.depth}" data-parent="${i.parent}">
-					<%--<div class="readArticle-comment__item__avatar">--%>
+				<div class="readArticle-comment__item" data-id="${i.no}" data-order="${idx.count}" data-depth="${i.depth}" data-parent="${i.parent}">
+						<%--<div class="readArticle-comment__item__avatar">--%>
 						<%--<img src="../../../resources/imgs/margarette.png" width="100px">--%>
-					<%--</div>--%>
+						<%--</div>--%>
 					<div class="readArticle-comment__item__comment">
 						<div class="readArticle-comment__item__comment__userinfo">
 							<span><strong>${i.id}</strong></span>&nbsp;
@@ -81,16 +81,16 @@
 							<p style="margin-bottom:0px;">${i.detail}</p>
 						</div>
 						<div class="readArticle-comment__item__comment__vote text-right">
-							<a href="#">[추천]</a>&nbsp;<a href="#">[비추]</a>&nbsp;<a href="#">[신고]</a>
+							<a href="#">[추천]</a>&nbsp;<a href="#">[비추]</a>&nbsp;<a href="#">[신고]</a>&nbsp;<a href="javascript:void(0)" onclick="editComment(this)">[수정]</a>
 						</div>
 					</div>
 				</div>
 			</c:forEach>
 			<!-- 댓글 목록 OFF -->
+			<%--<div class="readArticle-comment__item__avatar?" style="float:left; margin-right:10px;">--%>
+			<%--<img src="../../../resources/imgs/margarette.png" width="120px">--%>
+			<%--</div>--%>
 			<div id="readArticle-comment_bottom" style="padding:10px 10px;">
-				<%--<div class="readArticle-comment__item__avatar?" style="float:left; margin-right:10px;">--%>
-					<%--<img src="../../../resources/imgs/margarette.png" width="120px">--%>
-				<%--</div>--%>
 				<form id="form1" action="/board/addComment" method="POST">
 					<div class="form-row" style="margin-bottom:5px;">
 						<div class="col">
@@ -102,6 +102,7 @@
 						<div class="col">
 							<input type="password" class="form-control comment-text" name="pwConfirm" placeholder="비밀번호 확인">
 						</div>
+						<input type="hidden" name="no" value="">
 						<input type="hidden" name="category" value="${boardVO.category}">
 						<input type="hidden" name="boardId" value="${boardVO.id}">
 					</div>
@@ -133,6 +134,82 @@
 			});
 		});
 	};
+
+	$(function(){
+		var imgResize = document.getElementsByTagName( 'img' )[0]; // '0' to assign the first (and only `HTML` tag)
+		imgResize.className += 'img-fluid';
+	});
+
 	getAkaFromJSON();
+
+
+	function editComment(data){
+		var cmtIdx = data.parentElement.parentElement.parentElement;//.getAttribute('data-order');
+		// console.log('수정이 눌린 코멘트 data-order: ' + cmtIdx);
+		var targetCmt = $('#readArticle-comment').find(cmtIdx).children();
+		var targetCmtChildId = targetCmt.children(".readArticle-comment__item__comment__userinfo").children("span")[0].innerHTML.split('<strong>')[1].split('</strong>')[0];
+		var targetCmtChildDetail = targetCmt.children(".readArticle-comment__item__comment__detail").children("p")[0].innerHTML;
+		var regex = /<br\s*[\/]?>/gi;
+		targetCmtChildDetail = targetCmtChildDetail.replace(regex, '\n');
+		console.log(targetCmtChildDetail);
+		var targetCmtId = $('#readArticle-comment').find(cmtIdx).attr('data-id');
+		targetCmt.empty();
+		targetCmt.append('<div id="readArticle-comment_bottom" style="padding:10px 10px;">\n' +
+			'\t\t\t\t<form id="form1" action="/board/updateComment" method="POST">\n' +
+			'\t\t\t\t\t<div class="form-row" style="margin-bottom:5px;">\n' +
+			'\t\t\t\t\t\t<div class="col-md-3">\n' +
+			'\t\t\t\t\t\t\t<input type="text" class="form-control comment-text" name="id" placeholder="닉네임" disabled value="' + targetCmtChildId + '">\n' +
+			'\t\t\t\t\t\t</div>\n' +
+			'\t\t\t\t\t\t<div class="col-md-3">\n' +
+			'\t\t\t\t\t\t\t<input type="password" class="form-control comment-text" name="pw" required placeholder="비밀번호">\n' +
+			'\t\t\t\t\t\t</div>\n' +
+			'\t\t\t\t\t\t<div class="col-md-3">\n' +
+			'\t\t\t\t\t\t\t<a href="javascript:void(0)" class="btn btn-sm btn-danger" onclick="deleteComment(this)">삭제하기</a>\n' +
+			'\t\t\t\t\t\t</div>\n' +
+			// '\t\t\t\t\t\t<div class="col">\n' +
+			// '\t\t\t\t\t\t\t<input type="password" class="form-control comment-text" name="pwConfirm" placeholder="비밀번호 확인">\n' +
+			// '\t\t\t\t\t\t</div>\n' +
+			'\t\t\t\t\t\t<input type="hidden" name="category" value="${boardVO.category}">\n' +
+			'\t\t\t\t\t\t<input type="hidden" name="boardId" value="${boardVO.id}">\n' +
+			'\t\t\t\t\t\t<input type="hidden" name="dataId" value="'+ targetCmtId +'">\n' +
+			'\t\t\t\t\t</div>\n' +
+			'\t\t\t\t\t<textarea name="detail" class="form-control comment-text" style="float:left; overflow-x:hidden; width:calc(100% - 130px); min-height: 120px; overflow-y:auto; resize:none !important;">' + targetCmtChildDetail + '</textarea>\n' +
+			'\t\t\t\t\t<button type="submit" class="btn btn-info" style="float:left; overflow-x:hidden; height:120px; margin-left:10px; width:120px">댓글수정</button>\n' +
+			'\t\t\t\t</form>\n' +
+			'\t\t\t</div>');
+	};
+
+	function deleteComment(data){
+		var aaa = $('form').find('.form-row').children('.col-md-3');
+
+		/** 댓글수정 div 가 보여진다면 다른 댓글의 [수정]은 클릭 못하게 해야함 */
+		var switcher = 0;
+
+		var pw;
+		var bid = '${boardVO.id}';
+		var cid = '${boardVO.category}'
+		var did = data.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.getAttribute('data-id');
+
+		aaa.each(function(idx, value){
+			if($(this).children().attr('name') == 'pw'){
+				if($(this).children().val() == '' || '' == $(this).children().val()){
+					alert('비밀번호를 입력해주세요.');
+					switcher++;
+				}else{
+					pw = $(this).children().val();
+				}
+			}
+		});
+
+		if(switcher != 0){
+			return false;
+		}else{
+			if(confirm('정말 삭제하시겠습니까?\n삭제된 내용은 복구되지 않습니다!')){
+				$.post('/board/deleteComment', { pw: pw, category : cid, boardId : bid, dataId: did});
+			}else{
+				return false;
+			}
+		}
+	};
 </script>
 

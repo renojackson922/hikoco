@@ -42,6 +42,11 @@ public class BoardDAOImpl implements BoardDAO {
     }
 
     @Override
+    public int getListCountByCategory(int category){
+        return sqlSessionTemplate.selectOne("org.silkdog.maven.simpleboard.board.dao.BoardDAO.getListCountByCategory", category);
+    }
+
+    @Override
     public int doBot(HashMap<String, Object> hashMap) {
         return sqlSessionTemplate.
                 insert("org.silkdog.maven.simpleboard.board.dao.BoardDAO.doBot", hashMap);
@@ -69,5 +74,20 @@ public class BoardDAOImpl implements BoardDAO {
     public int pageNumByCategory(int category) {
         return sqlSessionTemplate.
                 selectOne("org.silkdog.maven.simpleboard.board.dao.BoardDAO.pageNumByCategory", category);
+    }
+
+    @Override
+    public int addCommentCntToBoard(int boardId) {
+        return sqlSessionTemplate.update("org.silkdog.maven.simpleboard.board.dao.BoardDAO.addCommentCntToBoard", boardId);
+    }
+
+    @Override
+    public int subtractCommentCntToBoard(int boardId) {
+        return sqlSessionTemplate.update("org.silkdog.maven.simpleboard.board.dao.BoardDAO.subtractCommentCntToBoard", boardId);
+    }
+
+    @Override
+    public int addHit(int boardId) {
+        return sqlSessionTemplate.update("org.silkdog.maven.simpleboard.board.dao.BoardDAO.addHit", boardId);
     }
 }

@@ -8,4 +8,5 @@ import javax.servlet.http.HttpServletRequest;
 @Service
 public interface BoardService {
     void addData(BoardVO boardVO, HttpServletRequest req);
+    void addHit(int id);
 }

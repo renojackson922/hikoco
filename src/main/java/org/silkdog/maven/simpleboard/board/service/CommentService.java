@@ -6,4 +6,6 @@ import org.springframework.stereotype.Service;
 @Service
 public interface CommentService {
     void putInfoBeforeInsert(CommentVO commentVO);
+    void addCommentCntToBoard(int boardId);
+    void subtractCommentCntToBoard(int boardId);
 }

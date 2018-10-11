@@ -35,4 +35,9 @@ public class BoardServiceImpl implements BoardService {
 
         int res = boardDAO.insert(boardVO);
     }
+
+    @Override
+    public void addHit(int boardId) {
+        boardDAO.addHit(boardId);
+    }
 }
