@@ -1,4 +1,5 @@
 	<%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
+		<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 		<div id="shadow" style="position:fixed; display:none; z-index:9998; width:100%; height:100%; background: rgba(0,0,0,0.8)"></div>
 		<button onclick="verticalScrollMenu()" id="vertical-scrollBtn" title="모바일 메뉴 보기"><i class="fas fa-bars"></i></button>
 		<!-- 모바일용 스크롤링  메뉴 -->
@@ -77,15 +78,112 @@
 		=============================================================================
 		-->
 		<div id="menu-view" style="float:left; max-width:220px;">  <!--rgba(0,0,0,0.125);-->
+		<style>
+		#login-module, #login-module-negative{
+		/*border:2px solid blueviolet;*/
+		box-sizing: border-box;
+		display: inline-block;
+		border-style: solid;
+		background-color:#fff;
+		border-image: linear-gradient(to right, #01c9ca 0%, #3886FF 100%);
+		border-image-slice: 1;
+		border-image-width:2px;
+		}
+		</style>
 		<c:choose>
-			<c:when test="${0 ne 0}">
-				<div id="login-module-negative" class="text-center"
-				style="height: 100px; margin-top:15px; border:1px solid rgba(0,0,0,0.125); padding:30px 0;">
-				<span style="font-size:0.8rem;">비회원으로 활동하거나<br><a href="#">로그인</a>하세요.</span>
+			<c:when test="${0 eq 0}">
+				<div id="login-module-negative" style="min-height:300px; width:220px; padding:7px 7px 15px 7px;">
+				<style>
+				#login-module-negative__header__title:before{
+				content: '';
+				font-size: 2.0rem;
+				animation-name: head;
+				animation-duration: 5s;
+				animation-direction: alternate;
+				animation-iteration-count: infinite;
+				-webkit-animation-name: head;
+				-webkit-animation-duration: 5s;
+				-webkit-animation-direction: alternate;
+				-webkit-animation-iteration-count: infinite;
+				-moz-animation-name: head;
+				-moz-animation-duration: 5s;
+				-moz-animation-direction: alternate;
+				-moz-animation-iteration-count: infinite;
+				}
+
+				@keyframes head {
+				0% {opacity:1; content: "심플보드"}
+				50% {opacity:0; color:#fff;}
+				100% {opacity:1; content: "Simpleboard"}
+				/*75% {opacity:0; color:#fff;}*/
+				/*100% {opacity:1; content: "심플보드"}*/
+				/*100% {opacity:1; content: "Simpleboard"}*/
+				}
+				@-webkit-keyframes head {
+				0% {opacity:1; content: "심플보드"}
+				50% {opacity:0; color:#fff;}
+				100% {opacity:1; content: "Simpleboard"}
+				}
+				@-moz-keyframes head {
+				0% {opacity:1; content: "심플보드"}
+				50% {opacity:0; color:#fff;}
+				100% {opacity:1; content: "Simpleboard"}
+				}
+				.login-field{
+				margin-bottom:8px;
+				}
+				.login-field > label{
+				margin-bottom:4px;
+				}
+				.login-field > input{
+				height: 30px !important;
+				}
+
+				.login-field > label, input{
+				font-size:0.8rem !important;
+				}
+				.login-field-option-item{
+				display: inline-block;
+				}
+				.login-field-option-item > a{
+				text-decoration: none;
+				color:#5d5d5d;
+				font-size:0.8rem;
+				}
+				</style>
+				<div id="login-module-negative__header" class="text-center" style="height:50px; margin:10px; ">
+				<span id="login-module-negative__header__title" style="line-height:50px; font-size:2.0rem; display:block; margin-bottom:10px;"></span>
+				<form class="text-left">
+				<div class="form-group login-field">
+				<label for="id">아이디</label>
+				<input type="email" id="id" name="id" class="form-control">
+				</div>
+				<div class="form-group login-field">
+				<label for="pw">비밀번호</label>
+				<input type="password" id="pw" name="pw" class="form-control">
+				</div>
+				<div class="text-center login-field-option">
+				<div class="login-field-option-item" style="padding-right:6px; border-right:1px solid #ddd;">
+				<a href="javascript:void(0)">회원가입</a>
+				<%--<a href="/board/signup">회원가입</a>--%>
+				</div>
+				<div class="login-field-option-item" style="padding-left:5px;">
+				<a href="javascript:void(0)">계정찾기</a>
+				<%--<a href="/board/account_find">계정찾기</a>--%>
+				</div>
+				<div style="padding-top:8px;">
+				<button type="submit" class="btn btn-secondary signature-btn">로그인</button>
+				</div>
+				</div>
+				</form>
+				</div>
+				<form>
+
+				</form>
 				</div>
 			</c:when>
 			<c:otherwise>
-				<div id="login-module" style="min-height:350px; border:1px solid crimson; padding:7px 7px 15px 7px;">
+				<div id="login-module" style="min-height:350px; padding:7px 7px 15px 7px;">
 				<img id="login-module-avatar" src="../../../../resources/imgs/margarette.png" width="100%" height="" class="mx-auto d-block">
 				<div id="login-module__idnick">
 				<span style="line-height:10px;"><strong>마가렛트</strong></span>
@@ -146,3 +244,8 @@
 		</c:forEach>
 		</ul>
 		</div>
+
+		<%--<c:forEach items="${param.model}" var="i">--%>
+		<%--${i}--%>
+		<%--</c:forEach>--%>
+		<%--<c:out value="${param.model}"/>--%>

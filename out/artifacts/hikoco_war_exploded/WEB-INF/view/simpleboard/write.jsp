@@ -85,7 +85,7 @@
 <spring:hasBindErrors name="boardVO" />
 <div id="writeArticle-wrapper">
 	<!-- 서브 게시판 배너 -->
-	<div class="text-center" style="width:100%; height:100px; border:1px solid #5d5d5d; margin-bottom:10px;">
+	<div class="common-banner text-center">
 		<span id="banner-span" style="font-size:2.0rem; font-weight:300; line-height:100px;"></span>
 	</div>
 	<div style="padding-bottom:20px;">
@@ -154,7 +154,7 @@
 			</div>
 		</div>
 		<div class="text-center" style="padding-top:20px; ">
-			<button type="submit" class="btn btn-info">제출</button>
+			<button type="submit" class="btn btn-info signature-btn">제출</button>
 		</div>
 	</form>
 </div>

@@ -18,11 +18,21 @@
         SELECT id, username, title, writedate FROM simpleboard_board
     </select>
 
+
+    <select id="getAnnounceListByCategory" parameterType="int" resultType="java.util.HashMap">
+        SELECT id, username, title, hit, comment_cnt ,writedate FROM simpleboard_board
+        WHERE category = #{category} AND visible = 1 AND isannounce = 1
+        ORDER BY id DESC
+    </select>
+
+
     <select id="getListByCategory" parameterType="java.util.HashMap" resultType="java.util.HashMap">
         SELECT id, username, title, hit, comment_cnt ,writedate FROM simpleboard_board
-        WHERE category = #{category}
+        WHERE category = #{category} AND visible = 1 AND isannounce = 0
         ORDER BY id DESC LIMIT #{PAGINATION}, #{LIMIT}
     </select>
+
+
 
     <select id="getListCountByCategory" parameterType="int" resultType="int">
         SELECT count(*) FROM simpleboard_board WHERE category = #{category}

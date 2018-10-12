@@ -1,6 +1,7 @@
 package org.silkdog.maven.simpleboard.board.controller;
 
 import org.silkdog.maven.simpleboard.board.dao.BoardDAO;
+import org.silkdog.maven.simpleboard.board.dao.CategoryDAO;
 import org.silkdog.maven.simpleboard.board.vo.BoardVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 
@@ -17,12 +19,17 @@ public class SimpleboardMainController {
 
     @Autowired
     private BoardDAO boardDAO;
+
+    @Autowired
+    private CategoryDAO categoryDAO;
+
     private int category;
     private int page;
 
     @Autowired
-    public SimpleboardMainController(BoardDAO boardDAO) {
+    public SimpleboardMainController(BoardDAO boardDAO, CategoryDAO categoryDAO) {
         this.boardDAO = boardDAO;
+        this.categoryDAO = categoryDAO;
     }
 
     /** 자유게시판으로 리다이렉트 */
@@ -55,16 +62,20 @@ public class SimpleboardMainController {
     @RequestMapping(value="/board/c{category}/p{page}", method= RequestMethod.GET)
     public String indexPagination(@PathVariable("page") int page,
                                   @PathVariable("category") int category,
+                                  HttpServletRequest req,
                                   Model model){
         this.page = page;
         this.category = category;
+        // 각 카테고리의 게시물 수 model 에 넣기
+        model.addAttribute("getAllCategoryList", categoryDAO.getAllCategoryList());
+
         // 카테고리 내 게시물 수 model 에 넣기
         model.addAttribute("getListCountByCategory", boardDAO.getListCountByCategory(category));
-        return doIndex(page, category, model);
+        return doIndex(page, category, req, model);
     }
 
     /** 게시판 인덱싱, 페이지네이션 */
-    public String doIndex(int page, int category, Model model){
+    public String doIndex(int page, int category, HttpServletRequest req, Model model){
         /** 페이지가 0일 경우 1로 리다이렉트(forward?)*/
         if(page == 0){
             return "redirect:/board/c{category}/p1";
@@ -93,9 +104,12 @@ public class SimpleboardMainController {
         hashMap.put("PAGINATION", PAGINATION);
         hashMap.put("LIMIT", LIMIT);
 
-        List<BoardVO> boardVOList = boardDAO.getListByCategory(hashMap);
+        List<BoardVO> boardVOAnnouceList = boardDAO.getAnnounceListByCategory(category);
+        model.addAttribute("bVAL", boardVOAnnouceList);
 
+        List<BoardVO> boardVOList = boardDAO.getListByCategory(hashMap);
         model.addAttribute("boardVOList", boardVOList);
+
         model.addAttribute("category", category);
         model.addAttribute("currentPage", page);
         return "simpleboard/newBoard";

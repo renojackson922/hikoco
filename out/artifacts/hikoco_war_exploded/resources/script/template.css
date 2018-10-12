@@ -26,14 +26,15 @@
     /*background: rgba(220,20,60,0.7);*/
     /*color: #*/
 }
-td > a{
+td > a, th > a{
     text-decoration: none;
     color:#5d5d5d;
 }
-td > a:hover{
+td > a:hover, th > a:hover{
     text-decoration: none;
     color:#ccc;
 }
+
 select, option{
     font-size: 0.8rem !important;
     padding:0 !important;
@@ -77,13 +78,13 @@ select, option{
         font-size: 0.85rem;
     }
     .bottom-wrapper{
-        margin-top: 50px;
+        margin-top: 150px;
     }
 }
 /* 데스크탑 뷰 */
 @media screen and (min-width: 768px) and (max-width: 3000px) {
     body{
-        width:70%;
+        width:80%;
         margin:0 auto;
     }
 
@@ -115,7 +116,7 @@ select, option{
         font-size: 1.0rem;
     }
     .bottom-wrapper{
-        margin-top: 50px;
+        margin-top: 100px;
     }
 }
 .search_module{
@@ -202,6 +203,9 @@ ul[id^="list-filter-vert"]{
 #times:focus, #times:hover{
     text-decoration: none;
 }
+#login-module{
+    background-color:#fff;
+}
 #login-module__idnick{
     padding:10px 5px 5px 5px;
 }
@@ -213,7 +217,8 @@ ul[id^="list-filter-vert"]{
     padding:2px 5px;
 }
 #login-module__progress > .progress > .progress-bar{
-    background-color: crimson !important;
+    background-color: blueviolet !important;
+    /*background-image: linear-gradient(to right, #01a6a7 0%, #2c6aca 100%) !important;*/
     font-size:0.7rem !important;
 }
 #login-module__motto{
@@ -244,6 +249,10 @@ ul[id^="list-filter-vert"]{
 
 }
 
+body{
+    background-color: #ebeef1;
+}
+
 #readArticle-wrapper{
     float:left;
     overflow-x:hidden;
@@ -252,27 +261,46 @@ ul[id^="list-filter-vert"]{
 }
 
 #readArticle-inner-wrapper{
-    border: 1px solid #5d5d5d;
+    /*border: 1px solid #5d5d5d;*/
+    padding-right:2px;
 }
 
+#readArticle-inner-wrapper-section1{
+    border: 1px solid #ebeef1;
+    background-color:#fff;
+    margin-bottom:15px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.15);
+}
+#readArticle-inner-wrapper-section2{
+    border: 1px solid #ebeef1;
+    background-color:#fff;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.15);
+}
+
+#readArticle-header{
+    padding:16px 24px;
+    border-bottom:1px solid #ebeef1;
+
+}
 #readArticle-title{
-    height:40px;
-    padding-left:10px;
-    background: #ddd;
-    border-bottom:1px solid #5d5d5d;
+    height:50px;
+    word-wrap: break-word;
+    word-break: break-all;
+    /*background: #ddd;*/
+    /*color: #fff;*/
+    /*background-image: linear-gradient(to right, #01c9ca 0%, #3886FF 100%);*/
+    /*border-bottom:1px solid #5d5d5d;*/
 }
 #readArticle-title > span{
     font-size:1.25rem;
     font-weight:600;
-    line-height:40px;
+    line-height:60px;
 }
 #readArticle-subinfo{
-    height:40px;
-    padding-left:10px;
-    border-bottom:1px solid #5d5d5d;
+    height:50px;
 }
 #readArticle-subinfo > span{
-    line-height:40px;
+    /*line-height:50px;*/
     font-size:0.8rem;
 }
 #readArticle-task{
@@ -285,19 +313,18 @@ ul[id^="list-filter-vert"]{
 }
 #readArticle-vote{
     height:50px;
-    background:#ddd;
-    border-bottom:1px solid #5d5d5d;
+    background:#f8f9fa;
 }
 #readArticle-comment__top{
     padding-left:10px;
-    height:40px;
-    border-bottom:1px solid #5d5d5d;
+    height:45px;
+    border-bottom:1px solid #ebeef1;
 }
 .readArticle-comment__item{
     min-height:145px;
     overflow-y: auto;
     /*border-left:1px solid #5d5d5d;*/
-    border-bottom:1px solid #5d5d5d;
+    border-bottom:1px solid #ebeef1;
 }
 .readArticle-comment__item__avatar{
     float:left;
@@ -397,3 +424,48 @@ ul[id^="list-filter-vert"]{
     padding-left:40px;
     /*margin:0 auto;*/
 }
+
+/**  btn */
+
+/*.signature-btn{*/
+    /*background-color:blueviolet;*/
+    /*border-color:blueviolet;*/
+/*}*/
+/*.signature-btn:hover{*/
+    /*color: #fff;*/
+    /*background-color: #631fa1;*/
+    /*border-color:blueviolet;*/
+/*}*/
+/*.signature-btn:focus{*/
+    /*box-shadow: 0 0 0 0.2rem rgba(142, 60, 184, 0.26) !important;*/
+/*}*/
+
+.signature-btn{
+    color: #fff;
+    background-image: linear-gradient(to right, #01c9ca 0%, #3886FF 100%);
+    border-style: solid;
+    border-image: linear-gradient(to right, #01c9ca 0%, #3886FF 100%);
+    border-image-slice: 1;
+    border-image-width: 2px;
+}
+.signature-btn:hover{
+    color: #fff;
+    background-image: linear-gradient(to right, #01a6a7 0%, #2c6aca 100%);
+    border-style: solid;
+    border-image: linear-gradient(to right, #01a6a7 0%, #2c6aca 100%);
+    border-image-slice: 1;
+    border-image-width: 2px;
+
+}
+.signature-btn:focus{
+    box-shadow: 0 0 0 0.2rem rgba(106, 186, 202, 0.56) !important;
+}
+
+.common-banner{
+    width:100%;
+    height:100px;
+    border:1px solid #5d5d5d;
+    background-color:#fff;
+    margin-bottom:15px;
+}
+

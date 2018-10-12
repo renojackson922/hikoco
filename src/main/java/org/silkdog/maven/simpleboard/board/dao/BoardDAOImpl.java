@@ -42,6 +42,12 @@ public class BoardDAOImpl implements BoardDAO {
     }
 
     @Override
+    public List<BoardVO> getAnnounceListByCategory(int category) {
+        return sqlSessionTemplate.
+            selectList("org.silkdog.maven.simpleboard.board.dao.BoardDAO.getAnnounceListByCategory", category);
+    }
+
+    @Override
     public int getListCountByCategory(int category){
         return sqlSessionTemplate.selectOne("org.silkdog.maven.simpleboard.board.dao.BoardDAO.getListCountByCategory", category);
     }

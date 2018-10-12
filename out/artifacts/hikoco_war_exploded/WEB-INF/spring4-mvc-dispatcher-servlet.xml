@@ -99,6 +99,7 @@
                 <!-- Simpleboard -->
                 <value>org.silkdog.maven.simpleboard.board.vo.BoardVO</value>
                 <value>org.silkdog.maven.simpleboard.board.vo.CommentVO</value>
+                <value>org.silkdog.maven.simpleboard.board.vo.CategoryVO</value>
             </list>
         </property>
         <!--<property name="mapperLocations" value="classpath*:/mybatis/*.xml"/>-->
@@ -150,6 +151,9 @@
         <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
     </bean>
     <bean id="commentDAO" class="org.silkdog.maven.simpleboard.board.dao.CommentDAOImpl">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+    </bean>
+    <bean id="boardCategoryDAO" class="org.silkdog.maven.simpleboard.board.dao.CategoryDAOImpl">
         <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
     </bean>
 

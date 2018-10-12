@@ -10,6 +10,7 @@ public interface BoardDAO {
     List<BoardVO> getList(HashMap<String, Object> hashMap);
     List<BoardVO> getAllList();
     List<BoardVO> getListByCategory(HashMap<String, Object> hashMap);
+    List<BoardVO> getAnnounceListByCategory(int category);
     int getListCountByCategory(int category);
 //    int insert(HashMap<String, Object> hashMap);
     int doBot(HashMap<String, Object> hashMap);

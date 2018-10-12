@@ -9,12 +9,20 @@
 	<%--<link href="../../../resources/script/ghostcss.css" rel="stylesheet">--%>
 	<link href="../../../resources/script/template.css" rel="stylesheet">
 	<script src="../../../resources/js/template.js" crossorigin="*" async defer></script>
+	<script>
+		var foo = '${getAllCategoryList}';
+		console.log(foo);
+	</script>
 </head>
 <body>
 	<div id="show">
 		<%@ include file="layout/banner.jsp"%>
 		<div id="board_list" style="display:block; width:100%; height:100%;">
-			<%@ include file="layout/menu.jsp"%>
+			<c:set var="myRequestModel" value="${getAllCategoryList}" scope="request" />
+			<%--<%@ include file="layout/menu.jsp"%>--%>
+			<jsp:include page="layout/menu.jsp">
+				<jsp:param name="model" value="myRequestModel"/>
+			</jsp:include>
 			<%@ include file="./boardList.jsp"%>
 		</div>
 		<%@ include file="layout/footer.jsp"%>

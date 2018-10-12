@@ -69,7 +69,7 @@
     </style>
     <div id="editArticle-wrapper">
 		<!-- 서브 게시판 배너 -->
-		<div class="text-center" style="width:100%; height:100px; border:1px solid #5d5d5d; margin-bottom:10px;">
+		<div class="common-banner text-center">
 			<span id="banner-span" style="font-size:2.0rem; font-weight:300; line-height:100px;"></span>
 		</div>
         <div style="padding-bottom:20px;">
