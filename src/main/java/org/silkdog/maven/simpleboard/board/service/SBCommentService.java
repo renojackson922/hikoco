@@ -4,7 +4,7 @@ import org.silkdog.maven.simpleboard.board.vo.CommentVO;
 import org.springframework.stereotype.Service;
 
 @Service
-public interface CommentService {
+public interface SBCommentService {
     void putInfoBeforeInsert(CommentVO commentVO);
     void addCommentCntToBoard(int boardId);
     void subtractCommentCntToBoard(int boardId);

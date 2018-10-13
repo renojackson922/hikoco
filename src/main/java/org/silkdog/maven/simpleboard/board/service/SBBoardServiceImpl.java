@@ -3,21 +3,13 @@ package org.silkdog.maven.simpleboard.board.service;
 import org.silkdog.maven.simpleboard.board.dao.BoardDAO;
 import org.silkdog.maven.simpleboard.board.vo.BoardVO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
 import javax.servlet.http.HttpServletRequest;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.util.Date;
 
-@Service
-public class BoardServiceImpl implements BoardService {
-
-    public BoardServiceImpl(BoardDAO boardDAO) {
-        this.boardDAO = boardDAO;
-    }
+@Repository
+public class SBBoardServiceImpl implements SBBoardService {
 
     @Autowired
     private BoardDAO boardDAO;

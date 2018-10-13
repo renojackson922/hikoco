@@ -20,5 +20,6 @@
         <mapper resource="mybatis/simpleboard/BoardMapper.xml"></mapper>
         <mapper resource="mybatis/simpleboard/CommentMapper.xml"></mapper>
         <mapper resource="mybatis/simpleboard/CategoryMapper.xml"></mapper>
+        <mapper resource="mybatis/simpleboard/MemberMapper.xml"></mapper>
     </mappers>
 </configuration>

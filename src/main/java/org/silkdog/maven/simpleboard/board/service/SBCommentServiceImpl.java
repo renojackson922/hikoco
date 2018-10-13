@@ -4,14 +4,14 @@ import org.silkdog.maven.simpleboard.board.dao.BoardDAO;
 import org.silkdog.maven.simpleboard.board.dao.CommentDAO;
 import org.silkdog.maven.simpleboard.board.vo.CommentVO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
 import java.util.Date;
 
-@Service
-public class CommentServiceImpl implements CommentService{
+@Repository
+public class SBCommentServiceImpl implements SBCommentService {
     @Autowired
-    private CommentService commentService;
+    private SBCommentService SBCommentService;
 
     @Autowired
     private BoardDAO boardDAO;
@@ -20,10 +20,10 @@ public class CommentServiceImpl implements CommentService{
     private CommentDAO commentDAO;
 
     /** ????? */
-    public void CommentServiceImpl(BoardDAO boardDAO, CommentDAO commentDAO, CommentService commentService){
+    public void CommentServiceImpl(BoardDAO boardDAO, CommentDAO commentDAO, SBCommentService SBCommentService){
         this.boardDAO = boardDAO;
         this.commentDAO = commentDAO;
-        this.commentService = commentService;
+        this.SBCommentService = SBCommentService;
     }
 
 

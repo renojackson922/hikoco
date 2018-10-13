@@ -1,6 +1,6 @@
 package org.silkdog.maven.simpleboard.board.controller;
 
-import org.silkdog.maven.simpleboard.board.service.CommentService;
+import org.silkdog.maven.simpleboard.board.service.SBCommentService;
 import org.silkdog.maven.simpleboard.board.vo.CommentVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/board/addComment")
 public class AddComment {
     @Autowired
-    private CommentService commentService;
+    private SBCommentService SBCommentService;
 
     public static String makeUrl(HttpServletRequest req){
         return req.getRequestURL().toString() + "?" + req.getQueryString();
@@ -45,7 +45,7 @@ public class AddComment {
             commentVO.setPw(pw);
             commentVO.setBoardId(boardId);
             commentVO.setDetail(detail);
-            commentService.putInfoBeforeInsert(commentVO);
+            SBCommentService.putInfoBeforeInsert(commentVO);
         }else{
             log("비번이 틀림");
             return "redirect:/board/c" + category + "/r" + boardId;

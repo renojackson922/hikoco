@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- DAO(Interface)를 지정할 것.-->
+<mapper namespace="org.silkdog.maven.simpleboard.board.dao.MemberDAO">
+    <insert id="createAccount" useGeneratedKeys="true" keyProperty="id" parameterType="simpleboardMemberVO">
+    INSERT INTO simpleboard_member (username, password, nickname, phone, introduction, regdate, reg_ip, last_login_date, last_login_ip) VALUES
+    (
+      #{username}, #{password}, #{nickname}, #{phone}, #{introduction}, #{regdate}, #{regip}, #{lastLoginDate}, #{lastLoginIp}
+    )
+    </insert>
+
+    <select id="login" parameterType="java.util.HashMap" resultType="int">
+        SELECT count(*) FROM simpleboard_member WHERE username = #{username} AND password = #{password}
+    </select>
+
+    <select id="getInfoByUsername" parameterType="String" resultType="simpleboardMemberVO">
+        SELECT * FROM simpleboard_member WHERE username = #{username}
+    </select>
+</mapper>
+
+
+
+
+<!--<update id="replaceNewline" parameterType="int">-->
+        <!--UPDATE simpleboard_comment SET detail = REPLACE(detail, '\r\n', '<![CDATA[<br />]]>') WHERE id = #{id}-->
+    <!--</update>-->
+
+    <!--&lt;!&ndash; #{LIMIT, #{PAGINATION} !!!! &ndash;&gt;-->
+<!--<select id="getCommentListByBoardId" parameterType="int" resultType="java.util.HashMap">-->
+        <!--SELECT * FROM simpleboard_comment WHERE board_id = #{boardId} AND visible = 1 ORDER BY no ASC, writedate ASC-->
+    <!--</select>-->
+
+<!--<select id="getCommentCountByBoardId" parameterType="int" resultType="int">-->
+        <!--SELECT count(*) FROM simpleboard_comment WHERE board_id = #{boardId} AND visible = 1-->
+    <!--</select>-->
+
+<!--<select id="getOneCommentById" parameterType="int" resultType="commentVO">-->
+        <!--SELECT * FROM simpleboard_comment WHERE no = #{dataId}-->
+    <!--</select>-->
+
+<!--<update id="updateComment" parameterType="java.util.HashMap">-->
+        <!--UPDATE simpleboard_comment SET detail = #{detail}, last_edited_date = #{lastEditedDate}, last_edited_ip = #{lastEditedIp}-->
+        <!--WHERE no = #{dataId}-->
+    <!--</update>-->
+
+<!--<update id="deleteComment" parameterType="int">-->
+        <!--UPDATE simpleboard_comment SET visible = 0,  deleted_date = now() WHERE no = #{dataId}-->
+    <!--</update>-->

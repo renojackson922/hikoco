@@ -1,7 +1,7 @@
 package org.silkdog.maven.simpleboard.board.controller;
 
 import org.silkdog.maven.simpleboard.board.dao.BoardDAO;
-import org.silkdog.maven.simpleboard.board.service.BoardService;
+import org.silkdog.maven.simpleboard.board.service.SBBoardService;
 import org.silkdog.maven.simpleboard.board.validator.AuthValidator;
 import org.silkdog.maven.simpleboard.board.vo.BoardVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +18,12 @@ import javax.servlet.http.HttpServletRequest;
 public class WriteController {
     private final static String WRITE_URL = "simpleboard/newWrite";
     private final BoardDAO boardDAO;
-    private BoardService boardService;
+    private SBBoardService SBBoardService;
 
     @Autowired
-    public WriteController(BoardDAO boardDAO, BoardService boardService) {
+    public WriteController(BoardDAO boardDAO, SBBoardService SBBoardService) {
         this.boardDAO = boardDAO;
-        this.boardService = boardService;
+        this.SBBoardService = SBBoardService;
     }
 
     @GetMapping
@@ -48,7 +48,7 @@ public class WriteController {
 
         /** Validator 서비스를 통해 오류 검출 */
 
-        boardService.addData(boardVO, req);
+        SBBoardService.addData(boardVO, req);
 
         return "redirect:/board/c" + category;
     }

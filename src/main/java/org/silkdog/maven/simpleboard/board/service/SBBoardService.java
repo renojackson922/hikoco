@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpServletRequest;
 
 @Service
-public interface BoardService {
+public interface SBBoardService {
     void addData(BoardVO boardVO, HttpServletRequest req);
     void addHit(int id);
 }

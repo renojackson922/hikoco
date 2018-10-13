@@ -91,7 +91,7 @@
 		}
 		</style>
 		<c:choose>
-			<c:when test="${0 eq 0}">
+			<c:when test="${session eq null}">
 				<div id="login-module-negative" style="min-height:300px; width:220px; padding:7px 7px 15px 7px;">
 				<style>
 				#login-module-negative__header__title:before{
@@ -153,14 +153,14 @@
 				</style>
 				<div id="login-module-negative__header" class="text-center" style="height:50px; margin:10px; ">
 				<span id="login-module-negative__header__title" style="line-height:50px; font-size:2.0rem; display:block; margin-bottom:10px;"></span>
-				<form class="text-left">
+				<form class="text-left" action="/board/login" method="POST">
 				<div class="form-group login-field">
 				<label for="id">아이디</label>
-				<input type="email" id="id" name="id" class="form-control">
+				<input type="email" id="id" name="username" class="form-control">
 				</div>
 				<div class="form-group login-field">
 				<label for="pw">비밀번호</label>
-				<input type="password" id="pw" name="pw" class="form-control">
+				<input type="password" id="pw" name="password" class="form-control">
 				</div>
 				<div class="text-center login-field-option">
 				<div class="login-field-option-item" style="padding-right:6px; border-right:1px solid #ddd;">
@@ -186,10 +186,10 @@
 				<div id="login-module" style="min-height:350px; padding:7px 7px 15px 7px;">
 				<img id="login-module-avatar" src="../../../../resources/imgs/margarette.png" width="100%" height="" class="mx-auto d-block">
 				<div id="login-module__idnick">
-				<span style="line-height:10px;"><strong>마가렛트</strong></span>
-				<span>(margarette)</span>
+				<span style="line-height:10px;"><strong>${userinfo.nickname}</strong></span>
+				<span>(${userinfo.username})</span>
 				<span class="login-module__idnick__icon" style="font-size:0.6rem !important; border:none; padding:1px 5px; border-radius:4px;
-				background:crimson; color:#fff; display:inline-block !important;">Lv.273</span>
+				background:crimson; color:#fff; display:inline-block !important;">Lv.${userinfo.level}</span>
 				<span class="login-module__idnick__icon"  style="font-size:0.6rem !important; border:none; padding:1px 5px; border-radius:4px;
 				background:orange; color:#fff; display:inline-block !important;">겜창인생</span>
 				<span class="login-module__idnick__icon"  style="font-size:0.6rem !important; border:none; padding:1px 5px; border-radius:4px;
@@ -202,12 +202,13 @@
 				</div>
 				</div>
 				<div id="login-module__motto">
-				<p>오늘밤도 고독이 밀려온다..<br>나 혼자서 이 밤을 견디려면.. 알코올.. 알코올이 필요하다..<br>
-				나는 저급한 소주 따위는 마시지 않는다.<br>아일랜드산 흑맥주. <strong>구인네스</strong>를 마신다.</p>
+				<p>${userinfo.introduction}</p>
 				</div>
 				<div id="login-module__menu" class="text-center">
-				<%--<button class="btn btn-sm btn-info">프로필 수정</button>--%>
-				<%--<button class="btn btn-sm btn-danger">로그아웃</button>--%>
+				<button class="btn btn-sm signature-btn">프로필 수정</button>
+				<form onsubmit="return confirm('로그아웃 하시겠습니까?')" action="/board/logout" method="POST" style="display:inline-block;">
+					<button type="submit" class="btn btn-sm signature-btn" style="font-size: 0.75rem;border-radius: 0px;">로그아웃</button>
+				</form>
 				</div>
 				</div>
 			</c:otherwise>

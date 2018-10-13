@@ -1,22 +1,30 @@
 package org.silkdog.maven.simpleboard.board.controller;
 
 import org.silkdog.maven.simpleboard.board.dao.BoardDAO;
+import org.silkdog.maven.simpleboard.board.service.SBLoginService;
 import org.silkdog.maven.simpleboard.board.vo.BoardVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 
-@CrossOrigin
 @Controller
+@CrossOrigin("*")
+//@SessionAttributes("session")
 public class EditController {
     private final static String EDIT_URL = "simpleboard/newEdit";
     private final BoardDAO boardDAO;
+
+    @Autowired
+    @Qualifier("SBLoginServiceImpl")
+    private SBLoginService sbLoginService;
 
     @Autowired
     public EditController(BoardDAO boardDAO) {
@@ -25,7 +33,12 @@ public class EditController {
 
     @RequestMapping(value = "/board/c{category}/r{id}/edit", method = RequestMethod.GET)
     public String edit(@PathVariable("category") int category,
-                       @PathVariable("id") int id, Model model) throws UnsupportedEncodingException { //, @ModelAttribute("boardVO") BoardVO boardVO
+                       @PathVariable("id") int id,
+                       HttpSession httpSession,
+                       Model model) throws UnsupportedEncodingException { //, @ModelAttribute("boardVO") BoardVO boardVO
+
+        sbLoginService.checkSession(httpSession, model);
+
         BoardVO boardVO = boardDAO.detailById(id);
         String str = new String((boardVO.getDetail()).getBytes("8859_1"), StandardCharsets.UTF_8);
         String strConverted = conversion(str);

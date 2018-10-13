@@ -2,35 +2,36 @@ package org.silkdog.maven.simpleboard.board.controller;
 
 import org.silkdog.maven.simpleboard.board.dao.BoardDAO;
 import org.silkdog.maven.simpleboard.board.dao.CategoryDAO;
+import org.silkdog.maven.simpleboard.board.dao.MemberDAO;
+import org.silkdog.maven.simpleboard.board.service.SBLoginService;
 import org.silkdog.maven.simpleboard.board.vo.BoardVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
 
 @Controller
+@CrossOrigin("*")
+//@SessionAttributes("session")
 public class SimpleboardMainController {
-
     @Autowired
     private BoardDAO boardDAO;
-
+    @Autowired
+    private MemberDAO memberDAO;
     @Autowired
     private CategoryDAO categoryDAO;
+    @Autowired
+    @Qualifier("SBLoginServiceImpl")
+    private SBLoginService sbLoginService;
 
     private int category;
     private int page;
-
-    @Autowired
-    public SimpleboardMainController(BoardDAO boardDAO, CategoryDAO categoryDAO) {
-        this.boardDAO = boardDAO;
-        this.categoryDAO = categoryDAO;
-    }
 
     /** 자유게시판으로 리다이렉트 */
     @RequestMapping(value={"/board", "/board/"})
@@ -63,15 +64,22 @@ public class SimpleboardMainController {
     public String indexPagination(@PathVariable("page") int page,
                                   @PathVariable("category") int category,
                                   HttpServletRequest req,
+                                  HttpSession httpSession,
                                   Model model){
         this.page = page;
         this.category = category;
+
+        // 로그인 여부에 따라 세션 가져오기
+        sbLoginService.checkSession(httpSession, model);
+
         // 각 카테고리의 게시물 수 model 에 넣기
         model.addAttribute("getAllCategoryList", categoryDAO.getAllCategoryList());
 
         // 카테고리 내 게시물 수 model 에 넣기
         model.addAttribute("getListCountByCategory", boardDAO.getListCountByCategory(category));
         return doIndex(page, category, req, model);
+
+
     }
 
     /** 게시판 인덱싱, 페이지네이션 */
@@ -114,4 +122,5 @@ public class SimpleboardMainController {
         model.addAttribute("currentPage", page);
         return "simpleboard/newBoard";
     }
+
 }
