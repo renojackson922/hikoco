@@ -7,123 +7,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e4dadd9-aa54-45fd-aee2-bdcdfaaf52b8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/SBDuplicatedAccountController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/SBSignupController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/SBSignupService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/SBSignupServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/validator/SBMemberValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/popup/check_account.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/sb_signup.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/imgs/moodbg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a4b30908-8c89-4b01-be15-ea091cc157ae.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a4b30908-8c89-4b01-be15-ea091cc157ae.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/messages/error.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/messages/error.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/mybatis/simpleboard/BoardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/mybatis/simpleboard/BoardMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/mybatis/simpleboard/CategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/mybatis/simpleboard/CategoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/mybatis/simpleboard/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/mybatis/simpleboard/CommentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/mybatis/simpleboard/MemberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/mybatis/simpleboard/MemberMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/AddComment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/AddComment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/BotController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/BotController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/DeleteComment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/DeleteComment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/EditController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/EditController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/ReadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/ReadController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/SimpleboardLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/SimpleboardLoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/SimpleboardMainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/SimpleboardMainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/UpdateComment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/UpdateComment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/WriteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/WriteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/dao/BoardDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/dao/BoardDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/dao/CategoryDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/dao/CategoryDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/dao/CommentDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/dao/CommentDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/dao/MemberDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/dao/MemberDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/service/SBBoardService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/service/SBBoardService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/service/SBBoardServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/service/SBBoardServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/service/SBCommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/service/SBCommentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/service/SBCommentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/service/SBCommentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/service/SBLoginServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/service/SBLoginServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/validator/AuthValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/vo/BoardVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/vo/CategoryVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/vo/CommentVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/vo/MemberVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/main/RestfulController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/main/RestfulController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/spring4-mvc-dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/spring4-mvc-dispatcher-servlet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/simpleboard/layout/menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/view/simpleboard/layout/menu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/AddComment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/DeleteComment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/EditController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/ReadController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/SimpleboardLoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/SimpleboardMainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/UpAndDownItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/UpdateComment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/WEB-INF/classes/org/silkdog/maven/simpleboard/board/controller/WriteController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/resources/script/template.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hikoco_war_exploded/resources/script/template.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/AddComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/SBAddComment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/BotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/BotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/DeleteComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/SBDeleteComment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/EditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/SBEditController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/ReadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/SBReadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/SimpleboardLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/SBLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/SimpleboardMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/SBMainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/UpAndDownItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/SBUpAndDownItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/UpdateComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/SBUpdateComment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/WriteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/SBWriteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/dao/BoardDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/dao/SBBoardDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/dao/BoardDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/dao/SBBoardDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/dao/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/dao/SBCategoryDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/dao/CategoryDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/dao/SBCategoryDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/dao/CommentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/dao/SBCommentDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/dao/CommentDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/dao/SBCommentDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/dao/MemberDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/dao/SBMemberDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/dao/MemberDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/dao/SBMemberDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/SBBoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/SBBoardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/SBBoardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/SBBoardServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/SBCommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/SBCommentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/SBCommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/SBCommentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/SBLoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/SBLoginServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/validator/AuthValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/validator/SBAuthValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/vo/BoardVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/vo/SBBoardVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/vo/CategoryVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/vo/SBCategoryVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/vo/CommentVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/vo/SBCommentVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/vo/MemberVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/vo/SBMemberVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/main/RestfulController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/main/RestfulController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages/error.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages/error.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/simpleboard/BoardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/simpleboard/BoardMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/simpleboard/CategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/simpleboard/CategoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/simpleboard/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/simpleboard/CommentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/simpleboard/MemberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/simpleboard/MemberMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/messages/error.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/messages/error.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/simpleboard/BoardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/simpleboard/BoardMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/simpleboard/CategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/simpleboard/CategoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/simpleboard/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/simpleboard/CommentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/simpleboard/MemberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/simpleboard/MemberMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/AddComment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/AddComment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/BotController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/BotController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/DeleteComment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/DeleteComment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/EditController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/EditController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/ReadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/ReadController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/SimpleboardLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/SimpleboardLoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/SimpleboardMainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/SimpleboardMainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/UpdateComment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/UpdateComment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/WriteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/WriteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/dao/BoardDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/dao/BoardDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/dao/CategoryDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/dao/CategoryDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/dao/CommentDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/dao/CommentDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/dao/MemberDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/dao/MemberDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/service/SBBoardService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/service/SBBoardService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/service/SBBoardServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/service/SBBoardServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/service/SBCommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/service/SBCommentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/service/SBCommentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/service/SBCommentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/service/SBLoginServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/service/SBLoginServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/validator/AuthValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/vo/BoardVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/vo/CategoryVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/vo/CommentVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/vo/MemberVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/main/RestfulController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/main/RestfulController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/spring4-mvc-dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/spring4-mvc-dispatcher-servlet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/AddComment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/DeleteComment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/EditController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/ReadController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/SimpleboardLoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/SimpleboardMainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/UpAndDownItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/UpdateComment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/silkdog/maven/simpleboard/board/controller/WriteController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/layout/menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/layout/menu.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/resources/script/template.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/resources/script/template.css" afterDir="false" />
     </list>
@@ -305,7 +208,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="JAVA/" value="1" />
-          <entry key="css" value="12" />
+          <entry key="css" value="13" />
           <entry key="gitattributes" value="1" />
           <entry key="gitignore" value="1" />
           <entry key="hollys_board" value="1" />
@@ -333,7 +236,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="12" />
+          <entry key="CSS" value="13" />
           <entry key="Database Element" value="32" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="Image" value="3" />
@@ -355,12 +258,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="cell" value="254" />
-          <entry key="css" value="581" />
+          <entry key="css" value="676" />
           <entry key="dummy" value="76" />
           <entry key="java" value="15583" />
           <entry key="js" value="19" />
           <entry key="json" value="220" />
-          <entry key="jsp" value="27020" />
+          <entry key="jsp" value="27049" />
           <entry key="properties" value="16" />
           <entry key="sql" value="372" />
           <entry key="txt" value="26" />
@@ -369,10 +272,10 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="581" />
+          <entry key="CSS" value="676" />
           <entry key="JAVA" value="15583" />
           <entry key="JSON" value="220" />
-          <entry key="JSP" value="27020" />
+          <entry key="JSP" value="27049" />
           <entry key="JavaScript" value="19" />
           <entry key="PLAIN_TEXT" value="102" />
           <entry key="Properties" value="16" />
@@ -462,11 +365,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/simpleboard/layout/menu.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="222" column="146" selection-start-line="222" selection-start-column="146" selection-end-line="222" selection-end-column="146" />
+            <state relative-caret-position="-11">
+              <caret line="192" column="47" lean-forward="true" selection-start-line="192" selection-start-column="47" selection-end-line="192" selection-end-column="47" />
               <folding>
                 <element signature="n#style#0;n#form#0;n#div#3;n#div#1;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#form#0;n#div#3;n#div#1;n#div#2;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -477,6 +379,15 @@
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/resources/script/template.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="434" lean-forward="true" selection-start-line="434" selection-end-line="434" />
             </state>
           </provider>
         </entry>
@@ -505,7 +416,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/SBUpdateComment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="84">
@@ -613,7 +524,6 @@
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/SBDuplicatedAccountController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/vo/MemberVO.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/SimpleboardLoginController.java" />
-        <option value="$PROJECT_DIR$/web/resources/script/template.css" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/vo/SBBoardVO.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/vo/SBCommentVO.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/vo/SBCategoryVO.java" />
@@ -643,10 +553,11 @@
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/simpleboard/MemberMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/SBSignupService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/service/SBSignupServiceImpl.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/layout/menu.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/SimpleboardMainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/SBReadController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/controller/SBUpdateComment.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/simpleboard/layout/menu.jsp" />
+        <option value="$PROJECT_DIR$/web/resources/script/template.css" />
       </list>
     </option>
   </component>
@@ -917,7 +828,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/aikocandy/IdeaProjects/hikoco/src/main/java/org/silkdog/maven/simpleboard/board/controller/SimpleboardMainController.java&#10;&gt;&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539534186399" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539534657060" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="database.data.extractors.current.id" value="Tab-separated (TSV)_id" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -1214,7 +1125,7 @@
       <workItem from="1539012492772" duration="3727000" />
       <workItem from="1539068551613" duration="6200000" />
       <workItem from="1539077143924" duration="7702000" />
-      <workItem from="1539217922817" duration="63983000" />
+      <workItem from="1539217922817" duration="64449000" />
     </task>
     <servers />
   </component>
@@ -1251,7 +1162,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1054398000" />
+    <option name="totallyTimeSpent" value="1054864000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1264,6 +1175,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="62" y="54" width="2432" height="1304" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77205884" visible="true" weight="0.16820084" />
       <window_info id="Structure" order="1" sideWeight="0.22794117" side_tool="true" weight="0.1420205" />
@@ -1288,7 +1200,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32943293" />
       <window_info anchor="bottom" id="Database Changes" order="13" weight="0.32853284" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.2718272" />
-      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.35230127" side_tool="true" visible="true" weight="0.3721122" />
+      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.35230127" side_tool="true" weight="0.3721122" />
       <window_info anchor="bottom" id="Inspection Results" order="16" sideWeight="0.7659722" weight="0.5074024" />
       <window_info anchor="bottom" id="Database Console" order="17" weight="0.25454545" />
       <window_info anchor="right" id="CDI" order="0" />
@@ -1297,7 +1209,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.13849372" />
+      <window_info anchor="right" id="Database" order="6" weight="0.13849372" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Maven Projects" order="9" weight="0.32924837" />
@@ -1305,7 +1217,7 @@
       <window_info anchor="right" id="Preview" order="11" weight="0.25956416" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77205884" visible="true" weight="0.12053572" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.77205884" weight="0.16820084" />
       <window_info id="Structure" order="1" sideWeight="0.22794117" side_tool="true" weight="0.1420205" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1316,20 +1228,20 @@
       <window_info anchor="bottom" id="SQL Generator" order="0" weight="0.32885906" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" sideWeight="0.5554785" weight="0.37281293" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.8805341" weight="0.39106655" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.64831346" visible="true" weight="0.116917625" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.71422595" weight="0.29950494" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.64769876" visible="true" weight="0.3721122" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32885906" />
       <window_info anchor="bottom" id="Application Servers" order="8" sideWeight="0.49930555" weight="0.3261745" />
       <window_info anchor="bottom" id="Spring" order="9" weight="0.29162917" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49930555" weight="0.32853284" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.48418835" weight="0.18741259" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.48418835" weight="0.26379544" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32943293" />
       <window_info anchor="bottom" id="Database Changes" order="13" weight="0.32853284" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.2718272" />
-      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.3516865" side_tool="true" visible="true" weight="0.116917625" />
-      <window_info anchor="bottom" id="Inspection Results" order="16" sideWeight="0.7659722" weight="0.49921384" />
+      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.35230127" side_tool="true" weight="0.3721122" />
+      <window_info anchor="bottom" id="Inspection Results" order="16" sideWeight="0.7659722" weight="0.5074024" />
       <window_info anchor="bottom" id="Database Console" order="17" weight="0.25454545" />
       <window_info anchor="right" id="CDI" order="0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -1337,7 +1249,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.11904762" />
+      <window_info anchor="right" id="Database" order="6" weight="0.13849372" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Maven Projects" order="9" weight="0.32924837" />
@@ -1352,13 +1264,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/resources/script/template.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="83" column="22" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/hikoco/member/authenticator/Authenticator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
@@ -1721,24 +1626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://a4b30908-8c89-4b01-be15-ea091cc157ae/schema/aikocandy/table/simpleboard_member">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/simpleboard/layout/menu.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="222" column="146" selection-start-line="222" selection-start-column="146" selection-end-line="222" selection-end-column="146" />
-          <folding>
-            <element signature="n#style#0;n#form#0;n#div#3;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#form#0;n#div#3;n#div#1;n#div#2;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/silkdog/maven/simpleboard/board/validator/SBAuthValidator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="722">
@@ -1780,6 +1667,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://a4b30908-8c89-4b01-be15-ea091cc157ae/schema/aikocandy/table/simpleboard_member">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/simpleboard/layout/menu.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11">
+          <caret line="192" column="47" lean-forward="true" selection-start-line="192" selection-start-column="47" selection-end-line="192" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#div#3;n#div#1;n#div#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/script/template.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="434" lean-forward="true" selection-start-line="434" selection-end-line="434" />
         </state>
       </provider>
     </entry>

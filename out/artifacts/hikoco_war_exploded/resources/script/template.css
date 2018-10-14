@@ -237,7 +237,7 @@ ul[id^="list-filter-vert"]{
     margin-bottom:3px;
 }
 #login-module__menu > button{
-    font-size:0.75rem;
+    font-size:0.8rem;
     border-radius: 0px;
 }
 .login-module__idnick__icon{
@@ -448,6 +448,8 @@ body{
 
 .signature-btn{
     color: #fff;
+    font-size:0.8rem;
+    font-weight:700;
     background-image: linear-gradient(to right, #01c9ca 0%, #3886FF 100%);
     border-style: solid;
     border-image: linear-gradient(to right, #01c9ca 0%, #3886FF 100%);
@@ -463,8 +465,18 @@ body{
     border-image-width: 2px;
 
 }
-.signature-btn:focus{
+.signature-btn:focus, .signature-btn:active{
+    color: #fff;
+    background-image: linear-gradient(to right, #017c7d 0%, #203d7d 100%) !important;
+    border-style: solid;
+    border-image: linear-gradient(to right, #017c7d 0%, #203d7d 100%);
+    border-image-slice: 1;
+    border-image-width: 2px;
     box-shadow: 0 0 0 0.2rem rgba(106, 186, 202, 0.56) !important;
+}
+
+.btn-radius0{
+    border-radius:0 !important;
 }
 
 .common-banner{

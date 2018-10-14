@@ -219,9 +219,9 @@
 				</c:choose>
 				</div>
 				<div id="login-module__menu" class="text-center">
-				<button class="btn btn-sm signature-btn">프로필 수정</button>
+				<button class="btn btn-sm signature-btn btn-radius0">프로필 수정</button>
 				<form onsubmit="return confirm('로그아웃 하시겠습니까?')" action="/board/logout" method="POST" style="display:inline-block; margin-bottom:0;">
-				<button type="submit" class="btn btn-sm signature-btn" style="font-size: 0.75rem;border-radius: 0px;">로그아웃</button>
+				<button type="submit" class="btn btn-sm signature-btn btn-radius0">로그아웃</button>
 				</form>
 				</div>
 				</div>
