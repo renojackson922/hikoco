@@ -1,7 +1,7 @@
 package org.silkdog.maven.simpleboard.board.service;
 
-import org.silkdog.maven.simpleboard.board.dao.BoardDAO;
-import org.silkdog.maven.simpleboard.board.vo.BoardVO;
+import org.silkdog.maven.simpleboard.board.dao.SBBoardDAO;
+import org.silkdog.maven.simpleboard.board.vo.SBBoardVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -12,24 +12,24 @@ import java.util.Date;
 public class SBBoardServiceImpl implements SBBoardService {
 
     @Autowired
-    private BoardDAO boardDAO;
+    private SBBoardDAO sbBoardDAO;
 
     @Override
-    public void addData(BoardVO boardVO, HttpServletRequest req) {
+    public void addData(SBBoardVO SBBoardVO, HttpServletRequest req) {
 //        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
         Date date = new Date();
         java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 
-        boardVO.setWritedate(sqlDate);
-        boardVO.setWriteip(req.getRemoteAddr());
-        boardVO.setLastEditedDate(sqlDate);
-        boardVO.setLastEditedIp(req.getRemoteAddr());
+        SBBoardVO.setWritedate(sqlDate);
+        SBBoardVO.setWriteip(req.getRemoteAddr());
+        SBBoardVO.setLastEditedDate(sqlDate);
+        SBBoardVO.setLastEditedIp(req.getRemoteAddr());
 
-        int res = boardDAO.insert(boardVO);
+        int res = sbBoardDAO.insert(SBBoardVO);
     }
 
     @Override
     public void addHit(int boardId) {
-        boardDAO.addHit(boardId);
+        sbBoardDAO.addHit(boardId);
     }
 }

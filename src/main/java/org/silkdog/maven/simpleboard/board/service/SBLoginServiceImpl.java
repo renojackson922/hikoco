@@ -1,6 +1,6 @@
 package org.silkdog.maven.simpleboard.board.service;
 
-import org.silkdog.maven.simpleboard.board.dao.MemberDAO;
+import org.silkdog.maven.simpleboard.board.dao.SBMemberDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
@@ -11,14 +11,14 @@ import javax.servlet.http.HttpSession;
 @Repository
 public class SBLoginServiceImpl implements SBLoginService {
     @Autowired
-    private MemberDAO memberDAO;
+    private SBMemberDAO sbMemberDAO;
 
     @Override
     public void checkSession(HttpSession httpSession, Model model) {
         if(httpSession.getAttribute("session") == null || httpSession.getAttribute("session").equals("")){
             System.out.println("세션이 없음!");
         }else{
-            model.addAttribute("userinfo", memberDAO.getInfoByUsername((String)httpSession.getAttribute("session")));
+            model.addAttribute("userinfo", sbMemberDAO.getInfoByUsername((String)httpSession.getAttribute("session")));
         }
     }
 

@@ -4,8 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- DAO(Interface)를 지정할 것.-->
-<mapper namespace="org.silkdog.maven.simpleboard.board.dao.BoardDAO">
-    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="boardVO">
+<mapper namespace="org.silkdog.maven.simpleboard.board.dao.SBBoardDAO">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="sbBoardVO">
         INSERT INTO simpleboard_board (username, password, category, title, detail, writedate, last_edited_date, writeip, last_edited_ip)
         VALUES (#{username},#{password},#{category}, #{title}, #{detail}, #{writedate}, #{lastEditedDate}, #{writeip}, #{lastEditedIp})
     </insert>
@@ -48,7 +48,7 @@
         )
     </insert>
 
-    <select id="detailById" parameterType="int" resultType="boardVO">
+    <select id="detailById" parameterType="int" resultType="sbBoardVO">
         SELECT * FROM simpleboard_board WHERE id = #{id}
     </select>
 

@@ -92,6 +92,11 @@
 		</style>
 		<c:choose>
 			<c:when test="${session eq null}">
+				<%--<c:if test="${loginResult ne null}">--%>
+				<%--<script>--%>
+				<%--loginResultAlert();--%>
+				<%--</script>--%>
+				<%--</c:if>--%>
 				<div id="login-module-negative" style="min-height:300px; width:220px; padding:7px 7px 15px 7px;">
 				<style>
 				#login-module-negative__header__title:before{
@@ -164,7 +169,7 @@
 				</div>
 				<div class="text-center login-field-option">
 				<div class="login-field-option-item" style="padding-right:6px; border-right:1px solid #ddd;">
-				<a href="javascript:void(0)">회원가입</a>
+				<a href="/board/signup">회원가입</a>
 				<%--<a href="/board/signup">회원가입</a>--%>
 				</div>
 				<div class="login-field-option-item" style="padding-left:5px;">
@@ -202,12 +207,21 @@
 				</div>
 				</div>
 				<div id="login-module__motto">
-				<p>${userinfo.introduction}</p>
+				<c:choose>
+					<c:when test="${userinfo.introduction eq null or userinfo.introduction eq ''}">
+						<%--<div class="text-center">--%>
+						<%--<span style="font-size:0.8rem;">자기소개가 없습니다.<br />프로필 수정에서 자기소개를 업데이트 해주세요.</span>--%>
+						<%--</div>--%>
+					</c:when>
+					<c:otherwise>
+						<p>${userinfo.introduction}</p>
+					</c:otherwise>
+				</c:choose>
 				</div>
 				<div id="login-module__menu" class="text-center">
 				<button class="btn btn-sm signature-btn">프로필 수정</button>
-				<form onsubmit="return confirm('로그아웃 하시겠습니까?')" action="/board/logout" method="POST" style="display:inline-block;">
-					<button type="submit" class="btn btn-sm signature-btn" style="font-size: 0.75rem;border-radius: 0px;">로그아웃</button>
+				<form onsubmit="return confirm('로그아웃 하시겠습니까?')" action="/board/logout" method="POST" style="display:inline-block; margin-bottom:0;">
+				<button type="submit" class="btn btn-sm signature-btn" style="font-size: 0.75rem;border-radius: 0px;">로그아웃</button>
 				</form>
 				</div>
 				</div>
@@ -245,6 +259,13 @@
 		</c:forEach>
 		</ul>
 		</div>
+		<script>
+		<%--var loginResultAlert = function(){--%>
+		<%--var phrase = '${loginResult}';--%>
+		<%--alert(phrase);--%>
+		<%--// return false;--%>
+		<%--};--%>
+		</script>
 
 		<%--<c:forEach items="${param.model}" var="i">--%>
 		<%--${i}--%>

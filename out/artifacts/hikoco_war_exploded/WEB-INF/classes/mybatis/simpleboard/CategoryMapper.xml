@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- DAO(Interface)를 지정할 것.-->
-<mapper namespace="org.silkdog.maven.simpleboard.board.dao.CategoryDAO">
+<mapper namespace="org.silkdog.maven.simpleboard.board.dao.SBCategoryDAO">
     <select id="getAllCategoryList" resultType="java.util.HashMap">
         SELECT no, cname, caka, boardCnt FROM simpleboard_category WHERE visible = 1
     </select>

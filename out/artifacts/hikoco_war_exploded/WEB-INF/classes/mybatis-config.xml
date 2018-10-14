@@ -7,7 +7,10 @@
 <configuration>
     <typeAliases>
         <!--<typeAlias type="org.silkdog.maven.hikoco.item.vo.ItemVO" alias="ItemVO"/>-->
-        <typeAlias type="org.silkdog.maven.simpleboard.board.vo.BoardVO" alias="boardVO"/>
+        <typeAlias type="org.silkdog.maven.simpleboard.board.vo.SBBoardVO" alias="sbBoardVO"/>
+        <typeAlias type="org.silkdog.maven.simpleboard.board.vo.SBCategoryVO" alias="sbCategoryVO"/>
+        <typeAlias type="org.silkdog.maven.simpleboard.board.vo.SBCommentVO" alias="sbCommentVO"/>
+        <typeAlias type="org.silkdog.maven.simpleboard.board.vo.SBMemberVO" alias="sbMemberVO"/>
     </typeAliases>
     <mappers>
         <!-- Hikoco -->

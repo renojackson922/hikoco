@@ -97,10 +97,10 @@
                 <value>org.silkdog.maven.hikoco.category.vo.CategoryVO</value>
                 <value>org.silkdog.maven.hikoco.mycart.vo.MyCartVO</value>
                 <!-- Simpleboard -->
-                <value>org.silkdog.maven.simpleboard.board.vo.BoardVO</value>
-                <value>org.silkdog.maven.simpleboard.board.vo.CommentVO</value>
-                <value>org.silkdog.maven.simpleboard.board.vo.CategoryVO</value>
-                <value>org.silkdog.maven.simpleboard.board.vo.MemberVO</value>
+                <value>org.silkdog.maven.simpleboard.board.vo.SBBoardVO</value>
+                <value>org.silkdog.maven.simpleboard.board.vo.SBCommentVO</value>
+                <value>org.silkdog.maven.simpleboard.board.vo.SBCategoryVO</value>
+                <value>org.silkdog.maven.simpleboard.board.vo.SBMemberVO</value>
             </list>
         </property>
         <!--<property name="mapperLocations" value="classpath*:/mybatis/*.xml"/>-->
@@ -148,16 +148,16 @@
     </bean>
 
     <!-- **************** Simpleboard **************** -->
-    <bean id="boardDAO" class="org.silkdog.maven.simpleboard.board.dao.BoardDAOImpl">
+    <bean id="sbBoardDAO" class="org.silkdog.maven.simpleboard.board.dao.SBBoardDAOImpl">
         <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
     </bean>
-    <bean id="commentDAO" class="org.silkdog.maven.simpleboard.board.dao.CommentDAOImpl">
+    <bean id="sbCommentDAO" class="org.silkdog.maven.simpleboard.board.dao.SBCommentDAOImpl">
         <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
     </bean>
-    <bean id="boardCategoryDAO" class="org.silkdog.maven.simpleboard.board.dao.CategoryDAOImpl">
+    <bean id="sbCategoryDAO" class="org.silkdog.maven.simpleboard.board.dao.SBCategoryDAOImpl">
         <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
     </bean>
-    <bean id="simpleboardMemberDAO" class="org.silkdog.maven.simpleboard.board.dao.MemberDAOImpl">
+    <bean id="sbMemberDAO" class="org.silkdog.maven.simpleboard.board.dao.SBMemberDAOImpl">
         <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
     </bean>
 

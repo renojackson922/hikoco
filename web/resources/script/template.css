@@ -80,6 +80,9 @@ select, option{
     .bottom-wrapper{
         margin-top: 150px;
     }
+    #password-check{
+        padding-top:0;
+    }
 }
 /* 데스크탑 뷰 */
 @media screen and (min-width: 768px) and (max-width: 3000px) {
@@ -117,6 +120,9 @@ select, option{
     }
     .bottom-wrapper{
         margin-top: 100px;
+    }
+    #password-check{
+        padding-top:30px;
     }
 }
 .search_module{

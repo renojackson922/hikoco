@@ -1,6 +1,6 @@
 package org.silkdog.maven.simpleboard.board.controller;
 
-import org.silkdog.maven.simpleboard.board.dao.BoardDAO;
+import org.silkdog.maven.simpleboard.board.dao.SBBoardDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -14,11 +14,11 @@ import java.util.HashMap;
 @CrossOrigin
 @RequestMapping("/bot")
 public class BotController {
-    private final BoardDAO boardDAO;
+    private final SBBoardDAO SBBoardDAO;
 
     @Autowired
-    public BotController(BoardDAO boardDAO) {
-        this.boardDAO = boardDAO;
+    public BotController(SBBoardDAO SBBoardDAO) {
+        this.SBBoardDAO = SBBoardDAO;
     }
 
     @GetMapping
@@ -47,7 +47,7 @@ public class BotController {
             hashMap.put("writeip", req.getRemoteAddr());
             hashMap.put("lastEditedIp", req.getRemoteAddr());
 
-            int res = boardDAO.doBot(hashMap);
+            int res = SBBoardDAO.doBot(hashMap);
         }
 
         return "redirect:bot";
