@@ -101,7 +101,7 @@
 		// });
 		var backToHome = function(){
 			if(confirm('메인 페이지로 돌아가시겠습니까?\n작업 내용은 저장되지 않습니다.')){
-				window.location.href="/shop";
+				window.location.href="/board";
 			}else{
 				return false;
 			}

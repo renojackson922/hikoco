@@ -1,5 +1,6 @@
 package org.silkdog.maven.simpleboard.board.vo;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.ibatis.type.Alias;
 
 import java.sql.Date;
@@ -20,13 +21,6 @@ public class SBBoardVO {
     private String writeip;
     private String lastEditedIp;
 
-//    public BoardVO(String username, String password, int category, String title, String detail){
-//        this.username = username;
-//        this.password = password;
-//        this.category = category;
-//        this.title = title;
-//        this.detail = detail;
-//    }
 
     public int getId() {
         return id;
@@ -57,12 +51,17 @@ public class SBBoardVO {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = passwordEncryption(password);
     }
 
     public String getPasswordConfirm() {
         return passwordConfirm;
     }
+
+    public void setPasswordConfirm(String passwordConfirm) {
+        this.passwordConfirm = passwordEncryption(passwordConfirm);
+    }
+
 
     /** 비밀번호 1차 검증 */
     public boolean isSamePasswordConfirmPassword() {
@@ -74,10 +73,6 @@ public class SBBoardVO {
     /** 비밀번호 입력여부 확인 */
     public boolean hasPassword() {
         return password != null && password.trim().length() > 0;
-    }
-
-    public void setPasswordConfirm(String passwordConfirm) {
-        this.passwordConfirm = passwordConfirm;
     }
 
     public int getCategory() {
@@ -103,7 +98,6 @@ public class SBBoardVO {
 //    public void setDetail(Blob detail) {
 //        this.detail = detail;
 //    }
-
 
     public String getDetail() {
         return detail;
@@ -151,5 +145,9 @@ public class SBBoardVO {
 
     public void setLastEditedIp(String lastEditedIp) {
         this.lastEditedIp = lastEditedIp;
+    }
+
+    public String passwordEncryption(String password){
+        return DigestUtils.sha512Hex(password);
     }
 }

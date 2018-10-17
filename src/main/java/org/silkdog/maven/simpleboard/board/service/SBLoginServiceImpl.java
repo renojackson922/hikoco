@@ -16,7 +16,7 @@ public class SBLoginServiceImpl implements SBLoginService {
     @Override
     public void checkSession(HttpSession httpSession, Model model) {
         if(httpSession.getAttribute("session") == null || httpSession.getAttribute("session").equals("")){
-            System.out.println("세션이 없음!");
+            System.out.println("[Log]"+"세션이 없음!");
         }else{
             model.addAttribute("userinfo", sbMemberDAO.getInfoByUsername((String)httpSession.getAttribute("session")));
         }

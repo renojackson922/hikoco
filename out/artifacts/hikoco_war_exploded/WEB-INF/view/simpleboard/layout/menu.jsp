@@ -253,11 +253,13 @@
 		<div class="text-center" style="padding:10px 0 5px;">
 		<span style="font-size:1rem">투데이윾머</span>
 		</div>
+		<li class="list-group-item list-menu" data-value="14" onclick="moveByRef(this)">음식갤러리</li>
 		<c:set var="array3">윾게,스게,만세a</c:set>
-		<c:forEach var="i" begin="0" end="2" items="${array3}" varStatus="idx">
+		<c:forEach var="i" begin="0" end="3" items="${array3}" varStatus="idx">
 			<li class="list-group-item list-menu" data-value="${idx.index + 10}" onclick="moveByRef(this)">${i}</li>
 		</c:forEach>
 		</ul>
+
 		</div>
 		<script>
 		<%--var loginResultAlert = function(){--%>

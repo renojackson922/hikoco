@@ -12,12 +12,12 @@ import java.util.HashMap;
 
 @Controller
 @CrossOrigin
-@RequestMapping("/bot")
-public class BotController {
+@RequestMapping("/board/bot")
+public class SBBotController {
     private final SBBoardDAO SBBoardDAO;
 
     @Autowired
-    public BotController(SBBoardDAO SBBoardDAO) {
+    public SBBotController(SBBoardDAO SBBoardDAO) {
         this.SBBoardDAO = SBBoardDAO;
     }
 
@@ -50,6 +50,6 @@ public class BotController {
             int res = SBBoardDAO.doBot(hashMap);
         }
 
-        return "redirect:bot";
+        return "redirect:/board/bot";
     }
 }

@@ -141,10 +141,10 @@
 		<nav aria-label="Page navigation example" style="display:inline-block;">
 			<ul class="pagination">
 				<c:choose>
-					<c:when test="${a eq 1}"></c:when>
+					<c:when test="${pageSplice eq 1}"></c:when>
 					<c:when test="${pageCnt > 5}">
 						<li class="page-item">
-							<a class="page-link" href="/board/c${category}/p${(a-1)*5}" aria-label="Previous">
+							<a class="page-link" href="/board/c${category}/p${(pageSplice-1)*5}" aria-label="Previous">
 								<span aria-hidden="true">&lsaquo;</span>
 								<span class="sr-only">Previous</span>
 							</a>
@@ -152,19 +152,18 @@
 					</c:when>
 					<c:otherwise/>
 				</c:choose>
-				<c:forEach var="i" begin="${(a * 5) - 4}" end="${a * 5}">
+				<c:forEach var="i" begin="${(pageSplice * 5) - 4}" end="${pageSplice * 5}">
 					<c:if test="${i le pageCnt}">
 						<li class="page-item"><a class="page-link" href="/board/c${category}/p${i}">${i}</a></li>
 					</c:if>
 				</c:forEach>
 				<c:choose>
-					<c:when test="${pageCnt lt (a*5)}"></c:when>
+					<c:when test="${pageCnt lt (pageSplice*5)}"></c:when>
 					<c:when test="${pageCnt > 5}">
 						<li class="page-item">
-							<a class="page-link" href="/board/c${category}/p${((a+1)*5)-4}" aria-label="Next">
+							<a class="page-link" href="/board/c${category}/p${((pageSplice+1)*5)-4}" aria-label="Next">
 								<span aria-hidden="true">&rsaquo;</span>
-								<span class="sr-only">Next</span>
-							</a>
+								<span class="sr-only">Next</span>ㅁ							</a>
 						</li>
 					</c:when>
 					<c:otherwise/>
@@ -253,10 +252,10 @@
 		<nav aria-label="Page navigation example" style="display:inline-block;">
 			<ul class="pagination">
 				<c:choose>
-					<c:when test="${a eq 1}"></c:when>
+					<c:when test="${pageSplice eq 1}"></c:when>
 					<c:when test="${pageCnt > 5}">
 						<li class="page-item">
-							<a class="page-link" href="/board/c${category}/p${(a-1)*5}" aria-label="Previous">
+							<a class="page-link" href="/board/c${category}/p${(pageSplice-1)*5}" aria-label="Previous">
 								<span aria-hidden="true">&lsaquo;</span>
 								<span class="sr-only">Previous</span>
 							</a>
@@ -264,16 +263,16 @@
 					</c:when>
 					<c:otherwise/>
 				</c:choose>
-				<c:forEach var="i" begin="${(a * 5) - 4}" end="${a * 5}">
+				<c:forEach var="i" begin="${(pageSplice * 5) - 4}" end="${pageSplice * 5}">
 					<c:if test="${i le pageCnt}">
 						<li class="page-item"><a class="page-link" href="/board/c${category}/p${i}">${i}</a></li>
 					</c:if>
 				</c:forEach>
 				<c:choose>
-					<c:when test="${pageCnt lt (a*5)}"></c:when>
+					<c:when test="${pageCnt lt (pageSplice*5)}"></c:when>
 					<c:when test="${pageCnt > 5}">
 						<li class="page-item">
-							<a class="page-link" href="/board/c${category}/p${((a+1)*5)-4}" aria-label="Next">
+							<a class="page-link" href="/board/c${category}/p${((pageSplice+1)*5)-4}" aria-label="Next">
 								<span aria-hidden="true">&rsaquo;</span>
 								<span class="sr-only">Next</span>
 							</a>

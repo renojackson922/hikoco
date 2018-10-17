@@ -39,7 +39,7 @@
     </select>
 
     <select id="pageNumByCategory" parameterType="int" resultType="int">
-        SELECT count(id) FROM simpleboard_board WHERE category = #{category};
+        SELECT count(id) FROM simpleboard_board WHERE category = #{category} AND isannounce = 0
     </select>
 
     <insert id="doBot" useGeneratedKeys="true" keyProperty="id" parameterType="java.util.HashMap">

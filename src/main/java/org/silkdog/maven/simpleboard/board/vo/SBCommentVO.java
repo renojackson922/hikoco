@@ -1,5 +1,6 @@
 package org.silkdog.maven.simpleboard.board.vo;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.ibatis.type.Alias;
 
 import java.sql.Date;
@@ -43,7 +44,7 @@ public class SBCommentVO {
     }
 
     public void setPw(String pw) {
-        this.pw = pw;
+        this.pw = passwordEncryption(pw);
     }
 
     public String getPwConfirm() {
@@ -51,7 +52,7 @@ public class SBCommentVO {
     }
 
     public void setPwConfirm(String pwConfirm) {
-        this.pwConfirm = pwConfirm;
+        this.pwConfirm = passwordEncryption(pwConfirm);
     }
 
     public boolean isPasswordSame(String pw, String pwConfirm){
@@ -153,5 +154,9 @@ public class SBCommentVO {
 
     public void setLastEditedIp(String lastEditedIp) {
         this.lastEditedIp = lastEditedIp;
+    }
+
+    public String passwordEncryption(String password){
+        return DigestUtils.sha512Hex(password);
     }
 }

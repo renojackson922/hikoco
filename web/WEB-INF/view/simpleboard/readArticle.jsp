@@ -127,6 +127,9 @@
 
 	</div>
 </div>
+<div>
+	<%@include file="./boardList.jsp"%>
+</div>
 
 <script>
 	var category = function(){

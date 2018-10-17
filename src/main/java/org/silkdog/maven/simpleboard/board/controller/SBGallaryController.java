@@ -19,7 +19,8 @@ import java.util.List;
 @Controller
 @CrossOrigin("*")
 //@SessionAttributes("session")
-public class SBMainController {
+@RequestMapping("/board/gallary/c{c}/p{p}")
+public class SBGallaryController {
     @Autowired
     private SBBoardDAO SBBoardDAO;
     @Autowired
@@ -33,41 +34,16 @@ public class SBMainController {
     private int category;
     private int page;
 
-    /** 자유게시판으로 리다이렉트 */
-    @RequestMapping(value={"/board", "/board/"})
-    public String indexNoCategory(){
-        // ResponseBody 를 통해 ~~로 인해 리다이렉트 되었습니다. 등의 메시지 보낼 것.
-        return "redirect:/board/c1";
-    }
 
-    /** 해당 카테고리의 첫번째 페이지로 리다이렉트 */
-    @RequestMapping("/board/c{category}")
-    public String indexByCategory(@PathVariable("category") int category){
-        this.category = category;
-        return "redirect:/board/c{category}/p1";
-    }
+    @GetMapping
+    public String gallaryGET(@PathVariable("c") int category,
+                             @PathVariable("p") int page,
+                             HttpServletRequest req,
+                             HttpSession httpSession,
+                             Model model){
 
-    /**
-     * 전체보기 게시판 처리
-     * 중고장터나 신고게시판 등은 제외할 것!
-     * */
-    @RequestMapping(value={"/board/c0", "/board/c0/", "/board/c0/p{page}", "/board/c0/p{page}/"})
-    public String showAllList(@PathVariable("page") int page){
-        this.page = page;
-        return "redirect:/board/c{category}/p1";
-    }
-
-    /**
-     * 게시판 처리하기
-     * */
-    @RequestMapping(value="/board/c{category}/p{page}", method= RequestMethod.GET)
-    public String indexPagination(@PathVariable("page") int page,
-                                  @PathVariable("category") int category,
-                                  HttpServletRequest req,
-                                  HttpSession httpSession,
-                                  Model model){
-        this.page = page;
-        this.category = category;
+//        this.page = page;
+//        this.category = category;
 
 
         if(req.getParameter("loginResult") == null){
@@ -86,11 +62,17 @@ public class SBMainController {
         model.addAttribute("getListCountByCategory", SBBoardDAO.getListCountByCategory(category));
         return doIndex(page, category, model);
 
+//        model.addAttribute("category", category);
+//        model.addAttribute("page", page);
 
+//        return "/simpleboard/newGallary";
     }
 
     /** 게시판 인덱싱, 페이지네이션 */
     public String doIndex(int page, int category, Model model){
+        /** 한 페이지에 표시할 최대 게시물의 수 */
+        int foo = 12;
+
         /** 페이지가 0일 경우 1로 리다이렉트(forward?)
          *  page == '페이지 번호'
          * */
@@ -98,8 +80,8 @@ public class SBMainController {
             return "redirect:/board/c{category}/p1";
         }
 
-        final int PAGINATION = 10 * (page - 1); // 페이지 번호; 하나를 빼야함
-        final int LIMIT = 10; // 한번에 표시할 게시물의 수
+        final int PAGINATION = foo * (page - 1); // 페이지 번호; 하나를 빼야함
+        final int LIMIT = foo; // 한번에 표시할 게시물의 수
 
         /** pagination 을 나누는 기준은 5 */
         int pageSplice;
@@ -114,10 +96,10 @@ public class SBMainController {
         /** 공지만큼 빼는 로직을 작성해야함!!! -> isannounce = 0 을 추가해서 조치완료. */
         int b = SBBoardDAO.pageNumByCategory(category);
         int pageCnt;
-        if(b % 10 == 0){
-            pageCnt = (int)(Math.floor(b / 10));
+        if(b % 12 == 0){
+            pageCnt = (int)(Math.floor(b / foo));
         }else{
-            pageCnt = (int)(Math.floor(b / 10)) + 1;
+            pageCnt = (int)(Math.floor(b / foo)) + 1;
         }
         System.out.println("총 페이지 수: " + pageCnt);
         model.addAttribute("pageCnt", pageCnt);
@@ -135,7 +117,6 @@ public class SBMainController {
 
         model.addAttribute("category", category);
         model.addAttribute("currentPage", page);
-        return "simpleboard/newBoard";
+        return "simpleboard/newGallary";
     }
-
 }
