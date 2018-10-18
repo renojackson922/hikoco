@@ -38,11 +38,9 @@
 
 <div id="readArticle-wrapper">
 	<!-- 서브 게시판 배너 -->
-	<div class="common-banner text-center">
-		<span id="banner-span" style="font-size:2.0rem; font-weight:300; line-height:100px;"></span>
-	</div>
-	<div id="readArticle-inner-wrapper">
+	<%@ include file="../layout/subBanner.jsp" %>
 
+	<div id="readArticle-inner-wrapper">
 		<div id="readArticle-inner-wrapper-section1">
 			<div id="readArticle-header">
 				<div id="readArticle-title">
@@ -128,31 +126,10 @@
 	</div>
 </div>
 <div>
-	<%@include file="./boardList.jsp"%>
+	<%--<%@include file="./boardListContent.jsp"%>--%>
 </div>
 
 <script>
-	var category = function(){
-		var url = new URL(window.location.href);
-		return url.pathname.split("/c")[1].split("/r")[0];
-	};
-
-	console.log(category());
-	var getAkaFromJSON = function(){
-		$.getJSON('../../../resources/json/board_category.json', function(result){
-			$.each(result, function(i, field){
-				if(i == category()){
-					console.log(field.name);
-					$('#banner-span').text(field.name);
-					$('#readArticle-title__category').text('[' + field.aka + ']');
-
-				}
-			});
-		});
-	};
-
-	getAkaFromJSON();
-
 	$(function(){
 		var imgResize = document.getElementsByTagName( 'img' )[0]; // '0' to assign the first (and only `HTML` tag)
 		imgResize.className += 'img-fluid';

@@ -4,76 +4,16 @@
 <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
 <!-- PC -->
 <div class="table-view pc-only" style="width: calc(100% - 220px); padding-left:20px; float:left; overflow-x:hidden;">
-	<div style="width:100%; height:135px;">
-
-		<c:choose>
-			<c:when test="${category eq 13}">
-				<div class="common-banner text-center" style="background:#fff no-repeat local; background-position-x: 50%; background-position-y: 50%; ">
-				<%--<div class="common-banner text-center" style="background:url('../../../resources/imgs/hots_mephisto_cropped.jpg') no-repeat local; background-position-x: 50%; background-position-y: 50%; ">--%>
-					<span id="banner-span" style="font-size:2.0rem; font-weight:300; line-height:100px; background:#fff; padding:0 10px;"></span>
-					<script>
-						var getAkaFromJSON = function(){
-							$.getJSON('../../../resources/json/board_category.json', function(result){
-								$.each(result, function(i, field){
-									if(i == category()){
-										console.log(field.name);
-										$('#banner-span').text(field.name);
-									}
-								});
-							});
-						};
-						getAkaFromJSON();
-					</script>
-				</div>
-			</c:when>
-			<c:otherwise>
-				<div class="common-banner text-center">
-					<span id="banner-span" style="font-size:2.0rem; font-weight:300; line-height:100px;"></span>
-					<script>
-						var getAkaFromJSON = function(){
-							$.getJSON('../../../resources/json/board_category.json', function(result){
-								$.each(result, function(i, field){
-									if(i == category()){
-										console.log(field.name);
-										$('#banner-span').text(field.name);
-									}
-								});
-							});
-						};
-						getAkaFromJSON();
-					</script>
-				</div>
-			</c:otherwise>
-		</c:choose>
-
-
-
-		<span id="board-name2" style="float:right; font-size:0.75rem; padding:10px 5px 5px 0;">총 게시글 수:&nbsp;${getListCountByCategory}</span>
-	</div>
-
-	<style>
-		.board-thead{
-			/*display: table-caption;*/
-			color:#fff;
-			background: linear-gradient(to right, #01c9ca 0%, #3886FF 2000px) fixed;
-			-moz-background-image: linear-gradient(left, #01c9ca 0%, #3886FF 100%);
-			-webkit-background-image: linear-gradient(left, #01c9ca 0%, #3886FF 100%);
-		}
-		.board-tbody{
-			/*display: table-row-group;*/
-		}
-
-	</style>
-
+	<%@ include file="../layout/subBanner.jsp" %>
 	<table id="board-table" class="table table-bordered" style="background-color:#fff; border-color:#ddd;">
 		<thead class="board-thead">
-			<tr>
-				<th scope="col" class="text-center" style="width:5% !important;">#</th>
-				<th style="width:70% !important;"><strong>제목</strong></th>
-				<th style="width:5% !important;"><strong>조회수</strong></th>
-				<th style="width:10% !important;"><strong>작성자</strong></th>
-				<th style="width:10% !important;"><strong>작성일자</strong></th>
-			</tr>
+		<tr>
+			<th scope="col" class="text-center" style="width:5% !important;">#</th>
+			<th style="width:70% !important;"><strong>제목</strong></th>
+			<th style="width:5% !important;"><strong>조회수</strong></th>
+			<th style="width:10% !important;"><strong>작성자</strong></th>
+			<th style="width:10% !important;"><strong>작성일자</strong></th>
+		</tr>
 		</thead>
 		<tbody class="board-tbody">
 		<c:choose>
@@ -101,7 +41,7 @@
 							</c:otherwise>
 						</c:choose>
 						<th><a href="/board/c${category}/r${j.id}">${tmpj}&nbsp;&nbsp;<strong>[${j.comment_cnt}]</strong></a>&nbsp;&nbsp;
-						<%--<i class="fas fa-leaf" title="새 게시물" style="color:#8fff52;">&nbsp;&nbsp;<i class="fas fa-fire" title="인기 게시물" style="color:#dc2e2e;"></i></i></td>--%>
+								<%--<i class="fas fa-leaf" title="새 게시물" style="color:#8fff52;">&nbsp;&nbsp;<i class="fas fa-fire" title="인기 게시물" style="color:#dc2e2e;"></i></i></td>--%>
 						<th class="text-center">${j.hit}</th>
 						<th>${j.username}</th>
 						<th>${j.writedate}</th>

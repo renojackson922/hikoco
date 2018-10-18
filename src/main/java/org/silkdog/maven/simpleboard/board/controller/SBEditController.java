@@ -19,7 +19,7 @@ import java.util.HashMap;
 @CrossOrigin("*")
 //@SessionAttributes("session")
 public class SBEditController {
-    private final static String EDIT_URL = "simpleboard/newEdit";
+    private final static String EDIT_URL = "simpleboard/framework/editFW";
     private final SBBoardDAO SBBoardDAO;
 
     @Autowired

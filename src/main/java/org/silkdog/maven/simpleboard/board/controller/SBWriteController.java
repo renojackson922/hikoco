@@ -16,9 +16,11 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 @RequestMapping("/c{category}/write")
 public class SBWriteController {
-    private final static String WRITE_URL = "simpleboard/newWrite";
     private final SBBoardDAO SBBoardDAO;
     private SBBoardService SBBoardService;
+
+    private final static String WRITE_URL = "simpleboard/framework/writeFW";
+
 
     @Autowired
     public SBWriteController(SBBoardDAO SBBoardDAO, SBBoardService SBBoardService) {

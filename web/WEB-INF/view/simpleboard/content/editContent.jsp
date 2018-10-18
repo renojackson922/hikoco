@@ -69,9 +69,7 @@
     </style>
     <div id="editArticle-wrapper">
 		<!-- 서브 게시판 배너 -->
-		<div class="common-banner text-center">
-			<span id="banner-span" style="font-size:2.0rem; font-weight:300; line-height:100px;"></span>
-		</div>
+		<%@ include file="../layout/subBanner.jsp" %>
         <div style="padding-bottom:20px;">
             <span style="font-size:2.0em; font-weight: 300;">글 수정</span>
             <div style="float:right;">
@@ -130,26 +128,6 @@
         </form>
     </div>
 <script>
-	var category = function(){
-		var url = new URL(window.location.href);
-		return url.pathname.split("/c")[1].split("/r")[0];
-	};
-
-	console.log(category());
-	var getAkaFromJSON = function(){
-		$.getJSON('../../../resources/json/board_category.json', function(result){
-			$.each(result, function(i, field){
-				if(i == category()){
-					console.log(field.name);
-					$('#banner-span').text(field.name);
-					$('#readArticle-title__category').text('[' + field.aka + ']');
-
-				}
-			});
-		});
-	};
-	getAkaFromJSON();
-
 	$(function(){
 		$('.card-block').css({'height':'550px', 'resize': 'none','background-color':'none'});
 		$('.note-resizebar').css('display','none');

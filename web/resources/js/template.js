@@ -1,8 +1,68 @@
-var category = function(){
-    var url = new URL(window.location.href);
-    return url.pathname.split("/c")[1].split("/p")[0];
+/** ==================================== 카테고리 구분 스크립트 ================================================ */
+
+var category = {
+    set current(str){
+        this.data = str;
+    },
+    data: ''
+}
+
+var pageType = {
+    set current(str){
+        this.data = str;
+    },
+    data: 0
+}
+
+var jsonPath = '../../../resources/json/board_category.json';
+
+var getAkaFromJSON = function(data){
+    $.getJSON(jsonPath, function(result){
+        $.each(result, function(i, field){
+            if(i == data){
+                console.log('필드이름: ' + field.name);
+                $('.sb-subbanner-span').text(field.name);
+                var elem = document.getElementById("readArticle-title__category");
+                if(elem != null){
+                    $('#readArticle-title__category').text('[' + field.aka + ']');
+                }
+            }
+        });
+    });
 };
-console.log(category());
+
+$(function(){
+    function findCategory(){
+        var url = (new URL(window.location.href)).pathname.split("/c")[1];
+        category.current = url.split('/')[0];
+        var type = url.split("/")[1].substring(0,1);
+        pageType.current = type;
+
+        switch(pageType.data) {
+            case 'p': {
+                console.log('게시판');
+                getAkaFromJSON(category.data);
+                break;
+            }
+            case 'w': {
+                console.log('글쓰기');
+                $('#sb-subbanner-amount').text('');
+                getAkaFromJSON(category.data);
+                break;
+            }
+            case 'r': {
+                console.log('게시글 읽기');
+                $('#sb-subbanner-amount').text('');
+                getAkaFromJSON(category.data);
+                break;
+            }
+        }
+    }
+    findCategory();
+});
+
+
+/** ======================================================================================================== */
 
 var tmp = 0, tmpNum = 0;
 
@@ -174,3 +234,4 @@ var deleteArticle = function(num){
         return false;
     }
 }
+

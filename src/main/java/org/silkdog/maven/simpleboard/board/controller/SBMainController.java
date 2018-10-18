@@ -33,6 +33,8 @@ public class SBMainController {
     private int category;
     private int page;
 
+    private static final String BOARDLIST_URL = "simpleboard/framework/boardFW";
+
     /** 자유게시판으로 리다이렉트 */
     @RequestMapping(value={"/board", "/board/"})
     public String indexNoCategory(){
@@ -135,7 +137,7 @@ public class SBMainController {
 
         model.addAttribute("category", category);
         model.addAttribute("currentPage", page);
-        return "simpleboard/newBoard";
+        return BOARDLIST_URL;
     }
 
 }

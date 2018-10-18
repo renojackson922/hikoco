@@ -5,19 +5,19 @@
 <html>
 <head>
 	<title>실크독 심플보드</title>
-	<%@ include file="../essential/base.jsp"%>
+	<%@ include file="../../essential/base.jsp"%>
 	<%--<link href="../../../resources/script/ghostcss.css" rel="stylesheet">--%>
-	<link href="../../../resources/script/template.css" rel="stylesheet">
-	<script src="../../../resources/js/template.js" crossorigin="*" async defer></script>
+	<link href="../../../../resources/script/template.css" rel="stylesheet">
+	<script src="../../../../resources/js/template.js" crossorigin="*" async defer></script>
 </head>
 <body>
 	<div id="show">
-		<%@ include file="layout/banner.jsp"%>
+		<%@ include file="../layout/banner.jsp"%>
 		<div id="read_article" style="display:block; width:100%; height:100%;">
-			<%@ include file="layout/menu.jsp"%>
-			<%@ include file="readArticle.jsp"%>
+			<%@ include file="../layout/menu.jsp"%>
+			<%@ include file="../content/readContent.jsp"%>
 		</div>
-		<%@ include file="layout/footer.jsp"%>
+		<%@ include file="../layout/footer.jsp"%>
 	</div>
 </body>
 <script>

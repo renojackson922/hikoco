@@ -5,10 +5,10 @@
 <html>
 <head>
 	<title>실크독 심플보드</title>
-	<%@ include file="../essential/base.jsp"%>
+	<%@ include file="../../essential/base.jsp"%>
 	<%--<link href="../../../resources/script/ghostcss.css" rel="stylesheet">--%>
-	<link href="../../../resources/script/template.css" rel="stylesheet">
-	<script src="../../../resources/js/template.js" crossorigin="*" async defer></script>
+	<link href="../../../../resources/script/template.css" rel="stylesheet">
+	<script src="../../../../resources/js/template.js" crossorigin="*" async defer></script>
 	<script>
 		var foo = '${getAllCategoryList}';
 		console.log(foo);
@@ -16,16 +16,16 @@
 </head>
 <body>
 	<div id="show">
-		<%@ include file="layout/banner.jsp"%>
+		<%@ include file="../layout/banner.jsp"%>
 		<div id="board_list" style="display:block; width:100%; height:100%;">
 			<c:set var="myRequestModel" value="${getAllCategoryList}" scope="request" />
 			<%--<%@ include file="layout/menu.jsp"%>--%>
-			<jsp:include page="layout/menu.jsp">
+			<jsp:include page="../layout/menu.jsp">
 				<jsp:param name="model" value="myRequestModel"/>
 			</jsp:include>
-			<%@ include file="./boardList.jsp"%>
+			<%@ include file="../content/boardListContent.jsp"%>
 		</div>
-		<%@ include file="layout/footer.jsp"%>
+		<%@ include file="../layout/footer.jsp"%>
 	</div>
 </body>
 <script>

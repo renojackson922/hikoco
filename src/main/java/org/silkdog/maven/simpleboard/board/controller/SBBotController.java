@@ -16,6 +16,8 @@ import java.util.HashMap;
 public class SBBotController {
     private final SBBoardDAO SBBoardDAO;
 
+    private static final String BOT_URL = "simpleboard/util/bot";
+
     @Autowired
     public SBBotController(SBBoardDAO SBBoardDAO) {
         this.SBBoardDAO = SBBoardDAO;
@@ -23,7 +25,7 @@ public class SBBotController {
 
     @GetMapping
     public String bot(){
-        return "simpleboard/bot";
+        return BOT_URL;
     }
 
     @PostMapping

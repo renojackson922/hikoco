@@ -36,7 +36,7 @@ public class SBReadController {
     @Qualifier("SBLoginServiceImpl")
     private SBLoginService sbLoginService;
 
-    private static String READ_ARTICLE = "/simpleboard/newReadArticle";
+    private static String READ_ARTICLE = "simpleboard/framework/readFW";
 
     @GetMapping
     public String detail(@PathVariable("category") int category,

@@ -34,6 +34,8 @@ public class SBGallaryController {
     private int category;
     private int page;
 
+    public static final String GALLARY_URL = "simpleboard/framework/gallaryFW";
+
 
     @GetMapping
     public String gallaryGET(@PathVariable("c") int category,
@@ -64,8 +66,6 @@ public class SBGallaryController {
 
 //        model.addAttribute("category", category);
 //        model.addAttribute("page", page);
-
-//        return "/simpleboard/newGallary";
     }
 
     /** 게시판 인덱싱, 페이지네이션 */
@@ -117,6 +117,6 @@ public class SBGallaryController {
 
         model.addAttribute("category", category);
         model.addAttribute("currentPage", page);
-        return "simpleboard/newGallary";
+        return GALLARY_URL;
     }
 }
