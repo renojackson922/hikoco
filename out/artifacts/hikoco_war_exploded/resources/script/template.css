@@ -1,3 +1,8 @@
+*{
+    /* Experimental */
+    /*https://getbootstrap.com/docs/4.1/getting-started/introduction/*/
+    /*box-sizing: content-box;*/
+}
 
 /* main */
 .main-banner-nav__button{
@@ -87,7 +92,7 @@ select, option{
 /* 데스크탑 뷰 */
 @media screen and (min-width: 768px) and (max-width: 3000px) {
     body{
-        width:80%;
+        width:70%;
         margin:0 auto;
     }
 
