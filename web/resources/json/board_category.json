@@ -1,58 +1,72 @@
 {
   "1":{
     "name": "자유게시판",
-    "aka": "자게"
+    "aka": "자게",
+    "isGallary": false
   },
   "2":{
     "name": "질문게시판",
-    "aka": "질게"
+    "aka": "질게",
+    "isGallary": false
   },
   "3":{
     "name": "익명게시판",
-    "aka": "익게"
+    "aka": "익게",
+    "isGallary": false
   },
   "4":{
     "name": "장터게시판",
-    "aka": "장터"
+    "aka": "장터",
+    "isGallary": false
   },
   "5":{
     "name": "신고게시판",
-    "aka": "신고"
+    "aka": "신고",
+    "isGallary": false
   },
   "6":{
     "name": "오버워치",
-    "aka": "옵치"
+    "aka": "옵치",
+    "isGallary": false
   },
   "7":{
     "name": "몬스터헌터:월드",
-    "aka": "몬월"
+    "aka": "몬월",
+    "isGallary": false
   },
   "8":{
     "name": "리그오브레전드",
-    "aka": "LOL"
+    "aka": "LOL",
+    "isGallary": false
   },
   "9":{
     "name": "나와라",
-    "aka": "나와라"
+    "aka": "나와라",
+    "isGallary": false
   },
   "10":{
     "name": "윾머게시판",
-    "aka": "윾게"
+    "aka": "윾게",
+    "isGallary": false
   },
   "11":{
     "name": "스샷게시판",
-    "aka": "스게"
+    "aka": "스게",
+    "isGallary": false
   },
   "12":{
     "name": "만세a",
-    "aka": "만세a"
+    "aka": "만세a",
+    "isGallary": false
   },
   "13":{
     "name": "히어로즈오브더스톰",
-    "aka": "히오스"
+    "aka": "히오스",
+    "isGallary": false
   },
   "14":{
     "name": "음식갤러리",
-    "aka": "음갤"
+    "aka": "음갤",
+    "isGallary": true
   }
 }
